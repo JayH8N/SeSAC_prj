@@ -40,7 +40,6 @@ class SearchWordController: UIViewController {
         designShortKeyword(name: shortKeyword)
         resultLabel.text = "줄임말 검색기입니다."
         resultLabel.numberOfLines = 0
-        
     }
     
     //shorKeyword를 return값으로 받는 함수
