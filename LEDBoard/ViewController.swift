@@ -36,8 +36,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func sendButtonPushed(_ sender: UIButton) {
-    ///3)저
-        ///장된 컬러값을 가진 currentTitle을 mainLabel에 띄운다.
+    ///3)저장된 컬러값을 가진 TextField의 text를 mainLabel에 띄운다.
         mainLabel.textColor = resultColor
         mainLabel.text = textField.text
         view.endEditing(true)
@@ -55,7 +54,6 @@ class ViewController: UIViewController {
     
     //버튼을 누르면 random한 UIColor값을 변수에 저장하는 함수
     @IBAction func colorChangeButtonPushed(_ sender: UIButton) {
-    ///2) 텍스트걸러 랜덤으로 변경된 값을 저장함
         resultColor = colorPicked()
         buttons[1].tintColor = resultColor
     }
@@ -77,7 +75,6 @@ class ViewController: UIViewController {
         mainLabel.textAlignment = .center
         mainLabel.sizeToFit()
         mainLabel.font = UIFont.boldSystemFont(ofSize: 120)
-        
     }
     
     //텍스트필드 디자인
@@ -85,7 +82,7 @@ class ViewController: UIViewController {
         textField.keyboardType = .emailAddress
         textField.placeholder = "Text를 입력해주세요"
         textField.tintColor = UIColor.systemPink
-        textField.layer.borderColor = UIColor.clear.cgColor
+        textField.borderStyle = .none
     }
     
     //보내기 버튼, 컬러버튼 디자인
