@@ -17,6 +17,9 @@ class SearchWordController: UIViewController {
     
     var keyword: [String:String] = ["ㅇㅇ": "응응", "ㅋㅋ": "킥킥", "ㅎㅎ": "히히", "ㄱㅅ": "감사", "ㄷㄷ": "덜덜", "ㄱㄱ": "고고", "ㅎㄱ": "허걱", "ㄴㄴ": "노노", "ㅇㄷ": "어디"]
     
+    
+    
+    
     @IBOutlet var searchWindow: UITextField!
     @IBOutlet var searchButton: UIButton!
     
@@ -25,11 +28,16 @@ class SearchWordController: UIViewController {
     @IBOutlet var shortKeyword: [UIButton]!
     
     @IBOutlet var resultLabel: UILabel!
+    var keys: [String] = []
     
     
-    //viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        for i in keyword.keys {
+            keys.append(i)
+        }
+        
         designTextField(name: searchWindow)
         designSearchButton(name: searchButton)
         designResultLabel(name: resultBackground, imageName: "background")
@@ -72,7 +80,7 @@ class SearchWordController: UIViewController {
             button.layer.cornerRadius = 11
             button.layer.borderColor = UIColor.black.cgColor
             button.layer.borderWidth = 2
-            button.setTitle("1", for: .normal)
+            button.setTitle(keys.randomElement()!, for: .normal)
             button.setTitleColor(.systemRed, for: .normal)
             button.tintColor = .blue
         }
@@ -95,7 +103,7 @@ class SearchWordController: UIViewController {
     //returnkey를 누르면 resultLabel에 뜨도록 하는 함수
     @IBAction func textFieldKeyboardTapped(_ sender: Any) {
         guard let text = searchWindow.text, text.count > 1 else {
-            let alert = UIAlertController(title: "최소 2글자는 입력해주세요", message: "", preferredStyle: .alert)
+            let alert = UIAlertController(title: "잘못된 입력입니다.", message: "", preferredStyle: .alert)
             let cancel = UIAlertAction(title: "취소", style: .cancel)
             let ok = UIAlertAction(title: "확인", style: .default)
             

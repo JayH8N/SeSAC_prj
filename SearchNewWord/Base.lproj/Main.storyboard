@@ -44,7 +44,7 @@
                             <stackView opaque="NO" contentMode="scaleAspectFit" distribution="equalCentering" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="WN7-TS-FT6">
                                 <rect key="frame" x="16" y="132" width="342.66666666666669" height="24"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p2K-z7-hG7">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p2K-z7-hG7">
                                         <rect key="frame" x="0.0" y="0.0" width="65.333333333333329" height="24"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
@@ -52,7 +52,7 @@
                                             <action selector="wordButtonTabed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MxE-E4-eV7"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDi-aR-qTR">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fDi-aR-qTR">
                                         <rect key="frame" x="69.333333333333343" y="0.0" width="65.333333333333343" height="24"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
@@ -60,7 +60,7 @@
                                             <action selector="wordButtonTabed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Tup-7e-aA5"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7I-On-2Ao">
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7I-On-2Ao">
                                         <rect key="frame" x="138.66666666666666" y="0.0" width="65.333333333333343" height="24"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
@@ -68,7 +68,7 @@
                                             <action selector="wordButtonTabed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VCg-i5-mxP"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m3G-ut-5x6">
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m3G-ut-5x6">
                                         <rect key="frame" x="208" y="0.0" width="65.333333333333314" height="24"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
@@ -76,7 +76,7 @@
                                             <action selector="wordButtonTabed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="RIk-fN-S4G"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omW-U6-xWG">
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omW-U6-xWG">
                                         <rect key="frame" x="277.33333333333331" y="0.0" width="65.333333333333314" height="24"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
