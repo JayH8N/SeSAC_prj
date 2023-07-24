@@ -15,6 +15,8 @@ import UIKit
 
 class SearchWordController: UIViewController {
     
+    var keyword: [String:String] = ["ㅇㅇ": "응응", "ㅋㅋ": "킥킥", "ㅎㅎ": "히히", "ㄱㅅ": "감사", "ㄷㄷ": "덜덜", "ㄱㄱ": "고고", "ㅎㄱ": "허걱", "ㄴㄴ": "노노", "ㅇㄷ": "어디"]
+    
     @IBOutlet var searchWindow: UITextField!
     @IBOutlet var searchButton: UIButton!
     
@@ -25,15 +27,9 @@ class SearchWordController: UIViewController {
     @IBOutlet var resultLabel: UILabel!
     
     
-    var keyword = ["ㅇㅇ", "ㅋㅋ", "ㅎㅎ", "ㄱㅅ", "ㄷㄷ", "ㄱㄱ", "ㅎㄱ", "ㄴㄴ", "ㅇㄷ"]
-    
-    
-    
     //viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         designTextField(name: searchWindow)
         designSearchButton(name: searchButton)
         designResultLabel(name: resultBackground, imageName: "background")
@@ -42,11 +38,7 @@ class SearchWordController: UIViewController {
         resultLabel.numberOfLines = 0
     }
     
-    //shorKeyword를 return값으로 받는 함수
-    func provideShortKeyword() -> String {
-        let pickword = keyword.randomElement()!
-        return pickword
-    }
+
     
     
     func designTextField(name: UITextField) {
@@ -58,8 +50,6 @@ class SearchWordController: UIViewController {
         name.placeholder = "키워드를 입력해주세요"
         name.textColor = .black
     }
-    
-    
     
     func designSearchButton(name: UIButton) {
         var button = UIButton.Configuration.filled()
@@ -82,7 +72,7 @@ class SearchWordController: UIViewController {
             button.layer.cornerRadius = 11
             button.layer.borderColor = UIColor.black.cgColor
             button.layer.borderWidth = 2
-            button.setTitle(provideShortKeyword(), for: .normal)
+            button.setTitle("1", for: .normal)
             button.setTitleColor(.systemRed, for: .normal)
             button.tintColor = .blue
         }
@@ -104,28 +94,19 @@ class SearchWordController: UIViewController {
     
     //returnkey를 누르면 resultLabel에 뜨도록 하는 함수
     @IBAction func textFieldKeyboardTapped(_ sender: Any) {
-        switch searchWindow.text {
-        case "ㅇㅇ" :
-            resultLabel.text = "응응"
-        case "ㅋㅋ" :
-            resultLabel.text = "킥킥"
-        case "ㅎㅎ" :
-            resultLabel.text = "히히"
-        case "ㄱㅅ" :
-            resultLabel.text = "감사"
-        case "ㄷㄷ" :
-            resultLabel.text = "덜덜"
-        case "ㄱㄱ" :
-            resultLabel.text = "고고"
-        case "ㅎㄱ" :
-            resultLabel.text = "허걱"
-        case "ㄴㄴ" :
-            resultLabel.text = "노노"
-        case "ㅇㄷ" :
-            resultLabel.text = "어디"
-        default:
-            resultLabel.text = "찾는 결과가 없습니다."
-        }
+        guard let text = searchWindow.text, text.count > 1 else {
+            let alert = UIAlertController(title: "최소 2글자는 입력해주세요", message: "", preferredStyle: .alert)
+            let cancel = UIAlertAction(title: "취소", style: .cancel)
+            let ok = UIAlertAction(title: "확인", style: .default)
+            
+            alert.addAction(cancel)
+            alert.addAction(ok)
+            
+            present(alert, animated: true)
+            return }
+        
+        resultLabel.text = keyword[text]
+        searchWindow.text = ""
     }
     
     
