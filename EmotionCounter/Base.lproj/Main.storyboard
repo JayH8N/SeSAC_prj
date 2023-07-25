@@ -1,24 +1,197 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="kHK-Rc-vwd">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="UIMenu" message="Requires Xcode 11 or later." minToolsVersion="11.0" requiredIntegratedClassName="UICommandDiff"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--작성하기-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EmotionCounter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBl-9g-h85">
+                                <rect key="frame" x="0.0" y="59" width="393" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="RXe-vl-gqp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VkZ-Ar-XkG">
+                                <rect key="frame" x="0.0" y="99" width="393" height="670"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dcc-9Q-rge">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="670"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="0C3-Nd-l4T">
+                                        <rect key="frame" x="184.66666666666666" y="215" width="24" height="240"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtr-uS-HBZ">
+                                                <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="dtr-uS-HBZ" secondAttribute="height" multiplier="1:1" id="Qzx-wx-S6W"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="imageTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h01-QJ-a4E"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MO3-eA-KQu">
+                                                <rect key="frame" x="0.0" y="54" width="24" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="MO3-eA-KQu" secondAttribute="height" multiplier="1:1" id="I53-fl-pvR"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="imageTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kxg-bF-9bV"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mmL-gI-LlE">
+                                                <rect key="frame" x="0.0" y="108" width="24" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="mmL-gI-LlE" secondAttribute="height" multiplier="1:1" id="pSK-UJ-tTy"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="imageTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fYb-Yd-zBD"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eCW-DJ-3ts">
+                                                <rect key="frame" x="0.0" y="162" width="24" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="eCW-DJ-3ts" secondAttribute="height" multiplier="1:1" id="ce2-NE-Dqh"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="imageTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="34O-fJ-rW4"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYY-Qm-aOO">
+                                                <rect key="frame" x="0.0" y="216" width="24" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="gYY-Qm-aOO" secondAttribute="height" multiplier="1:1" id="LFg-7d-eZe"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain"/>
+                                                <connections>
+                                                    <action selector="imageTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lzw-bd-g78"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="0C3-Nd-l4T" firstAttribute="centerY" secondItem="VkZ-Ar-XkG" secondAttribute="centerY" id="8yG-Pp-2a9"/>
+                                    <constraint firstAttribute="trailing" secondItem="dcc-9Q-rge" secondAttribute="trailing" id="I9Z-G3-vWh"/>
+                                    <constraint firstItem="dcc-9Q-rge" firstAttribute="leading" secondItem="VkZ-Ar-XkG" secondAttribute="leading" id="O7H-pF-Rqk"/>
+                                    <constraint firstAttribute="bottom" secondItem="dcc-9Q-rge" secondAttribute="bottom" id="Tug-uY-vgE"/>
+                                    <constraint firstItem="dcc-9Q-rge" firstAttribute="top" secondItem="VkZ-Ar-XkG" secondAttribute="top" id="b8b-U9-kJq"/>
+                                    <constraint firstItem="0C3-Nd-l4T" firstAttribute="centerX" secondItem="VkZ-Ar-XkG" secondAttribute="centerX" id="m9p-WG-HFB"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prD-cz-g1x">
+                                <rect key="frame" x="358" y="68" width="18.333333333333314" height="22"/>
+                                <menu key="menu" id="3DZ-Os-TkY">
+                                    <children>
+                                        <command title="Item 1" id="WsJ-zh-lvQ"/>
+                                        <command title="Item 2" id="kSX-9m-V6W"/>
+                                    </children>
+                                </menu>
+                                <state key="normal" image="ellipsis" catalog="system"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VkZ-Ar-XkG" firstAttribute="top" secondItem="JBl-9g-h85" secondAttribute="bottom" id="4ey-8R-bMo"/>
+                            <constraint firstItem="JBl-9g-h85" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="5hb-en-T6M"/>
+                            <constraint firstItem="JBl-9g-h85" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7wG-BY-du7"/>
+                            <constraint firstItem="prD-cz-g1x" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="9" id="8Qe-cV-fg9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="VkZ-Ar-XkG" secondAttribute="bottom" id="GE1-LR-lfc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="prD-cz-g1x" secondAttribute="trailing" constant="16" id="IHm-3K-Ch7"/>
+                            <constraint firstItem="JBl-9g-h85" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IRY-al-hQD"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JBl-9g-h85" secondAttribute="trailing" id="iPB-ER-OBJ"/>
+                            <constraint firstItem="VkZ-Ar-XkG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="u9g-ih-Ahd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VkZ-Ar-XkG" secondAttribute="trailing" id="vW6-Xa-7Yi"/>
+                        </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="작성하기" image="pencil.circle" catalog="system" id="wTp-jJ-xcg"/>
+                    <connections>
+                        <outlet property="background" destination="dcc-9Q-rge" id="kaI-DJ-N18"/>
+                        <outlet property="pullDownButton" destination="prD-cz-g1x" id="MbA-id-y4X"/>
+                        <outlet property="titleLabel" destination="JBl-9g-h85" id="QG4-we-BQc"/>
+                        <outletCollection property="emoticons" destination="dtr-uS-HBZ" collectionClass="NSMutableArray" id="aZx-ke-3is"/>
+                        <outletCollection property="emoticons" destination="MO3-eA-KQu" collectionClass="NSMutableArray" id="bPN-ai-u3q"/>
+                        <outletCollection property="emoticons" destination="mmL-gI-LlE" collectionClass="NSMutableArray" id="u74-Cw-9vc"/>
+                        <outletCollection property="emoticons" destination="eCW-DJ-3ts" collectionClass="NSMutableArray" id="fn0-Z8-7lv"/>
+                        <outletCollection property="emoticons" destination="gYY-Qm-aOO" collectionClass="NSMutableArray" id="ekp-jo-l67"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Ht1-u1-t4o"/>
             </objects>
+            <point key="canvasLocation" x="1035.8778625954199" y="73.943661971830991"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="OgL-AW-bxc">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="kHK-Rc-vwd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NQu-3u-9ee">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Ahq-pU-lE0"/>
+                        <segue destination="ly1-M6-QqN" kind="relationship" relationship="viewControllers" id="eBr-da-tjy"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cze-w6-hyn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-22.137404580152669" y="307.04225352112678"/>
+        </scene>
+        <!--통계보기-->
+        <scene sceneID="3fd-yx-e2n">
+            <objects>
+                <viewController id="ly1-M6-QqN" customClass="StatisticsViewController" customModule="EmotionCounter" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KbV-lE-e7Z">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="OXm-BW-uCx"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="통계보기" image="chart.bar" catalog="system" id="kkC-Ji-r4c"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X7T-kD-KSm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1017" y="812"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="chart.bar" catalog="system" width="128" height="89"/>
+        <image name="ellipsis" catalog="system" width="128" height="37"/>
+        <image name="pencil.circle" catalog="system" width="128" height="123"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
