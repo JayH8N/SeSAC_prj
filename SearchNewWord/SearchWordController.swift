@@ -15,11 +15,6 @@ import UIKit
 
 class SearchWordController: UIViewController {
     
-    var keyword: [String:String] = ["ㅇㅇ": "응응", "ㅋㅋ": "킥킥", "ㅎㅎ": "히히", "ㄱㅅ": "감사", "ㄷㄷ": "덜덜", "ㄱㄱ": "고고", "ㅎㄱ": "허걱", "ㄴㄴ": "노노", "ㅇㄷ": "어디"]
-    
-    
-    
-    
     @IBOutlet var searchWindow: UITextField!
     @IBOutlet var searchButton: UIButton!
     
@@ -28,16 +23,13 @@ class SearchWordController: UIViewController {
     @IBOutlet var shortKeyword: [UIButton]!
     
     @IBOutlet var resultLabel: UILabel!
-    var keys: [String] = []
     
+    
+    var means = ["갑자기 분위기 싸해짐", "혼자 코인 노래방에 가다", "퇴사를 준비하는 사람", "일과 삶의 균형", "Too Much Informatioin"]
+    var keyList = Words.allCases.map({ "\($0)"})
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        for i in keyword.keys {
-            keys.append(i)
-        }
-        
         
         designTextField(name: searchWindow)
         designSearchButton(name: searchButton)
@@ -47,7 +39,7 @@ class SearchWordController: UIViewController {
         resultLabel.numberOfLines = 0
     }
     
-
+    
     
     
     func designTextField(name: UITextField) {
@@ -77,20 +69,29 @@ class SearchWordController: UIViewController {
     
     
     func designShortKeyword(name: [UIButton]) {
-        for button in name {
-            button.layer.cornerRadius = 11
-            button.layer.borderColor = UIColor.black.cgColor
-            button.layer.borderWidth = 2
-            button.setTitle(keys.randomElement()!, for: .normal)
-            button.setTitleColor(.systemRed, for: .normal)
-            button.tintColor = .blue
+        
+        for i in 0...shortKeyword.count - 1 {
+            shortKeyword[i].layer.cornerRadius = 11
+            shortKeyword[i].layer.borderColor = UIColor.black.cgColor
+            shortKeyword[i].layer.borderWidth = 2
+            shortKeyword[i].setTitle(keyList[i], for: .normal)
+            shortKeyword[i].setTitleColor(.systemRed, for: .normal)
+            shortKeyword[i].tintColor = .blue
         }
     }
     
-    
-    //키워드 버튼을 누르면 키워드의 텍스트가 textfield에 나타나는 함수
+    func alert(title: String, message: String = "") {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "확인", style: .destructive)
+        
+        alert.addAction(ok)
+        
+        present(alert, animated: true)
+    }
+
     @IBAction func wordButtonTabed(_ sender: UIButton) {
-        searchWindow.text = sender.titleLabel?.text
+        searchWindow.text = keyList[sender.tag]
+        // ???: searchWindow.text = String(keyword[sender.tag])
     }
     
     
@@ -104,15 +105,29 @@ class SearchWordController: UIViewController {
     //returnkey를 누르면 resultLabel에 뜨도록 하는 함수
     @IBAction func textFieldKeyboardTapped(_ sender: Any) {
         guard let text = searchWindow.text, text.count > 1 else {
-            let alert = UIAlertController(title: "잘못된 입력입니다.", message: "", preferredStyle: .alert)
-            let ok = UIAlertAction(title: "확인", style: .destructive)
+            alert(title: "잘못된 입력입니다.")
             
-            alert.addAction(ok)
-            
-            present(alert, animated: true)
             return }
         
-        resultLabel.text = keyword[text]
+        var key: Words = .갑분싸
+        
+        switch text {
+        case "갑분싸":
+            key = .갑분싸
+        case "혼코노":
+            key = .워라밸
+        case "퇴준생":
+            key = .퇴준생
+        case "워라밸":
+            key = .워라밸
+        case "TMI":
+            key = .TMI
+        default:
+            alert(title: "데이터에 존재하지 않습니다.")
+            
+        }
+
+        resultLabel.text = means[key.rawValue]
         searchWindow.text = ""
     }
     
