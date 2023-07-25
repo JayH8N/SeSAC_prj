@@ -15,12 +15,6 @@ class ViewController: UIViewController {
     
     @IBOutlet var pullDownButton: UIButton!
     
-    let firstButton = Mood.happy.rawValue
-    let secondButton = Mood.smile.rawValue
-    let thirdButotn = Mood.blunt.rawValue
-    let fourthButton = Mood.sadness.rawValue
-    let fifthButton = Mood.blue.rawValue
-    
     
    override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,19 +47,19 @@ class ViewController: UIViewController {
     @IBAction func imageTouched(_ sender: UIButton) {
         
         switch sender.tag {
-        case firstButton:
+        case Mood.happy.rawValue:
             happy += 1
             print(happy)
-        case secondButton:
+        case Mood.smile.rawValue:
             smile += 1
             print(smile)
-        case thirdButotn:
+        case Mood.blunt.rawValue:
             blunt += 1
             print(blunt)
-        case fourthButton:
+        case Mood.sadness.rawValue:
             sadness += 1
             print(sadness)
-        case fifthButton:
+        case Mood.blue.rawValue:
             blue += 1
             print(blue)
         default:
