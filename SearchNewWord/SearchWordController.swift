@@ -38,6 +38,7 @@ class SearchWordController: UIViewController {
             keys.append(i)
         }
         
+        
         designTextField(name: searchWindow)
         designSearchButton(name: searchButton)
         designResultLabel(name: resultBackground, imageName: "background")
@@ -104,10 +105,8 @@ class SearchWordController: UIViewController {
     @IBAction func textFieldKeyboardTapped(_ sender: Any) {
         guard let text = searchWindow.text, text.count > 1 else {
             let alert = UIAlertController(title: "잘못된 입력입니다.", message: "", preferredStyle: .alert)
-            let cancel = UIAlertAction(title: "취소", style: .cancel)
-            let ok = UIAlertAction(title: "확인", style: .default)
+            let ok = UIAlertAction(title: "확인", style: .destructive)
             
-            alert.addAction(cancel)
             alert.addAction(ok)
             
             present(alert, animated: true)
