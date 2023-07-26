@@ -23,9 +23,31 @@ class StatisticsViewController: UIViewController {
         super.viewDidLoad()
         setViews()
         setLabel()
+    
+        result()
         
     }
     //MARK: -
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        result()
+    }
+    
+    
+    
+    
+    func result() {
+        
+        rightLabel[0].text = String(userDefaults.integer(forKey: forKey.first.rawValue))
+        rightLabel[1].text = String(userDefaults.integer(forKey: forKey.second.rawValue))
+        rightLabel[2].text = String(userDefaults.integer(forKey: forKey.third.rawValue))
+        rightLabel[3].text = String(userDefaults.integer(forKey: forKey.fourth.rawValue))
+        rightLabel[4].text = String(userDefaults.integer(forKey: forKey.fifth.rawValue))
+    }
+    
+    
+    
     
     
     func setViews() {

@@ -167,7 +167,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="Ht1-u1-t4o"/>
             </objects>
-            <point key="canvasLocation" x="1962.5954198473282" y="73.943661971830991"/>
+            <point key="canvasLocation" x="1848" y="87"/>
         </scene>
         <!--OH MY MOOD-->
         <scene sceneID="3fd-yx-e2n">
