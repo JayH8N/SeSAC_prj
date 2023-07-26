@@ -37,7 +37,7 @@ class ViewController: UIViewController {
     
 //MARK: - 이모티콘사진 삽입 기능
     func setEmoticons() {
-        for i in 0...4 {
+        for i in 0...emoticons.count - 1 {
            emoticons[i].setImage(UIImage(named: "emoji\(i + 1)"), for: .normal)
         }
     }
