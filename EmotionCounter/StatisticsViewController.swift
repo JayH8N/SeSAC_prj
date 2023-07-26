@@ -8,22 +8,50 @@
 import UIKit
 
 class StatisticsViewController: UIViewController {
-
+    
+    let backColor: [UIColor] = [.systemPink, .yellow, .systemYellow, .systemBlue, .cyan]
+    let labelColor: [UIColor] = [.white, .black, .black, .black, .white]
+    let leftLabelText = ["완전행복지수", "적당미소지수", "그냥그냥지수", "좀속상한 지수", "많이슬픈지수"]
+    
+    
+    @IBOutlet var views: [UIView]!
+    @IBOutlet var rightLabel: [UILabel]!
+    @IBOutlet var leftLabel: [UILabel]!
+    
+    //MARK: -
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setViews()
+        setLabel()
+        
+    }
+    //MARK: -
+    
+    
+    func setViews() {
+        for i in 0...views.count - 1 {
+            views[i].layer.cornerRadius = 5
+            views[i].backgroundColor = backColor[i]
+        }
+    }
+    func setLabel() {
+        for i in 0...rightLabel.count - 1 {
+            rightLabel[i].textColor = labelColor[i]
+            rightLabel[i].font = UIFont.systemFont(ofSize: 26)
+            leftLabel[i].textColor = labelColor[i]
+            leftLabel[i].font = UIFont.systemFont(ofSize: 17)
+            leftLabel[i].text = leftLabelText[i]
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }

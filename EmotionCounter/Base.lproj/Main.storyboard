@@ -10,24 +10,24 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item-->
+        <!--작성하기-->
         <scene sceneID="RSG-cd-jRt">
             <objects>
                 <navigationController id="aCX-dk-pBi" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="2hN-r9-VOK"/>
+                    <tabBarItem key="tabBarItem" title="작성하기" image="pencil.circle" catalog="system" id="2hN-r9-VOK"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PD5-oN-EJT">
                         <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="ly1-M6-QqN" kind="relationship" relationship="rootViewController" id="6uJ-eL-14R"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="LnM-CZ-C9D"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dh0-sn-F9U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="246.56488549618319" y="374.64788732394368"/>
+            <point key="canvasLocation" x="877" y="74"/>
         </scene>
-        <!--작성하기-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EmotionCounter" customModuleProvider="target" sceneMemberID="viewController">
@@ -36,7 +36,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JBl-9g-h85">
-                                <rect key="frame" x="0.0" y="59" width="393" height="40"/>
+                                <rect key="frame" x="0.0" y="103" width="393" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="RXe-vl-gqp"/>
                                 </constraints>
@@ -45,13 +45,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VkZ-Ar-XkG">
-                                <rect key="frame" x="0.0" y="99" width="393" height="719"/>
+                                <rect key="frame" x="0.0" y="143" width="393" height="626"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dcc-9Q-rge">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="719"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="626"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="0C3-Nd-l4T">
-                                        <rect key="frame" x="184.66666666666666" y="239.66666666666669" width="24" height="240"/>
+                                        <rect key="frame" x="184.66666666666666" y="193" width="24" height="240"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtr-uS-HBZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="24" height="24"/>
@@ -101,7 +101,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYY-Qm-aOO">
-                                                <rect key="frame" x="0.0" y="215.99999999999994" width="24" height="24"/>
+                                                <rect key="frame" x="0.0" y="216" width="24" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="gYY-Qm-aOO" secondAttribute="height" multiplier="1:1" id="LFg-7d-eZe"/>
                                                 </constraints>
@@ -126,7 +126,7 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" showsMenuAsPrimaryAction="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prD-cz-g1x">
-                                <rect key="frame" x="358.66666666666669" y="68" width="18.333333333333314" height="22"/>
+                                <rect key="frame" x="358.66666666666669" y="112" width="18.333333333333314" height="22"/>
                                 <menu key="menu" id="3DZ-Os-TkY">
                                     <children>
                                         <command title="Item 1" id="WsJ-zh-lvQ"/>
@@ -151,7 +151,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="VkZ-Ar-XkG" secondAttribute="trailing" id="vW6-Xa-7Yi"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="작성하기" image="pencil.circle" catalog="system" id="wTp-jJ-xcg"/>
+                    <tabBarItem key="tabBarItem" title="" id="wTp-jJ-xcg"/>
                     <navigationItem key="navigationItem" id="XmU-JK-Kmy"/>
                     <connections>
                         <outlet property="background" destination="dcc-9Q-rge" id="kaI-DJ-N18"/>
@@ -194,8 +194,9 @@
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GEX-nC-9Gs">
                                                         <rect key="frame" x="285" y="0.0" width="60" height="60"/>
+                                                        <gestureRecognizers/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" secondItem="GEX-nC-9Gs" secondAttribute="height" multiplier="1:1" id="Cvz-sC-G5z"/>
+                                                            <constraint firstAttribute="width" secondItem="GEX-nC-9Gs" secondAttribute="height" multiplier="1:1" id="mDF-0a-77d"/>
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
@@ -366,12 +367,28 @@
                             <constraint firstItem="OXm-BW-uCx" firstAttribute="trailing" secondItem="JVq-JO-FZ8" secondAttribute="trailing" constant="24" id="bGC-jN-Iea"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="통계보기" image="chart.bar" catalog="system" id="kkC-Ji-r4c"/>
                     <navigationItem key="navigationItem" title="OH MY MOOD" id="TII-Me-my2"/>
+                    <connections>
+                        <outletCollection property="views" destination="eZ6-lx-rhj" collectionClass="NSMutableArray" id="7Mv-U4-0Eo"/>
+                        <outletCollection property="views" destination="JIU-si-SEg" collectionClass="NSMutableArray" id="rZu-E8-NtU"/>
+                        <outletCollection property="views" destination="eJs-u5-ouO" collectionClass="NSMutableArray" id="VsS-sj-vi1"/>
+                        <outletCollection property="views" destination="tlB-k4-d4E" collectionClass="NSMutableArray" id="4pi-Jn-nUv"/>
+                        <outletCollection property="views" destination="Ohd-1C-9Vh" collectionClass="NSMutableArray" id="hhU-dI-3Bh"/>
+                        <outletCollection property="rightLabel" destination="GEX-nC-9Gs" collectionClass="NSMutableArray" id="pyS-ZX-GcX"/>
+                        <outletCollection property="rightLabel" destination="4hd-Yj-B8b" collectionClass="NSMutableArray" id="zhG-ja-mZT"/>
+                        <outletCollection property="rightLabel" destination="TNP-91-Mxg" collectionClass="NSMutableArray" id="fSz-dy-SUq"/>
+                        <outletCollection property="rightLabel" destination="ljJ-XG-dPd" collectionClass="NSMutableArray" id="oHm-Co-sIp"/>
+                        <outletCollection property="rightLabel" destination="8MT-iY-Ico" collectionClass="NSMutableArray" id="J3A-yw-Lyn"/>
+                        <outletCollection property="leftLabel" destination="Luy-7u-RAp" collectionClass="NSMutableArray" id="TXT-op-Ohh"/>
+                        <outletCollection property="leftLabel" destination="ZK9-u2-kSx" collectionClass="NSMutableArray" id="ed2-L5-AYL"/>
+                        <outletCollection property="leftLabel" destination="5R6-v7-ear" collectionClass="NSMutableArray" id="ITN-JP-0eb"/>
+                        <outletCollection property="leftLabel" destination="mFk-VQ-jpP" collectionClass="NSMutableArray" id="3aJ-xa-7ae"/>
+                        <outletCollection property="leftLabel" destination="Pty-WP-lKC" collectionClass="NSMutableArray" id="63h-92-kEK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X7T-kD-KSm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1942.7480916030534" y="811.97183098591552"/>
+            <point key="canvasLocation" x="1963" y="897"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="AWW-Hc-3ej">
@@ -379,16 +396,37 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="gih-0X-8Nb" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lEz-hd-4JO">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="aCX-dk-pBi" kind="relationship" relationship="viewControllers" id="cfS-zG-qE2"/>
+                        <segue destination="Ycm-4P-iFH" kind="relationship" relationship="viewControllers" id="67u-DV-s60"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qVQ-eN-eIp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-680.15267175572512" y="374.64788732394368"/>
+        </scene>
+        <!--통계보기-->
+        <scene sceneID="iwx-3d-Lvw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ycm-4P-iFH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="통계보기" image="chart.bar" catalog="system" id="kkC-Ji-r4c"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jQP-fA-HwC">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ly1-M6-QqN" kind="relationship" relationship="rootViewController" id="qQX-gx-hRN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QLP-tG-UHE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="876" y="897"/>
         </scene>
     </scenes>
     <resources>

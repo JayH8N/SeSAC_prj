@@ -13,3 +13,5 @@ var smile = 0
 var blunt = 0
 var sadness = 0
 var blue = 0
+
+var total = [happy, smile, blunt, sadness, blue]
