@@ -44,6 +44,7 @@ class StatisticsViewController: UIViewController {
         rightLabel[2].text = String(userDefaults.integer(forKey: forKey.third.rawValue))
         rightLabel[3].text = String(userDefaults.integer(forKey: forKey.fourth.rawValue))
         rightLabel[4].text = String(userDefaults.integer(forKey: forKey.fifth.rawValue))
+        
     }
     
     

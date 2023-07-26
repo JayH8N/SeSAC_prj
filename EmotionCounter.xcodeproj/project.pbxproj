@@ -15,7 +15,6 @@
 		781570252A6FA82F00F01974 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 781570232A6FA82F00F01974 /* LaunchScreen.storyboard */; };
 		781570532A6FC29F00F01974 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781570522A6FC29F00F01974 /* StatisticsViewController.swift */; };
 		781570552A6FCB9000F01974 /* EnumFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781570542A6FCB9000F01974 /* EnumFile.swift */; };
-		781570572A6FDC8300F01974 /* CountStatics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781570562A6FDC8300F01974 /* CountStatics.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +28,6 @@
 		781570262A6FA82F00F01974 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		781570522A6FC29F00F01974 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		781570542A6FCB9000F01974 /* EnumFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumFile.swift; sourceTree = "<group>"; };
-		781570562A6FDC8300F01974 /* CountStatics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountStatics.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +63,6 @@
 				781570182A6FA82F00F01974 /* AppDelegate.swift */,
 				7815701A2A6FA82F00F01974 /* SceneDelegate.swift */,
 				7815701C2A6FA82F00F01974 /* ViewController.swift */,
-				781570562A6FDC8300F01974 /* CountStatics.swift */,
 				781570542A6FCB9000F01974 /* EnumFile.swift */,
 				7815701E2A6FA82F00F01974 /* Main.storyboard */,
 				781570522A6FC29F00F01974 /* StatisticsViewController.swift */,
@@ -148,7 +145,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				7815701D2A6FA82F00F01974 /* ViewController.swift in Sources */,
-				781570572A6FDC8300F01974 /* CountStatics.swift in Sources */,
 				781570552A6FCB9000F01974 /* EnumFile.swift in Sources */,
 				781570192A6FA82F00F01974 /* AppDelegate.swift in Sources */,
 				7815701B2A6FA82F00F01974 /* SceneDelegate.swift in Sources */,
