@@ -13,23 +13,21 @@ class Case3TableViewController: UITableViewController {
     
     
     @IBOutlet var addTextField: UITextField!
-    @IBOutlet var searchButton: UIButton!
+    @IBOutlet var addButton: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        searchButton.setTitle("", for: .normal)
-        searchButton.setImage(UIImage(systemName: "plus.square.fill.on.square.fill"), for: .normal)
-        addTextField.text = ""
+        addButton.configureStyle(title: "추가", color: .black)
+        addTextField.configureStyle(text: "", placeholder: "무엇을 입력하실건가요?")
     }
 
     
     
     func addContent() {
-        guard let text = addTextField.text else { return
+        guard let text = addTextField.text, text.count > 1 else { return
             showAlert(title: "똑바로 입력해라")
         }
-        
         list.append(text)
         tableView.reloadData()
     }
@@ -37,11 +35,13 @@ class Case3TableViewController: UITableViewController {
     
     @IBAction func keyBoardTapped(_ sender: UITextField) {
         addContent()
+        addTextField.text = ""
     }
     
     
-    @IBAction func searchButtonTapped(_ sender: UIButton) {
+    @IBAction func addButtonTapped(_ sender: UIButton) {
         addContent()
+        addTextField.text = ""
     }
     
     
@@ -62,14 +62,8 @@ class Case3TableViewController: UITableViewController {
         
         //extension
         cell.textLabel?.configureTitleText()
-        
-        cell.imageView?.image = UIImage(systemName: "star.fill")
+        cell.backgroundColor = .systemGray4
         
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50
-    }
-
 }

@@ -53,6 +53,8 @@ class Case2TableViewController: UITableViewController {
         //identifier에 맞는 셀이 있을 수 있기 때문에 옵셔널로 반환을 해줌 > 해제가 필요하다., 하지 않는다면 cell변수 뒤마다 ?가 붙는다.
         let cell = tableView.dequeueReusableCell(withIdentifier: "case2")!
         
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 13)
+        
         if indexPath.section == 0 {
             cell.textLabel?.text = section1[indexPath.row]
         } else if indexPath.section == 1{

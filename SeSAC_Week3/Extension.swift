@@ -27,7 +27,17 @@ extension UILabel {
 }
 
 extension UIButton {
-    func configureStyle() {
-        self.setTitle("추가", for: .normal)
+    func configureStyle(title: String, color: UIColor) {
+        self.setTitle(title, for: .normal)
+        self.layer.cornerRadius = 5
+        self.setTitleColor(color, for: .normal)
+    }
+}
+
+extension UITextField {
+    func configureStyle(text: String, placeholder: String) {
+        self.text = text
+        self.borderStyle = .none
+        self.placeholder = placeholder
     }
 }
