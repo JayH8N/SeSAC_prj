@@ -23,9 +23,6 @@ class StatisticsViewController: UIViewController {
         super.viewDidLoad()
         setViews()
         setLabel()
-    
-        result()
-        
     }
     //MARK: -
     
@@ -35,16 +32,12 @@ class StatisticsViewController: UIViewController {
     }
     
     
-    
-    
     func result() {
-        
         rightLabel[0].text = String(userDefaults.integer(forKey: forKey.first.rawValue))
         rightLabel[1].text = String(userDefaults.integer(forKey: forKey.second.rawValue))
         rightLabel[2].text = String(userDefaults.integer(forKey: forKey.third.rawValue))
         rightLabel[3].text = String(userDefaults.integer(forKey: forKey.fourth.rawValue))
         rightLabel[4].text = String(userDefaults.integer(forKey: forKey.fifth.rawValue))
-        
     }
     
     
@@ -60,21 +53,11 @@ class StatisticsViewController: UIViewController {
     func setLabel() {
         for i in 0...rightLabel.count - 1 {
             rightLabel[i].textColor = labelColor[i]
-            rightLabel[i].font = UIFont.systemFont(ofSize: 26)
+            rightLabel[i].font = UIFont.boldSystemFont(ofSize: 30)
             leftLabel[i].textColor = labelColor[i]
-            leftLabel[i].font = UIFont.systemFont(ofSize: 17)
+            leftLabel[i].font = UIFont.boldSystemFont(ofSize: 18)
             leftLabel[i].text = leftLabelText[i]
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
     
 }

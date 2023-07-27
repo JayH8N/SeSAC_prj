@@ -8,13 +8,18 @@
 import UIKit
 
 class ViewController: UIViewController {
-
     
-    @IBOutlet var titleLabel: UILabel!
+    var first = userDefaults.integer(forKey: forKey.first.rawValue)
+    var second = userDefaults.integer(forKey: forKey.second.rawValue)
+    var third = userDefaults.integer(forKey: forKey.third.rawValue)
+    var fourth = userDefaults.integer(forKey: forKey.fourth.rawValue)
+    var fifth = userDefaults.integer(forKey: forKey.fifth.rawValue)
+    
+    
+
     @IBOutlet var emoticons: [UIButton]!
     @IBOutlet var background: UIImageView!
     
-    @IBOutlet var pullDownButton: UIButton!
     @IBOutlet var resetButton: UIButton!
     
     
@@ -26,12 +31,9 @@ class ViewController: UIViewController {
             emoticons[i].tag = array[i].rawValue
         }
         setResetButton()
-        titleLabel.text = "OH MY MOOD"
-        titleLabel.textAlignment = .center
         setEmoticons()
         background.image = UIImage(named: "launch")
         background.contentMode = .scaleAspectFill
-        pullDownButton.setImage(UIImage(named: "ellipsis"), for: .normal)
     }
     
     //MARK: - 이모티콘사진 삽입 기능
@@ -46,49 +48,44 @@ class ViewController: UIViewController {
         resetButton.setTitle("Reset", for: .normal)
         resetButton.tintColor = .systemRed
         resetButton.backgroundColor = .blue
+        resetButton.layer.cornerRadius = 5
     }
     //MARK: -
-    @IBAction func ResetButtonPushed(_ sender: UIButton) {
-        result1 = 0
-        result2 = 0
-        result3 = 0
-        result4 = 0
-        result5 = 0
+    @IBAction func resetButtonPushed(_ sender: UIButton) {
+        first = 0
+        second = 0
+        third = 0
+        fourth = 0
+        fifth = 0
         
-        userDefaults.set(result1, forKey: forKey.first.rawValue)
-        userDefaults.set(result2, forKey: forKey.second.rawValue)
-        userDefaults.set(result3, forKey: forKey.third.rawValue)
-        userDefaults.set(result4, forKey: forKey.fourth.rawValue)
-        userDefaults.set(result5, forKey: forKey.fifth.rawValue)
+        userDefaults.set(first, forKey: forKey.first.rawValue)
+        userDefaults.set(second, forKey: forKey.second.rawValue)
+        userDefaults.set(third, forKey: forKey.third.rawValue)
+        userDefaults.set(fourth, forKey: forKey.fourth.rawValue)
+        userDefaults.set(fifth, forKey: forKey.fifth.rawValue)
     }
     
     
     
     //MARK: -
     @IBAction func imageTouched(_ sender: UIButton) {
-        let first = userDefaults.integer(forKey: forKey.first.rawValue)
-        let second = userDefaults.integer(forKey: forKey.second.rawValue)
-        let third = userDefaults.integer(forKey: forKey.third.rawValue)
-        let fourth = userDefaults.integer(forKey: forKey.fourth.rawValue)
-        let fifth = userDefaults.integer(forKey: forKey.fifth.rawValue)
-        
         
         switch Mood(rawValue: sender.tag) {
         case .happy:
-            result1 = first + 1
-            userDefaults.set(result1, forKey: forKey.first.rawValue)
+            first += 1
+            userDefaults.set(first, forKey: forKey.first.rawValue)
         case .smile:
-            result2 = second + 1
-            userDefaults.set(result2, forKey: forKey.second.rawValue)
+            second += 1
+            userDefaults.set(second, forKey: forKey.second.rawValue)
         case .blunt:
-            result3 = third + 1
-            userDefaults.set(result3, forKey: forKey.third.rawValue)
+            third += 1
+            userDefaults.set(third, forKey: forKey.third.rawValue)
         case .sadness:
-            result4 = fourth + 1
-            userDefaults.set(result4, forKey: forKey.fourth.rawValue)
+            fourth += 1
+            userDefaults.set(fourth, forKey: forKey.fourth.rawValue)
         case .blue:
-            result5 = fifth + 1
-            userDefaults.set(result5, forKey: forKey.fifth.rawValue)
+            fifth += 1
+            userDefaults.set(fifth, forKey: forKey.fifth.rawValue)
         default:
             break
         }

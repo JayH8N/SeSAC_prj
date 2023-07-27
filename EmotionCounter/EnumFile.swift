@@ -21,8 +21,3 @@ enum forKey: String {
 
 let userDefaults = UserDefaults.standard
 
-var result1 = 0
-var result2 = 0
-var result3 = 0
-var result4 = 0
-var result5 = 0
