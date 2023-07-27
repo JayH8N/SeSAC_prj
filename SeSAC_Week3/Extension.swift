@@ -20,10 +20,14 @@ extension UITableViewController {
 
 extension UILabel {
     func configureTitleText() {
-        self.textColor = .red
-        self.font = .boldSystemFont(ofSize: 20)
-        self.textAlignment = .center
+        self.textColor = .black
+        self.font = .boldSystemFont(ofSize: 15)
+        self.textAlignment = .left
     }
 }
 
-
+extension UIButton {
+    func configureStyle() {
+        self.setTitle("추가", for: .normal)
+    }
+}

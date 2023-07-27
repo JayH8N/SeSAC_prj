@@ -27,7 +27,7 @@ class StudyTableViewController: UITableViewController {
     }
     
     
-    //
+    //0. 섹션 제목
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return section == 0 ? "첫번째 섹션" : "두번째 섹션"
     }

@@ -13,6 +13,7 @@
 		78952B022A72496400BF1EA4 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78952B012A72496400BF1EA4 /* Extension.swift */; };
 		78952B042A724C8600BF1EA4 /* AssignmentTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78952B032A724C8600BF1EA4 /* AssignmentTableViewController.storyboard */; };
 		78952B062A72580A00BF1EA4 /* Case2TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78952B052A72580A00BF1EA4 /* Case2TableViewController.swift */; };
+		78952B082A725E3100BF1EA4 /* Case3TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78952B072A725E3100BF1EA4 /* Case3TableViewController.swift */; };
 		78F953522A72000900805276 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F953512A72000900805276 /* AppDelegate.swift */; };
 		78F953542A72000900805276 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F953532A72000900805276 /* SceneDelegate.swift */; };
 		78F953562A72000900805276 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F953552A72000900805276 /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 		78952B012A72496400BF1EA4 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		78952B032A724C8600BF1EA4 /* AssignmentTableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AssignmentTableViewController.storyboard; sourceTree = "<group>"; };
 		78952B052A72580A00BF1EA4 /* Case2TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Case2TableViewController.swift; sourceTree = "<group>"; };
+		78952B072A725E3100BF1EA4 /* Case3TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Case3TableViewController.swift; sourceTree = "<group>"; };
 		78F9534E2A72000900805276 /* SeSAC_Week3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC_Week3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78F953512A72000900805276 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78F953532A72000900805276 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				78F9535C2A72000900805276 /* LaunchScreen.storyboard */,
 				78952B012A72496400BF1EA4 /* Extension.swift */,
 				78952B032A724C8600BF1EA4 /* AssignmentTableViewController.storyboard */,
+				78952B072A725E3100BF1EA4 /* Case3TableViewController.swift */,
 				78952B052A72580A00BF1EA4 /* Case2TableViewController.swift */,
 				78F9535F2A72000900805276 /* Info.plist */,
 			);
@@ -162,6 +165,7 @@
 				78952B022A72496400BF1EA4 /* Extension.swift in Sources */,
 				78F953542A72000900805276 /* SceneDelegate.swift in Sources */,
 				78952AFE2A720FFC00BF1EA4 /* TodoTableTableViewController.swift in Sources */,
+				78952B082A725E3100BF1EA4 /* Case3TableViewController.swift in Sources */,
 				78952B002A7232DB00BF1EA4 /* StudyViewController.swift in Sources */,
 				78952B062A72580A00BF1EA4 /* Case2TableViewController.swift in Sources */,
 				7861BC4E2A72068E003D92B2 /* TableViewController.swift in Sources */,
