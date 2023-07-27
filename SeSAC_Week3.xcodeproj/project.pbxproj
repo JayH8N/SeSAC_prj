@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7861BC4E2A72068E003D92B2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7861BC4D2A72068E003D92B2 /* TableViewController.swift */; };
+		78952AFE2A720FFC00BF1EA4 /* TodoTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78952AFD2A720FFC00BF1EA4 /* TodoTableTableViewController.swift */; };
+		78952B002A7232DB00BF1EA4 /* StudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78952AFF2A7232DB00BF1EA4 /* StudyViewController.swift */; };
+		78952B022A72496400BF1EA4 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78952B012A72496400BF1EA4 /* Extension.swift */; };
+		78952B042A724C8600BF1EA4 /* AssignmentTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78952B032A724C8600BF1EA4 /* AssignmentTableViewController.storyboard */; };
+		78952B062A72580A00BF1EA4 /* Case2TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78952B052A72580A00BF1EA4 /* Case2TableViewController.swift */; };
 		78F953522A72000900805276 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F953512A72000900805276 /* AppDelegate.swift */; };
 		78F953542A72000900805276 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F953532A72000900805276 /* SceneDelegate.swift */; };
 		78F953562A72000900805276 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F953552A72000900805276 /* ViewController.swift */; };
@@ -16,6 +22,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7861BC4D2A72068E003D92B2 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		78952AFD2A720FFC00BF1EA4 /* TodoTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableTableViewController.swift; sourceTree = "<group>"; };
+		78952AFF2A7232DB00BF1EA4 /* StudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyViewController.swift; sourceTree = "<group>"; };
+		78952B012A72496400BF1EA4 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		78952B032A724C8600BF1EA4 /* AssignmentTableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AssignmentTableViewController.storyboard; sourceTree = "<group>"; };
+		78952B052A72580A00BF1EA4 /* Case2TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Case2TableViewController.swift; sourceTree = "<group>"; };
 		78F9534E2A72000900805276 /* SeSAC_Week3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC_Week3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78F953512A72000900805276 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78F953532A72000900805276 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,12 +68,18 @@
 		78F953502A72000900805276 /* SeSAC_Week3 */ = {
 			isa = PBXGroup;
 			children = (
+				78952AFF2A7232DB00BF1EA4 /* StudyViewController.swift */,
 				78F953512A72000900805276 /* AppDelegate.swift */,
 				78F953532A72000900805276 /* SceneDelegate.swift */,
 				78F953552A72000900805276 /* ViewController.swift */,
 				78F953572A72000900805276 /* Main.storyboard */,
+				78952AFD2A720FFC00BF1EA4 /* TodoTableTableViewController.swift */,
+				7861BC4D2A72068E003D92B2 /* TableViewController.swift */,
 				78F9535A2A72000900805276 /* Assets.xcassets */,
 				78F9535C2A72000900805276 /* LaunchScreen.storyboard */,
+				78952B012A72496400BF1EA4 /* Extension.swift */,
+				78952B032A724C8600BF1EA4 /* AssignmentTableViewController.storyboard */,
+				78952B052A72580A00BF1EA4 /* Case2TableViewController.swift */,
 				78F9535F2A72000900805276 /* Info.plist */,
 			);
 			path = SeSAC_Week3;
@@ -128,6 +146,7 @@
 				78F9535E2A72000900805276 /* LaunchScreen.storyboard in Resources */,
 				78F9535B2A72000900805276 /* Assets.xcassets in Resources */,
 				78F953592A72000900805276 /* Main.storyboard in Resources */,
+				78952B042A724C8600BF1EA4 /* AssignmentTableViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,7 +159,12 @@
 			files = (
 				78F953562A72000900805276 /* ViewController.swift in Sources */,
 				78F953522A72000900805276 /* AppDelegate.swift in Sources */,
+				78952B022A72496400BF1EA4 /* Extension.swift in Sources */,
 				78F953542A72000900805276 /* SceneDelegate.swift in Sources */,
+				78952AFE2A720FFC00BF1EA4 /* TodoTableTableViewController.swift in Sources */,
+				78952B002A7232DB00BF1EA4 /* StudyViewController.swift in Sources */,
+				78952B062A72580A00BF1EA4 /* Case2TableViewController.swift in Sources */,
+				7861BC4E2A72068E003D92B2 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,10 +315,11 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSAC_Week3/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,9 +327,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.junghoon.SeSAC-Week3";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -319,10 +347,11 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSAC_Week3/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,9 +359,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.junghoon.SeSAC-Week3";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
