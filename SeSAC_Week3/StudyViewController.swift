@@ -55,12 +55,12 @@ class StudyTableViewController: UITableViewController {
     
     
     //3.셀 높이: 서비스 구현에 따라 필요한 경우가 많지만, 항상 같은 높이를 셀에서 사용한다면 비효율적일 수 있음!
-//    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        if indexPath.row == 0 {
-//            return 50
-//        } else {
-//            return 100
-//        }
-//    }
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.row == 0 {
+            return 50
+        } else {
+            return 100
+        }
+    }
     
 }

@@ -21,7 +21,7 @@ class Case3TableViewController: UITableViewController {
         addButton.configureStyle(title: "추가", color: .black)
         addTextField.configureStyle(text: "", placeholder: "무엇을 입력하실건가요?")
     }
-
+    
     
     
     func addContent() {
@@ -57,10 +57,12 @@ class Case3TableViewController: UITableViewController {
         //Identifier는 인터페이스 빌더에서 설정! , 재사용 메커니즘
         let cell = tableView.dequeueReusableCell(withIdentifier: "case3")!
         
+        let ribbon = UIImage(systemName: "star")
+        cell.accessoryView = UIImageView(image: ribbon)
+        
         cell.textLabel?.text = list[indexPath.row]
         //MARK: -
         
-        //extension
         cell.textLabel?.configureTitleText()
         cell.backgroundColor = .systemGray4
         
