@@ -204,11 +204,111 @@
             </objects>
             <point key="canvasLocation" x="121" y="823"/>
         </scene>
+        <!--Custom Table View Controller-->
+        <scene sceneID="qdi-Jq-DBW">
+            <objects>
+                <tableViewController id="sgo-IY-g9O" customClass="CustomTableViewController" customModule="SeSAC_Week3" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ddb-H1-vFl">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomCell" rowHeight="97" id="yvN-Kc-ZOy" customClass="CustomCell" customModule="SeSAC_Week3" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="393" height="97"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yvN-Kc-ZOy" id="pSM-A0-Vy2">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="97"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ftX-65-aEB">
+                                            <rect key="frame" x="20" y="11" width="353" height="75"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkmark.square.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="9xj-rr-Joc">
+                                                    <rect key="frame" x="20" y="20.333333333333329" width="38" height="34.999999999999986"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="38" id="S8Q-Ns-r5j"/>
+                                                        <constraint firstAttribute="width" constant="38" id="q8s-ge-gOK"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gBa-7C-MST">
+                                                    <rect key="frame" x="289" y="15.666666666666671" width="44" height="44"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="44" id="AAj-aL-h2x"/>
+                                                        <constraint firstAttribute="height" constant="44" id="lMp-O3-Ht2"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <buttonConfiguration key="configuration" style="plain">
+                                                        <imageReference key="image" image="star.fill" catalog="system" symbolScale="large"/>
+                                                        <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="25"/>
+                                                    </buttonConfiguration>
+                                                </button>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="O1b-tH-4Kj">
+                                                    <rect key="frame" x="66" y="15" width="215" height="45"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘은 장보기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KRJ-5G-qMt">
+                                                            <rect key="frame" x="0.0" y="0.0" width="215" height="22.666666666666668"/>
+                                                            <color key="backgroundColor" systemColor="systemGroupedBackgroundColor"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2022-22-22" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cXS-g3-rtH">
+                                                            <rect key="frame" x="0.0" y="22.666666666666664" width="215" height="22.333333333333336"/>
+                                                            <color key="backgroundColor" systemColor="systemBrownColor"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="KRJ-5G-qMt" firstAttribute="height" secondItem="cXS-g3-rtH" secondAttribute="height" id="Go1-IV-fi1"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemMintColor"/>
+                                            <constraints>
+                                                <constraint firstItem="O1b-tH-4Kj" firstAttribute="leading" secondItem="9xj-rr-Joc" secondAttribute="trailing" constant="8" id="3Oa-6l-mBs"/>
+                                                <constraint firstAttribute="trailing" secondItem="gBa-7C-MST" secondAttribute="trailing" constant="20" id="3kN-Zn-ZmP"/>
+                                                <constraint firstAttribute="bottom" secondItem="O1b-tH-4Kj" secondAttribute="bottom" constant="15" id="6o8-cR-zx6"/>
+                                                <constraint firstItem="gBa-7C-MST" firstAttribute="leading" secondItem="O1b-tH-4Kj" secondAttribute="trailing" constant="8" id="DpC-j6-zep"/>
+                                                <constraint firstItem="9xj-rr-Joc" firstAttribute="leading" secondItem="ftX-65-aEB" secondAttribute="leading" constant="20" id="Fh1-CX-CwJ"/>
+                                                <constraint firstItem="gBa-7C-MST" firstAttribute="centerY" secondItem="ftX-65-aEB" secondAttribute="centerY" id="Plu-Uk-Ux5"/>
+                                                <constraint firstItem="O1b-tH-4Kj" firstAttribute="top" secondItem="ftX-65-aEB" secondAttribute="top" constant="15" id="Zzt-22-n2D"/>
+                                                <constraint firstItem="9xj-rr-Joc" firstAttribute="centerY" secondItem="ftX-65-aEB" secondAttribute="centerY" id="zsO-LV-8Pz"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ftX-65-aEB" firstAttribute="top" secondItem="pSM-A0-Vy2" secondAttribute="top" constant="11" id="62X-LO-XTi"/>
+                                        <constraint firstAttribute="trailing" secondItem="ftX-65-aEB" secondAttribute="trailing" constant="20" id="BgH-Gb-Ncv"/>
+                                        <constraint firstItem="ftX-65-aEB" firstAttribute="leading" secondItem="pSM-A0-Vy2" secondAttribute="leading" constant="20" id="a80-HJ-F2J"/>
+                                        <constraint firstAttribute="bottom" secondItem="ftX-65-aEB" secondAttribute="bottom" constant="11" id="pqJ-0t-28Y"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="backView" destination="ftX-65-aEB" id="Awh-1m-ObF"/>
+                                    <outlet property="checkBoxImageView" destination="9xj-rr-Joc" id="faH-9r-8yM"/>
+                                    <outlet property="likeButton" destination="gBa-7C-MST" id="Ysx-D8-ZGw"/>
+                                    <outlet property="mainTitleLabel" destination="KRJ-5G-qMt" id="2Oa-Jw-GO2"/>
+                                    <outlet property="subTitleLabel" destination="cXS-g3-rtH" id="1sR-F1-2sK"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="sgo-IY-g9O" id="qb0-zY-Cka"/>
+                            <outlet property="delegate" destination="sgo-IY-g9O" id="SEG-Sc-aCD"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="En3-rF-ptH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1605" y="1179"/>
+        </scene>
         <!--쇼핑-->
         <scene sceneID="pgN-rN-t3d">
             <objects>
                 <tableViewController id="MNp-hT-BAF" customClass="Case3TableViewController" customModule="SeSAC_Week3" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="tfa-e2-v3i">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="insetGrouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" id="tfa-e2-v3i">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -294,7 +394,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4u0-Zo-0yv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="909" y="1872"/>
+            <point key="canvasLocation" x="73" y="1697"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FGW-Jd-gGn">
@@ -348,20 +448,31 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dES-bA-atA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="29.770992366412212" y="1871.8309859154931"/>
+            <point key="canvasLocation" x="-805" y="1697"/>
         </scene>
     </scenes>
     <resources>
         <image name="bed.double" catalog="system" width="128" height="82"/>
+        <image name="checkmark.square.fill" catalog="system" width="128" height="114"/>
         <image name="iphone.gen1" catalog="system" width="112" height="128"/>
         <image name="moon" catalog="system" width="128" height="123"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
         <image name="tray" catalog="system" width="128" height="88"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="systemBrownColor">
+            <color red="0.63529411764705879" green="0.51764705882352946" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemGray4Color">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemMintColor">
+            <color red="0.0" green="0.7803921568627451" blue="0.74509803921568629" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

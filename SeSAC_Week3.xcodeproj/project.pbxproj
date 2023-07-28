@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7832B6F52A7389C600AB09B4 /* ToDo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7832B6F42A7389C600AB09B4 /* ToDo.swift */; };
+		7832B6F72A738A2400AB09B4 /* ToDoInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7832B6F62A738A2400AB09B4 /* ToDoInformation.swift */; };
+		7832B7252A73CA4100AB09B4 /* Movie.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7832B7242A73CA4100AB09B4 /* Movie.storyboard */; };
+		7832B7272A73CCB300AB09B4 /* MovieTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7832B7262A73CCB300AB09B4 /* MovieTableViewController.swift */; };
 		7861BC4E2A72068E003D92B2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7861BC4D2A72068E003D92B2 /* TableViewController.swift */; };
 		78952AFE2A720FFC00BF1EA4 /* TodoTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78952AFD2A720FFC00BF1EA4 /* TodoTableTableViewController.swift */; };
 		78952B002A7232DB00BF1EA4 /* StudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78952AFF2A7232DB00BF1EA4 /* StudyViewController.swift */; };
@@ -20,9 +24,15 @@
 		78F953592A72000900805276 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78F953572A72000900805276 /* Main.storyboard */; };
 		78F9535B2A72000900805276 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78F9535A2A72000900805276 /* Assets.xcassets */; };
 		78F9535E2A72000900805276 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78F9535C2A72000900805276 /* LaunchScreen.storyboard */; };
+		78FCB08E2A73503F00DA3923 /* CustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FCB08D2A73503F00DA3923 /* CustomTableViewController.swift */; };
+		78FCB0902A73528900DA3923 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FCB08F2A73528900DA3923 /* CustomCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7832B6F42A7389C600AB09B4 /* ToDo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo.swift; sourceTree = "<group>"; };
+		7832B6F62A738A2400AB09B4 /* ToDoInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoInformation.swift; sourceTree = "<group>"; };
+		7832B7242A73CA4100AB09B4 /* Movie.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Movie.storyboard; sourceTree = "<group>"; };
+		7832B7262A73CCB300AB09B4 /* MovieTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewController.swift; sourceTree = "<group>"; };
 		7861BC4D2A72068E003D92B2 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		78952AFD2A720FFC00BF1EA4 /* TodoTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableTableViewController.swift; sourceTree = "<group>"; };
 		78952AFF2A7232DB00BF1EA4 /* StudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyViewController.swift; sourceTree = "<group>"; };
@@ -38,6 +48,8 @@
 		78F9535A2A72000900805276 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78F9535D2A72000900805276 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78F9535F2A72000900805276 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78FCB08D2A73503F00DA3923 /* CustomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewController.swift; sourceTree = "<group>"; };
+		78FCB08F2A73528900DA3923 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +96,12 @@
 				78952B072A725E3100BF1EA4 /* Case3TableViewController.swift */,
 				78952B052A72580A00BF1EA4 /* Case2TableViewController.swift */,
 				78F9535F2A72000900805276 /* Info.plist */,
+				78FCB08D2A73503F00DA3923 /* CustomTableViewController.swift */,
+				7832B6F42A7389C600AB09B4 /* ToDo.swift */,
+				7832B6F62A738A2400AB09B4 /* ToDoInformation.swift */,
+				78FCB08F2A73528900DA3923 /* CustomCell.swift */,
+				7832B7242A73CA4100AB09B4 /* Movie.storyboard */,
+				7832B7262A73CCB300AB09B4 /* MovieTableViewController.swift */,
 			);
 			path = SeSAC_Week3;
 			sourceTree = "<group>";
@@ -146,6 +164,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7832B7252A73CA4100AB09B4 /* Movie.storyboard in Resources */,
 				78F9535E2A72000900805276 /* LaunchScreen.storyboard in Resources */,
 				78F9535B2A72000900805276 /* Assets.xcassets in Resources */,
 				78F953592A72000900805276 /* Main.storyboard in Resources */,
@@ -162,12 +181,17 @@
 			files = (
 				78F953562A72000900805276 /* ViewController.swift in Sources */,
 				78F953522A72000900805276 /* AppDelegate.swift in Sources */,
+				78FCB0902A73528900DA3923 /* CustomCell.swift in Sources */,
+				7832B6F52A7389C600AB09B4 /* ToDo.swift in Sources */,
 				78952B022A72496400BF1EA4 /* Extension.swift in Sources */,
 				78F953542A72000900805276 /* SceneDelegate.swift in Sources */,
+				7832B7272A73CCB300AB09B4 /* MovieTableViewController.swift in Sources */,
+				78FCB08E2A73503F00DA3923 /* CustomTableViewController.swift in Sources */,
 				78952AFE2A720FFC00BF1EA4 /* TodoTableTableViewController.swift in Sources */,
 				78952B082A725E3100BF1EA4 /* Case3TableViewController.swift in Sources */,
 				78952B002A7232DB00BF1EA4 /* StudyViewController.swift in Sources */,
 				78952B062A72580A00BF1EA4 /* Case2TableViewController.swift in Sources */,
+				7832B6F72A738A2400AB09B4 /* ToDoInformation.swift in Sources */,
 				7861BC4E2A72068E003D92B2 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

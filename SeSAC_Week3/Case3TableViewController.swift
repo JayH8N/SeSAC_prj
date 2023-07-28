@@ -42,6 +42,7 @@ class Case3TableViewController: UITableViewController {
     @IBAction func addButtonTapped(_ sender: UIButton) {
         addContent()
         addTextField.text = ""
+        view.endEditing(true)
     }
     
     
@@ -57,6 +58,10 @@ class Case3TableViewController: UITableViewController {
         //Identifier는 인터페이스 빌더에서 설정! , 재사용 메커니즘
         let cell = tableView.dequeueReusableCell(withIdentifier: "case3")!
         
+        
+        
+        
+        //accessoryView이미지 변경
         let ribbon = UIImage(systemName: "star")
         cell.accessoryView = UIImageView(image: ribbon)
         
@@ -68,4 +73,8 @@ class Case3TableViewController: UITableViewController {
         
         return cell
     }
+    
+    
+    
+    
 }
