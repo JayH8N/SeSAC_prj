@@ -69,6 +69,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		78CA94A92A73EEA500FE000F /* MovieList */ = {
+			isa = PBXGroup;
+			children = (
+				7832B7242A73CA4100AB09B4 /* Movie.storyboard */,
+				7832B7262A73CCB300AB09B4 /* MovieTableViewController.swift */,
+				7832B7282A73CFB400AB09B4 /* MovieList.swift */,
+				78CA94A42A73E48900FE000F /* Movie.swift */,
+				78CA94A62A73E4A100FE000F /* MovieInfo.swift */,
+			);
+			path = MovieList;
+			sourceTree = "<group>";
+		};
 		78F953452A72000800805276 = {
 			isa = PBXGroup;
 			children = (
@@ -88,6 +100,7 @@
 		78F953502A72000900805276 /* SeSAC_Week3 */ = {
 			isa = PBXGroup;
 			children = (
+				78CA94A92A73EEA500FE000F /* MovieList */,
 				78952AFF2A7232DB00BF1EA4 /* StudyViewController.swift */,
 				78F953512A72000900805276 /* AppDelegate.swift */,
 				78F953532A72000900805276 /* SceneDelegate.swift */,
@@ -106,11 +119,6 @@
 				7832B6F42A7389C600AB09B4 /* ToDo.swift */,
 				7832B6F62A738A2400AB09B4 /* ToDoInformation.swift */,
 				78FCB08F2A73528900DA3923 /* CustomCell.swift */,
-				7832B7242A73CA4100AB09B4 /* Movie.storyboard */,
-				7832B7262A73CCB300AB09B4 /* MovieTableViewController.swift */,
-				7832B7282A73CFB400AB09B4 /* MovieList.swift */,
-				78CA94A42A73E48900FE000F /* Movie.swift */,
-				78CA94A62A73E4A100FE000F /* MovieInfo.swift */,
 			);
 			path = SeSAC_Week3;
 			sourceTree = "<group>";
