@@ -11,6 +11,7 @@
 		7832B6F72A738A2400AB09B4 /* ToDoInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7832B6F62A738A2400AB09B4 /* ToDoInformation.swift */; };
 		7832B7252A73CA4100AB09B4 /* Movie.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7832B7242A73CA4100AB09B4 /* Movie.storyboard */; };
 		7832B7272A73CCB300AB09B4 /* MovieTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7832B7262A73CCB300AB09B4 /* MovieTableViewController.swift */; };
+		7832B7292A73CFB400AB09B4 /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7832B7282A73CFB400AB09B4 /* MovieList.swift */; };
 		7861BC4E2A72068E003D92B2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7861BC4D2A72068E003D92B2 /* TableViewController.swift */; };
 		78952AFE2A720FFC00BF1EA4 /* TodoTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78952AFD2A720FFC00BF1EA4 /* TodoTableTableViewController.swift */; };
 		78952B002A7232DB00BF1EA4 /* StudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78952AFF2A7232DB00BF1EA4 /* StudyViewController.swift */; };
@@ -18,6 +19,8 @@
 		78952B042A724C8600BF1EA4 /* AssignmentTableViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78952B032A724C8600BF1EA4 /* AssignmentTableViewController.storyboard */; };
 		78952B062A72580A00BF1EA4 /* Case2TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78952B052A72580A00BF1EA4 /* Case2TableViewController.swift */; };
 		78952B082A725E3100BF1EA4 /* Case3TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78952B072A725E3100BF1EA4 /* Case3TableViewController.swift */; };
+		78CA94A52A73E48900FE000F /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CA94A42A73E48900FE000F /* Movie.swift */; };
+		78CA94A72A73E4A100FE000F /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CA94A62A73E4A100FE000F /* MovieInfo.swift */; };
 		78F953522A72000900805276 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F953512A72000900805276 /* AppDelegate.swift */; };
 		78F953542A72000900805276 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F953532A72000900805276 /* SceneDelegate.swift */; };
 		78F953562A72000900805276 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F953552A72000900805276 /* ViewController.swift */; };
@@ -33,6 +36,7 @@
 		7832B6F62A738A2400AB09B4 /* ToDoInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoInformation.swift; sourceTree = "<group>"; };
 		7832B7242A73CA4100AB09B4 /* Movie.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Movie.storyboard; sourceTree = "<group>"; };
 		7832B7262A73CCB300AB09B4 /* MovieTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewController.swift; sourceTree = "<group>"; };
+		7832B7282A73CFB400AB09B4 /* MovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieList.swift; sourceTree = "<group>"; };
 		7861BC4D2A72068E003D92B2 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		78952AFD2A720FFC00BF1EA4 /* TodoTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableTableViewController.swift; sourceTree = "<group>"; };
 		78952AFF2A7232DB00BF1EA4 /* StudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyViewController.swift; sourceTree = "<group>"; };
@@ -40,6 +44,8 @@
 		78952B032A724C8600BF1EA4 /* AssignmentTableViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AssignmentTableViewController.storyboard; sourceTree = "<group>"; };
 		78952B052A72580A00BF1EA4 /* Case2TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Case2TableViewController.swift; sourceTree = "<group>"; };
 		78952B072A725E3100BF1EA4 /* Case3TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Case3TableViewController.swift; sourceTree = "<group>"; };
+		78CA94A42A73E48900FE000F /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		78CA94A62A73E4A100FE000F /* MovieInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = "<group>"; };
 		78F9534E2A72000900805276 /* SeSAC_Week3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC_Week3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78F953512A72000900805276 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78F953532A72000900805276 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +108,9 @@
 				78FCB08F2A73528900DA3923 /* CustomCell.swift */,
 				7832B7242A73CA4100AB09B4 /* Movie.storyboard */,
 				7832B7262A73CCB300AB09B4 /* MovieTableViewController.swift */,
+				7832B7282A73CFB400AB09B4 /* MovieList.swift */,
+				78CA94A42A73E48900FE000F /* Movie.swift */,
+				78CA94A62A73E4A100FE000F /* MovieInfo.swift */,
 			);
 			path = SeSAC_Week3;
 			sourceTree = "<group>";
@@ -179,11 +188,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78CA94A72A73E4A100FE000F /* MovieInfo.swift in Sources */,
 				78F953562A72000900805276 /* ViewController.swift in Sources */,
 				78F953522A72000900805276 /* AppDelegate.swift in Sources */,
 				78FCB0902A73528900DA3923 /* CustomCell.swift in Sources */,
 				7832B6F52A7389C600AB09B4 /* ToDo.swift in Sources */,
 				78952B022A72496400BF1EA4 /* Extension.swift in Sources */,
+				7832B7292A73CFB400AB09B4 /* MovieList.swift in Sources */,
+				78CA94A52A73E48900FE000F /* Movie.swift in Sources */,
 				78F953542A72000900805276 /* SceneDelegate.swift in Sources */,
 				7832B7272A73CCB300AB09B4 /* MovieTableViewController.swift in Sources */,
 				78FCB08E2A73503F00DA3923 /* CustomTableViewController.swift in Sources */,
