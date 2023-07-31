@@ -13,12 +13,12 @@
 		783E18D92A77A7AF00857E09 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 783E18D82A77A7AF00857E09 /* Assets.xcassets */; };
 		783E18DC2A77A7AF00857E09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 783E18DA2A77A7AF00857E09 /* LaunchScreen.storyboard */; };
 		783E18E42A77A83E00857E09 /* BookCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783E18E32A77A83E00857E09 /* BookCollectionViewController.swift */; };
-		783E18E72A77AD1800857E09 /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783E18E52A77AD1800857E09 /* BookCollectionViewCell.swift */; };
-		783E18E82A77AD1800857E09 /* BookCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 783E18E62A77AD1800857E09 /* BookCollectionViewCell.xib */; };
 		783E18EA2A77B32200857E09 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783E18E92A77B32200857E09 /* Movie.swift */; };
 		783E18EC2A77B38300857E09 /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783E18EB2A77B38300857E09 /* MovieInfo.swift */; };
 		783E18EE2A77C8DA00857E09 /* MovieInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783E18ED2A77C8DA00857E09 /* MovieInfoViewController.swift */; };
 		783E18F02A77D1C400857E09 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783E18EF2A77D1C400857E09 /* SearchViewController.swift */; };
+		7857F8192A77FB91001A2261 /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7857F8172A77FB91001A2261 /* BookCollectionViewCell.swift */; };
+		7857F81A2A77FB91001A2261 /* BookCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7857F8182A77FB91001A2261 /* BookCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,12 +30,12 @@
 		783E18DB2A77A7AF00857E09 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		783E18DD2A77A7AF00857E09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		783E18E32A77A83E00857E09 /* BookCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewController.swift; sourceTree = "<group>"; };
-		783E18E52A77AD1800857E09 /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
-		783E18E62A77AD1800857E09 /* BookCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookCollectionViewCell.xib; sourceTree = "<group>"; };
 		783E18E92A77B32200857E09 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		783E18EB2A77B38300857E09 /* MovieInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = "<group>"; };
 		783E18ED2A77C8DA00857E09 /* MovieInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInfoViewController.swift; sourceTree = "<group>"; };
 		783E18EF2A77D1C400857E09 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		7857F8172A77FB91001A2261 /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
+		7857F8182A77FB91001A2261 /* BookCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,8 +73,8 @@
 				783E18D52A77A7AE00857E09 /* Main.storyboard */,
 				783E18EF2A77D1C400857E09 /* SearchViewController.swift */,
 				783E18ED2A77C8DA00857E09 /* MovieInfoViewController.swift */,
-				783E18E52A77AD1800857E09 /* BookCollectionViewCell.swift */,
-				783E18E62A77AD1800857E09 /* BookCollectionViewCell.xib */,
+				7857F8172A77FB91001A2261 /* BookCollectionViewCell.swift */,
+				7857F8182A77FB91001A2261 /* BookCollectionViewCell.xib */,
 				783E18D82A77A7AF00857E09 /* Assets.xcassets */,
 				783E18DD2A77A7AF00857E09 /* Info.plist */,
 				783E18E32A77A83E00857E09 /* BookCollectionViewController.swift */,
@@ -144,7 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				783E18DC2A77A7AF00857E09 /* LaunchScreen.storyboard in Resources */,
-				783E18E82A77AD1800857E09 /* BookCollectionViewCell.xib in Resources */,
+				7857F81A2A77FB91001A2261 /* BookCollectionViewCell.xib in Resources */,
 				783E18D92A77A7AF00857E09 /* Assets.xcassets in Resources */,
 				783E18D72A77A7AE00857E09 /* Main.storyboard in Resources */,
 			);
@@ -158,12 +158,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				783E18EC2A77B38300857E09 /* MovieInfo.swift in Sources */,
+				7857F8192A77FB91001A2261 /* BookCollectionViewCell.swift in Sources */,
 				783E18D02A77A7AE00857E09 /* AppDelegate.swift in Sources */,
 				783E18F02A77D1C400857E09 /* SearchViewController.swift in Sources */,
 				783E18EE2A77C8DA00857E09 /* MovieInfoViewController.swift in Sources */,
 				783E18EA2A77B32200857E09 /* Movie.swift in Sources */,
 				783E18D22A77A7AE00857E09 /* SceneDelegate.swift in Sources */,
-				783E18E72A77AD1800857E09 /* BookCollectionViewCell.swift in Sources */,
 				783E18E42A77A83E00857E09 /* BookCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

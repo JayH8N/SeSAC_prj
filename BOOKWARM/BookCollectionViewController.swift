@@ -26,9 +26,8 @@ class BookCollectionViewController: UICollectionViewController {
     
     func setLayout() {
         let layout = UICollectionViewFlowLayout()
-        let spacing: CGFloat = 10
+        let spacing: CGFloat = 14
         let width = UIScreen.main.bounds.width - (spacing * 3)
-        
         
         layout.itemSize = CGSize(width: width / 2, height: width / 2)
         layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
@@ -38,6 +37,7 @@ class BookCollectionViewController: UICollectionViewController {
         
         collectionView.collectionViewLayout = layout
     }
+    
     
     @IBAction func searchButtonClicked(_ sender: UIBarButtonItem) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
@@ -51,28 +51,15 @@ class BookCollectionViewController: UICollectionViewController {
     }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(identifier: "MovieInfoViewController") as! MovieInfoViewController
         
         vc.contents = "상세화면"
         
-        
         navigationController?.pushViewController(vc, animated: true)
     }
-    
-    
-    
-    
-    
+
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return movieList.movie.count
     }
@@ -84,13 +71,10 @@ class BookCollectionViewController: UICollectionViewController {
         
         let row = movieList.movie[indexPath.row]
         cell.setCell(row: row)
-        cell.backgroundColor = .clear
+        cell.movieTitle.textColor = .white
+        cell.movieRate.textColor = .white
      
         return cell
     }
-    
-    
-    
-    
     
 }

@@ -8,6 +8,7 @@
 import UIKit
 
 class MovieInfoViewController: UIViewController {
+    
 
     var contents: String = "상세화면"
     
@@ -17,8 +18,16 @@ class MovieInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        contentsLabel.text = contents
         
+        
+        
+//        self.title =
+        
+        
+        
+        contentsLabel.text = contents
+        contentsLabel.textAlignment = .center
+        contentsLabel.font = UIFont.systemFont(ofSize: 30)
     }
     
 
