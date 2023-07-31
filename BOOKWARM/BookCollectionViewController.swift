@@ -54,6 +54,7 @@ class BookCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(identifier: "MovieInfoViewController") as! MovieInfoViewController
+        vc.self.title = movieList.movie[indexPath.row].title
         
         vc.contents = "상세화면"
         
@@ -71,8 +72,6 @@ class BookCollectionViewController: UICollectionViewController {
         
         let row = movieList.movie[indexPath.row]
         cell.setCell(row: row)
-        cell.movieTitle.textColor = .white
-        cell.movieRate.textColor = .white
      
         return cell
     }

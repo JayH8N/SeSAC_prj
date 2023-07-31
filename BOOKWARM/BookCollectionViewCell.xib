@@ -61,6 +61,7 @@
             <size key="customSize" width="381" height="365"/>
             <connections>
                 <outlet property="backView" destination="1v7-cc-Yl4" id="ug6-ZV-asW"/>
+                <outlet property="moviePoster" destination="0OL-7I-jHe" id="ofr-gV-p6O"/>
                 <outlet property="movieRate" destination="Ruj-Q9-e32" id="lWg-HY-HwQ"/>
                 <outlet property="movieTitle" destination="gam-N2-M0N" id="2n6-sY-ggT"/>
             </connections>

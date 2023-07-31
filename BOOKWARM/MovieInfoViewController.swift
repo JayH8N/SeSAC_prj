@@ -18,18 +18,8 @@ class MovieInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
-//        self.title =
-        
-        
-        
         contentsLabel.text = contents
         contentsLabel.textAlignment = .center
         contentsLabel.font = UIFont.systemFont(ofSize: 30)
     }
-    
-
-
 }
