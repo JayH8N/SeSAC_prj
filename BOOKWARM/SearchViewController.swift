@@ -9,6 +9,8 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
+    static let identifier = "SearchViewController"
+    
     var searchContents: String = "검색화면"
     @IBOutlet var contentsLabel: UILabel!
     

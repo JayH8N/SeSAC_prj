@@ -9,9 +9,15 @@ import UIKit
 
 class MovieInfoViewController: UIViewController {
     
+    static let identifier = "MovieInfoViewController"
+    
     var Poster: String = ""
-    var movieInfo: String = ""
+    var mTitle: String = ""
     var overview: String = ""
+    
+    var movieRate: Double = 0.0
+    var rTime: Int = 1
+    var rDate: String = ""
     
     
     @IBOutlet var moviePoster: UIImageView!
@@ -23,17 +29,8 @@ class MovieInfoViewController: UIViewController {
         super.viewDidLoad()
         
         moviePoster.image = UIImage(named: Poster)
-        movieInformation.text = movieInfo
+        movieInformation.numberOfLines = 0
+        movieInformation.text = #" \#(mTitle) \#n \#(movieRate)점 \#n \#(rTime)분 \#n \#(rDate)"#
         movieOverview.text = overview
     }
-
-    
-//    func setScreen(row : Movie) {
-//        moviePoster.image = UIImage(named: row.image)
-//        movieOverview.text = row.overview
-//        movieInformation.text = "\(row.title), \(row.rate), \(row.releaseDate)"
-//    }
-
-
-
 }

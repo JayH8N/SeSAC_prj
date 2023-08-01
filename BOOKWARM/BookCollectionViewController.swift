@@ -15,13 +15,12 @@ class BookCollectionViewController: UICollectionViewController {
         }
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
-        let nib = UINib(nibName: "BookCollectionViewCell", bundle: nil)
-        collectionView.register(nib, forCellWithReuseIdentifier: "BookCollectionViewCell")
+        let nib = UINib(nibName: BookCollectionViewCell.identifier, bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: BookCollectionViewCell.identifier)
         
         
         setLayout()
@@ -45,7 +44,7 @@ class BookCollectionViewController: UICollectionViewController {
     
     @IBAction func searchButtonClicked(_ sender: UIBarButtonItem) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
+        let vc = sb.instantiateViewController(withIdentifier: SearchViewController.identifier) as! SearchViewController
         
         vc.searchContents = "검색화면"
         let nav = UINavigationController(rootViewController: vc)
@@ -57,11 +56,14 @@ class BookCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(identifier: "MovieInfoViewController") as! MovieInfoViewController
+        let vc = sb.instantiateViewController(identifier: MovieInfoViewController.identifier) as! MovieInfoViewController
         vc.self.title = movie.movie[indexPath.row].title
         vc.Poster = movie.movie[indexPath.row].image
-        vc.movieInfo = movie.movie[indexPath.row].title
+        vc.mTitle = movie.movie[indexPath.row].title
         vc.overview = movie.movie[indexPath.row].overview
+        vc.movieRate = movie.movie[indexPath.row].rate
+        vc.rTime = movie.movie[indexPath.row].runtime
+        vc.rDate = movie.movie[indexPath.row].releaseDate
         
         navigationController?.pushViewController(vc, animated: true)
     }
@@ -73,10 +75,11 @@ class BookCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookCollectionViewCell", for: indexPath) as! BookCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BookCollectionViewCell.identifier, for: indexPath) as! BookCollectionViewCell
         
         let row = movie.movie[indexPath.row]
         cell.setCell(row: row)
+        cell.setLikeButton(data: row)
         cell.likeButton.tag = indexPath.row
         cell.likeButton.addTarget(self, action: #selector(likeButtonClicked), for: .touchUpInside)
         

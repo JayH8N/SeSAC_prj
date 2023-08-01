@@ -9,6 +9,7 @@ import UIKit
 
 class BookCollectionViewCell: UICollectionViewCell {
     
+    static let identifier = "BookCollectionViewCell"
     
     @IBOutlet var backView: UIView!
     
@@ -32,9 +33,12 @@ class BookCollectionViewCell: UICollectionViewCell {
         movieRate.textColor = .white
         movieTitle.font = UIFont.boldSystemFont(ofSize: 15)
         
-        
+    }
+    
+    
+    func setLikeButton(data: Movie) {
         func likeButtonImage() -> String {
-            if row.like {
+            if data.like {
                 return "star.fill"
             } else {
                 return "star"
@@ -42,6 +46,7 @@ class BookCollectionViewCell: UICollectionViewCell {
         }
         likeButton.setImage(UIImage(systemName: likeButtonImage()), for: .normal)
     }
+    
     
     
     
