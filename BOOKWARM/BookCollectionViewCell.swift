@@ -16,6 +16,8 @@ class BookCollectionViewCell: UICollectionViewCell {
     @IBOutlet var moviePoster: UIImageView!
     @IBOutlet var movieRate: UILabel!
     
+    @IBOutlet var likeButton: UIButton!
+    
     func setCell(row: Movie) {
         let color: [UIColor] = [.black, .blue, .brown, .gray, .green, .magenta, .yellow, .systemCyan]
         
@@ -29,7 +31,19 @@ class BookCollectionViewCell: UICollectionViewCell {
         movieTitle.textColor = .white
         movieRate.textColor = .white
         movieTitle.font = UIFont.boldSystemFont(ofSize: 15)
-        print("\(row.title)")
+        
+        
+        func likeButtonImage() -> String {
+            if row.like {
+                return "star.fill"
+            } else {
+                return "star"
+            }
+        }
+        likeButton.setImage(UIImage(systemName: likeButtonImage()), for: .normal)
     }
+    
+    
+    
     
 }

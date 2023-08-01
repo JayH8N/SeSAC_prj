@@ -9,7 +9,11 @@ import UIKit
 
 class BookCollectionViewController: UICollectionViewController {
 
-    var movie = MovieInfo()
+    var movie = MovieInfo() {
+        didSet { //변수가 달라짐을 감지!
+            collectionView.reloadData()
+        }
+    }
     
     
     override func viewDidLoad() {
@@ -73,8 +77,14 @@ class BookCollectionViewController: UICollectionViewController {
         
         let row = movie.movie[indexPath.row]
         cell.setCell(row: row)
-     
+        cell.likeButton.tag = indexPath.row
+        cell.likeButton.addTarget(self, action: #selector(likeButtonClicked), for: .touchUpInside)
+        
         return cell
+    }
+    
+    @objc func likeButtonClicked(_ sender: UIButton) {
+        movie.movie[sender.tag].like.toggle()
     }
     
 }
