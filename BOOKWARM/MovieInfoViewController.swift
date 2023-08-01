@@ -9,17 +9,12 @@ import UIKit
 
 class MovieInfoViewController: UIViewController {
     
-
-    var contents: String = "상세화면"
-    
-    @IBOutlet var contentsLabel: UILabel!
-    
+    @IBOutlet var moviePoster: UIImageView!
+    @IBOutlet var movieInformation: UILabel!
+    @IBOutlet var movieOverview: UITextView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        contentsLabel.text = contents
-        contentsLabel.textAlignment = .center
-        contentsLabel.font = UIFont.systemFont(ofSize: 30)
     }
 }

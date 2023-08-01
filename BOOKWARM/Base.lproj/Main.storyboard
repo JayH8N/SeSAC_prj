@@ -92,8 +92,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tjq-Ba-cHd">
-                                <rect key="frame" x="30" y="309" width="333" height="259"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="95j-LV-YqY">
+                                <rect key="frame" x="16" y="79" width="203" height="304.66666666666669"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="95j-LV-YqY" secondAttribute="height" multiplier="2:3" id="QeK-wP-YXm"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7Pm-EN-UTT">
+                                <rect key="frame" x="16" y="403.66666666666674" width="363" height="394.33333333333326"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b5F-Z1-S9d">
+                                <rect key="frame" x="239" y="79" width="138" height="304.66666666666669"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -102,19 +116,28 @@
                         <viewLayoutGuide key="safeArea" id="DCh-xD-rEs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="DCh-xD-rEs" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="Tjq-Ba-cHd" secondAttribute="bottom" constant="250" id="VNE-kW-qA4"/>
-                            <constraint firstItem="Tjq-Ba-cHd" firstAttribute="leading" secondItem="DCh-xD-rEs" secondAttribute="leading" constant="30" id="glC-Qv-C8h"/>
-                            <constraint firstItem="DCh-xD-rEs" firstAttribute="trailing" secondItem="Tjq-Ba-cHd" secondAttribute="trailing" constant="30" id="ksJ-Rv-PLi"/>
-                            <constraint firstItem="Tjq-Ba-cHd" firstAttribute="top" relation="lessThanOrEqual" secondItem="DCh-xD-rEs" secondAttribute="top" constant="250" id="orn-YI-j9a"/>
+                            <constraint firstItem="7Pm-EN-UTT" firstAttribute="leading" secondItem="95j-LV-YqY" secondAttribute="leading" id="1ux-Ro-tRZ"/>
+                            <constraint firstItem="95j-LV-YqY" firstAttribute="top" secondItem="DCh-xD-rEs" secondAttribute="top" constant="20" id="WKM-wh-at7"/>
+                            <constraint firstItem="95j-LV-YqY" firstAttribute="width" secondItem="XZP-16-Xon" secondAttribute="width" multiplier="0.516539" id="YsJ-gJ-jV6"/>
+                            <constraint firstItem="95j-LV-YqY" firstAttribute="leading" secondItem="DCh-xD-rEs" secondAttribute="leading" constant="16" id="be3-lT-ugE"/>
+                            <constraint firstItem="b5F-Z1-S9d" firstAttribute="leading" secondItem="95j-LV-YqY" secondAttribute="trailing" constant="20" id="bpg-pX-nwg"/>
+                            <constraint firstItem="7Pm-EN-UTT" firstAttribute="top" secondItem="95j-LV-YqY" secondAttribute="bottom" constant="20" id="ea4-GF-ZVN"/>
+                            <constraint firstItem="DCh-xD-rEs" firstAttribute="bottom" secondItem="7Pm-EN-UTT" secondAttribute="bottom" constant="20" id="fPh-iQ-Nn8"/>
+                            <constraint firstItem="DCh-xD-rEs" firstAttribute="trailing" secondItem="b5F-Z1-S9d" secondAttribute="trailing" constant="16" id="icQ-D3-DZO"/>
+                            <constraint firstItem="DCh-xD-rEs" firstAttribute="trailing" secondItem="7Pm-EN-UTT" secondAttribute="trailing" constant="14" id="mSl-cz-wCu"/>
+                            <constraint firstItem="7Pm-EN-UTT" firstAttribute="top" secondItem="b5F-Z1-S9d" secondAttribute="bottom" constant="20" id="sB5-gd-ySd"/>
+                            <constraint firstItem="b5F-Z1-S9d" firstAttribute="top" secondItem="95j-LV-YqY" secondAttribute="top" id="zqP-ZY-d40"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="contentsLabel" destination="Tjq-Ba-cHd" id="15w-9C-riM"/>
+                        <outlet property="movieInformation" destination="b5F-Z1-S9d" id="18g-sY-taC"/>
+                        <outlet property="movieOverview" destination="7Pm-EN-UTT" id="dio-hJ-Zxs"/>
+                        <outlet property="moviePoster" destination="95j-LV-YqY" id="wyg-uJ-JlU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dGY-06-Kx7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3057" y="-104"/>
+            <point key="canvasLocation" x="3143" y="-3"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="du4-22-cgR">
@@ -138,6 +161,9 @@
     </scenes>
     <resources>
         <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
