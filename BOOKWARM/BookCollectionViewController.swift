@@ -9,7 +9,7 @@ import UIKit
 
 class BookCollectionViewController: UICollectionViewController {
 
-    var movieList = MovieInfo()
+    var movie = MovieInfo()
     
     
     override func viewDidLoad() {
@@ -54,15 +54,16 @@ class BookCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(identifier: "MovieInfoViewController") as! MovieInfoViewController
-        vc.self.title = movieList.movie[indexPath.row].title
-        
-        vc.contents = "상세화면"
+        vc.self.title = movie.movie[indexPath.row].title
+        vc.Poster = movie.movie[indexPath.row].image
+        vc.movieInfo = movie.movie[indexPath.row].title
+        vc.overview = movie.movie[indexPath.row].overview
         
         navigationController?.pushViewController(vc, animated: true)
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return movieList.movie.count
+        return movie.movie.count
     }
     
     
@@ -70,7 +71,7 @@ class BookCollectionViewController: UICollectionViewController {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookCollectionViewCell", for: indexPath) as! BookCollectionViewCell
         
-        let row = movieList.movie[indexPath.row]
+        let row = movie.movie[indexPath.row]
         cell.setCell(row: row)
      
         return cell

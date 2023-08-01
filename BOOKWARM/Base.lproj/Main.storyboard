@@ -130,9 +130,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="movieInformation" destination="b5F-Z1-S9d" id="18g-sY-taC"/>
-                        <outlet property="movieOverview" destination="7Pm-EN-UTT" id="dio-hJ-Zxs"/>
-                        <outlet property="moviePoster" destination="95j-LV-YqY" id="wyg-uJ-JlU"/>
+                        <outlet property="movieInformation" destination="b5F-Z1-S9d" id="4lM-jz-soG"/>
+                        <outlet property="movieOverview" destination="7Pm-EN-UTT" id="XgY-cp-DXX"/>
+                        <outlet property="moviePoster" destination="95j-LV-YqY" id="Tlg-PK-IIU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dGY-06-Kx7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

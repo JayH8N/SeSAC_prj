@@ -19,7 +19,7 @@ class BookCollectionViewCell: UICollectionViewCell {
     func setCell(row: Movie) {
         let color: [UIColor] = [.black, .blue, .brown, .gray, .green, .magenta, .yellow, .systemCyan]
         
-        moviePoster.image = UIImage(named: row.poster)
+        moviePoster.image = UIImage(named: row.image)
         movieTitle.text = row.title
         movieRate.text = String(row.rate)
         
