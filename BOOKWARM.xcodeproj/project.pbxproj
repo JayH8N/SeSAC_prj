@@ -31,6 +31,7 @@
 		7889A7612A7A6FCD00D9C2CC /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7889A7602A7A6FCD00D9C2CC /* Extension.swift */; };
 		7889A7632A7A72C400D9C2CC /* DetailScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7889A7622A7A72C400D9C2CC /* DetailScreen.storyboard */; };
 		7889A7652A7A72E300D9C2CC /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7889A7642A7A72E300D9C2CC /* BookDetailViewController.swift */; };
+		7889A7672A7A96D600D9C2CC /* MovieDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7889A7662A7A96D600D9C2CC /* MovieDetailTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		7889A7602A7A6FCD00D9C2CC /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		7889A7622A7A72C400D9C2CC /* DetailScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailScreen.storyboard; sourceTree = "<group>"; };
 		7889A7642A7A72E300D9C2CC /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
+		7889A7662A7A96D600D9C2CC /* MovieDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,7 +99,6 @@
 				783E18D12A77A7AE00857E09 /* SceneDelegate.swift */,
 				783E18D52A77A7AE00857E09 /* Main.storyboard */,
 				783E18EF2A77D1C400857E09 /* SearchViewController.swift */,
-				783E18ED2A77C8DA00857E09 /* MovieInfoViewController.swift */,
 				7857F8172A77FB91001A2261 /* BookCollectionViewCell.swift */,
 				7857F8182A77FB91001A2261 /* BookCollectionViewCell.xib */,
 				783E18D82A77A7AF00857E09 /* Assets.xcassets */,
@@ -120,11 +121,13 @@
 				7889A74A2A7A2A6B00D9C2CC /* MainViewController.swift */,
 				7889A74C2A7A2C7A00D9C2CC /* SecondViewController.swift */,
 				7889A74E2A7A2C8500D9C2CC /* ThirdViewController.swift */,
-				7889A7542A7A436400D9C2CC /* Book.swift */,
-				7889A7562A7A439E00D9C2CC /* BookInfo.swift */,
+				7889A7662A7A96D600D9C2CC /* MovieDetailTableViewCell.swift */,
 				7889A75C2A7A6B7D00D9C2CC /* BestsellerCollectionViewCell.swift */,
 				7889A75D2A7A6B7D00D9C2CC /* BestsellerCollectionViewCell.xib */,
+				7889A7542A7A436400D9C2CC /* Book.swift */,
+				7889A7562A7A439E00D9C2CC /* BookInfo.swift */,
 				7889A7602A7A6FCD00D9C2CC /* Extension.swift */,
+				783E18ED2A77C8DA00857E09 /* MovieInfoViewController.swift */,
 			);
 			name = "Bookwarm_8월2일_과제";
 			path = "Bookwarm8월2일";
@@ -214,6 +217,7 @@
 				7857F8192A77FB91001A2261 /* BookCollectionViewCell.swift in Sources */,
 				783E18D02A77A7AE00857E09 /* AppDelegate.swift in Sources */,
 				7889A7612A7A6FCD00D9C2CC /* Extension.swift in Sources */,
+				7889A7672A7A96D600D9C2CC /* MovieDetailTableViewCell.swift in Sources */,
 				783E18F02A77D1C400857E09 /* SearchViewController.swift in Sources */,
 				783E18EE2A77C8DA00857E09 /* MovieInfoViewController.swift in Sources */,
 				783E18EA2A77B32200857E09 /* Movie.swift in Sources */,

@@ -28,9 +28,32 @@ class MovieInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        let xmark = UIImage(systemName: "xmark")
+        navigationItem.leftBarButtonItem = UIBarButtonItem.init(image: xmark, style: .plain, target: self, action: #selector(closeButtonClicked))
+        navigationItem.leftBarButtonItem?.tintColor = .red
+        
+        
         moviePoster.image = UIImage(named: Poster)
         movieInformation.numberOfLines = 0
         movieInformation.text = #" \#(mTitle) \#n \#(movieRate)점 \#n \#(rTime)분 \#n \#(rDate)"#
         movieOverview.text = overview
+    }
+    
+    @objc
+    func closeButtonClicked(_ sender: UIBarButtonItem) {
+        
+        dismiss(animated: true)
+        
+    }
+    
+    
+    func setCell(data: Movie) {
+        Poster = data.image
+        mTitle = data.title
+        overview = data.overview
+        movieRate = data.rate
+        rTime = data.runtime
+        rDate = data.releaseDate
     }
 }
