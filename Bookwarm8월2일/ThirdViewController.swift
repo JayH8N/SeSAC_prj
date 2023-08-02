@@ -14,7 +14,6 @@ class ThirdViewController: UIViewController {
 
         self.tabBarController?.tabBar.items![2].image = UIImage(systemName: "star.fill")
     }
-    
 
 
 }

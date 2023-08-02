@@ -14,7 +14,6 @@ class SecondViewController: UIViewController {
 
         self.tabBarController?.tabBar.items![1].image = UIImage(systemName: "star.fill")
     }
-    
 
     /*
     // MARK: - Navigation

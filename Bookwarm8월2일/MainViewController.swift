@@ -8,7 +8,7 @@
 import UIKit
 
 class MainViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UITableViewDataSource, UITableViewDelegate  {
-    
+
     
     var movie = MovieInfo()
     var book = BookInfo()
@@ -71,7 +71,9 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let sb = UIStoryboard(name: "DetailScreen", bundle: nil)
         let vc = sb.instantiateViewController(identifier: BookDetailViewController.identifier) as! BookDetailViewController
         let item = book.book[indexPath.item]
-        vc.self.title = item.title
+        
+        //???: -
+        vc.title = item.title
         vc.cover = item.image
         vc.writer = item.author
 
@@ -84,6 +86,9 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     //MARK: - TableView
     
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "요즘 인기 작품"
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movie.movie.count
@@ -112,6 +117,8 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         nav.modalPresentationStyle = .fullScreen
         
         present(nav, animated: true)
+        
+        //tableView.reloadSections([indexPath.row], with: .none)
     }
 
 }
