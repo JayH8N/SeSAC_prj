@@ -16,7 +16,7 @@ class MovieInfoViewController: UIViewController {
     var overview: String = ""
     
     var movieRate: Double = 0.0
-    var rTime: Int = 1
+    var rTime: Int = 0
     var rDate: String = ""
     
     
