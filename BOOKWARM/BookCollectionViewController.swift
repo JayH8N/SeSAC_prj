@@ -12,7 +12,11 @@ class BookCollectionViewController: UICollectionViewController, UISearchBarDeleg
     let searchBar = UISearchBar()
     
     
-    var searchList: [Movie] = [] // [String] -> list에서 유저가 검색한 영화
+    var searchList: [Movie] = [] {
+        didSet {
+            collectionView.reloadData()
+        }
+    } // [String] -> list에서 유저가 검색한 영화
     
     
     var movie = MovieInfo() {
@@ -48,14 +52,14 @@ class BookCollectionViewController: UICollectionViewController, UISearchBarDeleg
                 searchList.append(item)
             }
         }
-        collectionView.reloadData()
+        //collectionView.reloadData()
     }
     
     //취소버튼 누르면 서치바 텍스트 내용 비우기 + 뷰 화면 clear시키는 기능
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchList.removeAll()
         searchBar.text = ""
-        collectionView.reloadData()
+        //collectionView.reloadData()
     }
     
     //실시간 검색
@@ -63,10 +67,10 @@ class BookCollectionViewController: UICollectionViewController, UISearchBarDeleg
         for item in movie.movie {
             if item.title.contains(searchBar.text!) {
                 searchList.append(item)
-                collectionView.reloadData()
+                //collectionView.reloadData()
             } else if searchBar.text == "" {
                 searchList.removeAll()
-                collectionView.reloadData()
+                //collectionView.reloadData()
                 //서치바 텍스트가 비워지면 collectioinView clear시킴
             }
         }
@@ -107,8 +111,8 @@ class BookCollectionViewController: UICollectionViewController, UISearchBarDeleg
         let vc = sb.instantiateViewController(identifier: MovieInfoViewController.identifier) as! MovieInfoViewController
         
         //let row = searchList[indexPath.row]
-        
-        vc.self.title = searchList[indexPath.row].title
+        vc.type = .push
+        vc.title = searchList[indexPath.row].title
         vc.Poster = searchList[indexPath.row].image
         vc.mTitle = searchList[indexPath.row].title
         vc.overview = searchList[indexPath.row].overview
@@ -142,7 +146,7 @@ class BookCollectionViewController: UICollectionViewController, UISearchBarDeleg
     
     
     @objc func likeButtonClicked(_ sender: UIButton) {
-        movie.movie[sender.tag].like.toggle()
+        searchList[sender.tag].like.toggle()
     }
     
 }

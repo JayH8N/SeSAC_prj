@@ -114,6 +114,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         vc.self.title = data.title
         vc.setCell(data: data)
         
+        vc.type = .present
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen
         
