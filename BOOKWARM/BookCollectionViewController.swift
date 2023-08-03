@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BookCollectionViewController: UICollectionViewController, UISearchBarDelegate {
+class BookCollectionViewController: UICollectionViewController {
 
     let searchBar = UISearchBar()
     
@@ -39,41 +39,6 @@ class BookCollectionViewController: UICollectionViewController, UISearchBarDeleg
         
         
         setLayout()
-    }
-
-    
-    //MARK: - searchBar Method
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        searchList.removeAll()
-        
-        for item in movie.movie {
-            if item.title.contains(searchBar.text!) {
-                searchList.append(item)
-            }
-        }
-        //collectionView.reloadData()
-    }
-    
-    //취소버튼 누르면 서치바 텍스트 내용 비우기 + 뷰 화면 clear시키는 기능
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchList.removeAll()
-        searchBar.text = ""
-        //collectionView.reloadData()
-    }
-    
-    //실시간 검색
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        for item in movie.movie {
-            if item.title.contains(searchBar.text!) {
-                searchList.append(item)
-                //collectionView.reloadData()
-            } else if searchBar.text == "" {
-                searchList.removeAll()
-                //collectionView.reloadData()
-                //서치바 텍스트가 비워지면 collectioinView clear시킴
-            }
-        }
     }
     
     
@@ -138,8 +103,6 @@ class BookCollectionViewController: UICollectionViewController, UISearchBarDeleg
         cell.likeButton.tag = indexPath.row
         cell.likeButton.addTarget(self, action: #selector(likeButtonClicked), for: .touchUpInside)
         
-        
-        
         return cell
     }
     
@@ -149,4 +112,38 @@ class BookCollectionViewController: UICollectionViewController, UISearchBarDeleg
         searchList[sender.tag].like.toggle()
     }
     
+}
+
+
+
+extension BookCollectionViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchList.removeAll()
+        
+        for item in movie.movie {
+            if item.title.contains(searchBar.text!) {
+                searchList.append(item)
+            }
+        }
+    }
+    
+    //취소버튼 누르면 서치바 텍스트 내용 비우기 + 뷰 화면 clear시키는 기능
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchList.removeAll()
+        searchBar.text = ""
+        //collectionView.reloadData()
+    }
+    
+    //실시간 검색
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        for item in movie.movie {
+            if item.title.contains(searchBar.text!) {
+                searchList.append(item)
+            } else if searchBar.text == "" {
+                searchList.removeAll()
+                //서치바 텍스트가 비워지면 collectioinView clear시킴
+            }
+        }
+    }
 }

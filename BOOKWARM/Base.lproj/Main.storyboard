@@ -115,31 +115,52 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="x2h-KD-wuI">
+                                <rect key="frame" x="16" y="543.66666666666663" width="361" height="254.33333333333337"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DCh-xD-rEs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="7Pm-EN-UTT" firstAttribute="leading" secondItem="95j-LV-YqY" secondAttribute="leading" id="1ux-Ro-tRZ"/>
+                            <constraint firstItem="x2h-KD-wuI" firstAttribute="leading" secondItem="DCh-xD-rEs" secondAttribute="leading" constant="16" id="EBR-IB-UeH"/>
+                            <constraint firstItem="DCh-xD-rEs" firstAttribute="trailing" secondItem="x2h-KD-wuI" secondAttribute="trailing" constant="16" id="MIT-2P-aEK"/>
+                            <constraint firstItem="DCh-xD-rEs" firstAttribute="bottom" secondItem="x2h-KD-wuI" secondAttribute="bottom" constant="20" id="Rzo-zI-7UX"/>
                             <constraint firstItem="95j-LV-YqY" firstAttribute="top" secondItem="DCh-xD-rEs" secondAttribute="top" constant="20" id="WKM-wh-at7"/>
                             <constraint firstItem="95j-LV-YqY" firstAttribute="width" secondItem="XZP-16-Xon" secondAttribute="width" multiplier="0.516539" id="YsJ-gJ-jV6"/>
                             <constraint firstItem="95j-LV-YqY" firstAttribute="leading" secondItem="DCh-xD-rEs" secondAttribute="leading" constant="16" id="be3-lT-ugE"/>
                             <constraint firstItem="b5F-Z1-S9d" firstAttribute="leading" secondItem="95j-LV-YqY" secondAttribute="trailing" constant="20" id="bpg-pX-nwg"/>
+                            <constraint firstItem="x2h-KD-wuI" firstAttribute="top" secondItem="7Pm-EN-UTT" secondAttribute="bottom" constant="40" id="doc-vV-Cyi"/>
                             <constraint firstItem="7Pm-EN-UTT" firstAttribute="top" secondItem="95j-LV-YqY" secondAttribute="bottom" constant="20" id="ea4-GF-ZVN"/>
                             <constraint firstItem="DCh-xD-rEs" firstAttribute="trailing" secondItem="b5F-Z1-S9d" secondAttribute="trailing" constant="16" id="icQ-D3-DZO"/>
                             <constraint firstItem="DCh-xD-rEs" firstAttribute="trailing" secondItem="7Pm-EN-UTT" secondAttribute="trailing" constant="14" id="mSl-cz-wCu"/>
                             <constraint firstItem="7Pm-EN-UTT" firstAttribute="top" secondItem="b5F-Z1-S9d" secondAttribute="bottom" constant="20" id="sB5-gd-ySd"/>
                             <constraint firstItem="b5F-Z1-S9d" firstAttribute="top" secondItem="95j-LV-YqY" secondAttribute="top" id="zqP-ZY-d40"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="BeQ-DM-oRQ" appends="YES" id="WOG-ve-0d7"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="movieInformation" destination="b5F-Z1-S9d" id="4lM-jz-soG"/>
                         <outlet property="movieOverview" destination="7Pm-EN-UTT" id="XgY-cp-DXX"/>
                         <outlet property="moviePoster" destination="95j-LV-YqY" id="Tlg-PK-IIU"/>
+                        <outlet property="textView" destination="x2h-KD-wuI" id="ODu-sE-4oD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dGY-06-Kx7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="BeQ-DM-oRQ">
+                    <connections>
+                        <action selector="tpaGesture:" destination="exE-XF-Hgq" id="Cgu-3J-INd"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1637" y="-383"/>
+            <point key="canvasLocation" x="1635.8778625954199" y="-383.0985915492958"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="du4-22-cgR">
