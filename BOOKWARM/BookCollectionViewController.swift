@@ -7,17 +7,28 @@
 
 import UIKit
 
-class BookCollectionViewController: UICollectionViewController {
+class BookCollectionViewController: UICollectionViewController, UISearchBarDelegate {
 
+    let searchBar = UISearchBar()
+    
+    
+    var searchList: [Movie] = [] // [String] -> list에서 유저가 검색한 영화
+    
+    
     var movie = MovieInfo() {
         didSet { //변수가 달라짐을 감지!
             collectionView.reloadData()
         }
     }
     
+    //MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navigationItem.titleView  = searchBar
+        searchBar.delegate = self
+        searchBar.placeholder = "검색어를 입력해주세요"
+        searchBar.showsCancelButton = true
         
         let nib = UINib(nibName: BookCollectionViewCell.identifier, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: BookCollectionViewCell.identifier)
@@ -26,6 +37,43 @@ class BookCollectionViewController: UICollectionViewController {
         setLayout()
     }
 
+    
+    //MARK: - searchBar Method
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchList.removeAll()
+        
+        for item in movie.movie {
+            if item.title.contains(searchBar.text!) {
+                searchList.append(item)
+            }
+        }
+        collectionView.reloadData()
+    }
+    
+    //취소버튼 누르면 서치바 텍스트 내용 비우기 + 뷰 화면 clear시키는 기능
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchList.removeAll()
+        searchBar.text = ""
+        collectionView.reloadData()
+    }
+    
+    //실시간 검색
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        for item in movie.movie {
+            if item.title.contains(searchBar.text!) {
+                searchList.append(item)
+                collectionView.reloadData()
+            } else if searchBar.text == "" {
+                searchList.removeAll()
+                collectionView.reloadData()
+                //서치바 텍스트가 비워지면 collectioinView clear시킴
+            }
+        }
+    }
+    
+    
+    
     
     func setLayout() {
         let layout = UICollectionViewFlowLayout()
@@ -57,19 +105,22 @@ class BookCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(identifier: MovieInfoViewController.identifier) as! MovieInfoViewController
-        vc.self.title = movie.movie[indexPath.row].title
-        vc.Poster = movie.movie[indexPath.row].image
-        vc.mTitle = movie.movie[indexPath.row].title
-        vc.overview = movie.movie[indexPath.row].overview
-        vc.movieRate = movie.movie[indexPath.row].rate
-        vc.rTime = movie.movie[indexPath.row].runtime
-        vc.rDate = movie.movie[indexPath.row].releaseDate
+        
+        //let row = searchList[indexPath.row]
+        
+        vc.self.title = searchList[indexPath.row].title
+        vc.Poster = searchList[indexPath.row].image
+        vc.mTitle = searchList[indexPath.row].title
+        vc.overview = searchList[indexPath.row].overview
+        vc.movieRate = searchList[indexPath.row].rate
+        vc.rTime = searchList[indexPath.row].runtime
+        vc.rDate = searchList[indexPath.row].releaseDate
         
         navigationController?.pushViewController(vc, animated: true)
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return movie.movie.count
+        return searchList.count
     }
     
     
@@ -77,14 +128,18 @@ class BookCollectionViewController: UICollectionViewController {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: BookCollectionViewCell.identifier, for: indexPath) as! BookCollectionViewCell
         
-        let row = movie.movie[indexPath.row]
+        let row = searchList[indexPath.row]
         cell.setCell(row: row)
         cell.setLikeButton(data: row)
         cell.likeButton.tag = indexPath.row
         cell.likeButton.addTarget(self, action: #selector(likeButtonClicked), for: .touchUpInside)
         
+        
+        
         return cell
     }
+    
+    
     
     @objc func likeButtonClicked(_ sender: UIButton) {
         movie.movie[sender.tag].like.toggle()

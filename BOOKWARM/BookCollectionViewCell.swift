@@ -20,19 +20,20 @@ class BookCollectionViewCell: UICollectionViewCell {
     @IBOutlet var likeButton: UIButton!
     
     func setCell(row: Movie) {
-        
+
         moviePoster.image = UIImage(named: row.image)
         movieTitle.text = row.title
         movieRate.text = String(row.rate)
-        
+
         backView.layer.cornerRadius = 15
         backView.backgroundColor = .systemGray5
-        
+
         movieTitle.textColor = .black
         movieRate.textColor = .black
         movieTitle.font = UIFont.boldSystemFont(ofSize: 15)
-        
+
     }
+    
     
     
     func setLikeButton(data: Movie) {

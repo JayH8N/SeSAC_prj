@@ -13,7 +13,7 @@ class BestsellerCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var bookCover: UIImageView!
     
-    
+    // prepareForReuse
     override func awakeFromNib() {
         super.awakeFromNib()
         

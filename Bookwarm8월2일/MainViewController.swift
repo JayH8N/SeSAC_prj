@@ -76,6 +76,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate, UICollecti
         vc.title = item.title
         vc.cover = item.image
         vc.writer = item.author
+        // Struct
 
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen

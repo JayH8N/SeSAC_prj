@@ -23,9 +23,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             tbc.tabBar.barTintColor = .systemGray5
 
             if let tbItems = tbc.tabBar.items {
-                            tbItems[0].image = UIImage(systemName: "star")
-                            tbItems[1].image = UIImage(systemName: "star")
-                            tbItems[2].image = UIImage(systemName: "star")
+                            tbItems[0].image = UIImage(systemName: "star.fill")
+                            tbItems[1].image = UIImage(systemName: "star.fill")
+                            tbItems[2].image = UIImage(systemName: "star.fill")
                             
                             tbItems[0].title = "둘러보기"
                             tbItems[1].title = ""
