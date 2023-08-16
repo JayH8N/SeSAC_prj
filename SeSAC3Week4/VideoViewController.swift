@@ -21,7 +21,6 @@ struct Video {
     var contents: String {
             return "\(author) | \(time)회\n\(date)"
     }
-
 }
 
 
@@ -33,8 +32,8 @@ class VideoViewController: UIViewController {
     @IBOutlet var videoTableview: UITableView!
 
 
-
-    var videoList: [Video] = []
+    //lazy var documentList: [Document] = []
+    lazy var videoList: [Video] = []
     var page = 1 //스크롤 인식은 어떻게 하지? --> 담당 프로토콜 존재함
     var isEnd = false //현재 페이지가 마지막 페이지인지 점검하는 프로퍼티
 
@@ -105,6 +104,7 @@ extension VideoViewController: UITableViewDelegate, UITableViewDataSource, UITab
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: VideoTableViewCell.identifier) as? VideoTableViewCell else { return UITableViewCell()}
         cell.titleLabel.text = videoList[indexPath.row].title
+        //cell.titleLabel.text = documentList[indexPath.row].title
         cell.contentLabel.text = videoList[indexPath.row].contents
         if let url = URL(string: videoList[indexPath.row].thumbnail) {
             cell.thumbnailImageView.kf.setImage(with: url)
@@ -128,7 +128,8 @@ extension VideoViewController: UITableViewDelegate, UITableViewDataSource, UITab
                 KakaoAPIManager.shared.callRequest(type: .video, query: searchBar.text!, page: page) { value in
                     
                     for i in value.documents {
-                        let data = Video(author: i.author.rawValue, date: i.datetime, time: i.playTime, thumbnail: i.thumbnail, title: i.title, link: i.url)
+                        let data = Video(author: i.author, date: i.datetime, time: i.playTime, thumbnail: i.thumbnail, title: i.title, link: i.url)
+                        
                         
                         self.videoList.append(data)
                     }
@@ -159,7 +160,7 @@ extension VideoViewController: UISearchBarDelegate {
         KakaoAPIManager.shared.callRequest(type: .video, query: searchBar.text!, page: page) { value in
             
             for i in value.documents {
-                let data = Video(author: i.author.rawValue, date: i.datetime, time: i.playTime, thumbnail: i.thumbnail, title: i.title, link: i.url)
+                let data = Video(author: i.author, date: i.datetime, time: i.playTime, thumbnail: i.thumbnail, title: i.title, link: i.url)
                 
                 self.videoList.append(data)
             }
@@ -181,7 +182,7 @@ struct KakaoVideo: Codable {
 
 // MARK: - Document
 struct Document: Codable {
-    let author: Author
+    let author: String
     let datetime: String
     let playTime: Int
     let thumbnail: String
@@ -193,10 +194,6 @@ struct Document: Codable {
         case playTime = "play_time"
         case thumbnail, title, url
     }
-}
-
-enum Author: String, Codable {
-    case 이지금IUOfficial = "이지금 [IU Official]"
 }
 
 // MARK: - M
