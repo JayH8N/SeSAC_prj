@@ -45,11 +45,5 @@ class TranslationViewController: UIViewController {
         TranslateAPIManger.shared.callRequest(text: originalTextView.text ?? "") { result in
             self.translateTextView.text = result
         }
-        
-        
-        
     }
-    
-    
-
 }
