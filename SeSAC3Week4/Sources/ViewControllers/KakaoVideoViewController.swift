@@ -21,7 +21,7 @@ import Kingfisher
 //    }
 //}
 
-
+//
 //UITableViewDataSourcePrefetching : iOS10이상 사용 가능한 프로토콜, cellForRowAt메서드가 호출되기 전에 미리 호출됨
 class KakaoVideoViewController: UIViewController {
 
