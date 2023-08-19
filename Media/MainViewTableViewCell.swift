@@ -37,6 +37,7 @@ class MainViewTableViewCell: UITableViewCell {
             rateLabel.font = .systemFont(ofSize: 10)
             rateLabel.textAlignment = .center
             rateLabel.backgroundColor = UIColor(red: 124/255, green: 91/255, blue: 245/255, alpha: 1)
+            rateLabel.text = "평점"
             rateScoreLabel.font = .systemFont(ofSize: 10)
             rateScoreLabel.textAlignment = .center
             rateScoreLabel.backgroundColor = .white

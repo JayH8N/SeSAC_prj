@@ -21,11 +21,11 @@
                                 <rect key="frame" x="0.0" y="159" width="393" height="693"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="333" id="nrW-eU-XKA">
-                                        <rect key="frame" x="0.0" y="50" width="393" height="333"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="350" id="nrW-eU-XKA">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="350"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nrW-eU-XKA" id="Rqj-mb-JH8">
-                                            <rect key="frame" x="0.0" y="0.0" width="393" height="333"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="350"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -51,19 +51,9 @@
                             <constraint firstItem="Ub1-t6-OXS" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="tfK-Me-6dh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="UWS-EN-Ivx">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="eP4-kn-hqy">
-                            <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="IQO-6H-Hv2">
-                                <rect key="frame" x="16" y="6" width="131" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                </segments>
-                            </segmentedControl>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="UWS-EN-Ivx"/>
                     <connections>
+                        <outlet property="searchBar" destination="Ub1-t6-OXS" id="LH8-ni-xLv"/>
                         <outlet property="tableView" destination="8NW-dp-R4Y" id="bFg-2y-lFM"/>
                     </connections>
                 </viewController>

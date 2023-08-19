@@ -10,6 +10,7 @@ import UIKit
 class MainViewController: UIViewController {
     
     
+    @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
     
     
@@ -17,9 +18,17 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        //tableView
+        tableViewDelegate()
+        registerNib()
+        
+        //searchBar
+        settingButton()
+        searchBar.delegate = self
+        searchBar.isHidden = true
+        
+        
     }
-    
     
     
     
@@ -27,4 +36,3 @@ class MainViewController: UIViewController {
 
 
 }
-

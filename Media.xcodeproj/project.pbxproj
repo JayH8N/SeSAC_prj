@@ -24,6 +24,7 @@
 		78FF60FC2A90B99F004EBE0A /* Protocol + identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF60FB2A90B99F004EBE0A /* Protocol + identifier.swift */; };
 		78FF60FE2A90BA7E004EBE0A /* Extension + MainViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF60FD2A90BA7E004EBE0A /* Extension + MainViewTableViewCell.swift */; };
 		78FF61002A90C054004EBE0A /* Extension + CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF60FF2A90C054004EBE0A /* Extension + CALayer.swift */; };
+		78FF61052A90C61A004EBE0A /* Protocol + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF61042A90C61A004EBE0A /* Protocol + TableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		78FF60FB2A90B99F004EBE0A /* Protocol + identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Protocol + identifier.swift"; sourceTree = "<group>"; };
 		78FF60FD2A90BA7E004EBE0A /* Extension + MainViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + MainViewTableViewCell.swift"; sourceTree = "<group>"; };
 		78FF60FF2A90C054004EBE0A /* Extension + CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + CALayer.swift"; sourceTree = "<group>"; };
+		78FF61042A90C61A004EBE0A /* Protocol + TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Protocol + TableView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				78FF60FB2A90B99F004EBE0A /* Protocol + identifier.swift */,
+				78FF61042A90C61A004EBE0A /* Protocol + TableView.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				78FF60CF2A909E27004EBE0A /* MainViewController.swift in Sources */,
 				78FF60CB2A909E27004EBE0A /* AppDelegate.swift in Sources */,
 				78FF60F12A90ADDD004EBE0A /* APIKey.swift in Sources */,
+				78FF61052A90C61A004EBE0A /* Protocol + TableView.swift in Sources */,
 				78FF60CD2A909E27004EBE0A /* SceneDelegate.swift in Sources */,
 				78FF60FC2A90B99F004EBE0A /* Protocol + identifier.swift in Sources */,
 				78FF60FE2A90BA7E004EBE0A /* Extension + MainViewTableViewCell.swift in Sources */,

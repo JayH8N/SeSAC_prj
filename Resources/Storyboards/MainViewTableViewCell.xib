@@ -168,7 +168,7 @@
                 <outlet property="subBackViewTitleLabel" destination="wuM-6I-RuM" id="6tD-Ep-M2F"/>
                 <outlet property="titleLabel" destination="bvm-5Y-IHn" id="h6R-8S-rg8"/>
             </connections>
-            <point key="canvasLocation" x="277.86259541984731" y="20.774647887323944"/>
+            <point key="canvasLocation" x="382" y="19"/>
         </tableViewCell>
     </objects>
     <resources>
