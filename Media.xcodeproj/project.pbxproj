@@ -25,6 +25,12 @@
 		78FF60FE2A90BA7E004EBE0A /* Extension + MainViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF60FD2A90BA7E004EBE0A /* Extension + MainViewTableViewCell.swift */; };
 		78FF61002A90C054004EBE0A /* Extension + CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF60FF2A90C054004EBE0A /* Extension + CALayer.swift */; };
 		78FF61052A90C61A004EBE0A /* Protocol + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF61042A90C61A004EBE0A /* Protocol + TableView.swift */; };
+		78FF61072A90D590004EBE0A /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF61062A90D590004EBE0A /* Endpoint.swift */; };
+		78FF61092A90D5BE004EBE0A /* TmdbManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF61082A90D5BE004EBE0A /* TmdbManager.swift */; };
+		78FF610B2A90D666004EBE0A /* Extension + URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF610A2A90D666004EBE0A /* Extension + URL.swift */; };
+		78FF61112A90D758004EBE0A /* Trending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF61102A90D758004EBE0A /* Trending.swift */; };
+		78FF61132A90EF24004EBE0A /* Extension + ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF61122A90EF24004EBE0A /* Extension + ImageView.swift */; };
+		78FF61152A91074B004EBE0A /* Genres.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF61142A91074B004EBE0A /* Genres.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +51,12 @@
 		78FF60FD2A90BA7E004EBE0A /* Extension + MainViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + MainViewTableViewCell.swift"; sourceTree = "<group>"; };
 		78FF60FF2A90C054004EBE0A /* Extension + CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + CALayer.swift"; sourceTree = "<group>"; };
 		78FF61042A90C61A004EBE0A /* Protocol + TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Protocol + TableView.swift"; sourceTree = "<group>"; };
+		78FF61062A90D590004EBE0A /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		78FF61082A90D5BE004EBE0A /* TmdbManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TmdbManager.swift; sourceTree = "<group>"; };
+		78FF610A2A90D666004EBE0A /* Extension + URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + URL.swift"; sourceTree = "<group>"; };
+		78FF61102A90D758004EBE0A /* Trending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trending.swift; sourceTree = "<group>"; };
+		78FF61122A90EF24004EBE0A /* Extension + ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + ImageView.swift"; sourceTree = "<group>"; };
+		78FF61142A91074B004EBE0A /* Genres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genres.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +136,10 @@
 		78FF60E22A909F1C004EBE0A /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				78FF610F2A90D747004EBE0A /* Data */,
+				78FF61062A90D590004EBE0A /* Endpoint.swift */,
+				78FF610A2A90D666004EBE0A /* Extension + URL.swift */,
+				78FF61082A90D5BE004EBE0A /* TmdbManager.swift */,
 				78FF60F02A90ADDD004EBE0A /* APIKey.swift */,
 			);
 			path = Network;
@@ -168,9 +184,19 @@
 			isa = PBXGroup;
 			children = (
 				78FF60FF2A90C054004EBE0A /* Extension + CALayer.swift */,
+				78FF61122A90EF24004EBE0A /* Extension + ImageView.swift */,
 			);
 			name = "Extension 추가기능";
 			path = "Extension 추가기능";
+			sourceTree = "<group>";
+		};
+		78FF610F2A90D747004EBE0A /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				78FF61102A90D758004EBE0A /* Trending.swift */,
+				78FF61142A91074B004EBE0A /* Genres.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,12 +285,18 @@
 				78FF60CF2A909E27004EBE0A /* MainViewController.swift in Sources */,
 				78FF60CB2A909E27004EBE0A /* AppDelegate.swift in Sources */,
 				78FF60F12A90ADDD004EBE0A /* APIKey.swift in Sources */,
+				78FF61152A91074B004EBE0A /* Genres.swift in Sources */,
 				78FF61052A90C61A004EBE0A /* Protocol + TableView.swift in Sources */,
 				78FF60CD2A909E27004EBE0A /* SceneDelegate.swift in Sources */,
+				78FF610B2A90D666004EBE0A /* Extension + URL.swift in Sources */,
 				78FF60FC2A90B99F004EBE0A /* Protocol + identifier.swift in Sources */,
+				78FF61092A90D5BE004EBE0A /* TmdbManager.swift in Sources */,
 				78FF60FE2A90BA7E004EBE0A /* Extension + MainViewTableViewCell.swift in Sources */,
 				78FF61002A90C054004EBE0A /* Extension + CALayer.swift in Sources */,
 				78FF60F62A90B3EE004EBE0A /* Extension + MainView.swift in Sources */,
+				78FF61132A90EF24004EBE0A /* Extension + ImageView.swift in Sources */,
+				78FF61072A90D590004EBE0A /* Endpoint.swift in Sources */,
+				78FF61112A90D758004EBE0A /* Trending.swift in Sources */,
 				78FF60F92A90B45E004EBE0A /* MainViewTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -31,15 +31,19 @@ extension MainViewController: TableViewAttributeProtocol {
 //tableView
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 350
+        return 430
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MainViewTableViewCell.identifier) as? MainViewTableViewCell else { return UITableViewCell() }
+        
+        cell.setCelldata(data: list[indexPath.row])
+        cell.genreLabel.text = "#\(genre[list[indexPath.row].genreIDS[0]]!)"
+        return cell
     }
     
 
@@ -51,11 +55,10 @@ extension MainViewController: UISearchBarDelegate {
     func settingButton() {
         let searchButton = UIImage(systemName: "magnifyingglass")
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(image: searchButton, style: .plain, target: self, action: #selector(searchButtonClicked))
-        //navigationItem.rightBarButtonItem?.tintColor = fontColor
     }
     
     @objc
     func searchButtonClicked(_ sender: UIBarButtonItem) {
-        searchBar.isHidden = false
+        searchBar.isHidden.toggle()
     }
 }

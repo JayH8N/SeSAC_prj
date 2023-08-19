@@ -34,16 +34,5 @@ extension CALayer {
         }
     }
     
-    //extension + CALayer
-    func roundCorners(cornerRadius: CGFloat, maskedCorners: CACornerMask) {
-        let border = CALayer()
-        //clipsToBounds = true
-        border.cornerRadius = cornerRadius
-        border.maskedCorners = CACornerMask(arrayLiteral: maskedCorners)
-    }
-    
-    //    .layerMinXMinYCorner : 왼쪽 상단
-    //    .layerMaxXMinYCorner : 오른쪽 상단
-    //    .layerMinXMaxYCorner : 왼쪽 하단
-    //    .layerMaxXMaxYCorner : 오른쪽 하단
+
 }

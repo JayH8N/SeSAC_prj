@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import Kingfisher
 
 class MainViewTableViewCell: UITableViewCell {
+    
+    let imageUrl = "https://image.tmdb.org/t/p/w500"
     
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var genreLabel: UILabel!
@@ -25,14 +28,17 @@ class MainViewTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        setCell()
+        setLabel()
+        setImageView()
+        setUIView()
+        setUIButton()
     }
 
-    func setCell() {
+    
         func setLabel() {
-            dateLabel.textColor = .systemGray5
-            dateLabel.font = .systemFont(ofSize: 10)
-            genreLabel.font = .boldSystemFont(ofSize: 13)
+            dateLabel.textColor = .lightGray
+            dateLabel.font = .systemFont(ofSize: 13)
+            genreLabel.font = .boldSystemFont(ofSize: 18)
             rateLabel.textColor = .white
             rateLabel.font = .systemFont(ofSize: 10)
             rateLabel.textAlignment = .center
@@ -41,17 +47,18 @@ class MainViewTableViewCell: UITableViewCell {
             rateScoreLabel.font = .systemFont(ofSize: 10)
             rateScoreLabel.textAlignment = .center
             rateScoreLabel.backgroundColor = .white
-            titleLabel.font = .systemFont(ofSize: 15)
-            actorsLabel.textColor = .systemGray5
-            actorsLabel.font = .systemFont(ofSize: 12)
+            titleLabel.font = .systemFont(ofSize: 20)
+            actorsLabel.textColor = .lightGray
+            actorsLabel.font = .systemFont(ofSize: 14)
             subBackViewTitleLabel.text = "자세히 보기"
-            subBackViewTitleLabel.font = .systemFont(ofSize: 10)
+            subBackViewTitleLabel.font = .systemFont(ofSize: 13)
         }
         
         func setImageView() {
-            mainPosterView.layer.roundCorners(cornerRadius: 10, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
+            mainPosterView.roundCorners(cornerRadius: 10, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
+            mainPosterView.contentMode = .scaleToFill
             subBackViewImage.image = UIImage(systemName: "chevron.forward")
-            subBackViewImage.tintColor = .systemGray5
+            subBackViewImage.tintColor = .lightGray
         }
         
         func setUIView() {
@@ -60,16 +67,26 @@ class MainViewTableViewCell: UITableViewCell {
             mainBackView.layer.shadowOffset = CGSize(width: 0, height: 0)  //태양이 보는 시점
             mainBackView.layer.shadowRadius = 10  //그림자 코너깎임정도
             mainBackView.layer.shadowOpacity = 0.5   //그림자 투명도
-            subBackView.layer.addBorder([.top], width: 0.7, color: UIColor.systemGray5.cgColor)
+            subBackView.layer.addBorder([.top], width: 0.7, color: UIColor.lightGray.cgColor)
         }
         
         func setUIButton() {
             pinnedButton.setImage(UIImage(systemName: "paperclip.circle.fill"), for: .normal)
             pinnedButton.tintColor = .white
+            pinnedButton.contentVerticalAlignment = .fill
+            pinnedButton.contentHorizontalAlignment = .fill
         }
+    
+    
+    func setCelldata(data: TmdbData) {
+        dateLabel.text = data.releaseDate
+        if let url = URL(string: imageUrl + data.backdropPath) {
+            mainPosterView.kf.setImage(with: url)
+        }
+        rateScoreLabel.text = "\(data.voteAverage)"
+        actorsLabel.text = data.overview
+        titleLabel.text = data.title
     }
-    
-    
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
