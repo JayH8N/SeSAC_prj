@@ -17,6 +17,8 @@ struct CastInfo {
 
 class DetailViewController: UIViewController {
     
+    
+    
     var movieId: Int = 0
     var backPoster: String = ""
     var mainPoster: String = ""
@@ -62,7 +64,7 @@ class DetailViewController: UIViewController {
     
     func setView() {
         movieTitleLabel.textColor = .white
-        movieTitleLabel.font = .boldSystemFont(ofSize: 20)
+        movieTitleLabel.font = .boldSystemFont(ofSize: 24)
         overViewTitle.text = "OverView"
         overViewTitle.textColor = .lightGray
         overViewTitle.font = .boldSystemFont(ofSize: 15)
