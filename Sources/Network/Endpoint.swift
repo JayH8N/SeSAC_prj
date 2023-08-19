@@ -11,8 +11,6 @@ import UIKit
 enum Endpoint {
     case movies_week
     case movies_day
-    case poeple_week
-    case people_day
     case tv_week
     case tv_day
     
@@ -20,8 +18,6 @@ enum Endpoint {
         switch self {
         case .movies_day: return URL.makeEndPointString("trending/movie/day")
         case .movies_week: return URL.makeEndPointString("trending/movie/week")
-        case .people_day: return URL.makeEndPointString("trending/person/day")
-        case .poeple_week: return URL.makeEndPointString("trending/person/week")
         case .tv_day: return URL.makeEndPointString("trending/tv/day")
         case .tv_week: return URL.makeEndPointString("trending/tv/week")
         }

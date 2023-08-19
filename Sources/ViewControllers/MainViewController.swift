@@ -96,6 +96,7 @@ class MainViewController: UIViewController {
         return outputFormatter.string(from: date)
     }
     
+    //segmentedControl
     @IBAction func segmenteValueChanged(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 1 {
             list.removeAll()

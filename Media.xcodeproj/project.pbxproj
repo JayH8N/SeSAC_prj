@@ -36,6 +36,11 @@
 		78FF611B2A912D99004EBE0A /* Cast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF611A2A912D99004EBE0A /* Cast.swift */; };
 		78FF611D2A9136DC004EBE0A /* CastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF611C2A9136DC004EBE0A /* CastTableViewCell.swift */; };
 		78FF611F2A913724004EBE0A /* Extension + CastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF611E2A913724004EBE0A /* Extension + CastTableViewCell.swift */; };
+		78FF61212A915BA2004EBE0A /* TVMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF61202A915BA2004EBE0A /* TVMainViewController.swift */; };
+		78FF61232A915BC6004EBE0A /* Extension + TVMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF61222A915BC6004EBE0A /* Extension + TVMainView.swift */; };
+		78FF61282A9165E8004EBE0A /* TVCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF61262A9165E8004EBE0A /* TVCollectionViewCell.swift */; };
+		78FF61292A9165E8004EBE0A /* TVCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78FF61272A9165E8004EBE0A /* TVCollectionViewCell.xib */; };
+		78FF612B2A91663C004EBE0A /* Extension + TVCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF612A2A91663C004EBE0A /* Extension + TVCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +72,11 @@
 		78FF611A2A912D99004EBE0A /* Cast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cast.swift; sourceTree = "<group>"; };
 		78FF611C2A9136DC004EBE0A /* CastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CastTableViewCell.swift; sourceTree = "<group>"; };
 		78FF611E2A913724004EBE0A /* Extension + CastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + CastTableViewCell.swift"; sourceTree = "<group>"; };
+		78FF61202A915BA2004EBE0A /* TVMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVMainViewController.swift; sourceTree = "<group>"; };
+		78FF61222A915BC6004EBE0A /* Extension + TVMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + TVMainView.swift"; sourceTree = "<group>"; };
+		78FF61262A9165E8004EBE0A /* TVCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCollectionViewCell.swift; sourceTree = "<group>"; };
+		78FF61272A9165E8004EBE0A /* TVCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TVCollectionViewCell.xib; sourceTree = "<group>"; };
+		78FF612A2A91663C004EBE0A /* Extension + TVCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + TVCollectionViewCell.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +148,7 @@
 			children = (
 				78FF60D02A909E27004EBE0A /* Main.storyboard */,
 				78FF60F82A90B45E004EBE0A /* MainViewTableViewCell.xib */,
+				78FF61272A9165E8004EBE0A /* TVCollectionViewCell.xib */,
 				78FF60D52A909E29004EBE0A /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -159,6 +170,7 @@
 			children = (
 				78FF60CE2A909E27004EBE0A /* MainViewController.swift */,
 				78FF61162A9120D5004EBE0A /* DetailViewController.swift */,
+				78FF61202A915BA2004EBE0A /* TVMainViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -178,9 +190,11 @@
 				78FF61032A90C0D0004EBE0A /* Extension 추가기능 */,
 				78FF60F52A90B3EE004EBE0A /* Extension + MainView.swift */,
 				78FF61182A9120F8004EBE0A /* Extension + DetailView.swift */,
+				78FF61222A915BC6004EBE0A /* Extension + TVMainView.swift */,
 				78FF60FD2A90BA7E004EBE0A /* Extension + MainViewTableViewCell.swift */,
 				78FF611E2A913724004EBE0A /* Extension + CastTableViewCell.swift */,
 				78FF610A2A90D666004EBE0A /* Extension + URL.swift */,
+				78FF612A2A91663C004EBE0A /* Extension + TVCollectionViewCell.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -190,6 +204,7 @@
 			children = (
 				78FF60F72A90B45E004EBE0A /* MainViewTableViewCell.swift */,
 				78FF611C2A9136DC004EBE0A /* CastTableViewCell.swift */,
+				78FF61262A9165E8004EBE0A /* TVCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -282,6 +297,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78FF61292A9165E8004EBE0A /* TVCollectionViewCell.xib in Resources */,
 				78FF60FA2A90B45E004EBE0A /* MainViewTableViewCell.xib in Resources */,
 				78FF60EF2A90ADAD004EBE0A /* .gitignore in Resources */,
 				78FF60D72A909E29004EBE0A /* LaunchScreen.storyboard in Resources */,
@@ -302,6 +318,7 @@
 				78FF611B2A912D99004EBE0A /* Cast.swift in Sources */,
 				78FF60CB2A909E27004EBE0A /* AppDelegate.swift in Sources */,
 				78FF60F12A90ADDD004EBE0A /* APIKey.swift in Sources */,
+				78FF61232A915BC6004EBE0A /* Extension + TVMainView.swift in Sources */,
 				78FF61152A91074B004EBE0A /* Genres.swift in Sources */,
 				78FF611F2A913724004EBE0A /* Extension + CastTableViewCell.swift in Sources */,
 				78FF61052A90C61A004EBE0A /* Protocol + TableView.swift in Sources */,
@@ -312,11 +329,14 @@
 				78FF61092A90D5BE004EBE0A /* TmdbManager.swift in Sources */,
 				78FF60FE2A90BA7E004EBE0A /* Extension + MainViewTableViewCell.swift in Sources */,
 				78FF61002A90C054004EBE0A /* Extension + CALayer.swift in Sources */,
+				78FF61212A915BA2004EBE0A /* TVMainViewController.swift in Sources */,
 				78FF60F62A90B3EE004EBE0A /* Extension + MainView.swift in Sources */,
 				78FF61132A90EF24004EBE0A /* Extension + ImageView.swift in Sources */,
 				78FF611D2A9136DC004EBE0A /* CastTableViewCell.swift in Sources */,
 				78FF61072A90D590004EBE0A /* Endpoint.swift in Sources */,
+				78FF612B2A91663C004EBE0A /* Extension + TVCollectionViewCell.swift in Sources */,
 				78FF61112A90D758004EBE0A /* Trending.swift in Sources */,
+				78FF61282A9165E8004EBE0A /* TVCollectionViewCell.swift in Sources */,
 				78FF60F92A90B45E004EBE0A /* MainViewTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
