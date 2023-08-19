@@ -43,7 +43,21 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.setCelldata(data: list[indexPath.row])
         cell.genreLabel.text = "#\(genre[list[indexPath.row].genreIDS[0]]!)"
+        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: DetailViewController.identifier) as! DetailViewController
+        
+        let row = list[indexPath.row]
+        
+        vc.forwardValue(data: row)
+        
+        navigationController?.pushViewController(vc, animated: true)
+        
+        tableView.reloadRows(at: [indexPath], with: .none)
     }
     
 

@@ -74,6 +74,12 @@ class MainViewController: UIViewController {
         }
     }
     
+    
+    override func awakeAfter(using coder: NSCoder) -> Any? {
+            navigationItem.backButtonDisplayMode = .minimal
+            return super.awakeAfter(using: coder)
+        }
+    
     //날짜 형변환 함수
     func convertDateFormat(_ inputDate: String, from inputFormat: String, to outputFormat: String) -> String? {
         let inputFormatter = DateFormatter()

@@ -44,4 +44,17 @@ class TmdbManager {
         }
     }
     
+    func callRequstCast(id: Int, completionHandler: @escaping (Cast) -> ()) {
+        
+        let url = "https://api.themoviedb.org/3/movie/\(id)/credits"
+        AF.request(url, method: .get, headers: header).validate()
+            .responseDecodable(of: Cast.self) { response in
+                guard let value = response.value else { return }
+                
+                completionHandler(value)
+            }
+        }
+        
+    
+    
 }
