@@ -8,6 +8,4 @@
 import UIKit
 
 
-extension MainViewController: UITableView {
-    
-}
+
