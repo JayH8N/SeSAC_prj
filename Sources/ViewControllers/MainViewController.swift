@@ -10,6 +10,7 @@ import UIKit
 class MainViewController: UIViewController {
     
     
+    @IBOutlet var tableView: UITableView!
     
     
     

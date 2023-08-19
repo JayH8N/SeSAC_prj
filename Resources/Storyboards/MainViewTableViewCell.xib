@@ -94,13 +94,12 @@
                                     <constraint firstItem="DKH-ew-EZj" firstAttribute="width" secondItem="heF-Ke-6cU" secondAttribute="width" multiplier="0.0573248" id="s8A-dY-cfY"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWW-PN-Kt0">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fWW-PN-Kt0">
                                 <rect key="frame" x="317" y="16" width="29" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="fWW-PN-Kt0" secondAttribute="height" multiplier="1:1" id="faX-EU-Xpf"/>
                                 </constraints>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="Button"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -155,6 +154,20 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="actorsLabel" destination="exq-IF-mt0" id="Jag-RC-Lkn"/>
+                <outlet property="dateLabel" destination="YFb-ei-YfA" id="izn-H3-ho8"/>
+                <outlet property="genreLabel" destination="ewF-YS-dSs" id="1wE-JU-JJD"/>
+                <outlet property="mainBackView" destination="scx-RW-ncp" id="2CP-pz-7Qz"/>
+                <outlet property="mainPosterView" destination="enf-o7-Gk3" id="8cj-yO-kTT"/>
+                <outlet property="pinnedButton" destination="fWW-PN-Kt0" id="0K5-CN-7yN"/>
+                <outlet property="rateLabel" destination="9tX-WM-EbO" id="Njs-Ji-2hS"/>
+                <outlet property="rateScoreLabel" destination="cbc-1L-zrg" id="w1f-wq-Rbb"/>
+                <outlet property="subBackView" destination="heF-Ke-6cU" id="CmL-rz-WA1"/>
+                <outlet property="subBackViewImage" destination="DKH-ew-EZj" id="G9d-NK-pZn"/>
+                <outlet property="subBackViewTitleLabel" destination="wuM-6I-RuM" id="6tD-Ep-M2F"/>
+                <outlet property="titleLabel" destination="bvm-5Y-IHn" id="h6R-8S-rg8"/>
+            </connections>
             <point key="canvasLocation" x="277.86259541984731" y="20.774647887323944"/>
         </tableViewCell>
     </objects>
