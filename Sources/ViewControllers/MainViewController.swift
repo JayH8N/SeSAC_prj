@@ -21,6 +21,7 @@ struct TmdbData {
 
 class MainViewController: UIViewController {
     
+    var page: Int = 1
     
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
@@ -47,7 +48,7 @@ class MainViewController: UIViewController {
         searchBar.isHidden = true
         
         //API
-        TmdbManager.shared.callReqeust(kind: .movies_day) { data in
+        TmdbManager.shared.callReqeust(kind: .movies_day, page: page) { data in
             
             TmdbManager.shared.callGenres(kind: .movie_genre) { jenre in
                 
@@ -100,7 +101,7 @@ class MainViewController: UIViewController {
     @IBAction func segmenteValueChanged(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 1 {
             list.removeAll()
-            TmdbManager.shared.callReqeust(kind: .movies_week) { data in
+            TmdbManager.shared.callReqeust(kind: .movies_week, page: page) { data in
                 for item in data.results {
                     let rawRate = item.voteAverage
                     let rate = String(format: "%.2f", rawRate)
@@ -117,7 +118,7 @@ class MainViewController: UIViewController {
             }
         } else {
             list.removeAll()
-            TmdbManager.shared.callReqeust(kind: .movies_day) { data in
+            TmdbManager.shared.callReqeust(kind: .movies_day, page: page) { data in
                 for item in data.results {
                     let rawRate = item.voteAverage
                     let rate = String(format: "%.2f", rawRate)

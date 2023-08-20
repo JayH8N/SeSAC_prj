@@ -45,6 +45,17 @@ extension TVMainViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let sb = UIStoryboard(name: "Main", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: TVDetailViewController.identifier) as! TVDetailViewController
+        
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .fullScreen
+        
+        present(nav, animated: true)
+    }
+    
+    
 }
 
 

@@ -21,8 +21,8 @@ class TmdbManager {
         "Authorization" : APIKey.tmdbToken
     ]
     
-    func callReqeust(kind: Endpoint, completionHandler: @escaping (TmdbTrending)-> Void) {
-        let url = kind.requestURL + "?language=ko-KR"
+    func callReqeust(kind: Endpoint, page: Int, completionHandler: @escaping (TmdbTrending)-> Void) {
+        let url = kind.requestURL + "?language=ko-KR&page=\(page)"
         
         AF.request(url, method: .get, headers: header).validate(statusCode: 200...500)
             .responseDecodable(of: TmdbTrending.self) { response in

@@ -34,7 +34,7 @@ class TVCollectionViewCell: UICollectionViewCell {
         infoLabel.font = .systemFont(ofSize: 11)
     }
     
-    func setCell(item: TvSeries) {
+    func setCell(item: Tv) {
         let imageURL = "https://image.tmdb.org/t/p/w500"
         
         titleLabel.text = item.name

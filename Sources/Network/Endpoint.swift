@@ -13,6 +13,8 @@ enum Endpoint {
     case movies_day
     case tv_week
     case tv_day
+    case tvSeries_airingToday
+    case tvSeries_Popular
     
     var requestURL: String {
         switch self {
@@ -20,6 +22,8 @@ enum Endpoint {
         case .movies_week: return URL.makeEndPointString("trending/movie/week")
         case .tv_day: return URL.makeEndPointString("trending/tv/day")
         case .tv_week: return URL.makeEndPointString("trending/tv/week")
+        case .tvSeries_airingToday: return URL.makeEndPointString("tv/airing_today")
+        case .tvSeries_Popular: return URL.makeEndPointString("tv/popular")
         }
     }
 }

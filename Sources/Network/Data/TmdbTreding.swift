@@ -29,7 +29,7 @@ struct Result: Codable {
     let originalLanguage: String
     let originalTitle: String?
     let overview, posterPath: String
-    let mediaType: MediaType
+    let mediaType: String
     let genreIDS: [Int]
     let popularity: Double
     let releaseDate: String?
@@ -61,7 +61,7 @@ struct Result: Codable {
     }
 }
 
-enum MediaType: String, Codable {
+enum MediaTypeTrending: String, Codable {
     case movie = "movie"
     case tv = "tv"
 }

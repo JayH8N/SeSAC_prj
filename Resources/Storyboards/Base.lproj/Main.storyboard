@@ -133,7 +133,7 @@
                     <navigationItem key="navigationItem" id="nfB-0j-5eF">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="owc-Lf-2cb">
                             <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="eeW-mi-XOL">
-                                <rect key="frame" x="16" y="5.6666666666666679" width="131" height="33"/>
+                                <rect key="frame" x="16" y="5" width="133" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="day"/>
@@ -154,6 +154,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G0l-oV-RVp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="301.52671755725191" y="278.87323943661971"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="KeG-eM-uA1">
+            <objects>
+                <viewController storyboardIdentifier="TVDetailViewController" id="J8D-ri-Lny" customClass="TVDetailViewController" customModule="Media" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b40-c9-sfb">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Shr-yH-Mai"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="48S-O2-WPx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1276" y="279"/>
         </scene>
         <!--Movie-->
         <scene sceneID="CDP-bl-ZLt">
@@ -330,6 +345,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="2Q5-Lz-UuR" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hkZ-3O-aY5">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
