@@ -9,14 +9,14 @@ import UIKit
 
 
 struct TmdbData {
-    var releaseDate: String
-    var genreIDS: [Int]
-    var voteAverage: String
-    var title: String
-    var overview: String
-    var backdropPath: String
-    var posterPath: String
-    var id: Int
+    let releaseDate: String
+    let genreIDS: [Int]
+    let voteAverage: String
+    let title: String
+    let overview: String
+    let backdropPath: String
+    let posterPath: String
+    let id: Int
 }
 
 class MainViewController: UIViewController {

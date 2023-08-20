@@ -28,7 +28,7 @@
 		78FF61072A90D590004EBE0A /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF61062A90D590004EBE0A /* Endpoint.swift */; };
 		78FF61092A90D5BE004EBE0A /* TmdbManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF61082A90D5BE004EBE0A /* TmdbManager.swift */; };
 		78FF610B2A90D666004EBE0A /* Extension + URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF610A2A90D666004EBE0A /* Extension + URL.swift */; };
-		78FF61112A90D758004EBE0A /* Trending.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF61102A90D758004EBE0A /* Trending.swift */; };
+		78FF61112A90D758004EBE0A /* TmdbTreding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF61102A90D758004EBE0A /* TmdbTreding.swift */; };
 		78FF61132A90EF24004EBE0A /* Extension + ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF61122A90EF24004EBE0A /* Extension + ImageView.swift */; };
 		78FF61152A91074B004EBE0A /* Genres.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF61142A91074B004EBE0A /* Genres.swift */; };
 		78FF61172A9120D5004EBE0A /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF61162A9120D5004EBE0A /* DetailViewController.swift */; };
@@ -41,6 +41,7 @@
 		78FF61282A9165E8004EBE0A /* TVCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF61262A9165E8004EBE0A /* TVCollectionViewCell.swift */; };
 		78FF61292A9165E8004EBE0A /* TVCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78FF61272A9165E8004EBE0A /* TVCollectionViewCell.xib */; };
 		78FF612B2A91663C004EBE0A /* Extension + TVCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF612A2A91663C004EBE0A /* Extension + TVCollectionViewCell.swift */; };
+		78FF612F2A916AC5004EBE0A /* Protocol + CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF612E2A916AC5004EBE0A /* Protocol + CollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,7 +65,7 @@
 		78FF61062A90D590004EBE0A /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		78FF61082A90D5BE004EBE0A /* TmdbManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TmdbManager.swift; sourceTree = "<group>"; };
 		78FF610A2A90D666004EBE0A /* Extension + URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + URL.swift"; sourceTree = "<group>"; };
-		78FF61102A90D758004EBE0A /* Trending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trending.swift; sourceTree = "<group>"; };
+		78FF61102A90D758004EBE0A /* TmdbTreding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TmdbTreding.swift; sourceTree = "<group>"; };
 		78FF61122A90EF24004EBE0A /* Extension + ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + ImageView.swift"; sourceTree = "<group>"; };
 		78FF61142A91074B004EBE0A /* Genres.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genres.swift; sourceTree = "<group>"; };
 		78FF61162A9120D5004EBE0A /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -77,6 +78,7 @@
 		78FF61262A9165E8004EBE0A /* TVCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCollectionViewCell.swift; sourceTree = "<group>"; };
 		78FF61272A9165E8004EBE0A /* TVCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TVCollectionViewCell.xib; sourceTree = "<group>"; };
 		78FF612A2A91663C004EBE0A /* Extension + TVCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + TVCollectionViewCell.swift"; sourceTree = "<group>"; };
+		78FF612E2A916AC5004EBE0A /* Protocol + CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Protocol + CollectionView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 			children = (
 				78FF60FB2A90B99F004EBE0A /* Protocol + identifier.swift */,
 				78FF61042A90C61A004EBE0A /* Protocol + TableView.swift */,
+				78FF612E2A916AC5004EBE0A /* Protocol + CollectionView.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -222,7 +225,7 @@
 		78FF610F2A90D747004EBE0A /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				78FF61102A90D758004EBE0A /* Trending.swift */,
+				78FF61102A90D758004EBE0A /* TmdbTreding.swift */,
 				78FF61142A91074B004EBE0A /* Genres.swift */,
 				78FF611A2A912D99004EBE0A /* Cast.swift */,
 			);
@@ -314,6 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78FF60CF2A909E27004EBE0A /* MainViewController.swift in Sources */,
+				78FF612F2A916AC5004EBE0A /* Protocol + CollectionView.swift in Sources */,
 				78FF61172A9120D5004EBE0A /* DetailViewController.swift in Sources */,
 				78FF611B2A912D99004EBE0A /* Cast.swift in Sources */,
 				78FF60CB2A909E27004EBE0A /* AppDelegate.swift in Sources */,
@@ -335,7 +339,7 @@
 				78FF611D2A9136DC004EBE0A /* CastTableViewCell.swift in Sources */,
 				78FF61072A90D590004EBE0A /* Endpoint.swift in Sources */,
 				78FF612B2A91663C004EBE0A /* Extension + TVCollectionViewCell.swift in Sources */,
-				78FF61112A90D758004EBE0A /* Trending.swift in Sources */,
+				78FF61112A90D758004EBE0A /* TmdbTreding.swift in Sources */,
 				78FF61282A9165E8004EBE0A /* TVCollectionViewCell.swift in Sources */,
 				78FF60F92A90B45E004EBE0A /* MainViewTableViewCell.swift in Sources */,
 			);
