@@ -16,6 +16,7 @@ struct TmdbData {
     let overview: String
     let backdropPath: String
     let posterPath: String
+    let originalTitle: String
     let id: Int
 }
 
@@ -68,7 +69,7 @@ class MainViewController: UIViewController {
                     let newDate = self.convertDateFormat(rawDate ?? "0000-00-00", from: "yyyy-MM-dd", to: "MM/dd/yyyy")
                     
                     
-                    let data = TmdbData(releaseDate: newDate ?? "", genreIDS: item.genreIDS, voteAverage: rate, title: title ?? "", overview: item.overview, backdropPath: item.backdropPath, posterPath: item.posterPath, id: item.id)
+                    let data = TmdbData(releaseDate: newDate ?? "", genreIDS: item.genreIDS, voteAverage: rate, title: title ?? "", overview: item.overview, backdropPath: item.backdropPath, posterPath: item.posterPath, originalTitle: item.originalTitle ?? "", id: item.id)
                     
                     self.list.append(data)
                 }
@@ -111,7 +112,7 @@ class MainViewController: UIViewController {
                     let newDate = self.convertDateFormat(rawDate ?? "0000-00-00", from: "yyyy-MM-dd", to: "MM/dd/yyyy")
                     
                     
-                    let data = TmdbData(releaseDate: newDate ?? "", genreIDS: item.genreIDS, voteAverage: rate, title: title ?? "", overview: item.overview, backdropPath: item.backdropPath, posterPath: item.posterPath, id: item.id)
+                    let data = TmdbData(releaseDate: newDate ?? "", genreIDS: item.genreIDS, voteAverage: rate, title: title ?? "", overview: item.overview, backdropPath: item.backdropPath, posterPath: item.posterPath, originalTitle: item.originalTitle ?? "", id: item.id)
                     
                     self.list.append(data)
                 }
@@ -128,7 +129,7 @@ class MainViewController: UIViewController {
                     let newDate = self.convertDateFormat(rawDate ?? "0000-00-00", from: "yyyy-MM-dd", to: "MM/dd/yyyy")
                     
                     
-                    let data = TmdbData(releaseDate: newDate ?? "", genreIDS: item.genreIDS, voteAverage: rate, title: title ?? "", overview: item.overview, backdropPath: item.backdropPath, posterPath: item.posterPath, id: item.id)
+                    let data = TmdbData(releaseDate: newDate ?? "", genreIDS: item.genreIDS, voteAverage: rate, title: title ?? "", overview: item.overview, backdropPath: item.backdropPath, posterPath: item.posterPath, originalTitle: item.originalTitle ?? "", id: item.id)
                     
                     self.list.append(data)
                 }

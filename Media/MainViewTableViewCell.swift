@@ -20,6 +20,7 @@ class MainViewTableViewCell: UITableViewCell {
     @IBOutlet var rateLabel: UILabel!
     @IBOutlet var rateScoreLabel: UILabel!
     @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var originalTitle: UILabel!
     @IBOutlet var actorsLabel: UILabel!
     @IBOutlet var subBackView: UIView!
     @IBOutlet var subBackViewTitleLabel: UILabel!
@@ -48,6 +49,8 @@ class MainViewTableViewCell: UITableViewCell {
             rateScoreLabel.textAlignment = .center
             rateScoreLabel.backgroundColor = .white
             titleLabel.font = .systemFont(ofSize: 20)
+            originalTitle.font = .systemFont(ofSize: 20)
+            originalTitle.textColor = .green
             actorsLabel.textColor = .lightGray
             actorsLabel.font = .systemFont(ofSize: 14)
             subBackViewTitleLabel.text = "자세히 보기"
@@ -86,6 +89,7 @@ class MainViewTableViewCell: UITableViewCell {
         rateScoreLabel.text = "\(data.voteAverage)"
         actorsLabel.text = data.overview
         titleLabel.text = data.title
+        originalTitle.text = data.originalTitle
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
