@@ -49,6 +49,8 @@ extension TVMainViewController: UICollectionViewDelegate, UICollectionViewDataSo
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: TVDetailViewController.identifier) as! TVDetailViewController
         
+        vc.tvId = tvList[indexPath.item].id
+        
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen
         

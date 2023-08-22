@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		782C56572A93556500090BED /* Backdrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782C56562A93556500090BED /* Backdrop.swift */; };
 		78FF60CB2A909E27004EBE0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF60CA2A909E27004EBE0A /* AppDelegate.swift */; };
 		78FF60CD2A909E27004EBE0A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF60CC2A909E27004EBE0A /* SceneDelegate.swift */; };
 		78FF60CF2A909E27004EBE0A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF60CE2A909E27004EBE0A /* MainViewController.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		782C56562A93556500090BED /* Backdrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backdrop.swift; sourceTree = "<group>"; };
 		78FF60C72A909E27004EBE0A /* Media.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Media.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78FF60CA2A909E27004EBE0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78FF60CC2A909E27004EBE0A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				78FF61102A90D758004EBE0A /* TmdbTreding.swift */,
 				78FF61142A91074B004EBE0A /* Genres.swift */,
 				78FF611A2A912D99004EBE0A /* Cast.swift */,
+				782C56562A93556500090BED /* Backdrop.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				78FF60CF2A909E27004EBE0A /* MainViewController.swift in Sources */,
 				78FF61332A91EAB1004EBE0A /* Extension + TVDetailView.swift in Sources */,
 				78FF612F2A916AC5004EBE0A /* Protocol + CollectionView.swift in Sources */,
+				782C56572A93556500090BED /* Backdrop.swift in Sources */,
 				78FF61172A9120D5004EBE0A /* DetailViewController.swift in Sources */,
 				78FF611B2A912D99004EBE0A /* Cast.swift in Sources */,
 				78FF60CB2A909E27004EBE0A /* AppDelegate.swift in Sources */,

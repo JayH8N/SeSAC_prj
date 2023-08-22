@@ -21,11 +21,11 @@ class TmdbManager {
         "Authorization" : APIKey.tmdbToken
     ]
     
-    func callReqeust(kind: Endpoint, page: Int, completionHandler: @escaping (TmdbTrending)-> Void) {
+    func callReqeust(kind: Endpoint, page: Int, completionHandler: @escaping (Tmdb)-> Void) {
         let url = kind.requestURL + "?language=ko-KR&page=\(page)"
         
         AF.request(url, method: .get, headers: header).validate(statusCode: 200...500)
-            .responseDecodable(of: TmdbTrending.self) { response in
+            .responseDecodable(of: Tmdb.self) { response in
                 guard let value = response.value else { return }
                 
                 completionHandler(value)
@@ -55,6 +55,15 @@ class TmdbManager {
             }
         }
     
+    func callReqeustTVSeries(id: Int, tvOption: TVSeires, page: Int, completionHandler: @escaping (Tmdb) -> ()) {
+        let url = "https://api.themoviedb.org/3/tv/\(id)/" + tvOption.requestURL + "?page=\(page)"
+        
+        AF.request(url, method: .get).validate()
+            .responseDecodable(of: Tmdb.self) { response in
+                guard let value = response.value else { return }
+                
+            }
+    }
     
     
         

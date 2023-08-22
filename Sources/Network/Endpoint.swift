@@ -42,6 +42,19 @@ enum GenreList {
     }
 }
 
+enum TVSeires {
+    case similar
+    case videos
+    case recommendations
+    
+    var requestURL: String {
+        switch self {
+        case .similar: return "similar"
+        case .videos: return "videos"
+        case .recommendations: return "recommendations"
 
+        }
+    }
+}
 
 

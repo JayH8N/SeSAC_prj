@@ -8,7 +8,7 @@
 import UIKit
 
 // MARK: - TrendingAll
-struct TmdbTrending: Codable {
+struct Tmdb: Codable {
     let page: Int
     let results: [Result]
     let totalPages, totalResults: Int
