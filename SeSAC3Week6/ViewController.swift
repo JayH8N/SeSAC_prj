@@ -111,7 +111,7 @@ class ViewController: UIViewController {
 //        let vc = sb.instantiateViewController(withIdentifier: <#T##String#>) as!
 //        present(vc, animated: true)
         
-        let vc = LocationViewController() //화면전환할 Class 인스턴스 생성
+        let vc = SnapViewController() //화면전환할 Class 인스턴스 생성
         present(vc, animated: true)
         
     }
