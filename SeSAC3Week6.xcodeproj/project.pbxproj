@@ -22,6 +22,9 @@
 		782C56262A930A4000090BED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 782C56242A930A4000090BED /* Main.storyboard */; };
 		782C56282A930A4100090BED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 782C56272A930A4100090BED /* Assets.xcassets */; };
 		782C562B2A930A4100090BED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 782C56292A930A4100090BED /* LaunchScreen.storyboard */; };
+		78F6E59C2A95D1D500365E24 /* Case4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E59B2A95D1D500365E24 /* Case4ViewController.swift */; };
+		78F6E59E2A95E42D00365E24 /* Enum + Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E59D2A95E42D00365E24 /* Enum + Annotation.swift */; };
+		78F6E5A32A95E4E200365E24 /* Movie_map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E5A22A95E4E200365E24 /* Movie_map.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		782C56272A930A4100090BED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		782C562A2A930A4100090BED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		782C562C2A930A4100090BED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78F6E59B2A95D1D500365E24 /* Case4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Case4ViewController.swift; sourceTree = "<group>"; };
+		78F6E59D2A95E42D00365E24 /* Enum + Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enum + Annotation.swift"; sourceTree = "<group>"; };
+		78F6E5A22A95E4E200365E24 /* Movie_map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie_map.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +77,7 @@
 				782632A32A94A1AD00730DD9 /* Case1ViewController.swift */,
 				782632A72A94AD2300730DD9 /* Case2ViewController.swift */,
 				782632A92A94AD5300730DD9 /* Case3ViewController.swift */,
+				78F6E59B2A95D1D500365E24 /* Case4ViewController.swift */,
 			);
 			name = "과제";
 			path = "r과제";
@@ -95,6 +102,8 @@
 		782C561D2A930A4000090BED /* SeSAC3Week6 */ = {
 			isa = PBXGroup;
 			children = (
+				78F6E5A12A95E4D300365E24 /* Model */,
+				78F6E59F2A95E43300365E24 /* Enum */,
 				782632A02A949A7800730DD9 /* 과제 */,
 				782632992A94464400730DD9 /* Test */,
 				782C561E2A930A4000090BED /* AppDelegate.swift */,
@@ -107,6 +116,22 @@
 				7826329E2A94792D00730DD9 /* LocationViewController.swift */,
 			);
 			path = SeSAC3Week6;
+			sourceTree = "<group>";
+		};
+		78F6E59F2A95E43300365E24 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				78F6E59D2A95E42D00365E24 /* Enum + Annotation.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
+		78F6E5A12A95E4D300365E24 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				78F6E5A22A95E4E200365E24 /* Movie_map.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -188,16 +213,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78F6E5A32A95E4E200365E24 /* Movie_map.swift in Sources */,
 				782632A42A94A1AD00730DD9 /* Case1ViewController.swift in Sources */,
 				782632A82A94AD2300730DD9 /* Case2ViewController.swift in Sources */,
 				782632A22A949AD400730DD9 /* MainViewController.swift in Sources */,
 				7826329D2A945CB300730DD9 /* TextViewController.swift in Sources */,
+				78F6E59E2A95E42D00365E24 /* Enum + Annotation.swift in Sources */,
 				7826329B2A94467400730DD9 /* SnapViewController.swift in Sources */,
 				782C56232A930A4000090BED /* ViewController.swift in Sources */,
 				7826329F2A94792D00730DD9 /* LocationViewController.swift in Sources */,
 				782C561F2A930A4000090BED /* AppDelegate.swift in Sources */,
 				782632AA2A94AD5300730DD9 /* Case3ViewController.swift in Sources */,
 				782C56212A930A4000090BED /* SceneDelegate.swift in Sources */,
+				78F6E59C2A95D1D500365E24 /* Case4ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,7 +301,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -327,7 +355,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -347,6 +375,7 @@
 				DEVELOPMENT_TEAM = 57CCR42RDS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSAC3Week6/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -379,6 +408,7 @@
 				DEVELOPMENT_TEAM = 57CCR42RDS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSAC3Week6/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

@@ -30,7 +30,6 @@ class Case2ViewController: UIViewController {
         button.tintColor = .white
         button.contentVerticalAlignment = .fill
         button.contentHorizontalAlignment = .fill
-        button.imageEdgeInsets = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2)
         return button
     }
     
@@ -42,7 +41,7 @@ class Case2ViewController: UIViewController {
         stackView.axis = .horizontal
         stackView.alignment = .fill
         stackView.distribution = .fillEqually
-        stackView.spacing = 4
+        stackView.spacing = 6
         return stackView
     }()
     
@@ -50,28 +49,37 @@ class Case2ViewController: UIViewController {
        let view = UIImageView()
         view.layer.cornerRadius = 15
         view.clipsToBounds = true
-        view.contentMode = .scaleToFill
+        view.contentMode = .scaleAspectFill
         return view
     }()
     
     let profileName = {
         let nameLabel = UILabel()
         nameLabel.textColor = .white
-        nameLabel.font = .systemFont(ofSize: 25)
+        nameLabel.font = .systemFont(ofSize: 20)
         nameLabel.textAlignment = .center
-        nameLabel.text = "Jack"
+        nameLabel.text = "화수목"
         return nameLabel
     }()
     
     let profileStackView = {
         let stackView = UIStackView()
         
-        stackView.translatesAutoresizingMaskIntoConstraints = false
+        //stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.alignment = .fill
         stackView.distribution = .equalSpacing
-        stackView.spacing = 0
+        stackView.spacing = 8
         return stackView
+    }()
+    
+    let profileSubLabel = {
+        let subLabel = UILabel()
+        subLabel.textColor = .white
+        subLabel.font = .systemFont(ofSize: 12)
+        subLabel.textAlignment = .center
+        subLabel.text = "금 - 토 - 일 - 월"
+        return subLabel
     }()
     
     
@@ -86,13 +94,35 @@ class Case2ViewController: UIViewController {
         stackView.axis = .horizontal
         stackView.alignment = .fill
         stackView.distribution = .fillEqually//.equalCentering
-        stackView.spacing = 10
+        stackView.spacing = 8
         return stackView
     }()
     
+    let uiBottomView = {
+        let uiview = UIView()
+        
+        uiview.backgroundColor = .clear
+        uiview.layer.borderColor = UIColor.lightGray.cgColor
+        uiview.layer.borderWidth = 0.7
+        
+        return uiview
+    }()
+    
+    //
+    let bottomDot1 = dotLabel()
+    let bottomDot2 = dotLabel()
+    
+    static func dotLabel() -> UILabel {
+        let subLabel = UILabel()
+        subLabel.font = .systemFont(ofSize: 40)
+        subLabel.textAlignment = .center
+        subLabel.textColor = .red
+        subLabel.text = "."
+        return subLabel
+    }
     
     
-    var backImageURL = "https://mblogthumb-phinf.pstatic.net/MjAxOTA3MTFfMjkz/MDAxNTYyODE4NzgyNzAz.spF-UPv2e4FUri41SGizxNMQRZb5VGbNs0H05cCWPfQg.e4yrDL47pXBmjyCfs4tRsi5mqU-ATAylfI42Wdu-RIQg.JPEG.yzzzii/output_935416776.jpg?type=w800"
+    var backImageURL = "https://cdn.imweb.me/upload/S2020112471695bbb9a79c/21456b9eefe72.jpg"
     
     var profileImage = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_640.png"
     
@@ -101,6 +131,7 @@ class Case2ViewController: UIViewController {
         super.viewDidLoad()
         //-----
         view.addSubview(backImageView)
+        view.addSubview(uiBottomView)
         backImageView.isUserInteractionEnabled = true
         backImageView.addSubview(xmark)
         backImageView.addSubview(firstButton)
@@ -110,10 +141,13 @@ class Case2ViewController: UIViewController {
         backImageView.addSubview(profileImageView)
         backImageView.addSubview(profileName)
         backImageView.addSubview(profileStackView)
-        backImageView.addSubview(bottomButton1)
-        backImageView.addSubview(bottomButton2)
-        backImageView.addSubview(bottomButton3)
-        backImageView.addSubview(bottomStackView)
+        backImageView.addSubview(profileSubLabel)
+        uiBottomView.addSubview(bottomButton1)
+        uiBottomView.addSubview(bottomButton2)
+        uiBottomView.addSubview(bottomButton3)
+        uiBottomView.addSubview(bottomStackView)
+        uiBottomView.addSubview(bottomDot1)
+        uiBottomView.addSubview(bottomDot2)
         //-----
         
         
@@ -140,6 +174,7 @@ class Case2ViewController: UIViewController {
         setProfileImageView(image: profileImageView, url: profileImage)
         setProfileLabel()
         setProfileStackView()
+        setProfileSubLabel()
         
         
         //상단
@@ -162,6 +197,12 @@ class Case2ViewController: UIViewController {
         setBottomUIButton(uiButton: bottomButton3, title: "카카오 스토리", imageName: "book.fill")
         setBottomStackView()
         
+        //uiViewbottom
+        setUIBottomView()
+        
+        //bottomDot
+        setBottomDot1()
+        setBottomDot2()
     }
     
     
@@ -179,7 +220,7 @@ class Case2ViewController: UIViewController {
     
     func setProfileImageView(image: UIImageView, url: String) {
         image.snp.makeConstraints { make in
-            make.size.equalTo(100)
+            make.size.equalTo(90)
         }
         if let url = URL(string: url) {
             image.kf.setImage(with: url)
@@ -195,14 +236,22 @@ class Case2ViewController: UIViewController {
         }
     }
     
+    func setProfileSubLabel() {
+        profileSubLabel.snp.makeConstraints { make in
+            make.leadingMargin.equalTo(30)
+            make.trailingMargin.equalTo(-30)
+            make.top.equalTo(profileStackView.snp.bottom).offset(2)
+        }
+    }
+    
     
     //MARK: - Xmark
     func setXmark() {
         print(#function)
         xmark.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide).inset(4)
+            make.top.equalTo(view.safeAreaLayoutGuide).inset(7)
             make.leading.equalTo(16)
-            make.size.equalTo(30)
+            make.size.equalTo(22)
         }
         
         xmark.addTarget(self, action: #selector(Self.closeButtonClicked), for: .touchUpInside)
@@ -218,19 +267,19 @@ class Case2ViewController: UIViewController {
     
     func setButton1() {
         firstButton.snp.makeConstraints { make in
-            make.size.equalTo(40)
+            make.size.equalTo(33)
         }
     }
     
     func setButton2() {
         secondButton.snp.makeConstraints { make in
-            make.size.equalTo(40)
+            make.size.equalTo(33)
         }
     }
     
     func setButton3() {
         firstButton.snp.makeConstraints { make in
-            make.size.equalTo(40)
+            make.size.equalTo(33)
         }
     }
     
@@ -238,7 +287,7 @@ class Case2ViewController: UIViewController {
         stackView.snp.makeConstraints { make in
             make.trailingMargin.equalTo(-20)
             make.top.equalTo(view.safeAreaLayoutGuide).inset(4)
-            make.height.equalTo(40)
+            //make.height.equalTo(40)
         }
     }
     
@@ -246,16 +295,15 @@ class Case2ViewController: UIViewController {
     func setProfileStackView() {
         profileStackView.snp.makeConstraints { make in
             make.centerX.equalTo(view)
-            make.centerY.equalTo(view).multipliedBy(1.3)
+            make.centerY.equalTo(view).multipliedBy(1.44)
         }
     }
     
     //bottom 버튼
     func setBottomUIButton(uiButton: UIButton, title: String, imageName: String) {
         
+        let imageConfig = UIImage.SymbolConfiguration(pointSize: 14)
         var button = UIButton.Configuration.plain()
-        
-        button.title = title
         
         button.titleAlignment = .center
 
@@ -263,26 +311,53 @@ class Case2ViewController: UIViewController {
         button.image = UIImage(systemName: imageName)
         button.imagePadding = 15
         button.imagePlacement = .top
-
+        button.preferredSymbolConfigurationForImage = imageConfig
+        
         uiButton.configuration = button
         uiButton.tintColor = .white
-
         
+        let attribute = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12)]
+        let attributedTitle = NSAttributedString(string: title, attributes: attribute)
+        uiButton.setAttributedTitle(attributedTitle, for: .normal)
     }
-    
-    
 
     
     //bottom스택뷰
     func setBottomStackView() {
         bottomStackView.snp.makeConstraints { make in
-            make.leadingMargin.equalTo(24)
-            make.trailingMargin.equalTo(-24)
-            make.top.equalTo(profileStackView.snp.bottom).offset(16)
-            make.height.equalTo(130)
+            make.leadingMargin.equalTo(40)
+            make.trailingMargin.equalTo(-40)
+            //make.top.equalTo(profileStackView.snp.bottom).offset(4)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).offset(8)
+            make.height.equalTo(90)
         }
     }
     
+    
+    //uiBottomView
+    func setUIBottomView() {
+        uiBottomView.snp.makeConstraints { make in
+            make.leading.equalTo(view)
+            make.trailing.equalTo(view)
+            make.bottom.equalTo(view)
+            make.height.equalTo(138)
+        }
+    }
+    
+    //bottomDot
+    func setBottomDot1() {
+        bottomDot1.snp.makeConstraints { make in
+            make.centerX.equalTo(uiBottomView).multipliedBy(1.62)
+            make.centerY.equalTo(uiBottomView).multipliedBy(0.46)
+        }
+    }
+    
+    func setBottomDot2() {
+        bottomDot2.snp.makeConstraints { make in
+            make.centerX.equalTo(uiBottomView).multipliedBy(1.09)
+            make.centerY.equalTo(uiBottomView).multipliedBy(0.46)
+        }
+    }
     
 
 }

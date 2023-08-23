@@ -13,6 +13,7 @@ class MainViewController: UIViewController {
     let case1Button = setUIButton()
     let case2Button = setUIButton()
     let case3Button = setUIButton()
+    let case4Button = setUIButton()
     
     static func setUIButton() -> UIButton {
         let button = UIButton()
@@ -28,11 +29,15 @@ class MainViewController: UIViewController {
         view.addSubview(case1Button)
         view.addSubview(case2Button)
         view.addSubview(case3Button)
+        view.addSubview(case4Button)
 
         setCase1Button()
         setCase2Button()
         setCase3button()
+        setCase4button()
         
+        title = "Assignment"
+        //view.backgroundColor = .white
 
     }
     
@@ -73,6 +78,18 @@ class MainViewController: UIViewController {
         case3Button.addTarget(self, action: #selector(case3ButtonClicked), for: .touchUpInside)
     }
     
+    func setCase4button() {
+        case4Button.backgroundColor = .red
+        case4Button.setTitle("영화관 지도", for: .normal)
+        case4Button.snp.makeConstraints { make in
+            make.top.equalTo(case3Button.snp.bottom).offset(20)
+            make.leadingMargin.equalTo(20)
+            make.trailingMargin.equalTo(-20)
+            make.height.equalTo(40)
+        }
+        case4Button.addTarget(self, action: #selector(case4ButtonClicked), for: .touchUpInside)
+    }
+    
     @objc
     func case1ButtonClicked() {
         
@@ -89,8 +106,21 @@ class MainViewController: UIViewController {
     }
     
     @objc func case3ButtonClicked() {
-        let vc = Case3ViewController()
-        present(vc, animated: true)
+//        let vc = Case3ViewController()
+//        present(vc, animated: true)
+        
+        navigationController?.pushViewController(Case3ViewController(), animated: true)
+    }
+    
+    @objc func case4ButtonClicked() {
+        print("눌리긴하냐")
+        let vc = Case4ViewController()
+//
+//        let nav = UINavigationController(rootViewController: vc)
+//        nav.modalPresentationStyle = .fullScreen
+//        present(nav, animated: true)
+        
+        navigationController?.pushViewController(vc, animated: true)
     }
 
 }
