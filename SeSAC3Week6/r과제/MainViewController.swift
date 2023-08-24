@@ -95,6 +95,8 @@ class MainViewController: UIViewController {
         
         let vc = Case1ViewController() //화면전환할 Class 인스턴스 생성
         present(vc, animated: true)
+        
+        //transition(viewController: GenericViewController.self, storyboard: "Main"/*열거형 활용*/, style: .present)
     }
 
     @objc func case2ButtonClicked() {

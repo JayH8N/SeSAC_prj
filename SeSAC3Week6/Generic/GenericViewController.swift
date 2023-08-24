@@ -20,6 +20,10 @@ class GenericViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "네비게이션 타이틀"
+        
+        view.backgroundColor = .brown
+        
         view.addSubview(sampleLabel)
         configureBorder(view: sampleLabel)
         sampleLabel.backgroundColor = .yellow

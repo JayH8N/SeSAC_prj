@@ -18,9 +18,14 @@ extension UIViewController {
     
     
     
-    func transition(storyboard: String, style: TransitionStyle) {
+    
+    /*
+     "고래밥" > String
+     String > String.self > String.Type
+     */
+    func transition<T: UIViewController>(viewController: T.Type, storyboard: String, style: TransitionStyle) {
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        guard let vc = sb.instantiateViewController(withIdentifier: "ViewController" ) as? ViewController else { return }
+        guard let vc = sb.instantiateViewController(withIdentifier: String(describing: viewController) ) as? T else { return }
         
         
         switch style {
@@ -28,11 +33,11 @@ extension UIViewController {
             present(vc, animated: true)
         case .presentNavigation:
             let nav = UINavigationController(rootViewController: vc)
-            present(vc, animated: true)
+            present(nav, animated: true)
         case .presentFullNavigation:
             let nav = UINavigationController(rootViewController: vc)
             nav.modalPresentationStyle = .fullScreen
-            present(vc, animated: true)
+            present(nav, animated: true)
         case .push:
             navigationController?.pushViewController(vc, animated: true)
         }
