@@ -32,6 +32,8 @@
 		78F6E5B52A9745BF00365E24 /* NetflixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E5B42A9745BF00365E24 /* NetflixViewController.swift */; };
 		78F6E5B72A9745CF00365E24 /* JackFlixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E5B62A9745CF00365E24 /* JackFlixViewController.swift */; };
 		78F6E5BB2A974B5300365E24 /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E5BA2A974B5300365E24 /* InputTextField.swift */; };
+		78F6E5BD2A97B43200365E24 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E5BC2A97B43200365E24 /* CircleImageView.swift */; };
+		78F6E5BF2A97C09000365E24 /* TopButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E5BE2A97C09000365E24 /* TopButtonLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		78F6E5B42A9745BF00365E24 /* NetflixViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixViewController.swift; sourceTree = "<group>"; };
 		78F6E5B62A9745CF00365E24 /* JackFlixViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackFlixViewController.swift; sourceTree = "<group>"; };
 		78F6E5BA2A974B5300365E24 /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
+		78F6E5BC2A97B43200365E24 /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
+		78F6E5BE2A97C09000365E24 /* TopButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopButtonLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -174,6 +178,8 @@
 			isa = PBXGroup;
 			children = (
 				78F6E5B42A9745BF00365E24 /* NetflixViewController.swift */,
+				78F6E5BC2A97B43200365E24 /* CircleImageView.swift */,
+				78F6E5BE2A97C09000365E24 /* TopButtonLabel.swift */,
 			);
 			path = Netflix;
 			sourceTree = "<group>";
@@ -265,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78F6E5BD2A97B43200365E24 /* CircleImageView.swift in Sources */,
 				78F6E5A82A96F13B00365E24 /* Extension + UIViewController.swift in Sources */,
 				78F6E5A32A95E4E200365E24 /* Movie_map.swift in Sources */,
 				78F6E5AD2A971E9B00365E24 /* BlackRadiusTextField.swift in Sources */,
@@ -283,6 +290,7 @@
 				782C56212A930A4000090BED /* SceneDelegate.swift in Sources */,
 				78F6E59C2A95D1D500365E24 /* Case4ViewController.swift in Sources */,
 				78F6E5AF2A972A1800365E24 /* CustomTableViewController.swift in Sources */,
+				78F6E5BF2A97C09000365E24 /* TopButtonLabel.swift in Sources */,
 				78F6E5B72A9745CF00365E24 /* JackFlixViewController.swift in Sources */,
 				78F6E5BB2A974B5300365E24 /* InputTextField.swift in Sources */,
 				78F6E5AB2A971CE300365E24 /* CustomViewController.swift in Sources */,
