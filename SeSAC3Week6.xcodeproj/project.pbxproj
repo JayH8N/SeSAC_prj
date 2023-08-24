@@ -29,6 +29,9 @@
 		78F6E5AB2A971CE300365E24 /* CustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E5AA2A971CE300365E24 /* CustomViewController.swift */; };
 		78F6E5AD2A971E9B00365E24 /* BlackRadiusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E5AC2A971E9B00365E24 /* BlackRadiusTextField.swift */; };
 		78F6E5AF2A972A1800365E24 /* CustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E5AE2A972A1800365E24 /* CustomTableViewController.swift */; };
+		78F6E5B52A9745BF00365E24 /* NetflixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E5B42A9745BF00365E24 /* NetflixViewController.swift */; };
+		78F6E5B72A9745CF00365E24 /* JackFlixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E5B62A9745CF00365E24 /* JackFlixViewController.swift */; };
+		78F6E5BB2A974B5300365E24 /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E5BA2A974B5300365E24 /* InputTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +57,9 @@
 		78F6E5AA2A971CE300365E24 /* CustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewController.swift; sourceTree = "<group>"; };
 		78F6E5AC2A971E9B00365E24 /* BlackRadiusTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackRadiusTextField.swift; sourceTree = "<group>"; };
 		78F6E5AE2A972A1800365E24 /* CustomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewController.swift; sourceTree = "<group>"; };
+		78F6E5B42A9745BF00365E24 /* NetflixViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixViewController.swift; sourceTree = "<group>"; };
+		78F6E5B62A9745CF00365E24 /* JackFlixViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackFlixViewController.swift; sourceTree = "<group>"; };
+		78F6E5BA2A974B5300365E24 /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +87,7 @@
 		782632A02A949A7800730DD9 /* 과제 */ = {
 			isa = PBXGroup;
 			children = (
+				78F6E5B32A9745AB00365E24 /* JackFlix */,
 				78F6E5B02A9738BF00365E24 /* Netflix */,
 				782632A12A949AD400730DD9 /* MainViewController.swift */,
 				782632A32A94A1AD00730DD9 /* Case1ViewController.swift */,
@@ -166,8 +173,18 @@
 		78F6E5B02A9738BF00365E24 /* Netflix */ = {
 			isa = PBXGroup;
 			children = (
+				78F6E5B42A9745BF00365E24 /* NetflixViewController.swift */,
 			);
 			path = Netflix;
+			sourceTree = "<group>";
+		};
+		78F6E5B32A9745AB00365E24 /* JackFlix */ = {
+			isa = PBXGroup;
+			children = (
+				78F6E5B62A9745CF00365E24 /* JackFlixViewController.swift */,
+				78F6E5BA2A974B5300365E24 /* InputTextField.swift */,
+			);
+			path = JackFlix;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,6 +273,7 @@
 				782632A22A949AD400730DD9 /* MainViewController.swift in Sources */,
 				78F6E5A62A96F12000365E24 /* GenericViewController.swift in Sources */,
 				7826329D2A945CB300730DD9 /* TextViewController.swift in Sources */,
+				78F6E5B52A9745BF00365E24 /* NetflixViewController.swift in Sources */,
 				78F6E59E2A95E42D00365E24 /* Enum + Annotation.swift in Sources */,
 				7826329B2A94467400730DD9 /* SnapViewController.swift in Sources */,
 				782C56232A930A4000090BED /* ViewController.swift in Sources */,
@@ -265,6 +283,8 @@
 				782C56212A930A4000090BED /* SceneDelegate.swift in Sources */,
 				78F6E59C2A95D1D500365E24 /* Case4ViewController.swift in Sources */,
 				78F6E5AF2A972A1800365E24 /* CustomTableViewController.swift in Sources */,
+				78F6E5B72A9745CF00365E24 /* JackFlixViewController.swift in Sources */,
+				78F6E5BB2A974B5300365E24 /* InputTextField.swift in Sources */,
 				78F6E5AB2A971CE300365E24 /* CustomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

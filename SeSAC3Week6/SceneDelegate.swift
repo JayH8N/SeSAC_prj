@@ -30,7 +30,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         //nav 아닐때
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
-        let vc = CustomTableViewController()
+        let vc = JackFlixViewController()
         window?.rootViewController = vc
         window?.makeKeyAndVisible()
         

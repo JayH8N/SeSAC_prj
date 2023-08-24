@@ -53,7 +53,7 @@ extension UIViewController {
     //Type Constraints: 클래스 제약, 프로토콜 제약
     //U (UpperCased)
     func configureBorder<T: UIView>(view: T) {
-        view.layer.cornerRadius = 8
+        view.layer.cornerRadius = 5
         view.layer.borderColor = UIColor.black.cgColor
         view.layer.borderWidth = 1
     }
@@ -79,5 +79,20 @@ extension UIViewController {
     func sumFloat(a: Float, b: Float) -> Float {
         return a + b
     }
+    
+    
+    func setBorderStyle<T: UIView>(view: T, cornerRadius: CGFloat, borderColor: CGColor, width: CGFloat) {
+        view.layer.cornerRadius = cornerRadius
+        view.layer.borderColor = borderColor
+        view.layer.borderWidth = width
+    }
+    
+
+    
+    
+    
+    
+    
+    
     
 }
