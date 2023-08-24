@@ -9,8 +9,14 @@ import UIKit
 import SnapKit
 
 class Case1ViewController: UIViewController {
+    //🏞️1.
+    let picker = UIImagePickerController()
+    
+    
 
     let imageView = UIImageView()
+    
+    
     let textField1 = textField(placeholder: "제목을 입력해주세요")
     let textField2 = textField(placeholder: "날짜를 입력해주세요")
     let textField3 = textField()
@@ -25,7 +31,7 @@ class Case1ViewController: UIViewController {
     }
 
     
-    
+    //MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,6 +45,26 @@ class Case1ViewController: UIViewController {
         setTextField1()
         setTextField2()
         setTextField3()
+    }
+    
+    //MARK: - viewDidAppear
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        //🏞️2.available
+        guard UIImagePickerController.isSourceTypeAvailable(.camera) else { //.photoLibrary
+            print("갤러리 사용불가, 사용자에게 토스/얼럿")
+            return
+        }
+        picker.delegate = self
+        picker.sourceType = .camera//.photoLibrary
+        picker.allowsEditing = true
+        
+        //➕💡다양한 컨트롤러
+        //let picker = UIFontPickerViewController() //UIColorPickerViewController()
+        
+        present(picker, animated: true)
+        
     }
     
     func setImageView() {
@@ -79,10 +105,34 @@ class Case1ViewController: UIViewController {
     }
         
     
-    
-    
 
-    
-    
 
+}
+
+
+
+//MARK: - extension
+
+
+//🏞️3.앨범상에서 puch-pop구조이기에 navigationcontroller필요함
+extension Case1ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    
+    //취소버튼 클릭시
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true)
+        print("취소\(#function)")
+       
+    }
+    
+    
+    //사진을 선택하거나 카메라 촬영 직후 호출
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.editedImage/*originalImage*/] as? UIImage { //picker.allowsEditing = true을 이용하여 편집된 이미지를 넣고 싶은 경우 InfoKey.editedImage로 바꿔준다.
+            self.imageView.image = image
+            dismiss(animated: true)
+        }
+    }
+    
+    
 }

@@ -25,6 +25,8 @@
 		78F6E59C2A95D1D500365E24 /* Case4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E59B2A95D1D500365E24 /* Case4ViewController.swift */; };
 		78F6E59E2A95E42D00365E24 /* Enum + Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E59D2A95E42D00365E24 /* Enum + Annotation.swift */; };
 		78F6E5A32A95E4E200365E24 /* Movie_map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E5A22A95E4E200365E24 /* Movie_map.swift */; };
+		78F6E5A62A96F12000365E24 /* GenericViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E5A52A96F12000365E24 /* GenericViewController.swift */; };
+		78F6E5A82A96F13B00365E24 /* Extension + UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E5A72A96F13B00365E24 /* Extension + UIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		78F6E59B2A95D1D500365E24 /* Case4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Case4ViewController.swift; sourceTree = "<group>"; };
 		78F6E59D2A95E42D00365E24 /* Enum + Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enum + Annotation.swift"; sourceTree = "<group>"; };
 		78F6E5A22A95E4E200365E24 /* Movie_map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie_map.swift; sourceTree = "<group>"; };
+		78F6E5A52A96F12000365E24 /* GenericViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericViewController.swift; sourceTree = "<group>"; };
+		78F6E5A72A96F13B00365E24 /* Extension + UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +106,7 @@
 		782C561D2A930A4000090BED /* SeSAC3Week6 */ = {
 			isa = PBXGroup;
 			children = (
+				78F6E5A42A96F10A00365E24 /* Generic */,
 				78F6E5A12A95E4D300365E24 /* Model */,
 				78F6E59F2A95E43300365E24 /* Enum */,
 				782632A02A949A7800730DD9 /* 과제 */,
@@ -132,6 +137,15 @@
 				78F6E5A22A95E4E200365E24 /* Movie_map.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		78F6E5A42A96F10A00365E24 /* Generic */ = {
+			isa = PBXGroup;
+			children = (
+				78F6E5A52A96F12000365E24 /* GenericViewController.swift */,
+				78F6E5A72A96F13B00365E24 /* Extension + UIViewController.swift */,
+			);
+			path = Generic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,10 +227,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78F6E5A82A96F13B00365E24 /* Extension + UIViewController.swift in Sources */,
 				78F6E5A32A95E4E200365E24 /* Movie_map.swift in Sources */,
 				782632A42A94A1AD00730DD9 /* Case1ViewController.swift in Sources */,
 				782632A82A94AD2300730DD9 /* Case2ViewController.swift in Sources */,
 				782632A22A949AD400730DD9 /* MainViewController.swift in Sources */,
+				78F6E5A62A96F12000365E24 /* GenericViewController.swift in Sources */,
 				7826329D2A945CB300730DD9 /* TextViewController.swift in Sources */,
 				78F6E59E2A95E42D00365E24 /* Enum + Annotation.swift in Sources */,
 				7826329B2A94467400730DD9 /* SnapViewController.swift in Sources */,

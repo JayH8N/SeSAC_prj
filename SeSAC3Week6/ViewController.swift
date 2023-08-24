@@ -113,7 +113,7 @@ class ViewController: UIViewController {
         
         
         //
-        let vc = LocationViewController() //화면전환할 Class 인스턴스 생성
+        let vc = Case1ViewController() //화면전환할 Class 인스턴스 생성
         let nav = UINavigationController(rootViewController: vc)
         present(nav, animated: true)
         
