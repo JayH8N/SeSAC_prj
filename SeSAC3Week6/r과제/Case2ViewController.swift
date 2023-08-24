@@ -316,7 +316,7 @@ class Case2ViewController: UIViewController {
         uiButton.configuration = button
         uiButton.tintColor = .white
         
-        let attribute = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12)]
+        let attribute = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 10)]
         let attributedTitle = NSAttributedString(string: title, attributes: attribute)
         uiButton.setAttributedTitle(attributedTitle, for: .normal)
     }

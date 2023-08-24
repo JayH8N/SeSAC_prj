@@ -37,7 +37,7 @@ class MainViewController: UIViewController {
         setCase4button()
         
         title = "Assignment"
-        //view.backgroundColor = .white
+        view.backgroundColor = .white
 
     }
     
@@ -49,10 +49,10 @@ class MainViewController: UIViewController {
             make.leadingMargin.equalTo(20) // == make.leading.equalTo(view).inset(20)
             make.trailingMargin.equalTo(-20)
             make.height.equalTo(40)
-            
         }
         case1Button.addTarget(self, action: #selector(case1ButtonClicked), for: .touchUpInside)
     }
+    
     
     func setCase2Button() {
         case2Button.backgroundColor = .green

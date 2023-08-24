@@ -7,9 +7,11 @@
 
 import Foundation
 
-enum TheaterOption {
+enum TheaterOption: String {
     case all
-    case lotte
-    case cgv
-    case megabox
+    case lotte = "롯데시네마"
+    case cgv = "CGV"
+    case megabox = "메가박스"
 }
+
+

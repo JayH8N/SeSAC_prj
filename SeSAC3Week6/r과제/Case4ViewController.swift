@@ -19,7 +19,7 @@ class Case4ViewController: UIViewController {
     let currentLocationButton = UIButton()
 
     
-    let sesacLocation = CLLocationCoordinate2D(latitude: 37.51800, longitude: 126.88651)
+    let sesacLocation = CLLocationCoordinate2D(latitude: 37.51800, longitude: 126.88651) //새싹캠퍼스(37.51800,126.88651), 더현대(37.58667,126.97611)
     
     
     //MARK: - viewDidLoad
@@ -168,8 +168,8 @@ class Case4ViewController: UIViewController {
             print("authorizedAlways")
         case .authorizedWhenInUse:
             print("authorizedWhenInUse")
-            authorizationCurrentLocation() //⭐️ 나의 위치를 표시까지 해주며 강제적이지 않는다.
-            //locationManager.startUpdatingLocation() //⭐️ 강제로 현재위치 고정시켜버린다.
+            authorizationCurrentLocation()
+            //locationManager.startUpdatingLocation() //⭐️ 강제로 현재위치 고정시켜버린다.  --> locationManager.stopUpdatingLocation() 사용
         case .authorized:
             print("authorized")
         @unknown default: //후에 위치 권한 종류가 더 생길 가능성 대비
@@ -198,13 +198,13 @@ class Case4ViewController: UIViewController {
             mapView.addAnnotations(list)
         case .cgv:
             mapView.removeAnnotations(mapView.annotations)
-            mapView.addAnnotations(list.filter{ $0.subtitle == "CGV" })
+            mapView.addAnnotations(list.filter{ $0.subtitle == TheaterOption.cgv.rawValue })
         case .lotte:
             mapView.removeAnnotations(mapView.annotations)
-            mapView.addAnnotations(list.filter{ $0.subtitle == "롯데시네마" })
+            mapView.addAnnotations(list.filter{ $0.subtitle == TheaterOption.lotte.rawValue })
         case .megabox:
             mapView.removeAnnotations(mapView.annotations)
-            mapView.addAnnotations(list.filter{ $0.subtitle == "메가박스" })
+            mapView.addAnnotations(list.filter{ $0.subtitle == TheaterOption.megabox.rawValue })
         }
     }
     
