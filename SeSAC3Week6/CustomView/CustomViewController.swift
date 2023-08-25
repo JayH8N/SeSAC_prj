@@ -43,19 +43,8 @@ class CustomViewController: UIViewController {
             make.height.equalTo(50)
         }
         
-        
-        
-        
-        
-        
-        
-        
+
     }
-    
-    
-    
-    
-    
 
     
 

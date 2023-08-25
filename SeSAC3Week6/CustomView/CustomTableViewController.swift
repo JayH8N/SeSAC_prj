@@ -16,17 +16,28 @@ struct Sample {
 class CustomTableViewController: UIViewController {
     
     //1.테이블 뷰 생성
-    let tableView = {
+    lazy var tableView = {
         let view = UITableView()
         view.rowHeight = UITableView.automaticDimension
+        //3.테이블 뷰 연결
+        view.delegate = self
+        view.dataSource = self
+        
+        //5.셀등록, UINib - xib사용 의미
+        view.register(CustomTableViewCell.self, forCellReuseIdentifier: "customCell")
         return view
     }()
     
-    
+    let imageView = {
+        let view = PosterImagerView(frame: .zero)
+        return view
+    }()
     
     //var isExpand = false //false => numberOflines = 2, true => numberOflines = 0
-    var list: [Sample] = [Sample(text: "rrrrr", isExpand: false), Sample(text: "111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111", isExpand: false),
-    Sample(text: "testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest", isExpand: false)]
+    var list: [Sample] = [Sample(text: "rrrrr", isExpand: false),
+                          Sample(text: "111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111", isExpand: false),
+                          Sample(text: "testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest", isExpand: false),
+                          Sample(text: "testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest", isExpand: false)]
     
     
     override func viewDidLoad() {
@@ -39,13 +50,14 @@ class CustomTableViewController: UIViewController {
             make.edges.equalToSuperview()
         }
         
-        //3.테이블 뷰 연결
-        tableView.delegate = self
-        tableView.dataSource = self
         
-        //5.셀등록, UINib - xib사용 의미
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "customCell")
-    
+        view.addSubview(imageView)
+        imageView.snp.makeConstraints { make in
+            make.size.equalTo(200)
+            make.center.equalTo(view)
+        }
+        
+        
     }
     
     
@@ -61,9 +73,10 @@ extension CustomTableViewController: UITableViewDelegate, UITableViewDataSource 
     
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell")!
-        cell.textLabel?.text = list[indexPath.row].text
-        cell.textLabel?.numberOfLines = list[indexPath.row].isExpand ? 0 : 2
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell") as! CustomTableViewCell
+        cell.label.text = list[indexPath.row].text
+        cell.label.numberOfLines = list[indexPath.row].isExpand ? 0 : 2
+        
         return cell
     }
     

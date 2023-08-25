@@ -34,6 +34,9 @@
 		78F6E5BB2A974B5300365E24 /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E5BA2A974B5300365E24 /* InputTextField.swift */; };
 		78F6E5BD2A97B43200365E24 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E5BC2A97B43200365E24 /* CircleImageView.swift */; };
 		78F6E5BF2A97C09000365E24 /* TopButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E5BE2A97C09000365E24 /* TopButtonLabel.swift */; };
+		78F6E5C12A982B0100365E24 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E5C02A982B0100365E24 /* CustomTableViewCell.swift */; };
+		78F6E5C32A9840B300365E24 /* PosterImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E5C22A9840B300365E24 /* PosterImageView.swift */; };
+		78F6E5C62A984B5500365E24 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E5C52A984B5500365E24 /* OnboardingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +67,9 @@
 		78F6E5BA2A974B5300365E24 /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
 		78F6E5BC2A97B43200365E24 /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		78F6E5BE2A97C09000365E24 /* TopButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopButtonLabel.swift; sourceTree = "<group>"; };
+		78F6E5C02A982B0100365E24 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		78F6E5C22A9840B300365E24 /* PosterImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PosterImageView.swift; sourceTree = "<group>"; };
+		78F6E5C52A984B5500365E24 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +128,7 @@
 		782C561D2A930A4000090BED /* SeSAC3Week6 */ = {
 			isa = PBXGroup;
 			children = (
+				78F6E5C42A984B0F00365E24 /* OnBoarding */,
 				78F6E5A92A971CB000365E24 /* CustomView */,
 				78F6E5A42A96F10A00365E24 /* Generic */,
 				78F6E5A12A95E4D300365E24 /* Model */,
@@ -170,6 +177,8 @@
 				78F6E5AA2A971CE300365E24 /* CustomViewController.swift */,
 				78F6E5AC2A971E9B00365E24 /* BlackRadiusTextField.swift */,
 				78F6E5AE2A972A1800365E24 /* CustomTableViewController.swift */,
+				78F6E5C02A982B0100365E24 /* CustomTableViewCell.swift */,
+				78F6E5C22A9840B300365E24 /* PosterImageView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -191,6 +200,14 @@
 				78F6E5BA2A974B5300365E24 /* InputTextField.swift */,
 			);
 			path = JackFlix;
+			sourceTree = "<group>";
+		};
+		78F6E5C42A984B0F00365E24 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				78F6E5C52A984B5500365E24 /* OnboardingViewController.swift */,
+			);
+			path = OnBoarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,11 +301,14 @@
 				78F6E59E2A95E42D00365E24 /* Enum + Annotation.swift in Sources */,
 				7826329B2A94467400730DD9 /* SnapViewController.swift in Sources */,
 				782C56232A930A4000090BED /* ViewController.swift in Sources */,
+				78F6E5C62A984B5500365E24 /* OnboardingViewController.swift in Sources */,
 				7826329F2A94792D00730DD9 /* LocationViewController.swift in Sources */,
+				78F6E5C32A9840B300365E24 /* PosterImageView.swift in Sources */,
 				782C561F2A930A4000090BED /* AppDelegate.swift in Sources */,
 				782632AA2A94AD5300730DD9 /* Case3ViewController.swift in Sources */,
 				782C56212A930A4000090BED /* SceneDelegate.swift in Sources */,
 				78F6E59C2A95D1D500365E24 /* Case4ViewController.swift in Sources */,
+				78F6E5C12A982B0100365E24 /* CustomTableViewCell.swift in Sources */,
 				78F6E5AF2A972A1800365E24 /* CustomTableViewController.swift in Sources */,
 				78F6E5BF2A97C09000365E24 /* TopButtonLabel.swift in Sources */,
 				78F6E5B72A9745CF00365E24 /* JackFlixViewController.swift in Sources */,
