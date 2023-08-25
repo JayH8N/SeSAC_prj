@@ -23,9 +23,21 @@ class CircleImageView: UIImageView {
     
     
     func setupView() {
-        layer.borderColor = UIColor(red: CGFloat(Int.random(in: 0...255)/255), green: CGFloat(Int.random(in: 0...255)/255), blue: CGFloat(Int.random(in: 0...255)/255), alpha: 1).cgColor
-        layer.borderWidth = 2
-        layer.cornerRadius = frame.width/2
+        let randomRed = CGFloat.random(in: 0...1)
+        let randomGreen = CGFloat.random(in: 0...1)
+        let randomBlue = CGFloat.random(in: 0...1)
+
+        let randomColor = UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1)
+        
+        layer.borderColor = randomColor.cgColor
+        layer.borderWidth = 3
+        clipsToBounds = true
+        contentMode = .scaleAspectFill
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.cornerRadius = frame.width / 2
     }
     
 }

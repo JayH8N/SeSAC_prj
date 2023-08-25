@@ -76,6 +76,27 @@ class NetflixViewController: UIViewController {
         return label
     }()
     
+    let imageView1 = {
+        let imageView = CircleImageView(frame: .zero)
+        imageView.setupView()
+        imageView.image = UIImage(named: "2")
+        return imageView
+    }()
+    
+    let imageView2 = {
+        let imageView = CircleImageView(frame: .zero)
+        imageView.setupView()
+        imageView.image = UIImage(named: "암살")
+        return imageView
+    }()
+    
+    let imageView3 = {
+        let imageView = CircleImageView(frame: .zero)
+        imageView.setupView()
+        imageView.image = UIImage(named: "아바타")
+        return imageView
+    }()
+    
     //MARK: - StackView
     
     let topLabelStackView = {
@@ -100,13 +121,18 @@ class NetflixViewController: UIViewController {
         return stackView
     }()
     
+    let bottomImageStackView = {
+        let stackView = UIStackView()
+        
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.axis = .horizontal
+        stackView.alignment = .center
+        stackView.distribution = .fillEqually
+        stackView.spacing = 5
+        return stackView
+    }()
     
-//    let imageView = {
-//        let imageView = CircleImageView(frame: <#CGRect#>)
-//        imageView.setupView()
-//        imageView.image = UIImage(named: "")
-//        return imageView
-//    }()
+    
     
     //MARK: - viewDidLoad
     override func viewDidLoad() {
@@ -120,7 +146,7 @@ class NetflixViewController: UIViewController {
         setMiddleUIButton()
         setSubView()
         setSmallLabel()
-        
+        setbottomImages()
     }
     
     //MARK: - addSubView
@@ -138,7 +164,11 @@ class NetflixViewController: UIViewController {
         view.addSubview(middleButton3)
         view.addSubview(middleButtonStackView)
         view.addSubview(subView)
-        view.addSubview(smallLabel)
+        subView.addSubview(smallLabel)
+        subView.addSubview(imageView1)
+        subView.addSubview(imageView2)
+        subView.addSubview(imageView3)
+        subView.addSubview(bottomImageStackView)
     }
     
     
@@ -218,7 +248,27 @@ class NetflixViewController: UIViewController {
     func setSmallLabel() {
         smallLabel.snp.makeConstraints { make in
             make.leading.top.equalTo(subView)
+            make.height.equalTo(30)
         }
+    }
+    
+    
+    //MARK: - bottomImage
+    
+    func setbottomImages() {
+        
+        let images = [imageView1, imageView2, imageView3]
+        
+        for i in images {
+            bottomImageStackView.addArrangedSubview(i)
+        }
+        
+        bottomImageStackView.snp.makeConstraints { make in
+            make.top.equalTo(smallLabel.snp.bottom)
+            make.leading.trailing.equalTo(subView).inset(8)
+            make.height.equalTo(imageView1.snp.width)
+        }
+        
     }
 
 }
