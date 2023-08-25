@@ -84,13 +84,20 @@ class ThirdViewController: UIViewController {
     
     @objc func buttonOfCloseClicked() {
 
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: MainViewController.identifier) as! MainViewController
-        let nav = UINavigationController(rootViewController: vc)
+//        let sb = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = sb.instantiateViewController(withIdentifier: MainViewController.identifier) as! MainViewController
+//        let nav = UINavigationController(rootViewController: vc)
+//
+//        nav.modalTransitionStyle = .crossDissolve
+//        nav.modalPresentationStyle = .fullScreen
+//        present(nav, animated: true)
         
-        nav.modalTransitionStyle = .crossDissolve
-        nav.modalPresentationStyle = .fullScreen
-        present(nav, animated: true)
+        let tab = TabBarController()
+        
+        tab.modalTransitionStyle = .crossDissolve
+        tab.modalPresentationStyle = .fullScreen
+        present(tab, animated: true)
+        
     }
     
     func setButtonOfNonReplay() {
@@ -101,13 +108,19 @@ class ThirdViewController: UIViewController {
         
         UseerDefaultsHelper.standard.isLaunched = true
         
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: MainViewController.identifier) as! MainViewController
-        let nav = UINavigationController(rootViewController: vc)
+//        let sb = UIStoryboard(name: "Main", bundle: nil)
+//        let vc = sb.instantiateViewController(withIdentifier: MainViewController.identifier) as! MainViewController
+//        let nav = UINavigationController(rootViewController: vc)
+//
+//        nav.modalTransitionStyle = .crossDissolve
+//        nav.modalPresentationStyle = .fullScreen
+//        present(nav, animated: true)
         
-        nav.modalTransitionStyle = .crossDissolve
-        nav.modalPresentationStyle = .fullScreen
-        present(nav, animated: true)
+        let tab = TabBarController()
+        
+        tab.modalTransitionStyle = .crossDissolve
+        tab.modalPresentationStyle = .fullScreen
+        present(tab, animated: true)
     }
     
     

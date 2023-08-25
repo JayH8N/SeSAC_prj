@@ -32,11 +32,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         } else { //true
             
-            let sb = UIStoryboard(name: "Main", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: MainViewController.identifier) as! MainViewController
-            let nav = UINavigationController(rootViewController: vc)
+//            let sb = UIStoryboard(name: "Main", bundle: nil)
+//            let vc = sb.instantiateViewController(withIdentifier: MainViewController.identifier) as! MainViewController
+//            let nav = UINavigationController(rootViewController: vc)
             
-            window?.rootViewController = nav
+            let tabBar = TabBarController()
+            
+            
+            window?.rootViewController = tabBar
             window?.makeKeyAndVisible()
         }
         

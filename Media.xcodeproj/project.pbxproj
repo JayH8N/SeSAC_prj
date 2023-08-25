@@ -15,6 +15,7 @@
 		78F6E5D42A98A9B000365E24 /* CloseButtonCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E5D32A98A9B000365E24 /* CloseButtonCustomView.swift */; };
 		78F6E5D72A98AA7C00365E24 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 78F6E5D62A98AA7C00365E24 /* SnapKit */; };
 		78F6E5DA2A98C1E500365E24 /* UserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E5D92A98C1E500365E24 /* UserDefaultHelper.swift */; };
+		78F6E5DC2A98CDCD00365E24 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E5DB2A98CDCD00365E24 /* TabBarController.swift */; };
 		78FF60CB2A909E27004EBE0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF60CA2A909E27004EBE0A /* AppDelegate.swift */; };
 		78FF60CD2A909E27004EBE0A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF60CC2A909E27004EBE0A /* SceneDelegate.swift */; };
 		78FF60CF2A909E27004EBE0A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF60CE2A909E27004EBE0A /* MainViewController.swift */; };
@@ -62,6 +63,7 @@
 		78F6E5CE2A98A40900365E24 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		78F6E5D32A98A9B000365E24 /* CloseButtonCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseButtonCustomView.swift; sourceTree = "<group>"; };
 		78F6E5D92A98C1E500365E24 /* UserDefaultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultHelper.swift; sourceTree = "<group>"; };
+		78F6E5DB2A98CDCD00365E24 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		78FF60C72A909E27004EBE0A /* Media.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Media.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78FF60CA2A909E27004EBE0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78FF60CC2A909E27004EBE0A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				78F6E5D92A98C1E500365E24 /* UserDefaultHelper.swift */,
+				78F6E5DB2A98CDCD00365E24 /* TabBarController.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				78F6E5C92A98A3AE00365E24 /* FirstViewController.swift in Sources */,
 				78FF610B2A90D666004EBE0A /* Extension + URL.swift in Sources */,
 				78FF60FC2A90B99F004EBE0A /* Protocol + identifier.swift in Sources */,
+				78F6E5DC2A98CDCD00365E24 /* TabBarController.swift in Sources */,
 				78FF61092A90D5BE004EBE0A /* TmdbManager.swift in Sources */,
 				78FF60FE2A90BA7E004EBE0A /* Extension + MainViewTableViewCell.swift in Sources */,
 				78FF61002A90C054004EBE0A /* Extension + CALayer.swift in Sources */,
