@@ -52,9 +52,45 @@ class BaeminViewController: UIViewController {
         return search
     }()
     
+    let button1 = {
+        let button = MainScreenButtonsCustom()
+        return button
+    }()
     
+    let button2 = {
+        let button = MainScreenButtonsCustom()
+        return button
+    }()
     
+    let button3 = {
+        let button = MainScreenButtonsCustom()
+        return button
+    }()
     
+    let button4 = {
+        let button = MainScreenButtonsCustom()
+        return button
+    }()
+
+    let button5 = {
+        let button = MainScreenButtonsCustom()
+        return button
+    }()
+    
+    let button6 = {
+        let button = MainScreenButtonsCustom()
+        return button
+    }()
+    
+    let button7 = {
+        let button = MainScreenButtonsCustom()
+        return button
+    }()
+    
+    let button8 = {
+        let button = MainScreenButtonsCustom()
+        return button
+    }()
 
     
     //MARK: - viewDidLoad
@@ -65,6 +101,8 @@ class BaeminViewController: UIViewController {
         setNavigationBarItem()
         setMainTopView()
         setSearchBar()
+        setMainScreenButtons()
+        
         
         
     }
@@ -95,13 +133,16 @@ class BaeminViewController: UIViewController {
     //MARK: - addSubView
     
     func addSubView() {
-        let views = [mainTopView]
-        
+        let views = [mainTopView, button1, button2, button3, button4, button5, button6, button7, button8]
+
         for i in views {
             view.addSubview(i)
         }
         //
         mainTopView.addSubview(searchBar)
+        
+        
+
         
         
     }
@@ -125,6 +166,65 @@ class BaeminViewController: UIViewController {
         }
     }
     
+    //MARK: - MainScreenButtons
+    
+    
+    func setMainScreenButtons() {
+        button1.snp.makeConstraints { make in
+            make.leading.equalTo(16)
+            make.top.equalTo(mainTopView.snp.bottom).offset(16)
+            make.height.equalTo(button1.snp.width)
+        }
+        
+        button2.snp.makeConstraints { make in
+            make.leading.equalTo(button1.snp.trailing).offset(16)
+            make.trailing.equalTo(view).inset(16)
+            make.top.equalTo(mainTopView.snp.bottom).offset(16)
+            make.width.equalTo(button1.snp.width).multipliedBy(1)
+            make.height.equalTo(button1.snp.width)
+        }
+        
+        button3.snp.makeConstraints { make in
+            make.top.equalTo(button1.snp.bottom).offset(16)
+            make.leading.trailing.equalTo(view).inset(16)
+            make.height.equalTo(button1.snp.height).multipliedBy(0.5)
+        }
+        
+        button4.snp.makeConstraints { make in
+            make.leading.equalTo(16)
+            make.top.equalTo(button3.snp.bottom).offset(16)
+            make.height.equalTo(button1.snp.height).multipliedBy(0.53)
+        }
+        
+        button5.snp.makeConstraints { make in
+            make.leading.equalTo(button4.snp.trailing).offset(16)
+            make.trailing.equalTo(view).inset(16)
+            make.top.equalTo(button3.snp.bottom).offset(16)
+            make.width.equalTo(button4.snp.width).multipliedBy(1)
+            make.height.equalTo(button4.snp.height)
+        }
+        
+        button6.snp.makeConstraints { make in
+            make.leading.equalTo(16)
+            make.top.equalTo(button4.snp.bottom).offset(16)
+            make.height.equalTo(button4.snp.height)
+        }
+        
+        button7.snp.makeConstraints { make in
+            make.leading.equalTo(button6.snp.trailing).offset(16)
+            make.trailing.equalTo(view).inset(16)
+            make.top.equalTo(button5.snp.bottom).offset(16)
+            make.width.equalTo(button6.snp.width).multipliedBy(1)
+            make.height.equalTo(button4.snp.height)
+        }
+        
+        button8.snp.makeConstraints { make in
+            make.top.equalTo(button7.snp.bottom).offset(16)
+            make.leading.trailing.equalTo(view).inset(16)
+            make.bottom.equalTo(view.safeAreaLayoutGuide)
+        }
+        
+    }
     
     
     

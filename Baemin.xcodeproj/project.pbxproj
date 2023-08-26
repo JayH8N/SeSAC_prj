@@ -17,6 +17,8 @@
 		78F6E6062A9A2E5600365E24 /* NavigationBarButtonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E6052A9A2E5600365E24 /* NavigationBarButtonCustom.swift */; };
 		78F6E60A2A9A311400365E24 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 78F6E6092A9A311400365E24 /* SnapKit */; };
 		78F6E60D2A9A331000365E24 /* Extension + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E60C2A9A331000365E24 /* Extension + UIView.swift */; };
+		78F6E60F2A9A411200365E24 /* MainScreenButtonsCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E60E2A9A411200365E24 /* MainScreenButtonsCustom.swift */; };
+		78F6E6112A9A574200365E24 /* MainScreenImageViewCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E6102A9A574200365E24 /* MainScreenImageViewCustom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		78F6E6022A9A2B2E00365E24 /* BaeminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaeminViewController.swift; sourceTree = "<group>"; };
 		78F6E6052A9A2E5600365E24 /* NavigationBarButtonCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarButtonCustom.swift; sourceTree = "<group>"; };
 		78F6E60C2A9A331000365E24 /* Extension + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIView.swift"; sourceTree = "<group>"; };
+		78F6E60E2A9A411200365E24 /* MainScreenButtonsCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenButtonsCustom.swift; sourceTree = "<group>"; };
+		78F6E6102A9A574200365E24 /* MainScreenImageViewCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScreenImageViewCustom.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,8 @@
 			isa = PBXGroup;
 			children = (
 				78F6E6052A9A2E5600365E24 /* NavigationBarButtonCustom.swift */,
+				78F6E60E2A9A411200365E24 /* MainScreenButtonsCustom.swift */,
+				78F6E6102A9A574200365E24 /* MainScreenImageViewCustom.swift */,
 			);
 			path = UIButton;
 			sourceTree = "<group>";
@@ -179,10 +185,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78F6E6112A9A574200365E24 /* MainScreenImageViewCustom.swift in Sources */,
 				78F6E6032A9A2B2E00365E24 /* BaeminViewController.swift in Sources */,
 				78F6E6062A9A2E5600365E24 /* NavigationBarButtonCustom.swift in Sources */,
 				782C56452A933A1900090BED /* ViewController.swift in Sources */,
 				78F6E60D2A9A331000365E24 /* Extension + UIView.swift in Sources */,
+				78F6E60F2A9A411200365E24 /* MainScreenButtonsCustom.swift in Sources */,
 				782C56412A933A1900090BED /* AppDelegate.swift in Sources */,
 				782C56432A933A1900090BED /* SceneDelegate.swift in Sources */,
 			);
