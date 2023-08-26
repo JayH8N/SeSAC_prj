@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mM3-ZM-lkc">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
@@ -14,11 +14,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Baemin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vrS-3g-7KK">
-                                <rect key="frame" x="16" y="112" width="183" height="183"/>
+                                <rect key="frame" x="16" y="122.99999999999999" width="172.66666666666666" height="172.66666666666663"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="vrS-3g-7KK" secondAttribute="height" multiplier="1:1" id="qEu-eT-ZPB"/>
                                 </constraints>
@@ -26,7 +26,7 @@
                                 <state key="normal" title="Button"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWs-67-PCi">
-                                <rect key="frame" x="215" y="112" width="183" height="183"/>
+                                <rect key="frame" x="204.66666666666663" y="122.99999999999999" width="172.33333333333337" height="172.66666666666663"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="rWs-67-PCi" secondAttribute="height" multiplier="1:1" id="CNO-9j-3ah"/>
                                 </constraints>
@@ -34,12 +34,12 @@
                                 <state key="normal" title="Button"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ReU-0x-Uwu">
-                                <rect key="frame" x="16" y="311" width="382" height="91.5"/>
+                                <rect key="frame" x="16" y="311.66666666666669" width="361" height="86"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kiz-jh-c6Z">
-                                <rect key="frame" x="16" y="418.5" width="183" height="91.5"/>
+                                <rect key="frame" x="16" y="413.66666666666669" width="172.66666666666666" height="86.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Kiz-jh-c6Z" secondAttribute="height" multiplier="1:0.5" id="Hwv-Ks-kqn"/>
                                 </constraints>
@@ -47,7 +47,7 @@
                                 <state key="normal" title="Button"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNR-Te-Bkl">
-                                <rect key="frame" x="215" y="418.5" width="183" height="91.5"/>
+                                <rect key="frame" x="204.66666666666663" y="413.66666666666669" width="172.33333333333337" height="86.333333333333314"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="bNR-Te-Bkl" secondAttribute="height" multiplier="1:0.5" id="Ptf-1u-DUW"/>
                                 </constraints>
@@ -55,7 +55,7 @@
                                 <state key="normal" title="Button"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d5y-QI-fxV">
-                                <rect key="frame" x="16" y="526" width="183" height="91.5"/>
+                                <rect key="frame" x="16" y="516" width="172.66666666666666" height="86.333333333333371"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="d5y-QI-fxV" secondAttribute="height" multiplier="1:0.5" id="GDA-lD-Eaa"/>
                                 </constraints>
@@ -63,7 +63,7 @@
                                 <state key="normal" title="Button"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HBJ-KQ-UIY">
-                                <rect key="frame" x="215" y="526" width="183" height="91.5"/>
+                                <rect key="frame" x="204.66666666666663" y="516" width="172.33333333333337" height="86.333333333333371"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="HBJ-KQ-UIY" secondAttribute="height" multiplier="1:0.5" id="tzX-R2-0EG"/>
                                 </constraints>
@@ -71,10 +71,7 @@
                                 <state key="normal" title="Button"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wfc-iL-93k">
-                                <rect key="frame" x="16" y="633.5" width="382" height="153"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Wfc-iL-93k" secondAttribute="height" multiplier="1:0.4" id="Whr-Y4-1Gm"/>
-                                </constraints>
+                                <rect key="frame" x="16" y="618.33333333333337" width="361" height="189.66666666666663"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Button"/>
                             </button>
@@ -85,9 +82,11 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ReU-0x-Uwu" secondAttribute="trailing" constant="16" id="0Yn-OW-LEE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Wfc-iL-93k" secondAttribute="trailing" constant="16" id="1KD-Ah-8gq"/>
                             <constraint firstItem="Wfc-iL-93k" firstAttribute="top" secondItem="d5y-QI-fxV" secondAttribute="bottom" constant="16" id="1Tt-zu-hxR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Wfc-iL-93k" secondAttribute="bottom" constant="10" id="2d5-ru-zsk"/>
                             <constraint firstItem="ReU-0x-Uwu" firstAttribute="top" secondItem="vrS-3g-7KK" secondAttribute="bottom" constant="16" id="3xc-iq-sZe"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HBJ-KQ-UIY" secondAttribute="trailing" constant="16" id="9A5-zU-dTG"/>
                             <constraint firstItem="bNR-Te-Bkl" firstAttribute="width" secondItem="Kiz-jh-c6Z" secondAttribute="width" id="DJB-0j-efh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Wfc-iL-93k" secondAttribute="bottom" constant="10" id="Efs-v8-7Qo"/>
                             <constraint firstItem="HBJ-KQ-UIY" firstAttribute="width" secondItem="Kiz-jh-c6Z" secondAttribute="width" id="FeL-3O-Jqv"/>
                             <constraint firstItem="bNR-Te-Bkl" firstAttribute="leading" secondItem="Kiz-jh-c6Z" secondAttribute="trailing" constant="16" id="GqL-Wv-kNU"/>
                             <constraint firstItem="rWs-67-PCi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="JDf-RT-muZ"/>
@@ -114,7 +113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="265" y="186"/>
+            <point key="canvasLocation" x="60" y="186"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Bdp-cl-bIX">
@@ -122,7 +121,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mM3-ZM-lkc" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hje-1V-gfc">
-                        <rect key="frame" x="0.0" y="48" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

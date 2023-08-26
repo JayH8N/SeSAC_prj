@@ -13,6 +13,7 @@
 		782C56482A933A1900090BED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 782C56462A933A1900090BED /* Main.storyboard */; };
 		782C564A2A933A1A00090BED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 782C56492A933A1A00090BED /* Assets.xcassets */; };
 		782C564D2A933A1A00090BED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 782C564B2A933A1A00090BED /* LaunchScreen.storyboard */; };
+		78F6E6032A9A2B2E00365E24 /* BaeminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E6022A9A2B2E00365E24 /* BaeminViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		782C56492A933A1A00090BED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		782C564C2A933A1A00090BED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		782C564E2A933A1A00090BED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78F6E6022A9A2B2E00365E24 /* BaeminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaeminViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		782C563F2A933A1900090BED /* Baemin */ = {
 			isa = PBXGroup;
 			children = (
+				78F6E6042A9A2BB800365E24 /* SnapKit */,
 				782C56402A933A1900090BED /* AppDelegate.swift */,
 				782C56422A933A1900090BED /* SceneDelegate.swift */,
 				782C56442A933A1900090BED /* ViewController.swift */,
@@ -65,6 +68,14 @@
 				782C564E2A933A1A00090BED /* Info.plist */,
 			);
 			path = Baemin;
+			sourceTree = "<group>";
+		};
+		78F6E6042A9A2BB800365E24 /* SnapKit */ = {
+			isa = PBXGroup;
+			children = (
+				78F6E6022A9A2B2E00365E24 /* BaeminViewController.swift */,
+			);
+			path = SnapKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78F6E6032A9A2B2E00365E24 /* BaeminViewController.swift in Sources */,
 				782C56452A933A1900090BED /* ViewController.swift in Sources */,
 				782C56412A933A1900090BED /* AppDelegate.swift in Sources */,
 				782C56432A933A1900090BED /* SceneDelegate.swift in Sources */,
@@ -292,7 +304,6 @@
 				INFOPLIST_FILE = Baemin/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -324,7 +335,6 @@
 				INFOPLIST_FILE = Baemin/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
