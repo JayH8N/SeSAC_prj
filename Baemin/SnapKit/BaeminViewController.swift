@@ -6,24 +6,129 @@
 //
 
 import UIKit
+import SnapKit
 
 class BaeminViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
+    let mainTopView = {
+       let view = UIView()
+        view.backgroundColor = UIColor(red: 118/255, green: 194/255, blue: 191/255, alpha: 1)
+        view.roundCorners(cornerRadius: 25, maskedCorners: [.layerMinXMaxYCorner, .layerMaxXMaxYCorner])
+        return view
+    }()
+    
+    let titleButton = {
+        let button = NavigationBarButtonCustom()
+        button.setView()
+        button.setTitle("회사", for: .normal)
+        button.setImage(UIImage(systemName: "chevron.down"), for: .normal)
+        button.semanticContentAttribute = .forceRightToLeft
+        return button
+    }()
+    
+    let leftBarItem = {
+        let button = UIBarButtonItem(image: UIImage(systemName: "square.grid.2x2"), style: .plain, target: BaeminViewController.self, action: #selector(leftBarItemClicked))
+        button.tintColor = .white
+        return button
+    }()
+    
+    let rightBarItem1 = {
+        let button = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle"), style: .plain, target: BaeminViewController.self, action: #selector(rightBarItem1Clicked))
+        button.tintColor = .white
+        return button
+    }()
+    
+    let rightBarItem2 = {
+        let button = UIBarButtonItem(image: UIImage(systemName: "bell"), style: .plain, target: BaeminViewController.self, action: #selector(rightBarItem2Clicked))
+        button.tintColor = .white
+        return button
+    }()
+    
+    let searchBar = {
+        let search = UISearchBar()
+        search.placeholder = "포케? 돈까스? 커리?"
+        search.searchTextField.backgroundColor = .clear
+        search.searchTextField.leftView?.tintColor = UIColor(red: 118/255, green: 194/255, blue: 191/255, alpha: 1)
+        return search
+    }()
+    
+    
+    
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    //MARK: - viewDidLoad
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.backgroundColor = .white
+        addSubView()
+        setNavigationBarItem()
+        setMainTopView()
+        setSearchBar()
+        
+        
     }
-    */
+    
+    //MARK: - NavigationBarItem
+    
+    func setNavigationBarItem() {
+        navigationItem.titleView = titleButton
+        navigationItem.leftBarButtonItem = leftBarItem
+        navigationItem.rightBarButtonItems = [rightBarItem1, rightBarItem2]
+    }
+    
+    @objc func leftBarItemClicked() {
+        print("leftBarButton")
+    }
+    
+    @objc func rightBarItem1Clicked() {
+        print("rightBarButton")
+    }
+    
+    @objc func rightBarItem2Clicked() {
+        print("rightBarButton")
+    }
+    
+    
+    
+    
+    //MARK: - addSubView
+    
+    func addSubView() {
+        let views = [mainTopView]
+        
+        for i in views {
+            view.addSubview(i)
+        }
+        //
+        mainTopView.addSubview(searchBar)
+        
+        
+    }
+    
+    
+    //MARK: - mainTopView
+    
+    func setMainTopView() {
+        mainTopView.snp.makeConstraints { make in
+            make.top.leading.trailing.equalToSuperview()
+            make.height.equalToSuperview().multipliedBy(0.19)
+        }
+    }
+    
+    //MARK: - searchBar
+    
+    func setSearchBar() {
+        searchBar.snp.makeConstraints { make in
+            make.leading.trailing.bottom.equalToSuperview().inset(16)
+            make.height.equalTo(searchBar.snp.width).multipliedBy(0.12)
+        }
+    }
+    
+    
+    
+    
+    
 
+    
 }
