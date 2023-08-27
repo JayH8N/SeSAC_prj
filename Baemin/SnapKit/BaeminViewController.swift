@@ -10,6 +10,7 @@ import SnapKit
 
 class BaeminViewController: UIViewController {
 
+    //MARK: - NavigationBar 영역 or 상단부
     let mainTopView = {
        let view = UIView()
         view.backgroundColor = UIColor(red: 118/255, green: 194/255, blue: 191/255, alpha: 1)
@@ -26,23 +27,65 @@ class BaeminViewController: UIViewController {
         return button
     }()
     
-    let leftBarItem = {
-        let button = UIBarButtonItem(image: UIImage(systemName: "square.grid.2x2"), style: .plain, target: BaeminViewController.self, action: #selector(leftBarItemClicked))
-        button.tintColor = .white
-        return button
-    }()
     
-    let rightBarItem1 = {
-        let button = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle"), style: .plain, target: BaeminViewController.self, action: #selector(rightBarItem1Clicked))
-        button.tintColor = .white
-        return button
-    }()
+//    let leftBarItem = {
+//        let button = UIBarButtonItem(image: UIImage(systemName: "square.grid.2x2"), style: .plain, target: BaeminViewController.self, action: #selector(leftBarItemClicked))
+//        button.tintColor = .white
+//        return button
+//    }()
+//
+//    let rightBarItem1 = {
+//        let button = UIBarButtonItem(image: UIImage(systemName: "person.crop.circle"), style: .plain, target: BaeminViewController.self, action: #selector(rightBarItem1Clicked))
+//        button.tintColor = .white
+//        return button
+//    }()
+//
+//    let rightBarItem2 = {
+//        let button = UIBarButtonItem(image: UIImage(systemName: "bell"), style: .plain, target: BaeminViewController.self, action: #selector(rightBarItem2Clicked))
+//        button.tintColor = .white
+//        return button
+//    }()
+//
+//    let leftBarItem = {
+//        let button = NavigationBarButtonCustom()
+//        button.setImage(UIImage(systemName: "square.grid.2x2"), for: .normal)
+//        return button
+//    }()
+//
+//        let rightBarItem1 = {
+//            let button = NavigationBarButtonCustom()
+//            button.setImage(UIImage(systemName: "person.crop.circle"), for: .normal)
+//            return button
+//        }()
+//
+//        let rightBarItem2 = {
+//            let button = NavigationBarButtonCustom()
+//            button.setImage(UIImage(systemName: "bell"), for: .normal)
+//            return button
+//        }()
     
-    let rightBarItem2 = {
-        let button = UIBarButtonItem(image: UIImage(systemName: "bell"), style: .plain, target: BaeminViewController.self, action: #selector(rightBarItem2Clicked))
-        button.tintColor = .white
-        return button
-    }()
+    let leftBarItem = navigationBarItem(imageName: "square.grid.2x2", imageSize: 18, color: .white, leading: 0, trailing: 20)
+    let rightBarItem1 = navigationBarItem(imageName: "person.crop.circle", imageSize: 18, color: .white, leading: 20, trailing: 0)
+    let rightBarItem2 = navigationBarItem(imageName: "bell", imageSize: 18, color: .white, leading: 8, trailing: 0)
+    
+    
+        
+    static func navigationBarItem(imageName: String, imageSize: CGFloat, color: UIColor, leading: CGFloat, trailing: CGFloat) -> UIButton {
+        let uiButton = UIButton()
+        let setImage = UIImage.SymbolConfiguration(pointSize: imageSize, weight: .regular)
+        
+        let image = UIImage(systemName: imageName, withConfiguration: setImage)
+        uiButton.setImage(image, for: .normal)
+        uiButton.tintColor = color
+        
+        var config = UIButton.Configuration.plain()
+        config.contentInsets = .init(top: 10, leading: leading, bottom: 10, trailing: trailing)
+        config.image = UIImage(systemName: imageName)
+        config.baseBackgroundColor = .clear
+        uiButton.configuration = config
+        return uiButton
+    }
+
     
     let searchBar = {
         let search = UISearchBar()
@@ -51,6 +94,8 @@ class BaeminViewController: UIViewController {
         search.searchTextField.leftView?.tintColor = UIColor(red: 118/255, green: 194/255, blue: 191/255, alpha: 1)
         return search
     }()
+    
+    //MARK: - 서치바 하단부분 객체
     
     let button1 = {
         let button = MainScreenButtonsCustom()
@@ -91,6 +136,17 @@ class BaeminViewController: UIViewController {
         let button = MainScreenButtonsCustom()
         return button
     }()
+    
+    //MARK: - StackView
+    
+    lazy var righthStackview = {
+        let stackView = UIStackView.init(arrangedSubviews: [rightBarItem1, rightBarItem2])
+        stackView.distribution = .equalSpacing
+        stackView.axis = .horizontal
+        stackView.alignment = .center
+        stackView.spacing = 4
+        return stackView
+    }()
 
     
     //MARK: - viewDidLoad
@@ -111,8 +167,8 @@ class BaeminViewController: UIViewController {
     
     func setNavigationBarItem() {
         navigationItem.titleView = titleButton
-        navigationItem.leftBarButtonItem = leftBarItem
-        navigationItem.rightBarButtonItems = [rightBarItem1, rightBarItem2]
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBarItem)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: righthStackview)
     }
     
     @objc func leftBarItemClicked() {
@@ -140,10 +196,6 @@ class BaeminViewController: UIViewController {
         }
         //
         mainTopView.addSubview(searchBar)
-        
-        
-
-        
         
     }
     
