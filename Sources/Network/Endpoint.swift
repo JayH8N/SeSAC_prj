@@ -8,13 +8,11 @@
 import UIKit
 
 
-enum Endpoint {
-    case movies_week
+enum EndpointTrending {
     case movies_day
-    case tv_week
+    case movies_week
     case tv_day
-    case tvSeries_airingToday
-    case tvSeries_Popular
+    case tv_week
     
     var requestURL: String {
         switch self {
@@ -22,8 +20,6 @@ enum Endpoint {
         case .movies_week: return URL.makeEndPointString("trending/movie/week")
         case .tv_day: return URL.makeEndPointString("trending/tv/day")
         case .tv_week: return URL.makeEndPointString("trending/tv/week")
-        case .tvSeries_airingToday: return URL.makeEndPointString("tv/airing_today")
-        case .tvSeries_Popular: return URL.makeEndPointString("tv/popular")
         }
     }
 }
@@ -42,19 +38,29 @@ enum GenreList {
     }
 }
 
-enum TVSeires {
+
+enum TVSeries {
+    case tvSeries_airingToday
+    case tvSeries_Popular
+    case tv
+    
+    var requestURL: String {
+        switch self {
+        case .tvSeries_airingToday: return URL.makeEndPointString("tv/airing_today")
+        case .tvSeries_Popular: return URL.makeEndPointString("tv/popular")
+        case .tv: return URL.makeEndPointString("tv/")
+        }
+    }
+}
+
+enum TVOption {
     case similar
-    case videos
     case recommendations
     
     var requestURL: String {
         switch self {
         case .similar: return "similar"
-        case .videos: return "videos"
         case .recommendations: return "recommendations"
-
         }
     }
 }
-
-

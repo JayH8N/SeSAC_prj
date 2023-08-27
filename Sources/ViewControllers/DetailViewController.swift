@@ -43,11 +43,11 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "출연/제작"
+        self.title = "Case/Info"
         setTablaView()
         setView()
         setValue()
-        TmdbManager.shared.callRequstCast(id: movieId) { value in
+        TmdbAPIManager.shared.callRequstCast(id: movieId) { value in
             for i in value.cast {
                 let data = CastInfo(image: i.profilePath ?? "", name: i.name, character: i.character ?? "")
                 

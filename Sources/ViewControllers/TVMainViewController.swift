@@ -7,17 +7,6 @@
 
 import UIKit
 
-struct Tv {
-    let name: String
-    let poster: String
-    let id: Int
-    let overview: String
-    let rate: String
-    
-    var contents: String {
-        return "평점 : \(rate)"
-    }
-}
 
 class TVMainViewController: UIViewController {
 
@@ -44,48 +33,33 @@ class TVMainViewController: UIViewController {
         searchBar.isHidden = true
         
         
-        TmdbManager.shared.callReqeust(kind: .tv_day, page: page) { data in
-            for i in data.results {
-                let rawRate = i.voteAverage
-                let rate = String(format: "%.2f", rawRate)
-                
-                let title = i.title ?? i.name
-                let data = Tv(name: title ?? "", poster: i.posterPath, id: i.id, overview: i.overview, rate: rate)
-                
-                self.tvList.append(data)
-            }
-        }
+        callRequestToday()
         
     }
+    
+    
     
     
     @IBAction func segmenteValueChanged(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 1 {
             tvList.removeAll()
-            TmdbManager.shared.callReqeust(kind: .tv_week, page: page) { data in
+            TmdbAPIManager.shared.callReqeustTVSeries(kind: .tvSeries_Popular) { data in
                 for i in data.results {
-                    let rawRate = i.voteAverage
-                    let rate = String(format: "%.2f", rawRate)
+                    let rate = i.voteAverage
+                    let name = i.name
+                    let overview = i.overview
+                    let poster = i.posterPath
+                    let id = i.id
+                    let back = i.backdropPath
                     
-                    let title = i.title ?? i.name
-                    let data = Tv(name: title ?? "", poster: i.posterPath, id: i.id, overview: i.overview, rate: rate)
+                    let data = Tv(name: name, poster: poster ?? "empty", id: id, overview: overview, rate: String(rate), backdrop: back ?? "empty")
                     
                     self.tvList.append(data)
                 }
             }
         } else {
             tvList.removeAll()
-            TmdbManager.shared.callReqeust(kind: .tv_day, page: page) { data in
-                for i in data.results {
-                    let rawRate = i.voteAverage
-                    let rate = String(format: "%.2f", rawRate)
-                    
-                    let title = i.title ?? i.name
-                    let data = Tv(name: title ?? "", poster: i.posterPath, id: i.id, overview: i.overview, rate: rate)
-                    
-                    self.tvList.append(data)
-                }
-            }
+            callRequestToday()
         }
     }
     
@@ -129,12 +103,11 @@ extension TVMainViewController: UICollectionViewDelegate, UICollectionViewDataSo
         let sb = UIStoryboard(name: "Main", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: TVDetailViewController.identifier) as! TVDetailViewController
         
+        //값전달
         vc.tvId = tvList[indexPath.item].id
+        vc.backDrop = tvList[indexPath.item].backdrop
         
-        let nav = UINavigationController(rootViewController: vc)
-        nav.modalPresentationStyle = .fullScreen
-        
-        present(nav, animated: true)
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     
@@ -155,7 +128,6 @@ extension TVMainViewController: CollectionViewAttributeProtocol {
         layout.scrollDirection = .vertical
         let spacing: CGFloat = 8
         let width = UIScreen.main.bounds.width - (spacing * 4)
-        layout.scrollDirection = .vertical
         layout.itemSize = CGSize(width: width / 3, height: 210)
         layout.sectionInset = UIEdgeInsets(top: 16, left: spacing, bottom: 0, right: spacing) // CollectionView의 상하좌우 여백
         layout.minimumLineSpacing = 10
@@ -165,4 +137,25 @@ extension TVMainViewController: CollectionViewAttributeProtocol {
     }
     
     
+}
+
+
+//
+extension TVMainViewController {
+    func callRequestToday() {
+        TmdbAPIManager.shared.callReqeustTVSeries(kind: .tvSeries_airingToday) { data in
+            for i in data.results {
+                let rate = i.voteAverage
+                let name = i.name
+                let overview = i.overview
+                let poster = i.posterPath
+                let id = i.id
+                let back = i.backdropPath
+                
+                let data = Tv(name: name, poster: poster ?? "empty", id: id, overview: overview, rate: String(rate), backdrop: back ?? "empty")
+                
+                self.tvList.append(data)
+            }
+        }
+    }
 }

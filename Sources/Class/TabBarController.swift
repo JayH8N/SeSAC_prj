@@ -31,7 +31,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         tabOne.tabBarItem = tabOneBarItem
         
         let tabTwo = UINavigationController(rootViewController: vc2)
-        let tabTwoBarItem = UITabBarItem(title: "TV", image: UIImage(systemName: "tv"), tag: 2)
+        let tabTwoBarItem = UITabBarItem(title: "TVSeries", image: UIImage(systemName: "tv"), tag: 2)
         tabTwo.tabBarItem = tabTwoBarItem
         
         

@@ -15,6 +15,8 @@
 		78F6E5DA2A98C1E500365E24 /* UserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E5D92A98C1E500365E24 /* UserDefaultHelper.swift */; };
 		78F6E5DC2A98CDCD00365E24 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E5DB2A98CDCD00365E24 /* TabBarController.swift */; };
 		78F6E6132A9B198300365E24 /* Extension + UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E6122A9B198300365E24 /* Extension + UIViewController.swift */; };
+		78F6E6152A9B349000365E24 /* TVSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E6142A9B349000365E24 /* TVSeries.swift */; };
+		78F6E6172A9B718600365E24 /* Similar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E6162A9B718600365E24 /* Similar.swift */; };
 		78FF60CB2A909E27004EBE0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF60CA2A909E27004EBE0A /* AppDelegate.swift */; };
 		78FF60CD2A909E27004EBE0A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF60CC2A909E27004EBE0A /* SceneDelegate.swift */; };
 		78FF60CF2A909E27004EBE0A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF60CE2A909E27004EBE0A /* MainViewController.swift */; };
@@ -32,7 +34,7 @@
 		78FF61002A90C054004EBE0A /* Extension + CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF60FF2A90C054004EBE0A /* Extension + CALayer.swift */; };
 		78FF61052A90C61A004EBE0A /* Protocol + TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF61042A90C61A004EBE0A /* Protocol + TableView.swift */; };
 		78FF61072A90D590004EBE0A /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF61062A90D590004EBE0A /* Endpoint.swift */; };
-		78FF61092A90D5BE004EBE0A /* TmdbManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF61082A90D5BE004EBE0A /* TmdbManager.swift */; };
+		78FF61092A90D5BE004EBE0A /* TmdbAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF61082A90D5BE004EBE0A /* TmdbAPIManager.swift */; };
 		78FF610B2A90D666004EBE0A /* Extension + URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF610A2A90D666004EBE0A /* Extension + URL.swift */; };
 		78FF61112A90D758004EBE0A /* TmdbTreding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF61102A90D758004EBE0A /* TmdbTreding.swift */; };
 		78FF61132A90EF24004EBE0A /* Extension + ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF61122A90EF24004EBE0A /* Extension + ImageView.swift */; };
@@ -55,6 +57,8 @@
 		78F6E5D92A98C1E500365E24 /* UserDefaultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultHelper.swift; sourceTree = "<group>"; };
 		78F6E5DB2A98CDCD00365E24 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		78F6E6122A9B198300365E24 /* Extension + UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIViewController.swift"; sourceTree = "<group>"; };
+		78F6E6142A9B349000365E24 /* TVSeries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSeries.swift; sourceTree = "<group>"; };
+		78F6E6162A9B718600365E24 /* Similar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Similar.swift; sourceTree = "<group>"; };
 		78FF60C72A909E27004EBE0A /* Media.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Media.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78FF60CA2A909E27004EBE0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78FF60CC2A909E27004EBE0A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -71,7 +75,7 @@
 		78FF60FF2A90C054004EBE0A /* Extension + CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + CALayer.swift"; sourceTree = "<group>"; };
 		78FF61042A90C61A004EBE0A /* Protocol + TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Protocol + TableView.swift"; sourceTree = "<group>"; };
 		78FF61062A90D590004EBE0A /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		78FF61082A90D5BE004EBE0A /* TmdbManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TmdbManager.swift; sourceTree = "<group>"; };
+		78FF61082A90D5BE004EBE0A /* TmdbAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TmdbAPIManager.swift; sourceTree = "<group>"; };
 		78FF610A2A90D666004EBE0A /* Extension + URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + URL.swift"; sourceTree = "<group>"; };
 		78FF61102A90D758004EBE0A /* TmdbTreding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TmdbTreding.swift; sourceTree = "<group>"; };
 		78FF61122A90EF24004EBE0A /* Extension + ImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + ImageView.swift"; sourceTree = "<group>"; };
@@ -186,9 +190,10 @@
 		78FF60E22A909F1C004EBE0A /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				78FF610F2A90D747004EBE0A /* Data */,
+				78FF610F2A90D747004EBE0A /* Model */,
 				78FF61062A90D590004EBE0A /* Endpoint.swift */,
-				78FF61082A90D5BE004EBE0A /* TmdbManager.swift */,
+				78FF610A2A90D666004EBE0A /* Extension + URL.swift */,
+				78FF61082A90D5BE004EBE0A /* TmdbAPIManager.swift */,
 				78FF60F02A90ADDD004EBE0A /* APIKey.swift */,
 			);
 			path = Network;
@@ -221,7 +226,6 @@
 				78FF60FF2A90C054004EBE0A /* Extension + CALayer.swift */,
 				78FF61122A90EF24004EBE0A /* Extension + ImageView.swift */,
 				78F6E6122A9B198300365E24 /* Extension + UIViewController.swift */,
-				78FF610A2A90D666004EBE0A /* Extension + URL.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -236,15 +240,17 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		78FF610F2A90D747004EBE0A /* Data */ = {
+		78FF610F2A90D747004EBE0A /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				78FF61102A90D758004EBE0A /* TmdbTreding.swift */,
 				78FF61142A91074B004EBE0A /* Genres.swift */,
 				78FF611A2A912D99004EBE0A /* Cast.swift */,
 				782C56562A93556500090BED /* Backdrop.swift */,
+				78F6E6142A9B349000365E24 /* TVSeries.swift */,
+				78F6E6162A9B718600365E24 /* Similar.swift */,
 			);
-			path = Data;
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,9 +342,11 @@
 				78FF60CF2A909E27004EBE0A /* MainViewController.swift in Sources */,
 				78FF612F2A916AC5004EBE0A /* Protocol + CollectionView.swift in Sources */,
 				782C56572A93556500090BED /* Backdrop.swift in Sources */,
+				78F6E6172A9B718600365E24 /* Similar.swift in Sources */,
 				78FF61172A9120D5004EBE0A /* DetailViewController.swift in Sources */,
 				78FF611B2A912D99004EBE0A /* Cast.swift in Sources */,
 				78FF60CB2A909E27004EBE0A /* AppDelegate.swift in Sources */,
+				78F6E6152A9B349000365E24 /* TVSeries.swift in Sources */,
 				78F6E6132A9B198300365E24 /* Extension + UIViewController.swift in Sources */,
 				78FF60F12A90ADDD004EBE0A /* APIKey.swift in Sources */,
 				78F6E5DA2A98C1E500365E24 /* UserDefaultHelper.swift in Sources */,
@@ -351,7 +359,7 @@
 				78FF610B2A90D666004EBE0A /* Extension + URL.swift in Sources */,
 				78FF60FC2A90B99F004EBE0A /* Protocol + identifier.swift in Sources */,
 				78F6E5DC2A98CDCD00365E24 /* TabBarController.swift in Sources */,
-				78FF61092A90D5BE004EBE0A /* TmdbManager.swift in Sources */,
+				78FF61092A90D5BE004EBE0A /* TmdbAPIManager.swift in Sources */,
 				78FF61002A90C054004EBE0A /* Extension + CALayer.swift in Sources */,
 				78FF61212A915BA2004EBE0A /* TVMainViewController.swift in Sources */,
 				78F6E5CF2A98A40900365E24 /* PageViewController.swift in Sources */,

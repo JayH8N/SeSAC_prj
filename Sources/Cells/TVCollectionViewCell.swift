@@ -30,20 +30,25 @@ class TVCollectionViewCell: UICollectionViewCell {
     
     func setLabel() {
         titleLabel.font = .boldSystemFont(ofSize: 15)
-        infoLabel.textColor = .lightGray
+        infoLabel.textColor = .red
         infoLabel.font = .systemFont(ofSize: 11)
     }
     
     func setCell(item: Tv) {
-        let imageURL = "https://image.tmdb.org/t/p/w500"
-        
         titleLabel.text = item.name
         infoLabel.text = item.contents
-        if let url = URL(string: imageURL + item.poster) {
+        
+        var posterURL = item.poster
+        if posterURL == "empty" {
+            posterURL = URL.emptyImage
+        } else {
+            posterURL = URL.imageBaseURL + item.poster
+        }
+        
+        if let url = URL(string: posterURL) {
             posterImageView.kf.setImage(with: url)
         }
     }
-
 }
 
 extension TVCollectionViewCell: Reusableidentifier {

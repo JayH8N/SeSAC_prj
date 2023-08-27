@@ -32,11 +32,10 @@ class CastTableViewCell: UITableViewCell {
     
     
     func setCell(row: CastInfo) {
-        let imageURL = "https://image.tmdb.org/t/p/w500"
         
         nameLabel.text = row.name
         characterLabel.text = row.character
-        if let url = URL(string: imageURL + row.image) {
+        if let url = URL(string: URL.imageBaseURL + row.image) {
             profileImage.kf.setImage(with: url)
         }
     }

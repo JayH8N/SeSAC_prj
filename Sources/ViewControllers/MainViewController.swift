@@ -49,9 +49,9 @@ class MainViewController: UIViewController {
         searchBar.isHidden = true
         
         //API
-        TmdbManager.shared.callReqeust(kind: .movies_day, page: page) { data in
+        TmdbAPIManager.shared.callReqeust(kind: .movies_day, page: page) { data in
             
-            TmdbManager.shared.callGenres(kind: .movie_genre) { jenre in
+            TmdbAPIManager.shared.callGenres(kind: .movie_genre) { jenre in
                 
                 for i in jenre.genres {
                     let id = i.id
@@ -84,25 +84,11 @@ class MainViewController: UIViewController {
             return super.awakeAfter(using: coder)
         }
     
-    //날짜 형변환 함수
-    func convertDateFormat(_ inputDate: String, from inputFormat: String, to outputFormat: String) -> String? {
-        let inputFormatter = DateFormatter()
-        inputFormatter.dateFormat = inputFormat
-        
-        guard let date = inputFormatter.date(from: inputDate) else {
-            return nil
-        }
-
-        let outputFormatter = DateFormatter()
-        outputFormatter.dateFormat = outputFormat
-        return outputFormatter.string(from: date)
-    }
-    
     //segmentedControl
     @IBAction func segmenteValueChanged(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 1 {
             list.removeAll()
-            TmdbManager.shared.callReqeust(kind: .movies_week, page: page) { data in
+            TmdbAPIManager.shared.callReqeust(kind: .movies_week, page: page) { data in
                 for item in data.results {
                     let rawRate = item.voteAverage
                     let rate = String(format: "%.2f", rawRate)
@@ -119,7 +105,7 @@ class MainViewController: UIViewController {
             }
         } else {
             list.removeAll()
-            TmdbManager.shared.callReqeust(kind: .movies_day, page: page) { data in
+            TmdbAPIManager.shared.callReqeust(kind: .movies_day, page: page) { data in
                 for item in data.results {
                     let rawRate = item.voteAverage
                     let rate = String(format: "%.2f", rawRate)

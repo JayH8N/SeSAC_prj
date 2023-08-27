@@ -10,8 +10,6 @@ import Kingfisher
 
 class MainViewTableViewCell: UITableViewCell {
     
-    let imageUrl = "https://image.tmdb.org/t/p/w500"
-    
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var genreLabel: UILabel!
     @IBOutlet var mainBackView: UIView!
@@ -44,7 +42,7 @@ class MainViewTableViewCell: UITableViewCell {
             rateLabel.font = .systemFont(ofSize: 10)
             rateLabel.textAlignment = .center
             rateLabel.backgroundColor = UIColor(red: 124/255, green: 91/255, blue: 245/255, alpha: 1)
-            rateLabel.text = "평점"
+            rateLabel.text = "Rate"
             rateScoreLabel.font = .systemFont(ofSize: 10)
             rateScoreLabel.textAlignment = .center
             rateScoreLabel.backgroundColor = .white
@@ -53,7 +51,7 @@ class MainViewTableViewCell: UITableViewCell {
             originalTitle.textColor = .green
             actorsLabel.textColor = .lightGray
             actorsLabel.font = .systemFont(ofSize: 14)
-            subBackViewTitleLabel.text = "자세히 보기"
+            subBackViewTitleLabel.text = "Details"
             subBackViewTitleLabel.font = .systemFont(ofSize: 13)
         }
         
@@ -83,7 +81,7 @@ class MainViewTableViewCell: UITableViewCell {
     
     func setCelldata(data: TmdbData) {
         dateLabel.text = data.releaseDate
-        if let url = URL(string: imageUrl + data.backdropPath) {
+        if let url = URL(string: URL.imageBaseURL + data.backdropPath) {
             mainPosterView.kf.setImage(with: url)
         }
         rateScoreLabel.text = "\(data.voteAverage)"
