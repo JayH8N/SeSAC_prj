@@ -99,3 +99,9 @@ class MainViewTableViewCell: UITableViewCell {
     }
     
 }
+
+extension MainViewTableViewCell: Reusableidentifier {
+    static var identifier: String {
+        return String(describing: Self.self)
+    }
+}

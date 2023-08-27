@@ -7,8 +7,6 @@
 
 import UIKit
 
-import UIKit
-
 extension CALayer {
     func addBorder(_ arr_edge: [UIRectEdge], width: CGFloat, color: CGColor) {
         for edge in arr_edge {

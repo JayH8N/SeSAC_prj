@@ -46,3 +46,9 @@ class CastTableViewCell: UITableViewCell {
     
 
 }
+
+extension CastTableViewCell: Reusableidentifier {
+    static var identifier: String {
+        return String(describing: Self.self)
+    }
+}

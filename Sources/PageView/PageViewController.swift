@@ -22,7 +22,7 @@ class PageViewController: UIPageViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        list = [FirstViewController(), SecondViewController(), ThirdViewController()]
+        list = [FirstViewController(), SecondViewController()]
 
         delegate = self
         dataSource = self

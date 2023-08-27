@@ -43,9 +43,11 @@ class TVCollectionViewCell: UICollectionViewCell {
             posterImageView.kf.setImage(with: url)
         }
     }
-    
-    
-    
-    
 
+}
+
+extension TVCollectionViewCell: Reusableidentifier {
+    static var identifier: String {
+        return String(describing: Self.self)
+    }
 }
