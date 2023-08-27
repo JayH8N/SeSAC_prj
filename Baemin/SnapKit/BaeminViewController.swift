@@ -64,13 +64,13 @@ class BaeminViewController: UIViewController {
 //            return button
 //        }()
     
-    let leftBarItem = navigationBarItem(imageName: "square.grid.2x2", imageSize: 18, color: .white, leading: 0, trailing: 20)
-    let rightBarItem1 = navigationBarItem(imageName: "person.crop.circle", imageSize: 18, color: .white, leading: 20, trailing: 0)
-    let rightBarItem2 = navigationBarItem(imageName: "bell", imageSize: 18, color: .white, leading: 8, trailing: 0)
+    let leftBarItem = navigationBarItem(imageName: "square.grid.2x2", imageSize: 18, color: .white)
+    let rightBarItem1 = navigationBarItem(imageName: "person.crop.circle", imageSize: 18, color: .white)
+    let rightBarItem2 = navigationBarItem(imageName: "bell", imageSize: 18, color: .white)
     
     
         
-    static func navigationBarItem(imageName: String, imageSize: CGFloat, color: UIColor, leading: CGFloat, trailing: CGFloat) -> UIButton {
+    static func navigationBarItem(imageName: String, imageSize: CGFloat, color: UIColor) -> UIButton {
         let uiButton = UIButton()
         let setImage = UIImage.SymbolConfiguration(pointSize: imageSize, weight: .regular)
         
@@ -79,7 +79,7 @@ class BaeminViewController: UIViewController {
         uiButton.tintColor = color
         
         var config = UIButton.Configuration.plain()
-        config.contentInsets = .init(top: 10, leading: leading, bottom: 10, trailing: trailing)
+        config.contentInsets = .init(top: 10, leading: 0, bottom: 10, trailing: 0)
         config.image = UIImage(systemName: imageName)
         config.baseBackgroundColor = .clear
         uiButton.configuration = config
@@ -144,7 +144,7 @@ class BaeminViewController: UIViewController {
         stackView.distribution = .equalSpacing
         stackView.axis = .horizontal
         stackView.alignment = .center
-        stackView.spacing = 4
+        stackView.spacing = 8
         return stackView
     }()
 
