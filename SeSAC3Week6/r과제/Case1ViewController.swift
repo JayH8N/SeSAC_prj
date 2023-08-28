@@ -114,7 +114,7 @@ class Case1ViewController: UIViewController {
 //MARK: - extension
 
 
-//🏞️3.앨범상에서 puch-pop구조이기에 navigationcontroller필요함
+//🏞️3.앨범상에서 push-pop구조이기에 navigationcontroller필요함
 extension Case1ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     

@@ -196,6 +196,7 @@ class Case4ViewController: UIViewController {
         switch type {
         case .all:
             mapView.addAnnotations(list)
+            mapView.showAnnotations(list, animated: true) //어노테이션 중심점으로 가는 메서드
         case .cgv:
             mapView.removeAnnotations(mapView.annotations)
             mapView.addAnnotations(list.filter{ $0.subtitle == TheaterOption.cgv.rawValue })
