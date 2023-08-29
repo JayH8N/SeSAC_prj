@@ -34,14 +34,15 @@ class ProfileViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "프로필 편집"
-//        NotificationCenter.default.addObserver(self, selector: #selector(selectPickerView), name: Notification.Name("PickerView"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(selectPickerView), name: Notification.Name("PickerView"), object: nil)
     }
     
-//    @objc func selectPickerView(notification: NSNotification) {
-//        if let gender = notification.userInfo?["gender"] as? String {
-//            mainView.genderButton.setTitle(gender, for: .normal)
-//        }
-//    }
+    @objc func selectPickerView(notification: NSNotification) {
+        if let gender = notification.userInfo?["gender"] as? String {
+            print("최종값전달", gender)
+            mainView.genderButton.setTitle(gender, for: .normal)
+        }
+    }
     
     
     override func configureView() {
@@ -49,6 +50,17 @@ class ProfileViewController: BaseViewController {
         navigationItem.rightBarButtonItem = rightBarItem
         navigationItem.leftBarButtonItem = leftBarItem
         
+        //UIImagePicker
+        guard UIImagePickerController.isSourceTypeAvailable(.camera) else {
+            return
+        }
+        
+        mainView.picker.delegate = self
+        mainView.picker.sourceType = .photoLibrary
+        mainView.picker.allowsEditing = true
+        
+        //
+        mainView.imageChangeButton.addTarget(self, action: #selector(imageChangeButtonClicked), for: .touchUpInside)
         mainView.nameTitleButton.addTarget(self, action: #selector(nameTitlebuttonClicked), for: .touchUpInside)
         mainView.userNameButton.addTarget(self, action: #selector(userNameButtonClicked), for: .touchUpInside)
         mainView.genderPronounButton.addTarget(self, action: #selector(genderPronounButtonClicked), for: .touchUpInside)
@@ -74,6 +86,11 @@ class ProfileViewController: BaseViewController {
     @objc func leftBarItemClicked() {
         
     }
+    
+    @objc func imageChangeButtonClicked() {
+        present(mainView.picker, animated: true)
+    }
+    
     //
     @objc func nameTitlebuttonClicked() {
         let vc = NameViewController()
@@ -121,10 +138,10 @@ class ProfileViewController: BaseViewController {
     @objc func genderButtonClicked() {
         let vc = GenderViewController()
         
-        vc.completionHandler = {
-            print("성별", $0)
-            self.mainView.genderButton.setTitle($0, for: .normal)
-        }
+//        vc.completionHandler = {
+//            print("성별", $0)
+//            self.mainView.genderButton.setTitle($0, for: .normal)
+//        }
         
         vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true)
@@ -132,3 +149,26 @@ class ProfileViewController: BaseViewController {
     
 
 }
+
+extension ProfileViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    
+    //취소버튼 클릭시
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true)
+        print("취소\(#function)")
+       
+    }
+    
+    
+    //사진을 선택하거나 카메라 촬영 직후 호출
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let image = info[UIImagePickerController.InfoKey.editedImage/*originalImage*/] as? UIImage { //picker.allowsEditing = true을 이용하여 편집된 이미지를 넣고 싶은 경우 InfoKey.editedImage로 바꿔준다.
+            self.mainView.photoCircle.image = image
+            dismiss(animated: true)
+        }
+    }
+    
+    
+}
+

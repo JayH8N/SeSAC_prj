@@ -11,6 +11,8 @@ import UIKit
 
 class ProfileView: BaseView {
     
+    let picker = UIImagePickerController()
+    
     let photoUIView = {
         let view = UIView()
         view.backgroundColor = .lightGray

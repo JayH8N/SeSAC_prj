@@ -66,8 +66,9 @@ extension GenderViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        NotificationCenter.default.post(name: Notification.Name("PickerView"), object: nil, userInfo: ["gender": gender[row]])
-        completionHandler?(gender[row])
+        print("\(gender[row]), Notification값전달 1")
+        NotificationCenter.default.post(name: Notification.Name("PickerView"), object: nil, userInfo: ["gender": gender[row]])
+        //completionHandler?(gender[row])
     }
     
 
