@@ -24,7 +24,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         let sb2 = UIStoryboard(name: "Main", bundle: nil)
         let vc2 = sb2.instantiateViewController(withIdentifier: TVMainViewController.identifier) as! TVMainViewController
         
-        
+        let vc3 = ProfileViewController()
       
         let tabOne = UINavigationController(rootViewController: vc1)
         let tabOneBarItem = UITabBarItem(title: "Movie", image: UIImage(systemName: "popcorn"), tag: 1)
@@ -34,8 +34,11 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         let tabTwoBarItem = UITabBarItem(title: "TVSeries", image: UIImage(systemName: "tv"), tag: 2)
         tabTwo.tabBarItem = tabTwoBarItem
         
+        let tabThird = UINavigationController(rootViewController: vc3)
+        let tabThirdBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person.crop.circle"), tag: 3)
+        tabThird.tabBarItem = tabThirdBarItem
         
-        self.viewControllers = [tabOne, tabTwo]
+        self.viewControllers = [tabOne, tabTwo, tabThird]
         
         
     }

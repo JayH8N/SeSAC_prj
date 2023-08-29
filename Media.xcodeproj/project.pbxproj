@@ -8,6 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		782C56572A93556500090BED /* Backdrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782C56562A93556500090BED /* Backdrop.swift */; };
+		78BCED9C2A9CF6D000F3BEBA /* TmdbData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCED9B2A9CF6D000F3BEBA /* TmdbData.swift */; };
+		78BCEDE82A9DD4BD00F3BEBA /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCEDE72A9DD4BD00F3BEBA /* BaseViewController.swift */; };
+		78BCEDEA2A9DD4F700F3BEBA /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCEDE92A9DD4F700F3BEBA /* BaseView.swift */; };
+		78BCEDEE2A9DD5B800F3BEBA /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCEDED2A9DD5B800F3BEBA /* ProfileViewController.swift */; };
+		78BCEDF02A9DD60400F3BEBA /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCEDEF2A9DD60400F3BEBA /* ProfileView.swift */; };
+		78BCEDF52A9DE2F300F3BEBA /* LeadingTitleCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCEDF42A9DE2F300F3BEBA /* LeadingTitleCustom.swift */; };
+		78BCEDFE2A9DF0E100F3BEBA /* NameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCEDFD2A9DF0E100F3BEBA /* NameViewController.swift */; };
+		78BCEE002A9DF1A800F3BEBA /* UserNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCEDFF2A9DF1A800F3BEBA /* UserNameViewController.swift */; };
+		78BCEE022A9DF1BA00F3BEBA /* GenderPronounViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCEE012A9DF1BA00F3BEBA /* GenderPronounViewController.swift */; };
+		78BCEE042A9DF1C600F3BEBA /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCEE032A9DF1C600F3BEBA /* InfoViewController.swift */; };
+		78BCEE062A9DF1D200F3BEBA /* LinkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCEE052A9DF1D200F3BEBA /* LinkViewController.swift */; };
+		78BCEE082A9DF1E000F3BEBA /* GenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCEE072A9DF1E000F3BEBA /* GenderViewController.swift */; };
+		78BCEE0A2A9DF57F00F3BEBA /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCEE092A9DF57F00F3BEBA /* NameView.swift */; };
+		78BCEE0E2A9E057800F3BEBA /* UserNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCEE0D2A9E057800F3BEBA /* UserNameView.swift */; };
+		78BCEE102A9E07C800F3BEBA /* GenderPronounView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCEE0F2A9E07C800F3BEBA /* GenderPronounView.swift */; };
+		78BCEE122A9E097F00F3BEBA /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCEE112A9E097F00F3BEBA /* InfoView.swift */; };
+		78BCEE142A9E0BB600F3BEBA /* LinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCEE132A9E0BB600F3BEBA /* LinkView.swift */; };
+		78BCEE162A9E141000F3BEBA /* GenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCEE152A9E141000F3BEBA /* GenderView.swift */; };
 		78F6E5C92A98A3AE00365E24 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E5C82A98A3AE00365E24 /* FirstViewController.swift */; };
 		78F6E5CD2A98A3C100365E24 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E5CC2A98A3C000365E24 /* SecondViewController.swift */; };
 		78F6E5CF2A98A40900365E24 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E5CE2A98A40900365E24 /* PageViewController.swift */; };
@@ -17,6 +35,7 @@
 		78F6E6132A9B198300365E24 /* Extension + UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E6122A9B198300365E24 /* Extension + UIViewController.swift */; };
 		78F6E6152A9B349000365E24 /* TVSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E6142A9B349000365E24 /* TVSeries.swift */; };
 		78F6E6172A9B718600365E24 /* Similar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E6162A9B718600365E24 /* Similar.swift */; };
+		78F6E6192A9BB56200365E24 /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E6182A9BB56200365E24 /* VideoViewController.swift */; };
 		78FF60CB2A909E27004EBE0A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF60CA2A909E27004EBE0A /* AppDelegate.swift */; };
 		78FF60CD2A909E27004EBE0A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF60CC2A909E27004EBE0A /* SceneDelegate.swift */; };
 		78FF60CF2A909E27004EBE0A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78FF60CE2A909E27004EBE0A /* MainViewController.swift */; };
@@ -51,6 +70,24 @@
 
 /* Begin PBXFileReference section */
 		782C56562A93556500090BED /* Backdrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Backdrop.swift; sourceTree = "<group>"; };
+		78BCED9B2A9CF6D000F3BEBA /* TmdbData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TmdbData.swift; sourceTree = "<group>"; };
+		78BCEDE72A9DD4BD00F3BEBA /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		78BCEDE92A9DD4F700F3BEBA /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		78BCEDED2A9DD5B800F3BEBA /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		78BCEDEF2A9DD60400F3BEBA /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		78BCEDF42A9DE2F300F3BEBA /* LeadingTitleCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeadingTitleCustom.swift; sourceTree = "<group>"; };
+		78BCEDFD2A9DF0E100F3BEBA /* NameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameViewController.swift; sourceTree = "<group>"; };
+		78BCEDFF2A9DF1A800F3BEBA /* UserNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameViewController.swift; sourceTree = "<group>"; };
+		78BCEE012A9DF1BA00F3BEBA /* GenderPronounViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderPronounViewController.swift; sourceTree = "<group>"; };
+		78BCEE032A9DF1C600F3BEBA /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		78BCEE052A9DF1D200F3BEBA /* LinkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkViewController.swift; sourceTree = "<group>"; };
+		78BCEE072A9DF1E000F3BEBA /* GenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderViewController.swift; sourceTree = "<group>"; };
+		78BCEE092A9DF57F00F3BEBA /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
+		78BCEE0D2A9E057800F3BEBA /* UserNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameView.swift; sourceTree = "<group>"; };
+		78BCEE0F2A9E07C800F3BEBA /* GenderPronounView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderPronounView.swift; sourceTree = "<group>"; };
+		78BCEE112A9E097F00F3BEBA /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		78BCEE132A9E0BB600F3BEBA /* LinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkView.swift; sourceTree = "<group>"; };
+		78BCEE152A9E141000F3BEBA /* GenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderView.swift; sourceTree = "<group>"; };
 		78F6E5C82A98A3AE00365E24 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		78F6E5CC2A98A3C000365E24 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		78F6E5CE2A98A40900365E24 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +96,7 @@
 		78F6E6122A9B198300365E24 /* Extension + UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIViewController.swift"; sourceTree = "<group>"; };
 		78F6E6142A9B349000365E24 /* TVSeries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSeries.swift; sourceTree = "<group>"; };
 		78F6E6162A9B718600365E24 /* Similar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Similar.swift; sourceTree = "<group>"; };
+		78F6E6182A9BB56200365E24 /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		78FF60C72A909E27004EBE0A /* Media.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Media.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78FF60CA2A909E27004EBE0A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78FF60CC2A909E27004EBE0A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -105,6 +143,85 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		78BCEDE62A9DD4AB00F3BEBA /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				78BCEDE72A9DD4BD00F3BEBA /* BaseViewController.swift */,
+				78BCEDE92A9DD4F700F3BEBA /* BaseView.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		78BCEDEC2A9DD58F00F3BEBA /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				78BCEDFC2A9DF0A900F3BEBA /* Gender */,
+				78BCEDFB2A9DF0A500F3BEBA /* Link */,
+				78BCEDFA2A9DF09F00F3BEBA /* Info */,
+				78BCEDF82A9DF09400F3BEBA /* GenderPronoun */,
+				78BCEDF72A9DF07200F3BEBA /* UserName */,
+				78BCEDF62A9DF06700F3BEBA /* NameTitle */,
+				78BCEDED2A9DD5B800F3BEBA /* ProfileViewController.swift */,
+				78BCEDEF2A9DD60400F3BEBA /* ProfileView.swift */,
+				78BCEDF42A9DE2F300F3BEBA /* LeadingTitleCustom.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		78BCEDF62A9DF06700F3BEBA /* NameTitle */ = {
+			isa = PBXGroup;
+			children = (
+				78BCEDFD2A9DF0E100F3BEBA /* NameViewController.swift */,
+				78BCEE092A9DF57F00F3BEBA /* NameView.swift */,
+			);
+			path = NameTitle;
+			sourceTree = "<group>";
+		};
+		78BCEDF72A9DF07200F3BEBA /* UserName */ = {
+			isa = PBXGroup;
+			children = (
+				78BCEDFF2A9DF1A800F3BEBA /* UserNameViewController.swift */,
+				78BCEE0D2A9E057800F3BEBA /* UserNameView.swift */,
+			);
+			path = UserName;
+			sourceTree = "<group>";
+		};
+		78BCEDF82A9DF09400F3BEBA /* GenderPronoun */ = {
+			isa = PBXGroup;
+			children = (
+				78BCEE012A9DF1BA00F3BEBA /* GenderPronounViewController.swift */,
+				78BCEE0F2A9E07C800F3BEBA /* GenderPronounView.swift */,
+			);
+			path = GenderPronoun;
+			sourceTree = "<group>";
+		};
+		78BCEDFA2A9DF09F00F3BEBA /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				78BCEE032A9DF1C600F3BEBA /* InfoViewController.swift */,
+				78BCEE112A9E097F00F3BEBA /* InfoView.swift */,
+			);
+			path = Info;
+			sourceTree = "<group>";
+		};
+		78BCEDFB2A9DF0A500F3BEBA /* Link */ = {
+			isa = PBXGroup;
+			children = (
+				78BCEE052A9DF1D200F3BEBA /* LinkViewController.swift */,
+				78BCEE132A9E0BB600F3BEBA /* LinkView.swift */,
+			);
+			path = Link;
+			sourceTree = "<group>";
+		};
+		78BCEDFC2A9DF0A900F3BEBA /* Gender */ = {
+			isa = PBXGroup;
+			children = (
+				78BCEE072A9DF1E000F3BEBA /* GenderViewController.swift */,
+				78BCEE152A9E141000F3BEBA /* GenderView.swift */,
+			);
+			path = Gender;
+			sourceTree = "<group>";
+		};
 		78F6E5C72A98A39300365E24 /* PageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +282,8 @@
 		78FF60DF2A909E53004EBE0A /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				78BCEDEC2A9DD58F00F3BEBA /* Profile */,
+				78BCEDE62A9DD4AB00F3BEBA /* Base */,
 				78F6E5D82A98C1CF00365E24 /* Class */,
 				78F6E5C72A98A39300365E24 /* PageView */,
 				78FF60F42A90B389004EBE0A /* Cells */,
@@ -206,6 +325,7 @@
 				78FF61162A9120D5004EBE0A /* DetailViewController.swift */,
 				78FF61202A915BA2004EBE0A /* TVMainViewController.swift */,
 				78FF61302A91EA92004EBE0A /* TVDetailViewController.swift */,
+				78F6E6182A9BB56200365E24 /* VideoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -249,6 +369,7 @@
 				782C56562A93556500090BED /* Backdrop.swift */,
 				78F6E6142A9B349000365E24 /* TVSeries.swift */,
 				78F6E6162A9B718600365E24 /* Similar.swift */,
+				78BCED9B2A9CF6D000F3BEBA /* TmdbData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -340,34 +461,53 @@
 			buildActionMask = 2147483647;
 			files = (
 				78FF60CF2A909E27004EBE0A /* MainViewController.swift in Sources */,
+				78BCEE002A9DF1A800F3BEBA /* UserNameViewController.swift in Sources */,
 				78FF612F2A916AC5004EBE0A /* Protocol + CollectionView.swift in Sources */,
+				78BCEDE82A9DD4BD00F3BEBA /* BaseViewController.swift in Sources */,
+				78BCEDEA2A9DD4F700F3BEBA /* BaseView.swift in Sources */,
+				78BCEE0A2A9DF57F00F3BEBA /* NameView.swift in Sources */,
 				782C56572A93556500090BED /* Backdrop.swift in Sources */,
 				78F6E6172A9B718600365E24 /* Similar.swift in Sources */,
 				78FF61172A9120D5004EBE0A /* DetailViewController.swift in Sources */,
+				78BCEDF52A9DE2F300F3BEBA /* LeadingTitleCustom.swift in Sources */,
 				78FF611B2A912D99004EBE0A /* Cast.swift in Sources */,
+				78BCEE102A9E07C800F3BEBA /* GenderPronounView.swift in Sources */,
 				78FF60CB2A909E27004EBE0A /* AppDelegate.swift in Sources */,
+				78BCEE022A9DF1BA00F3BEBA /* GenderPronounViewController.swift in Sources */,
+				78F6E6192A9BB56200365E24 /* VideoViewController.swift in Sources */,
 				78F6E6152A9B349000365E24 /* TVSeries.swift in Sources */,
 				78F6E6132A9B198300365E24 /* Extension + UIViewController.swift in Sources */,
+				78BCED9C2A9CF6D000F3BEBA /* TmdbData.swift in Sources */,
 				78FF60F12A90ADDD004EBE0A /* APIKey.swift in Sources */,
 				78F6E5DA2A98C1E500365E24 /* UserDefaultHelper.swift in Sources */,
+				78BCEE122A9E097F00F3BEBA /* InfoView.swift in Sources */,
+				78BCEE042A9DF1C600F3BEBA /* InfoViewController.swift in Sources */,
 				78FF61312A91EA92004EBE0A /* TVDetailViewController.swift in Sources */,
 				78FF61152A91074B004EBE0A /* Genres.swift in Sources */,
 				78FF61052A90C61A004EBE0A /* Protocol + TableView.swift in Sources */,
+				78BCEDFE2A9DF0E100F3BEBA /* NameViewController.swift in Sources */,
 				78FF60CD2A909E27004EBE0A /* SceneDelegate.swift in Sources */,
 				78F6E5CD2A98A3C100365E24 /* SecondViewController.swift in Sources */,
 				78F6E5C92A98A3AE00365E24 /* FirstViewController.swift in Sources */,
+				78BCEE0E2A9E057800F3BEBA /* UserNameView.swift in Sources */,
 				78FF610B2A90D666004EBE0A /* Extension + URL.swift in Sources */,
 				78FF60FC2A90B99F004EBE0A /* Protocol + identifier.swift in Sources */,
 				78F6E5DC2A98CDCD00365E24 /* TabBarController.swift in Sources */,
 				78FF61092A90D5BE004EBE0A /* TmdbAPIManager.swift in Sources */,
+				78BCEE142A9E0BB600F3BEBA /* LinkView.swift in Sources */,
 				78FF61002A90C054004EBE0A /* Extension + CALayer.swift in Sources */,
 				78FF61212A915BA2004EBE0A /* TVMainViewController.swift in Sources */,
 				78F6E5CF2A98A40900365E24 /* PageViewController.swift in Sources */,
+				78BCEDF02A9DD60400F3BEBA /* ProfileView.swift in Sources */,
 				78FF61132A90EF24004EBE0A /* Extension + ImageView.swift in Sources */,
 				78FF611D2A9136DC004EBE0A /* CastTableViewCell.swift in Sources */,
 				78FF61072A90D590004EBE0A /* Endpoint.swift in Sources */,
 				78FF61112A90D758004EBE0A /* TmdbTreding.swift in Sources */,
+				78BCEE062A9DF1D200F3BEBA /* LinkViewController.swift in Sources */,
+				78BCEDEE2A9DD5B800F3BEBA /* ProfileViewController.swift in Sources */,
 				78FF61282A9165E8004EBE0A /* TVCollectionViewCell.swift in Sources */,
+				78BCEE082A9DF1E000F3BEBA /* GenderViewController.swift in Sources */,
+				78BCEE162A9E141000F3BEBA /* GenderView.swift in Sources */,
 				78FF60F92A90B45E004EBE0A /* MainViewTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

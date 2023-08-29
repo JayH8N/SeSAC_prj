@@ -103,14 +103,18 @@ class TVDetailViewController: UIViewController {
 extension TVDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return collectionView == similarCollectionView ? similar.results.count : recommendation.results.count
+        if collectionView == similarCollectionView {
+            return similar.results.count
+        } else {
+            return recommendation.results.count
+        }
     }
-    
+        
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TVCollectionViewCell.identifier, for: indexPath) as? TVCollectionViewCell else { return UICollectionViewCell() }
         
-        let itemSimilar = similar.results[indexPath.item]
-        let itemRecommendation = recommendation.results[indexPath.item]
+        let itemSimilar = similar.results[indexPath.row]
+        let itemRecommendation = recommendation.results[indexPath.row]
         
         if collectionView == similarCollectionView {
             let url = URL.imageBaseURL + (itemSimilar.posterPath ?? "")
