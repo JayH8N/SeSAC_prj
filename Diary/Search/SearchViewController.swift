@@ -24,6 +24,9 @@ class SearchViewController: BaseViewController {
         
         //⚠️addObserver보다 post가 먼저 신호를 보내면 addObserver가 신호를 받지 못한다.!!(정방향)
         NotificationCenter.default.addObserver(self, selector: #selector(recommandKeywordNotificationObserver), name: NSNotification.Name("RecommandKeyword"), object: nil)
+        
+        mainView.searchBar.becomeFirstResponder() //유저가 터치하지 않아도 서치바의 커서가 바로 깜빡이고 키보드가 바로 뜨게 된다.
+        mainView.searchBar.delegate = self
     }
     
     @objc func recommandKeywordNotificationObserver(notification: NSNotification) {
@@ -37,6 +40,14 @@ class SearchViewController: BaseViewController {
         mainView.collectionView.dataSource = self
     }
 
+}
+
+extension SearchViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        mainView.searchBar.resignFirstResponder() //유저의 포커스가 서치바에 없다는 것을 명시적으로 알려줌(키보드가 내려가게 됨)
+    }
+    
 }
 
 extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource {

@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		789924702A9F1CC800AD8225 /* PhotoHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7899246F2A9F1CC800AD8225 /* PhotoHomeViewController.swift */; };
+		789924722A9F1CD100AD8225 /* PhotoHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789924712A9F1CD100AD8225 /* PhotoHomeView.swift */; };
+		789924752A9F1DBE00AD8225 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 789924742A9F1DBE00AD8225 /* Kingfisher */; };
+		789924782A9F26B500AD8225 /* WebSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789924772A9F26B500AD8225 /* WebSearchViewController.swift */; };
+		7899247A2A9F26BE00AD8225 /* WebSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789924792A9F26BE00AD8225 /* WebSearchView.swift */; };
+		7899247C2A9F299A00AD8225 /* WebSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7899247B2A9F299A00AD8225 /* WebSearchCollectionViewCell.swift */; };
+		7899247E2A9F2B6500AD8225 /* Protocol identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7899247D2A9F2B6500AD8225 /* Protocol identifier.swift */; };
 		78BCEDA42A9D7BD900F3BEBA /* Extension + Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCEDA32A9D7BD900F3BEBA /* Extension + Notification.swift */; };
 		78BCEDA62A9D7C7600F3BEBA /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCEDA52A9D7C7600F3BEBA /* DateView.swift */; };
 		78BCEDA82A9D7DC300F3BEBA /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCEDA72A9D7DC300F3BEBA /* DateViewController.swift */; };
@@ -16,6 +23,8 @@
 		78BCEDE12A9DB54C00F3BEBA /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCEDE02A9DB54C00F3BEBA /* TitleViewController.swift */; };
 		78BCEDE32A9DBB7700F3BEBA /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCEDE22A9DBB7700F3BEBA /* TextViewController.swift */; };
 		78BCEDE52A9DC76100F3BEBA /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCEDE42A9DC76100F3BEBA /* WebViewController.swift */; };
+		78BCEE1D2A9EC73C00F3BEBA /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCEE1C2A9EC73C00F3BEBA /* APIService.swift */; };
+		78BCEE1F2A9EEBD500F3BEBA /* URLSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCEE1E2A9EEBD500F3BEBA /* URLSessionViewController.swift */; };
 		78F6E6272A9C1D6C00365E24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E6262A9C1D6C00365E24 /* AppDelegate.swift */; };
 		78F6E6292A9C1D6C00365E24 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E6282A9C1D6C00365E24 /* SceneDelegate.swift */; };
 		78F6E62B2A9C1D6C00365E24 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E62A2A9C1D6C00365E24 /* AddViewController.swift */; };
@@ -63,6 +72,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		7899246F2A9F1CC800AD8225 /* PhotoHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoHomeViewController.swift; sourceTree = "<group>"; };
+		789924712A9F1CD100AD8225 /* PhotoHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoHomeView.swift; sourceTree = "<group>"; };
+		789924772A9F26B500AD8225 /* WebSearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSearchViewController.swift; sourceTree = "<group>"; };
+		789924792A9F26BE00AD8225 /* WebSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSearchView.swift; sourceTree = "<group>"; };
+		7899247B2A9F299A00AD8225 /* WebSearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		7899247D2A9F2B6500AD8225 /* Protocol identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Protocol identifier.swift"; sourceTree = "<group>"; };
 		78BCEDA32A9D7BD900F3BEBA /* Extension + Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + Notification.swift"; sourceTree = "<group>"; };
 		78BCEDA52A9D7C7600F3BEBA /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
 		78BCEDA72A9D7DC300F3BEBA /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +86,8 @@
 		78BCEDE02A9DB54C00F3BEBA /* TitleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
 		78BCEDE22A9DBB7700F3BEBA /* TextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		78BCEDE42A9DC76100F3BEBA /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		78BCEE1C2A9EC73C00F3BEBA /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		78BCEE1E2A9EEBD500F3BEBA /* URLSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionViewController.swift; sourceTree = "<group>"; };
 		78F6E6232A9C1D6C00365E24 /* Diary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Diary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78F6E6262A9C1D6C00365E24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78F6E6282A9C1D6C00365E24 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				789924752A9F1DBE00AD8225 /* Kingfisher in Frameworks */,
 				78BCEDDD2A9D9BBB00F3BEBA /* SeSACPhotoFramework.framework in Frameworks */,
 				78F6E63C2A9C1E2400365E24 /* SnapKit in Frameworks */,
 			);
@@ -100,6 +118,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		789924682A9F192000AD8225 /* 8월30일 과제 */ = {
+			isa = PBXGroup;
+			children = (
+				789924762A9F269D00AD8225 /* WebSearch */,
+				7899246E2A9F1C9700AD8225 /* PhotoHome */,
+				7899247D2A9F2B6500AD8225 /* Protocol identifier.swift */,
+			);
+			name = "8월30일 과제";
+			path = "8월30일 과제";
+			sourceTree = "<group>";
+		};
+		7899246E2A9F1C9700AD8225 /* PhotoHome */ = {
+			isa = PBXGroup;
+			children = (
+				7899246F2A9F1CC800AD8225 /* PhotoHomeViewController.swift */,
+				789924712A9F1CD100AD8225 /* PhotoHomeView.swift */,
+			);
+			path = PhotoHome;
+			sourceTree = "<group>";
+		};
+		789924762A9F269D00AD8225 /* WebSearch */ = {
+			isa = PBXGroup;
+			children = (
+				789924772A9F26B500AD8225 /* WebSearchViewController.swift */,
+				789924792A9F26BE00AD8225 /* WebSearchView.swift */,
+				7899247B2A9F299A00AD8225 /* WebSearchCollectionViewCell.swift */,
+			);
+			path = WebSearch;
+			sourceTree = "<group>";
+		};
 		78BCEDA22A9D7BC300F3BEBA /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,9 +173,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		78BCEE1B2A9EC73200F3BEBA /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				78BCEE1C2A9EC73C00F3BEBA /* APIService.swift */,
+				78BCEE1E2A9EEBD500F3BEBA /* URLSessionViewController.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		78F6E61A2A9C1D6C00365E24 = {
 			isa = PBXGroup;
 			children = (
+				789924682A9F192000AD8225 /* 8월30일 과제 */,
 				78BCEDD32A9D9B3500F3BEBA /* SeSACPhotoFramework.xcodeproj */,
 				78F6E6252A9C1D6C00365E24 /* Diary */,
 				78F6E6242A9C1D6C00365E24 /* Products */,
@@ -146,6 +204,7 @@
 		78F6E6252A9C1D6C00365E24 /* Diary */ = {
 			isa = PBXGroup;
 			children = (
+				78BCEE1B2A9EC73200F3BEBA /* Network */,
 				78BCEDA22A9D7BC300F3BEBA /* Extension */,
 				78F6E6452A9C2FC700365E24 /* Add */,
 				78F6E6402A9C272800365E24 /* Search */,
@@ -212,6 +271,7 @@
 			name = Diary;
 			packageProductDependencies = (
 				78F6E63B2A9C1E2400365E24 /* SnapKit */,
+				789924742A9F1DBE00AD8225 /* Kingfisher */,
 			);
 			productName = Diary;
 			productReference = 78F6E6232A9C1D6C00365E24 /* Diary.app */;
@@ -243,6 +303,7 @@
 			mainGroup = 78F6E61A2A9C1D6C00365E24;
 			packageReferences = (
 				78F6E63A2A9C1E2400365E24 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				789924732A9F1DBE00AD8225 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 78F6E6242A9C1D6C00365E24 /* Products */;
 			projectDirPath = "";
@@ -299,16 +360,24 @@
 				78F6E62B2A9C1D6C00365E24 /* AddViewController.swift in Sources */,
 				78BCEDA42A9D7BD900F3BEBA /* Extension + Notification.swift in Sources */,
 				78BCEDA82A9D7DC300F3BEBA /* DateViewController.swift in Sources */,
+				7899247A2A9F26BE00AD8225 /* WebSearchView.swift in Sources */,
 				78F6E63F2A9C242300365E24 /* BaseViewController.swift in Sources */,
 				78BCEDE32A9DBB7700F3BEBA /* TextViewController.swift in Sources */,
+				7899247E2A9F2B6500AD8225 /* Protocol identifier.swift in Sources */,
 				78BCEDA62A9D7C7600F3BEBA /* DateView.swift in Sources */,
 				78F6E6492A9C337500365E24 /* SearchView.swift in Sources */,
+				789924702A9F1CC800AD8225 /* PhotoHomeViewController.swift in Sources */,
+				789924782A9F26B500AD8225 /* WebSearchViewController.swift in Sources */,
+				7899247C2A9F299A00AD8225 /* WebSearchCollectionViewCell.swift in Sources */,
+				78BCEE1F2A9EEBD500F3BEBA /* URLSessionViewController.swift in Sources */,
 				78F6E6442A9C2EBF00365E24 /* BaseView.swift in Sources */,
 				78F6E6272A9C1D6C00365E24 /* AppDelegate.swift in Sources */,
 				78BCEDE52A9DC76100F3BEBA /* WebViewController.swift in Sources */,
 				78F6E6292A9C1D6C00365E24 /* SceneDelegate.swift in Sources */,
+				789924722A9F1CD100AD8225 /* PhotoHomeView.swift in Sources */,
 				78BCEDAA2A9D8E8C00F3BEBA /* Extension + DateFormat.swift in Sources */,
 				78F6E64D2A9C37EC00365E24 /* SearchCollectionViewCell.swift in Sources */,
+				78BCEE1D2A9EC73C00F3BEBA /* APIService.swift in Sources */,
 				78BCEDE12A9DB54C00F3BEBA /* TitleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -527,6 +596,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		789924732A9F1DBE00AD8225 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
 		78F6E63A2A9C1E2400365E24 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -538,6 +615,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		789924742A9F1DBE00AD8225 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 789924732A9F1DBE00AD8225 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		78F6E63B2A9C1E2400365E24 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 78F6E63A2A9C1E2400365E24 /* XCRemoteSwiftPackageReference "SnapKit" */;

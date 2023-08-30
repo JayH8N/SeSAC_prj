@@ -30,12 +30,14 @@ class AddViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //⌘커스텀 프레임워크
         ClassOpenExample.publicExample() //
         ClassPublicExample.publicExample() //
         //ClassInternalExample.internalExample() //프레임워크에서 class앞에 아무것도 정의되어 있지 않아 import해도 접근이 불가능하다.
         
         //2️⃣값전달.
         //NotificationCenter.default.addObserver(self, selector: #selector(selectImageNotificationObserver), name: NSNotification.Name("SelectImage"), object: nil)
+        APIServie.shared.callRequest()
         
     }
     
@@ -85,6 +87,7 @@ class AddViewController: BaseViewController {
         mainView.searchProtocolButton.addTarget(self, action: #selector(searchProtocolButtonClicked), for: .touchUpInside)
         mainView.titleButton.addTarget(self, action: #selector(titleButtonClicked), for: .touchUpInside)
         mainView.contentButton.addTarget(self, action: #selector(textButtonClicked), for: .touchUpInside)
+        APIServie.shared.callRequest()
     }
     
     @objc func searchProtocolButtonClicked() {
