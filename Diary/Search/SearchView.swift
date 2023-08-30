@@ -22,7 +22,7 @@ class SearchView: BaseView {
         return view
     }()
     
-    func collectionViewLayout() -> UICollectionViewLayout {
+    private func collectionViewLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 8
         layout.minimumInteritemSpacing = 8
@@ -31,6 +31,8 @@ class SearchView: BaseView {
         return layout
     }
 
+    
+    //따로 viewDidLoad에 넣지 않아도 함수가 실행된다.
     override func configureView() {
         addSubview(searchBar)
         addSubview(collectionView)

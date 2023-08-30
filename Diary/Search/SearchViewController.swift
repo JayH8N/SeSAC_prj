@@ -16,7 +16,8 @@ class SearchViewController: BaseViewController {
     override func loadView() {
         self.view = mainView
     }
-    
+    //💡💡2.값전달
+    var delegate: PassImageDataDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,13 +58,18 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        //protocol값전달
+        //💡💡3.값전달
+        delegate?.receiveImage(image: UIImage(systemName: imageList[indexPath.item])!)
         
-        print(imageList[indexPath.item])
+        
+        //print(imageList[indexPath.item])
         
         //1️⃣값전달. Notification
-        NotificationCenter.default.post(name: NSNotification.Name("SelectImage"), object: nil, userInfo: ["name": imageList[indexPath.item], "sample": "고래밥"])
+//        NotificationCenter.default.post(name: NSNotification.Name("SelectImage"), object: nil, userInfo: ["name": imageList[indexPath.item], "sample": "고래밥"])
         
         dismiss(animated: true)
+        
     }
     
     
