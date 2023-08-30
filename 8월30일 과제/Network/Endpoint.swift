@@ -1,12 +1,11 @@
 //
 //  Endpoint.swift
-//  Diary
+//  PhotoGram
 //
 //  Created by hoon on 2023/08/30.
 //
 
-import UIKit
-
+import Foundation
 
 enum Endpoint {
     case search
@@ -17,3 +16,4 @@ enum Endpoint {
         }
     }
 }
+
