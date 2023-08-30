@@ -12,8 +12,7 @@ enum Endpoint {
     
     var callRequest: String {
         switch self {
-        case .search : return URL.makeEndPoint(endPoint: "search/photos?query=")
+        case .search : return URL.makeEndPoint(endPoint: "search/photos?per_page=100&query=")
         }
     }
 }
-
