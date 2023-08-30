@@ -14,6 +14,13 @@
 		7899247A2A9F26BE00AD8225 /* WebSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789924792A9F26BE00AD8225 /* WebSearchView.swift */; };
 		7899247C2A9F299A00AD8225 /* WebSearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7899247B2A9F299A00AD8225 /* WebSearchCollectionViewCell.swift */; };
 		7899247E2A9F2B6500AD8225 /* Protocol identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7899247D2A9F2B6500AD8225 /* Protocol identifier.swift */; };
+		789924812A9F39C600AD8225 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789924802A9F39C600AD8225 /* APIManager.swift */; };
+		789924832A9F3B7000AD8225 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789924822A9F3B7000AD8225 /* Endpoint.swift */; };
+		789924852A9F3E1F00AD8225 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 789924842A9F3E1F00AD8225 /* .gitignore */; };
+		789924872A9F3E3B00AD8225 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789924862A9F3E3B00AD8225 /* APIKey.swift */; };
+		789924892A9F41A100AD8225 /* Extension + URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789924882A9F41A100AD8225 /* Extension + URL.swift */; };
+		789924922A9F4EB500AD8225 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 789924912A9F4EB500AD8225 /* Alamofire */; };
+		789924952A9F4F2100AD8225 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 789924942A9F4F2100AD8225 /* SwiftyJSON */; };
 		78BCEDA42A9D7BD900F3BEBA /* Extension + Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCEDA32A9D7BD900F3BEBA /* Extension + Notification.swift */; };
 		78BCEDA62A9D7C7600F3BEBA /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCEDA52A9D7C7600F3BEBA /* DateView.swift */; };
 		78BCEDA82A9D7DC300F3BEBA /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCEDA72A9D7DC300F3BEBA /* DateViewController.swift */; };
@@ -78,6 +85,11 @@
 		789924792A9F26BE00AD8225 /* WebSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSearchView.swift; sourceTree = "<group>"; };
 		7899247B2A9F299A00AD8225 /* WebSearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebSearchCollectionViewCell.swift; sourceTree = "<group>"; };
 		7899247D2A9F2B6500AD8225 /* Protocol identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Protocol identifier.swift"; sourceTree = "<group>"; };
+		789924802A9F39C600AD8225 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		789924822A9F3B7000AD8225 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		789924842A9F3E1F00AD8225 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		789924862A9F3E3B00AD8225 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		789924882A9F41A100AD8225 /* Extension + URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + URL.swift"; sourceTree = "<group>"; };
 		78BCEDA32A9D7BD900F3BEBA /* Extension + Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + Notification.swift"; sourceTree = "<group>"; };
 		78BCEDA52A9D7C7600F3BEBA /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
 		78BCEDA72A9D7DC300F3BEBA /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
@@ -110,7 +122,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				789924752A9F1DBE00AD8225 /* Kingfisher in Frameworks */,
+				789924922A9F4EB500AD8225 /* Alamofire in Frameworks */,
 				78BCEDDD2A9D9BBB00F3BEBA /* SeSACPhotoFramework.framework in Frameworks */,
+				789924952A9F4F2100AD8225 /* SwiftyJSON in Frameworks */,
 				78F6E63C2A9C1E2400365E24 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -121,6 +135,7 @@
 		789924682A9F192000AD8225 /* 8월30일 과제 */ = {
 			isa = PBXGroup;
 			children = (
+				7899247F2A9F39B900AD8225 /* Network */,
 				789924762A9F269D00AD8225 /* WebSearch */,
 				7899246E2A9F1C9700AD8225 /* PhotoHome */,
 				7899247D2A9F2B6500AD8225 /* Protocol identifier.swift */,
@@ -146,6 +161,17 @@
 				7899247B2A9F299A00AD8225 /* WebSearchCollectionViewCell.swift */,
 			);
 			path = WebSearch;
+			sourceTree = "<group>";
+		};
+		7899247F2A9F39B900AD8225 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				789924802A9F39C600AD8225 /* APIManager.swift */,
+				789924822A9F3B7000AD8225 /* Endpoint.swift */,
+				789924862A9F3E3B00AD8225 /* APIKey.swift */,
+				789924882A9F41A100AD8225 /* Extension + URL.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		78BCEDA22A9D7BC300F3BEBA /* Extension */ = {
@@ -211,6 +237,7 @@
 				78F6E63D2A9C23E900365E24 /* Base */,
 				78F6E6262A9C1D6C00365E24 /* AppDelegate.swift */,
 				78F6E6282A9C1D6C00365E24 /* SceneDelegate.swift */,
+				789924842A9F3E1F00AD8225 /* .gitignore */,
 				78F6E62F2A9C1D6E00365E24 /* Assets.xcassets */,
 				78F6E6312A9C1D6E00365E24 /* LaunchScreen.storyboard */,
 				78F6E6342A9C1D6E00365E24 /* Info.plist */,
@@ -272,6 +299,8 @@
 			packageProductDependencies = (
 				78F6E63B2A9C1E2400365E24 /* SnapKit */,
 				789924742A9F1DBE00AD8225 /* Kingfisher */,
+				789924912A9F4EB500AD8225 /* Alamofire */,
+				789924942A9F4F2100AD8225 /* SwiftyJSON */,
 			);
 			productName = Diary;
 			productReference = 78F6E6232A9C1D6C00365E24 /* Diary.app */;
@@ -304,6 +333,8 @@
 			packageReferences = (
 				78F6E63A2A9C1E2400365E24 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				789924732A9F1DBE00AD8225 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				789924902A9F4EB500AD8225 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				789924932A9F4F2100AD8225 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 78F6E6242A9C1D6C00365E24 /* Products */;
 			projectDirPath = "";
@@ -343,6 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78F6E6332A9C1D6E00365E24 /* LaunchScreen.storyboard in Resources */,
+				789924852A9F3E1F00AD8225 /* .gitignore in Resources */,
 				78F6E6302A9C1D6E00365E24 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,15 +387,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				78F6E6472A9C2FFA00365E24 /* AddView.swift in Sources */,
+				789924832A9F3B7000AD8225 /* Endpoint.swift in Sources */,
 				78F6E6422A9C274E00365E24 /* SearchViewController.swift in Sources */,
 				78F6E64B2A9C365E00365E24 /* BaseCollectionViewCell.swift in Sources */,
 				78F6E62B2A9C1D6C00365E24 /* AddViewController.swift in Sources */,
 				78BCEDA42A9D7BD900F3BEBA /* Extension + Notification.swift in Sources */,
 				78BCEDA82A9D7DC300F3BEBA /* DateViewController.swift in Sources */,
 				7899247A2A9F26BE00AD8225 /* WebSearchView.swift in Sources */,
+				789924892A9F41A100AD8225 /* Extension + URL.swift in Sources */,
 				78F6E63F2A9C242300365E24 /* BaseViewController.swift in Sources */,
 				78BCEDE32A9DBB7700F3BEBA /* TextViewController.swift in Sources */,
 				7899247E2A9F2B6500AD8225 /* Protocol identifier.swift in Sources */,
+				789924812A9F39C600AD8225 /* APIManager.swift in Sources */,
 				78BCEDA62A9D7C7600F3BEBA /* DateView.swift in Sources */,
 				78F6E6492A9C337500365E24 /* SearchView.swift in Sources */,
 				789924702A9F1CC800AD8225 /* PhotoHomeViewController.swift in Sources */,
@@ -374,6 +409,7 @@
 				78F6E6272A9C1D6C00365E24 /* AppDelegate.swift in Sources */,
 				78BCEDE52A9DC76100F3BEBA /* WebViewController.swift in Sources */,
 				78F6E6292A9C1D6C00365E24 /* SceneDelegate.swift in Sources */,
+				789924872A9F3E3B00AD8225 /* APIKey.swift in Sources */,
 				789924722A9F1CD100AD8225 /* PhotoHomeView.swift in Sources */,
 				78BCEDAA2A9D8E8C00F3BEBA /* Extension + DateFormat.swift in Sources */,
 				78F6E64D2A9C37EC00365E24 /* SearchCollectionViewCell.swift in Sources */,
@@ -604,6 +640,22 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		789924902A9F4EB500AD8225 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		789924932A9F4F2100AD8225 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		78F6E63A2A9C1E2400365E24 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -619,6 +671,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 789924732A9F1DBE00AD8225 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		789924912A9F4EB500AD8225 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 789924902A9F4EB500AD8225 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		789924942A9F4F2100AD8225 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 789924932A9F4F2100AD8225 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
 		};
 		78F6E63B2A9C1E2400365E24 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;

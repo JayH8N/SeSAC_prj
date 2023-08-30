@@ -23,7 +23,16 @@ class PhotoHomeViewController: BaseViewController {
         }
         mainView.picker.delegate = self
         mainView.picker.sourceType = .photoLibrary
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(selectedImage), name: Notification.Name("SelectedImage"), object: nil)
     }
+    
+    @objc func selectedImage(notification: NSNotification) {
+        if let url = notification.userInfo?["url"] as? String {
+            mainView.mainImageView.kf.setImage(with: URL(string: url))
+            }
+        }
+    
     
     
     override func configureView() {
