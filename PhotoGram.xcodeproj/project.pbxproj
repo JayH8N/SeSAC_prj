@@ -20,6 +20,9 @@
 		789924922A9F4EB500AD8225 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 789924912A9F4EB500AD8225 /* Alamofire */; };
 		789924952A9F4F2100AD8225 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 789924942A9F4F2100AD8225 /* SwiftyJSON */; };
 		789924A12A9F68F000AD8225 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789924A02A9F68F000AD8225 /* Endpoint.swift */; };
+		789924A42AA01A7200AD8225 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789924A32AA01A7200AD8225 /* HomeViewController.swift */; };
+		789924A62AA01A7D00AD8225 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789924A52AA01A7D00AD8225 /* HomeView.swift */; };
+		789924AC2AA16F9400AD8225 /* Unsplash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789924AB2AA16F9400AD8225 /* Unsplash.swift */; };
 		78BCEDA42A9D7BD900F3BEBA /* Extension + Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCEDA32A9D7BD900F3BEBA /* Extension + Notification.swift */; };
 		78BCEDA62A9D7C7600F3BEBA /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCEDA52A9D7C7600F3BEBA /* DateView.swift */; };
 		78BCEDA82A9D7DC300F3BEBA /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCEDA72A9D7DC300F3BEBA /* DateViewController.swift */; };
@@ -88,6 +91,9 @@
 		789924862A9F3E3B00AD8225 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		789924882A9F41A100AD8225 /* Extension + URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + URL.swift"; sourceTree = "<group>"; };
 		789924A02A9F68F000AD8225 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		789924A32AA01A7200AD8225 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		789924A52AA01A7D00AD8225 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		789924AB2AA16F9400AD8225 /* Unsplash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unsplash.swift; sourceTree = "<group>"; };
 		78BCEDA32A9D7BD900F3BEBA /* Extension + Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + Notification.swift"; sourceTree = "<group>"; };
 		78BCEDA52A9D7C7600F3BEBA /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
 		78BCEDA72A9D7DC300F3BEBA /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
@@ -164,11 +170,29 @@
 		7899247F2A9F39B900AD8225 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				789924AA2AA16F5C00AD8225 /* Data */,
 				789924A02A9F68F000AD8225 /* Endpoint.swift */,
 				789924862A9F3E3B00AD8225 /* APIKey.swift */,
 				789924882A9F41A100AD8225 /* Extension + URL.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		789924A22AA01A5800AD8225 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				789924A32AA01A7200AD8225 /* HomeViewController.swift */,
+				789924A52AA01A7D00AD8225 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		789924AA2AA16F5C00AD8225 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				789924AB2AA16F9400AD8225 /* Unsplash.swift */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		78BCEDA22A9D7BC300F3BEBA /* Extension */ = {
@@ -227,6 +251,7 @@
 		78F6E6252A9C1D6C00365E24 /* PhotoGram */ = {
 			isa = PBXGroup;
 			children = (
+				789924A22AA01A5800AD8225 /* Home */,
 				78BCEE1B2A9EC73200F3BEBA /* Network */,
 				78BCEDA22A9D7BC300F3BEBA /* Extension */,
 				78F6E6452A9C2FC700365E24 /* Add */,
@@ -386,6 +411,7 @@
 				78F6E6472A9C2FFA00365E24 /* AddView.swift in Sources */,
 				78F6E6422A9C274E00365E24 /* SearchViewController.swift in Sources */,
 				78F6E64B2A9C365E00365E24 /* BaseCollectionViewCell.swift in Sources */,
+				789924A62AA01A7D00AD8225 /* HomeView.swift in Sources */,
 				78F6E62B2A9C1D6C00365E24 /* AddViewController.swift in Sources */,
 				78BCEDA42A9D7BD900F3BEBA /* Extension + Notification.swift in Sources */,
 				78BCEDA82A9D7DC300F3BEBA /* DateViewController.swift in Sources */,
@@ -399,9 +425,11 @@
 				789924702A9F1CC800AD8225 /* PhotoHomeViewController.swift in Sources */,
 				789924A12A9F68F000AD8225 /* Endpoint.swift in Sources */,
 				789924782A9F26B500AD8225 /* WebSearchViewController.swift in Sources */,
+				789924AC2AA16F9400AD8225 /* Unsplash.swift in Sources */,
 				7899247C2A9F299A00AD8225 /* WebSearchCollectionViewCell.swift in Sources */,
 				78BCEE1F2A9EEBD500F3BEBA /* URLSessionViewController.swift in Sources */,
 				78F6E6442A9C2EBF00365E24 /* BaseView.swift in Sources */,
+				789924A42AA01A7200AD8225 /* HomeViewController.swift in Sources */,
 				78F6E6272A9C1D6C00365E24 /* AppDelegate.swift in Sources */,
 				78BCEDE52A9DC76100F3BEBA /* WebViewController.swift in Sources */,
 				78F6E6292A9C1D6C00365E24 /* SceneDelegate.swift in Sources */,
