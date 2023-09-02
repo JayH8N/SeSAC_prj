@@ -19,6 +19,8 @@ class WebSearchViewController: BaseViewController {
     
     var imageURL: [String] = []
     
+    var list: Photo = Photo(total: 0, total_pages: 0, results: [])
+    
     override func loadView() {
         self.view = mainView
     }
@@ -52,14 +54,14 @@ class WebSearchViewController: BaseViewController {
 
 extension WebSearchViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return imageURL.count
+        return list.results.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: WebSearchCollectionViewCell.identifier, for: indexPath) as? WebSearchCollectionViewCell else { return UICollectionViewCell() }
         
         
-        if let url = URL(string: imageURL[indexPath.row]) {
+        if let url = URL(string: list.results[indexPath.row].urls.thumb) {
             cell.imageView.kf.setImage(with: url)
         }
         
@@ -68,11 +70,11 @@ extension WebSearchViewController: UICollectionViewDataSource, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        NotificationCenter.default.post(name: Notification.Name("SelectedImage"), object: nil, userInfo: ["url": imageURL[indexPath.item]])
+        NotificationCenter.default.post(name: Notification.Name("SelectedImage"), object: nil, userInfo: ["url": list.results[indexPath.row].urls.thumb])
         
         
         dismiss(animated: true)
-        imageURL.removeAll()
+        list = Photo(total: 0, total_pages: 0, results: [])
     }
 
     
@@ -81,13 +83,24 @@ extension WebSearchViewController: UICollectionViewDataSource, UICollectionViewD
 extension WebSearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
 
-        callRequest(type: .search, text: mainView.searchBar.text ?? "")
+        //callRequest(type: .search, text: mainView.searchBar.text ?? "")
+        APIServie.shared.callRequest(type: .search, keyword: mainView.searchBar.text ?? "") { data in
+            guard let data = data else {
+                self.showAlertView(title: "통신 실패")
+                return
+            }
+            
+            self.list = data
+            
+            self.mainView.collectionView.reloadData()
+        }
+    
 
         mainView.searchBar.resignFirstResponder()
     }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        imageURL.removeAll()
+        list = Photo(total: 0, total_pages: 0, results: [])
         mainView.searchBar.text = ""
         mainView.collectionView.reloadData()
         print(imageURL)
@@ -95,28 +108,47 @@ extension WebSearchViewController: UISearchBarDelegate {
     
 }
 
-
 extension WebSearchViewController {
-    func callRequest(type: Endpoint, text: String) {
-        let keyword = text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        let url = type.callRequest + keyword + "&client_id=\(APIKey.unsplashKey)"
+    
+    func showAlertView(title: String, message: String? = nil, handler: ((UIAlertAction) -> Void)? = nil) {
         
-        AF.request(url, method: .get).validate().responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                
-                for i in json["results"].arrayValue {
-                    let url = i["urls"]["regular"].stringValue
-                    
-                    self.imageURL.append(url)
-                }
-                self.mainView.collectionView.reloadData()
-                
-            case .failure(let error):
-                print(error)
-            }
-        }
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        
+        let ok = UIAlertAction(title: "확인", style: .default, handler: handler)
+        let cancel = UIAlertAction(title: "No", style: .cancel)
+        
+        alert.addAction(ok)
+        alert.addAction(cancel)
+        
+        
+        present(alert, animated: true, completion: nil)
     }
-
+    
 }
+
+
+//extension WebSearchViewController {
+//    func callRequest(type: Endpoint, text: String) {
+//        let keyword = text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+//        let url = type.callRequest + keyword + "&client_id=\(APIKey.unsplashKey)"
+//
+//        AF.request(url, method: .get).validate().responseJSON { response in
+//            switch response.result {
+//            case .success(let value):
+//                let json = JSON(value)
+//
+//                for i in json["results"].arrayValue {
+//                    let url = i["urls"]["regular"].stringValue
+//
+//                    self.imageURL.append(url)
+//                }
+//                self.mainView.collectionView.reloadData()
+//
+//            case .failure(let error):
+//                print(error)
+//            }
+//        }
+//    }
+//
+//}

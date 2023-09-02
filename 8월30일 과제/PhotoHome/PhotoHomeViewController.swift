@@ -25,6 +25,7 @@ class PhotoHomeViewController: BaseViewController {
         mainView.picker.sourceType = .photoLibrary
         
         NotificationCenter.default.addObserver(self, selector: #selector(selectedImage), name: Notification.Name("SelectedImage"), object: nil)
+        
     }
     
     @objc func selectedImage(notification: NSNotification) {
@@ -80,7 +81,6 @@ extension PhotoHomeViewController {
         present(alert, animated: true, completion: nil)
     }
 }
-
 
 extension PhotoHomeViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     

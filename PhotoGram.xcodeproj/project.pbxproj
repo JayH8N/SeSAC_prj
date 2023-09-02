@@ -34,6 +34,7 @@
 		78BCEDE52A9DC76100F3BEBA /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCEDE42A9DC76100F3BEBA /* WebViewController.swift */; };
 		78BCEE1D2A9EC73C00F3BEBA /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCEE1C2A9EC73C00F3BEBA /* APIService.swift */; };
 		78BCEE1F2A9EEBD500F3BEBA /* URLSessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BCEE1E2A9EEBD500F3BEBA /* URLSessionViewController.swift */; };
+		78F4936D2AA373D0002B0B04 /* UnsplashAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F4936C2AA373D0002B0B04 /* UnsplashAPIManager.swift */; };
 		78F6E6272A9C1D6C00365E24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E6262A9C1D6C00365E24 /* AppDelegate.swift */; };
 		78F6E6292A9C1D6C00365E24 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E6282A9C1D6C00365E24 /* SceneDelegate.swift */; };
 		78F6E62B2A9C1D6C00365E24 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E62A2A9C1D6C00365E24 /* AddViewController.swift */; };
@@ -104,6 +105,7 @@
 		78BCEDE42A9DC76100F3BEBA /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		78BCEE1C2A9EC73C00F3BEBA /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		78BCEE1E2A9EEBD500F3BEBA /* URLSessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionViewController.swift; sourceTree = "<group>"; };
+		78F4936C2AA373D0002B0B04 /* UnsplashAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnsplashAPIManager.swift; sourceTree = "<group>"; };
 		78F6E6232A9C1D6C00365E24 /* PhotoGram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotoGram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78F6E6262A9C1D6C00365E24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78F6E6282A9C1D6C00365E24 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				789924A02A9F68F000AD8225 /* Endpoint.swift */,
 				789924862A9F3E3B00AD8225 /* APIKey.swift */,
 				789924882A9F41A100AD8225 /* Extension + URL.swift */,
+				78F4936C2AA373D0002B0B04 /* UnsplashAPIManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -430,6 +433,7 @@
 				78BCEE1F2A9EEBD500F3BEBA /* URLSessionViewController.swift in Sources */,
 				78F6E6442A9C2EBF00365E24 /* BaseView.swift in Sources */,
 				789924A42AA01A7200AD8225 /* HomeViewController.swift in Sources */,
+				78F4936D2AA373D0002B0B04 /* UnsplashAPIManager.swift in Sources */,
 				78F6E6272A9C1D6C00365E24 /* AppDelegate.swift in Sources */,
 				78BCEDE52A9DC76100F3BEBA /* WebViewController.swift in Sources */,
 				78F6E6292A9C1D6C00365E24 /* SceneDelegate.swift in Sources */,
