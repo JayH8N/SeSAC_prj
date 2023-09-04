@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import RealmSwift
 
 class HomeViewController: UIViewController {
     
@@ -20,8 +21,15 @@ class HomeViewController: UIViewController {
         return uibutton
     }()
     
+    let tableView = {
+        let view = UITableView()
+        view.rowHeight = UITableView.automaticDimension
+        view.estimatedRowHeight = UITableView.automaticDimension
+        view.register(HomeTableViewCell.self, forCellReuseIdentifier: "StoredCell")
+        return view
+    }()
     
-    
+    var stored: Results<BookTable>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +43,21 @@ class HomeViewController: UIViewController {
         
         configureView()
         setConstraints()
+        
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        let realm = try! Realm()
+        
+        stored = realm.objects(BookTable.self)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.reloadData()
+    }
+    
     
     @objc func addButtonClicked() {
         let vc = SearchViewController()
@@ -44,12 +66,39 @@ class HomeViewController: UIViewController {
     }
 
     func configureView() {
-        
+        view.addSubview(tableView)
     }
     
     func setConstraints() {
-        
+        tableView.snp.makeConstraints { make in
+            make.edges.equalTo(view.safeAreaLayoutGuide)
+        }
     }
 
 
+}
+
+extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return stored.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "StoredCell", for: indexPath) as! HomeTableViewCell
+        
+        let stored = self.stored[indexPath.row]
+        
+        cell.title.text = stored.bookTitle
+        cell.author.text = stored.bookAuthor
+        let url = stored.posterURL
+        
+        if let url = URL(string: url) {
+            cell.image.kf.setImage(with: url)
+        }
+
+        
+        return cell
+    }
+    
+    
 }

@@ -36,6 +36,8 @@ class SearchCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        configureView()
+        setConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -44,22 +46,22 @@ class SearchCollectionViewCell: UICollectionViewCell {
     
     
     func configureView() {
-        //contentView.addSubview(uiView)
-        contentView.addSubview(coverPoster)
-        contentView.addSubview(title)
-        contentView.addSubview(author)
+        contentView.addSubview(uiView)
+        uiView.addSubview(coverPoster)
+        uiView.addSubview(title)
+        uiView.addSubview(author)
     }
     
     
     func setConstraints() {
-//        uiView.snp.makeConstraints { make in
-//            make.edges.equalToSuperview()
-//        }
+        uiView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
         
         coverPoster.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.leading.trailing.equalToSuperview()
-            make.height.equalTo(coverPoster.snp.width).multipliedBy(1.4)
+            make.height.equalTo(coverPoster.snp.width).multipliedBy(1.2)
         }
         
         title.snp.makeConstraints { make in

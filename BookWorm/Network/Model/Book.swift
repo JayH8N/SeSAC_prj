@@ -9,10 +9,10 @@ import Foundation
 
 
 struct KakaoBook: Codable {
-    let documents: [Results]
+    let documents: [BookInfo]
 }
 
-struct Results: Codable {
+struct BookInfo: Codable {
     let authors: [String]
     let price: Int
     let thumbnail: String

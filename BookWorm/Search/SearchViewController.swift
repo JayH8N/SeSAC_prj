@@ -8,6 +8,7 @@
 import UIKit
 import SnapKit
 import Kingfisher
+import RealmSwift
 
 class SearchViewController: UIViewController {
     
@@ -101,6 +102,22 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
 
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let realm = try! Realm()
+        
+        let data = list.documents[indexPath.row]
+        
+        let task = BookTable(posterURL: data.thumbnail, bookTitle: data.title, bookAuthor: data.authors[0])
+        
+        try! realm.write {
+            realm.add(task)
+            print("Realm Add Succeed")
+        }
+        
+        
+        navigationController?.popViewController(animated: true)
     }
     
 }
