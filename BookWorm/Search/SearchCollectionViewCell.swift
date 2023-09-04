@@ -44,17 +44,17 @@ class SearchCollectionViewCell: UICollectionViewCell {
     
     
     func configureView() {
-        contentView.addSubview(uiView)
-        uiView.addSubview(coverPoster)
-        uiView.addSubview(title)
-        uiView.addSubview(author)
+        //contentView.addSubview(uiView)
+        contentView.addSubview(coverPoster)
+        contentView.addSubview(title)
+        contentView.addSubview(author)
     }
     
     
     func setConstraints() {
-        uiView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
+//        uiView.snp.makeConstraints { make in
+//            make.edges.equalToSuperview()
+//        }
         
         coverPoster.snp.makeConstraints { make in
             make.top.equalToSuperview()

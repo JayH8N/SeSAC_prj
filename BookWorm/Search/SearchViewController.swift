@@ -7,9 +7,12 @@
 
 import UIKit
 import SnapKit
-
+import Kingfisher
 
 class SearchViewController: UIViewController {
+    
+    var list: KakaoBook = KakaoBook(documents: [])
+    var page: Int = 1
 
     let searchBar = {
         let view = UISearchBar()
@@ -42,6 +45,10 @@ class SearchViewController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
+        searchBar.delegate = self
+        searchBar.showsCancelButton = true
+        searchBar.becomeFirstResponder()
+        
         configureView()
         setConstraints()
     }
@@ -71,19 +78,75 @@ class SearchViewController: UIViewController {
 }
 
 extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return list.documents.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Search", for: indexPath) as! SearchCollectionViewCell
         
-        cell.layer.cornerRadius = 10
+        let data = list.documents[indexPath.row]
+        
         cell.layer.borderColor = UIColor.black.cgColor
-        cell.layer.borderWidth = 3
+        cell.layer.borderWidth = 2
+        cell.author.text = data.authors[0]
+        cell.title.text = data.title
+        
+        let url = data.thumbnail
+        
+        if let url = URL(string: url) {
+            cell.coverPoster.kf.setImage(with: url)
+        }
+
         
         return cell
     }
     
+}
+
+
+extension SearchViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print("누름")
+        page = 1
+        list = KakaoBook(documents: [])
+        
+        print(searchBar.text!)
+        KakaoAPIManager.shared.callRequest(page: page, query: searchBar.text!) { value in
+            self.list = value
+            
+            print("==============\(self.list)")
+            
+            self.collectionView.reloadData()
+        }
+        
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        list = KakaoBook(documents: [])
+        searchBar.text = ""
+        collectionView.reloadData()
+    }
+
+}
+
+extension SearchViewController {
+    
+    func showAlertView(title: String, message: String? = nil, handler: ((UIAlertAction) -> Void)? = nil) {
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        
+        let ok = UIAlertAction(title: "확인", style: .default, handler: handler)
+        let cancel = UIAlertAction(title: "No", style: .cancel)
+        
+        alert.addAction(ok)
+        alert.addAction(cancel)
+        
+        
+        present(alert, animated: true, completion: nil)
+    }
     
 }
