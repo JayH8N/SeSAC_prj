@@ -6,11 +6,13 @@
 //
 
 import UIKit
+import RealmSwift
 
 
 class DetailViewController: BaseViewController {
     
     let mainView = DetailView()
+    let realm = try! Realm()
     
     var data: BookTable?
     
@@ -31,6 +33,25 @@ class DetailViewController: BaseViewController {
         
         let edit = UIBarButtonItem(customView: editButton)
         navigationItem.rightBarButtonItem = edit
+        
+        editButton.addTarget(self, action: #selector(editButtonClicked), for: .touchUpInside)
+    }
+    
+    @objc func editButtonClicked() {
+        
+        guard let data = data else { return }
+        let task = BookTable(value: ["_id": data._id, "bookAuthor": data.bookAuthor ,"bookTitle": data.bookTitle, "memo": mainView.textView.text])
+        
+        do {
+            try realm.write {
+                realm.add(task, update: .modified)
+            }
+        } catch {
+            print("") // NSlog
+        }
+        
+        navigationController?.popViewController(animated: true)
+        
     }
     
     
@@ -43,6 +64,7 @@ class DetailViewController: BaseViewController {
         guard let data = data else { return }
         mainView.titleLabel.text = data.bookTitle
         mainView.image.image = DocumentManager.shared.loadImageFromDocument(fileName: "JH\(data._id)")
+        mainView.textView.text = data.memo
     }
     
     

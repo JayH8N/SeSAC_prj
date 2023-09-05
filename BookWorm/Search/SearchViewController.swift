@@ -123,7 +123,7 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         
         let data = list.documents[indexPath.row]
         
-        let task = BookTable(posterURL: data.thumbnail, bookTitle: data.title, bookAuthor: data.authors[0])
+        let task = BookTable(posterURL: data.thumbnail, bookTitle: data.title, bookAuthor: data.authors[0], memo: nil)
         //let id = task._id.stringValue
         //imageURL = data.thumbnail
         

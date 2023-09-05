@@ -15,13 +15,15 @@ class BookTable: Object {
     @Persisted var posterURL: String
     @Persisted var bookTitle: String
     @Persisted var bookAuthor: String
+    @Persisted var memo: String?
 
-    convenience init(posterURL: String, bookTitle: String, bookAuthor: String) {
+    convenience init(posterURL: String, bookTitle: String, bookAuthor: String, memo: String?) {
         self.init()
         
         self.posterURL = posterURL
         self.bookTitle = bookTitle
         self.bookAuthor = bookAuthor
+        self.memo = memo
     }
 }
 
