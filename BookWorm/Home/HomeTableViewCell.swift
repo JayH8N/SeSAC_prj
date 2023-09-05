@@ -14,11 +14,8 @@ class HomeTableViewCell: UITableViewCell {
         let view = UIImageView()
         view.layer.cornerRadius = 10
         view.layer.borderColor = UIColor.black.cgColor
-        view.layer.borderWidth = 3
-        view.layer.shadowColor = UIColor.red.cgColor   //그림자 색깔
-        view.layer.shadowOffset = CGSize(width: 0, height: 0)  //태양이 보는 시점
-        view.layer.shadowRadius = 10  //그림자 코너깎임정도
-        view.layer.shadowOpacity = 1   //그림자 투명도
+        view.layer.borderWidth = 0.2
+        view.clipsToBounds = true
         return view
         }()
     
@@ -65,6 +62,7 @@ class HomeTableViewCell: UITableViewCell {
         
         title.snp.makeConstraints { make in
             make.leading.equalTo(image.snp.trailing).offset(20)
+            make.trailing.equalTo(contentView.snp.trailing).inset(20)
             make.top.equalTo(contentView.snp.top).inset(20)
         }
         

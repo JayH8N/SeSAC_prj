@@ -15,6 +15,7 @@ class SearchCollectionViewCell: UICollectionViewCell {
     let coverPoster = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFill
+        view.clipsToBounds = true
         return view
     }()
     
@@ -61,14 +62,14 @@ class SearchCollectionViewCell: UICollectionViewCell {
         coverPoster.snp.makeConstraints { make in
             make.top.equalToSuperview()
             make.leading.trailing.equalToSuperview()
-            make.height.equalTo(coverPoster.snp.width).multipliedBy(1.2)
+            make.height.equalTo(contentView.snp.width).multipliedBy(0.8)
         }
         
         title.snp.makeConstraints { make in
             make.top.equalTo(coverPoster.snp.bottom).offset(4)
             make.leading.trailing.equalToSuperview()
         }
-        
+
         author.snp.makeConstraints { make in
             make.top.equalTo(title.snp.bottom).offset(2)
             make.leading.trailing.equalToSuperview()

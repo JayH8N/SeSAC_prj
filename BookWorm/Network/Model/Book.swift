@@ -19,8 +19,3 @@ struct BookInfo: Codable {
     let title: String
 }
 
-//struct Meta: Codable {
-//    let is_end: Bool
-//    let pageable_count: Int
-//    let total_count: Int
-//}

@@ -11,11 +11,21 @@ import RealmSwift
 
 class HomeViewController: UIViewController {
     
+    let realm = try! Realm()
     
     let addButton = {
         let uibutton = UIButton()
         let buttonImage = UIImage.SymbolConfiguration(pointSize: 30, weight: .bold, scale: .small)
         let image = UIImage(systemName: "plus.circle", withConfiguration: buttonImage)
+        uibutton.setImage(image, for: .normal)
+        uibutton.tintColor = .blue
+        return uibutton
+    }()
+    
+    let filterButton = {
+        let uibutton = UIButton()
+        let buttonImage = UIImage.SymbolConfiguration(pointSize: 30, weight: .bold, scale: .small)
+        let image = UIImage(systemName: "slider.horizontal.3", withConfiguration: buttonImage)
         uibutton.setImage(image, for: .normal)
         uibutton.tintColor = .blue
         return uibutton
@@ -35,11 +45,7 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         title = "BOOKWORM"
-        
-        let search = UIBarButtonItem(customView: addButton)
-        navigationItem.rightBarButtonItem = search
-        
-        addButton.addTarget(self, action: #selector(addButtonClicked), for: .touchUpInside)
+        setNavigationBar()
         
         configureView()
         setConstraints()
@@ -47,15 +53,32 @@ class HomeViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        let realm = try! Realm()
         
         stored = realm.objects(BookTable.self)
+        //print(realm.configuration.fileURL)
+    }
+    
+    
+    private func setNavigationBar() {
+        let search = UIBarButtonItem(customView: addButton)
+        let filter = UIBarButtonItem(customView: filterButton)
+        navigationItem.rightBarButtonItems = [search, filter]
+        
+        addButton.addTarget(self, action: #selector(addButtonClicked), for: .touchUpInside)
+        filterButton.addTarget(self, action: #selector(filterButtonClicked), for: .touchUpInside)
+        
+        navigationController?.hidesBarsOnSwipe = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         tableView.reloadData()
+    }
+    
+    
+    @objc func filterButtonClicked() {
+        
     }
     
     
@@ -71,7 +94,7 @@ class HomeViewController: UIViewController {
     
     func setConstraints() {
         tableView.snp.makeConstraints { make in
-            make.edges.equalTo(view.safeAreaLayoutGuide)
+            make.edges.equalToSuperview()
         }
     }
 
@@ -90,15 +113,47 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         
         cell.title.text = stored.bookTitle
         cell.author.text = stored.bookAuthor
-        let url = stored.posterURL
         
-        if let url = URL(string: url) {
-            cell.image.kf.setImage(with: url)
-        }
+//        let url = stored.posterURL
+//
+//        if let url = URL(string: url) {
+//            cell.image.kf.setImage(with: url)
+//        }
+        
+        cell.image.image = DocumentManager.shared.loadImageFromDocument(fileName: "JH\(stored._id)")
 
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = DetailViewController()
+        
+        vc.data = stored[indexPath.row]
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let like = UIContextualAction(style: .destructive, title: "삭제") { [weak self] action, view, completionHandler in
+            let data = self?.stored[indexPath.row]
+            
+            DocumentManager.shared.removeImageFromDocument(fileName: "JH\(data!._id)")
+            
+            try! self?.realm.write {
+                self?.realm.delete(data!)
+            }
+            
+            tableView.reloadData()
+        }
+        like.image = UIImage(systemName: "trash")
+        
+        
+        return UISwipeActionsConfiguration(actions: [like])
+    }
+    
     
     
 }

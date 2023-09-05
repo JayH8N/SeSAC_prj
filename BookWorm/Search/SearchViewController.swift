@@ -15,6 +15,8 @@ class SearchViewController: UIViewController {
     var list: KakaoBook = KakaoBook(documents: [])
     var page: Int = 1
 
+    var imageURL: String?
+    
     let searchBar = {
         let view = UISearchBar()
         view.placeholder = "책 제목을 검색해 주세요"
@@ -34,7 +36,7 @@ class SearchViewController: UIViewController {
         layout.scrollDirection = .vertical
         layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right:  10)
         let size = UIScreen.main.bounds.width - 36 //컬렉션뷰 생성 전이라 collectionView.bounds.width사용을 못한다.
-        layout.itemSize = CGSize(width: size / 3, height: 160)
+        layout.itemSize = CGSize(width: size / 3, height: (size / 3) * 1.2)
         return layout
     }
     
@@ -94,10 +96,21 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         cell.author.text = data.authors[0]
         cell.title.text = data.title
         
-        let url = data.thumbnail
+//        let url = data.thumbnail
+//        imageURL = data.thumbnail
         
-        if let url = URL(string: url) {
-            cell.coverPoster.kf.setImage(with: url)
+//        if let url = URL(string: url) {
+//            cell.coverPoster.kf.setImage(with: url)
+//        }
+        
+        
+        DispatchQueue.global().async {
+            if let url = URL(string: data.thumbnail), let data = try? Data(contentsOf: url ) {
+                
+                DispatchQueue.main.async {
+                    cell.coverPoster.image = UIImage(data: data)
+                }
+            }
         }
 
         
@@ -105,19 +118,29 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         let realm = try! Realm()
         
         let data = list.documents[indexPath.row]
         
         let task = BookTable(posterURL: data.thumbnail, bookTitle: data.title, bookAuthor: data.authors[0])
+        //let id = task._id.stringValue
+        //imageURL = data.thumbnail
         
         try! realm.write {
             realm.add(task)
             print("Realm Add Succeed")
         }
         
+        DispatchQueue.global().async {
+            if let url = URL(string: data.thumbnail), let data = try? Data(contentsOf: url ) {
+                DispatchQueue.main.async {
+                    DocumentManager.shared.saveImageToDocument(fileName: "JH\(task._id)", image: UIImage(data: data)!)
+                    self.navigationController?.popViewController(animated: true)
+                }
+            }
+        }
         
-        navigationController?.popViewController(animated: true)
     }
     
 }
@@ -126,11 +149,11 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
 extension SearchViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print("누름")
         page = 1
         list = KakaoBook(documents: [])
+        view.endEditing(true)
         
-        print(searchBar.text!)
+        
         KakaoAPIManager.shared.callRequest(page: page, query: searchBar.text!) { value in
             self.list = value
             
@@ -144,6 +167,7 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         list = KakaoBook(documents: [])
         searchBar.text = ""
+        view.endEditing(true)
         collectionView.reloadData()
     }
 
