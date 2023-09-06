@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -13,7 +14,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let config = Realm.Configuration(schemaVersion: 4) { migration, oldSchemaVersion in
+        
+            if oldSchemaVersion < 1 { }
+            
+            if oldSchemaVersion < 2 { }
+            
+            if oldSchemaVersion < 3 {
+                migration.renameProperty(onType: BookTable.className() , from: "posterURL", to: "posterImage")
+                //migration구문 적지 않아도 변경은 정상적으로 되지만 컬럼이 통채로 바뀌는 개념이되서 데이터 역시 모두 날라감
+            }
+            
+            if oldSchemaVersion < 4 {
+                migration.enumerateObjects(ofType: BookTable.className()) { oldObject, newObject in
+                    guard let new = newObject else { return }
+                    guard let old = oldObject else { return }
+                    
+                    new["set"] = "\(old["bookTitle"])의 저자는 \(old["bookAuthor"])입니다."
+                }
+                
+            }
+        }
+        
+        Realm.Configuration.defaultConfiguration = config
+        
         return true
     }
 

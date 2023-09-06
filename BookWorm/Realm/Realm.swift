@@ -12,18 +12,21 @@ class BookTable: Object {
     
     @Persisted(primaryKey: true) var _id: ObjectId //
     
-    @Persisted var posterURL: String
+    @Persisted var posterImage: String
     @Persisted var bookTitle: String
     @Persisted var bookAuthor: String
     @Persisted var memo: String?
+    @Persisted var set: String
+    //@Persisted var liked: Bool
 
     convenience init(posterURL: String, bookTitle: String, bookAuthor: String, memo: String?) {
         self.init()
         
-        self.posterURL = posterURL
+        self.posterImage = posterURL
         self.bookTitle = bookTitle
         self.bookAuthor = bookAuthor
         self.memo = memo
+        self.set = "\(bookTitle)의 저자는 \(bookAuthor)입니다."
     }
 }
 

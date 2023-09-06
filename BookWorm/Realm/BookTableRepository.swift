@@ -24,6 +24,12 @@ class BookTableRepository {
     
     private let realm = try! Realm()
     
+    //realm파일경로
+    func realmPathCheck() {
+        print(realm.configuration.fileURL)
+    }
+    
+    
     //스키마버전 체크 메서드
     func checkSchemaVersion() {
         do {

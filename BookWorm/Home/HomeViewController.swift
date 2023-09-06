@@ -86,9 +86,14 @@ class HomeViewController: UIViewController {
         
         
         stored = repository.fetch(.added)
-        //print(realm.configuration.fileURL)
         
         setMenuButton()
+        
+        //realm경로 탐색
+        repository.realmPathCheck()
+        
+        //스키마 버전
+        repository.checkSchemaVersion()
     }
     
     
