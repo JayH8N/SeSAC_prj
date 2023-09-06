@@ -32,6 +32,7 @@ class DetailView: BaseView {
         view.layer.cornerRadius = 10
         view.layer.borderColor = UIColor.black.cgColor
         view.layer.borderWidth = 3
+        view.font = .systemFont(ofSize: 25)
         return view
     }()
     

@@ -11,6 +11,8 @@ import RealmSwift
 
 class DetailViewController: BaseViewController {
     
+    let repository = BookTableRepository()
+    
     let mainView = DetailView()
     let realm = try! Realm()
     
@@ -40,15 +42,17 @@ class DetailViewController: BaseViewController {
     @objc func editButtonClicked() {
         
         guard let data = data else { return }
-        let task = BookTable(value: ["_id": data._id, "bookAuthor": data.bookAuthor ,"bookTitle": data.bookTitle, "memo": mainView.textView.text])
+//        let task = BookTable(value: ["_id": data._id, "bookAuthor": data.bookAuthor ,"bookTitle": data.bookTitle, "memo": mainView.textView.text])
+//
+//        do {
+//            try realm.write {
+//                realm.add(task, update: .modified)
+//            }
+//        } catch {
+//            print("") // NSlog
+//        }
         
-        do {
-            try realm.write {
-                realm.add(task, update: .modified)
-            }
-        } catch {
-            print("") // NSlog
-        }
+        repository.updateItem(id: data._id, title: mainView.textView.text)
         
         navigationController?.popViewController(animated: true)
         

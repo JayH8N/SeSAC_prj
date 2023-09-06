@@ -11,7 +11,7 @@ import RealmSwift
 
 class HomeViewController: UIViewController {
     
-    let realm = try! Realm()
+    let repository = BookTableRepository()
     
     let addButton = {
         let uibutton = UIButton()
@@ -31,6 +31,37 @@ class HomeViewController: UIViewController {
         return uibutton
     }()
     
+    let backupButton = {
+        let uibutton = UIButton()
+        uibutton.setTitle("백/복", for: .normal)
+        uibutton.setTitleColor(UIColor.blue, for: .normal)
+        return uibutton
+    }()
+    
+    let logoImage = {
+        let view = UIImageView(frame: .zero)
+        let confi = UIImage.SymbolConfiguration(pointSize: 20)
+        view.image = UIImage(systemName: "books.vertical", variableValue: 0.1, configuration: confi)
+        view.tintColor = .brown
+        return view
+    }()
+    
+    let titleLabel = {
+        let label = UILabel()
+        label.text = "BookWorm"
+        label.font = .boldSystemFont(ofSize: 25)
+        return label
+    }()
+    
+    lazy var logoStackView: UIStackView = {
+        let view = UIStackView(arrangedSubviews: [logoImage, titleLabel])
+        view.axis = .horizontal
+        view.alignment = .fill
+        view.distribution = .fill
+        view.spacing = 0
+        return view
+    }()
+    
     let tableView = {
         let view = UITableView()
         view.rowHeight = UITableView.automaticDimension
@@ -44,7 +75,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        title = "BOOKWORM"
+        
         setNavigationBar()
         
         configureView()
@@ -54,18 +85,23 @@ class HomeViewController: UIViewController {
         tableView.dataSource = self
         
         
-        stored = realm.objects(BookTable.self)
+        stored = repository.fetch(.added)
         //print(realm.configuration.fileURL)
+        
+        setMenuButton()
     }
     
     
     private func setNavigationBar() {
         let search = UIBarButtonItem(customView: addButton)
         let filter = UIBarButtonItem(customView: filterButton)
-        navigationItem.rightBarButtonItems = [search, filter]
+        let backUp = UIBarButtonItem(customView: backupButton)
+        navigationItem.rightBarButtonItems = [search, filter, backUp]
+        
+        let title = UIBarButtonItem(customView: logoStackView)
+        navigationItem.leftBarButtonItem = title
         
         addButton.addTarget(self, action: #selector(addButtonClicked), for: .touchUpInside)
-        filterButton.addTarget(self, action: #selector(filterButtonClicked), for: .touchUpInside)
         
         navigationController?.hidesBarsOnSwipe = true
     }
@@ -76,16 +112,47 @@ class HomeViewController: UIViewController {
         tableView.reloadData()
     }
     
-    
-    @objc func filterButtonClicked() {
-        
-    }
-    
-    
     @objc func addButtonClicked() {
         let vc = SearchViewController()
         
         navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func setMenuButton() {
+        let case0 = UIAction(title: "all_추가된순") { _ in
+            self.stored = self.repository.fetch(.added)
+            self.tableView.reloadData()
+        }
+        let case1 = UIAction(title: "all_오름차순") { _ in
+            self.stored = self.repository.fetch(.sorted)
+            self.tableView.reloadData()
+        }
+        let case2 = UIAction(title: "all_내림차순") { _ in
+            self.stored = self.repository.fetch(.reversed)
+            self.tableView.reloadData()
+        }
+        let case3 = UIAction(title: "스위프트 관련여부") { _ in
+            self.stored = self.repository.fetchFilter(kindOf: .containSwift)
+            self.tableView.reloadData()
+        }
+        let case4 = UIAction(title: "memo 존재여부") { _ in
+            self.stored = self.repository.fetchFilter(kindOf: .existMemo)
+            self.tableView.reloadData()
+        }
+        filterButton.menu = UIMenu(title: "정렬방법을 선택해주세요", image: nil, identifier: nil, options: .displayInline, children: [case0, case1, case2, case3, case4])//UIMenu(title: "정렬", children: [case1, case2, case3])
+        filterButton.showsMenuAsPrimaryAction = true
+//        filterButton.changesSelectionAsPrimaryAction = true
+        
+        
+        let backup = UIAction(title: "백업") {_ in
+            print("백업")
+        }
+        
+        let restore = UIAction(title: "복구") {_ in
+            print("복구")
+        }
+        backupButton.menu = UIMenu(title: "백업/복구를 선택해주세요", children: [backup, restore])
+        backupButton.showsMenuAsPrimaryAction = true
     }
 
     func configureView() {
@@ -95,6 +162,10 @@ class HomeViewController: UIViewController {
     func setConstraints() {
         tableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
+        }
+        
+        logoImage.snp.makeConstraints { make in
+            make.width.equalTo(logoStackView.snp.height).multipliedBy(1)
         }
     }
 
@@ -137,14 +208,16 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        let like = UIContextualAction(style: .destructive, title: "삭제") { [weak self] action, view, completionHandler in
-            let data = self?.stored[indexPath.row]
+        let like = UIContextualAction(style: .destructive, title: "삭제") { action, view, completionHandler in
+            let data = self.stored[indexPath.row]
             
-            DocumentManager.shared.removeImageFromDocument(fileName: "JH\(data!._id)")
+            DocumentManager.shared.removeImageFromDocument(fileName: "JH\(data._id)")
             
-            try! self?.realm.write {
-                self?.realm.delete(data!)
-            }
+//            try! self?.realm.write {
+//                self?.realm.delete(data!)
+//            }
+            
+            self.repository.removeItem(data)
             
             tableView.reloadData()
         }

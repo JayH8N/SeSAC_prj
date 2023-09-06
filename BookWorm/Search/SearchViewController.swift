@@ -14,10 +14,12 @@ class SearchViewController: UIViewController {
     
     var list: KakaoBook = KakaoBook(documents: [])
     var page: Int = 1
+    
+    let repository = BookTableRepository()
 
     var imageURL: String?
     
-    let searchBar = {
+    private let searchBar = {
         let view = UISearchBar()
         view.placeholder = "책 제목을 검색해 주세요"
         return view
@@ -29,7 +31,7 @@ class SearchViewController: UIViewController {
         return view
     }()
     
-    func collectionViewLayout() -> UICollectionViewLayout {
+    private func collectionViewLayout() -> UICollectionViewLayout {
         let layout = UICollectionViewFlowLayout()
         layout.minimumLineSpacing = 10
         layout.minimumInteritemSpacing = 8
@@ -112,26 +114,17 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
                 }
             }
         }
-
-        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let realm = try! Realm()
-        
         let data = list.documents[indexPath.row]
         
         let task = BookTable(posterURL: data.thumbnail, bookTitle: data.title, bookAuthor: data.authors[0], memo: nil)
-        //let id = task._id.stringValue
-        //imageURL = data.thumbnail
         
-        try! realm.write {
-            realm.add(task)
-            print("Realm Add Succeed")
-        }
-        
+        repository.createItem(task)
+
         DispatchQueue.global().async {
             if let url = URL(string: data.thumbnail), let data = try? Data(contentsOf: url ) {
                 DispatchQueue.main.async {

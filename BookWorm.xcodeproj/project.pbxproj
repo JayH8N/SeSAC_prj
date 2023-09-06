@@ -34,6 +34,7 @@
 		787B080A2AA711F900FB8193 /* CALayer + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787B08092AA711F900FB8193 /* CALayer + Extension.swift */; };
 		787B080D2AA71DE700FB8193 /* DocumentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787B080C2AA71DE700FB8193 /* DocumentManager.swift */; };
 		787B080F2AA7343C00FB8193 /* UIImage + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787B080E2AA7343C00FB8193 /* UIImage + Extension.swift */; };
+		787B08142AA83E6100FB8193 /* BookTableRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787B08132AA83E6100FB8193 /* BookTableRepository.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		787B08092AA711F900FB8193 /* CALayer + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer + Extension.swift"; sourceTree = "<group>"; };
 		787B080C2AA71DE700FB8193 /* DocumentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentManager.swift; sourceTree = "<group>"; };
 		787B080E2AA7343C00FB8193 /* UIImage + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Extension.swift"; sourceTree = "<group>"; };
+		787B08132AA83E6100FB8193 /* BookTableRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableRepository.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 		787B07B72AA5DAA400FB8193 /* BookWorm */ = {
 			isa = PBXGroup;
 			children = (
+				787B08122AA83E0600FB8193 /* Realm */,
 				787B080B2AA71DD700FB8193 /* Class */,
 				787B08082AA711D900FB8193 /* Extension */,
 				787B08032AA70FFD00FB8193 /* Detail */,
@@ -149,7 +152,6 @@
 			isa = PBXGroup;
 			children = (
 				787B07EF2AA5EB6900FB8193 /* Book.swift */,
-				787B07F52AA6010600FB8193 /* Realm.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -187,6 +189,15 @@
 				787B080C2AA71DE700FB8193 /* DocumentManager.swift */,
 			);
 			path = Class;
+			sourceTree = "<group>";
+		};
+		787B08122AA83E0600FB8193 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				787B07F52AA6010600FB8193 /* Realm.swift */,
+				787B08132AA83E6100FB8193 /* BookTableRepository.swift */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,6 +301,7 @@
 				787B07E32AA5DD9E00FB8193 /* SearchCollectionViewCell.swift in Sources */,
 				787B07E52AA5E4CC00FB8193 /* HomeViewController.swift in Sources */,
 				787B080A2AA711F900FB8193 /* CALayer + Extension.swift in Sources */,
+				787B08142AA83E6100FB8193 /* BookTableRepository.swift in Sources */,
 				787B08072AA7101900FB8193 /* DetailView.swift in Sources */,
 				787B08052AA7101100FB8193 /* DetailViewController.swift in Sources */,
 			);
