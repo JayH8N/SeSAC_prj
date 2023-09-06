@@ -11,6 +11,7 @@ import RealmSwift
 enum Filter {
     case containSwift
     case existMemo
+    case pinned
 }
 
 enum Sort {
@@ -20,7 +21,7 @@ enum Sort {
 }
 
 
-class BookTableRepository {
+final class BookTableRepository {
     
     private let realm = try! Realm()
     
@@ -59,6 +60,7 @@ class BookTableRepository {
             switch kindOf {
             case .containSwift : return $0.bookTitle.contains("swift", options: .caseInsensitive) || $0.bookTitle.contains("스위프트")
             case .existMemo : return $0.memo != nil
+            case .pinned : return $0.liked == true
             }
         }
         return result
@@ -95,6 +97,16 @@ class BookTableRepository {
             }
         } catch {
             print("") // NSlog
+        }
+    }
+    
+    func updateLiked(id: ObjectId, liked: Bool) {
+        do {
+            try realm.write {
+                realm.create(BookTable.self, value: ["_id": id, "liked": liked], update: .modified)
+            }
+        } catch {
+            print("")
         }
     }
     

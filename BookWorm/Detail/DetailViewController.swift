@@ -47,9 +47,16 @@ class DetailViewController: BaseViewController {
     }
     
     @objc func saveButtonTapped() {
+        
         guard let data = data else { return }
         
-        
+        if data.liked {
+            repository.updateLiked(id: data._id, liked: false)
+            animation(color: .clear)
+        } else {
+            repository.updateLiked(id: data._id, liked: true)
+            animation(color: .blue)
+        }
     }
     
     
@@ -91,5 +98,15 @@ class DetailViewController: BaseViewController {
     
     override func setConstraints() {
         super.setConstraints()
+    }
+}
+
+
+extension DetailViewController {
+    func animation(color: UIColor) {
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
+            self.mainView.saveButtonImage.alpha = 0.5
+            self.mainView.saveButtonImage.backgroundColor = color
+        }, completion: nil)
     }
 }

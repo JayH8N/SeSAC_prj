@@ -38,9 +38,8 @@ class DetailView: BaseView {
     
     
     let saveButtonImage = {
-        let view = UIImageView()
+        let view = SaveButtonCustom(frame: .zero)
         view.image = UIImage(systemName: "checkmark.circle")
-        view.tintColor = .blue
         return view
     }()
     

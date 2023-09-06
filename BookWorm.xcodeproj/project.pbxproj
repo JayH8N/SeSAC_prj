@@ -35,6 +35,8 @@
 		787B080D2AA71DE700FB8193 /* DocumentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787B080C2AA71DE700FB8193 /* DocumentManager.swift */; };
 		787B080F2AA7343C00FB8193 /* UIImage + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787B080E2AA7343C00FB8193 /* UIImage + Extension.swift */; };
 		787B08142AA83E6100FB8193 /* BookTableRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787B08132AA83E6100FB8193 /* BookTableRepository.swift */; };
+		787B08162AA8CAA600FB8193 /* NSMutableAttributedString + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787B08152AA8CAA500FB8193 /* NSMutableAttributedString + Extension.swift */; };
+		787B081B2AA8D5E200FB8193 /* SaveButtonCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787B081A2AA8D5E200FB8193 /* SaveButtonCustom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +65,8 @@
 		787B080C2AA71DE700FB8193 /* DocumentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentManager.swift; sourceTree = "<group>"; };
 		787B080E2AA7343C00FB8193 /* UIImage + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage + Extension.swift"; sourceTree = "<group>"; };
 		787B08132AA83E6100FB8193 /* BookTableRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableRepository.swift; sourceTree = "<group>"; };
+		787B08152AA8CAA500FB8193 /* NSMutableAttributedString + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString + Extension.swift"; sourceTree = "<group>"; };
+		787B081A2AA8D5E200FB8193 /* SaveButtonCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveButtonCustom.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +174,7 @@
 			children = (
 				787B08042AA7101100FB8193 /* DetailViewController.swift */,
 				787B08062AA7101900FB8193 /* DetailView.swift */,
+				787B081A2AA8D5E200FB8193 /* SaveButtonCustom.swift */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -179,6 +184,7 @@
 			children = (
 				787B08092AA711F900FB8193 /* CALayer + Extension.swift */,
 				787B080E2AA7343C00FB8193 /* UIImage + Extension.swift */,
+				787B08152AA8CAA500FB8193 /* NSMutableAttributedString + Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -287,12 +293,14 @@
 			files = (
 				787B07BD2AA5DAA400FB8193 /* ViewController.swift in Sources */,
 				787B08022AA70FB200FB8193 /* BaseView.swift in Sources */,
+				787B081B2AA8D5E200FB8193 /* SaveButtonCustom.swift in Sources */,
 				787B080D2AA71DE700FB8193 /* DocumentManager.swift in Sources */,
 				787B07E92AA5E6F100FB8193 /* APIKey.swift in Sources */,
 				787B07B92AA5DAA400FB8193 /* AppDelegate.swift in Sources */,
 				787B080F2AA7343C00FB8193 /* UIImage + Extension.swift in Sources */,
 				787B07F62AA6010600FB8193 /* Realm.swift in Sources */,
 				787B07D02AA5DB0F00FB8193 /* SearchViewController.swift in Sources */,
+				787B08162AA8CAA600FB8193 /* NSMutableAttributedString + Extension.swift in Sources */,
 				787B08002AA70F6A00FB8193 /* BaseViewController.swift in Sources */,
 				787B07EC2AA5E73B00FB8193 /* KakaoAPIManager.swift in Sources */,
 				787B07F02AA5EB6900FB8193 /* Book.swift in Sources */,

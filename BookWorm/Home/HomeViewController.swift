@@ -124,6 +124,13 @@ class HomeViewController: UIViewController {
     }
     
     func setMenuButton() {
+//        let case5Title = NSMutableAttributedString(string: "myString")
+//
+//        if let image = UIImage(systemName: "checkmark.square") {
+//            let bounds = CGRect(x: 0, y: -3, width: 16, height: 16)
+//            case5Title.appendImage(image: image, bounds: bounds)
+//        }
+        
         let case0 = UIAction(title: "all_추가된순") { _ in
             self.stored = self.repository.fetch(.added)
             self.tableView.reloadData()
@@ -144,9 +151,14 @@ class HomeViewController: UIViewController {
             self.stored = self.repository.fetchFilter(kindOf: .existMemo)
             self.tableView.reloadData()
         }
-        filterButton.menu = UIMenu(title: "정렬방법을 선택해주세요", image: nil, identifier: nil, options: .displayInline, children: [case0, case1, case2, case3, case4])//UIMenu(title: "정렬", children: [case1, case2, case3])
+        let case5 = UIAction(title: "찜") { _ in
+            self.stored = self.repository.fetchFilter(kindOf: .pinned)
+            self.tableView.reloadData()
+        }
+        
+        filterButton.menu = UIMenu(title: "정렬방법을 선택해주세요", image: nil, identifier: nil, options: .displayInline, children: [case0, case1, case2, case3, case4, case5])
         filterButton.showsMenuAsPrimaryAction = true
-//        filterButton.changesSelectionAsPrimaryAction = true
+        filterButton.changesSelectionAsPrimaryAction = true
         
         
         let backup = UIAction(title: "백업") {_ in
