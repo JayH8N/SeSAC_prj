@@ -44,6 +44,8 @@ class DetailViewController: BaseViewController {
         mainView.saveButtonImage.isUserInteractionEnabled = true
         let tap = UITapGestureRecognizer(target: self, action: #selector(saveButtonTapped))
         mainView.saveButtonImage.addGestureRecognizer(tap)
+        
+        keepButtonEffect()
     }
     
     @objc func saveButtonTapped() {
@@ -103,10 +105,22 @@ class DetailViewController: BaseViewController {
 
 
 extension DetailViewController {
-    func animation(color: UIColor) {
+    private func animation(color: UIColor) {
         UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseOut, animations: {
             self.mainView.saveButtonImage.alpha = 0.5
             self.mainView.saveButtonImage.backgroundColor = color
         }, completion: nil)
+    }
+    
+    
+    private func keepButtonEffect() {
+        guard let data else { return }
+        if data.liked {
+            mainView.saveButtonImage.alpha = 0.5
+            mainView.saveButtonImage.backgroundColor = .blue
+        } else {
+            mainView.saveButtonImage.alpha = 0.5
+            mainView.saveButtonImage.backgroundColor = .clear
+        }
     }
 }
