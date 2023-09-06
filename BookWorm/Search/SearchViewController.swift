@@ -95,7 +95,12 @@ extension SearchViewController: UICollectionViewDelegate, UICollectionViewDataSo
         
         cell.layer.borderColor = UIColor.black.cgColor
         cell.layer.borderWidth = 2
-        cell.author.text = data.authors[0]
+        
+        if data.authors.isEmpty {
+            cell.author.text = "Unknown"
+        } else {
+            cell.author.text = data.authors[0]
+        }
         cell.title.text = data.title
         
 //        let url = data.thumbnail

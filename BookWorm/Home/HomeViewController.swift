@@ -213,7 +213,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
-        let like = UIContextualAction(style: .destructive, title: "삭제") { action, view, completionHandler in
+        let remove = UIContextualAction(style: .destructive, title: "삭제") { action, view, completionHandler in
             let data = self.stored[indexPath.row]
             
             DocumentManager.shared.removeImageFromDocument(fileName: "JH\(data._id)")
@@ -226,10 +226,10 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
             
             tableView.reloadData()
         }
-        like.image = UIImage(systemName: "trash")
+        remove.image = UIImage(systemName: "trash")
         
         
-        return UISwipeActionsConfiguration(actions: [like])
+        return UISwipeActionsConfiguration(actions: [remove])
     }
     
     
