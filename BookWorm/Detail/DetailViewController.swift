@@ -32,12 +32,28 @@ class DetailViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = UIColor(red: 143/255, green: 190/255, blue: 235/255, alpha: 1)
         
         let edit = UIBarButtonItem(customView: editButton)
         navigationItem.rightBarButtonItem = edit
+        navigationController?.navigationBar.tintColor = .blue
         
         editButton.addTarget(self, action: #selector(editButtonClicked), for: .touchUpInside)
+        
+        
+        mainView.saveButtonImage.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(saveButtonTapped))
+        mainView.saveButtonImage.addGestureRecognizer(tap)
     }
+    
+    @objc func saveButtonTapped() {
+        guard let data = data else { return }
+        
+        
+    }
+    
+    
+    
     
     @objc func editButtonClicked() {
         
@@ -52,7 +68,7 @@ class DetailViewController: BaseViewController {
 //            print("") // NSlog
 //        }
         
-        repository.updateItem(id: data._id, title: mainView.textView.text)
+        repository.updateItem(id: data._id, memoText: mainView.textView.text)
         
         navigationController?.popViewController(animated: true)
         

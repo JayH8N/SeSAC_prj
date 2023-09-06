@@ -86,12 +86,12 @@ class BookTableRepository {
         }
     }
     
-    func updateItem(id: ObjectId, title: String) {
+    func updateItem(id: ObjectId, memoText: String) {
         do {
             try realm.write {
                 //realm.add(item, update: .modified)
                 
-                realm.create(BookTable.self, value: ["_id": id, "memo": title] as [String : Any], update: .modified) //=> 내가 원하는 컬럼값만 바꿀 수 있게 된다.
+                realm.create(BookTable.self, value: ["_id": id, "memo": memoText] as [String : Any], update: .modified) //=> 내가 원하는 컬럼값만 바꿀 수 있게 된다.
             }
         } catch {
             print("") // NSlog

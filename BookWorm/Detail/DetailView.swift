@@ -9,14 +9,14 @@ import UIKit
 
 class DetailView: BaseView {
     
-    var image = {
+    let image = {
         let view = UIImageView()
         view.contentMode = .scaleAspectFit
         return view
     }()
     
     
-    var titleLabel = {
+    let titleLabel = {
         let view = UILabel()
         view.font = .boldSystemFont(ofSize: 25)
         view.textAlignment = .center
@@ -27,7 +27,7 @@ class DetailView: BaseView {
         return view
     }()
     
-    var textView = {
+    let textView = {
         let view = UITextView()
         view.layer.cornerRadius = 10
         view.layer.borderColor = UIColor.black.cgColor
@@ -37,12 +37,18 @@ class DetailView: BaseView {
     }()
     
     
+    let saveButtonImage = {
+        let view = UIImageView()
+        view.image = UIImage(systemName: "checkmark.circle")
+        view.tintColor = .blue
+        return view
+    }()
+    
     override func configureView() {
-        [image, titleLabel, textView].forEach {
+        [image, titleLabel, textView, saveButtonImage].forEach {
             addSubview($0)
         }
-        
-        
+
     }
     
     
@@ -63,6 +69,13 @@ class DetailView: BaseView {
             make.top.equalTo(titleLabel.snp.bottom).offset(10)
             make.leading.trailing.equalToSuperview().inset(20)
             make.bottom.equalTo(self.safeAreaLayoutGuide)
+        }
+        
+        saveButtonImage.snp.makeConstraints { make in
+            make.size.equalTo(50)
+            make.bottom.equalTo(image.snp.bottom)
+            make.leading.equalTo(titleLabel.snp.leading)
+            
         }
     }
     

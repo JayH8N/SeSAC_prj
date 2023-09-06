@@ -17,7 +17,7 @@ class BookTable: Object {
     @Persisted var bookAuthor: String
     @Persisted var memo: String?
     @Persisted var set: String
-    //@Persisted var liked: Bool
+    @Persisted var liked: Bool
 
     convenience init(posterURL: String, bookTitle: String, bookAuthor: String, memo: String?) {
         self.init()
