@@ -5,4 +5,26 @@
 //  Created by hoon on 2023/09/07.
 //
 
-import Foundation
+import UIKit
+import SnapKit
+
+class BaseViewController: UIViewController {
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configureView()
+        setConstraints()
+    }
+    
+    
+    
+    func configureView() {
+    }
+    
+    func setConstraints() {
+    }
+    
+    
+}
