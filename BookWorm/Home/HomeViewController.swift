@@ -130,33 +130,36 @@ class HomeViewController: UIViewController {
 //            let bounds = CGRect(x: 0, y: -3, width: 16, height: 16)
 //            case5Title.appendImage(image: image, bounds: bounds)
 //        }
+        var menuItems: [UIAction] {
+            return [
+                UIAction(title: "all_추가된순", image: UIImage(systemName: "folder.fill.badge.plus")) { _ in
+                    self.stored = self.repository.fetch(.added)
+                    self.tableView.reloadData()
+                },
+                UIAction(title: "all_오름차순", image: UIImage(systemName: "stairs")) { _ in
+                    self.stored = self.repository.fetch(.sorted)
+                    self.tableView.reloadData()
+                },
+                UIAction(title: "all_내림차순", image: UIImage(systemName: "stairs")) { _ in
+                    self.stored = self.repository.fetch(.reversed)
+                    self.tableView.reloadData()
+                },
+                UIAction(title: "스위프트 관련여부", image: UIImage(systemName: "ellipsis.curlybraces")) { _ in
+                    self.stored = self.repository.fetchFilter(kindOf: .containSwift)
+                    self.tableView.reloadData()
+                },
+                UIAction(title: "memo 존재여부", image: UIImage(systemName: "note.text")) { _ in
+                    self.stored = self.repository.fetchFilter(kindOf: .existMemo)
+                    self.tableView.reloadData()
+                },
+                UIAction(title: "찜", image: UIImage(systemName: "heart.fill")) { _ in
+                    self.stored = self.repository.fetchFilter(kindOf: .pinned)
+                    self.tableView.reloadData()
+                }
+            ]
+        }
         
-        let case0 = UIAction(title: "all_추가된순") { _ in
-            self.stored = self.repository.fetch(.added)
-            self.tableView.reloadData()
-        }
-        let case1 = UIAction(title: "all_오름차순") { _ in
-            self.stored = self.repository.fetch(.sorted)
-            self.tableView.reloadData()
-        }
-        let case2 = UIAction(title: "all_내림차순") { _ in
-            self.stored = self.repository.fetch(.reversed)
-            self.tableView.reloadData()
-        }
-        let case3 = UIAction(title: "스위프트 관련여부") { _ in
-            self.stored = self.repository.fetchFilter(kindOf: .containSwift)
-            self.tableView.reloadData()
-        }
-        let case4 = UIAction(title: "memo 존재여부") { _ in
-            self.stored = self.repository.fetchFilter(kindOf: .existMemo)
-            self.tableView.reloadData()
-        }
-        let case5 = UIAction(title: "찜") { _ in
-            self.stored = self.repository.fetchFilter(kindOf: .pinned)
-            self.tableView.reloadData()
-        }
-        
-        filterButton.menu = UIMenu(title: "정렬방법을 선택해주세요", image: nil, identifier: nil, options: .displayInline, children: [case0, case1, case2, case3, case4, case5])
+        filterButton.menu = UIMenu(title: "", image: nil, identifier: nil, options: [], children: menuItems)
         filterButton.showsMenuAsPrimaryAction = true
         filterButton.changesSelectionAsPrimaryAction = true
         

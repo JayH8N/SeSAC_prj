@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import MarqueeLabel
 
 class HomeTableViewCell: UITableViewCell {
     
@@ -20,8 +21,10 @@ class HomeTableViewCell: UITableViewCell {
         }()
     
     let title = {
-        let view = UILabel()
+        let view = MarqueeLabel()//MarqueeLabel.init(duration: 8.0, fadeLength: 10.0)
         view.text = "제목"
+        view.animationDuration
+        view.fadeLength = 10
         view.font = .boldSystemFont(ofSize: 20)
         return view
     }()
