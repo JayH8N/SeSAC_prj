@@ -5,4 +5,30 @@
 //  Created by hoon on 2023/09/07.
 //
 
-import Foundation
+import UIKit
+
+
+class SearchViewController: BaseViewController {
+    
+    
+    
+    convenience init(title: String) {
+        self.init()
+        self.title = title
+    }
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+    
+    override func configureView() {
+        
+    }
+    
+    override func setConstraints() {
+        
+    }
+    
+    
+}
