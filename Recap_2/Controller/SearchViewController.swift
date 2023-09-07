@@ -10,7 +10,9 @@ import UIKit
 
 class SearchViewController: BaseViewController {
     
-    
+    override func loadView() {
+        view = SearchView()
+    }
     
     convenience init(title: String) {
         self.init()
@@ -20,6 +22,11 @@ class SearchViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
+    }
+    
+    override func setNavigationBar() {
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
     }
     
     override func configureView() {

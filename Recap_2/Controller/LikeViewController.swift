@@ -22,7 +22,13 @@ class LikeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
+    
+    override func setNavigationBar() {
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
+    }
+    
     
     override func configureView() {
         
