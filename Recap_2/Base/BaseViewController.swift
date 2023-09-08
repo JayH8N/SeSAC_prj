@@ -19,15 +19,11 @@ class BaseViewController: UIViewController {
         setNavigationBar()
     }
     
-    func setNavigationBar() {
-        
-    }
+    func setNavigationBar() { }
     
-    func configureView() {
-    }
+    func configureView() { }
     
-    func setConstraints() {
-    }
+    func setConstraints() { }
     
     
 }

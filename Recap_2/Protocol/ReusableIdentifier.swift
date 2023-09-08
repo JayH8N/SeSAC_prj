@@ -16,3 +16,9 @@ extension FilterCell: ReusableIdentifier {
         return String(describing: self)
     }
 }
+
+extension ResultsCell: ReusableIdentifier {
+    static var identifier: String {
+        return String(describing: self)
+    }
+}

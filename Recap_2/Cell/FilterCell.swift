@@ -9,16 +9,14 @@ import UIKit
 
 class FilterCell: BaseCollectionViewCell {
     
-    let filterLabel = FilterCustomLabel()
+    let filterLabel = FilterLabelCustom()
     
     override var isSelected: Bool {
         didSet {
             if isSelected {
-                filterLabel.backgroundColor = .white
-                filterLabel.textColor = .black
+                changeState(filterLabel, bgColor: .white, txtColor: .black, bdColor: UIColor.white.cgColor)
             } else {
-                filterLabel.backgroundColor = .clear
-                filterLabel.textColor = CustomColor.feildItemColor
+                changeState(filterLabel, bgColor: .clear, txtColor: CustomColor.feildItemColor, bdColor: CustomColor.feildItemColor.cgColor)
             }
         }
     }

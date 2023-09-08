@@ -29,8 +29,10 @@
 		781B48262AAB1BED00CF1F05 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B48252AAB1BED00CF1F05 /* APIKey.swift */; };
 		781B48292AAB1DDB00CF1F05 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B48282AAB1DDB00CF1F05 /* FilterCell.swift */; };
 		781B482C2AAB201D00CF1F05 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B482B2AAB201D00CF1F05 /* CustomColor.swift */; };
-		781B48302AAB22C200CF1F05 /* FilterCustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B482F2AAB22C200CF1F05 /* FilterCustomLabel.swift */; };
+		781B48302AAB22C200CF1F05 /* FilterLabelCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B482F2AAB22C200CF1F05 /* FilterLabelCustom.swift */; };
 		781B48322AAB294700CF1F05 /* ReusableIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B48312AAB294700CF1F05 /* ReusableIdentifier.swift */; };
+		781B48372AAB4E4800CF1F05 /* ResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B48362AAB4E4800CF1F05 /* ResultsCell.swift */; };
+		781B483A2AAB508E00CF1F05 /* ItemImageCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B48392AAB508E00CF1F05 /* ItemImageCustom.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,8 +55,10 @@
 		781B48252AAB1BED00CF1F05 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		781B48282AAB1DDB00CF1F05 /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
 		781B482B2AAB201D00CF1F05 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
-		781B482F2AAB22C200CF1F05 /* FilterCustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCustomLabel.swift; sourceTree = "<group>"; };
+		781B482F2AAB22C200CF1F05 /* FilterLabelCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterLabelCustom.swift; sourceTree = "<group>"; };
 		781B48312AAB294700CF1F05 /* ReusableIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableIdentifier.swift; sourceTree = "<group>"; };
+		781B48362AAB4E4800CF1F05 /* ResultsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsCell.swift; sourceTree = "<group>"; };
+		781B48392AAB508E00CF1F05 /* ItemImageCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemImageCustom.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,8 +159,8 @@
 		781B47FB2AAA0F9900CF1F05 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				781B48382AAB4ED200CF1F05 /* CustomView */,
 				781B48172AAA1E1700CF1F05 /* SearchView.swift */,
-				781B48192AAA218900CF1F05 /* SearchBarCustom.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -175,7 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				781B48282AAB1DDB00CF1F05 /* FilterCell.swift */,
-				781B482F2AAB22C200CF1F05 /* FilterCustomLabel.swift */,
+				781B48362AAB4E4800CF1F05 /* ResultsCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -186,6 +190,16 @@
 				781B482B2AAB201D00CF1F05 /* CustomColor.swift */,
 			);
 			path = Enum;
+			sourceTree = "<group>";
+		};
+		781B48382AAB4ED200CF1F05 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				781B482F2AAB22C200CF1F05 /* FilterLabelCustom.swift */,
+				781B48192AAA218900CF1F05 /* SearchBarCustom.swift */,
+				781B48392AAB508E00CF1F05 /* ItemImageCustom.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,9 +290,11 @@
 				781B48002AAA101800CF1F05 /* SearchViewController.swift in Sources */,
 				781B47E72AAA0D1800CF1F05 /* ViewController.swift in Sources */,
 				781B481A2AAA218900CF1F05 /* SearchBarCustom.swift in Sources */,
+				781B483A2AAB508E00CF1F05 /* ItemImageCustom.swift in Sources */,
 				781B48082AAA105400CF1F05 /* BaseCollectionViewCell.swift in Sources */,
+				781B48372AAB4E4800CF1F05 /* ResultsCell.swift in Sources */,
 				781B47E32AAA0D1800CF1F05 /* AppDelegate.swift in Sources */,
-				781B48302AAB22C200CF1F05 /* FilterCustomLabel.swift in Sources */,
+				781B48302AAB22C200CF1F05 /* FilterLabelCustom.swift in Sources */,
 				781B47FE2AAA0FDD00CF1F05 /* MainTabBarController.swift in Sources */,
 				781B47E52AAA0D1800CF1F05 /* SceneDelegate.swift in Sources */,
 				781B48322AAB294700CF1F05 /* ReusableIdentifier.swift in Sources */,

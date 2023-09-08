@@ -13,7 +13,6 @@ class BaseCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         configureView()
         setConstraints()
     }
@@ -25,5 +24,12 @@ class BaseCollectionViewCell: UICollectionViewCell {
     func configureView() { }
     
     func setConstraints() { }
+    
+    
+    func changeState(_ object: UILabel, bgColor: UIColor, txtColor: UIColor, bdColor: CGColor) {
+        object.backgroundColor = bgColor
+        object.textColor = txtColor
+        object.layer.borderColor = bdColor
+    }
     
 }

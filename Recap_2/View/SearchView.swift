@@ -7,14 +7,31 @@
 
 import UIKit
 
+
+struct A {
+    let title: String
+    let name: String
+    let price: String
+}
+
 class SearchView: BaseView {
     
     var filterList = ["정확도", "날짜순", "가격높은순", "가격낮은순"]
     
+    var textList: [A] = [
+    A(title: "content", name: "제목1", price: "100000000"),
+    A(title: "dkdkda;lsdkjf;alsdjkfl;wkjl;fjw;ljfkwl;jflw;jkdf;lwkjdf;lwkj", name: "제목2", price: "4000"),
+    A(title: "contentcontentcontent", name: "제목3", price: "2300000"),
+    A(title: "content", name: "제목4", price: "10"),
+    A(title: "content", name: "제목5", price: "123000"),
+    A(title: "contentcontentcontentcontentcontentcontentcontentcontentcontent", name: "제목6", price: "6000")
+    ]
+    
     let searchBar = SearchBarCustom()
     
+    //filterCollectionView
     lazy var filter = {
-        let view = UICollectionView(frame: .zero, collectionViewLayout: collectionViewLayout())
+        let view = UICollectionView(frame: .zero, collectionViewLayout: filterCollectionViewLayout())
         view.register(FilterCell.self, forCellWithReuseIdentifier: FilterCell.identifier)
         view.backgroundColor = .clear
         view.dataSource = self
@@ -22,59 +39,66 @@ class SearchView: BaseView {
         return view
     }()
     
-    func collectionViewLayout() -> UICollectionViewLayout {
-        let layout = UICollectionViewFlowLayout()
-        layout.minimumInteritemSpacing = 5
-        layout.scrollDirection = .horizontal
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 9, bottom: 0, right: 9)
-        return layout
-    }
-    
+    //resultsCollectionView
+    lazy var results = {
+        let view = UICollectionView(frame: .zero, collectionViewLayout: resultsCollectionViewLayout())
+        view.register(ResultsCell.self, forCellWithReuseIdentifier: ResultsCell.identifier)
+        view.backgroundColor = .clear
+        view.dataSource = self
+        view.delegate = self
+        return view
+    }()
     
     
     override func configureView() {
         searchBar.showsCancelButton = true
-        [searchBar, filter].forEach {
+        [searchBar, filter, results].forEach {
             addSubview($0)
         }
     }
     
     override func setConstraints() {
-        searchBar.snp.makeConstraints { make in
-            make.top.horizontalEdges.equalTo(self.safeAreaLayoutGuide)
+        searchBar.snp.makeConstraints {
+            $0.top.horizontalEdges.equalTo(self.safeAreaLayoutGuide)
         }
         
-        filter.snp.makeConstraints { make in
-            make.top.equalTo(searchBar.snp.bottom)
-            make.leading.trailing.equalToSuperview()
-            make.height.equalTo(self.snp.height).multipliedBy(0.05)
+        filter.snp.makeConstraints {
+            $0.top.equalTo(searchBar.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(self.snp.height).multipliedBy(0.05)
+        }
+        
+        results.snp.makeConstraints {
+            $0.top.equalTo(filter.snp.bottom)
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(self.safeAreaLayoutGuide)
         }
     }
-    
-    
-    
     
 }
 
 
 
-
-
-
-
 extension SearchView: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return filterList.count
+        return collectionView == filter ? filterList.count : textList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FilterCell.identifier, for: indexPath) as? FilterCell else { return UICollectionViewCell() }
         
-        cell.filterLabel.text = filterList[indexPath.row]
-        
-        return cell
+        if collectionView == filter {
+            guard let cell1 = collectionView.dequeueReusableCell(withReuseIdentifier: FilterCell.identifier, for: indexPath) as? FilterCell else { return UICollectionViewCell() }
+            cell1.filterLabel.text = filterList[indexPath.row]
+            return cell1
+        } else {
+            guard let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: ResultsCell.identifier, for: indexPath) as? ResultsCell else { return UICollectionViewCell() }
+            cell2.itemImage.backgroundColor = .yellow
+            cell2.mallNameLabel.text = textList[indexPath.row].name
+            cell2.titleLabel.text = textList[indexPath.row].title
+            cell2.priceLabel.text = textList[indexPath.row].price
+            return cell2
+        }
     }
-    
     
     
 }
@@ -82,17 +106,24 @@ extension SearchView: UICollectionViewDataSource, UICollectionViewDelegate {
 //Cell 사이즈
 extension SearchView: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
-        let label = {
-            let view = UILabel()
-            view.font = .systemFont(ofSize: 14)
-            view.text = filterList[indexPath.row]
-            view.sizeToFit()
-            return view
-        }()
-        
-        let size = label.frame.size
+
+        if collectionView == filter {
+            let label = {
+                let view = UILabel()
+                view.font = .systemFont(ofSize: 14)
+                view.text = filterList[indexPath.row]
+                view.sizeToFit()
+                return view
+            }()
+
+            let size = label.frame.size
             
-        return CGSize(width: size.width + 10, height: size.height + 12)
+            return CGSize(width: size.width + 10, height: size.height + 12)
+        } else {
+            
+            let size = UIScreen.main.bounds.width - 44
+            
+            return CGSize(width: size / 2, height: (size / 2) * 1.43)
+        }
     }
 }

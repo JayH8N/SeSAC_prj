@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FilterCustomLabel: UILabel {
+class FilterLabelCustom: UILabel {
     
     
     
