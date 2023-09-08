@@ -10,7 +10,10 @@ import UIKit
 
 class BaseView: UIView {
     
-    
+    let filterCollectionView = {
+        let view = UICollectionView()
+        
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)

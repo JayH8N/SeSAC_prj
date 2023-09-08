@@ -27,6 +27,10 @@
 		781B481A2AAA218900CF1F05 /* SearchBarCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B48192AAA218900CF1F05 /* SearchBarCustom.swift */; };
 		781B48242AAB1BD500CF1F05 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 781B48232AAB1BD500CF1F05 /* .gitignore */; };
 		781B48262AAB1BED00CF1F05 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B48252AAB1BED00CF1F05 /* APIKey.swift */; };
+		781B48292AAB1DDB00CF1F05 /* FilterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B48282AAB1DDB00CF1F05 /* FilterCell.swift */; };
+		781B482C2AAB201D00CF1F05 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B482B2AAB201D00CF1F05 /* CustomColor.swift */; };
+		781B48302AAB22C200CF1F05 /* FilterCustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B482F2AAB22C200CF1F05 /* FilterCustomLabel.swift */; };
+		781B48322AAB294700CF1F05 /* ReusableIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B48312AAB294700CF1F05 /* ReusableIdentifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +51,10 @@
 		781B48192AAA218900CF1F05 /* SearchBarCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarCustom.swift; sourceTree = "<group>"; };
 		781B48232AAB1BD500CF1F05 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		781B48252AAB1BED00CF1F05 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		781B48282AAB1DDB00CF1F05 /* FilterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCell.swift; sourceTree = "<group>"; };
+		781B482B2AAB201D00CF1F05 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
+		781B482F2AAB22C200CF1F05 /* FilterCustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCustomLabel.swift; sourceTree = "<group>"; };
+		781B48312AAB294700CF1F05 /* ReusableIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableIdentifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +93,8 @@
 		781B47E12AAA0D1800CF1F05 /* Recap_2 */ = {
 			isa = PBXGroup;
 			children = (
+				781B482A2AAB201200CF1F05 /* Enum */,
+				781B48272AAB1DC100CF1F05 /* Cell */,
 				781B47FC2AAA0FA100CF1F05 /* Controller */,
 				781B47FB2AAA0F9900CF1F05 /* View */,
 				781B47FA2AAA0F9200CF1F05 /* Model */,
@@ -105,6 +115,7 @@
 		781B47F62AAA0F6A00CF1F05 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				781B48312AAB294700CF1F05 /* ReusableIdentifier.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -158,6 +169,23 @@
 				781B48012AAA102500CF1F05 /* LikeViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		781B48272AAB1DC100CF1F05 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				781B48282AAB1DDB00CF1F05 /* FilterCell.swift */,
+				781B482F2AAB22C200CF1F05 /* FilterCustomLabel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		781B482A2AAB201200CF1F05 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				781B482B2AAB201D00CF1F05 /* CustomColor.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,11 +278,15 @@
 				781B481A2AAA218900CF1F05 /* SearchBarCustom.swift in Sources */,
 				781B48082AAA105400CF1F05 /* BaseCollectionViewCell.swift in Sources */,
 				781B47E32AAA0D1800CF1F05 /* AppDelegate.swift in Sources */,
+				781B48302AAB22C200CF1F05 /* FilterCustomLabel.swift in Sources */,
 				781B47FE2AAA0FDD00CF1F05 /* MainTabBarController.swift in Sources */,
 				781B47E52AAA0D1800CF1F05 /* SceneDelegate.swift in Sources */,
+				781B48322AAB294700CF1F05 /* ReusableIdentifier.swift in Sources */,
+				781B482C2AAB201D00CF1F05 /* CustomColor.swift in Sources */,
 				781B48042AAA103900CF1F05 /* BaseViewController.swift in Sources */,
 				781B48022AAA102600CF1F05 /* LikeViewController.swift in Sources */,
 				781B48262AAB1BED00CF1F05 /* APIKey.swift in Sources */,
+				781B48292AAB1DDB00CF1F05 /* FilterCell.swift in Sources */,
 				781B48062AAA104200CF1F05 /* BaseView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,11 +9,6 @@ import UIKit
 
 class SearchBarCustom: UISearchBar {
     
-    enum CustomColor {
-        static let feildBGColor = UIColor(red: 28/255, green: 28/255, blue: 31/255, alpha: 1)
-        static let feildItemColor = UIColor(red: 152/255, green: 152/255, blue: 158/255, alpha: 1)
-    }
-    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
