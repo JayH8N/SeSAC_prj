@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 
 class ResultsCell: BaseCollectionViewCell {
@@ -34,6 +35,19 @@ class ResultsCell: BaseCollectionViewCell {
         return view
     }()
     
+    func setCell(data: Item) {
+        let url = data.image
+        
+        if let url = URL(string: url) {
+            itemImage.kf.setImage(with: url)
+        }
+        
+        let titleResult = data.title.replacingOccurrences(of: "</b>", with: "").replacingOccurrences(of: "<b>", with: "")
+        mallNameLabel.text = "[\(data.mallName)]"
+        titleLabel.text = titleResult
+        priceLabel.text = decimalWon(value: Int(data.lprice)!)
+    }
+    
     
     
     override func configureView() {
@@ -54,17 +68,17 @@ class ResultsCell: BaseCollectionViewCell {
         
         mallNameLabel.snp.makeConstraints {
             $0.top.equalTo(itemImage.snp.bottom).offset(4)
-            $0.leading.trailing.equalToSuperview().inset(8)
+            $0.leading.trailing.equalToSuperview().inset(5)
         }
         
         titleLabel.snp.makeConstraints {
             $0.top.equalTo(mallNameLabel.snp.bottom).offset(2)
-            $0.leading.trailing.equalToSuperview().inset(8)
+            $0.leading.trailing.equalToSuperview().inset(5)
         }
         
         priceLabel.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(2)
-            $0.leading.trailing.equalToSuperview().inset(8)
+            $0.leading.trailing.equalToSuperview().inset(5)
         }
     }
     

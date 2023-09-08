@@ -29,7 +29,7 @@ class ItemImageCustom: UIImageView {
     
     
     override func layoutSublayers(of layer: CALayer) {
-        layer.cornerRadius = 7
+        layer.cornerRadius = 13
         
     }
     

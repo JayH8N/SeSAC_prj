@@ -32,4 +32,13 @@ class BaseCollectionViewCell: UICollectionViewCell {
         object.layer.borderColor = bdColor
     }
     
+    //원단위 함수
+    func decimalWon(value: Int) -> String{
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        let result = numberFormatter.string(from: NSNumber(value: value))!
+        
+        return result
+    }
+    
 }

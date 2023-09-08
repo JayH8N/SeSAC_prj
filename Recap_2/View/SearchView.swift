@@ -8,24 +8,16 @@
 import UIKit
 
 
-struct A {
-    let title: String
-    let name: String
-    let price: String
-}
+
 
 class SearchView: BaseView {
     
-    var filterList = ["정확도", "날짜순", "가격높은순", "가격낮은순"]
+    var filterList = ["정확도", "날짜순", "가격낮은순", "가격높은순"]
+    var shoppingList: Shopping = Shopping(total: 0, start: 1, display: 0, items: [])
+    var page: Int = 1
     
-    var textList: [A] = [
-    A(title: "content", name: "제목1", price: "100000000"),
-    A(title: "dkdkda;lsdkjf;alsdjkfl;wkjl;fjw;ljfkwl;jflw;jkdf;lwkjdf;lwkj", name: "제목2", price: "4000"),
-    A(title: "contentcontentcontent", name: "제목3", price: "2300000"),
-    A(title: "content", name: "제목4", price: "10"),
-    A(title: "content", name: "제목5", price: "123000"),
-    A(title: "contentcontentcontentcontentcontentcontentcontentcontentcontent", name: "제목6", price: "6000")
-    ]
+    weak var delegate: SearchViewProtocol?
+    
     
     let searchBar = SearchBarCustom()
     
@@ -51,7 +43,10 @@ class SearchView: BaseView {
     
     
     override func configureView() {
+        searchBar.delegate = self
+        searchBar.becomeFirstResponder()
         searchBar.showsCancelButton = true
+        
         [searchBar, filter, results].forEach {
             addSubview($0)
         }
@@ -77,26 +72,25 @@ class SearchView: BaseView {
     
 }
 
-
+//MARK: - Extension
 
 extension SearchView: UICollectionViewDataSource, UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return collectionView == filter ? filterList.count : textList.count
+        return collectionView == filter ? filterList.count : shoppingList.items.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         if collectionView == filter {
-            guard let cell1 = collectionView.dequeueReusableCell(withReuseIdentifier: FilterCell.identifier, for: indexPath) as? FilterCell else { return UICollectionViewCell() }
-            cell1.filterLabel.text = filterList[indexPath.row]
-            return cell1
+            guard let filterCell = collectionView.dequeueReusableCell(withReuseIdentifier: FilterCell.identifier, for: indexPath) as? FilterCell else { return UICollectionViewCell() }
+            filterCell.filterLabel.text = filterList[indexPath.row]
+            return filterCell
         } else {
-            guard let cell2 = collectionView.dequeueReusableCell(withReuseIdentifier: ResultsCell.identifier, for: indexPath) as? ResultsCell else { return UICollectionViewCell() }
-            cell2.itemImage.backgroundColor = .yellow
-            cell2.mallNameLabel.text = textList[indexPath.row].name
-            cell2.titleLabel.text = textList[indexPath.row].title
-            cell2.priceLabel.text = textList[indexPath.row].price
-            return cell2
+            //collectionView == results
+            guard let resultCell = collectionView.dequeueReusableCell(withReuseIdentifier: ResultsCell.identifier, for: indexPath) as? ResultsCell else { return UICollectionViewCell() }
+            let data = shoppingList.items[indexPath.item]
+            resultCell.setCell(data: data)
+            return resultCell
         }
     }
     
@@ -125,5 +119,36 @@ extension SearchView: UICollectionViewDelegateFlowLayout {
             
             return CGSize(width: size / 2, height: (size / 2) * 1.43)
         }
+    }
+}
+
+
+//서치바
+extension SearchView: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        
+
+        searchBar.resignFirstResponder()
+        shoppingList = Shopping(total: 0, start: 1, display: 0, items: [])
+        page = 1
+        
+        guard let text = searchBar.text else { return }
+        
+        NaverAPIManager.shared.callRequest(keyword: text, sort: .sim, page: page) { [weak self] data in
+            self?.shoppingList = data
+            
+            self?.results.reloadData()
+        }
+        
+        if shoppingList.items.isEmpty {
+            delegate?.showAlert?(title: "검색결과가 존재하지 않습니다.")
+        }
+    }
+    
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.text = ""
+        shoppingList = Shopping(total: 0, start: 1, display: 0, items: [])
+        results.reloadData()
     }
 }

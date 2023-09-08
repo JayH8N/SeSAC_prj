@@ -33,6 +33,8 @@
 		781B48322AAB294700CF1F05 /* ReusableIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B48312AAB294700CF1F05 /* ReusableIdentifier.swift */; };
 		781B48372AAB4E4800CF1F05 /* ResultsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B48362AAB4E4800CF1F05 /* ResultsCell.swift */; };
 		781B483A2AAB508E00CF1F05 /* ItemImageCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B48392AAB508E00CF1F05 /* ItemImageCustom.swift */; };
+		781B483C2AAB9A5500CF1F05 /* NaverAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B483B2AAB9A5500CF1F05 /* NaverAPIManager.swift */; };
+		781B483E2AABABED00CF1F05 /* Shopping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B483D2AABABED00CF1F05 /* Shopping.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +61,8 @@
 		781B48312AAB294700CF1F05 /* ReusableIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableIdentifier.swift; sourceTree = "<group>"; };
 		781B48362AAB4E4800CF1F05 /* ResultsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsCell.swift; sourceTree = "<group>"; };
 		781B48392AAB508E00CF1F05 /* ItemImageCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemImageCustom.swift; sourceTree = "<group>"; };
+		781B483B2AAB9A5500CF1F05 /* NaverAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverAPIManager.swift; sourceTree = "<group>"; };
+		781B483D2AABABED00CF1F05 /* Shopping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shopping.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				781B48252AAB1BED00CF1F05 /* APIKey.swift */,
+				781B483B2AAB9A5500CF1F05 /* NaverAPIManager.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -152,6 +157,7 @@
 		781B47FA2AAA0F9200CF1F05 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				781B483D2AABABED00CF1F05 /* Shopping.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -293,7 +299,9 @@
 				781B483A2AAB508E00CF1F05 /* ItemImageCustom.swift in Sources */,
 				781B48082AAA105400CF1F05 /* BaseCollectionViewCell.swift in Sources */,
 				781B48372AAB4E4800CF1F05 /* ResultsCell.swift in Sources */,
+				781B483C2AAB9A5500CF1F05 /* NaverAPIManager.swift in Sources */,
 				781B47E32AAA0D1800CF1F05 /* AppDelegate.swift in Sources */,
+				781B483E2AABABED00CF1F05 /* Shopping.swift in Sources */,
 				781B48302AAB22C200CF1F05 /* FilterLabelCustom.swift in Sources */,
 				781B47FE2AAA0FDD00CF1F05 /* MainTabBarController.swift in Sources */,
 				781B47E52AAA0D1800CF1F05 /* SceneDelegate.swift in Sources */,
