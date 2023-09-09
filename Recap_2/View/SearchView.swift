@@ -7,15 +7,19 @@
 
 import UIKit
 
-
+@objc protocol SearchViewProtocol: AnyObject {
+    @objc optional func didselectItemAt(indexPath: IndexPath)
+    @objc optional func showAlert(title: String)
+}
 
 
 class SearchView: BaseView {
     
     var filterList = ["정확도", "날짜순", "가격낮은순", "가격높은순"]
-    var shoppingList: Shopping = Shopping(total: 0, start: 1, display: 0, items: [])
+    var shoppingList: Shopping = Shopping(total: 0, start: 0, display: 0, items: [])
     var page: Int = 1
-    
+    var text: String?
+     
     weak var delegate: SearchViewProtocol?
     
     
@@ -83,7 +87,13 @@ extension SearchView: UICollectionViewDataSource, UICollectionViewDelegate {
         
         if collectionView == filter {
             guard let filterCell = collectionView.dequeueReusableCell(withReuseIdentifier: FilterCell.identifier, for: indexPath) as? FilterCell else { return UICollectionViewCell() }
-            filterCell.filterLabel.text = filterList[indexPath.row]
+            filterCell.filterLabel.text = filterList[indexPath.item]
+            
+            if indexPath.item == 0 {
+                filterCell.isSelected = true
+                filter.selectItem(at: indexPath, animated: false, scrollPosition: .init()) //???: - ⚠️셀이 재사용되는 순간 의도와 다르게 다시 선택 될 수있음....
+            }
+            
             return filterCell
         } else {
             //collectionView == results
@@ -91,6 +101,36 @@ extension SearchView: UICollectionViewDataSource, UICollectionViewDelegate {
             let data = shoppingList.items[indexPath.item]
             resultCell.setCell(data: data)
             return resultCell
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == filter {
+            switch indexPath.item {
+            case 0:
+                NaverAPIManager.shared.callRequest(keyword: text!, sort: .sim, page: page) { data in
+                    self.shoppingList = data
+                    self.results.reloadData()
+                }
+            case 1:
+                NaverAPIManager.shared.callRequest(keyword: text!, sort: .date, page: page) { data in
+                    self.shoppingList = data
+                    self.results.reloadData()
+                }
+            case 2:
+                NaverAPIManager.shared.callRequest(keyword: text!, sort: .asc, page: page) { data in
+                    self.shoppingList = data
+                    self.results.reloadData()
+                }
+            case 3:
+                NaverAPIManager.shared.callRequest(keyword: text!, sort: .dsc, page: page) { data in
+                    self.shoppingList = data
+                    self.results.reloadData()
+                }
+            default: break
+            }
+        } else {
+            
         }
     }
     
@@ -127,22 +167,25 @@ extension SearchView: UICollectionViewDelegateFlowLayout {
 extension SearchView: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
-
         searchBar.resignFirstResponder()
         shoppingList = Shopping(total: 0, start: 1, display: 0, items: [])
         page = 1
         
         guard let text = searchBar.text else { return }
+        self.text = text
         
-        NaverAPIManager.shared.callRequest(keyword: text, sort: .sim, page: page) { [weak self] data in
-            self?.shoppingList = data
-            
-            self?.results.reloadData()
+        NaverAPIManager.shared.callRequest(keyword: text, sort: .sim, page: page) { data in
+            self.shoppingList = data
+            self.results.reloadData()
         }
         
+        print(shoppingList)
+        //???: - ⚠️왜 변수에 값이 안담기지...ㅠㅠ
         if shoppingList.items.isEmpty {
             delegate?.showAlert?(title: "검색결과가 존재하지 않습니다.")
         }
+        
+        
     }
     
     

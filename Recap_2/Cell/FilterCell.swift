@@ -21,7 +21,6 @@ class FilterCell: BaseCollectionViewCell {
         }
     }
     
-    
     override func configureView() {
         contentView.addSubview(filterLabel)
     }

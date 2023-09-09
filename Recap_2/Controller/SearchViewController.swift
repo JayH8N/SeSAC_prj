@@ -8,16 +8,13 @@
 import UIKit
 
 
-@objc protocol SearchViewProtocol: AnyObject {
-    @objc optional func didselectItemAt(indexPath: IndexPath)
-    @objc optional func showAlert(title: String)
-}
-
 class SearchViewController: BaseViewController {
     
+    let mainView = SearchView()
+    
     override func loadView() {
-        view = SearchView()
-        SearchView().delegate = self
+        view = mainView
+        mainView.delegate = self
     }
     
     convenience init(title: String) {
@@ -28,7 +25,6 @@ class SearchViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
     }
     
     override func setNavigationBar() {
@@ -47,10 +43,13 @@ class SearchViewController: BaseViewController {
 }
 
 extension SearchViewController: SearchViewProtocol {
+    
     func showAlert(title: String) {
         let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
         let ok = UIAlertAction(title: "확인", style: .default)
         alert.addAction(ok)
         present(alert, animated: true, completion: nil)
     }
+    
+    
 }

@@ -20,8 +20,6 @@
 		781B48082AAA105400CF1F05 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B48072AAA105400CF1F05 /* BaseCollectionViewCell.swift */; };
 		781B480B2AAA107A00CF1F05 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 781B480A2AAA107A00CF1F05 /* Alamofire */; };
 		781B480E2AAA108400CF1F05 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 781B480D2AAA108400CF1F05 /* Kingfisher */; };
-		781B48112AAA10BA00CF1F05 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 781B48102AAA10BA00CF1F05 /* Realm */; };
-		781B48132AAA10BA00CF1F05 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 781B48122AAA10BA00CF1F05 /* RealmSwift */; };
 		781B48162AAA10CA00CF1F05 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 781B48152AAA10CA00CF1F05 /* SnapKit */; };
 		781B48182AAA1E1700CF1F05 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B48172AAA1E1700CF1F05 /* SearchView.swift */; };
 		781B481A2AAA218900CF1F05 /* SearchBarCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B48192AAA218900CF1F05 /* SearchBarCustom.swift */; };
@@ -35,6 +33,7 @@
 		781B483A2AAB508E00CF1F05 /* ItemImageCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B48392AAB508E00CF1F05 /* ItemImageCustom.swift */; };
 		781B483C2AAB9A5500CF1F05 /* NaverAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B483B2AAB9A5500CF1F05 /* NaverAPIManager.swift */; };
 		781B483E2AABABED00CF1F05 /* Shopping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B483D2AABABED00CF1F05 /* Shopping.swift */; };
+		781B48402AAC6B1500CF1F05 /* Enum+API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B483F2AAC6B1500CF1F05 /* Enum+API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +62,7 @@
 		781B48392AAB508E00CF1F05 /* ItemImageCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemImageCustom.swift; sourceTree = "<group>"; };
 		781B483B2AAB9A5500CF1F05 /* NaverAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverAPIManager.swift; sourceTree = "<group>"; };
 		781B483D2AABABED00CF1F05 /* Shopping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shopping.swift; sourceTree = "<group>"; };
+		781B483F2AAC6B1500CF1F05 /* Enum+API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enum+API.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,8 +70,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				781B48132AAA10BA00CF1F05 /* RealmSwift in Frameworks */,
-				781B48112AAA10BA00CF1F05 /* Realm in Frameworks */,
 				781B480E2AAA108400CF1F05 /* Kingfisher in Frameworks */,
 				781B480B2AAA107A00CF1F05 /* Alamofire in Frameworks */,
 				781B48162AAA10CA00CF1F05 /* SnapKit in Frameworks */,
@@ -194,6 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				781B482B2AAB201D00CF1F05 /* CustomColor.swift */,
+				781B483F2AAC6B1500CF1F05 /* Enum+API.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -227,8 +226,6 @@
 			packageProductDependencies = (
 				781B480A2AAA107A00CF1F05 /* Alamofire */,
 				781B480D2AAA108400CF1F05 /* Kingfisher */,
-				781B48102AAA10BA00CF1F05 /* Realm */,
-				781B48122AAA10BA00CF1F05 /* RealmSwift */,
 				781B48152AAA10CA00CF1F05 /* SnapKit */,
 			);
 			productName = Recap_2;
@@ -262,7 +259,6 @@
 			packageReferences = (
 				781B48092AAA107A00CF1F05 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				781B480C2AAA108400CF1F05 /* XCRemoteSwiftPackageReference "Kingfisher" */,
-				781B480F2AAA10BA00CF1F05 /* XCRemoteSwiftPackageReference "realm-swift" */,
 				781B48142AAA10CA00CF1F05 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 781B47E02AAA0D1800CF1F05 /* Products */;
@@ -297,6 +293,7 @@
 				781B47E72AAA0D1800CF1F05 /* ViewController.swift in Sources */,
 				781B481A2AAA218900CF1F05 /* SearchBarCustom.swift in Sources */,
 				781B483A2AAB508E00CF1F05 /* ItemImageCustom.swift in Sources */,
+				781B48402AAC6B1500CF1F05 /* Enum+API.swift in Sources */,
 				781B48082AAA105400CF1F05 /* BaseCollectionViewCell.swift in Sources */,
 				781B48372AAB4E4800CF1F05 /* ResultsCell.swift in Sources */,
 				781B483C2AAB9A5500CF1F05 /* NaverAPIManager.swift in Sources */,
@@ -545,14 +542,6 @@
 				minimumVersion = 7.0.0;
 			};
 		};
-		781B480F2AAA10BA00CF1F05 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/realm-swift.git";
-			requirement = {
-				kind = exactVersion;
-				version = 10.42.1;
-			};
-		};
 		781B48142AAA10CA00CF1F05 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -573,16 +562,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 781B480C2AAA108400CF1F05 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
-		};
-		781B48102AAA10BA00CF1F05 /* Realm */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 781B480F2AAA10BA00CF1F05 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
-		};
-		781B48122AAA10BA00CF1F05 /* RealmSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 781B480F2AAA10BA00CF1F05 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = RealmSwift;
 		};
 		781B48152AAA10CA00CF1F05 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
