@@ -51,5 +51,7 @@ extension SearchViewController: SearchViewProtocol {
         present(alert, animated: true, completion: nil)
     }
     
-    
+    func didselectItemAt(vc: UIViewController) {
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }

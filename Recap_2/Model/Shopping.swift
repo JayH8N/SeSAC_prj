@@ -14,5 +14,5 @@ struct Shopping: Codable {
 }
 
 struct Item: Codable {
-    let mallName, lprice, title, image: String
+    let mallName, lprice, title, image, productId: String
 }

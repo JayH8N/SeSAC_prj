@@ -8,7 +8,7 @@
 import UIKit
 
 @objc protocol SearchViewProtocol: AnyObject {
-    @objc optional func didselectItemAt(indexPath: IndexPath)
+    @objc optional func didselectItemAt(vc: UIViewController)
     @objc optional func showAlert(title: String)
 }
 
@@ -106,31 +106,39 @@ extension SearchView: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == filter {
+            guard let text = text else {
+                delegate?.showAlert?(title: "검색어를 기입해주세요")
+                return
+            }
             switch indexPath.item {
             case 0:
-                NaverAPIManager.shared.callRequest(keyword: text!, sort: .sim, page: page) { data in
+                NaverAPIManager.shared.callRequest(keyword: text, sort: .sim, page: page) { data in
                     self.shoppingList = data
                     self.results.reloadData()
                 }
             case 1:
-                NaverAPIManager.shared.callRequest(keyword: text!, sort: .date, page: page) { data in
+                NaverAPIManager.shared.callRequest(keyword: text, sort: .date, page: page) { data in
                     self.shoppingList = data
                     self.results.reloadData()
                 }
             case 2:
-                NaverAPIManager.shared.callRequest(keyword: text!, sort: .asc, page: page) { data in
+                NaverAPIManager.shared.callRequest(keyword: text, sort: .asc, page: page) { data in
                     self.shoppingList = data
                     self.results.reloadData()
                 }
             case 3:
-                NaverAPIManager.shared.callRequest(keyword: text!, sort: .dsc, page: page) { data in
+                NaverAPIManager.shared.callRequest(keyword: text, sort: .dsc, page: page) { data in
                     self.shoppingList = data
                     self.results.reloadData()
                 }
             default: break
             }
         } else {
+            let vc = DetailViewController()
+            vc.mainView.productID = shoppingList.items[indexPath.item].productId
+            vc.mainView.title = shoppingList.items[indexPath.item].title.replacingOccurrences(of: "</b>", with: "").replacingOccurrences(of: "<b>", with: "")
             
+            delegate?.didselectItemAt?(vc: vc)
         }
     }
     
@@ -191,6 +199,7 @@ extension SearchView: UISearchBarDelegate {
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
+        text = nil
         shoppingList = Shopping(total: 0, start: 1, display: 0, items: [])
         results.reloadData()
     }

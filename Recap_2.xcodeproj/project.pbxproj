@@ -34,6 +34,10 @@
 		781B483C2AAB9A5500CF1F05 /* NaverAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B483B2AAB9A5500CF1F05 /* NaverAPIManager.swift */; };
 		781B483E2AABABED00CF1F05 /* Shopping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B483D2AABABED00CF1F05 /* Shopping.swift */; };
 		781B48402AAC6B1500CF1F05 /* Enum+API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B483F2AAC6B1500CF1F05 /* Enum+API.swift */; };
+		781B48422AAC71F000CF1F05 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B48412AAC71F000CF1F05 /* DetailView.swift */; };
+		781B48442AAC722300CF1F05 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B48432AAC722300CF1F05 /* DetailViewController.swift */; };
+		781B48472AAC7F5800CF1F05 /* MarqueeLabel in Frameworks */ = {isa = PBXBuildFile; productRef = 781B48462AAC7F5800CF1F05 /* MarqueeLabel */; };
+		781B48492AACA0A800CF1F05 /* Extension+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B48482AACA0A800CF1F05 /* Extension+URL.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -63,6 +67,9 @@
 		781B483B2AAB9A5500CF1F05 /* NaverAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverAPIManager.swift; sourceTree = "<group>"; };
 		781B483D2AABABED00CF1F05 /* Shopping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shopping.swift; sourceTree = "<group>"; };
 		781B483F2AAC6B1500CF1F05 /* Enum+API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enum+API.swift"; sourceTree = "<group>"; };
+		781B48412AAC71F000CF1F05 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		781B48432AAC722300CF1F05 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		781B48482AACA0A800CF1F05 /* Extension+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+URL.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +77,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				781B48472AAC7F5800CF1F05 /* MarqueeLabel in Frameworks */,
 				781B480E2AAA108400CF1F05 /* Kingfisher in Frameworks */,
 				781B480B2AAA107A00CF1F05 /* Alamofire in Frameworks */,
 				781B48162AAA10CA00CF1F05 /* SnapKit in Frameworks */,
@@ -148,6 +156,7 @@
 		781B47F92AAA0F8A00CF1F05 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				781B48482AACA0A800CF1F05 /* Extension+URL.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -165,6 +174,7 @@
 			children = (
 				781B48382AAB4ED200CF1F05 /* CustomView */,
 				781B48172AAA1E1700CF1F05 /* SearchView.swift */,
+				781B48412AAC71F000CF1F05 /* DetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -175,6 +185,7 @@
 				781B47FD2AAA0FDD00CF1F05 /* MainTabBarController.swift */,
 				781B47FF2AAA101800CF1F05 /* SearchViewController.swift */,
 				781B48012AAA102500CF1F05 /* LikeViewController.swift */,
+				781B48432AAC722300CF1F05 /* DetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -227,6 +238,7 @@
 				781B480A2AAA107A00CF1F05 /* Alamofire */,
 				781B480D2AAA108400CF1F05 /* Kingfisher */,
 				781B48152AAA10CA00CF1F05 /* SnapKit */,
+				781B48462AAC7F5800CF1F05 /* MarqueeLabel */,
 			);
 			productName = Recap_2;
 			productReference = 781B47DF2AAA0D1800CF1F05 /* Recap_2.app */;
@@ -260,6 +272,7 @@
 				781B48092AAA107A00CF1F05 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				781B480C2AAA108400CF1F05 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				781B48142AAA10CA00CF1F05 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				781B48452AAC7F5800CF1F05 /* XCRemoteSwiftPackageReference "MarqueeLabel" */,
 			);
 			productRefGroup = 781B47E02AAA0D1800CF1F05 /* Products */;
 			projectDirPath = "";
@@ -289,10 +302,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				781B48182AAA1E1700CF1F05 /* SearchView.swift in Sources */,
+				781B48492AACA0A800CF1F05 /* Extension+URL.swift in Sources */,
 				781B48002AAA101800CF1F05 /* SearchViewController.swift in Sources */,
+				781B48442AAC722300CF1F05 /* DetailViewController.swift in Sources */,
 				781B47E72AAA0D1800CF1F05 /* ViewController.swift in Sources */,
 				781B481A2AAA218900CF1F05 /* SearchBarCustom.swift in Sources */,
 				781B483A2AAB508E00CF1F05 /* ItemImageCustom.swift in Sources */,
+				781B48422AAC71F000CF1F05 /* DetailView.swift in Sources */,
 				781B48402AAC6B1500CF1F05 /* Enum+API.swift in Sources */,
 				781B48082AAA105400CF1F05 /* BaseCollectionViewCell.swift in Sources */,
 				781B48372AAB4E4800CF1F05 /* ResultsCell.swift in Sources */,
@@ -550,6 +566,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		781B48452AAC7F5800CF1F05 /* XCRemoteSwiftPackageReference "MarqueeLabel" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/cbpowell/MarqueeLabel.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -567,6 +591,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 781B48142AAA10CA00CF1F05 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		781B48462AAC7F5800CF1F05 /* MarqueeLabel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 781B48452AAC7F5800CF1F05 /* XCRemoteSwiftPackageReference "MarqueeLabel" */;
+			productName = MarqueeLabel;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
