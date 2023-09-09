@@ -25,8 +25,9 @@ class SearchViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
     
+    }
+
     override func setNavigationBar() {
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
     }
@@ -38,7 +39,6 @@ class SearchViewController: BaseViewController {
     override func setConstraints() {
         
     }
-    
     
 }
 

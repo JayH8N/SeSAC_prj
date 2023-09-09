@@ -47,5 +47,16 @@ class BaseView: UIView {
         layout.sectionInset = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
         return layout
     }
+    
+    func resultsLikeCollectionViewLayout() -> UICollectionViewLayout {
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumInteritemSpacing = 20
+        layout.minimumLineSpacing = 20
+        layout.scrollDirection = .vertical
+        let size = UIScreen.main.bounds.width - 44
+        layout.itemSize = CGSize(width: size / 2, height: (size / 2) * 1.43)
+        layout.sectionInset = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
+        return layout
+    }
 }
 

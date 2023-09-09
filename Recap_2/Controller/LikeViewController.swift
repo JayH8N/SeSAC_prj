@@ -10,7 +10,11 @@ import UIKit
 
 class LikeViewController: BaseViewController {
     
+    let mainView = LikeView()
     
+    override func loadView() {
+        view = mainView
+    }
     
     
     convenience init(title: String) {

@@ -48,7 +48,6 @@ class SearchView: BaseView {
     
     override func configureView() {
         searchBar.delegate = self
-        searchBar.becomeFirstResponder()
         searchBar.showsCancelButton = true
         
         [searchBar, filter, results].forEach {
@@ -204,3 +203,11 @@ extension SearchView: UISearchBarDelegate {
         results.reloadData()
     }
 }
+
+//스크롤시 키보드 내리기
+extension SearchView: UIScrollViewDelegate {
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        searchBar.resignFirstResponder()
+    }
+}
+
