@@ -10,6 +10,8 @@ import UIKit
 
 class SearchViewController: BaseViewController {
     
+    let repository = NaverShoppingRepository()
+    
     let mainView = SearchView()
     
     override func loadView() {
@@ -27,6 +29,8 @@ class SearchViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        
+        
+        repository.realmPathCheck()
     }
 
     

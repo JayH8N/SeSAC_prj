@@ -29,6 +29,12 @@ class LikeViewController: BaseViewController {
         
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        mainView.resultsLike.reloadData()
+    }
+    
     override func setNavigationBar() {
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
     }

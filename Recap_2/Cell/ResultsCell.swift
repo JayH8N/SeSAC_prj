@@ -38,17 +38,12 @@ class ResultsCell: BaseCollectionViewCell {
     
     let likeButton = {
         let uibutton = UIButton()
-        let buttonImage = UIImage.SymbolConfiguration(pointSize: 30, weight: .light, scale: .small)
-        let image = UIImage(systemName: "heart", withConfiguration: buttonImage)
-        uibutton.setImage(image, for: .normal)
+//        let buttonImage = UIImage.SymbolConfiguration(pointSize: 30, weight: .light, scale: .small)
+//        let image = UIImage(systemName: "heart", withConfiguration: buttonImage)
+//        uibutton.setImage(image, for: .normal)
         uibutton.tintColor = .black
-        uibutton.addTarget(ResultsCell.self, action: #selector(tapped), for: .touchUpInside)
         return uibutton
     }()
-    
-    @objc func tapped() {
-        
-    }
     
     let buttonBack = LikeButtonCustomView()
     
@@ -71,11 +66,21 @@ class ResultsCell: BaseCollectionViewCell {
             itemImage.kf.setImage(with: url, options: [.processor(ResizingImageProcessor(referenceSize: CGSize(width: 300, height: 300)))])
         }
         
-        let titleResult = data.title.replacingOccurrences(of: "</b>", with: "").replacingOccurrences(of: "<b>", with: "")
+
         mallNameLabel.text = "[\(data.mallName)]"
-        titleLabel.text = titleResult
+        titleLabel.text = removeTag(data.title)
         priceLabel.text = decimalWon(value: Int(data.lprice)!)
     }
+    
+    
+    func likeCell(data: Items) {
+        mallNameLabel.text = "[\(data.mallName)]"
+        titleLabel.text = removeTag(data.title)
+        priceLabel.text = decimalWon(value: Int(data.lprice)!)
+        itemImage.image = DocumentManager.shared.loadImageFromDocument(fileName: "JH\(data.productId)")
+    }
+    
+    
     
     
     

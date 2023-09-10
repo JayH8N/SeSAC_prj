@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 @objc protocol SearchViewProtocol: AnyObject {
     @objc optional func didselectItemAt(vc: UIViewController)
@@ -17,10 +18,14 @@ class SearchView: BaseView {
     
     var filterList = ["정확도", "날짜순", "가격낮은순", "가격높은순"]
     var shoppingList: Shopping = Shopping(total: 0, items: [])
+    var bool: Bool = false
     
     var page: Int = 1
     //var maxPage: Int = 0
     var text: String?
+    var stored: Results<Items>!
+    
+    let repository = NaverShoppingRepository()
      
     weak var delegate: SearchViewProtocol?
     
@@ -104,15 +109,43 @@ extension SearchView: UICollectionViewDataSource, UICollectionViewDelegate {
             }
             
             return filterCell
+            
         } else {
             //collectionView == results
             guard let resultCell = collectionView.dequeueReusableCell(withReuseIdentifier: ResultsCell.identifier, for: indexPath) as? ResultsCell else { return UICollectionViewCell() }
             let data = shoppingList.items[indexPath.item]
             resultCell.setCell(data: data)
+            resultCell.setButtonImage(button: resultCell.likeButton, size: 30, systemName: "heart")
+            resultCell.likeButton.tag = indexPath.item
+            resultCell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
             
             return resultCell
         }
     }
+    
+    @objc func likeButtonTapped(_ sender: UIButton) {
+        let data = shoppingList.items[sender.tag]
+        
+        //true
+        let task = Items(productId: data.productId, image: data.image, mallName: data.mallName, title: data.title, lprice: data.lprice)
+        
+        repository.createItem(task)
+        //stored = repository.fetch()
+        
+        DispatchQueue.global().async {
+            if let url = URL(string: data.image), let data = try? Data(contentsOf: url) {
+                DispatchQueue.main.async {
+                    DocumentManager.shared.saveImageToDocument(fileName: "JH\(task.productId)", image: UIImage(data: data)!)
+                }
+            }
+        }
+        
+        
+        
+    }
+    
+    
+    
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == filter {

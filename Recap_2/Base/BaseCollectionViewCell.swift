@@ -41,4 +41,16 @@ class BaseCollectionViewCell: UICollectionViewCell {
         return result
     }
     
+    
+    //<b>제거 함수
+    func removeTag(_ title: String) -> String {
+        return title.replacingOccurrences(of: "</b>", with: "").replacingOccurrences(of: "<b>", with: "")
+    }
+    
+    //버튼 이미지
+    func setButtonImage(button: UIButton, size: CGFloat, systemName: String) {
+        let buttonImage = UIImage.SymbolConfiguration(pointSize: size, weight: .light, scale: .small)
+        let image = UIImage(systemName: systemName, withConfiguration: buttonImage)
+        button.setImage(image, for: .normal)
+    }
 }
