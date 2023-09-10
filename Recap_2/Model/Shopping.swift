@@ -9,7 +9,7 @@ import UIKit
 
 
 struct Shopping: Codable {
-    let total, start, display: Int
+    let total: Int
     let items: [Item]
 }
 

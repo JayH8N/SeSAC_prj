@@ -16,8 +16,10 @@ import UIKit
 class SearchView: BaseView {
     
     var filterList = ["정확도", "날짜순", "가격낮은순", "가격높은순"]
-    var shoppingList: Shopping = Shopping(total: 0, start: 0, display: 0, items: [])
+    var shoppingList: Shopping = Shopping(total: 0, items: [])
+    
     var page: Int = 1
+    //var maxPage: Int = 0
     var text: String?
      
     weak var delegate: SearchViewProtocol?
@@ -73,6 +75,14 @@ class SearchView: BaseView {
         }
     }
     
+//    func calculateMaxPage(total: Int) {
+//        if total >= 30000 {
+//            maxPage = 1000
+//        } else {
+//            maxPage = (total / 30) + 1
+//        }
+//    }
+    
 }
 
 //MARK: - Extension
@@ -99,6 +109,7 @@ extension SearchView: UICollectionViewDataSource, UICollectionViewDelegate {
             guard let resultCell = collectionView.dequeueReusableCell(withReuseIdentifier: ResultsCell.identifier, for: indexPath) as? ResultsCell else { return UICollectionViewCell() }
             let data = shoppingList.items[indexPath.item]
             resultCell.setCell(data: data)
+            
             return resultCell
         }
     }
@@ -136,12 +147,11 @@ extension SearchView: UICollectionViewDataSource, UICollectionViewDelegate {
             let vc = DetailViewController()
             vc.mainView.productID = shoppingList.items[indexPath.item].productId
             vc.mainView.title = shoppingList.items[indexPath.item].title.replacingOccurrences(of: "</b>", with: "").replacingOccurrences(of: "<b>", with: "")
-            
+                    
             delegate?.didselectItemAt?(vc: vc)
         }
     }
-    
-    
+         
 }
 
 //Cell 사이즈
@@ -175,7 +185,7 @@ extension SearchView: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         searchBar.resignFirstResponder()
-        shoppingList = Shopping(total: 0, start: 1, display: 0, items: [])
+        shoppingList = Shopping(total: 0, items: [])
         page = 1
         
         guard let text = searchBar.text else { return }
@@ -186,28 +196,40 @@ extension SearchView: UISearchBarDelegate {
             self.results.reloadData()
         }
         
-        print(shoppingList)
-        //???: - ⚠️왜 변수에 값이 안담기지...ㅠㅠ
-        if shoppingList.items.isEmpty {
-            delegate?.showAlert?(title: "검색결과가 존재하지 않습니다.")
-        }
-        
-        
     }
     
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
         text = nil
-        shoppingList = Shopping(total: 0, start: 1, display: 0, items: [])
+        shoppingList = Shopping(total: 0, items: [])
         results.reloadData()
     }
 }
 
-//스크롤시 키보드 내리기
+
 extension SearchView: UIScrollViewDelegate {
+    //스크롤시 키보드 내리기
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
         searchBar.resignFirstResponder()
     }
+    
+    
+//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        //print(#function)
+//
+//        let offsetY = results.contentOffset.y
+//        let contentHeight = results.contentSize.height
+//        let paginationOrigin = contentHeight * 0.7
+//
+//        if offsetY > paginationOrigin && page < maxPage {
+//            page += 1
+//            NaverAPIManager.shared.callRequest(keyword: searchBar.text!, sort: .sim, page: page) { data in
+//                self.shoppingList = data
+//                self.results.reloadData()
+//            }
+//        }
+//
+//    }
+    
 }
-

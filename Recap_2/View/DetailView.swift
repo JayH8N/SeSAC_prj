@@ -21,7 +21,7 @@ class DetailView: BaseView, WKUIDelegate {
         view.text = title!
         view.fadeLength = 10
         view.textColor = .white
-        view.widthAnchor.constraint(equalToConstant: 200).isActive = true
+        view.widthAnchor.constraint(equalToConstant: 150).isActive = true
         return view
     }()
     

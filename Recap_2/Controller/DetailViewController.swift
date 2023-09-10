@@ -28,7 +28,6 @@ class DetailViewController: BaseViewController {
     }
     
     
-    
     func loadWebView() {
         let myURL = URL(string: URL.naverShopURL + mainView.productID!)
         let myRequest = URLRequest(url: myURL!)

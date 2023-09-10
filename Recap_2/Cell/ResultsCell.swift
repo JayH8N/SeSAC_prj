@@ -35,11 +35,40 @@ class ResultsCell: BaseCollectionViewCell {
         return view
     }()
     
+    
+    let likeButton = {
+        let uibutton = UIButton()
+        let buttonImage = UIImage.SymbolConfiguration(pointSize: 30, weight: .light, scale: .small)
+        let image = UIImage(systemName: "heart", withConfiguration: buttonImage)
+        uibutton.setImage(image, for: .normal)
+        uibutton.tintColor = .black
+        uibutton.addTarget(ResultsCell.self, action: #selector(tapped), for: .touchUpInside)
+        return uibutton
+    }()
+    
+    @objc func tapped() {
+        
+    }
+    
+    let buttonBack = LikeButtonCustomView()
+    
+//    var isTouched: Bool {
+//        didSet {
+//            if isTouched {
+//                likeButton.setImage(UIImage(systemName: "heart.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30, weight: .light)), for: .normal)
+//            } else {
+//                likeButton.setImage(UIImage(systemName: "heart", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30, weight: .light)), for: .normal)
+//            }
+//        }
+//    }
+    
+    
+    
     func setCell(data: Item) {
         let url = data.image
         
         if let url = URL(string: url) {
-            itemImage.kf.setImage(with: url)
+            itemImage.kf.setImage(with: url, options: [.processor(ResizingImageProcessor(referenceSize: CGSize(width: 300, height: 300)))])
         }
         
         let titleResult = data.title.replacingOccurrences(of: "</b>", with: "").replacingOccurrences(of: "<b>", with: "")
@@ -52,7 +81,8 @@ class ResultsCell: BaseCollectionViewCell {
     
     override func configureView() {
         contentView.backgroundColor = .clear
-        let objects: [Any] = [itemImage, mallNameLabel, titleLabel, priceLabel]
+        itemImage.isUserInteractionEnabled = true
+        let objects: [Any] = [itemImage, mallNameLabel, titleLabel, priceLabel, buttonBack, likeButton]
         for i in objects {
             contentView.addSubview(i as! UIView)
         }
@@ -80,7 +110,18 @@ class ResultsCell: BaseCollectionViewCell {
             $0.top.equalTo(titleLabel.snp.bottom).offset(2)
             $0.leading.trailing.equalToSuperview().inset(5)
         }
+        
+        buttonBack.snp.makeConstraints {
+            $0.size.equalTo(40)
+            $0.trailing.equalTo(contentView.snp.trailing).inset(6)
+            $0.centerY.equalTo(contentView).multipliedBy(1.16)
+        }
+        
+        likeButton.snp.makeConstraints {
+            $0.center.equalTo(buttonBack)
+        }
     }
     
     
 }
+
