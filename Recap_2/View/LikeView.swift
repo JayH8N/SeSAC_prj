@@ -14,6 +14,8 @@ class LikeView: BaseView {
     
     lazy var stored = repository.fetch()
     
+    weak var delegate: SearchViewProtocol?
+    
     lazy var resultsLike = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: resultsLikeCollectionViewLayout())
         view.register(ResultsCell.self, forCellWithReuseIdentifier: ResultsCell.identifier)
@@ -69,10 +71,19 @@ extension LikeView: UICollectionViewDataSource, UICollectionViewDelegate {
     @objc func likeButtonTapped(_ sender: UIButton) {
         let data = stored[sender.tag]
         
-        DocumentManager.shared.removeImageFromDocument(fileName: "JH\(data.productId)")
+        DocumentManager.shared.removeImageFromDocument(fileName: "JH\(data._id)")
         repository.removeItem(data)
         
         resultsLike.reloadData()
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = DetailViewController()
+        vc.mainView.title = removeTag(stored[indexPath.item].title)
+        vc.mainView.productID = stored[indexPath.item].productId
+        
+        delegate?.didselectItemAt?(vc: vc)
     }
     
     
@@ -86,8 +97,26 @@ extension LikeView: UISearchBarDelegate {
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
+        searchBar.resignFirstResponder()
         resultsLike.reloadData()
     }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        guard let text = searchBar.text else { return }
+        
+        stored = repository.searchTitle(text: text)
+        
+        resultsLike.reloadData()
+        
+        if text == "" {
+            stored = repository.fetch()
+            
+            resultsLike.reloadData()
+        }
+    }
+    
+    
 }
 
 

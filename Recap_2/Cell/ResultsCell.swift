@@ -77,7 +77,7 @@ class ResultsCell: BaseCollectionViewCell {
         mallNameLabel.text = "[\(data.mallName)]"
         titleLabel.text = removeTag(data.title)
         priceLabel.text = decimalWon(value: Int(data.lprice)!)
-        itemImage.image = DocumentManager.shared.loadImageFromDocument(fileName: "JH\(data.productId)")
+        itemImage.image = DocumentManager.shared.loadImageFromDocument(fileName: "JH\(data._id)")
     }
     
     

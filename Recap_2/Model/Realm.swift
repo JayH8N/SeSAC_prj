@@ -10,7 +10,8 @@ import RealmSwift
 
 class Items: Object {
     
-    @Persisted(primaryKey: true) var productId: String
+    @Persisted(primaryKey: true) var _id: ObjectId
+    @Persisted var productId: String
     @Persisted var image: String
     @Persisted var mallName: String
     @Persisted var title: String

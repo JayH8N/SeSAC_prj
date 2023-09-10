@@ -27,8 +27,19 @@ class NaverShoppingRepository {
         }
     }
     
+    //검색 필터
+    func searchTitle(text: String) -> Results<Items> {
+        let results = realm.objects(Items.self).where {
+             $0.title.contains(text, options: .caseInsensitive)
+        }
+        return results
+    }
+    
+    
+    
+    
     func fetch() -> Results<Items> {
-        var data = realm.objects(Items.self)
+        let data = realm.objects(Items.self).sorted(byKeyPath: "_id", ascending: false)
         
         return data
     }

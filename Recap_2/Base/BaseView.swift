@@ -59,5 +59,11 @@ class BaseView: UIView {
         return layout
     }
     
+    
+    func removeTag(_ title: String) -> String {
+        return title.replacingOccurrences(of: "</b>", with: "").replacingOccurrences(of: "<b>", with: "")
+    }
+
+    
 }
 

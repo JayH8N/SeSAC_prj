@@ -14,6 +14,7 @@ class LikeViewController: BaseViewController {
     
     override func loadView() {
         view = mainView
+        mainView.delegate = self
     }
     
     
@@ -47,5 +48,18 @@ class LikeViewController: BaseViewController {
     
     override func setConstraints() {
         
+    }
+}
+
+extension LikeViewController: SearchViewProtocol {
+    func showAlert(title: String) {
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "확인", style: .default)
+        alert.addAction(ok)
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func didselectItemAt(vc: UIViewController) {
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

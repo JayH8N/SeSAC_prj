@@ -56,7 +56,7 @@ class SearchView: BaseView {
     override func configureView() {
         searchBar.delegate = self
         searchBar.showsCancelButton = true
-        
+        searchBar.becomeFirstResponder()
         [searchBar, filter, results].forEach {
             addSubview($0)
         }
@@ -135,7 +135,7 @@ extension SearchView: UICollectionViewDataSource, UICollectionViewDelegate {
         DispatchQueue.global().async {
             if let url = URL(string: data.image), let data = try? Data(contentsOf: url) {
                 DispatchQueue.main.async {
-                    DocumentManager.shared.saveImageToDocument(fileName: "JH\(task.productId)", image: UIImage(data: data)!)
+                    DocumentManager.shared.saveImageToDocument(fileName: "JH\(task._id)", image: UIImage(data: data)!)
                 }
             }
         }
@@ -179,7 +179,7 @@ extension SearchView: UICollectionViewDataSource, UICollectionViewDelegate {
         } else {
             let vc = DetailViewController()
             vc.mainView.productID = shoppingList.items[indexPath.item].productId
-            vc.mainView.title = shoppingList.items[indexPath.item].title.replacingOccurrences(of: "</b>", with: "").replacingOccurrences(of: "<b>", with: "")
+            vc.mainView.title = removeTag(shoppingList.items[indexPath.item].title)
                     
             delegate?.didselectItemAt?(vc: vc)
         }
@@ -234,6 +234,7 @@ extension SearchView: UISearchBarDelegate {
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
+        searchBar.resignFirstResponder()
         text = nil
         shoppingList = Shopping(total: 0, items: [])
         results.reloadData()
