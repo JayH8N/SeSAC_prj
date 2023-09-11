@@ -7,14 +7,14 @@
 
 import UIKit
 
-class LikeView: BaseView {
+final class LikeView: BaseView {
     
     let searchBar = SearchBarCustom()
     let repository = NaverShoppingRepository()
     
     lazy var stored = repository.fetch()
     
-    weak var delegate: SearchViewProtocol?
+    weak var delegate: FunctionDeliveryProtocol?
     
     lazy var resultsLike = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: resultsLikeCollectionViewLayout())
@@ -80,8 +80,12 @@ extension LikeView: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = DetailViewController()
-        vc.mainView.title = removeTag(stored[indexPath.item].title)
-        vc.mainView.productID = stored[indexPath.item].productId
+//        vc.mainView.title = removeTag(stored[indexPath.item].title)
+//        vc.mainView.productID = stored[indexPath.item].productId
+        let data = stored[indexPath.item]
+        
+        vc.mainView.deliveryValue = Items(productId: data.productId, image: data.image, mallName: data.mallName, title: data.title, lprice: data.lprice)
+        
         
         delegate?.didselectItemAt?(vc: vc)
     }

@@ -8,7 +8,7 @@
 import UIKit
 import RealmSwift
  
-class NaverShoppingRepository {
+final class NaverShoppingRepository {
     
     private let realm = try! Realm()
     
@@ -28,7 +28,7 @@ class NaverShoppingRepository {
     }
     
     
-    //검색 필터
+    //실시간 검색필터
     func searchTitle(text: String) -> Results<Items> {
         let results = realm.objects(Items.self).where {
              $0.title.contains(text, options: .caseInsensitive)

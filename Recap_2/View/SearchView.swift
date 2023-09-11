@@ -8,13 +8,8 @@
 import UIKit
 import RealmSwift
 
-@objc protocol SearchViewProtocol: AnyObject {
-    @objc optional func didselectItemAt(vc: UIViewController)
-    @objc optional func showAlert(title: String)
-}
 
-
-class SearchView: BaseView {
+final class SearchView: BaseView {
     
     var filterList = ["정확도", "날짜순", "가격낮은순", "가격높은순"]
     var shoppingList: Shopping = Shopping(total: 0, items: [])
@@ -30,7 +25,7 @@ class SearchView: BaseView {
     
     let repository = NaverShoppingRepository()
      
-    weak var delegate: SearchViewProtocol?
+    weak var delegate: FunctionDeliveryProtocol?
     
     
     let searchBar = SearchBarCustom()
@@ -145,12 +140,13 @@ extension SearchView: UICollectionViewDataSource, UICollectionViewDelegate {
             
             DispatchQueue.global().async {
                 if let url = URL(string: data.image), let data = try? Data(contentsOf: url) {
+                    
                     DispatchQueue.main.async {
                         DocumentManager.shared.saveImageToDocument(fileName: "JH\(task.productId)", image: UIImage(data: data)!)
+                        sender.setButtonImage(size: 30, systemName: "heart.fill")
                     }
                 }
             }
-            sender.setButtonImage(size: 30, systemName: "heart.fill")
         }
     }
     
@@ -188,8 +184,12 @@ extension SearchView: UICollectionViewDataSource, UICollectionViewDelegate {
             }
         } else {
             let vc = DetailViewController()
-            vc.mainView.productID = shoppingList.items[indexPath.item].productId
-            vc.mainView.title = removeTag(shoppingList.items[indexPath.item].title)
+            let data = shoppingList.items[indexPath.item]
+        
+//            vc.mainView.productID = shoppingList.items[indexPath.item].productId
+//            vc.mainView.title = removeTag(shoppingList.items[indexPath.item].title)
+            
+            vc.mainView.deliveryValue = Items(productId: data.productId, image: data.image, mallName: data.mallName, title: data.title, lprice: data.lprice)
                     
             delegate?.didselectItemAt?(vc: vc)
         }

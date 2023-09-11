@@ -44,8 +44,8 @@
 		781B48542AAD73FB00CF1F05 /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B48532AAD73FB00CF1F05 /* Realm.swift */; };
 		781B48562AAD766C00CF1F05 /* NaverShoppingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B48552AAD766C00CF1F05 /* NaverShoppingRepository.swift */; };
 		781B48582AAD7EDD00CF1F05 /* DocumentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B48572AAD7EDD00CF1F05 /* DocumentManager.swift */; };
-		781B48982AAEF8B300CF1F05 /* RealmFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B48972AAEF8B300CF1F05 /* RealmFilter.swift */; };
 		781B489A2AAF061F00CF1F05 /* Extension+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B48992AAF061F00CF1F05 /* Extension+UIButton.swift */; };
+		781B489D2AAF116000CF1F05 /* FunctionDeliveryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B489C2AAF116000CF1F05 /* FunctionDeliveryProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,8 +82,8 @@
 		781B48532AAD73FB00CF1F05 /* Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
 		781B48552AAD766C00CF1F05 /* NaverShoppingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverShoppingRepository.swift; sourceTree = "<group>"; };
 		781B48572AAD7EDD00CF1F05 /* DocumentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentManager.swift; sourceTree = "<group>"; };
-		781B48972AAEF8B300CF1F05 /* RealmFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmFilter.swift; sourceTree = "<group>"; };
 		781B48992AAF061F00CF1F05 /* Extension+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIButton.swift"; sourceTree = "<group>"; };
+		781B489C2AAF116000CF1F05 /* FunctionDeliveryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionDeliveryProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,9 +123,10 @@
 		781B47E12AAA0D1800CF1F05 /* Recap_2 */ = {
 			isa = PBXGroup;
 			children = (
+				781B489B2AAF10B500CF1F05 /* Realm */,
 				781B482A2AAB201200CF1F05 /* Enum */,
 				781B48272AAB1DC100CF1F05 /* Cell */,
-				781B47FC2AAA0FA100CF1F05 /* Controller */,
+				781B47FC2AAA0FA100CF1F05 /* ViewController */,
 				781B47FB2AAA0F9900CF1F05 /* View */,
 				781B47FA2AAA0F9200CF1F05 /* Model */,
 				781B47F92AAA0F8A00CF1F05 /* Extension */,
@@ -138,8 +139,6 @@
 				781B47EB2AAA0D1900CF1F05 /* Assets.xcassets */,
 				781B47ED2AAA0D1900CF1F05 /* LaunchScreen.storyboard */,
 				781B47F02AAA0D1900CF1F05 /* Info.plist */,
-				781B48552AAD766C00CF1F05 /* NaverShoppingRepository.swift */,
-				781B48572AAD7EDD00CF1F05 /* DocumentManager.swift */,
 			);
 			path = Recap_2;
 			sourceTree = "<group>";
@@ -148,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				781B48312AAB294700CF1F05 /* ReusableIdentifier.swift */,
+				781B489C2AAF116000CF1F05 /* FunctionDeliveryProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -200,7 +200,7 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		781B47FC2AAA0FA100CF1F05 /* Controller */ = {
+		781B47FC2AAA0FA100CF1F05 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				781B47FD2AAA0FDD00CF1F05 /* MainTabBarController.swift */,
@@ -208,7 +208,7 @@
 				781B48012AAA102500CF1F05 /* LikeViewController.swift */,
 				781B48432AAC722300CF1F05 /* DetailViewController.swift */,
 			);
-			path = Controller;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		781B48272AAB1DC100CF1F05 /* Cell */ = {
@@ -224,7 +224,6 @@
 			isa = PBXGroup;
 			children = (
 				781B482B2AAB201D00CF1F05 /* CustomColor.swift */,
-				781B48972AAEF8B300CF1F05 /* RealmFilter.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -238,6 +237,15 @@
 				781B484C2AACF8B300CF1F05 /* LikeButtonCustomView.swift */,
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		781B489B2AAF10B500CF1F05 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				781B48572AAD7EDD00CF1F05 /* DocumentManager.swift */,
+				781B48552AAD766C00CF1F05 /* NaverShoppingRepository.swift */,
+			);
+			path = Realm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,9 +351,9 @@
 				781B47E32AAA0D1800CF1F05 /* AppDelegate.swift in Sources */,
 				781B483E2AABABED00CF1F05 /* Shopping.swift in Sources */,
 				781B48302AAB22C200CF1F05 /* FilterLabelCustom.swift in Sources */,
+				781B489D2AAF116000CF1F05 /* FunctionDeliveryProtocol.swift in Sources */,
 				781B47FE2AAA0FDD00CF1F05 /* MainTabBarController.swift in Sources */,
 				781B47E52AAA0D1800CF1F05 /* SceneDelegate.swift in Sources */,
-				781B48982AAEF8B300CF1F05 /* RealmFilter.swift in Sources */,
 				781B48322AAB294700CF1F05 /* ReusableIdentifier.swift in Sources */,
 				781B482C2AAB201D00CF1F05 /* CustomColor.swift in Sources */,
 				781B48042AAA103900CF1F05 /* BaseViewController.swift in Sources */,

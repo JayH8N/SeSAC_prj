@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DocumentManager {
+final class DocumentManager {
     
     static let shared = DocumentManager()
     

@@ -9,7 +9,7 @@ import UIKit
 import Kingfisher
 
 
-class ResultsCell: BaseCollectionViewCell {
+final class ResultsCell: BaseCollectionViewCell {
     
     let itemImage = ItemImageCustom(frame: .zero)
     let repository = NaverShoppingRepository()
@@ -60,8 +60,8 @@ class ResultsCell: BaseCollectionViewCell {
         priceLabel.text = decimalWon(value: Int(data.lprice)!)
         
         
-        //db에 존재하면 heart.fill 아니라면 heart
-        if let isExist = repository.isLikeFilter(data: data.productId) {
+        //DB에 존재하면 heart.fill 아니라면 heart
+        if repository.isLikeFilter(data: data.productId) != nil {
             likeButton.setButtonImage(size: 30, systemName: "heart.fill")
         } else {
             likeButton.setButtonImage(size: 30, systemName: "heart")

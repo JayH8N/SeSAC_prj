@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FilterCell: BaseCollectionViewCell {
+final class FilterCell: BaseCollectionViewCell {
     
     let filterLabel = FilterLabelCustom()
     

@@ -8,9 +8,10 @@
 import UIKit
 
 
-class DetailViewController: BaseViewController {
+final class DetailViewController: BaseViewController {
     
     let mainView = DetailView()
+    
     
     override func loadView() {
         view = mainView
@@ -25,11 +26,15 @@ class DetailViewController: BaseViewController {
         let appearanceTB = UITabBarAppearance()
         appearanceTB.backgroundColor = .black
         tabBarController?.tabBar.standardAppearance = appearanceTB
+        
+        mainView.setNavigationBarlikeButton()
+        
+        print("====\(mainView.deliveryValue)====") //값전달 확인
     }
     
     
-    func loadWebView() {
-        let myURL = URL(string: URL.naverShopURL + mainView.productID!)
+    private func loadWebView() {
+        let myURL = URL(string: URL.naverShopURL + mainView.deliveryValue.productId)
         let myRequest = URLRequest(url: myURL!)
         mainView.webView.load(myRequest)
     }
@@ -38,23 +43,19 @@ class DetailViewController: BaseViewController {
         navigationController?.navigationBar.tintColor = .white
         navigationItem.titleView = mainView.productTitle
         
-        
+        //네비게이션바 appearance
         let appearanceNB = UINavigationBarAppearance()
         appearanceNB.backgroundColor = .black
         navigationController?.navigationBar.scrollEdgeAppearance = appearanceNB
         navigationController?.navigationBar.standardAppearance = appearanceNB
-    }
-    
-    
-    override func configureView() {
-
-    }
-    
-    
-    
-    override func setConstraints() {
         
+        
+        let likeButton = UIBarButtonItem(customView: mainView.likeButton)
+        navigationItem.rightBarButtonItem = likeButton
     }
+    
+    
+    
     
 
     
