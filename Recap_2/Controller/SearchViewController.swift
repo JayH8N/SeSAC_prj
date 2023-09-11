@@ -31,6 +31,7 @@ class SearchViewController: BaseViewController {
        
         
         repository.realmPathCheck()
+        mainView.stored = repository.fetch()
     }
 
     

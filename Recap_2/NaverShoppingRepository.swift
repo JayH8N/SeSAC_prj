@@ -27,6 +27,7 @@ class NaverShoppingRepository {
         }
     }
     
+    
     //검색 필터
     func searchTitle(text: String) -> Results<Items> {
         let results = realm.objects(Items.self).where {
@@ -34,6 +35,14 @@ class NaverShoppingRepository {
         }
         return results
     }
+    
+    //Db존재여부
+    func isLikeFilter(data: String) -> Items? {
+        let exist = realm.object(ofType: Items.self, forPrimaryKey: data)
+
+        return exist
+    }
+    
     
     
     
@@ -66,5 +75,15 @@ class NaverShoppingRepository {
         }
     }
     
+    
+    func updateItem(id: String, liked: Bool) {
+        do {
+            try realm.write {
+                realm.create(Items.self, value: ["productId": id, "liked": liked], update: .modified)
+            }
+        } catch {
+            print("")
+        }
+    }
     
 }

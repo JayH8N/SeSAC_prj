@@ -12,6 +12,7 @@ import Kingfisher
 class ResultsCell: BaseCollectionViewCell {
     
     let itemImage = ItemImageCustom(frame: .zero)
+    let repository = NaverShoppingRepository()
     
     let mallNameLabel = {
         let view = UILabel()
@@ -38,24 +39,11 @@ class ResultsCell: BaseCollectionViewCell {
     
     let likeButton = {
         let uibutton = UIButton()
-//        let buttonImage = UIImage.SymbolConfiguration(pointSize: 30, weight: .light, scale: .small)
-//        let image = UIImage(systemName: "heart", withConfiguration: buttonImage)
-//        uibutton.setImage(image, for: .normal)
         uibutton.tintColor = .black
         return uibutton
     }()
     
     let buttonBackground = LikeButtonCustomView()
-    
-//    var isTouched: Bool {
-//        didSet {
-//            if isTouched {
-//                likeButton.setImage(UIImage(systemName: "heart.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30, weight: .light)), for: .normal)
-//            } else {
-//                likeButton.setImage(UIImage(systemName: "heart", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30, weight: .light)), for: .normal)
-//            }
-//        }
-//    }
     
     
     
@@ -70,6 +58,15 @@ class ResultsCell: BaseCollectionViewCell {
         mallNameLabel.text = "[\(data.mallName)]"
         titleLabel.text = removeTag(data.title)
         priceLabel.text = decimalWon(value: Int(data.lprice)!)
+        
+        
+        //db에 존재하면 heart.fill 아니라면 heart
+        if let isExist = repository.isLikeFilter(data: data.productId) {
+            likeButton.setButtonImage(size: 30, systemName: "heart.fill")
+        } else {
+            likeButton.setButtonImage(size: 30, systemName: "heart")
+        }
+        
     }
     
     
@@ -77,7 +74,7 @@ class ResultsCell: BaseCollectionViewCell {
         mallNameLabel.text = "[\(data.mallName)]"
         titleLabel.text = removeTag(data.title)
         priceLabel.text = decimalWon(value: Int(data.lprice)!)
-        itemImage.image = DocumentManager.shared.loadImageFromDocument(fileName: "JH\(data._id)")
+        itemImage.image = DocumentManager.shared.loadImageFromDocument(fileName: "JH\(data.productId)")
     }
     
     

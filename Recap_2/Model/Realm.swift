@@ -10,13 +10,13 @@ import RealmSwift
 
 class Items: Object {
     
-    @Persisted(primaryKey: true) var _id: ObjectId
-    @Persisted var productId: String
+    @Persisted(primaryKey: true) var productId: String
+    @Persisted var _id: ObjectId
     @Persisted var image: String
     @Persisted var mallName: String
     @Persisted var title: String
     @Persisted var lprice: String
-    //@Persisted var liked: Bool
+    @Persisted var liked: Bool
 
     convenience init(productId: String, image: String, mallName: String, title: String, lprice: String) {
         self.init()

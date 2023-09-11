@@ -61,7 +61,7 @@ extension LikeView: UICollectionViewDataSource, UICollectionViewDelegate {
         let data = stored[indexPath.item]
         
         likedCell.likeCell(data: data)
-        likedCell.setButtonImage(button: likedCell.likeButton, size: 30, systemName: "xmark")
+        likedCell.likeButton.setButtonImage(size: 30, systemName: "xmark")
         likedCell.likeButton.tag = indexPath.item
         likedCell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
         
@@ -71,7 +71,7 @@ extension LikeView: UICollectionViewDataSource, UICollectionViewDelegate {
     @objc func likeButtonTapped(_ sender: UIButton) {
         let data = stored[sender.tag]
         
-        DocumentManager.shared.removeImageFromDocument(fileName: "JH\(data._id)")
+        DocumentManager.shared.removeImageFromDocument(fileName: "JH\(data.productId)")
         repository.removeItem(data)
         
         resultsLike.reloadData()

@@ -18,12 +18,11 @@ class SearchView: BaseView {
     
     var filterList = ["정확도", "날짜순", "가격낮은순", "가격높은순"]
     var shoppingList: Shopping = Shopping(total: 0, items: [])
-    var bool: Bool = false
     
     //페이지 네이션관련
     var page: Int = 1
     var maxPage: Int = 0
-    var ongoing: Bool = false
+    var onGoing: Bool = false //page자동으로 더해지는것 방지
     
     
     var text: String?
@@ -84,7 +83,7 @@ class SearchView: BaseView {
         }
     }
     
-    func calculateMaxPage(total: Int) {
+    private func calculateMaxPage(total: Int) {
         if total >= 30000 {
             maxPage = 1000
         } else {
@@ -119,7 +118,6 @@ extension SearchView: UICollectionViewDataSource, UICollectionViewDelegate {
             guard let resultCell = collectionView.dequeueReusableCell(withReuseIdentifier: ResultsCell.identifier, for: indexPath) as? ResultsCell else { return UICollectionViewCell() }
             let data = shoppingList.items[indexPath.item]
             resultCell.setCell(data: data)
-            resultCell.setButtonImage(button: resultCell.likeButton, size: 30, systemName: "heart")
             resultCell.likeButton.tag = indexPath.item
             resultCell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
             
@@ -127,21 +125,32 @@ extension SearchView: UICollectionViewDataSource, UICollectionViewDelegate {
         }
     }
     
+    //좋아요 버튼 탭
     @objc func likeButtonTapped(_ sender: UIButton) {
         let data = shoppingList.items[sender.tag]
         
-        //true
-        let task = Items(productId: data.productId, image: data.image, mallName: data.mallName, title: data.title, lprice: data.lprice)
-        
-        repository.createItem(task)
-        //stored = repository.fetch()
-        
-        DispatchQueue.global().async {
-            if let url = URL(string: data.image), let data = try? Data(contentsOf: url) {
-                DispatchQueue.main.async {
-                    DocumentManager.shared.saveImageToDocument(fileName: "JH\(task._id)", image: UIImage(data: data)!)
+        if let isExist = repository.isLikeFilter(data: data.productId) { //
+            
+            DocumentManager.shared.removeImageFromDocument(fileName: "JH\(data.productId)")
+            repository.removeItem(isExist)
+            
+            sender.setButtonImage(size: 30, systemName: "heart")
+            
+        } else {
+            
+            let task = Items(productId: data.productId, image: data.image, mallName: data.mallName, title: data.title, lprice: data.lprice)
+            
+            repository.createItem(task)
+            //stored = repository.fetch()
+            
+            DispatchQueue.global().async {
+                if let url = URL(string: data.image), let data = try? Data(contentsOf: url) {
+                    DispatchQueue.main.async {
+                        DocumentManager.shared.saveImageToDocument(fileName: "JH\(task.productId)", image: UIImage(data: data)!)
+                    }
                 }
             }
+            sender.setButtonImage(size: 30, systemName: "heart.fill")
         }
     }
     
@@ -221,7 +230,7 @@ extension SearchView: UISearchBarDelegate {
         searchBar.resignFirstResponder()
         shoppingList = Shopping(total: 0, items: [])
         page = 1
-        ongoing = false
+        onGoing = false
         
         guard let text = searchBar.text else { return }
         self.text = text
@@ -254,16 +263,13 @@ extension SearchView: UIScrollViewDelegate {
     
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        //print(#function)
-        print(page, maxPage, ongoing)
-        let offsetY = results.contentOffset.y
-        let contentHeight = results.contentSize.height
-        let paginationOrigin = contentHeight * 0.7
         
+        let offsetY = results.contentOffset.y // origin(y)
+        let contentHeight = results.contentSize.height // height
+        let paginationOrigin = contentHeight * 0.7 // 데이터 갱신 지점
         
-        
-        if offsetY > paginationOrigin && page < maxPage && !ongoing {
-            ongoing = true
+        if offsetY > paginationOrigin && page < maxPage && !onGoing {
+            onGoing = true
             page += 1
             
             
@@ -274,7 +280,7 @@ extension SearchView: UIScrollViewDelegate {
                     self?.shoppingList.items.append(contentsOf: data.items)
                     DispatchQueue.main.async {
                         
-                        self?.ongoing = false
+                        self?.onGoing = false
                         self?.results.reloadData()
                         
                     }

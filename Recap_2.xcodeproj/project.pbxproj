@@ -33,7 +33,6 @@
 		781B483A2AAB508E00CF1F05 /* ItemImageCustom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B48392AAB508E00CF1F05 /* ItemImageCustom.swift */; };
 		781B483C2AAB9A5500CF1F05 /* NaverAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B483B2AAB9A5500CF1F05 /* NaverAPIManager.swift */; };
 		781B483E2AABABED00CF1F05 /* Shopping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B483D2AABABED00CF1F05 /* Shopping.swift */; };
-		781B48402AAC6B1500CF1F05 /* Enum+API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B483F2AAC6B1500CF1F05 /* Enum+API.swift */; };
 		781B48422AAC71F000CF1F05 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B48412AAC71F000CF1F05 /* DetailView.swift */; };
 		781B48442AAC722300CF1F05 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B48432AAC722300CF1F05 /* DetailViewController.swift */; };
 		781B48472AAC7F5800CF1F05 /* MarqueeLabel in Frameworks */ = {isa = PBXBuildFile; productRef = 781B48462AAC7F5800CF1F05 /* MarqueeLabel */; };
@@ -45,6 +44,8 @@
 		781B48542AAD73FB00CF1F05 /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B48532AAD73FB00CF1F05 /* Realm.swift */; };
 		781B48562AAD766C00CF1F05 /* NaverShoppingRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B48552AAD766C00CF1F05 /* NaverShoppingRepository.swift */; };
 		781B48582AAD7EDD00CF1F05 /* DocumentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B48572AAD7EDD00CF1F05 /* DocumentManager.swift */; };
+		781B48982AAEF8B300CF1F05 /* RealmFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B48972AAEF8B300CF1F05 /* RealmFilter.swift */; };
+		781B489A2AAF061F00CF1F05 /* Extension+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781B48992AAF061F00CF1F05 /* Extension+UIButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,7 +74,6 @@
 		781B48392AAB508E00CF1F05 /* ItemImageCustom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemImageCustom.swift; sourceTree = "<group>"; };
 		781B483B2AAB9A5500CF1F05 /* NaverAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverAPIManager.swift; sourceTree = "<group>"; };
 		781B483D2AABABED00CF1F05 /* Shopping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shopping.swift; sourceTree = "<group>"; };
-		781B483F2AAC6B1500CF1F05 /* Enum+API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enum+API.swift"; sourceTree = "<group>"; };
 		781B48412AAC71F000CF1F05 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		781B48432AAC722300CF1F05 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		781B48482AACA0A800CF1F05 /* Extension+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+URL.swift"; sourceTree = "<group>"; };
@@ -82,6 +82,8 @@
 		781B48532AAD73FB00CF1F05 /* Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
 		781B48552AAD766C00CF1F05 /* NaverShoppingRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverShoppingRepository.swift; sourceTree = "<group>"; };
 		781B48572AAD7EDD00CF1F05 /* DocumentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentManager.swift; sourceTree = "<group>"; };
+		781B48972AAEF8B300CF1F05 /* RealmFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmFilter.swift; sourceTree = "<group>"; };
+		781B48992AAF061F00CF1F05 /* Extension+UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIButton.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				781B48482AACA0A800CF1F05 /* Extension+URL.swift */,
+				781B48992AAF061F00CF1F05 /* Extension+UIButton.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -221,7 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				781B482B2AAB201D00CF1F05 /* CustomColor.swift */,
-				781B483F2AAC6B1500CF1F05 /* Enum+API.swift */,
+				781B48972AAEF8B300CF1F05 /* RealmFilter.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -334,7 +337,6 @@
 				781B483A2AAB508E00CF1F05 /* ItemImageCustom.swift in Sources */,
 				781B48542AAD73FB00CF1F05 /* Realm.swift in Sources */,
 				781B48422AAC71F000CF1F05 /* DetailView.swift in Sources */,
-				781B48402AAC6B1500CF1F05 /* Enum+API.swift in Sources */,
 				781B48082AAA105400CF1F05 /* BaseCollectionViewCell.swift in Sources */,
 				781B48372AAB4E4800CF1F05 /* ResultsCell.swift in Sources */,
 				781B483C2AAB9A5500CF1F05 /* NaverAPIManager.swift in Sources */,
@@ -343,6 +345,7 @@
 				781B48302AAB22C200CF1F05 /* FilterLabelCustom.swift in Sources */,
 				781B47FE2AAA0FDD00CF1F05 /* MainTabBarController.swift in Sources */,
 				781B47E52AAA0D1800CF1F05 /* SceneDelegate.swift in Sources */,
+				781B48982AAEF8B300CF1F05 /* RealmFilter.swift in Sources */,
 				781B48322AAB294700CF1F05 /* ReusableIdentifier.swift in Sources */,
 				781B482C2AAB201D00CF1F05 /* CustomColor.swift in Sources */,
 				781B48042AAA103900CF1F05 /* BaseViewController.swift in Sources */,
@@ -352,6 +355,7 @@
 				781B484B2AACB39B00CF1F05 /* LikeView.swift in Sources */,
 				781B48292AAB1DDB00CF1F05 /* FilterCell.swift in Sources */,
 				781B48062AAA104200CF1F05 /* BaseView.swift in Sources */,
+				781B489A2AAF061F00CF1F05 /* Extension+UIButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

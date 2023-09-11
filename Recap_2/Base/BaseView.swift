@@ -65,5 +65,11 @@ class BaseView: UIView {
     }
 
     
+    func setButtonImage(button: UIButton, size: CGFloat, systemName: String) {
+        let buttonImage = UIImage.SymbolConfiguration(pointSize: size, weight: .light, scale: .small)
+        let image = UIImage(systemName: systemName, withConfiguration: buttonImage)
+        button.setImage(image, for: .normal)
+    }
+    
 }
 
