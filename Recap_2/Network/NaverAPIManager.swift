@@ -42,8 +42,9 @@ class NaverAPIManager {
             switch response.result {
             case .success( _):
                 guard let data = response.value else { return }
-                
+                print("실제 호출되는 페이지 : \(page)")
                 completionHandler(data)
+                //print(data)
                 
             case .failure(let error):
                 print(error)

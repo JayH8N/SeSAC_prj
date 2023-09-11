@@ -20,8 +20,12 @@ class SearchView: BaseView {
     var shoppingList: Shopping = Shopping(total: 0, items: [])
     var bool: Bool = false
     
+    //페이지 네이션관련
     var page: Int = 1
-    //var maxPage: Int = 0
+    var maxPage: Int = 0
+    var ongoing: Bool = false
+    
+    
     var text: String?
     var stored: Results<Items>!
     
@@ -80,13 +84,13 @@ class SearchView: BaseView {
         }
     }
     
-//    func calculateMaxPage(total: Int) {
-//        if total >= 30000 {
-//            maxPage = 1000
-//        } else {
-//            maxPage = (total / 30) + 1
-//        }
-//    }
+    func calculateMaxPage(total: Int) {
+        if total >= 30000 {
+            maxPage = 1000
+        } else {
+            maxPage = (total / 30) + 1
+        }
+    }
     
 }
 
@@ -105,7 +109,7 @@ extension SearchView: UICollectionViewDataSource, UICollectionViewDelegate {
             
             if indexPath.item == 0 {
                 filterCell.isSelected = true
-                filter.selectItem(at: indexPath, animated: false, scrollPosition: .init()) //???: - ⚠️셀이 재사용되는 순간 의도와 다르게 다시 선택 될 수있음....
+                filter.selectItem(at: indexPath, animated: false, scrollPosition: .init()) //???: - 셀이 재사용되는 순간 의도와 다르게 다시 선택 될 수있음....
             }
             
             return filterCell
@@ -139,9 +143,6 @@ extension SearchView: UICollectionViewDataSource, UICollectionViewDelegate {
                 }
             }
         }
-        
-        
-        
     }
     
     
@@ -220,12 +221,14 @@ extension SearchView: UISearchBarDelegate {
         searchBar.resignFirstResponder()
         shoppingList = Shopping(total: 0, items: [])
         page = 1
+        ongoing = false
         
         guard let text = searchBar.text else { return }
         self.text = text
         
         NaverAPIManager.shared.callRequest(keyword: text, sort: .sim, page: page) { data in
             self.shoppingList = data
+            self.calculateMaxPage(total: data.total)
             self.results.reloadData()
         }
         
@@ -235,6 +238,7 @@ extension SearchView: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
         searchBar.resignFirstResponder()
+        page = 1
         text = nil
         shoppingList = Shopping(total: 0, items: [])
         results.reloadData()
@@ -249,21 +253,33 @@ extension SearchView: UIScrollViewDelegate {
     }
     
     
-//    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        //print(#function)
-//
-//        let offsetY = results.contentOffset.y
-//        let contentHeight = results.contentSize.height
-//        let paginationOrigin = contentHeight * 0.7
-//
-//        if offsetY > paginationOrigin && page < maxPage {
-//            page += 1
-//            NaverAPIManager.shared.callRequest(keyword: searchBar.text!, sort: .sim, page: page) { data in
-//                self.shoppingList = data
-//                self.results.reloadData()
-//            }
-//        }
-//
-//    }
-    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        //print(#function)
+        print(page, maxPage, ongoing)
+        let offsetY = results.contentOffset.y
+        let contentHeight = results.contentSize.height
+        let paginationOrigin = contentHeight * 0.7
+        
+        
+        
+        if offsetY > paginationOrigin && page < maxPage && !ongoing {
+            ongoing = true
+            page += 1
+            
+            
+            guard let text = self.searchBar.text else { return }
+            DispatchQueue.global().async {
+                NaverAPIManager.shared.callRequest(keyword: text, sort: .sim, page: self.page) { [weak self] data in
+                    
+                    self?.shoppingList.items.append(contentsOf: data.items)
+                    DispatchQueue.main.async {
+                        
+                        self?.ongoing = false
+                        self?.results.reloadData()
+                        
+                    }
+                }
+            }
+        }
+    }
 }

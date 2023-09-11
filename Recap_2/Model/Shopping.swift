@@ -10,7 +10,7 @@ import UIKit
 
 struct Shopping: Codable {
     let total: Int
-    let items: [Item]
+    var items: [Item]
 }
 
 struct Item: Codable {

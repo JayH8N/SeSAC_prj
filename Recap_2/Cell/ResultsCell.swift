@@ -45,7 +45,7 @@ class ResultsCell: BaseCollectionViewCell {
         return uibutton
     }()
     
-    let buttonBack = LikeButtonCustomView()
+    let buttonBackground = LikeButtonCustomView()
     
 //    var isTouched: Bool {
 //        didSet {
@@ -87,7 +87,7 @@ class ResultsCell: BaseCollectionViewCell {
     override func configureView() {
         contentView.backgroundColor = .clear
         itemImage.isUserInteractionEnabled = true
-        let objects: [Any] = [itemImage, mallNameLabel, titleLabel, priceLabel, buttonBack, likeButton]
+        let objects: [Any] = [itemImage, mallNameLabel, titleLabel, priceLabel, buttonBackground, likeButton]
         for i in objects {
             contentView.addSubview(i as! UIView)
         }
@@ -116,14 +116,14 @@ class ResultsCell: BaseCollectionViewCell {
             $0.leading.trailing.equalToSuperview().inset(5)
         }
         
-        buttonBack.snp.makeConstraints {
+        buttonBackground.snp.makeConstraints {
             $0.size.equalTo(40)
             $0.trailing.equalTo(contentView.snp.trailing).inset(6)
             $0.centerY.equalTo(contentView).multipliedBy(1.16)
         }
         
         likeButton.snp.makeConstraints {
-            $0.center.equalTo(buttonBack)
+            $0.center.equalTo(buttonBackground)
         }
     }
     
