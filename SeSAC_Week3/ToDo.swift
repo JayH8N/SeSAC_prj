@@ -5,7 +5,7 @@
 //  Created by hoon on 2023/07/28.
 //
 
-import Foundation
+import UIKit
 
 
 struct ToDo {
@@ -13,4 +13,5 @@ struct ToDo {
     var sub: String
     var like: Bool
     var done: Bool
+    var color: UIColor
 }

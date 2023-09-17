@@ -18,9 +18,25 @@ class CustomCell: UITableViewCell {
     @IBOutlet var subTitleLabel: UILabel!
     @IBOutlet var likeButton: UIButton!
     
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        mainTitleLabel.font = .boldSystemFont(ofSize: 17)
+        mainTitleLabel.textColor = .brown
+        //갱신할 때 마다 호출되고 같은 데이터 계속 덮여싀워진다. --> 1번만 써도 되지 않을까?
+        
+    }
+    
+    
+    
+    
     func configureCell(row: ToDo) {
+        
         mainTitleLabel.text = row.main
         subTitleLabel.text = row.sub
+        
+        backView.backgroundColor  = row.color
         
         func image() -> String {
             if row.done {

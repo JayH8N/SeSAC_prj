@@ -13,6 +13,11 @@
 		7832B7272A73CCB300AB09B4 /* MovieTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7832B7262A73CCB300AB09B4 /* MovieTableViewController.swift */; };
 		7832B7292A73CFB400AB09B4 /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7832B7282A73CFB400AB09B4 /* MovieList.swift */; };
 		7861BC4E2A72068E003D92B2 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7861BC4D2A72068E003D92B2 /* TableViewController.swift */; };
+		7865A5D42AB6A3D10029AD03 /* Case1Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7865A5D32AB6A3D10029AD03 /* Case1Model.swift */; };
+		7865A5DA2AB6DBD40029AD03 /* Case1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7865A5D92AB6DBD40029AD03 /* Case1.swift */; };
+		7865A5DD2AB6DBE80029AD03 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7865A5DC2AB6DBE80029AD03 /* SnapKit */; };
+		7865A5E12AB6F50C0029AD03 /* Case2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7865A5E02AB6F50C0029AD03 /* Case2.swift */; };
+		7889A7442A79E7B700D9C2CC /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7889A7432A79E7B700D9C2CC /* DetailViewController.swift */; };
 		78952AFE2A720FFC00BF1EA4 /* TodoTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78952AFD2A720FFC00BF1EA4 /* TodoTableTableViewController.swift */; };
 		78952B002A7232DB00BF1EA4 /* StudyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78952AFF2A7232DB00BF1EA4 /* StudyViewController.swift */; };
 		78952B022A72496400BF1EA4 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78952B012A72496400BF1EA4 /* Extension.swift */; };
@@ -38,6 +43,10 @@
 		7832B7262A73CCB300AB09B4 /* MovieTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewController.swift; sourceTree = "<group>"; };
 		7832B7282A73CFB400AB09B4 /* MovieList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieList.swift; sourceTree = "<group>"; };
 		7861BC4D2A72068E003D92B2 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		7865A5D32AB6A3D10029AD03 /* Case1Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Case1Model.swift; sourceTree = "<group>"; };
+		7865A5D92AB6DBD40029AD03 /* Case1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Case1.swift; sourceTree = "<group>"; };
+		7865A5E02AB6F50C0029AD03 /* Case2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Case2.swift; sourceTree = "<group>"; };
+		7889A7432A79E7B700D9C2CC /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		78952AFD2A720FFC00BF1EA4 /* TodoTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableTableViewController.swift; sourceTree = "<group>"; };
 		78952AFF2A7232DB00BF1EA4 /* StudyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudyViewController.swift; sourceTree = "<group>"; };
 		78952B012A72496400BF1EA4 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
@@ -63,12 +72,39 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7865A5DD2AB6DBE80029AD03 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7865A5D22AB6A3AF0029AD03 /* ModernCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				7865A5D72AB6A4F60029AD03 /* Case1 */,
+				7865A5D82AB6A4FB0029AD03 /* Case2 */,
+			);
+			path = ModernCollectionView;
+			sourceTree = "<group>";
+		};
+		7865A5D72AB6A4F60029AD03 /* Case1 */ = {
+			isa = PBXGroup;
+			children = (
+				7865A5D32AB6A3D10029AD03 /* Case1Model.swift */,
+				7865A5D92AB6DBD40029AD03 /* Case1.swift */,
+			);
+			path = Case1;
+			sourceTree = "<group>";
+		};
+		7865A5D82AB6A4FB0029AD03 /* Case2 */ = {
+			isa = PBXGroup;
+			children = (
+				7865A5E02AB6F50C0029AD03 /* Case2.swift */,
+			);
+			path = Case2;
+			sourceTree = "<group>";
+		};
 		78CA94A92A73EEA500FE000F /* MovieList */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +136,7 @@
 		78F953502A72000900805276 /* SeSAC_Week3 */ = {
 			isa = PBXGroup;
 			children = (
+				7865A5D22AB6A3AF0029AD03 /* ModernCollectionView */,
 				78CA94A92A73EEA500FE000F /* MovieList */,
 				78952AFF2A7232DB00BF1EA4 /* StudyViewController.swift */,
 				78F953512A72000900805276 /* AppDelegate.swift */,
@@ -116,6 +153,7 @@
 				78952B052A72580A00BF1EA4 /* Case2TableViewController.swift */,
 				78F9535F2A72000900805276 /* Info.plist */,
 				78FCB08D2A73503F00DA3923 /* CustomTableViewController.swift */,
+				7889A7432A79E7B700D9C2CC /* DetailViewController.swift */,
 				7832B6F42A7389C600AB09B4 /* ToDo.swift */,
 				7832B6F62A738A2400AB09B4 /* ToDoInformation.swift */,
 				78FCB08F2A73528900DA3923 /* CustomCell.swift */,
@@ -139,6 +177,9 @@
 			dependencies = (
 			);
 			name = SeSAC_Week3;
+			packageProductDependencies = (
+				7865A5DC2AB6DBE80029AD03 /* SnapKit */,
+			);
 			productName = SeSAC_Week3;
 			productReference = 78F9534E2A72000900805276 /* SeSAC_Week3.app */;
 			productType = "com.apple.product-type.application";
@@ -167,6 +208,9 @@
 				Base,
 			);
 			mainGroup = 78F953452A72000800805276;
+			packageReferences = (
+				7865A5DB2AB6DBE80029AD03 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 78F9534F2A72000900805276 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -198,6 +242,7 @@
 			files = (
 				78CA94A72A73E4A100FE000F /* MovieInfo.swift in Sources */,
 				78F953562A72000900805276 /* ViewController.swift in Sources */,
+				7865A5E12AB6F50C0029AD03 /* Case2.swift in Sources */,
 				78F953522A72000900805276 /* AppDelegate.swift in Sources */,
 				78FCB0902A73528900DA3923 /* CustomCell.swift in Sources */,
 				7832B6F52A7389C600AB09B4 /* ToDo.swift in Sources */,
@@ -205,10 +250,13 @@
 				7832B7292A73CFB400AB09B4 /* MovieList.swift in Sources */,
 				78CA94A52A73E48900FE000F /* Movie.swift in Sources */,
 				78F953542A72000900805276 /* SceneDelegate.swift in Sources */,
+				7889A7442A79E7B700D9C2CC /* DetailViewController.swift in Sources */,
 				7832B7272A73CCB300AB09B4 /* MovieTableViewController.swift in Sources */,
 				78FCB08E2A73503F00DA3923 /* CustomTableViewController.swift in Sources */,
 				78952AFE2A720FFC00BF1EA4 /* TodoTableTableViewController.swift in Sources */,
+				7865A5DA2AB6DBD40029AD03 /* Case1.swift in Sources */,
 				78952B082A725E3100BF1EA4 /* Case3TableViewController.swift in Sources */,
+				7865A5D42AB6A3D10029AD03 /* Case1Model.swift in Sources */,
 				78952B002A7232DB00BF1EA4 /* StudyViewController.swift in Sources */,
 				78952B062A72580A00BF1EA4 /* Case2TableViewController.swift in Sources */,
 				7832B6F72A738A2400AB09B4 /* ToDoInformation.swift in Sources */,
@@ -364,7 +412,7 @@
 				INFOPLIST_FILE = SeSAC_Week3/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = AssignmentTableViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -396,7 +444,7 @@
 				INFOPLIST_FILE = SeSAC_Week3/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = AssignmentTableViewController;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -438,6 +486,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7865A5DB2AB6DBE80029AD03 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7865A5DC2AB6DBE80029AD03 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7865A5DB2AB6DBE80029AD03 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 78F953462A72000800805276 /* Project object */;
 }
