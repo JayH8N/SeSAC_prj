@@ -21,6 +21,7 @@
 		782C56232A930A4000090BED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 782C56222A930A4000090BED /* ViewController.swift */; };
 		782C56282A930A4100090BED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 782C56272A930A4100090BED /* Assets.xcassets */; };
 		782C562B2A930A4100090BED /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 782C56292A930A4100090BED /* LaunchScreen.storyboard */; };
+		7865A5E92AB836470029AD03 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7865A5E82AB836470029AD03 /* Observable.swift */; };
 		78F6E59C2A95D1D500365E24 /* Case4ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E59B2A95D1D500365E24 /* Case4ViewController.swift */; };
 		78F6E59E2A95E42D00365E24 /* Enum + Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E59D2A95E42D00365E24 /* Enum + Annotation.swift */; };
 		78F6E5A32A95E4E200365E24 /* Movie_map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E5A22A95E4E200365E24 /* Movie_map.swift */; };
@@ -30,7 +31,7 @@
 		78F6E5AD2A971E9B00365E24 /* BlackRadiusTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E5AC2A971E9B00365E24 /* BlackRadiusTextField.swift */; };
 		78F6E5AF2A972A1800365E24 /* CustomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E5AE2A972A1800365E24 /* CustomTableViewController.swift */; };
 		78F6E5B52A9745BF00365E24 /* NetflixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E5B42A9745BF00365E24 /* NetflixViewController.swift */; };
-		78F6E5B72A9745CF00365E24 /* JackFlixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E5B62A9745CF00365E24 /* JackFlixViewController.swift */; };
+		78F6E5B72A9745CF00365E24 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E5B62A9745CF00365E24 /* LoginViewController.swift */; };
 		78F6E5BB2A974B5300365E24 /* InputTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E5BA2A974B5300365E24 /* InputTextField.swift */; };
 		78F6E5BD2A97B43200365E24 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E5BC2A97B43200365E24 /* CircleImageView.swift */; };
 		78F6E5BF2A97C09000365E24 /* TopButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F6E5BE2A97C09000365E24 /* TopButtonLabel.swift */; };
@@ -54,6 +55,7 @@
 		782C56272A930A4100090BED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		782C562A2A930A4100090BED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		782C562C2A930A4100090BED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7865A5E82AB836470029AD03 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		78F6E59B2A95D1D500365E24 /* Case4ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Case4ViewController.swift; sourceTree = "<group>"; };
 		78F6E59D2A95E42D00365E24 /* Enum + Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Enum + Annotation.swift"; sourceTree = "<group>"; };
 		78F6E5A22A95E4E200365E24 /* Movie_map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie_map.swift; sourceTree = "<group>"; };
@@ -63,7 +65,7 @@
 		78F6E5AC2A971E9B00365E24 /* BlackRadiusTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlackRadiusTextField.swift; sourceTree = "<group>"; };
 		78F6E5AE2A972A1800365E24 /* CustomTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewController.swift; sourceTree = "<group>"; };
 		78F6E5B42A9745BF00365E24 /* NetflixViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetflixViewController.swift; sourceTree = "<group>"; };
-		78F6E5B62A9745CF00365E24 /* JackFlixViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JackFlixViewController.swift; sourceTree = "<group>"; };
+		78F6E5B62A9745CF00365E24 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		78F6E5BA2A974B5300365E24 /* InputTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputTextField.swift; sourceTree = "<group>"; };
 		78F6E5BC2A97B43200365E24 /* CircleImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		78F6E5BE2A97C09000365E24 /* TopButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopButtonLabel.swift; sourceTree = "<group>"; };
@@ -97,13 +99,14 @@
 		782632A02A949A7800730DD9 /* 과제 */ = {
 			isa = PBXGroup;
 			children = (
-				78F6E5B32A9745AB00365E24 /* JackFlix */,
+				78F6E5B32A9745AB00365E24 /* Login */,
 				78F6E5B02A9738BF00365E24 /* Netflix */,
 				782632A12A949AD400730DD9 /* MainViewController.swift */,
 				782632A32A94A1AD00730DD9 /* Case1ViewController.swift */,
 				782632A72A94AD2300730DD9 /* Case2ViewController.swift */,
 				782632A92A94AD5300730DD9 /* Case3ViewController.swift */,
 				78F6E59B2A95D1D500365E24 /* Case4ViewController.swift */,
+				7865A5E82AB836470029AD03 /* Observable.swift */,
 			);
 			name = "과제";
 			path = "r과제";
@@ -193,13 +196,13 @@
 			path = Netflix;
 			sourceTree = "<group>";
 		};
-		78F6E5B32A9745AB00365E24 /* JackFlix */ = {
+		78F6E5B32A9745AB00365E24 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				78F6E5B62A9745CF00365E24 /* JackFlixViewController.swift */,
+				78F6E5B62A9745CF00365E24 /* LoginViewController.swift */,
 				78F6E5BA2A974B5300365E24 /* InputTextField.swift */,
 			);
-			path = JackFlix;
+			path = Login;
 			sourceTree = "<group>";
 		};
 		78F6E5C42A984B0F00365E24 /* OnBoarding */ = {
@@ -301,6 +304,7 @@
 				78F6E59E2A95E42D00365E24 /* Enum + Annotation.swift in Sources */,
 				7826329B2A94467400730DD9 /* SnapViewController.swift in Sources */,
 				782C56232A930A4000090BED /* ViewController.swift in Sources */,
+				7865A5E92AB836470029AD03 /* Observable.swift in Sources */,
 				78F6E5C62A984B5500365E24 /* OnboardingViewController.swift in Sources */,
 				7826329F2A94792D00730DD9 /* LocationViewController.swift in Sources */,
 				78F6E5C32A9840B300365E24 /* PosterImageView.swift in Sources */,
@@ -311,7 +315,7 @@
 				78F6E5C12A982B0100365E24 /* CustomTableViewCell.swift in Sources */,
 				78F6E5AF2A972A1800365E24 /* CustomTableViewController.swift in Sources */,
 				78F6E5BF2A97C09000365E24 /* TopButtonLabel.swift in Sources */,
-				78F6E5B72A9745CF00365E24 /* JackFlixViewController.swift in Sources */,
+				78F6E5B72A9745CF00365E24 /* LoginViewController.swift in Sources */,
 				78F6E5BB2A974B5300365E24 /* InputTextField.swift in Sources */,
 				78F6E5AB2A971CE300365E24 /* CustomViewController.swift in Sources */,
 			);
