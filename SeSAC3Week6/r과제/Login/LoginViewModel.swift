@@ -19,11 +19,28 @@ class LoginViewModel {
     
     
     func checkValidation() {
-        if email.value.contains("@") && recommendCode.value.count == 6 && (pw.value.count >= 6 && pw.value.count <= 10) {
-            isvalid.value = true
-        } else {
+//        if email.value.contains("@") && recommendCode.value.count == 6 && (pw.value.count >= 6 && pw.value.count <= 10) {
+//            isvalid.value = true
+//        } else {
+//            isvalid.value = false
+//        }
+        
+        guard email.value.contains("@") else {
             isvalid.value = false
+            return
         }
+        
+        guard recommendCode.value.count == 6 else {
+            isvalid.value = false
+            return
+        }
+        
+        guard pw.value.count >= 6 && pw.value.count <= 10 else {
+            isvalid.value = false
+            return
+        }
+        
+        isvalid.value = true
     }
     
 }
