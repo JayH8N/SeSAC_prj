@@ -10,80 +10,159 @@ import SnapKit
 
 class SearchViewController: UIViewController {
     
-    let scrollView = UIScrollView()
-    let contentView = UIView()
+    let list = Array(0...100)
     
-    let imageView = UIImageView()
-    let label = UILabel()
-    let button = UIButton()
+    
+    var collectionView = UICollectionView(frame: .zero, collectionViewLayout: configureCollectionLayout())
+    
+    var dataSource: UICollectionViewDiffableDataSource<Int, Int>! //=> 클래스이기에 상속을 이용해 코드줄이는 것 가능
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureHierarchy()
+        configureDataSource()
         configureLayout()
-        configureContentView()
+        
+       //collectionView.register(SearchCollectionViewCell.self, forCellWithReuseIdentifier: "cell")
     }
     
-    func configureContentView() {
-        contentView.addSubview(imageView)
-        contentView.addSubview(button)
-        contentView.addSubview(label)
-        
-        imageView.backgroundColor = .orange
-        button.backgroundColor = .magenta
-        label.backgroundColor = .systemGreen
-        
-        imageView.snp.makeConstraints { make in
-            make.top.horizontalEdges.equalTo(contentView).inset(10)
-            make.height.equalTo(200)
-        }
-        
-        button.snp.makeConstraints { make in
-            make.bottom.horizontalEdges.equalTo(contentView).inset(10)
-            make.height.equalTo(80)
-        }
-        
-        //label은 높이가 동적으로 변하도록
-        label.text = "texttexttexttexttexttexttext\nttexttexttexttexttexttexttext\nttexttexttexttexttexttexttext\nttexttexttexttexttexttexttext\nttexttexttexttexttexttexttext\nttexttexttexttexttexttexttext\nttexttexttexttexttexttexttext\nttexttexttexttexttexttexttext\nttexttexttexttexttexttexttext\nttexttexttexttexttexttexttext\nttexttexttexttexttexttexttext\nttexttexttexttexttexttexttext\nttexttexttexttexttexttexttext\nttexttexttexttexttexttexttext\nttexttexttexttexttexttexttext\nttexttexttexttexttexttexttext\nttexttexttexttexttexttexttext\nttexttexttexttexttexttexttext\ntexttexttexttext\ntexttexttexttext\ntexttexttexttext\ntexttexttexttext\ntexttexttexttext\ntexttexttext\ntexttexttext\ntexttexttexttexttext\ntexttexttext\ntexttexttexttext\ntexttexttexttexttext\ntexttexttexttext"
-        label.numberOfLines = 0
-        label.textColor = .red
-        label.snp.makeConstraints { make in
-            make.horizontalEdges.equalTo(contentView)
-            make.top.equalTo(imageView.snp.bottom).offset(50)
-            make.bottom.equalTo(button.snp.top).offset(-50)
-        }
+    static func configureCollectionLayout() -> UICollectionViewLayout {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 50, height: 50)
+        layout.scrollDirection = .vertical
+        return layout
     }
-    
-    
-    func configureHierarchy() {
-        view.addSubview(scrollView)
-        scrollView.addSubview(contentView)
-    }
-    
     
     func configureLayout() {
-        scrollView.bounces = false //스크롤뷰 바운스 효과
-        scrollView.showsVerticalScrollIndicator = false
-        scrollView.backgroundColor = .lightGray
-        scrollView.snp.makeConstraints { make in
+        collectionView.snp.makeConstraints { make in
             make.edges.equalTo(view.safeAreaLayoutGuide)
-        }
-        
-        
-        
-        contentView.backgroundColor = .white
-        contentView.snp.makeConstraints { make in
-            make.verticalEdges.equalTo(scrollView)
-            make.width.equalTo(scrollView.snp.width)
         }
     }
     
+    func configureHierarchy() {
+        view.addSubview(collectionView)
+    }
     
     
+    func configureDataSource() {
+        
+        //어떤 셀을 사용할지, 어떤 데이터를 사용할지 지정 => 제네릭으로 지정
+        let cellRegistration = UICollectionView.CellRegistration<SearchCollectionViewCell, Int> { cell, indexPath, itemIdentifier in
+            cell.imageView.image = UIImage(systemName: "star")
+            cell.label.text = "\(itemIdentifier)번"
+        }
+        
+        dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
+            
+            return collectionView.dequeueConfiguredReusableCell(using: cellRegistration, for: indexPath, item: itemIdentifier)
+            
+        })
+        
+        
+        //데이터 소스 제너릭타입과 통일시킨다.
+        var snapshot = NSDiffableDataSourceSnapshot<Int, Int>()
+        snapshot.appendSections([0])
+        snapshot.appendItems(list)
+        dataSource.apply(snapshot)
+        
+    }
+    
+    
+//    func numberOfSections(in collectionView: UICollectionView) -> Int {
+//        return 1
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+//        return list.count
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! SearchCollectionViewCell
+//        cell.label.text = "\(list[indexPath.item])번"
+//        return cell
+//    }
     
 }
+
+
+
+//class SearchViewController: UIViewController {
+//
+//    let scrollView = UIScrollView()
+//    let contentView = UIView()
+//
+//    let imageView = UIImageView()
+//    let label = UILabel()
+//    let button = UIButton()
+//
+//
+//    override func viewDidLoad() {
+//        super.viewDidLoad()
+//
+//        configureHierarchy()
+//        configureLayout()
+//        configureContentView()
+//    }
+//
+//    func configureContentView() {
+//        contentView.addSubview(imageView)
+//        contentView.addSubview(button)
+//        contentView.addSubview(label)
+//
+//        imageView.backgroundColor = .orange
+//        button.backgroundColor = .magenta
+//        label.backgroundColor = .systemGreen
+//
+//        imageView.snp.makeConstraints { make in
+//            make.top.horizontalEdges.equalTo(contentView).inset(10)
+//            make.height.equalTo(200)
+//        }
+//
+//        button.snp.makeConstraints { make in
+//            make.bottom.horizontalEdges.equalTo(contentView).inset(10)
+//            make.height.equalTo(80)
+//        }
+//
+//        //label은 높이가 동적으로 변하도록
+//        label.text = "texttexttexttexttexttexttext\nttexttexttexttexttexttexttext\nttexttexttexttexttexttexttext\nttexttexttexttexttexttexttext\nttexttexttexttexttexttexttext\nttexttexttexttexttexttexttext\nttexttexttexttexttexttexttext\nttexttexttexttexttexttexttext\nttexttexttexttexttexttexttext\nttexttexttexttexttexttexttext\nttexttexttexttexttexttexttext\nttexttexttexttexttexttexttext\nttexttexttexttexttexttexttext\nttexttexttexttexttexttexttext\nttexttexttexttexttexttexttext\nttexttexttexttexttexttexttext\nttexttexttexttexttexttexttext\nttexttexttexttexttexttexttext\ntexttexttexttext\ntexttexttexttext\ntexttexttexttext\ntexttexttexttext\ntexttexttexttext\ntexttexttext\ntexttexttext\ntexttexttexttexttext\ntexttexttext\ntexttexttexttext\ntexttexttexttexttext\ntexttexttexttext"
+//        label.numberOfLines = 0
+//        label.textColor = .red
+//        label.snp.makeConstraints { make in
+//            make.horizontalEdges.equalTo(contentView)
+//            make.top.equalTo(imageView.snp.bottom).offset(50)
+//            make.bottom.equalTo(button.snp.top).offset(-50)
+//        }
+//    }
+//
+//
+//    func configureHierarchy() {
+//        view.addSubview(scrollView)
+//        scrollView.addSubview(contentView)
+//    }
+//
+//
+//    func configureLayout() {
+//        scrollView.bounces = false //스크롤뷰 바운스 효과
+//        scrollView.showsVerticalScrollIndicator = false
+//        scrollView.backgroundColor = .lightGray
+//        scrollView.snp.makeConstraints { make in
+//            make.edges.equalTo(view.safeAreaLayoutGuide)
+//        }
+//
+//
+//
+//        contentView.backgroundColor = .white
+//        contentView.snp.makeConstraints { make in
+//            make.verticalEdges.equalTo(scrollView)
+//            make.width.equalTo(scrollView.snp.width)
+//        }
+//    }
+//
+//
+//}
 
 //class SearchViewController: UIViewController {
 //

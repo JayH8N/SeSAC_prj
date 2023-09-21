@@ -22,6 +22,7 @@
 		787DF47B2ABA7637000DF044 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787DF47A2ABA7637000DF044 /* Router.swift */; };
 		787DF47D2ABA9A86000DF044 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787DF47C2ABA9A86000DF044 /* ViewModel.swift */; };
 		787DF4832ABBCB49000DF044 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787DF4822ABBCB49000DF044 /* SearchViewController.swift */; };
+		787DF4872ABBE112000DF044 /* SearchCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787DF4862ABBE112000DF044 /* SearchCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		787DF47A2ABA7637000DF044 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		787DF47C2ABA9A86000DF044 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		787DF4822ABBCB49000DF044 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		787DF4862ABBE112000DF044 /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				787DF47C2ABA9A86000DF044 /* ViewModel.swift */,
 				787DF4822ABBCB49000DF044 /* SearchViewController.swift */,
 				7817CA892AB9294F003A2527 /* ViewController.swift */,
+				787DF4862ABBE112000DF044 /* SearchCollectionViewCell.swift */,
 			);
 			path = SeSAC3Week10;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 				7817CAA42AB93CD3003A2527 /* NetworkBasic.swift in Sources */,
 				7817CAA82AB97445003A2527 /* Network.swift in Sources */,
 				787DF4832ABBCB49000DF044 /* SearchViewController.swift in Sources */,
+				787DF4872ABBE112000DF044 /* SearchCollectionViewCell.swift in Sources */,
 				787DF47B2ABA7637000DF044 /* Router.swift in Sources */,
 				7817CAA62AB9649D003A2527 /* SeSACAPI.swift in Sources */,
 				7817CA862AB9294F003A2527 /* AppDelegate.swift in Sources */,
