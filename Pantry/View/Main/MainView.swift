@@ -5,5 +5,23 @@
 //  Created by hoon on 2023/09/25.
 //
 
-import Foundation
+
+class MainView: BaseView {
+    
+    
+    
+    
+    
+    
+    override func configureView() {
+        
+    }
+    
+    
+    override func setConstraints() {
+        
+    }
+    
+    
+}
 
