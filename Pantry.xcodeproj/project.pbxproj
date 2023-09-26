@@ -9,19 +9,32 @@
 /* Begin PBXBuildFile section */
 		785E01892ABE883E0057859F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E01882ABE883E0057859F /* AppDelegate.swift */; };
 		785E018B2ABE883E0057859F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E018A2ABE883E0057859F /* SceneDelegate.swift */; };
-		785E018D2ABE883E0057859F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E018C2ABE883E0057859F /* ViewController.swift */; };
 		785E01922ABE883F0057859F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 785E01912ABE883F0057859F /* Assets.xcassets */; };
 		785E01952ABE883F0057859F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 785E01932ABE883F0057859F /* LaunchScreen.storyboard */; };
+		785E01AE2AC1076D0057859F /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E01AD2AC1076D0057859F /* MainView.swift */; };
+		785E01B02AC107740057859F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E01AF2AC107740057859F /* MainViewController.swift */; };
+		785E01B22AC107DD0057859F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E01B12AC107DD0057859F /* TabBarController.swift */; };
+		785E01B52AC108190057859F /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E01B42AC108190057859F /* BaseView.swift */; };
+		785E01B72AC108250057859F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E01B62AC108250057859F /* BaseViewController.swift */; };
+		785E01BA2AC170990057859F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 785E01B92AC170990057859F /* SnapKit */; };
+		785E01BD2AC170F70057859F /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 785E01BC2AC170F70057859F /* Realm */; };
+		785E01BF2AC170F70057859F /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 785E01BE2AC170F70057859F /* RealmSwift */; };
+		785E01C12AC171140057859F /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E01C02AC171140057859F /* Realm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		785E01852ABE883E0057859F /* Pantry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pantry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		785E01882ABE883E0057859F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		785E018A2ABE883E0057859F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		785E018C2ABE883E0057859F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		785E01912ABE883F0057859F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		785E01942ABE883F0057859F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		785E01962ABE883F0057859F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		785E01AD2AC1076D0057859F /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		785E01AF2AC107740057859F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		785E01B12AC107DD0057859F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		785E01B42AC108190057859F /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		785E01B62AC108250057859F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		785E01C02AC171140057859F /* Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +42,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				785E01BF2AC170F70057859F /* RealmSwift in Frameworks */,
+				785E01BD2AC170F70057859F /* Realm in Frameworks */,
+				785E01BA2AC170990057859F /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -38,6 +54,7 @@
 		785E017C2ABE883E0057859F = {
 			isa = PBXGroup;
 			children = (
+				785E01A52AC1053E0057859F /* App */,
 				785E01872ABE883E0057859F /* Pantry */,
 				785E01862ABE883E0057859F /* Products */,
 			);
@@ -54,14 +71,82 @@
 		785E01872ABE883E0057859F /* Pantry */ = {
 			isa = PBXGroup;
 			children = (
+				785E01B32AC1080D0057859F /* Base */,
+				785E01AB2AC107300057859F /* Extensions */,
+				785E01AA2AC107220057859F /* Sources */,
+				785E01A92AC106060057859F /* ViewModel */,
+				785E01A72AC105D00057859F /* View */,
+				785E01A62AC105C40057859F /* Model */,
+			);
+			path = Pantry;
+			sourceTree = "<group>";
+		};
+		785E01A52AC1053E0057859F /* App */ = {
+			isa = PBXGroup;
+			children = (
 				785E01882ABE883E0057859F /* AppDelegate.swift */,
 				785E018A2ABE883E0057859F /* SceneDelegate.swift */,
-				785E018C2ABE883E0057859F /* ViewController.swift */,
-				785E01912ABE883F0057859F /* Assets.xcassets */,
 				785E01932ABE883F0057859F /* LaunchScreen.storyboard */,
 				785E01962ABE883F0057859F /* Info.plist */,
 			);
-			path = Pantry;
+			path = App;
+			sourceTree = "<group>";
+		};
+		785E01A62AC105C40057859F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				785E01C02AC171140057859F /* Realm.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		785E01A72AC105D00057859F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				785E01B12AC107DD0057859F /* TabBarController.swift */,
+				785E01AC2AC107540057859F /* Main */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		785E01A92AC106060057859F /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		785E01AA2AC107220057859F /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				785E01912ABE883F0057859F /* Assets.xcassets */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		785E01AB2AC107300057859F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		785E01AC2AC107540057859F /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				785E01AD2AC1076D0057859F /* MainView.swift */,
+				785E01AF2AC107740057859F /* MainViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		785E01B32AC1080D0057859F /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				785E01B42AC108190057859F /* BaseView.swift */,
+				785E01B62AC108250057859F /* BaseViewController.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,6 +165,11 @@
 			dependencies = (
 			);
 			name = Pantry;
+			packageProductDependencies = (
+				785E01B92AC170990057859F /* SnapKit */,
+				785E01BC2AC170F70057859F /* Realm */,
+				785E01BE2AC170F70057859F /* RealmSwift */,
+			);
 			productName = Pantry;
 			productReference = 785E01852ABE883E0057859F /* Pantry.app */;
 			productType = "com.apple.product-type.application";
@@ -108,6 +198,10 @@
 				Base,
 			);
 			mainGroup = 785E017C2ABE883E0057859F;
+			packageReferences = (
+				785E01B82AC170990057859F /* XCRemoteSwiftPackageReference "SnapKit" */,
+				785E01BB2AC170F70057859F /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 785E01862ABE883E0057859F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -134,9 +228,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				785E018D2ABE883E0057859F /* ViewController.swift in Sources */,
 				785E01892ABE883E0057859F /* AppDelegate.swift in Sources */,
+				785E01AE2AC1076D0057859F /* MainView.swift in Sources */,
 				785E018B2ABE883E0057859F /* SceneDelegate.swift in Sources */,
+				785E01B52AC108190057859F /* BaseView.swift in Sources */,
+				785E01B22AC107DD0057859F /* TabBarController.swift in Sources */,
+				785E01B72AC108250057859F /* BaseViewController.swift in Sources */,
+				785E01B02AC107740057859F /* MainViewController.swift in Sources */,
+				785E01C12AC171140057859F /* Realm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,7 +376,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 57CCR42RDS;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Pantry/Info.plist;
+				INFOPLIST_FILE = App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -308,7 +407,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 57CCR42RDS;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Pantry/Info.plist;
+				INFOPLIST_FILE = App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -352,6 +451,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		785E01B82AC170990057859F /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		785E01BB2AC170F70057859F /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				kind = exactVersion;
+				version = 10.42.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		785E01B92AC170990057859F /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 785E01B82AC170990057859F /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		785E01BC2AC170F70057859F /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 785E01BB2AC170F70057859F /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		785E01BE2AC170F70057859F /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 785E01BB2AC170F70057859F /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 785E017D2ABE883E0057859F /* Project object */;
 }
