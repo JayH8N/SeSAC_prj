@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TabBarController: UITabBarController {
+final class TabBarController: UITabBarController {
     
     
     
@@ -31,13 +31,13 @@ class TabBarController: UITabBarController {
 
 extension TabBarController {
     
-    func configureTabBar() {
-        tabBar.backgroundColor = UIColor.theme
-        tabBar.tintColor = .white
+    private func configureTabBar() {
+        tabBar.backgroundColor = .white
+        tabBar.tintColor = UIColor.theme
         tabBar.unselectedItemTintColor = .darkGray
     }
     
-    func templateNavigationController(tabBarTitle: String, image: String, rootViewController: UIViewController) -> UINavigationController {
+    private func templateNavigationController(tabBarTitle: String, image: String, rootViewController: UIViewController) -> UINavigationController {
         
         let nav = UINavigationController(rootViewController: rootViewController)
         
