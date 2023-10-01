@@ -27,7 +27,7 @@ class HighlightedButton: UIButton {
     
     func setView() {
         setBackgroundColor(.clear, for: .normal)
-        setBackgroundColor(.white.withAlphaComponent(0.1), for: .highlighted)
+        setBackgroundColor(.gray.withAlphaComponent(0.4), for: .highlighted)
         tintColor = .black
         adjustsImageWhenHighlighted = false
         layer.masksToBounds = true

@@ -23,7 +23,6 @@ class MainView: BaseView {
 //MARK: - LifeCycle
     override func configureView() {
         super.configureView()
-        //addSubview(wallPaper)
         self.addSubview(blurEffect)
     }
     

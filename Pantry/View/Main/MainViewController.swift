@@ -45,7 +45,8 @@ extension MainViewController {
     
     @objc func addButtonTapped() {
         let vc = addRefrigerViewController()
+        let nav = UINavigationController(rootViewController: vc)
         
-        present(vc, animated: true)
+        present(nav, animated: true)
     }
 }

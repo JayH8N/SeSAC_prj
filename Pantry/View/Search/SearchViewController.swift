@@ -10,7 +10,11 @@ import UIKit
 
 class SearchViewController: BaseViewController {
     
+    let mainView = SearchView()
     
+    override func loadView() {
+        view = mainView
+    }
     
     convenience init(title: String) {
         self.init()

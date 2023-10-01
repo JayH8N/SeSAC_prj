@@ -31,6 +31,7 @@
 		78F37D392AC47E9300ED4466 /* highlightedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F37D382AC47E9300ED4466 /* highlightedButton.swift */; };
 		78F37D3C2AC4878C00ED4466 /* addRefrigerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F37D3B2AC4878C00ED4466 /* addRefrigerView.swift */; };
 		78F37D3E2AC4879D00ED4466 /* addRefrigerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F37D3D2AC4879D00ED4466 /* addRefrigerViewController.swift */; };
+		78F37D422AC97FCE00ED4466 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F37D412AC97FCD00ED4466 /* Observable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		78F37D382AC47E9300ED4466 /* highlightedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = highlightedButton.swift; sourceTree = "<group>"; };
 		78F37D3B2AC4878C00ED4466 /* addRefrigerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addRefrigerView.swift; sourceTree = "<group>"; };
 		78F37D3D2AC4879D00ED4466 /* addRefrigerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addRefrigerViewController.swift; sourceTree = "<group>"; };
+		78F37D412AC97FCD00ED4466 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 		785E01872ABE883E0057859F /* Pantry */ = {
 			isa = PBXGroup;
 			children = (
+				78F37D402AC97F8700ED4466 /* Helper */,
 				785E01B32AC1080D0057859F /* Base */,
 				785E01AB2AC107300057859F /* Extensions */,
 				785E01AA2AC107220057859F /* Sources */,
@@ -128,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				785E01B12AC107DD0057859F /* TabBarController.swift */,
+				78F37D3F2AC97F2500ED4466 /* Components */,
 				78F37D372AC47D3900ED4466 /* CustomView */,
 				78F37D3A2AC4871100ED4466 /* addRefrigerator */,
 				785E01AC2AC107540057859F /* Main */,
@@ -221,6 +225,21 @@
 				78F37D3D2AC4879D00ED4466 /* addRefrigerViewController.swift */,
 			);
 			path = addRefrigerator;
+			sourceTree = "<group>";
+		};
+		78F37D3F2AC97F2500ED4466 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		78F37D402AC97F8700ED4466 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				78F37D412AC97FCD00ED4466 /* Observable.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,6 +338,7 @@
 				785E01B72AC108250057859F /* BaseViewController.swift in Sources */,
 				785E01B02AC107740057859F /* MainViewController.swift in Sources */,
 				785E01C12AC171140057859F /* Realm.swift in Sources */,
+				78F37D422AC97FCE00ED4466 /* Observable.swift in Sources */,
 				78F37D362AC47CE300ED4466 /* UIImage.swift in Sources */,
 				78F37D3C2AC4878C00ED4466 /* addRefrigerView.swift in Sources */,
 				78F37D342AC47CC300ED4466 /* UIButton.swift in Sources */,

@@ -19,19 +19,34 @@ class addRefrigerViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //view.backgroundColor = .black
         
     }
     
-    
-    override func setNavigationBar() {
-        
-    }
     
 }
 
 extension addRefrigerViewController {
     private func initNav() {
-        self.navigationItem.title = "냉장고 추가"
+        let addRefriger = NSLocalizedString("AddRefriger", comment: "")
+        let cancel = NSLocalizedString("Cancel", comment: "")
+        let add = NSLocalizedString("Add", comment: "")
+        
+        
+        self.navigationItem.title = addRefriger
+        self.navigationItem.rightBarButtonItem = .init(title: add, style: .done, target: self, action: #selector(addButtonTapped))
+        self.navigationItem.leftBarButtonItem = .init(title: cancel, style: .done, target: self, action: #selector(cancelButtonTapped))
     }
+}
+
+
+extension addRefrigerViewController {
+    
+    @objc func addButtonTapped() {
+        //냉장고 추가 작업 realm
+    }
+    
+    @objc func cancelButtonTapped() {
+        dismiss(animated: true)
+    }
+    
 }

@@ -5,6 +5,11 @@
   Created by hoon on 2023/09/27.
   
 */
-"RefrigerTabBarTitle" = "Refrigerators";
 
 "Search" = "Search";
+
+"AddRefriger" = "Add refrigerator";
+
+"Cancel" = "Cancel";
+
+"Add" = "Add";
