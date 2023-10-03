@@ -13,3 +13,15 @@
 "Cancel" = "Cancel";
 
 "Add" = "Add";
+
+"EnterTitle" = "Please enter name";
+
+"Memo" = "Memo";
+
+"Edit" = "Edit";
+
+"Camera" = "Camera";
+
+"Album" = "Album";
+
+"NoCamera" = "Camera is not available";
