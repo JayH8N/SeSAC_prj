@@ -11,6 +11,7 @@ import UIKit
 class MainViewController: BaseViewController {
     
     let mainView = MainView()
+    let repository = RefrigeratorRepository()
     
     override func loadView() {
         self.view = mainView
@@ -25,6 +26,7 @@ class MainViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        repository.realmPathCheck()
         
     }
     

@@ -11,7 +11,10 @@ import Then
 
 class AddViewController: BaseViewController {
     
+    var selectedImage: UIImage?
+    
     let viewModel = AddViewModel()
+    let repository = RefrigeratorRepository()
     
     let blurEffect = UIVisualEffectView(effect: UIBlurEffect(style: .light))
     
@@ -145,7 +148,13 @@ extension AddViewController {
 extension AddViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @objc func addButtonTapped() {
+        let data = Refrigerator(name: name.text ?? "", memo: memo.text ?? "")
+
+        DocumentManager.shared.saveImageToDocument(fileName: "Re\(data._id)", image: (selectedImage ?? UIImage(named: "basicRefiger"))!)
+
+        repository.createItem(data)
         
+        dismiss(animated: true)
     }
     
     @objc func cancelButtonTapped() {
@@ -184,9 +193,11 @@ extension AddViewController: UIImagePickerControllerDelegate, UINavigationContro
         present(alertController, animated: true, completion: nil)
     }
     
+    //이미지 선택 후 or 촬영 후 호출
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let selectedImage = info[.originalImage] as? UIImage {
-            imageView.image = selectedImage
+        if let pickedImage = info[.originalImage] as? UIImage {
+            imageView.image = pickedImage
+            selectedImage = pickedImage
         }
         picker.dismiss(animated: true, completion: nil)
     }

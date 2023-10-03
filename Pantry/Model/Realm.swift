@@ -18,15 +18,13 @@ enum State: Int, PersistableEnum {
 
 class Refrigerator: Object {
    @Persisted(primaryKey: true) var _id: ObjectId
-   @Persisted var photo: Data?
    @Persisted var name: String
    @Persisted var memo: String?
    @Persisted var ingredient: List<Items>
 
 
 
-    convenience init(photo: Data?,
-                     name: String,
+    convenience init(name: String,
                      memo: String?) {
 
        self.init()
@@ -39,7 +37,6 @@ class Refrigerator: Object {
 
 class Items: Object {
     @Persisted(primaryKey: true) var _id: ObjectId
-    @Persisted var photo: Data?
     @Persisted var state: State
     @Persisted var name: String
     @Persisted var count: Int
@@ -49,8 +46,7 @@ class Items: Object {
 
     @Persisted(originProperty: "ingredient") var mainFridge: LinkingObjects<Refrigerator> //역관계 정의
 
-    convenience init(photo: Data?,
-                     state: State,
+    convenience init(state: State,
                      name: String,
                      count: Int,
                      registDay: Date,
@@ -58,7 +54,6 @@ class Items: Object {
                      memo: String?) {
 
         self.init()
-        self.photo = photo
         self.state = state
         self.name = name
         self.count = count

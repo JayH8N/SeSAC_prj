@@ -35,6 +35,8 @@
 		78F37D4F2ACABFAE00ED4466 /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F37D4E2ACABFAE00ED4466 /* CALayer.swift */; };
 		78F37D592ACBC7BC00ED4466 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F37D582ACBC7BC00ED4466 /* AddViewController.swift */; };
 		78F37D5B2ACBDB4100ED4466 /* AddViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F37D5A2ACBDB4100ED4466 /* AddViewModel.swift */; };
+		78F37D5D2ACBEC0300ED4466 /* RefrigeratorRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F37D5C2ACBEC0300ED4466 /* RefrigeratorRepository.swift */; };
+		78F37D5F2ACC69B600ED4466 /* DocumentManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F37D5E2ACC69B600ED4466 /* DocumentManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +67,8 @@
 		78F37D4E2ACABFAE00ED4466 /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
 		78F37D582ACBC7BC00ED4466 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		78F37D5A2ACBDB4100ED4466 /* AddViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewModel.swift; sourceTree = "<group>"; };
+		78F37D5C2ACBEC0300ED4466 /* RefrigeratorRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefrigeratorRepository.swift; sourceTree = "<group>"; };
+		78F37D5E2ACC69B600ED4466 /* DocumentManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -247,6 +251,8 @@
 			isa = PBXGroup;
 			children = (
 				78F37D412AC97FCD00ED4466 /* Observable.swift */,
+				78F37D5C2ACBEC0300ED4466 /* RefrigeratorRepository.swift */,
+				78F37D5E2ACC69B600ED4466 /* DocumentManager.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -345,7 +351,9 @@
 			files = (
 				78F37D2D2AC4617A00ED4466 /* SearchView.swift in Sources */,
 				78F37D2F2AC4618400ED4466 /* SearchViewController.swift in Sources */,
+				78F37D5D2ACBEC0300ED4466 /* RefrigeratorRepository.swift in Sources */,
 				78F37D592ACBC7BC00ED4466 /* AddViewController.swift in Sources */,
+				78F37D5F2ACC69B600ED4466 /* DocumentManager.swift in Sources */,
 				785E01892ABE883E0057859F /* AppDelegate.swift in Sources */,
 				785E01AE2AC1076D0057859F /* MainView.swift in Sources */,
 				78F37D4A2ACAB3E500ED4466 /* BaseTableViewCell.swift in Sources */,

@@ -9,9 +9,13 @@ import Foundation
 
 class AddViewModel {
     
+    let repository = RefrigeratorRepository()
+    
     var name = Observable("")
     var memo = Observable("")
     var isValid = Observable(false)
+    
+    
     
     
 }
