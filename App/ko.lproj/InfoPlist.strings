@@ -1,0 +1,11 @@
+/* 
+  InfoPlist.strings
+  Pantry
+
+  Created by hoon on 2023/10/04.
+  
+*/
+
+NSCameraUsageDescription = "카메라 사용권한을 허용하시겠습니까?";
+
+NSPhotoLibraryUsageDescription = "사진첩 접근권한을 허용해주시겠습니까?";

@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>NSCameraUsageDescription</key>
-	<string>카메라 사용권한 허용하시겠습니까?</string>
-	<key>NSPhotoLibraryAddUsageDescription</key>
-	<string>앨범 사용권한 허용하시겠습니까?</string>
+	<string>NSCameraUsageDescription</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>NSPhotoLibraryUsageDescription</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>TiquiTaca-Regular.otf</string>

@@ -20,6 +20,8 @@ class MainView: BaseView {
     let addButton = UIButton.makeHighlightedButton(withImageName: "plus")
     
     
+    
+    
 //MARK: - LifeCycle
     override func configureView() {
         super.configureView()
