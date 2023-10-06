@@ -150,10 +150,10 @@ extension AddViewController: UIImagePickerControllerDelegate, UINavigationContro
     @objc func addButtonTapped() {
         let data = Refrigerator(name: name.text ?? "", memo: memo.text ?? "")
 
-        DocumentManager.shared.saveImageToDocument(fileName: "Re\(data._id)", image: (selectedImage ?? UIImage(named: "basicRefiger"))!)
+        DocumentManager.shared.saveImageToDocument(fileName: "JH\(data._id)", image: (selectedImage ?? UIImage(named: "basicRefiger"))!)
 
         repository.createItem(data)
-        
+                
         dismiss(animated: true)
     }
     

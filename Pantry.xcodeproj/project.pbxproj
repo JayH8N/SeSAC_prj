@@ -20,10 +20,16 @@
 		785E01BD2AC170F70057859F /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 785E01BC2AC170F70057859F /* Realm */; };
 		785E01BF2AC170F70057859F /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 785E01BE2AC170F70057859F /* RealmSwift */; };
 		785E01C12AC171140057859F /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E01C02AC171140057859F /* Realm.swift */; };
+		787CEAC92ACE830E0077A073 /* YPImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 787CEAC82ACE830E0077A073 /* YPImagePicker */; };
+		787CEACC2AD054C00077A073 /* ItemListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787CEACB2AD054C00077A073 /* ItemListViewController.swift */; };
+		787CEACE2AD054CC0077A073 /* ItemList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787CEACD2AD054CC0077A073 /* ItemList.swift */; };
 		78C8C24E2ACD7B75004EF75D /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 78C8C24D2ACD7B75004EF75D /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		78C8C2502ACD7B75004EF75D /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 78C8C24F2ACD7B75004EF75D /* FirebaseCrashlytics */; };
 		78C8C2522ACD8604004EF75D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 78C8C2512ACD8604004EF75D /* GoogleService-Info.plist */; };
 		78C8C2552ACD8A68004EF75D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 78C8C2542ACD8A68004EF75D /* .gitignore */; };
+		78C8C2592ACD9A7A004EF75D /* RefrigeratorHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C8C2582ACD9A7A004EF75D /* RefrigeratorHeaderView.swift */; };
+		78C8C25B2ACDACF5004EF75D /* RefrigerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C8C25A2ACDACF5004EF75D /* RefrigerCell.swift */; };
+		78C8C25D2ACDAD20004EF75D /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C8C25C2ACDAD20004EF75D /* BaseCollectionViewCell.swift */; };
 		78F37D1F2AC366A600ED4466 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78F37D212AC366A600ED4466 /* Localizable.strings */; };
 		78F37D242AC3686600ED4466 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F37D232AC3686600ED4466 /* UIColor.swift */; };
 		78F37D2A2AC45B7A00ED4466 /* TiquiTaca-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 78F37D292AC45B7A00ED4466 /* TiquiTaca-Regular.otf */; };
@@ -57,8 +63,13 @@
 		785E01B42AC108190057859F /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		785E01B62AC108250057859F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		785E01C02AC171140057859F /* Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
+		787CEACB2AD054C00077A073 /* ItemListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListViewController.swift; sourceTree = "<group>"; };
+		787CEACD2AD054CC0077A073 /* ItemList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemList.swift; sourceTree = "<group>"; };
 		78C8C2512ACD8604004EF75D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		78C8C2542ACD8A68004EF75D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		78C8C2582ACD9A7A004EF75D /* RefrigeratorHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefrigeratorHeaderView.swift; sourceTree = "<group>"; };
+		78C8C25A2ACDACF5004EF75D /* RefrigerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefrigerCell.swift; sourceTree = "<group>"; };
+		78C8C25C2ACDAD20004EF75D /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		78F37D202AC366A600ED4466 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		78F37D222AC366DD00ED4466 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		78F37D232AC3686600ED4466 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
@@ -89,6 +100,7 @@
 				78C8C24E2ACD7B75004EF75D /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				785E01BD2AC170F70057859F /* Realm in Frameworks */,
 				78C8C2502ACD7B75004EF75D /* FirebaseCrashlytics in Frameworks */,
+				787CEAC92ACE830E0077A073 /* YPImagePicker in Frameworks */,
 				785E01BA2AC170990057859F /* SnapKit in Frameworks */,
 				78F37D322AC464EA00ED4466 /* Then in Frameworks */,
 			);
@@ -155,6 +167,7 @@
 		785E01A72AC105D00057859F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				787CEACA2AD054A30077A073 /* ItemList */,
 				785E01B12AC107DD0057859F /* TabBarController.swift */,
 				78F37D3F2AC97F2500ED4466 /* Components */,
 				78F37D372AC47D3900ED4466 /* CustomView */,
@@ -208,8 +221,18 @@
 				785E01B42AC108190057859F /* BaseView.swift */,
 				785E01B62AC108250057859F /* BaseViewController.swift */,
 				78F37D492ACAB3E500ED4466 /* BaseTableViewCell.swift */,
+				78C8C25C2ACDAD20004EF75D /* BaseCollectionViewCell.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		787CEACA2AD054A30077A073 /* ItemList */ = {
+			isa = PBXGroup;
+			children = (
+				787CEACB2AD054C00077A073 /* ItemListViewController.swift */,
+				787CEACD2AD054CC0077A073 /* ItemList.swift */,
+			);
+			path = ItemList;
 			sourceTree = "<group>";
 		};
 		78F37D1C2AC3451200ED4466 /* Main */ = {
@@ -257,6 +280,8 @@
 		78F37D3F2AC97F2500ED4466 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				78C8C2582ACD9A7A004EF75D /* RefrigeratorHeaderView.swift */,
+				78C8C25A2ACDACF5004EF75D /* RefrigerCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -303,6 +328,7 @@
 				78F37D312AC464EA00ED4466 /* Then */,
 				78C8C24D2ACD7B75004EF75D /* FirebaseAnalyticsWithoutAdIdSupport */,
 				78C8C24F2ACD7B75004EF75D /* FirebaseCrashlytics */,
+				787CEAC82ACE830E0077A073 /* YPImagePicker */,
 			);
 			productName = Pantry;
 			productReference = 785E01852ABE883E0057859F /* Pantry.app */;
@@ -338,6 +364,7 @@
 				785E01BB2AC170F70057859F /* XCRemoteSwiftPackageReference "realm-swift" */,
 				78F37D302AC464EA00ED4466 /* XCRemoteSwiftPackageReference "Then" */,
 				78C8C24C2ACD7B75004EF75D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				787CEAC72ACE830D0077A073 /* XCRemoteSwiftPackageReference "YPImagePicker" */,
 			);
 			productRefGroup = 785E01862ABE883E0057859F /* Products */;
 			projectDirPath = "";
@@ -398,21 +425,26 @@
 				78F37D2D2AC4617A00ED4466 /* SearchView.swift in Sources */,
 				78F37D2F2AC4618400ED4466 /* SearchViewController.swift in Sources */,
 				78F37D5D2ACBEC0300ED4466 /* RefrigeratorRepository.swift in Sources */,
+				78C8C25B2ACDACF5004EF75D /* RefrigerCell.swift in Sources */,
 				78F37D592ACBC7BC00ED4466 /* AddViewController.swift in Sources */,
 				78F37D5F2ACC69B600ED4466 /* DocumentManager.swift in Sources */,
 				785E01892ABE883E0057859F /* AppDelegate.swift in Sources */,
+				787CEACE2AD054CC0077A073 /* ItemList.swift in Sources */,
 				785E01AE2AC1076D0057859F /* MainView.swift in Sources */,
 				78F37D4A2ACAB3E500ED4466 /* BaseTableViewCell.swift in Sources */,
 				78F37D4D2ACABAB800ED4466 /* ReuseIdentifier.swift in Sources */,
 				785E018B2ABE883E0057859F /* SceneDelegate.swift in Sources */,
 				785E01B52AC108190057859F /* BaseView.swift in Sources */,
 				78F37D242AC3686600ED4466 /* UIColor.swift in Sources */,
+				78C8C2592ACD9A7A004EF75D /* RefrigeratorHeaderView.swift in Sources */,
 				785E01B22AC107DD0057859F /* TabBarController.swift in Sources */,
+				78C8C25D2ACDAD20004EF75D /* BaseCollectionViewCell.swift in Sources */,
 				785E01B72AC108250057859F /* BaseViewController.swift in Sources */,
 				785E01B02AC107740057859F /* MainViewController.swift in Sources */,
 				785E01C12AC171140057859F /* Realm.swift in Sources */,
 				78F37D422AC97FCE00ED4466 /* Observable.swift in Sources */,
 				78F37D362AC47CE300ED4466 /* UIImage.swift in Sources */,
+				787CEACC2AD054C00077A073 /* ItemListViewController.swift in Sources */,
 				78F37D4F2ACABFAE00ED4466 /* CALayer.swift in Sources */,
 				78F37D342AC47CC300ED4466 /* UIButton.swift in Sources */,
 				78F37D5B2ACBDB4100ED4466 /* AddViewModel.swift in Sources */,
@@ -672,6 +704,14 @@
 				version = 10.42.1;
 			};
 		};
+		787CEAC72ACE830D0077A073 /* XCRemoteSwiftPackageReference "YPImagePicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Yummypets/YPImagePicker.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		78C8C24C2ACD7B75004EF75D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -705,6 +745,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 785E01BB2AC170F70057859F /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;
+		};
+		787CEAC82ACE830E0077A073 /* YPImagePicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 787CEAC72ACE830D0077A073 /* XCRemoteSwiftPackageReference "YPImagePicker" */;
+			productName = YPImagePicker;
 		};
 		78C8C24D2ACD7B75004EF75D /* FirebaseAnalyticsWithoutAdIdSupport */ = {
 			isa = XCSwiftPackageProductDependency;

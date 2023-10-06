@@ -24,7 +24,6 @@ class Observable<T> {
     }
     
     func bind(_ closure: @escaping (T) -> Void ) {
-        print(#function)
         closure(value)
         listner = closure
     }

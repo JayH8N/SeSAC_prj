@@ -28,6 +28,11 @@ class RefrigeratorRepository {
         }
     }
     
+    func fetch() -> Results<Refrigerator> {
+        var data = realm.objects(Refrigerator.self)
+        return data
+    }
+    
     func createItem(_ item: Refrigerator) {
         do {
             try! realm.write {
