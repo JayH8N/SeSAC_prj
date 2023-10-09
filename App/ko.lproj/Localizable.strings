@@ -26,4 +26,8 @@
 
 "NoCamera" = "카메라 이용할 수 없습니다";
 
-"Refigerator" = "냉장고";
+"Refrigerator" = "냉장";
+
+"Freezer" = "냉동";
+
+"All" = "전체";

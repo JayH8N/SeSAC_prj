@@ -1,16 +1,16 @@
 //
-//  ItemListViewController.swift
+//  RefigerPageViewController.swift
 //  Pantry
 //
-//  Created by hoon on 2023/10/06.
+//  Created by hoon on 2023/10/09.
 //
 
 import UIKit
 
 
-class ItemListViewController: BaseViewController {
+class RefrigerPageViewController: BaseViewController {
     
-    let mainView = ItemList()
+    let mainView = RefigerPageView()
     
     override func loadView() {
         view = mainView
@@ -26,11 +26,9 @@ class ItemListViewController: BaseViewController {
         
     }
     
-    
     override func setConstraints() {
         
     }
-    
     
     
 }

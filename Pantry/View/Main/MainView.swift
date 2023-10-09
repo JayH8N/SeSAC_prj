@@ -9,13 +9,15 @@ import UIKit
 import Then
 import SnapKit
 import RealmSwift
-
+import FSPagerView
 
 class MainView: BaseView {
     
     let repository = RefrigeratorRepository()
     
     var stored: Results<Refrigerator>!
+    
+    weak var delegate: didSelectProtocol?
 //MARK: - Properties
     //blur
     let blurEffect = UIVisualEffectView(effect: UIBlurEffect(style: .light))
@@ -23,16 +25,21 @@ class MainView: BaseView {
     //냉장고 추가버튼
     let addButton = UIButton.makeHighlightedButton(withImageName: "plus")
     
-    lazy var refrigerCollection = UICollectionView(frame: .zero, collectionViewLayout: mainCollectionViewLayout()).then {
+
+    
+    lazy var refrigerCollection = FSPagerView(frame: .zero).then {
         $0.dataSource = self
         $0.delegate = self
-        $0.backgroundColor = .clear//.white.withAlphaComponent(0.5)
-        $0.showsHorizontalScrollIndicator = false
         $0.register(RefrigerCell.self, forCellWithReuseIdentifier: RefrigerCell.identifier)
+        $0.backgroundColor = .clear
         $0.layer.shadowColor = UIColor.black.cgColor
         $0.layer.shadowOffset = CGSize(width: 0, height: 0)
         $0.layer.shadowRadius = 10
         $0.layer.shadowOpacity = 0.5
+        let size = UIScreen.main.bounds.width
+        $0.itemSize = CGSize(width: size * 0.6, height: size * 0.5)
+        $0.interitemSpacing = 20
+        $0.transformer = FSPagerViewTransformer(type: .overlap)
     }
 
 //MARK: - Setting
@@ -59,37 +66,21 @@ class MainView: BaseView {
     }
 }
 
-
-//layout
-extension MainView {
-    func mainCollectionViewLayout() -> UICollectionViewLayout {
-        let layout = UICollectionViewFlowLayout()
-        layout.minimumInteritemSpacing = 10
-        layout.scrollDirection = .horizontal
-        let size = UIScreen.main.bounds.width
-        layout.itemSize = CGSize(width: size * 0.5, height: size * 0.5)
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 9, bottom: 0, right: 9)
-        return layout
-    }
-}
-
-extension MainView: UICollectionViewDelegate, UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-//        return stored.count
-        
+extension MainView: FSPagerViewDelegate, FSPagerViewDataSource {
+    func numberOfItems(in pagerView: FSPagerView) -> Int {
         return 10
     }
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
+        let cell = pagerView.dequeueReusableCell(withReuseIdentifier: RefrigerCell.identifier, at: index) as! RefrigerCell
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RefrigerCell.identifier, for: indexPath) as! RefrigerCell
-        
-//        let stored = self.stored[indexPath.item]
-//
-//        cell.setData(data: stored)
         
         return cell
+    }
+    
+    func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
+        let vc = DetailPagerTabViewController()
+        delegate?.didselectItemAt(vc: vc)
     }
     
     

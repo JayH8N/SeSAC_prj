@@ -15,6 +15,7 @@ class MainViewController: BaseViewController {
     
     override func loadView() {
         self.view = mainView
+        mainView.delegate = self
     }
     
     
@@ -30,6 +31,7 @@ class MainViewController: BaseViewController {
         
         mainView.stored = repository.fetch()
         print(mainView.stored)
+        
     }
     
     override func setNavigationBar() {
@@ -52,5 +54,11 @@ extension MainViewController {
         let nav = UINavigationController(rootViewController: vc)
         
         present(nav, animated: true)
+    }
+}
+
+extension MainViewController: didSelectProtocol {
+    func didselectItemAt(vc: UIViewController) {
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

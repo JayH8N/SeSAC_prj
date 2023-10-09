@@ -8,8 +8,10 @@
 import UIKit
 import SnapKit
 import Then
+import YPImagePicker
 
 class AddViewController: BaseViewController {
+    
     
     var selectedImage: UIImage?
     
@@ -142,6 +144,9 @@ extension AddViewController {
         self.navigationItem.title = addRefriger
         self.navigationItem.rightBarButtonItem = .init(title: add, style: .done, target: self, action: #selector(addButtonTapped))
         self.navigationItem.leftBarButtonItem = .init(title: cancel, style: .done, target: self, action: #selector(cancelButtonTapped))
+        
+        navigationItem.rightBarButtonItem?.tintColor = UIColor.blue
+        navigationItem.leftBarButtonItem?.tintColor = UIColor.red
     }
 }
 
@@ -153,6 +158,9 @@ extension AddViewController: UIImagePickerControllerDelegate, UINavigationContro
         DocumentManager.shared.saveImageToDocument(fileName: "JH\(data._id)", image: (selectedImage ?? UIImage(named: "basicRefiger"))!)
 
         repository.createItem(data)
+        
+        let vc = MainView()
+        vc.refrigerCollection.reloadData()
                 
         dismiss(animated: true)
     }
@@ -162,55 +170,23 @@ extension AddViewController: UIImagePickerControllerDelegate, UINavigationContro
     }
     
     @objc func imageViewTapped() {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
+
+        var config = YPImagePickerConfiguration()
+        config.library.onlySquare = true
+        config.startOnScreen = .library
+        let picker = YPImagePicker(configuration: config)
         
-        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
-        
-        // 카메라로 찍기
-        let cameraAction = UIAlertAction(title: NSLocalizedString("Camera", comment: ""), style: .default) { _ in
-            if UIImagePickerController.isSourceTypeAvailable(.camera) {
-                imagePicker.sourceType = .camera
-                self.present(imagePicker, animated: true, completion: nil)
-            } else {
-                self.showAlert(message: NSLocalizedString("NoCamera", comment: ""))
+        // 이미지 선택이 완료
+        picker.didFinishPicking { [unowned picker] items, _ in
+            if let photo = items.singlePhoto {
+                self.imageView.image = photo.image
             }
+            
+            picker.dismiss(animated: true, completion: nil)
         }
         
-        // 앨범에서 선택
-        let libraryAction = UIAlertAction(title: NSLocalizedString("Album", comment: ""), style: .default) { _ in
-            imagePicker.sourceType = .photoLibrary
-            self.present(imagePicker, animated: true, completion: nil)
-        }
-        
-        // 취소
-        let cancelAction = UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil)
-        
-        alertController.addAction(cameraAction)
-        alertController.addAction(libraryAction)
-        alertController.addAction(cancelAction)
-        
-        present(alertController, animated: true, completion: nil)
-    }
-    
-    //이미지 선택 후 or 촬영 후 호출
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let pickedImage = info[.originalImage] as? UIImage {
-            imageView.image = pickedImage
-            selectedImage = pickedImage
-        }
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
-    func showAlert(message: String) {
-        let alertController = UIAlertController(title: "알림", message: message, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "확인", style: .default, handler: nil)
-        alertController.addAction(okAction)
-        present(alertController, animated: true, completion: nil)
+        // YPImagePicker를 표시
+        present(picker, animated: true, completion: nil)
     }
     
 }

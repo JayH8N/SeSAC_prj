@@ -26,4 +26,8 @@
 
 "NoCamera" = "Camera is not available";
 
-"Refigerator" = "Refigerator";
+"Refrigerator" = "Refrigerator";
+
+"Freezer" = "Freezer";
+
+"All" = "All";

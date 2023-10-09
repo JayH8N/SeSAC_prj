@@ -8,8 +8,22 @@
 import UIKit
 import Then
 import SnapKit
+import FSPagerView
 
-class RefrigerCell: BaseCollectionViewCell {
+class RefrigerCell: FSPagerViewCell {
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        configureView()
+        setConstraints()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
     
     
     let image = UIImageView().then {
@@ -22,7 +36,7 @@ class RefrigerCell: BaseCollectionViewCell {
     }
     
 
-    override func configureView() {
+    func configureView() {
         contentView.backgroundColor = UIColor.refrigerCellBackground
         contentView.layer.cornerRadius = 15
         contentView.addSubview(image)
@@ -30,7 +44,7 @@ class RefrigerCell: BaseCollectionViewCell {
     }
     
     
-    override func setConstraints() {
+    func setConstraints() {
         image.snp.makeConstraints {
             $0.top.leading.trailing.equalToSuperview().inset(20)
             $0.height.equalTo(self.snp.height).multipliedBy(0.4)
