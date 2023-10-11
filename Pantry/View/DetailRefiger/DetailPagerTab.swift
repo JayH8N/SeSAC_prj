@@ -20,7 +20,6 @@ class DetailPagerTabViewController: TabmanViewController, PageboyViewControllerD
         configureTabman()
     }
     
-    
 }
 
 extension DetailPagerTabViewController {

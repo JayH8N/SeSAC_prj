@@ -30,6 +30,7 @@
 		787CEAE62AD436AE0077A073 /* RefigerPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787CEAE52AD436AE0077A073 /* RefigerPageView.swift */; };
 		787CEAE82AD436B70077A073 /* RefrigerPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787CEAE72AD436B70077A073 /* RefrigerPageViewController.swift */; };
 		787CEAEB2AD452040077A073 /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = 787CEAEA2AD452040077A073 /* Tabman */; };
+		787CEAED2AD461140077A073 /* ItemsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787CEAEC2AD461140077A073 /* ItemsCell.swift */; };
 		78C8C24E2ACD7B75004EF75D /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 78C8C24D2ACD7B75004EF75D /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		78C8C2502ACD7B75004EF75D /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 78C8C24F2ACD7B75004EF75D /* FirebaseCrashlytics */; };
 		78C8C2522ACD8604004EF75D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 78C8C2512ACD8604004EF75D /* GoogleService-Info.plist */; };
@@ -81,6 +82,7 @@
 		787CEAE32AD4369B0077A073 /* FreezerPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreezerPageView.swift; sourceTree = "<group>"; };
 		787CEAE52AD436AE0077A073 /* RefigerPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefigerPageView.swift; sourceTree = "<group>"; };
 		787CEAE72AD436B70077A073 /* RefrigerPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefrigerPageViewController.swift; sourceTree = "<group>"; };
+		787CEAEC2AD461140077A073 /* ItemsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsCell.swift; sourceTree = "<group>"; };
 		78C8C2512ACD8604004EF75D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		78C8C2542ACD8A68004EF75D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		78C8C2582ACD9A7A004EF75D /* RefrigeratorHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefrigeratorHeaderView.swift; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 			children = (
 				78C8C2582ACD9A7A004EF75D /* RefrigeratorHeaderView.swift */,
 				78C8C25A2ACDACF5004EF75D /* RefrigerCell.swift */,
+				787CEAEC2AD461140077A073 /* ItemsCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -535,6 +538,7 @@
 			files = (
 				78F37D2D2AC4617A00ED4466 /* SearchView.swift in Sources */,
 				78F37D2F2AC4618400ED4466 /* SearchViewController.swift in Sources */,
+				787CEAED2AD461140077A073 /* ItemsCell.swift in Sources */,
 				787CEAE42AD4369B0077A073 /* FreezerPageView.swift in Sources */,
 				787CEAD42AD434E30077A073 /* DetailPagerTab.swift in Sources */,
 				78F37D5D2ACBEC0300ED4466 /* RefrigeratorRepository.swift in Sources */,
@@ -729,6 +733,8 @@
 				DEVELOPMENT_TEAM = 57CCR42RDS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = App/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = NSCameraUsageDescription;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = NSPhotoLibraryUsageDescription;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -739,7 +745,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.junghoon.Pantry;
+				PRODUCT_BUNDLE_IDENTIFIER = com.junghoon.Pantrytest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -762,6 +768,8 @@
 				DEVELOPMENT_TEAM = 57CCR42RDS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = App/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = NSCameraUsageDescription;
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = NSPhotoLibraryUsageDescription;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -772,7 +780,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.junghoon.Pantry;
+				PRODUCT_BUNDLE_IDENTIFIER = com.junghoon.Pantrytest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

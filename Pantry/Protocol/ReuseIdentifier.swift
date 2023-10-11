@@ -24,3 +24,9 @@ extension RefrigerCell: ReuseIdentifierProtocol {
         return String(describing: self)
     }
 }
+
+extension ItemsCell: ReuseIdentifierProtocol {
+    static var identifier: String {
+        return String(describing: self)
+    }
+}
