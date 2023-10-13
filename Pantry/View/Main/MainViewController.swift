@@ -13,9 +13,10 @@ class MainViewController: BaseViewController {
     let mainView = MainView()
     let repository = RefrigeratorRepository()
     
+    
     override func loadView() {
         self.view = mainView
-        mainView.delegate = self
+        
     }
     
     
@@ -30,18 +31,24 @@ class MainViewController: BaseViewController {
         repository.realmPathCheck()
         
         mainView.stored = repository.fetch()
+        mainView.hapticFeedBack.prepare()
         print(mainView.stored)
         
+        mainView.delegate = self
+        
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: Notification.Name("ReloadData"), object: nil)
     }
     
     override func setNavigationBar() {
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "TiquiTaca-Regular", size: 30)!]
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "TAEBAEK milkyway", size: 30)!]
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: mainView.addButton)
     }
     
     override func configureView() {
         mainView.addButton.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
+        
     }
     
     
@@ -54,6 +61,10 @@ extension MainViewController {
         let nav = UINavigationController(rootViewController: vc)
         
         present(nav, animated: true)
+    }
+    
+    @objc func reloadData() {
+        mainView.refrigerCollection.reloadData()
     }
 }
 

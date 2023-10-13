@@ -53,5 +53,18 @@ class RefrigeratorRepository {
         }
     }
     
+    func updateItem(id: ObjectId, name: String, memo: String) {
+        do {
+            try realm.write {
+                //realm.add(item, update: .modified)
+                
+                realm.create(Refrigerator.self, value: ["_id": id, "name": name, "memo": memo] as [String : Any], update: .modified)
+            }
+        } catch {
+            print("") // NSlog
+        }
+    }
+    
+    
 
 }

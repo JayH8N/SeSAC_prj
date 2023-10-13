@@ -31,6 +31,9 @@
 		787CEAE82AD436B70077A073 /* RefrigerPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787CEAE72AD436B70077A073 /* RefrigerPageViewController.swift */; };
 		787CEAEB2AD452040077A073 /* Tabman in Frameworks */ = {isa = PBXBuildFile; productRef = 787CEAEA2AD452040077A073 /* Tabman */; };
 		787CEAED2AD461140077A073 /* ItemsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 787CEAEC2AD461140077A073 /* ItemsCell.swift */; };
+		788FE3012AD71FC60018B1C9 /* EditRefrigerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788FE3002AD71FC60018B1C9 /* EditRefrigerViewController.swift */; };
+		788FE3032AD736EF0018B1C9 /* SwitchScreenProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788FE3022AD736EF0018B1C9 /* SwitchScreenProtocol.swift */; };
+		788FE3092AD74C030018B1C9 /* TAEBAEK milkyway.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 788FE3082AD74C030018B1C9 /* TAEBAEK milkyway.ttf */; };
 		78C8C24E2ACD7B75004EF75D /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 78C8C24D2ACD7B75004EF75D /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		78C8C2502ACD7B75004EF75D /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 78C8C24F2ACD7B75004EF75D /* FirebaseCrashlytics */; };
 		78C8C2522ACD8604004EF75D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 78C8C2512ACD8604004EF75D /* GoogleService-Info.plist */; };
@@ -83,6 +86,9 @@
 		787CEAE52AD436AE0077A073 /* RefigerPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefigerPageView.swift; sourceTree = "<group>"; };
 		787CEAE72AD436B70077A073 /* RefrigerPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefrigerPageViewController.swift; sourceTree = "<group>"; };
 		787CEAEC2AD461140077A073 /* ItemsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsCell.swift; sourceTree = "<group>"; };
+		788FE3002AD71FC60018B1C9 /* EditRefrigerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRefrigerViewController.swift; sourceTree = "<group>"; };
+		788FE3022AD736EF0018B1C9 /* SwitchScreenProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchScreenProtocol.swift; sourceTree = "<group>"; };
+		788FE3082AD74C030018B1C9 /* TAEBAEK milkyway.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TAEBAEK milkyway.ttf"; sourceTree = "<group>"; };
 		78C8C2512ACD8604004EF75D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		78C8C2542ACD8A68004EF75D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		78C8C2582ACD9A7A004EF75D /* RefrigeratorHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefrigeratorHeaderView.swift; sourceTree = "<group>"; };
@@ -199,6 +205,7 @@
 		785E01A72AC105D00057859F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				788FE2FF2AD71F9C0018B1C9 /* EditRefrigerator */,
 				785E01B12AC107DD0057859F /* TabBarController.swift */,
 				787CEAD22AD434B10077A073 /* DetailRefiger */,
 				78F37D3F2AC97F2500ED4466 /* Components */,
@@ -296,6 +303,14 @@
 			path = FreezerPage;
 			sourceTree = "<group>";
 		};
+		788FE2FF2AD71F9C0018B1C9 /* EditRefrigerator */ = {
+			isa = PBXGroup;
+			children = (
+				788FE3002AD71FC60018B1C9 /* EditRefrigerViewController.swift */,
+			);
+			path = EditRefrigerator;
+			sourceTree = "<group>";
+		};
 		78F37D1C2AC3451200ED4466 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -308,6 +323,7 @@
 			isa = PBXGroup;
 			children = (
 				78F37D292AC45B7A00ED4466 /* TiquiTaca-Regular.otf */,
+				788FE3082AD74C030018B1C9 /* TAEBAEK milkyway.ttf */,
 			);
 			name = Font;
 			path = "래ㅜㅅ";
@@ -363,6 +379,7 @@
 			children = (
 				78F37D4C2ACABAB800ED4466 /* ReuseIdentifier.swift */,
 				787CEAD02AD3F5AB0077A073 /* didSelectProtocol.swift */,
+				788FE3022AD736EF0018B1C9 /* SwitchScreenProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -459,6 +476,7 @@
 				78C8C2552ACD8A68004EF75D /* .gitignore in Resources */,
 				785E01952ABE883F0057859F /* LaunchScreen.storyboard in Resources */,
 				78F37D1F2AC366A600ED4466 /* Localizable.strings in Resources */,
+				788FE3092AD74C030018B1C9 /* TAEBAEK milkyway.ttf in Resources */,
 				785E01922ABE883F0057859F /* Assets.xcassets in Resources */,
 				78C8C2522ACD8604004EF75D /* GoogleService-Info.plist in Resources */,
 				78F37D622ACCE6BA00ED4466 /* InfoPlist.strings in Resources */,
@@ -551,7 +569,9 @@
 				787CEAD12AD3F5AB0077A073 /* didSelectProtocol.swift in Sources */,
 				78F37D4A2ACAB3E500ED4466 /* BaseTableViewCell.swift in Sources */,
 				787CEAE62AD436AE0077A073 /* RefigerPageView.swift in Sources */,
+				788FE3012AD71FC60018B1C9 /* EditRefrigerViewController.swift in Sources */,
 				787CEADC2AD435ED0077A073 /* AllPageViewController.swift in Sources */,
+				788FE3032AD736EF0018B1C9 /* SwitchScreenProtocol.swift in Sources */,
 				78F37D4D2ACABAB800ED4466 /* ReuseIdentifier.swift in Sources */,
 				785E018B2ABE883E0057859F /* SceneDelegate.swift in Sources */,
 				785E01B52AC108190057859F /* BaseView.swift in Sources */,

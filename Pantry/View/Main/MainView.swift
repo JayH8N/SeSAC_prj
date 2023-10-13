@@ -12,24 +12,25 @@ import RealmSwift
 import FSPagerView
 
 class MainView: BaseView {
-    
+
     let repository = RefrigeratorRepository()
     
     var stored: Results<Refrigerator>!
     
+    let hapticFeedBack = UISelectionFeedbackGenerator()
+    
     weak var delegate: didSelectProtocol?
+    
 //MARK: - Properties
     //blur
     let blurEffect = UIVisualEffectView(effect: UIBlurEffect(style: .light))
         
     //냉장고 추가버튼
-    let addButton = UIButton.makeHighlightedButton(withImageName: "plus")
+    let addButton = UIButton.makeHighlightedButton(withImageName: "plus", size: 30)
     
 
     
     lazy var refrigerCollection = FSPagerView(frame: .zero).then {
-        $0.dataSource = self
-        $0.delegate = self
         $0.register(RefrigerCell.self, forCellWithReuseIdentifier: RefrigerCell.identifier)
         $0.backgroundColor = .clear
         $0.layer.shadowColor = UIColor.black.cgColor
@@ -45,6 +46,9 @@ class MainView: BaseView {
 //MARK: - Setting
     override func configureView() {
         super.configureView()
+        refrigerCollection.dataSource = self
+        refrigerCollection.delegate = self
+        
         addSubview(blurEffect)
         addSubview(refrigerCollection)
     }
@@ -68,20 +72,45 @@ class MainView: BaseView {
 
 extension MainView: FSPagerViewDelegate, FSPagerViewDataSource {
     func numberOfItems(in pagerView: FSPagerView) -> Int {
-        return 10
+        return stored.count
     }
     
     func pagerView(_ pagerView: FSPagerView, cellForItemAt index: Int) -> FSPagerViewCell {
         let cell = pagerView.dequeueReusableCell(withReuseIdentifier: RefrigerCell.identifier, at: index) as! RefrigerCell
         
+        cell.switchDelegate = self
+        
+        let data = stored[index]
+        
+        cell.setData(data: data)
+        cell.data = data
         
         return cell
     }
     
     func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
+        let data = stored[index]
+        
         let vc = DetailPagerTabViewController()
+        
+        vc.rfName = data.name
+        
         delegate?.didselectItemAt(vc: vc)
     }
     
+    func pagerViewWillBeginDragging(_ pagerView: FSPagerView) {
+        hapticFeedBack.selectionChanged()
+    }
     
+    func pagerViewDidEndDecelerating(_ pagerView: FSPagerView) {
+        hapticFeedBack.prepare()
+    }
+    
+}
+
+
+extension MainView: SwitchScreenProtocol {
+    func switchScreen(nav: UINavigationController) {
+        self.window?.rootViewController?.present(nav, animated: true)
+    }
 }

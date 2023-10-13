@@ -14,13 +14,22 @@ extension UIButton {
 }
 
 extension UIButton {
-    static func makeHighlightedButton(withImageName imageName: String) -> UIButton {
-        let buttonImage = UIImage.SymbolConfiguration(pointSize: 30, weight: .regular, scale: .small)
+    static func makeHighlightedButton(withImageName imageName: String, size: CGFloat) -> UIButton {
+        let buttonImage = UIImage.SymbolConfiguration(pointSize: size, weight: .regular, scale: .small)
         let image = UIImage(systemName: imageName, withConfiguration: buttonImage)
         
         let button = HighlightedButton()
         button.setImage(image, for: .normal)
         
+        button.addTarget(self, action: #selector(hapticFeedBackGenerator), for: .touchUpInside)
+        
         return button
+    }
+    
+    @objc private static func hapticFeedBackGenerator() {
+        let haptic = UIImpactFeedbackGenerator(style: .medium)
+        haptic.prepare()
+        
+        haptic.impactOccurred()
     }
 }

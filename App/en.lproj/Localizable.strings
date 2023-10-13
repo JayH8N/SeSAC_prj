@@ -35,3 +35,7 @@
 "addFood" = "addFood";
 
 "addFoodBarcode" = "Add as Barcode";
+
+"Delete" = "Delete";
+
+"Update" = "Update";

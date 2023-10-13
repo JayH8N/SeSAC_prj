@@ -43,7 +43,7 @@ class DocumentManager {
         if FileManager.default.fileExists(atPath: fileURL.path) {
             return UIImage(contentsOfFile: fileURL.path)! //존재할 경우
         } else {
-            return UIImage(systemName: "star.fill")! //존재하지 않을 경우
+            return UIImage(named: "basicRefiger")! //존재하지 않을 경우
         }
     }
     

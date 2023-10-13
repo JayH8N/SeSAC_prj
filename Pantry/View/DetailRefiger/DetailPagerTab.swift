@@ -14,10 +14,13 @@ class DetailPagerTabViewController: TabmanViewController, PageboyViewControllerD
     
     private var viewControllers: Array<UIViewController> = []
     
+    var rfName: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureTabman()
+        title = rfName
     }
     
 }
