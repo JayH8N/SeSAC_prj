@@ -95,7 +95,7 @@ extension MainView: FSPagerViewDelegate, FSPagerViewDataSource {
         
         vc.rfName = data.name
         
-        delegate?.didselectItemAt(vc: vc)
+        delegate?.pushView(vc: vc)
     }
     
     func pagerViewWillBeginDragging(_ pagerView: FSPagerView) {

@@ -39,3 +39,11 @@
 "Delete" = "Delete";
 
 "Update" = "Update";
+
+"AddFoods" = "AddFoods";
+
+"FoodName" = "FoodName";
+
+"Expiry date" = "Expiry date";
+
+"Quantity" =  "Quantity";

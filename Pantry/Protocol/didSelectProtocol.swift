@@ -8,5 +8,5 @@
 import UIKit
 
 protocol didSelectProtocol: AnyObject {
-    func didselectItemAt(vc: UIViewController)
+    func pushView(vc: UIViewController)
 }

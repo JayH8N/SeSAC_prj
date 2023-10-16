@@ -69,7 +69,7 @@ extension MainViewController {
 }
 
 extension MainViewController: didSelectProtocol {
-    func didselectItemAt(vc: UIViewController) {
+    func pushView(vc: UIViewController) {
         navigationController?.pushViewController(vc, animated: true)
     }
 }

@@ -6,7 +6,12 @@
 //
 
 import UIKit
+import YPImagePicker
 
 protocol SwitchScreenProtocol: AnyObject {
     func switchScreen(nav: UINavigationController)
+}
+
+protocol YPImagePickerProtocol: AnyObject {
+    func presentImagePicker(picker: YPImagePicker)
 }

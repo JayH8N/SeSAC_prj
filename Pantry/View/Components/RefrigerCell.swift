@@ -30,8 +30,7 @@ class RefrigerCell: FSPagerViewCell {
     }
     
     let title = UILabel().then {
-        $0.font = .boldSystemFont(ofSize: 20)
-        $0.text = "냉장고 이름"
+        $0.font = .boldSystemFont(ofSize: 23)
     }
     
     
@@ -73,7 +72,7 @@ class RefrigerCell: FSPagerViewCell {
         }
 
         title.snp.makeConstraints {
-            $0.top.equalTo(image.snp.bottom).offset(5)
+            $0.top.equalTo(image.snp.bottom).offset(10)
             $0.leading.equalTo(image.snp.leading)
         }
         

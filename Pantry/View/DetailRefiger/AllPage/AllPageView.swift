@@ -9,9 +9,15 @@ import UIKit
 import Then
 import SnapKit
 import JJFloatingActionButton
+import BarcodeScanner
 
 class AllPageView: BaseView {
     
+    
+    weak var switchDelegate: SwitchScreenProtocol?
+    weak var delegate: didSelectProtocol?
+    
+//MARK: - Properties
     let blurEffect = UIVisualEffectView(effect: UIBlurEffect(style: .light))
     
     lazy var allCollectionView = UICollectionView(frame: .zero, collectionViewLayout: allCollectionViewLayout()).then {
@@ -20,6 +26,8 @@ class AllPageView: BaseView {
         $0.dataSource = self
         $0.register(ItemsCell.self, forCellWithReuseIdentifier: ItemsCell.identifier)
     }
+    
+    
     
     let addFood = NSLocalizedString("addFood", comment: "")
     let addFoodBarcode = NSLocalizedString("addFoodBarcode", comment: "")
@@ -30,14 +38,28 @@ class AllPageView: BaseView {
         
         
         $0.addItem(title: addFood, image: UIImage(systemName: "square")) { _ in
-            print("firstButton")
+            let vc = AddFoodsViewController()
+            let nav = UINavigationController(rootViewController: vc)
+            
+            self.switchDelegate?.switchScreen(nav: nav)
         }
+        
         $0.addItem(title: addFoodBarcode, image: UIImage(systemName: "barcode.viewfinder")) { _ in
-            print("SecondButton")
+            let barcodeScanner = self.makeBarcodeScannerVC()
+            self.delegate?.pushView(vc: barcodeScanner)
+               
         }
+        
         $0.buttonImageSize = CGSize(width: 40, height: 40)
     }
     
+    private func makeBarcodeScannerVC() -> BarcodeScannerViewController {
+        let viewController = BarcodeScannerViewController()
+        viewController.codeDelegate = self
+        viewController.errorDelegate = self
+        viewController.dismissalDelegate = self
+        return viewController
+    }
     
     
     override func configureView() {
@@ -92,4 +114,30 @@ extension AllPageView: UICollectionViewDelegate, UICollectionViewDataSource {
     }
     
     
+}
+
+extension AllPageView: BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate {
+    func scanner(_ controller: BarcodeScanner.BarcodeScannerViewController, didCaptureCode code: String, type: String) {
+        print("Barcode====== \(code)")
+        print("Type======= \(type)")
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            controller.reset()
+            controller.navigationController?.popViewController(animated: true)
+            
+            let vc = AddFoodsViewController()
+            let nav = UINavigationController(rootViewController: vc)
+            
+            self.switchDelegate?.switchScreen(nav: nav)
+        }
+    }
+
+    func scanner(_ controller: BarcodeScanner.BarcodeScannerViewController, didReceiveError error: Error) {
+        print(error)
+    }
+
+    func scannerDidDismiss(_ controller: BarcodeScanner.BarcodeScannerViewController) {
+        controller.dismiss(animated: true)
+    }
+
 }

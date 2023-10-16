@@ -6,8 +6,10 @@
 //
 
 import UIKit
+import BarcodeScanner
 
 class AllPageViewController: BaseViewController {
+    
     
     let mainView = AllPageView()
     
@@ -18,6 +20,8 @@ class AllPageViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        mainView.switchDelegate = self
+        mainView.delegate = self
     }
     
     
@@ -27,6 +31,18 @@ class AllPageViewController: BaseViewController {
     
     override func setConstraints() {
         
+    }
+    
+    
+}
+
+extension AllPageViewController: SwitchScreenProtocol, didSelectProtocol {
+    func pushView(vc: UIViewController) {
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func switchScreen(nav: UINavigationController) {
+        present(nav, animated: true)
     }
     
     

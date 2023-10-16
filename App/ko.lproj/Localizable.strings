@@ -39,3 +39,11 @@
 "Delete" = "삭제";
 
 "Update" = "수정";
+
+"AddFoods" = "식재료 추가";
+
+"FoodName" = "식재료 이름";
+
+"Expiry date" = "유통기한";
+
+"Quantity" =  "수량";
