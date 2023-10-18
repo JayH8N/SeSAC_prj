@@ -24,11 +24,14 @@ class FreezerPageView: BaseView {
         $0.tintColor = .black
     }
     
+    let introDuctionButton = UIButton.makeHighlightedButton(withImageName: "exclamationmark.circle", size: 28)
+    
     override func configureView() {
         super.configureView()
         addSubview(blurEffect)
         addSubview(filterButton)
         addSubview(allCollectionView)
+        addSubview(introDuctionButton)
     }
     
     override func setConstraints() {
@@ -44,6 +47,11 @@ class FreezerPageView: BaseView {
         allCollectionView.snp.makeConstraints {
             $0.top.equalTo(filterButton.snp.bottom).offset(4)
             $0.leading.trailing.bottom.equalTo(self.safeAreaLayoutGuide)
+        }
+        
+        introDuctionButton.snp.makeConstraints {
+            $0.top.equalTo(self.safeAreaLayoutGuide).inset(8)
+            $0.trailing.equalTo(self.snp.trailing).inset(18)
         }
     }
     

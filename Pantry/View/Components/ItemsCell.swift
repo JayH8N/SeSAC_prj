@@ -100,7 +100,7 @@ class ItemsCell: BaseCollectionViewCell {
             $0.bottom.equalTo(itemImage.snp.bottom)
         }
         
-        progressView.setProgress(0.5, animated: true)
+        progressView.setProgress(0.7, animated: true)
         progressView.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(10)
             $0.height.equalTo(16)
@@ -121,7 +121,7 @@ extension ItemsCell {
         }
         
         expDateLabel.text = "Exp.\n\(formatDate(date: data.expiryDay))"
-        var percentage = calculateProgressPercentage(currentDate: Date(), expirationDate: data.expiryDay)
+        let percentage = calculateProgressPercentage(currentDate: Date(), expirationDate: data.expiryDay)
         
         progressView.setProgress(percentage, animated: true)
     }

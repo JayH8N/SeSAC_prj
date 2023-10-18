@@ -27,9 +27,6 @@ extension UIButton {
     }
     
     @objc private static func hapticFeedBackGenerator() {
-        let haptic = UIImpactFeedbackGenerator(style: .medium)
-        haptic.prepare()
-        
-        haptic.impactOccurred()
+        HapticFeedbackManager.shared.provideFeedback()
     }
 }

@@ -32,6 +32,13 @@ class AllPageView: BaseView {
         $0.tintColor = .black
     }
     
+    let bgView = UIView().then {
+        $0.backgroundColor = .black
+        $0.alpha = 0
+    }
+    
+    
+    let introDuctionButton = UIButton.makeHighlightedButton(withImageName: "exclamationmark.circle", size: 28)
     
     
     
@@ -39,9 +46,10 @@ class AllPageView: BaseView {
         $0.buttonImage = UIImage(systemName: "plus")
         $0.buttonColor = UIColor.black
         
-        
         $0.addItem(title: NSLocalizedString("AddItem", comment: ""),
                    image: UIImage(systemName: "square")) { _ in
+            
+            HapticFeedbackManager.shared.provideFeedback()
             let vc = AddItemViewController()
             let nav = UINavigationController(rootViewController: vc)
             
@@ -50,6 +58,7 @@ class AllPageView: BaseView {
         
         $0.addItem(title: NSLocalizedString("addItemBarcode", comment: ""),
                    image: UIImage(systemName: "barcode.viewfinder")) { _ in
+            HapticFeedbackManager.shared.provideFeedback()
             let barcodeScanner = self.makeBarcodeScannerVC()
             self.delegate?.pushView(vc: barcodeScanner)
                
@@ -73,6 +82,7 @@ class AllPageView: BaseView {
         addSubview(filterButton)
         addSubview(allCollectionView)
         addSubview(actionButton)
+        addSubview(introDuctionButton)
         
     }
     
@@ -96,6 +106,10 @@ class AllPageView: BaseView {
             $0.bottom.equalTo(self.safeAreaLayoutGuide.snp.bottom).inset(30)
         }
         
+        introDuctionButton.snp.makeConstraints {
+            $0.top.equalTo(self.safeAreaLayoutGuide).inset(8)
+            $0.trailing.equalTo(self.snp.trailing).inset(18)
+        }
     }
     
     

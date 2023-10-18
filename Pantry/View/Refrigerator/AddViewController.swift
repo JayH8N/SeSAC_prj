@@ -1,8 +1,8 @@
 //
-//  EditRefrigerViewController.swift
+//  AddViewController.swift
 //  Pantry
 //
-//  Created by hoon on 2023/10/12.
+//  Created by hoon on 2023/10/03.
 //
 
 import UIKit
@@ -10,13 +10,15 @@ import SnapKit
 import Then
 import YPImagePicker
 
-class EditRefrigerViewController: BaseViewController {
+class AddViewController: BaseViewController {
     
+    
+    var selectedImage: UIImage?
+    
+    
+    let viewModel = AddViewModel()
     let repository = RefrigeratorRepository()
     
-    var data: Refrigerator?
-    
-//MARK: - Properties
     let blurEffect = UIVisualEffectView(effect: UIBlurEffect(style: .light))
     
     let uiView = UIView().then {
@@ -25,6 +27,7 @@ class EditRefrigerViewController: BaseViewController {
     }
     
     let imageView = UIImageView().then {
+        $0.image = UIImage(named: "basicRefiger")
         $0.contentMode = .scaleAspectFill
     }
     
@@ -52,24 +55,27 @@ class EditRefrigerViewController: BaseViewController {
         $0.backgroundColor = .white
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         initNav()
+        setBind()
         
-        initialSetting()
-
+        self.hideKeyboardWhenTappedAround()
     }
     
-    private func initialSetting() {
+    private func setBind() {
+        viewModel.name.bind { [weak self] name in
+            self?.name.text = name
+            self?.viewModel.isValid.value = !name.isEmpty
+        }
         
-        guard let data = data else { return }
-        
-        imageView.image = DocumentManager.shared.loadImageFromDocument(fileName: "JH\(data._id)")
-        
-        name.text = data.name
-        memo.text = data.memo
+        viewModel.isValid.bind { [weak self] isValid in
+            self?.navigationItem.rightBarButtonItem?.isEnabled = isValid
+        }
     }
+    
     
     override func configureView() {
         view.addSubview(blurEffect)
@@ -83,6 +89,17 @@ class EditRefrigerViewController: BaseViewController {
         
         view.addSubview(name)
         view.addSubview(memo)
+        
+        name.addTarget(self, action: #selector(nameTextChanged), for: .editingChanged)
+        memo.addTarget(self, action: #selector(memoTextChanged), for: .editingChanged)
+    }
+    
+    @objc func nameTextChanged() {
+        viewModel.name.value = name.text ?? ""
+    }
+    
+    @objc func memoTextChanged() {
+        viewModel.memo.value = memo.text ?? ""
     }
     
     override func setConstraints() {
@@ -126,62 +143,35 @@ class EditRefrigerViewController: BaseViewController {
     
 }
 
-extension EditRefrigerViewController {
+extension AddViewController {
     private func initNav() {
-        let editRefriger = NSLocalizedString("Edit", comment: "")
+        let addRefriger = NSLocalizedString("AddRefriger", comment: "")
         let cancel = NSLocalizedString("Cancel", comment: "")
-        let update = NSLocalizedString("Update", comment: "")
-        let delete = NSLocalizedString("Delete", comment: "")
+        let add = NSLocalizedString("Add", comment: "")
         
-        self.navigationItem.title = editRefriger
+        self.navigationItem.title = addRefriger
+        self.navigationItem.rightBarButtonItem = .init(title: add, style: .done, target: self, action: #selector(addButtonTapped))
+        self.navigationItem.leftBarButtonItem = .init(title: cancel, style: .done, target: self, action: #selector(cancelButtonTapped))
         
-        let editButton = UIBarButtonItem(title: update, style: .done, target: self, action: #selector(editButtonTapped))
-        let deleteButton = UIBarButtonItem(title: delete, style: .done, target: self, action: #selector(deleteButtonTapped))
-        let cancelButton = UIBarButtonItem(title: cancel, style: .done, target: self, action: #selector(cancelButtonTapped))
-        
-        navigationItem.setRightBarButtonItems([editButton, deleteButton], animated: false)
-        navigationItem.setLeftBarButton(cancelButton, animated: false)
-        
-        editButton.tintColor = .blue
-        deleteButton.tintColor = .red
-        
+        navigationItem.rightBarButtonItem?.tintColor = UIColor.blue
         navigationItem.leftBarButtonItem?.tintColor = UIColor.red
     }
 }
 
-extension EditRefrigerViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension AddViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    //수정
-    @objc func editButtonTapped() {
-         
-        guard let data = data else { return }
-        
-        repository.updateItem(id: data._id, name: name.text ?? "", memo: memo.text ?? "")
-        
-        DocumentManager.shared.saveImageToDocument(fileName: "JH\(data._id)", image: imageView.image!)
-        
+    @objc func addButtonTapped() {
+        let data = Refrigerator(name: name.text ?? "", memo: memo.text ?? "")
+
+        DocumentManager.shared.saveImageToDocument(fileName: "JH\(data._id)", image: (selectedImage ?? UIImage(named: "basicRefiger"))!)
+
+        repository.createItem(data)
+
         NotificationCenter.default.post(name: Notification.Name("ReloadData"), object: nil)
         
         dismiss(animated: true)
     }
     
-    
-    //삭제
-    @objc func deleteButtonTapped() {
-        
-        guard let data = data else { return }
-        
-        DocumentManager.shared.removeImageFromDocument(fileName: "JH\(data._id)")
-        
-        repository.removeItem(data)
-        
-        NotificationCenter.default.post(name: Notification.Name("ReloadData"), object: nil)
-        
-        dismiss(animated: true)
-    }
-    
-    
-    //취소
     @objc func cancelButtonTapped() {
         dismiss(animated: true)
     }
@@ -197,6 +187,7 @@ extension EditRefrigerViewController: UIImagePickerControllerDelegate, UINavigat
         picker.didFinishPicking { [unowned picker] items, _ in
             if let photo = items.singlePhoto {
                 self.imageView.image = photo.image
+                self.selectedImage = photo.image
             }
             
             picker.dismiss(animated: true, completion: nil)

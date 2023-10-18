@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		784CE0012ADFF59D008ADC5B /* MarqueeLabel in Frameworks */ = {isa = PBXBuildFile; productRef = 784CE0002ADFF59D008ADC5B /* MarqueeLabel */; };
+		784CE0052AE03907008ADC5B /* BLTNBoard in Frameworks */ = {isa = PBXBuildFile; productRef = 784CE0042AE03907008ADC5B /* BLTNBoard */; };
+		784CE0072AE0405D008ADC5B /* FilterButtonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CE0062AE0405D008ADC5B /* FilterButtonVC.swift */; };
+		784CE0092AE04402008ADC5B /* BulletinDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CE0082AE04402008ADC5B /* BulletinDelegate.swift */; };
+		784CE00B2AE053EC008ADC5B /* HapticFeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CE00A2AE053EC008ADC5B /* HapticFeedbackManager.swift */; };
 		785E01892ABE883E0057859F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E01882ABE883E0057859F /* AppDelegate.swift */; };
 		785E018B2ABE883E0057859F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E018A2ABE883E0057859F /* SceneDelegate.swift */; };
 		785E01922ABE883F0057859F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 785E01912ABE883F0057859F /* Assets.xcassets */; };
@@ -71,6 +75,9 @@
 /* Begin PBXFileReference section */
 		16208A2335D6E5DAF8096A0E /* Pods-Pantry.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pantry.debug.xcconfig"; path = "Target Support Files/Pods-Pantry/Pods-Pantry.debug.xcconfig"; sourceTree = "<group>"; };
 		4D32824E34E7CAB174290C67 /* Pods_Pantry.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pantry.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		784CE0062AE0405D008ADC5B /* FilterButtonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButtonVC.swift; sourceTree = "<group>"; };
+		784CE0082AE04402008ADC5B /* BulletinDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletinDelegate.swift; sourceTree = "<group>"; };
+		784CE00A2AE053EC008ADC5B /* HapticFeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackManager.swift; sourceTree = "<group>"; };
 		785E01852ABE883E0057859F /* Pantry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pantry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		785E01882ABE883E0057859F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		785E018A2ABE883E0057859F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				785E01BF2AC170F70057859F /* RealmSwift in Frameworks */,
+				784CE0052AE03907008ADC5B /* BLTNBoard in Frameworks */,
 				78C8C24E2ACD7B75004EF75D /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				785E01BD2AC170F70057859F /* Realm in Frameworks */,
 				784CE0012ADFF59D008ADC5B /* MarqueeLabel in Frameworks */,
@@ -155,6 +163,15 @@
 				DF0DF4B25A9A72E7FC28FA34 /* Pods-Pantry.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		784CE0022AE02914008ADC5B /* Refrigerator */ = {
+			isa = PBXGroup;
+			children = (
+				78F37D582ACBC7BC00ED4466 /* AddViewController.swift */,
+				788FE3002AD71FC60018B1C9 /* EditRefrigerViewController.swift */,
+			);
+			path = Refrigerator;
 			sourceTree = "<group>";
 		};
 		785E017C2ABE883E0057859F = {
@@ -218,12 +235,12 @@
 			isa = PBXGroup;
 			children = (
 				785E01B12AC107DD0057859F /* TabBarController.swift */,
+				784CE0062AE0405D008ADC5B /* FilterButtonVC.swift */,
+				784CE0022AE02914008ADC5B /* Refrigerator */,
 				788FE3252ADF77F60018B1C9 /* AddItems */,
-				788FE2FF2AD71F9C0018B1C9 /* EditRefrigerator */,
 				787CEAD22AD434B10077A073 /* DetailRefiger */,
 				78F37D3F2AC97F2500ED4466 /* Components */,
 				78F37D372AC47D3900ED4466 /* CustomView */,
-				78F37D3A2AC4871100ED4466 /* addRefrigerator */,
 				785E01AC2AC107540057859F /* Main */,
 				78F37D2B2AC4616900ED4466 /* Search */,
 			);
@@ -319,14 +336,6 @@
 			path = FreezerPage;
 			sourceTree = "<group>";
 		};
-		788FE2FF2AD71F9C0018B1C9 /* EditRefrigerator */ = {
-			isa = PBXGroup;
-			children = (
-				788FE3002AD71FC60018B1C9 /* EditRefrigerViewController.swift */,
-			);
-			path = EditRefrigerator;
-			sourceTree = "<group>";
-		};
 		788FE3252ADF77F60018B1C9 /* AddItems */ = {
 			isa = PBXGroup;
 			children = (
@@ -371,14 +380,6 @@
 			path = CustomView;
 			sourceTree = "<group>";
 		};
-		78F37D3A2AC4871100ED4466 /* addRefrigerator */ = {
-			isa = PBXGroup;
-			children = (
-				78F37D582ACBC7BC00ED4466 /* AddViewController.swift */,
-			);
-			path = addRefrigerator;
-			sourceTree = "<group>";
-		};
 		78F37D3F2AC97F2500ED4466 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -394,6 +395,7 @@
 				78F37D412AC97FCD00ED4466 /* Observable.swift */,
 				78F37D5C2ACBEC0300ED4466 /* RefrigeratorRepository.swift */,
 				78F37D5E2ACC69B600ED4466 /* DocumentManager.swift */,
+				784CE00A2AE053EC008ADC5B /* HapticFeedbackManager.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -404,6 +406,7 @@
 				78F37D4C2ACABAB800ED4466 /* ReuseIdentifier.swift */,
 				787CEAD02AD3F5AB0077A073 /* didSelectProtocol.swift */,
 				788FE3022AD736EF0018B1C9 /* SwitchScreenProtocol.swift */,
+				784CE0082AE04402008ADC5B /* BulletinDelegate.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -446,6 +449,7 @@
 				787CEAEA2AD452040077A073 /* Tabman */,
 				788FE3232ADE4EB20018B1C9 /* Toast */,
 				784CE0002ADFF59D008ADC5B /* MarqueeLabel */,
+				784CE0042AE03907008ADC5B /* BLTNBoard */,
 			);
 			productName = Pantry;
 			productReference = 785E01852ABE883E0057859F /* Pantry.app */;
@@ -485,6 +489,7 @@
 				787CEAE92AD452040077A073 /* XCRemoteSwiftPackageReference "Tabman" */,
 				788FE3222ADE4EB20018B1C9 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				784CDFFF2ADFF59D008ADC5B /* XCRemoteSwiftPackageReference "MarqueeLabel" */,
+				784CE0032AE03907008ADC5B /* XCRemoteSwiftPackageReference "BulletinBoard" */,
 			);
 			productRefGroup = 785E01862ABE883E0057859F /* Products */;
 			projectDirPath = "";
@@ -592,6 +597,7 @@
 				788FE31E2ADD5CE30018B1C9 /* UIResponder.swift in Sources */,
 				78C8C25B2ACDACF5004EF75D /* RefrigerCell.swift in Sources */,
 				787CEAE82AD436B70077A073 /* RefrigerPageViewController.swift in Sources */,
+				784CE00B2AE053EC008ADC5B /* HapticFeedbackManager.swift in Sources */,
 				78F37D592ACBC7BC00ED4466 /* AddViewController.swift in Sources */,
 				788FE3292ADF79810018B1C9 /* AddItemView.swift in Sources */,
 				78F37D5F2ACC69B600ED4466 /* DocumentManager.swift in Sources */,
@@ -603,6 +609,7 @@
 				787CEAE62AD436AE0077A073 /* RefigerPageView.swift in Sources */,
 				788FE3012AD71FC60018B1C9 /* EditRefrigerViewController.swift in Sources */,
 				787CEADC2AD435ED0077A073 /* AllPageViewController.swift in Sources */,
+				784CE0072AE0405D008ADC5B /* FilterButtonVC.swift in Sources */,
 				788FE3032AD736EF0018B1C9 /* SwitchScreenProtocol.swift in Sources */,
 				78F37D4D2ACABAB800ED4466 /* ReuseIdentifier.swift in Sources */,
 				785E018B2ABE883E0057859F /* SceneDelegate.swift in Sources */,
@@ -616,6 +623,7 @@
 				785E01C12AC171140057859F /* Realm.swift in Sources */,
 				78F37D422AC97FCE00ED4466 /* Observable.swift in Sources */,
 				787CEADE2AD435F80077A073 /* AllPageView.swift in Sources */,
+				784CE0092AE04402008ADC5B /* BulletinDelegate.swift in Sources */,
 				78F37D362AC47CE300ED4466 /* UIImage.swift in Sources */,
 				78F37D4F2ACABFAE00ED4466 /* CALayer.swift in Sources */,
 				78F37D342AC47CC300ED4466 /* UIButton.swift in Sources */,
@@ -875,6 +883,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		784CE0032AE03907008ADC5B /* XCRemoteSwiftPackageReference "BulletinBoard" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alexisakers/BulletinBoard.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		785E01B82AC170990057859F /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -938,6 +954,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 784CDFFF2ADFF59D008ADC5B /* XCRemoteSwiftPackageReference "MarqueeLabel" */;
 			productName = MarqueeLabel;
+		};
+		784CE0042AE03907008ADC5B /* BLTNBoard */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 784CE0032AE03907008ADC5B /* XCRemoteSwiftPackageReference "BulletinBoard" */;
+			productName = BLTNBoard;
 		};
 		785E01B92AC170990057859F /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;

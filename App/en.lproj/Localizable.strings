@@ -47,3 +47,12 @@
 "Quantity" =  "Quantity";
 
 "ItemNameEssential" = "ItemName entry is required";
+
+"introTitle" = "About the Progress Bar";
+
+"introDes" = "A higher progression on the bar indicates an impending expiration date.
+The bar will turn purple when the expiration date has passed.";
+
+"SelectSort" = "Select Sort";
+
+"Apply" = "Apply";
