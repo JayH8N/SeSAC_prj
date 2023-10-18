@@ -1,17 +1,15 @@
 //
-//  AddViewModel.swift
+//  AddItemViewModel.swift
 //  Pantry
 //
-//  Created by hoon on 2023/10/03.
+//  Created by hoon on 2023/10/18.
 //
 
 import Foundation
 
-class AddViewModel {
+class AddItemViewModel {
     
     var name = Observable("")
-    var memo = Observable("")
     var isValid = Observable(false)
-    
     
 }

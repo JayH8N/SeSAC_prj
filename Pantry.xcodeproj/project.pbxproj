@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		784CE0012ADFF59D008ADC5B /* MarqueeLabel in Frameworks */ = {isa = PBXBuildFile; productRef = 784CE0002ADFF59D008ADC5B /* MarqueeLabel */; };
 		785E01892ABE883E0057859F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E01882ABE883E0057859F /* AppDelegate.swift */; };
 		785E018B2ABE883E0057859F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E018A2ABE883E0057859F /* SceneDelegate.swift */; };
 		785E01922ABE883F0057859F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 785E01912ABE883F0057859F /* Assets.xcassets */; };
@@ -34,19 +35,16 @@
 		788FE3012AD71FC60018B1C9 /* EditRefrigerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788FE3002AD71FC60018B1C9 /* EditRefrigerViewController.swift */; };
 		788FE3032AD736EF0018B1C9 /* SwitchScreenProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788FE3022AD736EF0018B1C9 /* SwitchScreenProtocol.swift */; };
 		788FE3092AD74C030018B1C9 /* TAEBAEK milkyway.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 788FE3082AD74C030018B1C9 /* TAEBAEK milkyway.ttf */; };
-		788FE30C2AD9EB290018B1C9 /* AddFoodsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788FE30B2AD9EB280018B1C9 /* AddFoodsViewController.swift */; };
-		788FE30E2AD9EB320018B1C9 /* AddFoodsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788FE30D2AD9EB320018B1C9 /* AddFoodsView.swift */; };
-		788FE3142ADA80940018B1C9 /* FoodsNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788FE3132ADA80940018B1C9 /* FoodsNameCell.swift */; };
-		788FE3162ADA88AA0018B1C9 /* FoodsMemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788FE3152ADA88AA0018B1C9 /* FoodsMemoCell.swift */; };
-		788FE3182ADC67A60018B1C9 /* FoodsExDateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788FE3172ADC67A60018B1C9 /* FoodsExDateCell.swift */; };
-		788FE31A2ADC74BE0018B1C9 /* FoodsStateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788FE3192ADC74BE0018B1C9 /* FoodsStateCell.swift */; };
-		788FE31C2ADC91B10018B1C9 /* FoodsQuantityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788FE31B2ADC91B10018B1C9 /* FoodsQuantityCell.swift */; };
 		788FE31E2ADD5CE30018B1C9 /* UIResponder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788FE31D2ADD5CE30018B1C9 /* UIResponder.swift */; };
+		788FE3242ADE4EB20018B1C9 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 788FE3232ADE4EB20018B1C9 /* Toast */; };
+		788FE3272ADF78130018B1C9 /* AddItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788FE3262ADF78130018B1C9 /* AddItemViewController.swift */; };
+		788FE3292ADF79810018B1C9 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788FE3282ADF79810018B1C9 /* AddItemView.swift */; };
+		788FE32B2ADFB86B0018B1C9 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788FE32A2ADFB86B0018B1C9 /* UIView.swift */; };
+		788FE32D2ADFDF660018B1C9 /* AddItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788FE32C2ADFDF660018B1C9 /* AddItemViewModel.swift */; };
 		78C8C24E2ACD7B75004EF75D /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 78C8C24D2ACD7B75004EF75D /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		78C8C2502ACD7B75004EF75D /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 78C8C24F2ACD7B75004EF75D /* FirebaseCrashlytics */; };
 		78C8C2522ACD8604004EF75D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 78C8C2512ACD8604004EF75D /* GoogleService-Info.plist */; };
 		78C8C2552ACD8A68004EF75D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 78C8C2542ACD8A68004EF75D /* .gitignore */; };
-		78C8C2592ACD9A7A004EF75D /* RefrigeratorHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C8C2582ACD9A7A004EF75D /* RefrigeratorHeaderView.swift */; };
 		78C8C25B2ACDACF5004EF75D /* RefrigerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C8C25A2ACDACF5004EF75D /* RefrigerCell.swift */; };
 		78C8C25D2ACDAD20004EF75D /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C8C25C2ACDAD20004EF75D /* BaseCollectionViewCell.swift */; };
 		78F37D1F2AC366A600ED4466 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 78F37D212AC366A600ED4466 /* Localizable.strings */; };
@@ -97,17 +95,13 @@
 		788FE3002AD71FC60018B1C9 /* EditRefrigerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRefrigerViewController.swift; sourceTree = "<group>"; };
 		788FE3022AD736EF0018B1C9 /* SwitchScreenProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchScreenProtocol.swift; sourceTree = "<group>"; };
 		788FE3082AD74C030018B1C9 /* TAEBAEK milkyway.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "TAEBAEK milkyway.ttf"; sourceTree = "<group>"; };
-		788FE30B2AD9EB280018B1C9 /* AddFoodsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodsViewController.swift; sourceTree = "<group>"; };
-		788FE30D2AD9EB320018B1C9 /* AddFoodsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodsView.swift; sourceTree = "<group>"; };
-		788FE3132ADA80940018B1C9 /* FoodsNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodsNameCell.swift; sourceTree = "<group>"; };
-		788FE3152ADA88AA0018B1C9 /* FoodsMemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodsMemoCell.swift; sourceTree = "<group>"; };
-		788FE3172ADC67A60018B1C9 /* FoodsExDateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodsExDateCell.swift; sourceTree = "<group>"; };
-		788FE3192ADC74BE0018B1C9 /* FoodsStateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodsStateCell.swift; sourceTree = "<group>"; };
-		788FE31B2ADC91B10018B1C9 /* FoodsQuantityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodsQuantityCell.swift; sourceTree = "<group>"; };
 		788FE31D2ADD5CE30018B1C9 /* UIResponder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIResponder.swift; sourceTree = "<group>"; };
+		788FE3262ADF78130018B1C9 /* AddItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewController.swift; sourceTree = "<group>"; };
+		788FE3282ADF79810018B1C9 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
+		788FE32A2ADFB86B0018B1C9 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		788FE32C2ADFDF660018B1C9 /* AddItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewModel.swift; sourceTree = "<group>"; };
 		78C8C2512ACD8604004EF75D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		78C8C2542ACD8A68004EF75D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		78C8C2582ACD9A7A004EF75D /* RefrigeratorHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefrigeratorHeaderView.swift; sourceTree = "<group>"; };
 		78C8C25A2ACDACF5004EF75D /* RefrigerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefrigerCell.swift; sourceTree = "<group>"; };
 		78C8C25C2ACDAD20004EF75D /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		78F37D202AC366A600ED4466 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -140,11 +134,13 @@
 				785E01BF2AC170F70057859F /* RealmSwift in Frameworks */,
 				78C8C24E2ACD7B75004EF75D /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				785E01BD2AC170F70057859F /* Realm in Frameworks */,
+				784CE0012ADFF59D008ADC5B /* MarqueeLabel in Frameworks */,
 				78C8C2502ACD7B75004EF75D /* FirebaseCrashlytics in Frameworks */,
 				787CEAC92ACE830E0077A073 /* YPImagePicker in Frameworks */,
 				787CEAEB2AD452040077A073 /* Tabman in Frameworks */,
 				785E01BA2AC170990057859F /* SnapKit in Frameworks */,
 				78F37D322AC464EA00ED4466 /* Then in Frameworks */,
+				788FE3242ADE4EB20018B1C9 /* Toast in Frameworks */,
 				B35DD6DBA13BD0129B46A291 /* Pods_Pantry.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,8 +217,8 @@
 		785E01A72AC105D00057859F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				788FE30A2AD9EB0F0018B1C9 /* AddFoods */,
 				785E01B12AC107DD0057859F /* TabBarController.swift */,
+				788FE3252ADF77F60018B1C9 /* AddItems */,
 				788FE2FF2AD71F9C0018B1C9 /* EditRefrigerator */,
 				787CEAD22AD434B10077A073 /* DetailRefiger */,
 				78F37D3F2AC97F2500ED4466 /* Components */,
@@ -238,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				78F37D1C2AC3451200ED4466 /* Main */,
+				788FE32C2ADFDF660018B1C9 /* AddItemViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -259,6 +256,7 @@
 				78F37D352AC47CE300ED4466 /* UIImage.swift */,
 				78F37D4E2ACABFAE00ED4466 /* CALayer.swift */,
 				788FE31D2ADD5CE30018B1C9 /* UIResponder.swift */,
+				788FE32A2ADFB86B0018B1C9 /* UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -329,25 +327,13 @@
 			path = EditRefrigerator;
 			sourceTree = "<group>";
 		};
-		788FE30A2AD9EB0F0018B1C9 /* AddFoods */ = {
+		788FE3252ADF77F60018B1C9 /* AddItems */ = {
 			isa = PBXGroup;
 			children = (
-				788FE30B2AD9EB280018B1C9 /* AddFoodsViewController.swift */,
-				788FE30D2AD9EB320018B1C9 /* AddFoodsView.swift */,
+				788FE3262ADF78130018B1C9 /* AddItemViewController.swift */,
+				788FE3282ADF79810018B1C9 /* AddItemView.swift */,
 			);
-			path = AddFoods;
-			sourceTree = "<group>";
-		};
-		788FE3122ADA80780018B1C9 /* AddFoodsCells */ = {
-			isa = PBXGroup;
-			children = (
-				788FE3132ADA80940018B1C9 /* FoodsNameCell.swift */,
-				788FE3152ADA88AA0018B1C9 /* FoodsMemoCell.swift */,
-				788FE3172ADC67A60018B1C9 /* FoodsExDateCell.swift */,
-				788FE3192ADC74BE0018B1C9 /* FoodsStateCell.swift */,
-				788FE31B2ADC91B10018B1C9 /* FoodsQuantityCell.swift */,
-			);
-			path = AddFoodsCells;
+			path = AddItems;
 			sourceTree = "<group>";
 		};
 		78F37D1C2AC3451200ED4466 /* Main */ = {
@@ -396,8 +382,6 @@
 		78F37D3F2AC97F2500ED4466 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				788FE3122ADA80780018B1C9 /* AddFoodsCells */,
-				78C8C2582ACD9A7A004EF75D /* RefrigeratorHeaderView.swift */,
 				78C8C25A2ACDACF5004EF75D /* RefrigerCell.swift */,
 				787CEAEC2AD461140077A073 /* ItemsCell.swift */,
 			);
@@ -460,6 +444,8 @@
 				78C8C24F2ACD7B75004EF75D /* FirebaseCrashlytics */,
 				787CEAC82ACE830E0077A073 /* YPImagePicker */,
 				787CEAEA2AD452040077A073 /* Tabman */,
+				788FE3232ADE4EB20018B1C9 /* Toast */,
+				784CE0002ADFF59D008ADC5B /* MarqueeLabel */,
 			);
 			productName = Pantry;
 			productReference = 785E01852ABE883E0057859F /* Pantry.app */;
@@ -497,6 +483,8 @@
 				78C8C24C2ACD7B75004EF75D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				787CEAC72ACE830D0077A073 /* XCRemoteSwiftPackageReference "YPImagePicker" */,
 				787CEAE92AD452040077A073 /* XCRemoteSwiftPackageReference "Tabman" */,
+				788FE3222ADE4EB20018B1C9 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				784CDFFF2ADFF59D008ADC5B /* XCRemoteSwiftPackageReference "MarqueeLabel" */,
 			);
 			productRefGroup = 785E01862ABE883E0057859F /* Products */;
 			projectDirPath = "";
@@ -594,38 +582,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				788FE30E2AD9EB320018B1C9 /* AddFoodsView.swift in Sources */,
 				78F37D2D2AC4617A00ED4466 /* SearchView.swift in Sources */,
 				78F37D2F2AC4618400ED4466 /* SearchViewController.swift in Sources */,
 				787CEAED2AD461140077A073 /* ItemsCell.swift in Sources */,
+				788FE3272ADF78130018B1C9 /* AddItemViewController.swift in Sources */,
 				787CEAE42AD4369B0077A073 /* FreezerPageView.swift in Sources */,
 				787CEAD42AD434E30077A073 /* DetailPagerTab.swift in Sources */,
 				78F37D5D2ACBEC0300ED4466 /* RefrigeratorRepository.swift in Sources */,
-				788FE3142ADA80940018B1C9 /* FoodsNameCell.swift in Sources */,
 				788FE31E2ADD5CE30018B1C9 /* UIResponder.swift in Sources */,
 				78C8C25B2ACDACF5004EF75D /* RefrigerCell.swift in Sources */,
 				787CEAE82AD436B70077A073 /* RefrigerPageViewController.swift in Sources */,
 				78F37D592ACBC7BC00ED4466 /* AddViewController.swift in Sources */,
+				788FE3292ADF79810018B1C9 /* AddItemView.swift in Sources */,
 				78F37D5F2ACC69B600ED4466 /* DocumentManager.swift in Sources */,
+				788FE32B2ADFB86B0018B1C9 /* UIView.swift in Sources */,
 				785E01892ABE883E0057859F /* AppDelegate.swift in Sources */,
-				788FE30C2AD9EB290018B1C9 /* AddFoodsViewController.swift in Sources */,
 				785E01AE2AC1076D0057859F /* MainView.swift in Sources */,
 				787CEAD12AD3F5AB0077A073 /* didSelectProtocol.swift in Sources */,
 				78F37D4A2ACAB3E500ED4466 /* BaseTableViewCell.swift in Sources */,
-				788FE31A2ADC74BE0018B1C9 /* FoodsStateCell.swift in Sources */,
 				787CEAE62AD436AE0077A073 /* RefigerPageView.swift in Sources */,
 				788FE3012AD71FC60018B1C9 /* EditRefrigerViewController.swift in Sources */,
 				787CEADC2AD435ED0077A073 /* AllPageViewController.swift in Sources */,
 				788FE3032AD736EF0018B1C9 /* SwitchScreenProtocol.swift in Sources */,
 				78F37D4D2ACABAB800ED4466 /* ReuseIdentifier.swift in Sources */,
-				788FE3182ADC67A60018B1C9 /* FoodsExDateCell.swift in Sources */,
 				785E018B2ABE883E0057859F /* SceneDelegate.swift in Sources */,
 				785E01B52AC108190057859F /* BaseView.swift in Sources */,
 				78F37D242AC3686600ED4466 /* UIColor.swift in Sources */,
-				78C8C2592ACD9A7A004EF75D /* RefrigeratorHeaderView.swift in Sources */,
 				785E01B22AC107DD0057859F /* TabBarController.swift in Sources */,
 				78C8C25D2ACDAD20004EF75D /* BaseCollectionViewCell.swift in Sources */,
 				785E01B72AC108250057859F /* BaseViewController.swift in Sources */,
+				788FE32D2ADFDF660018B1C9 /* AddItemViewModel.swift in Sources */,
 				785E01B02AC107740057859F /* MainViewController.swift in Sources */,
 				785E01C12AC171140057859F /* Realm.swift in Sources */,
 				78F37D422AC97FCE00ED4466 /* Observable.swift in Sources */,
@@ -636,8 +622,6 @@
 				78F37D5B2ACBDB4100ED4466 /* AddViewModel.swift in Sources */,
 				78F37D392AC47E9300ED4466 /* highlightedButton.swift in Sources */,
 				787CEAE22AD436930077A073 /* FreezerPageViewController.swift in Sources */,
-				788FE31C2ADC91B10018B1C9 /* FoodsQuantityCell.swift in Sources */,
-				788FE3162ADA88AA0018B1C9 /* FoodsMemoCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -883,6 +867,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		784CDFFF2ADFF59D008ADC5B /* XCRemoteSwiftPackageReference "MarqueeLabel" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/cbpowell/MarqueeLabel.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.0.0;
+			};
+		};
 		785E01B82AC170990057859F /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -915,6 +907,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		788FE3222ADE4EB20018B1C9 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		78C8C24C2ACD7B75004EF75D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -934,6 +934,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		784CE0002ADFF59D008ADC5B /* MarqueeLabel */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 784CDFFF2ADFF59D008ADC5B /* XCRemoteSwiftPackageReference "MarqueeLabel" */;
+			productName = MarqueeLabel;
+		};
 		785E01B92AC170990057859F /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 785E01B82AC170990057859F /* XCRemoteSwiftPackageReference "SnapKit" */;
@@ -958,6 +963,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 787CEAE92AD452040077A073 /* XCRemoteSwiftPackageReference "Tabman" */;
 			productName = Tabman;
+		};
+		788FE3232ADE4EB20018B1C9 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 788FE3222ADE4EB20018B1C9 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
 		};
 		78C8C24D2ACD7B75004EF75D /* FirebaseAnalyticsWithoutAdIdSupport */ = {
 			isa = XCSwiftPackageProductDependency;

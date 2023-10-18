@@ -37,7 +37,7 @@ class Refrigerator: Object {
 
 class Items: Object {
     @Persisted(primaryKey: true) var _id: ObjectId
-    @Persisted var state: State
+    @Persisted var state: State.RawValue
     @Persisted var name: String
     @Persisted var count: Int
     @Persisted var registDay: Date
@@ -46,7 +46,7 @@ class Items: Object {
 
     @Persisted(originProperty: "ingredient") var mainFridge: LinkingObjects<Refrigerator> //역관계 정의
 
-    convenience init(state: State,
+    convenience init(state: State.RawValue,
                      name: String,
                      count: Int,
                      registDay: Date,

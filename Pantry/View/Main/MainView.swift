@@ -79,9 +79,9 @@ extension MainView: FSPagerViewDelegate, FSPagerViewDataSource {
         let cell = pagerView.dequeueReusableCell(withReuseIdentifier: RefrigerCell.identifier, at: index) as! RefrigerCell
         
         cell.switchDelegate = self
-        
+
         let data = stored[index]
-        
+
         cell.setData(data: data)
         cell.data = data
         

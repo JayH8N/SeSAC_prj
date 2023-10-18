@@ -27,24 +27,29 @@ class AllPageView: BaseView {
         $0.register(ItemsCell.self, forCellWithReuseIdentifier: ItemsCell.identifier)
     }
     
+
+    let filterButton = UIButton.makeHighlightedButton(withImageName: "slider.horizontal.3", size: 34).then {
+        $0.tintColor = .black
+    }
     
     
-    let addFood = NSLocalizedString("addFood", comment: "")
-    let addFoodBarcode = NSLocalizedString("addFoodBarcode", comment: "")
+    
     
     lazy var actionButton = JJFloatingActionButton().then {
         $0.buttonImage = UIImage(systemName: "plus")
         $0.buttonColor = UIColor.black
         
         
-        $0.addItem(title: addFood, image: UIImage(systemName: "square")) { _ in
-            let vc = AddFoodsViewController()
+        $0.addItem(title: NSLocalizedString("AddItem", comment: ""),
+                   image: UIImage(systemName: "square")) { _ in
+            let vc = AddItemViewController()
             let nav = UINavigationController(rootViewController: vc)
             
             self.switchDelegate?.switchScreen(nav: nav)
         }
         
-        $0.addItem(title: addFoodBarcode, image: UIImage(systemName: "barcode.viewfinder")) { _ in
+        $0.addItem(title: NSLocalizedString("addItemBarcode", comment: ""),
+                   image: UIImage(systemName: "barcode.viewfinder")) { _ in
             let barcodeScanner = self.makeBarcodeScannerVC()
             self.delegate?.pushView(vc: barcodeScanner)
                
@@ -65,6 +70,7 @@ class AllPageView: BaseView {
     override func configureView() {
         super.configureView()
         addSubview(blurEffect)
+        addSubview(filterButton)
         addSubview(allCollectionView)
         addSubview(actionButton)
         
@@ -75,8 +81,14 @@ class AllPageView: BaseView {
             $0.edges.equalToSuperview()
         }
         
+        filterButton.snp.makeConstraints {
+            $0.top.equalTo(self.safeAreaLayoutGuide).inset(4)
+            $0.leading.equalTo(self.snp.leading).inset(18)
+        }
+        
         allCollectionView.snp.makeConstraints {
-            $0.edges.equalTo(self.safeAreaLayoutGuide)
+            $0.top.equalTo(filterButton.snp.bottom).offset(4)
+            $0.leading.trailing.bottom.equalTo(self.safeAreaLayoutGuide)
         }
         
         actionButton.snp.makeConstraints {
@@ -97,7 +109,7 @@ extension AllPageView {
         layout.scrollDirection = .vertical
         let size = UIScreen.main.bounds.width - 36
         layout.itemSize = CGSize(width: size / 2, height: (size / 2) * 0.7)
-        layout.sectionInset = UIEdgeInsets(top: 12, left: 12, bottom: 12, right: 12)
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 12, bottom: 12, right: 12)
         return layout
     }
 }
@@ -121,11 +133,11 @@ extension AllPageView: BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, 
         print("Barcode====== \(code)")
         print("Type======= \(type)")
 
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
             controller.reset()
             controller.navigationController?.popViewController(animated: true)
             
-            let vc = AddFoodsViewController()
+            let vc = AddItemViewController()
             let nav = UINavigationController(rootViewController: vc)
             
             self.switchDelegate?.switchScreen(nav: nav)

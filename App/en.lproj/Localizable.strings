@@ -32,18 +32,18 @@
 
 "All" = "All";
 
-"addFood" = "addFood";
-
-"addFoodBarcode" = "Add as Barcode";
+"addItemBarcode" = "Add as Barcode";
 
 "Delete" = "Delete";
 
 "Update" = "Update";
 
-"AddFoods" = "AddFoods";
+"AddItem" = "Add Item";
 
-"FoodName" = "FoodName";
+"ItemName" = "Item Name";
 
-"Expiry date" = "Expiry date";
+"Expiry date" = "EXP date";
 
 "Quantity" =  "Quantity";
+
+"ItemNameEssential" = "ItemName entry is required";

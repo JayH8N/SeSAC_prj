@@ -105,12 +105,17 @@ class EditRefrigerViewController: BaseViewController {
             $0.height.equalTo(uiView.snp.height).multipliedBy(0.23)
         }
         
+        
+        name.leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 10.0, height: 0.0))
+        name.leftViewMode = .always
         name.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(30)
             $0.top.equalTo(uiView.snp.bottom).offset(30)
             $0.height.equalTo(uiView.snp.height).multipliedBy(0.3)
         }
         
+        memo.leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 10.0, height: 0.0))
+        memo.leftViewMode = .always
         memo.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(30)
             $0.top.equalTo(name.snp.bottom).offset(30)
