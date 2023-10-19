@@ -7,6 +7,6 @@
 
 import UIKit
 
-protocol didSelectProtocol: AnyObject {
+protocol NavPushProtocol: AnyObject {
     func pushView(vc: UIViewController)
 }

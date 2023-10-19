@@ -19,7 +19,7 @@ class MainView: BaseView {
     
     let hapticFeedBack = UISelectionFeedbackGenerator()
     
-    weak var delegate: didSelectProtocol?
+    weak var delegate: NavPushProtocol?
     
 //MARK: - Properties
     //blur

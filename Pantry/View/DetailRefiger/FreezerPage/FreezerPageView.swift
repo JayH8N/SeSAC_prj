@@ -24,6 +24,11 @@ class FreezerPageView: BaseView {
         $0.tintColor = .black
     }
     
+    let bgView = UIView().then {
+        $0.backgroundColor = .black
+        $0.alpha = 0
+    }
+    
     override func configureView() {
         super.configureView()
         addSubview(blurEffect)

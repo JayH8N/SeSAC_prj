@@ -36,7 +36,7 @@ class ItemsCell: BaseCollectionViewCell {
     
     let progressView = UIProgressView().then {
         $0.progressViewStyle = .default
-        $0.progressTintColor = .red
+        $0.progressTintColor = .green
         $0.trackTintColor = .black
     }
     
@@ -82,7 +82,7 @@ class ItemsCell: BaseCollectionViewCell {
         }
         
         itemTitle.snp.makeConstraints {
-            $0.top.equalTo(self.snp.top).inset(13)
+            $0.top.equalTo(self.snp.top).inset(10)
             $0.leading.equalTo(itemImage.snp.trailing).offset(6)
             $0.trailing.equalTo(self.snp.trailing).inset(6)
         }
@@ -100,7 +100,7 @@ class ItemsCell: BaseCollectionViewCell {
             $0.bottom.equalTo(itemImage.snp.bottom)
         }
         
-        progressView.setProgress(0.7, animated: true)
+        progressView.setProgress(1.0, animated: true)
         progressView.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(10)
             $0.height.equalTo(16)
@@ -169,7 +169,7 @@ extension ItemsCell {
         // 진행 퍼센트 계산
         let progressPercentage = remainingDays / totalDays
         
-        // 유통기한이 지난 경우에는 1.0으로 설정 + 프로그레스 바 보라색으로
+        // 유통기한이 지난 경우에는 1.0으로 설정
         if progressPercentage < 0 {
             return 1.0
         }

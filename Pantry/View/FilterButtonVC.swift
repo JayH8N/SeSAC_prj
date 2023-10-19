@@ -135,6 +135,10 @@ class FilterButtonVC: BaseViewController {
     }
     
     func handleRadioButtonSelection(_ selectedButton: CustomRadioButton) {
+        if selectedButton.isSelected {
+            return
+        }
+        
         selectedButton.isSelected.toggle()
         
         for button in [radioButton1, radioButton2, radioButton3, radioButton4] {

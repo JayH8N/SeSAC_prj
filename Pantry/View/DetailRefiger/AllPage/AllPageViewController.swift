@@ -54,7 +54,7 @@ class AllPageViewController: BaseViewController {
                            duration: 3.0, point: CGPoint(x: x, y: y),
                            title: NSLocalizedString("introTitle", comment: ""),
                            image: UIImage(named: "ExampleBar"),
-                           style: .init(),
+                           style: mainView.style,
                            completion: nil)
     }
     
@@ -70,10 +70,10 @@ class AllPageViewController: BaseViewController {
     }
     
     private func removeDim() {
-            DispatchQueue.main.async { [weak self] in
-                self?.mainView.bgView.removeFromSuperview()
-            }
+        DispatchQueue.main.async { [weak self] in
+            self?.mainView.bgView.removeFromSuperview()
         }
+    }
     
     
 }
@@ -84,7 +84,7 @@ extension AllPageViewController: BulletinDelegate {
     }
 }
 
-extension AllPageViewController: SwitchScreenProtocol, didSelectProtocol {
+extension AllPageViewController: SwitchScreenProtocol, NavPushProtocol {
     func pushView(vc: UIViewController) {
         navigationController?.pushViewController(vc, animated: true)
     }

@@ -10,12 +10,13 @@ import Then
 import SnapKit
 import JJFloatingActionButton
 import BarcodeScanner
+import Toast
 
 class AllPageView: BaseView {
     
     
     weak var switchDelegate: SwitchScreenProtocol?
-    weak var delegate: didSelectProtocol?
+    weak var delegate: NavPushProtocol?
     
 //MARK: - Properties
     let blurEffect = UIVisualEffectView(effect: UIBlurEffect(style: .light))
@@ -38,7 +39,19 @@ class AllPageView: BaseView {
     }
     
     
-    let introDuctionButton = UIButton.makeHighlightedButton(withImageName: "exclamationmark.circle", size: 28)
+    let introDuctionButton = UIButton.makeHighlightedButton(withImageName: "questionmark.circle", size: 25).then {
+        $0.tintColor = .darkGray
+    }
+    
+    //toast
+    var style = {
+        var view = ToastStyle()
+        view.backgroundColor = UIColor(red: 243/255, green: 244/255, blue: 246/255, alpha: 1)
+        view.imageSize = CGSize(width: 80, height: 120)
+        view.titleColor = .black
+        view.messageColor = .black
+        return view
+    }()
     
     
     
@@ -106,7 +119,7 @@ class AllPageView: BaseView {
         }
         
         introDuctionButton.snp.makeConstraints {
-            $0.top.equalTo(self.safeAreaLayoutGuide).inset(8)
+            $0.top.equalTo(self.safeAreaLayoutGuide).inset(11)
             $0.trailing.equalTo(self.snp.trailing).inset(18)
         }
     }
