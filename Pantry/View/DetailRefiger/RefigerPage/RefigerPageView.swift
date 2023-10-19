@@ -24,14 +24,11 @@ class RefigerPageView: BaseView {
         $0.tintColor = .black
     }
     
-    let introDuctionButton = UIButton.makeHighlightedButton(withImageName: "exclamationmark.circle", size: 28)
-    
     override func configureView() {
         super.configureView()
         addSubview(blurEffect)
         addSubview(filterButton)
         addSubview(allCollectionView)
-        addSubview(introDuctionButton)
     }
     
     
@@ -49,26 +46,8 @@ class RefigerPageView: BaseView {
             $0.top.equalTo(filterButton.snp.bottom).offset(4)
             $0.leading.trailing.bottom.equalTo(self.safeAreaLayoutGuide)
         }
-        
-        introDuctionButton.snp.makeConstraints {
-            $0.top.equalTo(self.safeAreaLayoutGuide).inset(8)
-            $0.trailing.equalTo(self.snp.trailing).inset(18)
-        }
     }
     
-}
-
-extension RefigerPageView {
-    private func allCollectionViewLayout() -> UICollectionViewLayout {
-        let layout = UICollectionViewFlowLayout()
-        layout.minimumInteritemSpacing = 12
-        layout.minimumLineSpacing = 15
-        layout.scrollDirection = .vertical
-        let size = UIScreen.main.bounds.width - 36
-        layout.itemSize = CGSize(width: size / 2, height: (size / 2) * 0.7)
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 12, bottom: 12, right: 12)
-        return layout
-    }
 }
 
 extension RefigerPageView: UICollectionViewDelegate, UICollectionViewDataSource {

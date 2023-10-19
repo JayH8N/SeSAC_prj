@@ -56,3 +56,12 @@
 "SelectSort" = "정렬 선택";
 
 "Apply" = "확인";
+
+//정렬 선택
+"SortNetAdded" = "추가된 순";
+
+"SortFastestDate" = "유통기한 빠른순";
+
+"SortSlowestDate" = "유통기한 느린순";
+
+"ExpiredGoods" = "유통기한 지난 물건";

@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		784CE0012ADFF59D008ADC5B /* MarqueeLabel in Frameworks */ = {isa = PBXBuildFile; productRef = 784CE0002ADFF59D008ADC5B /* MarqueeLabel */; };
-		784CE0052AE03907008ADC5B /* BLTNBoard in Frameworks */ = {isa = PBXBuildFile; productRef = 784CE0042AE03907008ADC5B /* BLTNBoard */; };
 		784CE0072AE0405D008ADC5B /* FilterButtonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CE0062AE0405D008ADC5B /* FilterButtonVC.swift */; };
 		784CE0092AE04402008ADC5B /* BulletinDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CE0082AE04402008ADC5B /* BulletinDelegate.swift */; };
 		784CE00B2AE053EC008ADC5B /* HapticFeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CE00A2AE053EC008ADC5B /* HapticFeedbackManager.swift */; };
+		784CE0102AE08A50008ADC5B /* CustomRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CE00F2AE08A50008ADC5B /* CustomRadioButton.swift */; };
 		785E01892ABE883E0057859F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E01882ABE883E0057859F /* AppDelegate.swift */; };
 		785E018B2ABE883E0057859F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E018A2ABE883E0057859F /* SceneDelegate.swift */; };
 		785E01922ABE883F0057859F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 785E01912ABE883F0057859F /* Assets.xcassets */; };
@@ -78,6 +78,7 @@
 		784CE0062AE0405D008ADC5B /* FilterButtonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButtonVC.swift; sourceTree = "<group>"; };
 		784CE0082AE04402008ADC5B /* BulletinDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletinDelegate.swift; sourceTree = "<group>"; };
 		784CE00A2AE053EC008ADC5B /* HapticFeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackManager.swift; sourceTree = "<group>"; };
+		784CE00F2AE08A50008ADC5B /* CustomRadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRadioButton.swift; sourceTree = "<group>"; };
 		785E01852ABE883E0057859F /* Pantry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pantry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		785E01882ABE883E0057859F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		785E018A2ABE883E0057859F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,7 +140,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				785E01BF2AC170F70057859F /* RealmSwift in Frameworks */,
-				784CE0052AE03907008ADC5B /* BLTNBoard in Frameworks */,
 				78C8C24E2ACD7B75004EF75D /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				785E01BD2AC170F70057859F /* Realm in Frameworks */,
 				784CE0012ADFF59D008ADC5B /* MarqueeLabel in Frameworks */,
@@ -250,7 +250,7 @@
 		785E01A92AC106060057859F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				78F37D1C2AC3451200ED4466 /* Main */,
+				78F37D5A2ACBDB4100ED4466 /* AddViewModel.swift */,
 				788FE32C2ADFDF660018B1C9 /* AddItemViewModel.swift */,
 			);
 			path = ViewModel;
@@ -345,14 +345,6 @@
 			path = AddItems;
 			sourceTree = "<group>";
 		};
-		78F37D1C2AC3451200ED4466 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				78F37D5A2ACBDB4100ED4466 /* AddViewModel.swift */,
-			);
-			path = Main;
-			sourceTree = "<group>";
-		};
 		78F37D282AC45B1B00ED4466 /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -376,6 +368,7 @@
 			isa = PBXGroup;
 			children = (
 				78F37D382AC47E9300ED4466 /* highlightedButton.swift */,
+				784CE00F2AE08A50008ADC5B /* CustomRadioButton.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -449,7 +442,6 @@
 				787CEAEA2AD452040077A073 /* Tabman */,
 				788FE3232ADE4EB20018B1C9 /* Toast */,
 				784CE0002ADFF59D008ADC5B /* MarqueeLabel */,
-				784CE0042AE03907008ADC5B /* BLTNBoard */,
 			);
 			productName = Pantry;
 			productReference = 785E01852ABE883E0057859F /* Pantry.app */;
@@ -489,7 +481,6 @@
 				787CEAE92AD452040077A073 /* XCRemoteSwiftPackageReference "Tabman" */,
 				788FE3222ADE4EB20018B1C9 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				784CDFFF2ADFF59D008ADC5B /* XCRemoteSwiftPackageReference "MarqueeLabel" */,
-				784CE0032AE03907008ADC5B /* XCRemoteSwiftPackageReference "BulletinBoard" */,
 			);
 			productRefGroup = 785E01862ABE883E0057859F /* Products */;
 			projectDirPath = "";
@@ -627,6 +618,7 @@
 				78F37D362AC47CE300ED4466 /* UIImage.swift in Sources */,
 				78F37D4F2ACABFAE00ED4466 /* CALayer.swift in Sources */,
 				78F37D342AC47CC300ED4466 /* UIButton.swift in Sources */,
+				784CE0102AE08A50008ADC5B /* CustomRadioButton.swift in Sources */,
 				78F37D5B2ACBDB4100ED4466 /* AddViewModel.swift in Sources */,
 				78F37D392AC47E9300ED4466 /* highlightedButton.swift in Sources */,
 				787CEAE22AD436930077A073 /* FreezerPageViewController.swift in Sources */,
@@ -883,14 +875,6 @@
 				minimumVersion = 4.0.0;
 			};
 		};
-		784CE0032AE03907008ADC5B /* XCRemoteSwiftPackageReference "BulletinBoard" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/alexisakers/BulletinBoard.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
 		785E01B82AC170990057859F /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -954,11 +938,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 784CDFFF2ADFF59D008ADC5B /* XCRemoteSwiftPackageReference "MarqueeLabel" */;
 			productName = MarqueeLabel;
-		};
-		784CE0042AE03907008ADC5B /* BLTNBoard */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 784CE0032AE03907008ADC5B /* XCRemoteSwiftPackageReference "BulletinBoard" */;
-			productName = BLTNBoard;
 		};
 		785E01B92AC170990057859F /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;

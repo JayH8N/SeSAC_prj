@@ -89,6 +89,7 @@ extension MainView: FSPagerViewDelegate, FSPagerViewDataSource {
     }
     
     func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
+        HapticFeedbackManager.shared.provideFeedback()
         let data = stored[index]
         
         let vc = DetailPagerTabViewController()

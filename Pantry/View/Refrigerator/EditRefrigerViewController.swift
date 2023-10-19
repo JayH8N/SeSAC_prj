@@ -52,6 +52,18 @@ class EditRefrigerViewController: BaseViewController {
         $0.backgroundColor = .white
     }
     
+    let deleteButton = UIButton(type: .system).then {
+        $0.setTitle(NSLocalizedString("Delete", comment: ""), for: .normal)
+        $0.setTitleColor(UIColor.white, for: .normal)
+        $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 17)
+        $0.titleEdgeInsets = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 0)
+        $0.setImage(UIImage(systemName: "trash"), for: .normal)
+        $0.tintColor = .white
+        $0.setBackgroundColor(UIColor.red, for: .normal)
+        $0.layer.cornerRadius = 20
+        $0.layer.masksToBounds = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -80,9 +92,12 @@ class EditRefrigerViewController: BaseViewController {
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped))
         uiView.addGestureRecognizer(tapGesture)
+        deleteButton.addTarget(self, action: #selector(deleteButtonTapped), for: .touchUpInside)
+        
         
         view.addSubview(name)
         view.addSubview(memo)
+        view.addSubview(deleteButton)
     }
     
     override func setConstraints() {
@@ -109,17 +124,26 @@ class EditRefrigerViewController: BaseViewController {
         name.leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 10.0, height: 0.0))
         name.leftViewMode = .always
         name.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview().inset(30)
+            $0.width.equalTo(view.snp.width).multipliedBy(0.9)
+            $0.centerX.equalToSuperview()
             $0.top.equalTo(uiView.snp.bottom).offset(30)
-            $0.height.equalTo(uiView.snp.height).multipliedBy(0.3)
+            $0.height.equalTo(40)
         }
         
         memo.leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 10.0, height: 0.0))
         memo.leftViewMode = .always
         memo.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview().inset(30)
-            $0.top.equalTo(name.snp.bottom).offset(30)
+            $0.width.equalTo(name)
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(name.snp.bottom).offset(24)
             $0.height.equalTo(name)
+        }
+        
+        deleteButton.snp.makeConstraints {
+            $0.height.equalTo(name)
+            $0.top.equalTo(memo.snp.bottom).offset(24)
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(name)
         }
     }
     
@@ -131,19 +155,16 @@ extension EditRefrigerViewController {
         let editRefriger = NSLocalizedString("Edit", comment: "")
         let cancel = NSLocalizedString("Cancel", comment: "")
         let update = NSLocalizedString("Update", comment: "")
-        let delete = NSLocalizedString("Delete", comment: "")
         
         self.navigationItem.title = editRefriger
         
         let editButton = UIBarButtonItem(title: update, style: .done, target: self, action: #selector(editButtonTapped))
-        let deleteButton = UIBarButtonItem(title: delete, style: .done, target: self, action: #selector(deleteButtonTapped))
         let cancelButton = UIBarButtonItem(title: cancel, style: .done, target: self, action: #selector(cancelButtonTapped))
         
-        navigationItem.setRightBarButtonItems([editButton, deleteButton], animated: false)
+        navigationItem.setRightBarButton(editButton, animated: false)
         navigationItem.setLeftBarButton(cancelButton, animated: false)
         
         editButton.tintColor = .blue
-        deleteButton.tintColor = .red
         
         navigationItem.leftBarButtonItem?.tintColor = UIColor.red
     }
@@ -168,7 +189,8 @@ extension EditRefrigerViewController: UIImagePickerControllerDelegate, UINavigat
     
     //삭제
     @objc func deleteButtonTapped() {
-        
+        HapticFeedbackManager.shared.provideFeedback()
+
         guard let data = data else { return }
         
         DocumentManager.shared.removeImageFromDocument(fileName: "JH\(data._id)")

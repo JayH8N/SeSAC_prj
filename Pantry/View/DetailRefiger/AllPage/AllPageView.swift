@@ -47,21 +47,20 @@ class AllPageView: BaseView {
         $0.buttonColor = UIColor.black
         
         $0.addItem(title: NSLocalizedString("AddItem", comment: ""),
-                   image: UIImage(systemName: "square")) { _ in
+                   image: UIImage(systemName: "square")) { [weak self] _ in
             
             HapticFeedbackManager.shared.provideFeedback()
             let vc = AddItemViewController()
             let nav = UINavigationController(rootViewController: vc)
             
-            self.switchDelegate?.switchScreen(nav: nav)
+            self?.switchDelegate?.switchScreen(nav: nav)
         }
         
         $0.addItem(title: NSLocalizedString("addItemBarcode", comment: ""),
-                   image: UIImage(systemName: "barcode.viewfinder")) { _ in
+                   image: UIImage(systemName: "barcode.viewfinder")) { [weak self] _ in
             HapticFeedbackManager.shared.provideFeedback()
-            let barcodeScanner = self.makeBarcodeScannerVC()
-            self.delegate?.pushView(vc: barcodeScanner)
-               
+            let barcodeScanner = self?.makeBarcodeScannerVC()
+            self?.delegate?.pushView(vc: barcodeScanner!)
         }
         
         $0.buttonImageSize = CGSize(width: 40, height: 40)
@@ -92,7 +91,7 @@ class AllPageView: BaseView {
         }
         
         filterButton.snp.makeConstraints {
-            $0.top.equalTo(self.safeAreaLayoutGuide).inset(4)
+            $0.top.equalTo(self.safeAreaLayoutGuide).inset(8)
             $0.leading.equalTo(self.snp.leading).inset(18)
         }
         
@@ -113,19 +112,6 @@ class AllPageView: BaseView {
     }
     
     
-}
-
-extension AllPageView {
-    private func allCollectionViewLayout() -> UICollectionViewLayout {
-        let layout = UICollectionViewFlowLayout()
-        layout.minimumInteritemSpacing = 12
-        layout.minimumLineSpacing = 15
-        layout.scrollDirection = .vertical
-        let size = UIScreen.main.bounds.width - 36
-        layout.itemSize = CGSize(width: size / 2, height: (size / 2) * 0.7)
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 12, bottom: 12, right: 12)
-        return layout
-    }
 }
 
 extension AllPageView: UICollectionViewDelegate, UICollectionViewDataSource {

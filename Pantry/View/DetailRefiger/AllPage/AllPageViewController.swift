@@ -65,7 +65,7 @@ class AllPageViewController: BaseViewController {
         }
         
         DispatchQueue.main.async { [weak self] in
-            self?.mainView.bgView.alpha = 0.2
+            self?.mainView.bgView.alpha = 0.5
         }
     }
     

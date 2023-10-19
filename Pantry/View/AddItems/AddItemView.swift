@@ -46,6 +46,11 @@ class AddItemView: BaseView {
     
     let items = [NSLocalizedString("Refrigerator", comment: ""), NSLocalizedString("Freezer", comment: "")]
     
+    let storageBackView = UIView().then {
+        $0.backgroundColor = .white
+        $0.layer.masksToBounds = true
+    }
+    
     lazy var storageType = UISegmentedControl(items: items).then {
         $0.selectedSegmentIndex = 0
         $0.backgroundColor = .white
@@ -101,8 +106,9 @@ class AddItemView: BaseView {
     }
     
     override func layoutSubviews() {
+        
+        storageBackView.roundCorners(cornerRadius: 8, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
         nameTextField.layer.cornerRadius = 8
-        expBackUIView.roundCorners(cornerRadius: 8, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
         memoBackUIView.layer.cornerRadius = 8
         amountBackUIView.roundCorners(cornerRadius: 8, maskedCorners: [.layerMinXMaxYCorner, .layerMaxXMaxYCorner])
         
@@ -124,9 +130,10 @@ class AddItemView: BaseView {
         uiView.addGestureRecognizer(tapGesture)
         
         ///
+        scrollView.addSubview(storageBackView)
+        storageBackView.addSubview(storageType)
         
         scrollView.addSubview(nameTextField)
-        scrollView.addSubview(storageType)
         scrollView.addSubview(expBackUIView)
         
         //EXP Date
@@ -176,21 +183,25 @@ class AddItemView: BaseView {
             $0.height.equalTo(40)
             $0.top.equalTo(uiView.snp.bottom).offset(20)
             $0.centerX.equalToSuperview()
-            $0.width.equalTo(self.snp.width).multipliedBy(0.8)
+            $0.width.equalTo(self.snp.width).multipliedBy(0.9)
         }
         
-        storageType.snp.makeConstraints {
+        storageBackView.snp.makeConstraints {
             $0.height.equalTo(nameTextField.snp.height)
             $0.top.equalTo(nameTextField.snp.bottom).offset(24)
             $0.centerX.equalToSuperview()
-            $0.width.equalTo(self.snp.width).multipliedBy(0.8)
+            $0.width.equalTo(nameTextField.snp.width)
+        }
+        
+        storageType.snp.makeConstraints {
+            $0.edges.equalToSuperview()
         }
         
         expBackUIView.snp.makeConstraints {
             $0.height.equalTo(nameTextField.snp.height)
-            $0.top.equalTo(storageType.snp.bottom).offset(10)
+            $0.top.equalTo(storageType.snp.bottom)
             $0.centerX.equalToSuperview()
-            $0.width.equalTo(self.snp.width).multipliedBy(0.8)
+            $0.width.equalTo(nameTextField.snp.width)
         }
         
         expLabel.snp.makeConstraints {
@@ -207,7 +218,7 @@ class AddItemView: BaseView {
             $0.height.equalTo(nameTextField.snp.height)
             $0.top.equalTo(expBackUIView.snp.bottom)//.offset(2)
             $0.centerX.equalToSuperview()
-            $0.width.equalTo(self.snp.width).multipliedBy(0.8)
+            $0.width.equalTo(nameTextField.snp.width)
         }
         
         amountLabel.snp.makeConstraints {
@@ -228,7 +239,7 @@ class AddItemView: BaseView {
             $0.height.equalTo(150)
             $0.top.equalTo(amountBackUIView.snp.bottom).offset(24)
             $0.centerX.equalToSuperview()
-            $0.width.equalTo(self.snp.width).multipliedBy(0.8)
+            $0.width.equalTo(nameTextField.snp.width)
         }
         
         memoLabel.snp.makeConstraints {

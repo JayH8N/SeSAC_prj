@@ -48,8 +48,8 @@ class ItemsCell: BaseCollectionViewCell {
         //
         progressView.layer.borderColor = UIColor.black.cgColor
         progressView.layer.borderWidth = 4
-        progressView.layer.cornerRadius = 10
-        progressView.layer.sublayers![1].cornerRadius = 10
+        progressView.layer.cornerRadius = progressView.bounds.height / 2
+        progressView.layer.sublayers![1].cornerRadius = progressView.bounds.height / 2
         progressView.clipsToBounds = true
         progressView.subviews[1].clipsToBounds = true
     }
@@ -58,7 +58,7 @@ class ItemsCell: BaseCollectionViewCell {
     override func configureView() {
         contentView.backgroundColor = .black.withAlphaComponent(0.5)
         contentView.addSubview(blurEffect)
-        contentView.layer.cornerRadius = 25
+        contentView.layer.cornerRadius = 17
         contentView.layer.masksToBounds = true
         
         contentView.addSubview(itemImage)
@@ -123,6 +123,16 @@ extension ItemsCell {
         expDateLabel.text = "Exp.\n\(formatDate(date: data.expiryDay))"
         let percentage = calculateProgressPercentage(currentDate: Date(), expirationDate: data.expiryDay)
         
+        
+        if percentage <= 0.35 {
+            progressView.tintColor = .green
+        } else if percentage <= 0.65 {
+            progressView.tintColor = .yellow
+        } else if percentage <= 0.99 {
+            progressView.tintColor = .red
+        } else {
+            progressView.tintColor = .purple
+        }
         progressView.setProgress(percentage, animated: true)
     }
 }
@@ -161,10 +171,8 @@ extension ItemsCell {
         
         // 유통기한이 지난 경우에는 1.0으로 설정 + 프로그레스 바 보라색으로
         if progressPercentage < 0 {
-            storageStateView.backgroundColor = .purple
             return 1.0
         }
-        
         
         return min(progressPercentage, 1.0)
     }

@@ -56,3 +56,12 @@ The bar will turn purple when the expiration date has passed.";
 "SelectSort" = "Select Sort";
 
 "Apply" = "Apply";
+
+//정렬 선택
+"SortNetAdded" = "Net Added";
+
+"SortFastestDate" = "Fastest Expiration Date";
+
+"SortSlowestDate" = "Slowest Expiration Date";
+
+"ExpiredGoods" = "Expired Goods";
