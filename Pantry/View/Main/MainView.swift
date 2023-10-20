@@ -100,7 +100,7 @@ extension MainView: FSPagerViewDelegate, FSPagerViewDataSource {
     }
     
     func pagerViewWillBeginDragging(_ pagerView: FSPagerView) {
-        HapticFeedbackManager.shared.provideFeedback()
+        //HapticFeedbackManager.shared.provideFeedback()
     }
     
 }

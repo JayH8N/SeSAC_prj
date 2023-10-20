@@ -15,6 +15,8 @@ class AddViewController: BaseViewController {
     
     var selectedImage: UIImage?
     
+    let nameLimit = 15
+    let memoLimit = 50
     
     let viewModel = AddViewModel()
     let repository = RefrigeratorRepository()
@@ -25,6 +27,8 @@ class AddViewController: BaseViewController {
         $0.layer.cornerRadius = 10
         $0.layer.masksToBounds = true
     }
+    
+    
     
     let imageView = UIImageView().then {
         $0.image = UIImage(named: "basicRefiger")
@@ -48,11 +52,23 @@ class AddViewController: BaseViewController {
         $0.backgroundColor = .white
     }
     
+    lazy var nameLimitLabel = UILabel().then {
+        $0.font = .systemFont(ofSize: 10)
+        $0.textAlignment = .left
+        //$0.text = "(0/\(nameLimit))"
+    }
+    
     let memo = UITextField().then {
         $0.placeholder = NSLocalizedString("Memo", comment: "")
         $0.tintColor = .black
         $0.layer.cornerRadius = 10
         $0.backgroundColor = .white
+    }
+    
+    lazy var memoLimitLabel = UILabel().then {
+        $0.font = .systemFont(ofSize: 10)
+        $0.textAlignment = .left
+        //$0.text = "(0/\(memoLimit))"
     }
     
     
@@ -62,7 +78,10 @@ class AddViewController: BaseViewController {
         initNav()
         setBind()
         
+        name.delegate = self
+        memo.delegate = self
         self.hideKeyboardWhenTappedAround()
+        updateCountLimitLabel()
     }
     
     private func setBind() {
@@ -88,17 +107,21 @@ class AddViewController: BaseViewController {
         uiView.addGestureRecognizer(tapGesture)
         
         view.addSubview(name)
+        view.addSubview(nameLimitLabel)
         view.addSubview(memo)
+        view.addSubview(memoLimitLabel)
         
         name.addTarget(self, action: #selector(nameTextChanged), for: .editingChanged)
         memo.addTarget(self, action: #selector(memoTextChanged), for: .editingChanged)
     }
     
     @objc func nameTextChanged() {
+        updateCountLimitLabel()
         viewModel.name.value = name.text ?? ""
     }
     
     @objc func memoTextChanged() {
+        updateCountLimitLabel()
         viewModel.memo.value = memo.text ?? ""
     }
     
@@ -132,13 +155,23 @@ class AddViewController: BaseViewController {
             $0.height.equalTo(40)
         }
         
+        nameLimitLabel.snp.makeConstraints {
+            $0.trailing.equalTo(name.snp.trailing)
+            $0.top.equalTo(name.snp.bottom).offset(3)
+        }
+        
         memo.leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 10.0, height: 0.0))
         memo.leftViewMode = .always
         memo.snp.makeConstraints {
             $0.width.equalTo(name)
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(name.snp.bottom).offset(24)
+            $0.top.equalTo(nameLimitLabel.snp.bottom).offset(19)
             $0.height.equalTo(name)
+        }
+        
+        memoLimitLabel.snp.makeConstraints {
+            $0.trailing.equalTo(memo.snp.trailing)
+            $0.top.equalTo(memo.snp.bottom).offset(3)
         }
     }
     
@@ -199,4 +232,41 @@ extension AddViewController: UIImagePickerControllerDelegate, UINavigationContro
         present(picker, animated: true, completion: nil)
     }
     
+}
+
+extension AddViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if textField == name {
+            let nowString = name.text ?? ""
+            let newString = (nowString as NSString).replacingCharacters(in: range, with: string)
+            
+            if newString.count <= nameLimit {
+                return true
+            } else {
+                return false
+            }
+        } else if textField == memo {
+            let nowString = memo.text ?? ""
+            let newString = (nowString as NSString).replacingCharacters(in: range, with: string)
+            
+            if newString.count <= memoLimit {
+                return true
+            } else {
+                return false
+            }
+        }
+        
+        return true
+    }
+    
+    
+    private func updateCountLimitLabel() {
+        if let text = name.text {
+            nameLimitLabel.text = "(\(text.count)/\(nameLimit))"
+        }
+        if let memo = memo.text {
+            memoLimitLabel.text = "(\(memo.count)/\(memoLimit))"
+        }
+    }
 }

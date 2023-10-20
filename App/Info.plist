@@ -4,7 +4,6 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>TiquiTaca-Regular.otf</string>
 		<string>TAEBAEK milkyway.ttf</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>

@@ -16,6 +16,9 @@ class EditRefrigerViewController: BaseViewController {
     
     var data: Refrigerator?
     
+    let nameLimit = 15
+    let memoLimit = 50
+    
 //MARK: - Properties
     let blurEffect = UIVisualEffectView(effect: UIBlurEffect(style: .light))
     
@@ -45,11 +48,21 @@ class EditRefrigerViewController: BaseViewController {
         $0.backgroundColor = .white
     }
     
+    lazy var nameLimitLabel = UILabel().then {
+        $0.font = .systemFont(ofSize: 10)
+        $0.textAlignment = .left
+    }
+    
     let memo = UITextField().then {
         $0.placeholder = NSLocalizedString("Memo", comment: "")
         $0.tintColor = .black
         $0.layer.cornerRadius = 10
         $0.backgroundColor = .white
+    }
+    
+    lazy var memoLimitLabel = UILabel().then {
+        $0.font = .systemFont(ofSize: 10)
+        $0.textAlignment = .left
     }
     
     let deleteButton = UIButton(type: .system).then {
@@ -68,8 +81,11 @@ class EditRefrigerViewController: BaseViewController {
         super.viewDidLoad()
         
         initNav()
-        
         initialSetting()
+        
+        name.delegate = self
+        memo.delegate = self
+        updateCountLimitLabel()
         self.hideKeyboardWhenTappedAround()
     }
     
@@ -82,6 +98,7 @@ class EditRefrigerViewController: BaseViewController {
         name.text = data.name
         memo.text = data.memo
     }
+    
     
     override func configureView() {
         view.addSubview(blurEffect)
@@ -96,9 +113,29 @@ class EditRefrigerViewController: BaseViewController {
         
         
         view.addSubview(name)
+        view.addSubview(nameLimitLabel)
         view.addSubview(memo)
+        view.addSubview(memoLimitLabel)
         view.addSubview(deleteButton)
+        
+        name.addTarget(self, action: #selector(nameTextChanged), for: .editingChanged)
+        memo.addTarget(self, action: #selector(memoTextChanged), for: .editingChanged)
     }
+    
+    @objc func nameTextChanged() {
+        updateCountLimitLabel()
+        if let text = name.text, !text.isEmpty {
+            // 입력값이 존재하는 경우 네비게이션 바 아이템 활성화
+            navigationItem.rightBarButtonItem?.isEnabled = true
+        } else {
+            navigationItem.rightBarButtonItem?.isEnabled = false
+        }
+    }
+    
+    @objc func memoTextChanged() {
+        updateCountLimitLabel()
+    }
+    
     
     override func setConstraints() {
         blurEffect.snp.makeConstraints {
@@ -130,13 +167,23 @@ class EditRefrigerViewController: BaseViewController {
             $0.height.equalTo(40)
         }
         
+        nameLimitLabel.snp.makeConstraints {
+            $0.trailing.equalTo(name.snp.trailing)
+            $0.top.equalTo(name.snp.bottom).offset(3)
+        }
+        
         memo.leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 10.0, height: 0.0))
         memo.leftViewMode = .always
         memo.snp.makeConstraints {
             $0.width.equalTo(name)
             $0.centerX.equalToSuperview()
-            $0.top.equalTo(name.snp.bottom).offset(24)
+            $0.top.equalTo(nameLimitLabel.snp.bottom).offset(19)
             $0.height.equalTo(name)
+        }
+        
+        memoLimitLabel.snp.makeConstraints {
+            $0.trailing.equalTo(memo.snp.trailing)
+            $0.top.equalTo(memo.snp.bottom).offset(3)
         }
         
         deleteButton.snp.makeConstraints {
@@ -228,4 +275,41 @@ extension EditRefrigerViewController: UIImagePickerControllerDelegate, UINavigat
         present(picker, animated: true, completion: nil)
     }
     
+}
+
+extension EditRefrigerViewController: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        
+        if textField == name {
+            let nowString = name.text ?? ""
+            let newString = (nowString as NSString).replacingCharacters(in: range, with: string)
+            
+            if newString.count <= nameLimit {
+                return true
+            } else {
+                return false
+            }
+        } else if textField == memo {
+            let nowString = memo.text ?? ""
+            let newString = (nowString as NSString).replacingCharacters(in: range, with: string)
+            
+            if newString.count <= memoLimit {
+                return true
+            } else {
+                return false
+            }
+        }
+        
+        return true
+    }
+    
+    
+    private func updateCountLimitLabel() {
+        if let text = name.text {
+            nameLimitLabel.text = "(\(text.count)/\(nameLimit))"
+        }
+        if let memo = memo.text {
+            memoLimitLabel.text = "(\(memo.count)/\(memoLimit))"
+        }
+    }
 }

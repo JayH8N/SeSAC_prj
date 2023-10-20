@@ -17,6 +17,9 @@ class AddItemView: BaseView {
         $0.backgroundColor = .clear
     }
     
+    let nameLimit = 15
+    let memoLimit = 150
+    
 //MARK: - Properties
     let uiView = UIView().then {
         $0.layer.cornerRadius = 10
@@ -42,6 +45,12 @@ class AddItemView: BaseView {
         $0.backgroundColor = .white
         $0.tintColor = .black
         $0.attributedPlaceholder = NSAttributedString(string: NSLocalizedString("ItemName", comment: ""), attributes: [NSAttributedString.Key.foregroundColor: UIColor.red])
+    }
+    
+    lazy var nameLimitLabel = UILabel().then {
+        $0.font = .systemFont(ofSize: 10)
+        $0.textAlignment = .left
+        $0.text = "(0/\(nameLimit))"
     }
     
     let items = [NSLocalizedString("Refrigerator", comment: ""), NSLocalizedString("Freezer", comment: "")]
@@ -105,6 +114,12 @@ class AddItemView: BaseView {
         $0.font = .systemFont(ofSize: 17)
     }
     
+    lazy var memoLimitLabel = UILabel().then {
+        $0.font = .systemFont(ofSize: 10)
+        $0.textAlignment = .left
+        $0.text = "(0/\(memoLimit))"
+    }
+    
     override func layoutSubviews() {
         
         storageBackView.roundCorners(cornerRadius: 8, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
@@ -134,6 +149,7 @@ class AddItemView: BaseView {
         storageBackView.addSubview(storageType)
         
         scrollView.addSubview(nameTextField)
+        scrollView.addSubview(nameLimitLabel)
         scrollView.addSubview(expBackUIView)
         
         //EXP Date
@@ -151,6 +167,7 @@ class AddItemView: BaseView {
         scrollView.addSubview(memoBackUIView)
         memoBackUIView.addSubview(memoLabel)
         memoBackUIView.addSubview(memoTextView)
+        scrollView.addSubview(memoLimitLabel)
     }
     
     override func setConstraints() {
@@ -186,9 +203,14 @@ class AddItemView: BaseView {
             $0.width.equalTo(self.snp.width).multipliedBy(0.9)
         }
         
+        nameLimitLabel.snp.makeConstraints {
+            $0.trailing.equalTo(nameTextField.snp.trailing)
+            $0.top.equalTo(nameTextField.snp.bottom).offset(3)
+        }
+        
         storageBackView.snp.makeConstraints {
             $0.height.equalTo(nameTextField.snp.height)
-            $0.top.equalTo(nameTextField.snp.bottom).offset(24)
+            $0.top.equalTo(nameLimitLabel.snp.bottom).offset(19)
             $0.centerX.equalToSuperview()
             $0.width.equalTo(nameTextField.snp.width)
         }
@@ -249,6 +271,11 @@ class AddItemView: BaseView {
         memoTextView.snp.makeConstraints {
             $0.top.equalTo(memoLabel.snp.bottom).offset(5)
             $0.leading.trailing.bottom.equalToSuperview().inset(10)
+        }
+        
+        memoLimitLabel.snp.makeConstraints {
+            $0.trailing.equalTo(memoBackUIView.snp.trailing)
+            $0.top.equalTo(memoBackUIView.snp.bottom).offset(3)
         }
         
         

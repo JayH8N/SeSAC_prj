@@ -39,53 +39,39 @@ class AllPageView: BaseView {
     }
     
     
-    let introDuctionButton = UIButton.makeHighlightedButton(withImageName: "questionmark.circle", size: 25).then {
-        $0.tintColor = .darkGray
-    }
-    
-    //toast
-    var style = {
-        var view = ToastStyle()
-        view.backgroundColor = UIColor(red: 243/255, green: 244/255, blue: 246/255, alpha: 1)
-        view.imageSize = CGSize(width: 80, height: 120)
-        view.titleColor = .black
-        view.messageColor = .black
-        return view
-    }()
-    
-    
-    
-    lazy var actionButton = JJFloatingActionButton().then {
-        $0.buttonImage = UIImage(systemName: "plus")
-        $0.buttonColor = UIColor.black
-        
-        $0.addItem(title: NSLocalizedString("AddItem", comment: ""),
-                   image: UIImage(systemName: "square")) { [weak self] _ in
-            
-            HapticFeedbackManager.shared.provideFeedback()
-            let vc = AddItemViewController()
-            let nav = UINavigationController(rootViewController: vc)
-            
-            self?.switchDelegate?.switchScreen(nav: nav)
-        }
-        
-        $0.addItem(title: NSLocalizedString("addItemBarcode", comment: ""),
-                   image: UIImage(systemName: "barcode.viewfinder")) { [weak self] _ in
-            HapticFeedbackManager.shared.provideFeedback()
-            let barcodeScanner = self?.makeBarcodeScannerVC()
-            self?.delegate?.pushView(vc: barcodeScanner!)
-        }
-        
-        $0.buttonImageSize = CGSize(width: 40, height: 40)
-    }
-    
-    private func makeBarcodeScannerVC() -> BarcodeScannerViewController {
-        let viewController = BarcodeScannerViewController()
-        viewController.codeDelegate = self
-        viewController.errorDelegate = self
-        viewController.dismissalDelegate = self
-        return viewController
-    }
+//⚠️
+//    lazy var actionButton = JJFloatingActionButton().then {
+//        $0.buttonImage = UIImage(systemName: "plus")
+//        $0.buttonColor = UIColor.black
+//
+//        $0.addItem(title: NSLocalizedString("AddItem", comment: ""),
+//                   image: UIImage(systemName: "square")) { [weak self] _ in
+//
+//            HapticFeedbackManager.shared.provideFeedback()
+//            let vc = AddItemViewController()
+//            let nav = UINavigationController(rootViewController: vc)
+//
+//            self?.switchDelegate?.switchScreen(nav: nav)
+//        }
+//
+//        $0.addItem(title: NSLocalizedString("addItemBarcode", comment: ""),
+//                   image: UIImage(systemName: "barcode.viewfinder")) { [weak self] _ in
+//            HapticFeedbackManager.shared.provideFeedback()
+//            let barcodeScanner = self?.makeBarcodeScannerVC()
+//            self?.delegate?.pushView(vc: barcodeScanner!)
+//        }
+//
+//        $0.buttonImageSize = CGSize(width: 40, height: 40)
+//    }
+
+//⚠️
+//    private func makeBarcodeScannerVC() -> BarcodeScannerViewController {
+//        let viewController = BarcodeScannerViewController()
+//        viewController.codeDelegate = self
+//        viewController.errorDelegate = self
+//        viewController.dismissalDelegate = self
+//        return viewController
+//    }
     
     
     override func configureView() {
@@ -93,8 +79,7 @@ class AllPageView: BaseView {
         addSubview(blurEffect)
         addSubview(filterButton)
         addSubview(allCollectionView)
-        addSubview(actionButton)
-        addSubview(introDuctionButton)
+        //⚠️addSubview(actionButton)
         
     }
     
@@ -113,15 +98,10 @@ class AllPageView: BaseView {
             $0.leading.trailing.bottom.equalTo(self.safeAreaLayoutGuide)
         }
         
-        actionButton.snp.makeConstraints {
-            $0.trailing.equalTo(self.snp.trailing).inset(30)
-            $0.bottom.equalTo(self.safeAreaLayoutGuide.snp.bottom).inset(30)
-        }
-        
-        introDuctionButton.snp.makeConstraints {
-            $0.top.equalTo(self.safeAreaLayoutGuide).inset(11)
-            $0.trailing.equalTo(self.snp.trailing).inset(18)
-        }
+//⚠️        actionButton.snp.makeConstraints {
+//            $0.trailing.equalTo(self.snp.trailing).inset(30)
+//            $0.bottom.equalTo(self.safeAreaLayoutGuide.snp.bottom).inset(30)
+//        }
     }
     
     
@@ -141,28 +121,29 @@ extension AllPageView: UICollectionViewDelegate, UICollectionViewDataSource {
     
 }
 
-extension AllPageView: BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate {
-    func scanner(_ controller: BarcodeScanner.BarcodeScannerViewController, didCaptureCode code: String, type: String) {
-        print("Barcode====== \(code)")
-        print("Type======= \(type)")
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
-            controller.reset()
-            controller.navigationController?.popViewController(animated: true)
-            
-            let vc = AddItemViewController()
-            let nav = UINavigationController(rootViewController: vc)
-            
-            self.switchDelegate?.switchScreen(nav: nav)
-        }
-    }
-
-    func scanner(_ controller: BarcodeScanner.BarcodeScannerViewController, didReceiveError error: Error) {
-        print(error)
-    }
-
-    func scannerDidDismiss(_ controller: BarcodeScanner.BarcodeScannerViewController) {
-        controller.dismiss(animated: true)
-    }
-
-}
+//⚠️
+//extension AllPageView: BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate {
+//    func scanner(_ controller: BarcodeScanner.BarcodeScannerViewController, didCaptureCode code: String, type: String) {
+//        print("Barcode====== \(code)")
+//        print("Type======= \(type)")
+//
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+//            controller.reset()
+//            controller.navigationController?.popViewController(animated: true)
+//
+//            let vc = AddItemViewController()
+//            let nav = UINavigationController(rootViewController: vc)
+//
+//            self.switchDelegate?.switchScreen(nav: nav)
+//        }
+//    }
+//
+//    func scanner(_ controller: BarcodeScanner.BarcodeScannerViewController, didReceiveError error: Error) {
+//        print(error)
+//    }
+//
+//    func scannerDidDismiss(_ controller: BarcodeScanner.BarcodeScannerViewController) {
+//        controller.dismiss(animated: true)
+//    }
+//
+//}

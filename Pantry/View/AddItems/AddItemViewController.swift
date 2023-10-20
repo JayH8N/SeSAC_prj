@@ -15,6 +15,7 @@ class AddItemViewController: BaseViewController {
         view = mainView
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,7 +24,8 @@ class AddItemViewController: BaseViewController {
         setBind()
         
         mainView.delegate = self
-        
+        mainView.memoTextView.delegate = self
+        mainView.nameTextField.delegate = self
     }
     
     private func setBind() {
@@ -46,7 +48,6 @@ class AddItemViewController: BaseViewController {
         mainView.datePicker.addTarget(self, action: #selector(datePickerPickedValue), for: .valueChanged)
         mainView.stepper.addTarget(self, action: #selector(stepperValueChanged), for: .valueChanged)
     }
-    
     
     @objc private func handleTap() {
         view.endEditing(true)
@@ -148,6 +149,7 @@ extension AddItemViewController: YPImagePickerProtocol {
 //valueChanged
 extension AddItemViewController {
     @objc private func nameChanged() {
+        updateCountLimitLabel()
         viewModel.name.value = mainView.nameTextField.text ?? ""
     }
     
@@ -163,6 +165,42 @@ extension AddItemViewController {
         mainView.qLabel.text = String(Int(mainView.stepper.value))
         print(Int(mainView.stepper.value))
     }
-    
+}
 
+extension AddItemViewController: UITextViewDelegate, UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let nowString = mainView.nameTextField.text ?? ""
+        let newString = (nowString as NSString).replacingCharacters(in: range, with: string)
+        
+        if newString.count <= mainView.nameLimit {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        let nowString = mainView.memoTextView.text ?? ""
+        let newString = (nowString as NSString).replacingCharacters(in: range, with: text)
+        
+        if newString.count <= mainView.memoLimit {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func updateCountLimitLabel() {
+        if let text = mainView.nameTextField.text {
+            mainView.nameLimitLabel.text = "(\(text.count)/\(mainView.nameLimit))"
+        }
+        if let memo = mainView.memoTextView.text {
+            mainView.memoLimitLabel.text = "(\(memo.count)/\(mainView.memoLimit))"
+        }
+    }
+    
+    //textview 내용 변경 호출 메서드
+    func textViewDidChange(_ textView: UITextView) {
+        updateCountLimitLabel()
+    }
 }
