@@ -28,35 +28,55 @@ class RefrigeratorRepository {
         }
     }
     
+    //냉장고 가져오기
     func fetch() -> Results<Refrigerator> {
         var data = realm.objects(Refrigerator.self)
         return data
     }
     
-    func createItem(_ item: Refrigerator) {
+    //냉장고 아이템 가져오기
+    func fetchItem(rfObjectid: ObjectId) -> List<Items>? {
+        if let refrigerator = realm.object(ofType: Refrigerator.self, forPrimaryKey: rfObjectid) {
+            let items = refrigerator.ingredient
+            return items
+        }
+        return nil
+    }
+
+//MARK: - 냉장고 관련메서드
+    func createRefrigerator(_ rf: Refrigerator) {
         do {
             try! realm.write {
-                realm.add(item)
+                realm.add(rf)
+            }
+        } catch {
+            print(error)
+        }
+    }
+
+    func removeRefrigerator(_ rf: Refrigerator) {
+        do {
+            try! realm.write {
+                // 냉장고 이미지 파일 삭제
+                let imageFileName = "JH\(rf._id)"
+                DocumentManager.shared.removeImageFromDocument(fileName: imageFileName)
+
+                for item in rf.ingredient {
+                    let itemImageFileName = "JH\(item._id)"
+                    DocumentManager.shared.removeImageFromDocument(fileName: itemImageFileName)
+                }
+                realm.delete(rf.ingredient)
+
+                realm.delete(rf)
             }
         } catch {
             print(error)
         }
     }
     
-    func removeItem(_ item: Refrigerator) {
-        do {
-            try! realm.write {
-                realm.delete(item)
-            }
-        } catch {
-            print(error)
-        }
-    }
-    
-    func updateItem(id: ObjectId, name: String, memo: String) {
+    func updateRefrigerator(_ id: ObjectId, name: String, memo: String) {
         do {
             try realm.write {
-                //realm.add(item, update: .modified)
                 
                 realm.create(Refrigerator.self, value: ["_id": id, "name": name, "memo": memo] as [String : Any], update: .modified)
             }
@@ -65,6 +85,55 @@ class RefrigeratorRepository {
         }
     }
     
+//MARK: - 냉장고 아이템관련 메서드
+    //아이템 추가
+    func addItemToRefrigerator(_ item: Items, refrigeratorId: ObjectId) {
+        do {
+            if let refrigerator = realm.object(ofType: Refrigerator.self, forPrimaryKey: refrigeratorId) {
+                try realm.write {
+                    refrigerator.ingredient.append(item)
+                }
+            } else {
+                print("Error")
+            }
+        } catch {
+            print(error)
+        }
+    }
     
-
+    //아이템 삭제
+    func removeItemFromRefrigerator(_ objectId: ObjectId) {
+        do {
+            if let item = realm.object(ofType: Items.self, forPrimaryKey: objectId) {
+                try realm.write {
+                    DocumentManager.shared.removeImageFromDocument(fileName: "JH\(objectId)")
+                    realm.delete(item)
+                }
+            } else {
+                print("Error")
+            }
+        } catch {
+            print(error)
+        }
+    }
+    
+    //아이템 수정
+    func updateItemFromRefrigerator(_ objectId: ObjectId, state: State.RawValue, name: String, count: Int, expiryDay: Date, memo: String?) {
+        do {
+            if let item = realm.object(ofType: Items.self, forPrimaryKey: objectId) {
+                try realm.write {
+                    item.state = state
+                    item.name = name
+                    item.count = count
+                    item.expiryDay = expiryDay
+                    item.memo = memo
+                }
+            } else {
+                print("Error")
+            }
+        } catch {
+            print(error)
+        }
+    }
+    
 }

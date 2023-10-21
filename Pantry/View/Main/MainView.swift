@@ -16,6 +16,7 @@ class MainView: BaseView {
     let repository = RefrigeratorRepository()
     
     var stored: Results<Refrigerator>!
+    var rfID: ObjectId?
     
     let hapticFeedBack = UISelectionFeedbackGenerator()
     
@@ -91,10 +92,12 @@ extension MainView: FSPagerViewDelegate, FSPagerViewDataSource {
     func pagerView(_ pagerView: FSPagerView, didSelectItemAt index: Int) {
         HapticFeedbackManager.shared.provideFeedback()
         let data = stored[index]
+        rfID = data._id //For 컬렉션뷰값전달
         
         let vc = DetailPagerTabViewController()
         
         vc.rfName = data.name
+        vc.rfId = data._id
         
         delegate?.pushView(vc: vc)
     }

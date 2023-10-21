@@ -224,7 +224,7 @@ extension EditRefrigerViewController: UIImagePickerControllerDelegate, UINavigat
          
         guard let data = data else { return }
         
-        repository.updateItem(id: data._id, name: name.text ?? "", memo: memo.text ?? "")
+        repository.updateRefrigerator(data._id, name: name.text ?? "", memo: memo.text ?? "")
         
         DocumentManager.shared.saveImageToDocument(fileName: "JH\(data._id)", image: imageView.image!)
         
@@ -240,9 +240,7 @@ extension EditRefrigerViewController: UIImagePickerControllerDelegate, UINavigat
 
         guard let data = data else { return }
         
-        DocumentManager.shared.removeImageFromDocument(fileName: "JH\(data._id)")
-        
-        repository.removeItem(data)
+        repository.removeRefrigerator(data)
         
         NotificationCenter.default.post(name: Notification.Name("ReloadData"), object: nil)
         

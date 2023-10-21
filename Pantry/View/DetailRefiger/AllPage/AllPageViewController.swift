@@ -8,11 +8,14 @@
 import UIKit
 import BarcodeScanner
 import Toast
+import RealmSwift
 
 class AllPageViewController: BaseViewController {
     
+    var rfID: ObjectId?
     
     let mainView = AllPageView()
+    let repository = RefrigeratorRepository()
     
     override func loadView() {
         view = mainView
@@ -23,6 +26,10 @@ class AllPageViewController: BaseViewController {
         
         mainView.switchDelegate = self
         mainView.delegate = self
+        
+        mainView.itemList = repository.fetchItem(rfObjectid: rfID!)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: Notification.Name("itemReload"), object: nil)
     }
     
     
@@ -35,6 +42,12 @@ class AllPageViewController: BaseViewController {
     override func setConstraints() {
         
     }
+    
+    @objc private func reloadData() {
+        mainView.allCollectionView.reloadData()
+    }
+    
+    
     
     @objc private func filterButtonTapped() {
         let bulletinBoardVC = FilterButtonVC.instance()

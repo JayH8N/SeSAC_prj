@@ -40,7 +40,7 @@ class Items: Object {
     @Persisted var state: State.RawValue
     @Persisted var name: String
     @Persisted var count: Int
-    @Persisted var registDay: Date
+    @Persisted(indexed: true) var registDay: Date
     @Persisted var expiryDay: Date
     @Persisted var memo: String?
 

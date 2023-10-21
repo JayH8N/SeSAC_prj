@@ -18,6 +18,7 @@ class ItemsCell: BaseCollectionViewCell {
         $0.contentMode = .scaleAspectFill
         $0.layer.cornerRadius = 10
         $0.backgroundColor = .black
+        $0.clipsToBounds = true
     }
     
     let itemTitle = MarqueeLabel().then {
@@ -36,7 +37,6 @@ class ItemsCell: BaseCollectionViewCell {
     
     let progressView = UIProgressView().then {
         $0.progressViewStyle = .default
-        $0.progressTintColor = .green
         $0.trackTintColor = .black
     }
     
@@ -100,7 +100,6 @@ class ItemsCell: BaseCollectionViewCell {
             $0.bottom.equalTo(itemImage.snp.bottom)
         }
         
-        progressView.setProgress(1.0, animated: true)
         progressView.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(10)
             $0.height.equalTo(16)
@@ -115,25 +114,16 @@ extension ItemsCell {
         itemImage.image = DocumentManager.shared.loadImageFromDocument(fileName: "JH\(data._id)")
         
         if data.state == 0 {
-            storageStateView.backgroundColor = .blue
-        } else {
             storageStateView.backgroundColor = UIColor(red: 111/255, green: 178/255, blue: 232/255, alpha: 1)
+        } else {
+            storageStateView.backgroundColor = .blue
         }
         
         expDateLabel.text = "Exp.\n\(formatDate(date: data.expiryDay))"
-        let percentage = calculateProgressPercentage(currentDate: Date(), expirationDate: data.expiryDay)
         
+        let percentage = calculateDiscount(expirationDate: data.expiryDay)
         
-        if percentage <= 0.35 {
-            progressView.tintColor = .green
-        } else if percentage <= 0.65 {
-            progressView.tintColor = .yellow
-        } else if percentage <= 0.99 {
-            progressView.tintColor = .red
-        } else {
-            progressView.tintColor = .purple
-        }
-        progressView.setProgress(percentage, animated: true)
+        progressView.setProgress(percentage, animated: false)
     }
 }
 
@@ -142,39 +132,43 @@ extension ItemsCell {
     //날짜형식 변환
     func formatDate(date: Date) -> String {
         let dateFormatter = DateFormatter()
-        let locale = Locale.current
-        
-        if locale.identifier == "en_US" {
+        dateFormatter.timeZone = TimeZone.current
+
+        if Locale.preferredLanguages.first == "en-US" {
             dateFormatter.dateFormat = "MM-dd-yyyy"
+            dateFormatter.locale = Locale(identifier: "en_US")
         } else {
             dateFormatter.dateFormat = "yyyy-MM-dd"
+            dateFormatter.locale = Locale(identifier: "ko_KR")
         }
-        
-        dateFormatter.timeZone = TimeZone.current
+
         return dateFormatter.string(from: date)
     }
     
     //프로그레스 뷰 계산
-    func calculateProgressPercentage(currentDate: Date, expirationDate: Date) -> Float {
-        // 현재 날짜와 유통기한 날짜 간격
-        let calendar = Calendar.current
-        let timeDifference = calendar.dateComponents([.day], from: currentDate, to: expirationDate)
+    func calculateDiscount(expirationDate: Date) -> Float {
+        let components = Calendar.current.dateComponents([.year, .month, .day], from: expirationDate)
+        let startDate = Calendar.current.date(from: components)!
         
-        // 유통기한까지의 총 날짜
-        let totalDays = Float(timeDifference.day ?? 0)
+        let offsetComps = Calendar.current.dateComponents([.day], from: Date(), to: startDate)
         
-        // 현재 날짜부터 유통기한까지의 남은 날짜
-        let remainingDays = Float(max(timeDifference.day ?? 0, 0))
-        
-        // 진행 퍼센트 계산
-        let progressPercentage = remainingDays / totalDays
-        
-        // 유통기한이 지난 경우에는 1.0으로 설정
-        if progressPercentage < 0 {
-            return 1.0
+        if let day = offsetComps.day {
+            switch day {
+            case 0...3:
+                progressView.tintColor = .red
+                return 0.8
+            case 4...10:
+                progressView.tintColor = .yellow
+                return 0.5
+            case 11...:
+                progressView.tintColor = .green
+                return 0.3
+            default:
+                progressView.tintColor = .purple
+                return 1.0
+            }
         }
         
-        return min(progressPercentage, 1.0)
+        return 0.0
     }
-
 }

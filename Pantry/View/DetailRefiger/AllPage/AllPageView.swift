@@ -11,13 +11,16 @@ import SnapKit
 import JJFloatingActionButton
 import BarcodeScanner
 import Toast
+import RealmSwift
 
 class AllPageView: BaseView {
     
+    let repository = RefrigeratorRepository()
     
     weak var switchDelegate: SwitchScreenProtocol?
     weak var delegate: NavPushProtocol?
     
+    var itemList: List<Items>!
 //MARK: - Properties
     let blurEffect = UIVisualEffectView(effect: UIBlurEffect(style: .light))
     
@@ -109,13 +112,28 @@ class AllPageView: BaseView {
 
 extension AllPageView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return itemList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemsCell.identifier, for: indexPath) as! ItemsCell
         
+        let data = itemList[indexPath.item]
+
+        cell.setCell(data: data)
+        
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        HapticFeedbackManager.shared.provideFeedback()
+        let data = itemList[indexPath.item]
+        
+        let vc = EditItemViewController()
+        vc.data = data
+        let nav = UINavigationController(rootViewController: vc)
+        
+        self.window?.rootViewController?.present(nav, animated: true)
     }
     
     

@@ -13,6 +13,7 @@ import SnapKit
 import JJFloatingActionButton
 import BarcodeScanner
 import Toast
+import RealmSwift
 
 class DetailPagerTabViewController: TabmanViewController, PageboyViewControllerDataSource {
     
@@ -20,6 +21,7 @@ class DetailPagerTabViewController: TabmanViewController, PageboyViewControllerD
     private var viewControllers: Array<UIViewController> = []
     
     var rfName: String = ""
+    var rfId: ObjectId?
     
     let introDuctionButton = UIButton.makeHighlightedButton(withImageName: "questionmark.circle", size: 25).then {
         $0.tintColor = .darkGray
@@ -43,6 +45,7 @@ class DetailPagerTabViewController: TabmanViewController, PageboyViewControllerD
             
             HapticFeedbackManager.shared.provideFeedback()
             let vc = AddItemViewController()
+            vc.refrigerId = self?.rfId
             let nav = UINavigationController(rootViewController: vc)
             
             //self?.switchDelegate?.switchScreen(nav: nav)
@@ -106,6 +109,7 @@ class DetailPagerTabViewController: TabmanViewController, PageboyViewControllerD
 extension DetailPagerTabViewController {
     private func configureTabman() {
         let vc1 = AllPageViewController()
+        vc1.rfID = self.rfId
         let vc2 = RefrigerPageViewController()
         let vc3 = FreezerPageViewController()
         

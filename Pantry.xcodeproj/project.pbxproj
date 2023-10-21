@@ -13,6 +13,8 @@
 		784CE00B2AE053EC008ADC5B /* HapticFeedbackManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CE00A2AE053EC008ADC5B /* HapticFeedbackManager.swift */; };
 		784CE0102AE08A50008ADC5B /* CustomRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CE00F2AE08A50008ADC5B /* CustomRadioButton.swift */; };
 		784CE0252AE216CA008ADC5B /* EditRefrigerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CE0242AE216CA008ADC5B /* EditRefrigerViewModel.swift */; };
+		784CE0282AE3F8A2008ADC5B /* EditItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CE0272AE3F8A2008ADC5B /* EditItemView.swift */; };
+		784CE02A2AE3F8AC008ADC5B /* EditItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CE0292AE3F8AC008ADC5B /* EditItemViewController.swift */; };
 		785E01892ABE883E0057859F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E01882ABE883E0057859F /* AppDelegate.swift */; };
 		785E018B2ABE883E0057859F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E018A2ABE883E0057859F /* SceneDelegate.swift */; };
 		785E01922ABE883F0057859F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 785E01912ABE883F0057859F /* Assets.xcassets */; };
@@ -80,6 +82,8 @@
 		784CE00A2AE053EC008ADC5B /* HapticFeedbackManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticFeedbackManager.swift; sourceTree = "<group>"; };
 		784CE00F2AE08A50008ADC5B /* CustomRadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRadioButton.swift; sourceTree = "<group>"; };
 		784CE0242AE216CA008ADC5B /* EditRefrigerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditRefrigerViewModel.swift; sourceTree = "<group>"; };
+		784CE0272AE3F8A2008ADC5B /* EditItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemView.swift; sourceTree = "<group>"; };
+		784CE0292AE3F8AC008ADC5B /* EditItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemViewController.swift; sourceTree = "<group>"; };
 		785E01852ABE883E0057859F /* Pantry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pantry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		785E01882ABE883E0057859F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		785E018A2ABE883E0057859F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -174,6 +178,15 @@
 			path = Refrigerator;
 			sourceTree = "<group>";
 		};
+		784CE0262AE3F653008ADC5B /* EditItems */ = {
+			isa = PBXGroup;
+			children = (
+				784CE0272AE3F8A2008ADC5B /* EditItemView.swift */,
+				784CE0292AE3F8AC008ADC5B /* EditItemViewController.swift */,
+			);
+			path = EditItems;
+			sourceTree = "<group>";
+		};
 		785E017C2ABE883E0057859F = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +249,7 @@
 			children = (
 				785E01B12AC107DD0057859F /* TabBarController.swift */,
 				784CE0062AE0405D008ADC5B /* FilterButtonVC.swift */,
+				784CE0262AE3F653008ADC5B /* EditItems */,
 				784CE0022AE02914008ADC5B /* Refrigerator */,
 				788FE3252ADF77F60018B1C9 /* AddItems */,
 				787CEAD22AD434B10077A073 /* DetailRefiger */,
@@ -594,6 +608,7 @@
 				788FE32B2ADFB86B0018B1C9 /* UIView.swift in Sources */,
 				785E01892ABE883E0057859F /* AppDelegate.swift in Sources */,
 				785E01AE2AC1076D0057859F /* MainView.swift in Sources */,
+				784CE0282AE3F8A2008ADC5B /* EditItemView.swift in Sources */,
 				787CEAD12AD3F5AB0077A073 /* NavPushProtocol.swift in Sources */,
 				78F37D4A2ACAB3E500ED4466 /* BaseTableViewCell.swift in Sources */,
 				787CEAE62AD436AE0077A073 /* RefigerPageView.swift in Sources */,
@@ -606,6 +621,7 @@
 				785E018B2ABE883E0057859F /* SceneDelegate.swift in Sources */,
 				785E01B52AC108190057859F /* BaseView.swift in Sources */,
 				78F37D242AC3686600ED4466 /* UIColor.swift in Sources */,
+				784CE02A2AE3F8AC008ADC5B /* EditItemViewController.swift in Sources */,
 				785E01B22AC107DD0057859F /* TabBarController.swift in Sources */,
 				78C8C25D2ACDAD20004EF75D /* BaseCollectionViewCell.swift in Sources */,
 				785E01B72AC108250057859F /* BaseViewController.swift in Sources */,
