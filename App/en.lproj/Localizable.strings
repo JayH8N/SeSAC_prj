@@ -65,3 +65,13 @@ The bar will turn purple when the expiration date has passed.";
 "SortSlowestDate" = "Slowest Expiration Date";
 
 "ExpiredGoods" = "Expired Goods";
+
+"ExpNotiTitle" = "Expiration date notification";
+
+"ExpNotiBody" = "%@ has %d days left to expire.";
+
+"None" = "None";
+
+"dayAlarm" = "%dday ago Alarm";
+
+"shortDayAlarm" = "%dDay";

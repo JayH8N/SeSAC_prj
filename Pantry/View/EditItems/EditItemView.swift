@@ -132,6 +132,8 @@ class EditItemView: BaseView {
         $0.layer.masksToBounds = true
     }
     
+    let notiButton = UIButton.uiButtonConfigure(imageName: "bell", title: "None")
+    
     override func layoutSubviews() {
         
         storageBackView.roundCorners(cornerRadius: 8, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
@@ -142,6 +144,7 @@ class EditItemView: BaseView {
         memoTextView.layer.addBorder([.top], width: 0.3, color: UIColor.gray.cgColor)
         
         amountBackUIView.layer.addBorder([.top], width: 0.3, color: UIColor.lightGray.cgColor)
+        notiButton.layer.cornerRadius = notiButton.bounds.width / 2
     }
     
     
@@ -152,6 +155,7 @@ class EditItemView: BaseView {
         scrollView.addSubview(uiView)
         uiView.addSubview(imageView)
         uiView.addSubview(editLabel)
+        scrollView.addSubview(notiButton)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped))
         uiView.addGestureRecognizer(tapGesture)
@@ -297,6 +301,12 @@ class EditItemView: BaseView {
             $0.top.equalTo(memoBackUIView.snp.bottom).offset(24)
             $0.centerX.equalToSuperview()
             $0.width.equalTo(nameTextField)
+        }
+        
+        notiButton.snp.makeConstraints {
+            $0.bottom.equalTo(uiView.snp.bottom)
+            $0.size.equalTo(uiView.snp.width).multipliedBy(0.37)
+            $0.leading.equalTo(uiView.snp.trailing).offset(13)
         }
         
         

@@ -11,9 +11,10 @@ import Toast
 import RealmSwift
 
 class EditItemViewController: BaseViewController {
-
-    var data: Items?
     
+    var data: Items?
+    var notificationOption: NotificationOption = .none
+    var storageIndex = 0
     let repository = RefrigeratorRepository()
     
     let mainView = EditItemView()
@@ -27,8 +28,10 @@ class EditItemViewController: BaseViewController {
         super.viewDidLoad()
         
         initNav()
+        setUIMenu()
         setupKeyboardEvent()
         initialSetting()
+        initialAlarmSetting()
         mainView.delegate = self
         mainView.memoTextView.delegate = self
         mainView.nameTextField.delegate = self
@@ -46,6 +49,41 @@ class EditItemViewController: BaseViewController {
         mainView.stepper.value = Double(data.count)
         mainView.qLabel.text = String(data.count)
         mainView.memoTextView.text = data.memo
+        
+        if mainView.storageType.selectedSegmentIndex == 1 {
+            mainView.notiButton.isHidden = true
+        } else {
+            mainView.notiButton.isHidden = false
+        }
+    }
+    
+    private func initialAlarmSetting() {
+        func configSetTitle(title: String) -> AttributedString {
+            var attString = AttributedString(title)
+            attString.font = .systemFont(ofSize: 11, weight: .light)
+            return attString
+        }
+        let none = NSLocalizedString("None", comment: "")
+        guard let data = data else { return }
+        if let alarmInfo = LocalNotificationManager.shared.readAlarmInfo(identifier: "\(data._id)") {
+            switch alarmInfo.notification {
+            case .none:
+                self.mainView.notiButton.configuration?.attributedTitle = configSetTitle(title: none)
+                self.notificationOption = .none
+            case .oneDayBefore:
+                self.mainView.notiButton.configuration?.attributedTitle = configSetTitle(title: String(format: NSLocalizedString("shortDayAlarm", comment: ""), 1))
+                self.notificationOption = .oneDayBefore
+            case .threeDayBefore:
+                self.mainView.notiButton.configuration?.attributedTitle = configSetTitle(title: String(format: NSLocalizedString("shortDayAlarm", comment: ""), 3))
+                self.notificationOption = .threeDayBefore
+            case .sevenDayBefore:
+                self.mainView.notiButton.configuration?.attributedTitle = configSetTitle(title: String(format: NSLocalizedString("shortDayAlarm", comment: ""), 7))
+                self.notificationOption = .sevenDayBefore
+            }
+        } else {
+            self.mainView.notiButton.configuration?.attributedTitle = configSetTitle(title: none)
+            self.notificationOption = .none
+        }
     }
     
     override func configureView() {
@@ -61,6 +99,40 @@ class EditItemViewController: BaseViewController {
     
     @objc private func handleTap() {
         view.endEditing(true)
+    }
+    
+    private func setUIMenu() {
+        func configSetTitle(title: String) -> AttributedString {
+            var attString = AttributedString(title)
+            attString.font = .systemFont(ofSize: 11, weight: .light)
+            return attString
+        }
+        
+        let none = NSLocalizedString("None", comment: "")
+        
+        var menuItems: [UIAction] {
+            return [
+                UIAction(title: none) { [weak self] _ in
+                    self?.mainView.notiButton.configuration?.attributedTitle = configSetTitle(title: none)
+                    self?.notificationOption = .none
+                },
+                UIAction(title: String(format: NSLocalizedString("dayAlarm", comment: ""), 1)) { [weak self] _ in
+                    self?.mainView.notiButton.configuration?.attributedTitle = configSetTitle(title: String(format: NSLocalizedString("shortDayAlarm", comment: ""), 1))
+                    self?.notificationOption = .oneDayBefore
+                },
+                UIAction(title: String(format: NSLocalizedString("dayAlarm", comment: ""), 3)) { [weak self] _ in
+                    self?.mainView.notiButton.configuration?.attributedTitle = configSetTitle(title: String(format: NSLocalizedString("shortDayAlarm", comment: ""), 3))
+                    self?.notificationOption = .threeDayBefore
+                },
+                UIAction(title: String(format: NSLocalizedString("dayAlarm", comment: ""), 7)) { [weak self] _ in
+                    self?.mainView.notiButton.configuration?.attributedTitle = configSetTitle(title: String(format: NSLocalizedString("shortDayAlarm", comment: ""), 7))
+                    self?.notificationOption = .sevenDayBefore
+                }
+            ]
+        }
+        
+        mainView.notiButton.menu = UIMenu(title: "", image: nil, identifier: nil, options: [], children: menuItems)
+        mainView.notiButton.showsMenuAsPrimaryAction = true
     }
     
     
@@ -79,34 +151,34 @@ class EditItemViewController: BaseViewController {
     @objc private func keyboardWillShow(_ sender: Notification) {
         guard let keyboardFrame = sender.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue,
               let currentTextField = UIResponder.currentResponder as? UITextView else { return }
-
-
+        
+        
         let keyboardTopY = keyboardFrame.cgRectValue.origin.y
-
+        
         let convertedTextFieldFrame = view.convert(currentTextField.frame,
                                                    from: currentTextField.superview)
-
+        
         let textFieldBottomY = convertedTextFieldFrame.origin.y + convertedTextFieldFrame.size.height
-
-
+        
+        
         if textFieldBottomY > keyboardTopY {
             let textFieldTopY = convertedTextFieldFrame.origin.y
-
+            
             let newFrame = textFieldTopY - keyboardTopY/1.6
             view.frame.origin.y -= newFrame
         }
-       
+        
     }
     
     @objc private func keyboardWillHide(_ sender: Notification) {
         if view.frame.origin.y != 0 {
-                view.frame.origin.y = 0
-            }
+            view.frame.origin.y = 0
+        }
     }
     
     
 }
- 
+
 extension EditItemViewController {
     private func initNav() {
         let edit = NSLocalizedString("Edit", comment: "")
@@ -144,13 +216,19 @@ extension EditItemViewController {
         
         DocumentManager.shared.saveImageToDocument(fileName: "JH\(data._id)", image: mainView.imageView.image!)
         
+        if storageIndex == 0 {
+            LocalNotificationManager.shared.createNotification(item: data, notificationDay: notificationOption)
+        } else if storageIndex == 1 {
+            LocalNotificationManager.shared.removeNotification(item: data)
+        }
+        
         NotificationCenter.default.post(name: Notification.Name("itemReload"), object: nil)
         
         dismiss(animated: true)
     }
     
     @objc private func cancelButtonTapped() {
-
+        
         dismiss(animated: true)
     }
     
@@ -159,6 +237,7 @@ extension EditItemViewController {
         
         guard let data = data else { return }
         
+        LocalNotificationManager.shared.removeNotification(item: data)
         repository.removeItemFromRefrigerator(data._id)
         
         NotificationCenter.default.post(name: Notification.Name("itemReload"), object: nil)
@@ -185,7 +264,13 @@ extension EditItemViewController {
     }
     
     @objc private func segmentedControlValueChanged(_ sender: UISegmentedControl) {
-        print(sender.selectedSegmentIndex)
+        if sender.selectedSegmentIndex == 1 {
+            mainView.notiButton.isHidden = true
+            storageIndex = 1
+        } else {
+            mainView.notiButton.isHidden = false
+            storageIndex = 0
+        }
     }
     
     @objc private func datePickerPickedValue() {

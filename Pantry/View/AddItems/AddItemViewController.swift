@@ -9,6 +9,9 @@ class AddItemViewController: BaseViewController {
 
     var refrigerId: ObjectId?
     
+    var notificationOption: NotificationOption = .none //알람 초기설정
+    var storageIndex = 0
+    
     let viewModel = AddItemViewModel()
     let repository = RefrigeratorRepository()
     
@@ -25,6 +28,7 @@ class AddItemViewController: BaseViewController {
         initNav()
         setupKeyboardEvent()
         setBind()
+        setUIMenu()
         
         mainView.delegate = self
         mainView.memoTextView.delegate = self
@@ -50,6 +54,7 @@ class AddItemViewController: BaseViewController {
         mainView.storageType.addTarget(self, action: #selector(segmentedControlValueChanged), for: .valueChanged)
         mainView.datePicker.addTarget(self, action: #selector(datePickerPickedValue), for: .valueChanged)
         mainView.stepper.addTarget(self, action: #selector(stepperValueChanged), for: .valueChanged)
+        mainView.notiButton.addTarget(self, action: #selector(notiButtonTapped), for: .touchUpInside)
     }
     
     @objc private func handleTap() {
@@ -97,6 +102,40 @@ class AddItemViewController: BaseViewController {
             }
     }
     
+    private func setUIMenu() {
+        func configSetTitle(title: String) -> AttributedString {
+            var attString = AttributedString(title)
+            attString.font = .systemFont(ofSize: 11, weight: .light)
+            return attString
+        }
+        
+        let none = NSLocalizedString("None", comment: "")
+        
+        var menuItems: [UIAction] {
+            return [
+                UIAction(title: none) { [weak self] _ in
+                    self?.mainView.notiButton.configuration?.attributedTitle = configSetTitle(title: none)
+                    self?.notificationOption = .none
+                },
+                UIAction(title: String(format: NSLocalizedString("dayAlarm", comment: ""), 1)) { [weak self] _ in
+                    self?.mainView.notiButton.configuration?.attributedTitle = configSetTitle(title: String(format: NSLocalizedString("shortDayAlarm", comment: ""), 1))
+                    self?.notificationOption = .oneDayBefore
+                },
+                UIAction(title: String(format: NSLocalizedString("dayAlarm", comment: ""), 3)) { [weak self] _ in
+                    self?.mainView.notiButton.configuration?.attributedTitle = configSetTitle(title: String(format: NSLocalizedString("shortDayAlarm", comment: ""), 3))
+                    self?.notificationOption = .threeDayBefore
+                },
+                UIAction(title: String(format: NSLocalizedString("dayAlarm", comment: ""), 7)) { [weak self] _ in
+                    self?.mainView.notiButton.configuration?.attributedTitle = configSetTitle(title: String(format: NSLocalizedString("shortDayAlarm", comment: ""), 7))
+                    self?.notificationOption = .sevenDayBefore
+                }
+            ]
+        }
+        
+        mainView.notiButton.menu = UIMenu(title: "", image: nil, identifier: nil, options: [], children: menuItems)
+        mainView.notiButton.showsMenuAsPrimaryAction = true
+    }
+    
     
 }
  
@@ -122,7 +161,7 @@ extension AddItemViewController {
 
 //navigationBar Button TouchEvent
 extension AddItemViewController {
-    
+    //MARK: ADD
     @objc private func addButtonTapped() {
         
         let item = Items(state: mainView.storageType.selectedSegmentIndex,
@@ -135,6 +174,10 @@ extension AddItemViewController {
         DocumentManager.shared.saveImageToDocument(fileName: "JH\(item._id)", image: mainView.selectedImage ?? UIImage(named: "basicRefiger")!)
         
         repository.addItemToRefrigerator(item, refrigeratorId: refrigerId!)
+        
+        if storageIndex == 0 {
+            LocalNotificationManager.shared.createNotification(item: item, notificationDay: notificationOption)
+        }
         
         NotificationCenter.default.post(name: Notification.Name("itemReload"), object: nil)
         
@@ -161,7 +204,15 @@ extension AddItemViewController {
     }
     
     @objc private func segmentedControlValueChanged(_ sender: UISegmentedControl) {
-        print(sender.selectedSegmentIndex)
+        if sender.selectedSegmentIndex == 1 {
+            mainView.notiButton.isHidden = true
+            storageIndex = 1
+        } else {
+            mainView.notiButton.isHidden = false
+            storageIndex = 0
+        }
+        
+        ////인덱스 1이라면 알람 설정 이전에 했더라도 무효화 시켜버림 => if문으로 분기처리
     }
     
     @objc private func datePickerPickedValue() {
@@ -171,6 +222,10 @@ extension AddItemViewController {
     @objc private func stepperValueChanged() {
         mainView.qLabel.text = String(Int(mainView.stepper.value))
         print(Int(mainView.stepper.value))
+    }
+    
+    @objc private func notiButtonTapped() {
+    
     }
 }
 

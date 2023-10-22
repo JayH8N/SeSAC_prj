@@ -120,6 +120,9 @@ class AddItemView: BaseView {
         $0.text = "(0/\(memoLimit))"
     }
     
+    let notiButton = UIButton.uiButtonConfigure(imageName: "bell", title: "None")
+    
+    
     override func layoutSubviews() {
         
         storageBackView.roundCorners(cornerRadius: 8, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMinYCorner])
@@ -130,6 +133,7 @@ class AddItemView: BaseView {
         memoTextView.layer.addBorder([.top], width: 0.3, color: UIColor.gray.cgColor)
         
         amountBackUIView.layer.addBorder([.top], width: 0.3, color: UIColor.lightGray.cgColor)
+        notiButton.layer.cornerRadius = notiButton.bounds.width / 2
     }
     
     
@@ -140,6 +144,7 @@ class AddItemView: BaseView {
         scrollView.addSubview(uiView)
         uiView.addSubview(imageView)
         uiView.addSubview(editLabel)
+        scrollView.addSubview(notiButton)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped))
         uiView.addGestureRecognizer(tapGesture)
@@ -276,6 +281,12 @@ class AddItemView: BaseView {
         memoLimitLabel.snp.makeConstraints {
             $0.trailing.equalTo(memoBackUIView.snp.trailing)
             $0.top.equalTo(memoBackUIView.snp.bottom).offset(3)
+        }
+        
+        notiButton.snp.makeConstraints {
+            $0.bottom.equalTo(uiView.snp.bottom)
+            $0.size.equalTo(uiView.snp.width).multipliedBy(0.37)
+            $0.leading.equalTo(uiView.snp.trailing).offset(13)
         }
         
         

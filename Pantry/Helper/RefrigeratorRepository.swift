@@ -64,6 +64,7 @@ class RefrigeratorRepository {
                 for item in rf.ingredient {
                     let itemImageFileName = "JH\(item._id)"
                     DocumentManager.shared.removeImageFromDocument(fileName: itemImageFileName)
+                    LocalNotificationManager.shared.removeNotification(item: item)
                 }
                 realm.delete(rf.ingredient)
 

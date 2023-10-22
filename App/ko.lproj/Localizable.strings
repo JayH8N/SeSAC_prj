@@ -65,3 +65,13 @@
 "SortSlowestDate" = "유통기한 느린순";
 
 "ExpiredGoods" = "유통기한 지난 물건";
+
+"ExpNotiTitle" = "유통기한 알림";
+
+"ExpNotiBody" = "%@의 유통기한이 %d일 남았습니다.";
+
+"None" = "None";
+
+"dayAlarm" = "%d일전 알람";
+
+"shortDayAlarm" = "%d일전";
