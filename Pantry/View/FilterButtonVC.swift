@@ -12,7 +12,7 @@ import SnapKit
 class FilterButtonVC: BaseViewController {
     
     weak var delegate: BulletinDelegate?
-    
+    var selectedSort: Sort?
     var pageOption: PageOption?
     
     let bgView = UIView().then {
@@ -92,16 +92,26 @@ class FilterButtonVC: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if let initialSelectedButton = view.viewWithTag(1) as? CustomRadioButton {
-            initialSelectedButton.isSelected = true
+        if let selectedSort = selectedSort {
+            switch selectedSort {
+            case .Added:
+                if let selectedButton = view.viewWithTag(1) as? CustomRadioButton {
+                    selectedButton.isSelected = true
+                }
+            case .ExpFastest:
+                if let selectedButton = view.viewWithTag(2) as? CustomRadioButton {
+                    selectedButton.isSelected = true
+                }
+            case .ExpSlowest:
+                if let selectedButton = view.viewWithTag(3) as? CustomRadioButton {
+                    selectedButton.isSelected = true
+                }
+            case .ExpiredGoods:
+                if let selectedButton = view.viewWithTag(4) as? CustomRadioButton {
+                    selectedButton.isSelected = true
+                }
+            }
         }
-    }
-
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        
     }
     
     

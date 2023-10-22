@@ -57,6 +57,7 @@ class AllPageViewController: BaseViewController {
         let bulletinBoardVC = FilterButtonVC.instance()
         bulletinBoardVC.delegate = self
         bulletinBoardVC.pageOption = .All
+        bulletinBoardVC.selectedSort = self.selectedSort
         addDim()
         present(bulletinBoardVC, animated: true)
     }
@@ -102,18 +103,22 @@ extension AllPageViewController {
     //추가된 순
     @objc private func added() {
         selectedSort = .Added
+        mainView.filterLabel.text = NSLocalizedString("SortNetAdded", comment: "")
         mainView.itemList = repository.fetch(selectedSort, rfObjectid: rfID!)
     }
     @objc private func ExpFastest() {
         selectedSort = .ExpFastest
+        mainView.filterLabel.text = NSLocalizedString("SortFastestDate", comment: "")
         mainView.itemList = repository.fetch(selectedSort, rfObjectid: rfID!)
     }
     @objc private func ExpSlowest() {
         selectedSort = .ExpSlowest
+        mainView.filterLabel.text = NSLocalizedString("SortSlowestDate", comment: "")
         mainView.itemList = repository.fetch(selectedSort, rfObjectid: rfID!)
     }
     @objc private func ExpiredGoods() {
         selectedSort = .ExpiredGoods
+        mainView.filterLabel.text = NSLocalizedString("ExpiredGoods", comment: "")
         mainView.itemList = repository.fetch(selectedSort, rfObjectid: rfID!)
     }
 }

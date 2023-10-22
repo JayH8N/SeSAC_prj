@@ -84,18 +84,22 @@ extension RefrigerPageViewController: BulletinDelegate {
 extension RefrigerPageViewController {
     @objc private func added() {
         selectedSort = .Added
+        mainView.filterLabel.text = NSLocalizedString("SortNetAdded", comment: "")
         mainView.itemList = repository.fetchItemsInRefrigerator(rfID!, state: .refrigeration, sort: selectedSort)
     }
     @objc private func ExpFastest() {
         selectedSort = .ExpFastest
+        mainView.filterLabel.text = NSLocalizedString("SortFastestDate", comment: "")
         mainView.itemList = repository.fetchItemsInRefrigerator(rfID!, state: .refrigeration, sort: selectedSort)
     }
     @objc private func ExpSlowest() {
         selectedSort = .ExpSlowest
+        mainView.filterLabel.text = NSLocalizedString("SortSlowestDate", comment: "")
         mainView.itemList = repository.fetchItemsInRefrigerator(rfID!, state: .refrigeration, sort: selectedSort)
     }
     @objc private func ExpiredGoods() {
         selectedSort = .ExpiredGoods
+        mainView.filterLabel.text = NSLocalizedString("ExpiredGoods", comment: "")
         mainView.itemList = repository.fetchItemsInRefrigerator(rfID!, state: .refrigeration, sort: selectedSort)
     }
 }

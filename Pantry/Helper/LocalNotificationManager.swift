@@ -12,7 +12,7 @@ class LocalNotificationManager {
     
     private init() { }
     
-    private let userDefaults = UserDefaults.standard
+    private let userDefaults = UserDefaults.standard //UserDefaults로 저장해야 앱을 종료해도 알람정보가 남아있게 됨
     
     //딕셔너리로 관리 => 중복되면 덮어쓰기 되도록!
     private var infoList: [String: NotificationOption] {

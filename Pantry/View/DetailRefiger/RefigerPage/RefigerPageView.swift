@@ -27,6 +27,11 @@ class RefigerPageView: BaseView {
         $0.tintColor = .black
     }
     
+    let filterLabel = UILabel().then {
+        $0.font = UIFont(name: "TAEBAEK milkyway", size: 16)
+        $0.text = NSLocalizedString("SortNetAdded", comment: "")
+    }
+    
     let bgView = UIView().then {
         $0.backgroundColor = .black
         $0.alpha = 0
@@ -37,6 +42,7 @@ class RefigerPageView: BaseView {
         addSubview(blurEffect)
         addSubview(filterButton)
         addSubview(allCollectionView)
+        addSubview(filterLabel)
     }
     
     
@@ -54,6 +60,12 @@ class RefigerPageView: BaseView {
             $0.top.equalTo(filterButton.snp.bottom).offset(4)
             $0.leading.trailing.bottom.equalTo(self.safeAreaLayoutGuide)
         }
+        
+        filterLabel.snp.makeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(filterButton.snp.top).inset(5)
+        }
+        
     }
     
 }
