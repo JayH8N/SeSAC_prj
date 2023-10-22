@@ -178,6 +178,9 @@ extension AddItemViewController {
         if storageIndex == 0 {
             LocalNotificationManager.shared.createNotification(item: item, notificationDay: notificationOption)
         }
+        NotificationCenter.default.post(name: Notification.Name("All_Added"), object: nil)
+        NotificationCenter.default.post(name: Notification.Name("Ref_Added"), object: nil)
+        NotificationCenter.default.post(name: Notification.Name("F_Added"), object: nil)
         
         NotificationCenter.default.post(name: Notification.Name("itemReload"), object: nil)
         

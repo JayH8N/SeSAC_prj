@@ -20,8 +20,8 @@ class AllPageView: BaseView {
     weak var switchDelegate: SwitchScreenProtocol?
     weak var delegate: NavPushProtocol?
     
-    var itemList: List<Items>!
-//MARK: - Properties
+    var itemList: Results<Items>!
+    //MARK: - Properties
     let blurEffect = UIVisualEffectView(effect: UIBlurEffect(style: .light))
     
     lazy var allCollectionView = UICollectionView(frame: .zero, collectionViewLayout: allCollectionViewLayout()).then {
@@ -31,7 +31,7 @@ class AllPageView: BaseView {
         $0.register(ItemsCell.self, forCellWithReuseIdentifier: ItemsCell.identifier)
     }
     
-
+    
     let filterButton = UIButton.makeHighlightedButton(withImageName: "slider.horizontal.3", size: 34).then {
         $0.tintColor = .black
     }
@@ -42,47 +42,12 @@ class AllPageView: BaseView {
     }
     
     
-//⚠️
-//    lazy var actionButton = JJFloatingActionButton().then {
-//        $0.buttonImage = UIImage(systemName: "plus")
-//        $0.buttonColor = UIColor.black
-//
-//        $0.addItem(title: NSLocalizedString("AddItem", comment: ""),
-//                   image: UIImage(systemName: "square")) { [weak self] _ in
-//
-//            HapticFeedbackManager.shared.provideFeedback()
-//            let vc = AddItemViewController()
-//            let nav = UINavigationController(rootViewController: vc)
-//
-//            self?.switchDelegate?.switchScreen(nav: nav)
-//        }
-//
-//        $0.addItem(title: NSLocalizedString("addItemBarcode", comment: ""),
-//                   image: UIImage(systemName: "barcode.viewfinder")) { [weak self] _ in
-//            HapticFeedbackManager.shared.provideFeedback()
-//            let barcodeScanner = self?.makeBarcodeScannerVC()
-//            self?.delegate?.pushView(vc: barcodeScanner!)
-//        }
-//
-//        $0.buttonImageSize = CGSize(width: 40, height: 40)
-//    }
-
-//⚠️
-//    private func makeBarcodeScannerVC() -> BarcodeScannerViewController {
-//        let viewController = BarcodeScannerViewController()
-//        viewController.codeDelegate = self
-//        viewController.errorDelegate = self
-//        viewController.dismissalDelegate = self
-//        return viewController
-//    }
-    
     
     override func configureView() {
         super.configureView()
         addSubview(blurEffect)
         addSubview(filterButton)
         addSubview(allCollectionView)
-        //⚠️addSubview(actionButton)
         
     }
     
@@ -101,10 +66,6 @@ class AllPageView: BaseView {
             $0.leading.trailing.bottom.equalTo(self.safeAreaLayoutGuide)
         }
         
-//⚠️        actionButton.snp.makeConstraints {
-//            $0.trailing.equalTo(self.snp.trailing).inset(30)
-//            $0.bottom.equalTo(self.safeAreaLayoutGuide.snp.bottom).inset(30)
-//        }
     }
     
     
@@ -119,7 +80,7 @@ extension AllPageView: UICollectionViewDelegate, UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemsCell.identifier, for: indexPath) as! ItemsCell
         
         let data = itemList[indexPath.item]
-
+        
         cell.setCell(data: data)
         
         return cell
@@ -138,30 +99,3 @@ extension AllPageView: UICollectionViewDelegate, UICollectionViewDataSource {
     
     
 }
-
-//⚠️
-//extension AllPageView: BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate {
-//    func scanner(_ controller: BarcodeScanner.BarcodeScannerViewController, didCaptureCode code: String, type: String) {
-//        print("Barcode====== \(code)")
-//        print("Type======= \(type)")
-//
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
-//            controller.reset()
-//            controller.navigationController?.popViewController(animated: true)
-//
-//            let vc = AddItemViewController()
-//            let nav = UINavigationController(rootViewController: vc)
-//
-//            self.switchDelegate?.switchScreen(nav: nav)
-//        }
-//    }
-//
-//    func scanner(_ controller: BarcodeScanner.BarcodeScannerViewController, didReceiveError error: Error) {
-//        print(error)
-//    }
-//
-//    func scannerDidDismiss(_ controller: BarcodeScanner.BarcodeScannerViewController) {
-//        controller.dismiss(animated: true)
-//    }
-//
-//}

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum NotificationOption: Int {
+enum NotificationOption: Int, Codable {
     case none
     case oneDayBefore = 1
     case threeDayBefore = 3

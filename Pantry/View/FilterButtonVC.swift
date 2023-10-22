@@ -13,6 +13,7 @@ class FilterButtonVC: BaseViewController {
     
     weak var delegate: BulletinDelegate?
     
+    var pageOption: PageOption?
     
     let bgView = UIView().then {
         $0.backgroundColor = .clear
@@ -146,15 +147,53 @@ class FilterButtonVC: BaseViewController {
                 button.isSelected = false
             }
         }
+        
+        
         switch selectedButton.tag {
         case 1:
-            print("=== 1 ===")
+            switch pageOption {
+            case .All:
+                NotificationCenter.default.post(name: Notification.Name("All_Added"), object: nil)
+            case .Refrigerator:
+                NotificationCenter.default.post(name: Notification.Name("Ref_Added"), object: nil)
+            case .Frozen:
+                NotificationCenter.default.post(name: Notification.Name("F_Added"), object: nil)
+            default:
+                break
+            }
         case 2:
-            print("=== 2 ===")
+            switch pageOption {
+            case .All:
+                NotificationCenter.default.post(name: Notification.Name("All_ExpFastest"), object: nil)
+            case .Refrigerator:
+                NotificationCenter.default.post(name: Notification.Name("Ref_ExpFastest"), object: nil)
+            case .Frozen:
+                NotificationCenter.default.post(name: Notification.Name("F_ExpFastest"), object: nil)
+            default:
+                break
+            }
         case 3:
-            print("=== 3 ===")
+            switch pageOption {
+            case .All:
+                NotificationCenter.default.post(name: Notification.Name("All_ExpSlowest"), object: nil)
+            case .Refrigerator:
+                NotificationCenter.default.post(name: Notification.Name("Ref_ExpSlowest"), object: nil)
+            case .Frozen:
+                NotificationCenter.default.post(name: Notification.Name("F_ExpSlowest"), object: nil)
+            default:
+                break
+            }
         case 4:
-            print("=== 4 ===")
+            switch pageOption {
+            case .All:
+                NotificationCenter.default.post(name: Notification.Name("All_ExpiredGoods"), object: nil)
+            case .Refrigerator:
+                NotificationCenter.default.post(name: Notification.Name("Ref_ExpiredGoods"), object: nil)
+            case .Frozen:
+                NotificationCenter.default.post(name: Notification.Name("F_ExpiredGoods"), object: nil)
+            default:
+                break
+            }
         default:
             break
         }
@@ -211,6 +250,7 @@ extension FilterButtonVC {
     @objc func applyTapped() {
         HapticFeedbackManager.shared.provideFeedback()
         
+        NotificationCenter.default.post(name: Notification.Name("itemReload"), object: nil)
         delegate?.onTapClose()
         dismiss(animated: true)
     }

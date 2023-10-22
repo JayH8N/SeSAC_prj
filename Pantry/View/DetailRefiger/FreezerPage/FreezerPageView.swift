@@ -8,10 +8,13 @@
 import UIKit
 import Then
 import SnapKit
+import RealmSwift
 
 class FreezerPageView: BaseView {
     
     let blurEffect = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+    
+    var itemList: Results<Items>!
     
     lazy var allCollectionView = UICollectionView(frame: .zero, collectionViewLayout: allCollectionViewLayout()).then {
         $0.backgroundColor = .clear
@@ -57,12 +60,26 @@ class FreezerPageView: BaseView {
 
 extension FreezerPageView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return itemList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemsCell.identifier, for: indexPath) as! ItemsCell
         
+        let data = itemList[indexPath.item]
+        cell.setCell(data: data)
+        
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        HapticFeedbackManager.shared.provideFeedback()
+        let data = itemList[indexPath.item]
+        
+        let vc = EditItemViewController()
+        vc.data = data
+        let nav = UINavigationController(rootViewController: vc)
+        
+        self.window?.rootViewController?.present(nav, animated: true)
     }
 }

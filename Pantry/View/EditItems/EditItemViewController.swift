@@ -13,7 +13,7 @@ import RealmSwift
 class EditItemViewController: BaseViewController {
     
     var data: Items?
-    var notificationOption: NotificationOption = .none
+    var notiOption: NotificationOption = .none
     var storageIndex = 0
     let repository = RefrigeratorRepository()
     
@@ -63,27 +63,28 @@ class EditItemViewController: BaseViewController {
             attString.font = .systemFont(ofSize: 11, weight: .light)
             return attString
         }
+        
         let none = NSLocalizedString("None", comment: "")
+        
         guard let data = data else { return }
-        if let alarmInfo = LocalNotificationManager.shared.readAlarmInfo(identifier: "\(data._id)") {
-            switch alarmInfo.notification {
-            case .none:
-                self.mainView.notiButton.configuration?.attributedTitle = configSetTitle(title: none)
-                self.notificationOption = .none
-            case .oneDayBefore:
-                self.mainView.notiButton.configuration?.attributedTitle = configSetTitle(title: String(format: NSLocalizedString("shortDayAlarm", comment: ""), 1))
-                self.notificationOption = .oneDayBefore
-            case .threeDayBefore:
-                self.mainView.notiButton.configuration?.attributedTitle = configSetTitle(title: String(format: NSLocalizedString("shortDayAlarm", comment: ""), 3))
-                self.notificationOption = .threeDayBefore
-            case .sevenDayBefore:
-                self.mainView.notiButton.configuration?.attributedTitle = configSetTitle(title: String(format: NSLocalizedString("shortDayAlarm", comment: ""), 7))
-                self.notificationOption = .sevenDayBefore
-            }
-        } else {
-            self.mainView.notiButton.configuration?.attributedTitle = configSetTitle(title: none)
-            self.notificationOption = .none
+        
+        let alarmInfo = LocalNotificationManager.shared.readAlarmInfo(identifier: "\(data._id)")
+        let notiTitle: String
+        switch alarmInfo {
+        case .none:
+            notiTitle = none
+            self.notiOption = .none
+        case .oneDayBefore:
+            notiTitle = String(format: NSLocalizedString("shortDayAlarm", comment: ""), 1)
+            self.notiOption = .oneDayBefore
+        case .threeDayBefore:
+            notiTitle = String(format: NSLocalizedString("shortDayAlarm", comment: ""), 3)
+            self.notiOption = .threeDayBefore
+        case .sevenDayBefore:
+            notiTitle = String(format: NSLocalizedString("shortDayAlarm", comment: ""), 7)
+            self.notiOption = .sevenDayBefore
         }
+        self.mainView.notiButton.configuration?.attributedTitle = configSetTitle(title: notiTitle)
     }
     
     override func configureView() {
@@ -114,19 +115,19 @@ class EditItemViewController: BaseViewController {
             return [
                 UIAction(title: none) { [weak self] _ in
                     self?.mainView.notiButton.configuration?.attributedTitle = configSetTitle(title: none)
-                    self?.notificationOption = .none
+                    self?.notiOption = .none
                 },
                 UIAction(title: String(format: NSLocalizedString("dayAlarm", comment: ""), 1)) { [weak self] _ in
                     self?.mainView.notiButton.configuration?.attributedTitle = configSetTitle(title: String(format: NSLocalizedString("shortDayAlarm", comment: ""), 1))
-                    self?.notificationOption = .oneDayBefore
+                    self?.notiOption = .oneDayBefore
                 },
                 UIAction(title: String(format: NSLocalizedString("dayAlarm", comment: ""), 3)) { [weak self] _ in
                     self?.mainView.notiButton.configuration?.attributedTitle = configSetTitle(title: String(format: NSLocalizedString("shortDayAlarm", comment: ""), 3))
-                    self?.notificationOption = .threeDayBefore
+                    self?.notiOption = .threeDayBefore
                 },
                 UIAction(title: String(format: NSLocalizedString("dayAlarm", comment: ""), 7)) { [weak self] _ in
                     self?.mainView.notiButton.configuration?.attributedTitle = configSetTitle(title: String(format: NSLocalizedString("shortDayAlarm", comment: ""), 7))
-                    self?.notificationOption = .sevenDayBefore
+                    self?.notiOption = .sevenDayBefore
                 }
             ]
         }
@@ -217,7 +218,7 @@ extension EditItemViewController {
         DocumentManager.shared.saveImageToDocument(fileName: "JH\(data._id)", image: mainView.imageView.image!)
         
         if storageIndex == 0 {
-            LocalNotificationManager.shared.createNotification(item: data, notificationDay: notificationOption)
+            LocalNotificationManager.shared.createNotification(item: data, notificationDay: notiOption)
         } else if storageIndex == 1 {
             LocalNotificationManager.shared.removeNotification(item: data)
         }

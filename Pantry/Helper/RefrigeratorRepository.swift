@@ -35,14 +35,49 @@ class RefrigeratorRepository {
     }
     
     //냉장고 아이템 가져오기
-    func fetchItem(rfObjectid: ObjectId) -> List<Items>? {
+    func fetch(_ sort: Sort, rfObjectid: ObjectId) -> Results<Items>? {
+        guard let refrigerator = realm.object(ofType: Refrigerator.self, forPrimaryKey: rfObjectid) else {
+            return nil
+        }
+        
+        let currentDate = Date()
+        let basicDate = Calendar.current.date(byAdding: .day, value: -1, to: currentDate)
+
+        switch sort {
+        case .Added:
+            return refrigerator.ingredient.sorted(byKeyPath: "registDay", ascending: false)
+        case .ExpFastest:
+            return refrigerator.ingredient.sorted(byKeyPath: "expiryDay", ascending: true)
+        case .ExpSlowest:
+            return refrigerator.ingredient.sorted(byKeyPath: "expiryDay", ascending: false)
+        case .ExpiredGoods:
+            return refrigerator.ingredient.filter("expiryDay < %@", basicDate).sorted(byKeyPath: "expiryDay", ascending: true)
+        }
+    }
+    
+    //냉장고 아이템 중 냉장, 냉동 구분하여 받아오기
+    func fetchItemsInRefrigerator(_ rfObjectid: ObjectId, state: State, sort: Sort) -> Results<Items>? {
         if let refrigerator = realm.object(ofType: Refrigerator.self, forPrimaryKey: rfObjectid) {
-            let items = refrigerator.ingredient
-            return items
+            let itemsWithState = refrigerator.ingredient.filter("state == %@", state.rawValue)
+
+            switch sort {
+            case .Added:
+                return itemsWithState.sorted(byKeyPath: "registDay", ascending: false)
+            case .ExpFastest:
+                return itemsWithState.sorted(byKeyPath: "expiryDay", ascending: true)
+            case .ExpSlowest:
+                return itemsWithState.sorted(byKeyPath: "expiryDay", ascending: false)
+            case .ExpiredGoods:
+                let currentDate = Date()
+                let basicDate = Calendar.current.date(byAdding: .day, value: -1, to: currentDate)
+                return itemsWithState.filter("expiryDay < %@", basicDate).sorted(byKeyPath: "expiryDay", ascending: true)
+            }
         }
         return nil
     }
-
+    
+    
+    
 //MARK: - 냉장고 관련메서드
     func createRefrigerator(_ rf: Refrigerator) {
         do {
@@ -67,7 +102,6 @@ class RefrigeratorRepository {
                     LocalNotificationManager.shared.removeNotification(item: item)
                 }
                 realm.delete(rf.ingredient)
-
                 realm.delete(rf)
             }
         } catch {
@@ -136,5 +170,4 @@ class RefrigeratorRepository {
             print(error)
         }
     }
-    
 }

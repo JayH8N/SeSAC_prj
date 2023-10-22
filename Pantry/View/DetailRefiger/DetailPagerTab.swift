@@ -111,7 +111,9 @@ extension DetailPagerTabViewController {
         let vc1 = AllPageViewController()
         vc1.rfID = self.rfId
         let vc2 = RefrigerPageViewController()
+        vc2.rfID = self.rfId
         let vc3 = FreezerPageViewController()
+        vc3.rfID = self.rfId
         
         viewControllers.append(vc1)
         viewControllers.append(vc2)

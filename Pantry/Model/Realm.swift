@@ -8,14 +8,6 @@
 import Foundation
 import RealmSwift
 
-//냉장,냉동 상태
-enum State: Int, PersistableEnum {
-    case refrigeration
-    case frozen
-}
-
-
-
 class Refrigerator: Object {
    @Persisted(primaryKey: true) var _id: ObjectId
    @Persisted var name: String

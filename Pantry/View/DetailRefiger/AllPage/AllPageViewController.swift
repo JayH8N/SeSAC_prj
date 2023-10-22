@@ -13,7 +13,7 @@ import RealmSwift
 class AllPageViewController: BaseViewController {
     
     var rfID: ObjectId?
-    
+    var selectedSort: Sort = .Added
     let mainView = AllPageView()
     let repository = RefrigeratorRepository()
     
@@ -27,9 +27,13 @@ class AllPageViewController: BaseViewController {
         mainView.switchDelegate = self
         mainView.delegate = self
         
-        mainView.itemList = repository.fetchItem(rfObjectid: rfID!)
+        mainView.itemList = repository.fetch(selectedSort, rfObjectid: rfID!)
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: Notification.Name("itemReload"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(added), name: Notification.Name("All_Added"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ExpFastest), name: Notification.Name("All_ExpFastest"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ExpSlowest), name: Notification.Name("All_ExpSlowest"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ExpiredGoods), name: Notification.Name("All_ExpiredGoods"), object: nil)
     }
     
     
@@ -52,6 +56,7 @@ class AllPageViewController: BaseViewController {
     @objc private func filterButtonTapped() {
         let bulletinBoardVC = FilterButtonVC.instance()
         bulletinBoardVC.delegate = self
+        bulletinBoardVC.pageOption = .All
         addDim()
         present(bulletinBoardVC, animated: true)
     }
@@ -90,5 +95,25 @@ extension AllPageViewController: SwitchScreenProtocol, NavPushProtocol {
     func switchScreen(nav: UINavigationController) {
         present(nav, animated: true)
     }
-    
+}
+
+
+extension AllPageViewController {
+    //추가된 순
+    @objc private func added() {
+        selectedSort = .Added
+        mainView.itemList = repository.fetch(selectedSort, rfObjectid: rfID!)
+    }
+    @objc private func ExpFastest() {
+        selectedSort = .ExpFastest
+        mainView.itemList = repository.fetch(selectedSort, rfObjectid: rfID!)
+    }
+    @objc private func ExpSlowest() {
+        selectedSort = .ExpSlowest
+        mainView.itemList = repository.fetch(selectedSort, rfObjectid: rfID!)
+    }
+    @objc private func ExpiredGoods() {
+        selectedSort = .ExpiredGoods
+        mainView.itemList = repository.fetch(selectedSort, rfObjectid: rfID!)
+    }
 }
