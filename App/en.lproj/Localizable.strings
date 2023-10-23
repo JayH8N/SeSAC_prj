@@ -75,3 +75,9 @@ The bar will turn purple when the expiration date has passed.";
 "dayAlarm" = "%dday ago Alarm";
 
 "shortDayAlarm" = "%dDay";
+
+"APIError" = "This item is not registered.";
+
+"EXPLeft" = "%d days left";
+
+"EXPAgo" = "%d days ago";

@@ -15,7 +15,7 @@ class LocalNotificationManager {
     private let userDefaults = UserDefaults.standard //UserDefaults로 저장해야 앱을 종료해도 알람정보가 남아있게 됨
     
     //딕셔너리로 관리 => 중복되면 덮어쓰기 되도록!
-    private var infoList: [String: NotificationOption] {
+    var infoList: [String: NotificationOption] {
         get {
             if let data = userDefaults.value(forKey: "infoList") as? Data,
                let infoList = try? JSONDecoder().decode([String: NotificationOption].self, from: data) {
@@ -40,6 +40,9 @@ class LocalNotificationManager {
         return infoList[identifier] ?? .none
     }
     
+    func removeAlarmInfo(identifier: String) {
+        infoList.removeValue(forKey: identifier)
+    }
     
     //알람 등록
     func createNotification(item: Items, notificationDay: NotificationOption) {
@@ -58,10 +61,10 @@ class LocalNotificationManager {
         
         
         let content = UNMutableNotificationContent()
-        content.title = NSLocalizedString("ExpNoti", comment: "") //"유통기한 알림"
+        content.title = NSLocalizedString("ExpNotiTitle", comment: "") //"유통기한 알림"
         content.body = String(format: NSLocalizedString("ExpNotiBody", comment: ""), item.name, notificationDay.rawValue)
         
-        var triggerDateComponents = Calendar.current.dateComponents([.year, .month, .day], from: item.expiryDay)
+        var triggerDateComponents = Calendar.current.dateComponents([.year, .month, .day], from: item.expiryDay) //유통기한 년, 월, 일 추출
         triggerDateComponents.hour = 18 // 오후 6시 고정
         triggerDateComponents.minute = 0
         
@@ -85,11 +88,36 @@ class LocalNotificationManager {
     //알람 삭제
     //존재하지 않는 identifier할당해도 오류나지는 않음!
     func removeNotification(item: Items) {
+        removeAlarmInfo(identifier: "\(item._id)")
         let center = UNUserNotificationCenter.current()
         center.removePendingNotificationRequests(withIdentifiers: ["\(item._id)"]) //발생하지 않은 알림 삭제
         center.removeDeliveredNotifications(withIdentifiers: ["\(item._id)"]) // 이미 발생한 알림 삭제
         
     }
+    
+    //알람 제대로 등록됬는지 확인
+    func printScheduledLocalNotifications() {
+        let center = UNUserNotificationCenter.current()
+        
+        center.getPendingNotificationRequests { (notificationRequests) in
+            for request in notificationRequests {
+                let content = request.content
+                let trigger = request.trigger
+                
+                if let dateTrigger = trigger as? UNCalendarNotificationTrigger {
+                    let date = dateTrigger.dateComponents.date
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                    
+                    print("Title: \(content.title ?? "N/A")")
+                    print("Body: \(content.body ?? "N/A")")
+                    print("Scheduled Time: \(formatter.string(from: date ?? Date()))")
+                    print("--------")
+                }
+            }
+        }
+    }
+
 }
 
 

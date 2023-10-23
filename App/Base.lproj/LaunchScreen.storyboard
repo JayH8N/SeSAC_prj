@@ -16,19 +16,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stopWatch" translatesAutoresizingMaskIntoConstraints="NO" id="KF8-Yv-bpW">
-                                <rect key="frame" x="98.333333333333329" y="203.33333333333337" width="196.33333333333337" height="275"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="APPTitle" translatesAutoresizingMaskIntoConstraints="NO" id="myb-Ef-Li5">
+                                <rect key="frame" x="59" y="197" width="275" height="330"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="KF8-Yv-bpW" secondAttribute="height" multiplier="1:1.4" id="UKK-7w-fJr"/>
+                                    <constraint firstAttribute="width" secondItem="myb-Ef-Li5" secondAttribute="height" multiplier="1:1.2" id="tC7-bQ-FN6"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" red="0.63921568630000003" green="0.62745098040000002" blue="0.60784313729999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="KF8-Yv-bpW" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.5" id="bUd-2Q-54b"/>
-                            <constraint firstItem="KF8-Yv-bpW" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="0.8" id="dBo-cV-uBO"/>
-                            <constraint firstItem="KF8-Yv-bpW" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="iaj-r6-wBE"/>
+                            <constraint firstItem="myb-Ef-Li5" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" multiplier="0.7" id="47U-RG-CNS"/>
+                            <constraint firstItem="myb-Ef-Li5" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="i0a-tw-PUR"/>
+                            <constraint firstItem="myb-Ef-Li5" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="0.85" id="uOQ-Lb-XIo"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -38,6 +38,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="stopWatch" width="1376" height="804"/>
+        <image name="APPTitle" width="1448" height="936"/>
     </resources>
 </document>

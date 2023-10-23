@@ -30,7 +30,12 @@ class RefrigeratorRepository {
     
     //냉장고 가져오기
     func fetch() -> Results<Refrigerator> {
-        var data = realm.objects(Refrigerator.self)
+        let data = realm.objects(Refrigerator.self)
+        return data
+    }
+    
+    func fetchItems() -> Results<Items> {
+        let data = realm.objects(Items.self).sorted(byKeyPath: "registDay", ascending: false)
         return data
     }
     
@@ -170,4 +175,13 @@ class RefrigeratorRepository {
             print(error)
         }
     }
+    
+    //아이템 검색
+    func searchTitle(text: String) -> Results<Items> {
+        let results = realm.objects(Items.self).where {
+            $0.name.contains(text, options: .caseInsensitive)
+        }
+        return results
+    }
+    
 }

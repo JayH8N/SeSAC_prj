@@ -20,6 +20,11 @@
 		784CE0312AE4D4BF008ADC5B /* ItemState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CE0302AE4D4BF008ADC5B /* ItemState.swift */; };
 		784CE0332AE4D551008ADC5B /* PageOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CE0322AE4D551008ADC5B /* PageOption.swift */; };
 		784CE0352AE4DD9F008ADC5B /* Sort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CE0342AE4DD9F008ADC5B /* Sort.swift */; };
+		784CE0392AE58B12008ADC5B /* BarcodeAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CE0382AE58B12008ADC5B /* BarcodeAPIManager.swift */; };
+		784CE03C2AE58B79008ADC5B /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CE03B2AE58B79008ADC5B /* APIKey.swift */; };
+		784CE03F2AE58D9A008ADC5B /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 784CE03E2AE58D9A008ADC5B /* Alamofire */; };
+		784CE0412AE58E17008ADC5B /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CE0402AE58E17008ADC5B /* Network.swift */; };
+		784CE0482AE6584F008ADC5B /* SearchItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 784CE0472AE6584F008ADC5B /* SearchItemCell.swift */; };
 		785E01892ABE883E0057859F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E01882ABE883E0057859F /* AppDelegate.swift */; };
 		785E018B2ABE883E0057859F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E018A2ABE883E0057859F /* SceneDelegate.swift */; };
 		785E01922ABE883F0057859F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 785E01912ABE883F0057859F /* Assets.xcassets */; };
@@ -94,6 +99,10 @@
 		784CE0302AE4D4BF008ADC5B /* ItemState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemState.swift; sourceTree = "<group>"; };
 		784CE0322AE4D551008ADC5B /* PageOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageOption.swift; sourceTree = "<group>"; };
 		784CE0342AE4DD9F008ADC5B /* Sort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sort.swift; sourceTree = "<group>"; };
+		784CE0382AE58B12008ADC5B /* BarcodeAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeAPIManager.swift; sourceTree = "<group>"; };
+		784CE03B2AE58B79008ADC5B /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		784CE0402AE58E17008ADC5B /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
+		784CE0472AE6584F008ADC5B /* SearchItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemCell.swift; sourceTree = "<group>"; };
 		785E01852ABE883E0057859F /* Pantry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pantry.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		785E01882ABE883E0057859F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		785E018A2ABE883E0057859F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -162,6 +171,7 @@
 				787CEAEB2AD452040077A073 /* Tabman in Frameworks */,
 				785E01BA2AC170990057859F /* SnapKit in Frameworks */,
 				78F37D322AC464EA00ED4466 /* Then in Frameworks */,
+				784CE03F2AE58D9A008ADC5B /* Alamofire in Frameworks */,
 				788FE3242ADE4EB20018B1C9 /* Toast in Frameworks */,
 				B35DD6DBA13BD0129B46A291 /* Pods_Pantry.framework in Frameworks */,
 			);
@@ -208,6 +218,14 @@
 			path = Enum;
 			sourceTree = "<group>";
 		};
+		784CE03A2AE58B4C008ADC5B /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				784CE03B2AE58B79008ADC5B /* APIKey.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		785E017C2ABE883E0057859F = {
 			isa = PBXGroup;
 			children = (
@@ -231,6 +249,7 @@
 		785E01872ABE883E0057859F /* Pantry */ = {
 			isa = PBXGroup;
 			children = (
+				784CE03A2AE58B4C008ADC5B /* Network */,
 				784CE02D2AE4629F008ADC5B /* Enum */,
 				78F37D4B2ACABA9800ED4466 /* Protocol */,
 				78F37D402AC97F8700ED4466 /* Helper */,
@@ -262,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				785E01C02AC171140057859F /* Realm.swift */,
+				784CE0402AE58E17008ADC5B /* Network.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -414,6 +434,7 @@
 			children = (
 				78C8C25A2ACDACF5004EF75D /* RefrigerCell.swift */,
 				787CEAEC2AD461140077A073 /* ItemsCell.swift */,
+				784CE0472AE6584F008ADC5B /* SearchItemCell.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -426,6 +447,7 @@
 				78F37D5E2ACC69B600ED4466 /* DocumentManager.swift */,
 				784CE00A2AE053EC008ADC5B /* HapticFeedbackManager.swift */,
 				784CE02B2AE4442C008ADC5B /* LocalNotificationManager.swift */,
+				784CE0382AE58B12008ADC5B /* BarcodeAPIManager.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -479,6 +501,7 @@
 				787CEAEA2AD452040077A073 /* Tabman */,
 				788FE3232ADE4EB20018B1C9 /* Toast */,
 				784CE0002ADFF59D008ADC5B /* MarqueeLabel */,
+				784CE03E2AE58D9A008ADC5B /* Alamofire */,
 			);
 			productName = Pantry;
 			productReference = 785E01852ABE883E0057859F /* Pantry.app */;
@@ -518,6 +541,7 @@
 				787CEAE92AD452040077A073 /* XCRemoteSwiftPackageReference "Tabman" */,
 				788FE3222ADE4EB20018B1C9 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				784CDFFF2ADFF59D008ADC5B /* XCRemoteSwiftPackageReference "MarqueeLabel" */,
+				784CE03D2AE58D9A008ADC5B /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 785E01862ABE883E0057859F /* Products */;
 			projectDirPath = "";
@@ -618,7 +642,9 @@
 				78F37D2F2AC4618400ED4466 /* SearchViewController.swift in Sources */,
 				787CEAED2AD461140077A073 /* ItemsCell.swift in Sources */,
 				788FE3272ADF78130018B1C9 /* AddItemViewController.swift in Sources */,
+				784CE0482AE6584F008ADC5B /* SearchItemCell.swift in Sources */,
 				787CEAE42AD4369B0077A073 /* FreezerPageView.swift in Sources */,
+				784CE0412AE58E17008ADC5B /* Network.swift in Sources */,
 				787CEAD42AD434E30077A073 /* DetailPagerTab.swift in Sources */,
 				784CE02C2AE4442C008ADC5B /* LocalNotificationManager.swift in Sources */,
 				78F37D5D2ACBEC0300ED4466 /* RefrigeratorRepository.swift in Sources */,
@@ -648,6 +674,7 @@
 				785E018B2ABE883E0057859F /* SceneDelegate.swift in Sources */,
 				785E01B52AC108190057859F /* BaseView.swift in Sources */,
 				78F37D242AC3686600ED4466 /* UIColor.swift in Sources */,
+				784CE03C2AE58B79008ADC5B /* APIKey.swift in Sources */,
 				784CE02A2AE3F8AC008ADC5B /* EditItemViewController.swift in Sources */,
 				785E01B22AC107DD0057859F /* TabBarController.swift in Sources */,
 				78C8C25D2ACDAD20004EF75D /* BaseCollectionViewCell.swift in Sources */,
@@ -666,6 +693,7 @@
 				78F37D5B2ACBDB4100ED4466 /* AddViewModel.swift in Sources */,
 				78F37D392AC47E9300ED4466 /* highlightedButton.swift in Sources */,
 				787CEAE22AD436930077A073 /* FreezerPageViewController.swift in Sources */,
+				784CE0392AE58B12008ADC5B /* BarcodeAPIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -919,6 +947,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		784CE03D2AE58D9A008ADC5B /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		785E01B82AC170990057859F /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -982,6 +1018,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 784CDFFF2ADFF59D008ADC5B /* XCRemoteSwiftPackageReference "MarqueeLabel" */;
 			productName = MarqueeLabel;
+		};
+		784CE03E2AE58D9A008ADC5B /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 784CE03D2AE58D9A008ADC5B /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
 		};
 		785E01B92AC170990057859F /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;

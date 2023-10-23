@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import UserNotifications
 
 class MainViewController: BaseViewController {
     
@@ -37,7 +37,26 @@ class MainViewController: BaseViewController {
         
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: Notification.Name("ReloadData"), object: nil)
+        
+        
+        
+        //+++++++++++++++++++알람 확인=======================++++++++++++++++++++++=========
+        UNUserNotificationCenter.current().getPendingNotificationRequests { notificationRequests in
+            for request in notificationRequests {
+                let identifier = request.identifier
+                let content = request.content
+                let trigger = request.trigger
+                print("알람 식별자: \(identifier)")
+                print("알람 내용: \(content)")
+                print("알람 트리거: \(trigger))")
+            }
+        }
+        
+        print(LocalNotificationManager.shared.infoList)
+        
+
     }
+    
     
     override func setNavigationBar() {
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "TAEBAEK milkyway", size: 30)!]

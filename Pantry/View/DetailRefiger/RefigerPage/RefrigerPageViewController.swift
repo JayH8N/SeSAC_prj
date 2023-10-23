@@ -50,6 +50,7 @@ class RefrigerPageViewController: BaseViewController {
         let bulletinBoardVC = FilterButtonVC.instance()
         bulletinBoardVC.delegate = self
         bulletinBoardVC.pageOption = .Refrigerator
+        bulletinBoardVC.selectedSort = self.selectedSort
         addDim()
         present(bulletinBoardVC, animated: true)
     }

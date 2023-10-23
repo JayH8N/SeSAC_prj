@@ -17,13 +17,11 @@ class ItemsCell: BaseCollectionViewCell {
     let itemImage = UIImageView().then {
         $0.contentMode = .scaleAspectFill
         $0.layer.cornerRadius = 10
-        $0.backgroundColor = .black
         $0.clipsToBounds = true
     }
     
     let itemTitle = MarqueeLabel().then {
         $0.font = .boldSystemFont(ofSize: 16)
-        $0.text = "Item Name"
     }
     
     let storageStateView = UIView()
@@ -31,7 +29,6 @@ class ItemsCell: BaseCollectionViewCell {
     let expDateLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 13)
         $0.textColor = .red
-        $0.text = "Exp.\n0000-00-00"
         $0.numberOfLines = 2
     }
     
@@ -42,8 +39,6 @@ class ItemsCell: BaseCollectionViewCell {
     
     
     override func layoutSubviews() {
-        storageStateView.layer.borderWidth = 1
-        storageStateView.layer.borderColor = UIColor.white.cgColor
         storageStateView.layer.cornerRadius = storageStateView.bounds.width / 2
         //
         progressView.layer.borderColor = UIColor.black.cgColor
@@ -97,7 +92,6 @@ class ItemsCell: BaseCollectionViewCell {
             $0.size.equalToSuperview().multipliedBy(0.25)
             $0.top.equalToSuperview().inset(5)
             $0.trailing.equalToSuperview().inset(5)
-            $0.bottom.equalTo(itemImage.snp.bottom)
         }
         
         progressView.snp.makeConstraints {

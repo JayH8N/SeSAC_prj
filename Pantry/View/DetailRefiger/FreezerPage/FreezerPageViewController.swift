@@ -49,6 +49,7 @@ class FreezerPageViewController: BaseViewController {
         let bulletinBoardVC = FilterButtonVC.instance()
         bulletinBoardVC.delegate = self
         bulletinBoardVC.pageOption = .Frozen
+        bulletinBoardVC.selectedSort = self.selectedSort
         addDim()
         present(bulletinBoardVC, animated: true)
     }

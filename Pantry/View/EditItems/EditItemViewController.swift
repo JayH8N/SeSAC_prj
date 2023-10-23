@@ -217,9 +217,9 @@ extension EditItemViewController {
         
         DocumentManager.shared.saveImageToDocument(fileName: "JH\(data._id)", image: mainView.imageView.image!)
         
-        if storageIndex == 0 {
+        if mainView.storageType.selectedSegmentIndex == 0 {
             LocalNotificationManager.shared.createNotification(item: data, notificationDay: notiOption)
-        } else if storageIndex == 1 {
+        } else if mainView.storageType.selectedSegmentIndex == 1 {
             LocalNotificationManager.shared.removeNotification(item: data)
         }
         

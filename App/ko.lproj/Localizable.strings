@@ -75,3 +75,9 @@
 "dayAlarm" = "%d일전 알람";
 
 "shortDayAlarm" = "%d일전";
+
+"APIError" = "등록되지 않은 물건입니다.";
+
+"EXPLeft" = "%d일 남음";
+
+"EXPAgo" = "%d일 지남";

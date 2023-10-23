@@ -33,10 +33,13 @@ class AddItemViewController: BaseViewController {
         mainView.delegate = self
         mainView.memoTextView.delegate = self
         mainView.nameTextField.delegate = self
+        updateCountLimitLabel()
     }
     
     private func setBind() {
         viewModel.name.bind { [weak self] name in
+//            if !name.isEmpty {
+//            }
             self?.mainView.nameTextField.text = name
             self?.viewModel.isValid.value = !name.isEmpty
         }
@@ -93,7 +96,6 @@ class AddItemViewController: BaseViewController {
             let newFrame = textFieldTopY - keyboardTopY/1.6
             view.frame.origin.y -= newFrame
         }
-       
     }
     
     @objc private func keyboardWillHide(_ sender: Notification) {
@@ -134,6 +136,14 @@ class AddItemViewController: BaseViewController {
         
         mainView.notiButton.menu = UIMenu(title: "", image: nil, identifier: nil, options: [], children: menuItems)
         mainView.notiButton.showsMenuAsPrimaryAction = true
+    }
+    
+    func receiveItemData(name: String?, memo: String?) {
+        //updateCountLimitLabel()
+        viewModel.name.value = name ?? ""
+        //updateCountLimitLabel()
+        mainView.memoTextView.text = memo ?? ""
+        //updateCountLimitLabel()
     }
     
     
@@ -202,8 +212,8 @@ extension AddItemViewController: YPImagePickerProtocol {
 //valueChanged
 extension AddItemViewController {
     @objc private func nameChanged() {
-        updateCountLimitLabel()
         viewModel.name.value = mainView.nameTextField.text ?? ""
+        updateCountLimitLabel()
     }
     
     @objc private func segmentedControlValueChanged(_ sender: UISegmentedControl) {

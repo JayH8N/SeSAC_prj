@@ -24,3 +24,9 @@ extension ItemsCell: ReuseIdentifierProtocol {
         return String(describing: self)
     }
 }
+
+extension SearchItemCell: ReuseIdentifierProtocol {
+    static var identifier: String {
+        return String(describing: self)
+    }
+}

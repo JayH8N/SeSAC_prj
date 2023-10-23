@@ -56,7 +56,6 @@ class DetailPagerTabViewController: TabmanViewController, PageboyViewControllerD
                    image: UIImage(systemName: "barcode.viewfinder")) { [weak self] _ in
             HapticFeedbackManager.shared.provideFeedback()
             let barcodeScanner = self?.makeBarcodeScannerVC()
-            //self?.delegate?.pushView(vc: barcodeScanner!)
             self?.navigationController?.pushViewController(barcodeScanner!, animated: true)
         }
         
@@ -171,27 +170,36 @@ extension DetailPagerTabViewController: TMBarDataSource {
 
 extension DetailPagerTabViewController: BarcodeScannerCodeDelegate, BarcodeScannerErrorDelegate, BarcodeScannerDismissalDelegate {
     func scanner(_ controller: BarcodeScanner.BarcodeScannerViewController, didCaptureCode code: String, type: String) {
-        print("Barcode====== \(code)")
-        print("Type======= \(type)")
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
             controller.reset()
             controller.navigationController?.popViewController(animated: true)
             
-            let vc = AddItemViewController()
-            let nav = UINavigationController(rootViewController: vc)
-            
-            //self.switchDelegate?.switchScreen(nav: nav)
-            self.present(nav, animated: true)
+            BarcodeAPIManager.shared.callRequest(code: code) { data in
+                switch data {
+                case .success(let value):
+                    let vc = AddItemViewController()
+                    vc.refrigerId = self.rfId
+                    vc.receiveItemData(name: value.PRDLST_NM, memo: value.POG_DAYCNT)
+                    let nav = UINavigationController(rootViewController: vc)
+
+                    self.present(nav, animated: true)
+                    
+                case .failure( _):
+                    self.view.makeToast(NSLocalizedString("APIError", comment: ""), duration: 2.0, position: .center)
+                }
+            }
         }
+        
+        
     }
-    
+
     func scanner(_ controller: BarcodeScanner.BarcodeScannerViewController, didReceiveError error: Error) {
         print(error)
     }
-    
+
     func scannerDidDismiss(_ controller: BarcodeScanner.BarcodeScannerViewController) {
         controller.dismiss(animated: true)
     }
-    
+
 }
