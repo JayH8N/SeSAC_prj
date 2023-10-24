@@ -185,11 +185,14 @@ extension AddViewController {
         let add = NSLocalizedString("Add", comment: "")
         
         self.navigationItem.title = addRefriger
-        self.navigationItem.rightBarButtonItem = .init(title: add, style: .done, target: self, action: #selector(addButtonTapped))
-        self.navigationItem.leftBarButtonItem = .init(title: cancel, style: .done, target: self, action: #selector(cancelButtonTapped))
+        let addButton = UIBarButtonItem(title: add, style: .done, target: self, action: #selector(addButtonTapped))
+        let cancelButton = UIBarButtonItem(title: cancel, style: .done, target: self, action: #selector(cancelButtonTapped))
         
-        navigationItem.rightBarButtonItem?.tintColor = UIColor.blue
-        navigationItem.leftBarButtonItem?.tintColor = UIColor.red
+        navigationItem.setRightBarButton(addButton, animated: false)
+        navigationItem.setLeftBarButton(cancelButton, animated: false)
+        
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "TAEBAEK milkyway", size: 20)!]
+        addButton.tintColor = UIColor.rightButton
     }
 }
 

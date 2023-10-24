@@ -22,8 +22,6 @@ class AllPageView: BaseView {
     
     var itemList: Results<Items>!
     //MARK: - Properties
-    let blurEffect = UIVisualEffectView(effect: UIBlurEffect(style: .light))
-    
     lazy var allCollectionView = UICollectionView(frame: .zero, collectionViewLayout: allCollectionViewLayout()).then {
         $0.backgroundColor = .clear
         $0.delegate = self
@@ -50,17 +48,14 @@ class AllPageView: BaseView {
     
     override func configureView() {
         super.configureView()
-        addSubview(blurEffect)
         addSubview(filterButton)
         addSubview(allCollectionView)
         addSubview(filterLabel)
         
+        
     }
     
     override func setConstraints() {
-        blurEffect.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
         
         filterButton.snp.makeConstraints {
             $0.top.equalTo(self.safeAreaLayoutGuide).inset(8)

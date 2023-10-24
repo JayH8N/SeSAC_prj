@@ -35,11 +35,10 @@ class AddItemViewController: BaseViewController {
         mainView.nameTextField.delegate = self
         updateCountLimitLabel()
     }
+
     
     private func setBind() {
         viewModel.name.bind { [weak self] name in
-//            if !name.isEmpty {
-//            }
             self?.mainView.nameTextField.text = name
             self?.viewModel.isValid.value = !name.isEmpty
         }
@@ -57,7 +56,7 @@ class AddItemViewController: BaseViewController {
         mainView.storageType.addTarget(self, action: #selector(segmentedControlValueChanged), for: .valueChanged)
         mainView.datePicker.addTarget(self, action: #selector(datePickerPickedValue), for: .valueChanged)
         mainView.stepper.addTarget(self, action: #selector(stepperValueChanged), for: .valueChanged)
-        mainView.notiButton.addTarget(self, action: #selector(notiButtonTapped), for: .touchUpInside)
+        mainView.notiIntroDuctionButton.addTarget(self, action: #selector(notiIntroTapped), for: .touchUpInside)
     }
     
     @objc private func handleTap() {
@@ -139,11 +138,8 @@ class AddItemViewController: BaseViewController {
     }
     
     func receiveItemData(name: String?, memo: String?) {
-        //updateCountLimitLabel()
         viewModel.name.value = name ?? ""
-        //updateCountLimitLabel()
         mainView.memoTextView.text = memo ?? ""
-        //updateCountLimitLabel()
     }
     
     
@@ -164,8 +160,8 @@ extension AddItemViewController {
         navigationItem.setRightBarButton(addButton, animated: false)
         navigationItem.setLeftBarButton(cancelButton, animated: false)
         
-        addButton.tintColor = .blue
-        cancelButton.tintColor = .red
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "TAEBAEK milkyway", size: 20)!]
+        addButton.tintColor = UIColor.rightButton
     }
 }
 
@@ -219,9 +215,11 @@ extension AddItemViewController {
     @objc private func segmentedControlValueChanged(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 1 {
             mainView.notiButton.isHidden = true
+            mainView.notiIntroDuctionButton.isHidden = true
             storageIndex = 1
         } else {
             mainView.notiButton.isHidden = false
+            mainView.notiIntroDuctionButton.isHidden = false
             storageIndex = 0
         }
         
@@ -237,8 +235,9 @@ extension AddItemViewController {
         print(Int(mainView.stepper.value))
     }
     
-    @objc private func notiButtonTapped() {
-    
+    @objc private func notiIntroTapped() {
+        
+        self.view.makeToast(NSLocalizedString("AlarmIntro", comment: ""), duration: 2.0, position: .center)
     }
 }
 

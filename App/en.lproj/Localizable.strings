@@ -50,8 +50,8 @@
 
 "introTitle" = "About the Progress Bar";
 
-"introDes" = "A higher progression on the bar indicates an impending expiration date.
-The bar will turn purple when the expiration date has passed.";
+"introMessage" = "The higher the progress of the bar, the closer the expiration date is.
+The item darkens after the expiration date.";
 
 "SelectSort" = "Select Sort";
 
@@ -81,3 +81,9 @@ The bar will turn purple when the expiration date has passed.";
 "EXPLeft" = "%d days left";
 
 "EXPAgo" = "%d days ago";
+
+"RemoveData" = "Remove data";
+
+"RemoveDataMessage" = "Are you sure you want to delete this data";
+
+"AlarmIntro" = "The alarm defaults to 6 p.m.";

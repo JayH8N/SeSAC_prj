@@ -30,15 +30,10 @@ final class TabBarController: UITabBarController {
 extension TabBarController {
     
     private func configureTabBar() {
-        tabBar.backgroundColor = .white
-        tabBar.tintColor = UIColor.theme
+        tabBar.backgroundColor = UIColor.natural
+        tabBar.tintColor = UIColor.white
         tabBar.unselectedItemTintColor = .darkGray
         
-        //shadow
-        tabBar.layer.shadowColor = UIColor.black.cgColor   //그림자 색깔
-        tabBar.layer.shadowOffset = CGSize(width: 0, height: 0)  //태양이 보는 시점
-        tabBar.layer.shadowRadius = 10  //그림자 코너깎임정도
-        tabBar.layer.shadowOpacity = 0.5   //그림자 투명도
     }
     
     private func templateNavigationController(image: String, rootViewController: UIViewController) -> UINavigationController {
@@ -51,6 +46,10 @@ extension TabBarController {
         
         return nav
     }
+    
+    
+    
+    
     
     
     

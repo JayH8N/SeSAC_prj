@@ -72,7 +72,7 @@ class EditRefrigerViewController: BaseViewController {
         $0.titleEdgeInsets = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 0)
         $0.setImage(UIImage(systemName: "trash"), for: .normal)
         $0.tintColor = .white
-        $0.setBackgroundColor(UIColor.red, for: .normal)
+        $0.setBackgroundColor(UIColor.black, for: .normal)
         $0.layer.cornerRadius = 20
         $0.layer.masksToBounds = true
     }
@@ -125,7 +125,6 @@ class EditRefrigerViewController: BaseViewController {
     @objc func nameTextChanged() {
         updateCountLimitLabel()
         if let text = name.text, !text.isEmpty {
-            // 입력값이 존재하는 경우 네비게이션 바 아이템 활성화
             navigationItem.rightBarButtonItem?.isEnabled = true
         } else {
             navigationItem.rightBarButtonItem?.isEnabled = false
@@ -211,9 +210,8 @@ extension EditRefrigerViewController {
         navigationItem.setRightBarButton(editButton, animated: false)
         navigationItem.setLeftBarButton(cancelButton, animated: false)
         
-        editButton.tintColor = .blue
-        
-        navigationItem.leftBarButtonItem?.tintColor = UIColor.red
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "TAEBAEK milkyway", size: 20)!]
+        editButton.tintColor = UIColor.rightButton
     }
 }
 
@@ -221,15 +219,14 @@ extension EditRefrigerViewController: UIImagePickerControllerDelegate, UINavigat
     
     //수정
     @objc func editButtonTapped() {
-         
         guard let data = data else { return }
-        
-        repository.updateRefrigerator(data._id, name: name.text ?? "", memo: memo.text ?? "")
-        
-        DocumentManager.shared.saveImageToDocument(fileName: "JH\(data._id)", image: imageView.image!)
-        
+
+        self.repository.updateRefrigerator(data._id, name: name.text ?? "", memo: memo.text ?? "")
+
+        DocumentManager.shared.saveImageToDocument(fileName: "JH\(data._id)", image: self.imageView.image!)
+
         NotificationCenter.default.post(name: Notification.Name("ReloadData"), object: nil)
-        
+
         dismiss(animated: true)
     }
     
@@ -237,14 +234,20 @@ extension EditRefrigerViewController: UIImagePickerControllerDelegate, UINavigat
     //삭제
     @objc func deleteButtonTapped() {
         HapticFeedbackManager.shared.provideFeedback()
-
-        guard let data = data else { return }
         
-        repository.removeRefrigerator(data)
+        let title = NSLocalizedString("RemoveData", comment: "")
+        let message = NSLocalizedString("RemoveDataMessage", comment: "")
         
-        NotificationCenter.default.post(name: Notification.Name("ReloadData"), object: nil)
+        showAlertView(title: title, message: message) { _ in
+            guard let data = self.data else { return }
+            
+            self.repository.removeRefrigerator(data)
+            
+            NotificationCenter.default.post(name: Notification.Name("ReloadData"), object: nil)
+            
+            self.dismiss(animated: true)
+        }
         
-        dismiss(animated: true)
     }
     
     
@@ -297,7 +300,6 @@ extension EditRefrigerViewController: UITextFieldDelegate {
                 return false
             }
         }
-        
         return true
     }
     

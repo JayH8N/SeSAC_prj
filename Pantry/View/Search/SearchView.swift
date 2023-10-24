@@ -14,10 +14,8 @@ class SearchView: BaseView {
     
     var itemList: Results<Items>!
     
-    let blurEffect = UIVisualEffectView(effect: UIBlurEffect(style: .light))
-    
     let searchBar = UISearchBar().then {
-        $0.barTintColor = UIColor.natural2
+        $0.barTintColor = UIColor.natural
         $0.tintColor = .black
     }
     
@@ -42,16 +40,11 @@ class SearchView: BaseView {
     
     override func configureView() {
         super.configureView()
-        addSubview(blurEffect)
         addSubview(searchBar)
         addSubview(searchCollectionView)
     }
     
     override func setConstraints() {
-        blurEffect.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
-        
         searchBar.snp.makeConstraints {
             $0.top.trailing.leading.equalTo(self.safeAreaLayoutGuide)
         }

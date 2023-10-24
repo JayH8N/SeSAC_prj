@@ -12,8 +12,6 @@ import MarqueeLabel
 
 class ItemsCell: BaseCollectionViewCell {
     
-    let blurEffect = UIVisualEffectView(effect: UIBlurEffect(style: .light))
-    
     let itemImage = UIImageView().then {
         $0.contentMode = .scaleAspectFill
         $0.layer.cornerRadius = 10
@@ -24,11 +22,19 @@ class ItemsCell: BaseCollectionViewCell {
         $0.font = .boldSystemFont(ofSize: 16)
     }
     
+    let expiredLabel = UILabel().then {
+        $0.textColor = .black
+        $0.font = .boldSystemFont(ofSize: 16)
+        $0.textAlignment = .center
+        $0.text = "Expired"
+        $0.isHidden = true
+        $0.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 4)
+    }
+    
     let storageStateView = UIView()
     
     let expDateLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 13)
-        $0.textColor = .red
         $0.numberOfLines = 2
     }
     
@@ -42,7 +48,7 @@ class ItemsCell: BaseCollectionViewCell {
         storageStateView.layer.cornerRadius = storageStateView.bounds.width / 2
         //
         progressView.layer.borderColor = UIColor.black.cgColor
-        progressView.layer.borderWidth = 4
+        progressView.layer.borderWidth = 2
         progressView.layer.cornerRadius = progressView.bounds.height / 2
         progressView.layer.sublayers![1].cornerRadius = progressView.bounds.height / 2
         progressView.clipsToBounds = true
@@ -51,12 +57,11 @@ class ItemsCell: BaseCollectionViewCell {
     
     
     override func configureView() {
-        contentView.backgroundColor = .black.withAlphaComponent(0.5)
-        contentView.addSubview(blurEffect)
         contentView.layer.cornerRadius = 17
         contentView.layer.masksToBounds = true
         
         contentView.addSubview(itemImage)
+        itemImage.addSubview(expiredLabel)
         contentView.addSubview(itemTitle)
         contentView.addSubview(expDateLabel)
         contentView.addSubview(progressView)
@@ -66,14 +71,14 @@ class ItemsCell: BaseCollectionViewCell {
     
     
     override func setConstraints() {
-        blurEffect.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
-        
         itemImage.snp.makeConstraints {
-            $0.size.equalTo(self.snp.height).multipliedBy(0.5)
+            $0.size.equalTo(self.snp.height).multipliedBy(0.65)
             $0.top.equalTo(self.snp.top).inset(10)
             $0.leading.equalTo(self.snp.leading).inset(10)
+        }
+        
+        expiredLabel.snp.makeConstraints {
+            $0.center.equalToSuperview()
         }
         
         itemTitle.snp.makeConstraints {
@@ -89,15 +94,15 @@ class ItemsCell: BaseCollectionViewCell {
         }
         
         storageStateView.snp.makeConstraints {
-            $0.size.equalToSuperview().multipliedBy(0.25)
+            $0.size.equalToSuperview().multipliedBy(0.2)
             $0.top.equalToSuperview().inset(5)
             $0.trailing.equalToSuperview().inset(5)
         }
         
         progressView.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(10)
-            $0.height.equalTo(16)
-            $0.top.equalTo(itemImage.snp.bottom).offset(14)
+            $0.height.equalTo(10)
+            $0.top.equalTo(itemImage.snp.bottom).offset(6)
         }
     }
 }
@@ -116,6 +121,15 @@ extension ItemsCell {
         expDateLabel.text = "Exp.\n\(formatDate(date: data.expiryDay))"
         
         let percentage = calculateDiscount(expirationDate: data.expiryDay)
+        if percentage >= 1.0 {
+            expDateLabel.textColor = .black
+            expiredLabel.isHidden = false
+            contentView.backgroundColor = .darkGray.withAlphaComponent(0.9)
+        } else {
+            expDateLabel.textColor = UIColor.expColor
+            expiredLabel.isHidden = true
+            contentView.backgroundColor = .darkGray.withAlphaComponent(0.3)
+        }
         
         progressView.setProgress(percentage, animated: false)
     }
@@ -142,27 +156,26 @@ extension ItemsCell {
     //프로그레스 뷰 계산
     func calculateDiscount(expirationDate: Date) -> Float {
         let components = Calendar.current.dateComponents([.year, .month, .day], from: expirationDate)
-        let startDate = Calendar.current.date(from: components)!
+        let expDate = Calendar.current.date(from: components)!
         
-        let offsetComps = Calendar.current.dateComponents([.day], from: Date(), to: startDate)
+        let offsetComps = Calendar.current.dateComponents([.day], from: Date(), to: expDate)
         
         if let day = offsetComps.day {
             switch day {
             case 0...3:
-                progressView.tintColor = .red
-                return 0.8
+                progressView.tintColor = UIColor.freshBad
+                return 0.85
             case 4...10:
-                progressView.tintColor = .yellow
-                return 0.5
+                progressView.tintColor = UIColor.freshNotBad
+                return 0.6
             case 11...:
-                progressView.tintColor = .green
-                return 0.3
+                progressView.tintColor = UIColor.freshGood
+                return 0.2
             default:
-                progressView.tintColor = .purple
+                progressView.tintColor = UIColor.freshDone
                 return 1.0
             }
         }
-        
         return 0.0
     }
 }

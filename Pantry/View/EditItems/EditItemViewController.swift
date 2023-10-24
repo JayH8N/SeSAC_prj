@@ -96,6 +96,7 @@ class EditItemViewController: BaseViewController {
         mainView.datePicker.addTarget(self, action: #selector(datePickerPickedValue), for: .valueChanged)
         mainView.stepper.addTarget(self, action: #selector(stepperValueChanged), for: .valueChanged)
         mainView.deleteButton.addTarget(self, action: #selector(deleteButtonTapped), for: .touchUpInside)
+        mainView.notiIntroDuctionButton.addTarget(self, action: #selector(notiIntroTapped), for: .touchUpInside)
     }
     
     @objc private func handleTap() {
@@ -195,8 +196,8 @@ extension EditItemViewController {
         navigationItem.setRightBarButton(updateButton, animated: false)
         navigationItem.setLeftBarButton(cancelButton, animated: false)
         
-        updateButton.tintColor = .blue
-        cancelButton.tintColor = .red
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "TAEBAEK milkyway", size: 20)!]
+        updateButton.tintColor = UIColor.rightButton
     }
 }
 
@@ -235,16 +236,23 @@ extension EditItemViewController {
     
     @objc private func deleteButtonTapped() {
         HapticFeedbackManager.shared.provideFeedback()
-        
-        guard let data = data else { return }
-        
-        LocalNotificationManager.shared.removeNotification(item: data)
-        repository.removeItemFromRefrigerator(data._id)
-        
-        NotificationCenter.default.post(name: Notification.Name("itemReload"), object: nil)
-        
-        dismiss(animated: true)
+        let title = NSLocalizedString("RemoveData", comment: "")
+        let message = NSLocalizedString("RemoveDataMessage", comment: "")
+
+        showAlertView(title: title, message: message) { _ in
+            guard let data = self.data else { return }
+
+            LocalNotificationManager.shared.removeNotification(item: data)
+            self.repository.removeItemFromRefrigerator(data._id)
+
+            NotificationCenter.default.post(name: Notification.Name("itemReload"), object: nil)
+
+            self.dismiss(animated: true)
+        }
     }
+    
+    
+    
 }
 
 extension EditItemViewController: YPImagePickerProtocol {
@@ -267,9 +275,11 @@ extension EditItemViewController {
     @objc private func segmentedControlValueChanged(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 1 {
             mainView.notiButton.isHidden = true
+            mainView.notiIntroDuctionButton.isHidden = true
             storageIndex = 1
         } else {
             mainView.notiButton.isHidden = false
+            mainView.notiIntroDuctionButton.isHidden = false
             storageIndex = 0
         }
     }
@@ -281,6 +291,10 @@ extension EditItemViewController {
     @objc private func stepperValueChanged() {
         mainView.qLabel.text = String(Int(mainView.stepper.value))
         print(Int(mainView.stepper.value))
+    }
+    
+    @objc private func notiIntroTapped() {        
+        self.view.makeToast(NSLocalizedString("AlarmIntro", comment: ""), duration: 2.0, position: .center)
     }
 }
 

@@ -33,16 +33,6 @@ class SearchViewController: BaseViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: Notification.Name("itemReload"), object: nil)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        mainView.searchCollectionView.reloadData()
-    }
-    
-    override func setNavigationBar() {
-        
-    }
-    
     @objc private func reloadData() {
         mainView.searchCollectionView.reloadData()
     }

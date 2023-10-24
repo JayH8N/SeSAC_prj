@@ -12,8 +12,6 @@ import RealmSwift
 
 class RefigerPageView: BaseView {
     
-    let blurEffect = UIVisualEffectView(effect: UIBlurEffect(style: .light))
-    
     var itemList: Results<Items>!
 
     lazy var allCollectionView = UICollectionView(frame: .zero, collectionViewLayout: allCollectionViewLayout()).then {
@@ -39,7 +37,6 @@ class RefigerPageView: BaseView {
     
     override func configureView() {
         super.configureView()
-        addSubview(blurEffect)
         addSubview(filterButton)
         addSubview(allCollectionView)
         addSubview(filterLabel)
@@ -47,10 +44,6 @@ class RefigerPageView: BaseView {
     
     
     override func setConstraints() {
-        blurEffect.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
-        
         filterButton.snp.makeConstraints {
             $0.top.equalTo(self.safeAreaLayoutGuide).inset(4)
             $0.leading.equalTo(self.snp.leading).inset(18)

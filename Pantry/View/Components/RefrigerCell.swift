@@ -17,7 +17,8 @@ class RefrigerCell: FSPagerViewCell {
     weak var switchDelegate: SwitchScreenProtocol?
     
 //MARK: - Properties
-    let editButton = UIButton.makeHighlightedButton(withImageName: "ellipsis.circle", size: 40)
+    //let editButton = UIButton.makeHighlightedButton(withImageName: "ellipsis", size: 38)
+    let editButton = UIButton.makeHighlightedButton2(withImageName: "ellipsis")
     
     let edit = NSLocalizedString("Edit", comment: "")
     let delete = NSLocalizedString("Delete", comment: "")
@@ -50,7 +51,7 @@ class RefrigerCell: FSPagerViewCell {
     
 
     private func configureView() {
-        contentView.backgroundColor = UIColor.refrigerCellBackground
+        contentView.backgroundColor = UIColor.white.withAlphaComponent(0.8)
         contentView.layer.cornerRadius = 15
         contentView.addSubview(image)
         contentView.addSubview(title)
@@ -59,11 +60,6 @@ class RefrigerCell: FSPagerViewCell {
     
     
     private func setConstraints() {
-//        image.snp.makeConstraints {
-//            $0.size.equalTo(self.snp.width).multipliedBy(0.5)
-//            $0.leading.equalTo(self.snp.leading).inset(10)
-//            $0.top.equalTo(self.snp.top).inset(10)
-//        }
         
         image.snp.makeConstraints {
             $0.leading.equalTo(contentView.snp.leading).offset(10)
@@ -72,13 +68,15 @@ class RefrigerCell: FSPagerViewCell {
         }
 
         title.snp.makeConstraints {
-            $0.top.equalTo(image.snp.bottom).offset(10)
+            $0.top.equalTo(image.snp.bottom).offset(17)
             $0.leading.equalTo(image.snp.leading)
+            $0.trailing.equalTo(-10)
         }
         
         editButton.snp.makeConstraints {
-            $0.top.equalTo(10)
-            $0.trailing.equalTo(-10)
+            $0.size.equalTo(23)
+            $0.top.equalTo(13)
+            $0.trailing.equalTo(-8)
         }
     }
     

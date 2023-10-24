@@ -24,7 +24,7 @@ class MainView: BaseView {
     
 //MARK: - Properties
     //blur
-    let blurEffect = UIVisualEffectView(effect: UIBlurEffect(style: .light))
+    //let blurEffect = UIVisualEffectView(effect: UIBlurEffect(style: .light))
         
     //냉장고 추가버튼
     let addButton = UIButton.makeHighlightedButton(withImageName: "plus", size: 30)
@@ -50,15 +50,15 @@ class MainView: BaseView {
         refrigerCollection.dataSource = self
         refrigerCollection.delegate = self
         
-        addSubview(blurEffect)
+        //addSubview(blurEffect)
         addSubview(refrigerCollection)
     }
     
     
     override func setConstraints() {
-        blurEffect.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
+//        blurEffect.snp.makeConstraints {
+//            $0.edges.equalToSuperview()
+//        }
         addButton.snp.makeConstraints {
             $0.size.equalTo(40)
         }

@@ -1,9 +1,4 @@
-//
-//  SearchItemCell.swift
-//  Pantry
-//
-//  Created by hoon on 2023/10/23.
-//
+
 
 import UIKit
 import SnapKit
@@ -11,8 +6,6 @@ import Then
 import MarqueeLabel
 
 class SearchItemCell: BaseCollectionViewCell {
-    
-    let blurEffect = UIVisualEffectView(effect: UIBlurEffect(style: .light))
     
     let imageBackView = UIView().then {
         $0.backgroundColor = .clear
@@ -37,6 +30,16 @@ class SearchItemCell: BaseCollectionViewCell {
         $0.image = UIImage(systemName: "archivebox")
         $0.tintColor = .black
     }
+    
+    let expiredLabel = UILabel().then {
+        $0.textColor = .black
+        $0.font = .boldSystemFont(ofSize: 26)
+        $0.textAlignment = .center
+        $0.text = "Expired"
+        $0.isHidden = true
+        $0.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 4)
+    }
+    
     let storageTitle = UILabel().then {
         $0.font = .systemFont(ofSize: 16)
         $0.textAlignment = .center
@@ -58,13 +61,12 @@ class SearchItemCell: BaseCollectionViewCell {
     }
     
     override func configureView() {
-        contentView.backgroundColor = .black.withAlphaComponent(0.5)
-        contentView.addSubview(blurEffect)
         contentView.layer.cornerRadius = 10
         contentView.layer.masksToBounds = true
         contentView.addSubview(imageBackView)
         imageBackView.addSubview(imageView)
         imageView.addSubview(storageStateView)
+        imageView.addSubview(expiredLabel)
         contentView.addSubview(itemTitle)
         contentView.addSubview(storageStackView)
         contentView.addSubview(expLabel)
@@ -73,10 +75,6 @@ class SearchItemCell: BaseCollectionViewCell {
     
     
     override func setConstraints() {
-        blurEffect.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
-        
         imageBackView.snp.makeConstraints {
             $0.top.leading.trailing.equalToSuperview()
             $0.height.equalTo(contentView.snp.width).multipliedBy(1)
@@ -84,6 +82,10 @@ class SearchItemCell: BaseCollectionViewCell {
         
         imageView.snp.makeConstraints {
             $0.edges.equalToSuperview().inset(4)
+        }
+        
+        expiredLabel.snp.makeConstraints {
+            $0.center.equalToSuperview()
         }
         
         storageStateView.backgroundColor = .white
@@ -120,18 +122,12 @@ class SearchItemCell: BaseCollectionViewCell {
         
     }
     
-    func calculateExpiryStatus(expDay: Date) -> String {
+    func calculateExpiryStatus(expDay: Date) -> Int {
         let timeInterval = expDay.timeIntervalSince(Date())
         
         let remainDay = Int(timeInterval / 60 / 60 / 24)
         
-        if remainDay >= 0 {
-            expLabel.textColor = .red
-            return String(format: NSLocalizedString("EXPLeft", comment: ""), remainDay)
-        } else {
-            expLabel.textColor = .black
-            return String(format: NSLocalizedString("EXPAgo", comment: ""), (-1 * remainDay))
-        }
+        return remainDay
     }
     
     
@@ -147,9 +143,19 @@ extension SearchItemCell {
         } else {
             storageStateView.backgroundColor = .blue
         }
-        
-        //storageTitle.text = data.mainFridge
         storageTitle.text = data.mainFridge.first?.name
-        expLabel.text = calculateExpiryStatus(expDay: data.expiryDay)
+        let value = calculateExpiryStatus(expDay: data.expiryDay)
+        
+        if value >= 0 {
+            contentView.backgroundColor = .darkGray.withAlphaComponent(0.3)
+            expLabel.textColor = UIColor.expColor
+            expLabel.text = String(format: NSLocalizedString("EXPLeft", comment: ""), value)
+            expiredLabel.isHidden = true
+        } else {
+            contentView.backgroundColor = .darkGray.withAlphaComponent(0.9)
+            expLabel.textColor = .black
+            expLabel.text = String(format: NSLocalizedString("EXPAgo", comment: ""), (-1 * value))
+            expiredLabel.isHidden = false
+        }
     }
 }

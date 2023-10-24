@@ -23,10 +23,10 @@ class FilterButtonVC: BaseViewController {
         $0.isUserInteractionEnabled = true
     }
     
-    let blurEffect = UIVisualEffectView(effect: UIBlurEffect(style: .dark))
+    let blurEffect = UIVisualEffectView(effect: UIBlurEffect(style: .light))
     
     lazy var titleLabel = UILabel().then {
-        $0.textColor = .white
+        $0.textColor = .black
         $0.font = .boldSystemFont(ofSize: 20)
         $0.text = NSLocalizedString("SelectSort", comment: "")
     }
@@ -41,8 +41,8 @@ class FilterButtonVC: BaseViewController {
     
     let applyButton = UIButton(type: .system).then {
         $0.setTitle(NSLocalizedString("Apply", comment: ""), for: .normal)
-        $0.setTitleColor(UIColor.black, for: .normal)
-        $0.setBackgroundColor(UIColor.refrigerCellBackground, for: .normal)
+        $0.setTitleColor(UIColor.white, for: .normal)
+        $0.setBackgroundColor(UIColor.black, for: .normal)
         $0.layer.cornerRadius = 20
         $0.layer.masksToBounds = true
     }
@@ -256,7 +256,7 @@ extension FilterButtonVC {
         dismiss(animated: true)
     }
     
-    //적용 reloadData필요
+    
     @objc func applyTapped() {
         HapticFeedbackManager.shared.provideFeedback()
         

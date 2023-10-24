@@ -29,6 +29,18 @@ extension UIButton {
     @objc private static func hapticFeedBackGenerator() {
         HapticFeedbackManager.shared.provideFeedback()
     }
+    
+    static func makeHighlightedButton2(withImageName imageName: String) -> UIButton {
+        let image = UIImage(named: imageName)
+        
+        let button = HighlightedButton()
+        button.setImage(image, for: .normal)
+        
+        button.addTarget(self, action: #selector(hapticFeedBackGenerator), for: .touchUpInside)
+        
+        return button
+    }
+    
 }
 
 extension UIButton {

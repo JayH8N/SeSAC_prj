@@ -36,7 +36,7 @@ class BaseView: UIView {
         layout.minimumLineSpacing = 15
         layout.scrollDirection = .vertical
         let size = UIScreen.main.bounds.width - 36
-        layout.itemSize = CGSize(width: size / 2, height: (size / 2) * 0.65)
+        layout.itemSize = CGSize(width: size / 2, height: (size / 2) * 0.52)
         layout.sectionInset = UIEdgeInsets(top: 10, left: 12, bottom: 12, right: 12)
         return layout
     }

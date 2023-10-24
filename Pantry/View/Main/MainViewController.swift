@@ -31,7 +31,6 @@ class MainViewController: BaseViewController {
         repository.realmPathCheck()
         
         mainView.stored = repository.fetch()
-        print(mainView.stored)
         
         mainView.delegate = self
         

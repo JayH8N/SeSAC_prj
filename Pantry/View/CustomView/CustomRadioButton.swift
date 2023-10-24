@@ -21,7 +21,7 @@ class CustomRadioButton: BaseView {
         $0.textAlignment = .left
     }
     let indicator = UIImageView().then {
-        $0.tintColor = .white
+        $0.tintColor = .black
     }
 
     
@@ -54,18 +54,18 @@ class CustomRadioButton: BaseView {
     func update() {
         if isSelected {
             
-            titleLabel.textColor = UIColor.white
+            titleLabel.textColor = UIColor.black
             indicator.image = UIImage(systemName: "record.circle")
             
-            UIView.animate(withDuration: 0.3) {
+            UIView.animate(withDuration: 0.1) {
                 self.backgroundColor = UIColor.lightGray.withAlphaComponent(0.8)
             }
         } else {
             
-            titleLabel.textColor = UIColor.white
+            titleLabel.textColor = UIColor.black
             indicator.image = UIImage(systemName: "circle")
             
-            UIView.animate(withDuration: 0.3) {
+            UIView.animate(withDuration: 0.1) {
                 self.backgroundColor = UIColor.clear
             }
         }

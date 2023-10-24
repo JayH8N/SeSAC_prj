@@ -127,12 +127,15 @@ class EditItemView: BaseView {
         $0.titleEdgeInsets = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 0)
         $0.setImage(UIImage(systemName: "trash"), for: .normal)
         $0.tintColor = .white
-        $0.setBackgroundColor(UIColor.red, for: .normal)
+        $0.setBackgroundColor(UIColor.black, for: .normal)
         $0.layer.cornerRadius = 20
         $0.layer.masksToBounds = true
     }
     
     let notiButton = UIButton.uiButtonConfigure(imageName: "bell", title: "None")
+    let notiIntroDuctionButton = UIButton.makeHighlightedButton(withImageName: "questionmark.circle", size: 22).then {
+        $0.tintColor = .darkGray
+    }
     
     override func layoutSubviews() {
         
@@ -156,6 +159,7 @@ class EditItemView: BaseView {
         uiView.addSubview(imageView)
         uiView.addSubview(editLabel)
         scrollView.addSubview(notiButton)
+        scrollView.addSubview(notiIntroDuctionButton)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped))
         uiView.addGestureRecognizer(tapGesture)
@@ -307,6 +311,11 @@ class EditItemView: BaseView {
             $0.bottom.equalTo(uiView.snp.bottom)
             $0.size.equalTo(uiView.snp.width).multipliedBy(0.37)
             $0.leading.equalTo(uiView.snp.trailing).offset(13)
+        }
+        
+        notiIntroDuctionButton.snp.makeConstraints {
+            $0.bottom.equalTo(notiButton.snp.top).inset(-10)
+            $0.centerX.equalTo(notiButton)
         }
         
         

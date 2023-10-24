@@ -121,6 +121,9 @@ class AddItemView: BaseView {
     }
     
     let notiButton = UIButton.uiButtonConfigure(imageName: "bell", title: "None")
+    let notiIntroDuctionButton = UIButton.makeHighlightedButton(withImageName: "questionmark.circle", size: 22).then {
+        $0.tintColor = .darkGray
+    }
     
     
     override func layoutSubviews() {
@@ -145,6 +148,7 @@ class AddItemView: BaseView {
         uiView.addSubview(imageView)
         uiView.addSubview(editLabel)
         scrollView.addSubview(notiButton)
+        scrollView.addSubview(notiIntroDuctionButton)
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(imageViewTapped))
         uiView.addGestureRecognizer(tapGesture)
@@ -287,6 +291,11 @@ class AddItemView: BaseView {
             $0.bottom.equalTo(uiView.snp.bottom)
             $0.size.equalTo(uiView.snp.width).multipliedBy(0.37)
             $0.leading.equalTo(uiView.snp.trailing).offset(13)
+        }
+        
+        notiIntroDuctionButton.snp.makeConstraints {
+            $0.bottom.equalTo(notiButton.snp.top).inset(-10)
+            $0.centerX.equalTo(notiButton)
         }
         
         

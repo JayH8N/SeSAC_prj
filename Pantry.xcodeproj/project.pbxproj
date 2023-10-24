@@ -58,6 +58,8 @@
 		788FE3292ADF79810018B1C9 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788FE3282ADF79810018B1C9 /* AddItemView.swift */; };
 		788FE32B2ADFB86B0018B1C9 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788FE32A2ADFB86B0018B1C9 /* UIView.swift */; };
 		788FE32D2ADFDF660018B1C9 /* AddItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788FE32C2ADFDF660018B1C9 /* AddItemViewModel.swift */; };
+		78BB717B2AE793480070347F /* LaunchScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 78BB717A2AE793480070347F /* LaunchScreen.png */; };
+		78BB717D2AE7A88F0070347F /* UITabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB717C2AE7A88F0070347F /* UITabBar.swift */; };
 		78C8C24E2ACD7B75004EF75D /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 78C8C24D2ACD7B75004EF75D /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		78C8C2502ACD7B75004EF75D /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 78C8C24F2ACD7B75004EF75D /* FirebaseCrashlytics */; };
 		78C8C2522ACD8604004EF75D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 78C8C2512ACD8604004EF75D /* GoogleService-Info.plist */; };
@@ -132,6 +134,8 @@
 		788FE3282ADF79810018B1C9 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 		788FE32A2ADFB86B0018B1C9 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		788FE32C2ADFDF660018B1C9 /* AddItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewModel.swift; sourceTree = "<group>"; };
+		78BB717A2AE793480070347F /* LaunchScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchScreen.png; sourceTree = "<group>"; };
+		78BB717C2AE7A88F0070347F /* UITabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBar.swift; sourceTree = "<group>"; };
 		78C8C2512ACD8604004EF75D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		78C8C2542ACD8A68004EF75D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		78C8C25A2ACDACF5004EF75D /* RefrigerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefrigerCell.swift; sourceTree = "<group>"; };
@@ -316,6 +320,7 @@
 		785E01AA2AC107220057859F /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				78BB717A2AE793480070347F /* LaunchScreen.png */,
 				78F37D282AC45B1B00ED4466 /* Font */,
 				785E01912ABE883F0057859F /* Assets.xcassets */,
 			);
@@ -331,6 +336,7 @@
 				78F37D4E2ACABFAE00ED4466 /* CALayer.swift */,
 				788FE31D2ADD5CE30018B1C9 /* UIResponder.swift */,
 				788FE32A2ADFB86B0018B1C9 /* UIView.swift */,
+				78BB717C2AE7A88F0070347F /* UITabBar.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -563,6 +569,7 @@
 				788FE3092AD74C030018B1C9 /* TAEBAEK milkyway.ttf in Resources */,
 				785E01922ABE883F0057859F /* Assets.xcassets in Resources */,
 				78C8C2522ACD8604004EF75D /* GoogleService-Info.plist in Resources */,
+				78BB717B2AE793480070347F /* LaunchScreen.png in Resources */,
 				78F37D622ACCE6BA00ED4466 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -685,6 +692,7 @@
 				78F37D422AC97FCE00ED4466 /* Observable.swift in Sources */,
 				787CEADE2AD435F80077A073 /* AllPageView.swift in Sources */,
 				784CE02F2AE462BF008ADC5B /* NotificationOption.swift in Sources */,
+				78BB717D2AE7A88F0070347F /* UITabBar.swift in Sources */,
 				784CE0092AE04402008ADC5B /* BulletinDelegate.swift in Sources */,
 				78F37D362AC47CE300ED4466 /* UIImage.swift in Sources */,
 				78F37D4F2ACABFAE00ED4466 /* CALayer.swift in Sources */,
@@ -851,8 +859,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 57CCR42RDS;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -886,8 +895,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 57CCR42RDS;
 				GENERATE_INFOPLIST_FILE = YES;

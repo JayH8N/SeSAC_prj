@@ -29,10 +29,10 @@ class DetailPagerTabViewController: TabmanViewController, PageboyViewControllerD
     
     var style = {
         var view = ToastStyle()
-        view.backgroundColor = UIColor.toastColor
+        //view.backgroundColor = UIColor.toastColor
         view.imageSize = CGSize(width: 80, height: 120)
-        view.titleColor = .black
-        view.messageColor = .black
+//        view.titleColor = .black
+//        view.messageColor = .black
         return view
     }()
     
@@ -48,7 +48,6 @@ class DetailPagerTabViewController: TabmanViewController, PageboyViewControllerD
             vc.refrigerId = self?.rfId
             let nav = UINavigationController(rootViewController: vc)
             
-            //self?.switchDelegate?.switchScreen(nav: nav)
             self?.present(nav, animated: true)
         }
         
@@ -74,11 +73,10 @@ class DetailPagerTabViewController: TabmanViewController, PageboyViewControllerD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+            tabBarController?.tabBar.backgroundColor = .natural
         configureTabman()
         configureView()
         title = rfName
-        
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: introDuctionButton)
         introDuctionButton.addTarget(self, action: #selector(introDuctionButtonTapped), for: .touchUpInside)
     }
@@ -95,7 +93,7 @@ class DetailPagerTabViewController: TabmanViewController, PageboyViewControllerD
         let x = UIScreen.main.bounds.width / 2
         let y = UIScreen.main.bounds.height / 2
         
-        self.view.makeToast(NSLocalizedString("introDes", comment: ""),
+        self.view.makeToast(NSLocalizedString("introMessage", comment: ""),
                             duration: 3.0, point: CGPoint(x: x, y: y),
                             title: NSLocalizedString("introTitle", comment: ""),
                             image: UIImage(named: "ExampleBar"),
@@ -125,15 +123,17 @@ extension DetailPagerTabViewController {
         bar.layout.transitionStyle = .snap
         bar.layout.alignment = .centerDistributed
         bar.layout.contentMode = .fit
-        
+
         bar.buttons.customize { button in
             button.tintColor = .lightGray
             button.selectedTintColor = .black
         }
-        
+
         bar.indicator.weight = .custom(value: 3)
         bar.indicator.overscrollBehavior = .none
         bar.indicator.tintColor = .black
+        bar.backgroundColor = .clear
+        
         
         // Add to view
         addBar(bar, dataSource: self, at: .top)
