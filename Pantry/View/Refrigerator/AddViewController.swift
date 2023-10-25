@@ -205,7 +205,7 @@ extension AddViewController: UIImagePickerControllerDelegate, UINavigationContro
 
         repository.createRefrigerator(data)
 
-        NotificationCenter.default.post(name: Notification.Name("ReloadData"), object: nil)
+        NotificationCenter.default.post(name: Notification.Name("RefrigerReloadData"), object: nil)
         
         dismiss(animated: true)
     }

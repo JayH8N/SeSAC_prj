@@ -52,8 +52,10 @@ class EditItemViewController: BaseViewController {
         
         if mainView.storageType.selectedSegmentIndex == 1 {
             mainView.notiButton.isHidden = true
+            mainView.notiIntroDuctionButton.isHidden = true
         } else {
             mainView.notiButton.isHidden = false
+            mainView.notiIntroDuctionButton.isHidden = false
         }
     }
     
@@ -225,7 +227,7 @@ extension EditItemViewController {
         }
         
         NotificationCenter.default.post(name: Notification.Name("itemReload"), object: nil)
-        
+        NotificationCenter.default.post(name: Notification.Name("RefrigerReloadData"), object: nil)
         dismiss(animated: true)
     }
     
@@ -246,6 +248,7 @@ extension EditItemViewController {
             self.repository.removeItemFromRefrigerator(data._id)
 
             NotificationCenter.default.post(name: Notification.Name("itemReload"), object: nil)
+            NotificationCenter.default.post(name: Notification.Name("RefrigerReloadData"), object: nil)
 
             self.dismiss(animated: true)
         }
@@ -293,7 +296,7 @@ extension EditItemViewController {
         print(Int(mainView.stepper.value))
     }
     
-    @objc private func notiIntroTapped() {        
+    @objc private func notiIntroTapped() {
         self.view.makeToast(NSLocalizedString("AlarmIntro", comment: ""), duration: 2.0, position: .center)
     }
 }

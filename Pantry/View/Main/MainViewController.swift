@@ -35,7 +35,7 @@ class MainViewController: BaseViewController {
         mainView.delegate = self
         
         
-        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: Notification.Name("ReloadData"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: Notification.Name("RefrigerReloadData"), object: nil)
         
         
         

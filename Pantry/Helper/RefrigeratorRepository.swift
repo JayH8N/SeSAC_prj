@@ -81,6 +81,17 @@ class RefrigeratorRepository {
         return nil
     }
     
+    //냉장고 아이템 냉장, 냉동 아이템 개수
+    func itemCountForState(in rfObjectid: ObjectId, state: State) -> Int {
+        guard let refrigerator = realm.object(ofType: Refrigerator.self, forPrimaryKey: rfObjectid) else {
+            return 0
+        }
+        
+        let items = refrigerator.ingredient.filter { $0.state == state.rawValue }
+
+        return items.count
+    }
+    
     
     
 //MARK: - 냉장고 관련메서드

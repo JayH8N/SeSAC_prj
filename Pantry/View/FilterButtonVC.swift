@@ -14,6 +14,7 @@ class FilterButtonVC: BaseViewController {
     weak var delegate: BulletinDelegate?
     var selectedSort: Sort?
     var pageOption: PageOption?
+    var buttonSignal: FilterButtonSignal? //filter누르고 바로 확인누르면 옵셔널이라 오류날듯
     
     let bgView = UIView().then {
         $0.backgroundColor = .clear
@@ -163,44 +164,44 @@ class FilterButtonVC: BaseViewController {
         case 1:
             switch pageOption {
             case .All:
-                NotificationCenter.default.post(name: Notification.Name("All_Added"), object: nil)
+                buttonSignal = .all_added
             case .Refrigerator:
-                NotificationCenter.default.post(name: Notification.Name("Ref_Added"), object: nil)
+                buttonSignal = .ref_Added
             case .Frozen:
-                NotificationCenter.default.post(name: Notification.Name("F_Added"), object: nil)
+                buttonSignal = .f_added
             default:
                 break
             }
         case 2:
             switch pageOption {
             case .All:
-                NotificationCenter.default.post(name: Notification.Name("All_ExpFastest"), object: nil)
+                buttonSignal = .all_expFastest
             case .Refrigerator:
-                NotificationCenter.default.post(name: Notification.Name("Ref_ExpFastest"), object: nil)
+                buttonSignal = .ref_expFastest
             case .Frozen:
-                NotificationCenter.default.post(name: Notification.Name("F_ExpFastest"), object: nil)
+                buttonSignal = .f_expFastest
             default:
                 break
             }
         case 3:
             switch pageOption {
             case .All:
-                NotificationCenter.default.post(name: Notification.Name("All_ExpSlowest"), object: nil)
+                buttonSignal = .all_expSlowest
             case .Refrigerator:
-                NotificationCenter.default.post(name: Notification.Name("Ref_ExpSlowest"), object: nil)
+                buttonSignal = .ref_expSlowest
             case .Frozen:
-                NotificationCenter.default.post(name: Notification.Name("F_ExpSlowest"), object: nil)
+                buttonSignal = .f_expSlowest
             default:
                 break
             }
         case 4:
             switch pageOption {
             case .All:
-                NotificationCenter.default.post(name: Notification.Name("All_ExpiredGoods"), object: nil)
+                buttonSignal = .all_expiredGoods
             case .Refrigerator:
-                NotificationCenter.default.post(name: Notification.Name("Ref_ExpiredGoods"), object: nil)
+                buttonSignal = .ref_expiredGoods
             case .Frozen:
-                NotificationCenter.default.post(name: Notification.Name("F_ExpiredGoods"), object: nil)
+                buttonSignal = .f_expiredGoods
             default:
                 break
             }
@@ -259,6 +260,22 @@ extension FilterButtonVC {
     
     @objc func applyTapped() {
         HapticFeedbackManager.shared.provideFeedback()
+        
+        switch buttonSignal {
+        case.all_added: NotificationCenter.default.post(name: Notification.Name("All_Added"), object: nil)
+        case .all_expFastest: NotificationCenter.default.post(name: Notification.Name("All_ExpFastest"), object: nil)
+        case .all_expSlowest: NotificationCenter.default.post(name: Notification.Name("All_ExpSlowest"), object: nil)
+        case .all_expiredGoods: NotificationCenter.default.post(name: Notification.Name("All_ExpiredGoods"), object: nil)
+        case .ref_Added: NotificationCenter.default.post(name: Notification.Name("Ref_Added"), object: nil)
+        case .ref_expFastest: NotificationCenter.default.post(name: Notification.Name("Ref_ExpFastest"), object: nil)
+        case .ref_expSlowest: NotificationCenter.default.post(name: Notification.Name("Ref_ExpSlowest"), object: nil)
+        case .ref_expiredGoods: NotificationCenter.default.post(name: Notification.Name("Ref_ExpiredGoods"), object: nil)
+        case .f_added: NotificationCenter.default.post(name: Notification.Name("F_Added"), object: nil)
+        case .f_expFastest: NotificationCenter.default.post(name: Notification.Name("F_ExpFastest"), object: nil)
+        case .f_expSlowest: NotificationCenter.default.post(name: Notification.Name("F_ExpSlowest"), object: nil)
+        case .f_expiredGoods: NotificationCenter.default.post(name: Notification.Name("F_ExpiredGoods"), object: nil)
+        default: break
+        }
         
         NotificationCenter.default.post(name: Notification.Name("itemReload"), object: nil)
         delegate?.onTapClose()

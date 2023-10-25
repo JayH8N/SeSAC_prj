@@ -12,6 +12,8 @@ import FSPagerView
 
 class RefrigerCell: FSPagerViewCell {
     
+    let repository = RefrigeratorRepository()
+    
     var data: Refrigerator?
 
     weak var switchDelegate: SwitchScreenProtocol?
@@ -32,6 +34,35 @@ class RefrigerCell: FSPagerViewCell {
     
     let title = UILabel().then {
         $0.font = .boldSystemFont(ofSize: 23)
+    }
+    
+    let refrigerIcon = UIImageView().then {
+        $0.image = UIImage(systemName: "thermometer.snowflake")
+        $0.tintColor = .black
+    }
+    let refrigerItemNumber = UILabel().then {
+        $0.font = .systemFont(ofSize: 16)
+        $0.text = "TestTest"
+    }
+    let frozenIcon = UIImageView().then {
+        $0.image = UIImage(systemName: "snowflake")
+        $0.tintColor = .black
+    }
+    let frozenItemNumber = UILabel().then {
+        $0.font = .systemFont(ofSize: 16)
+        $0.text = "TestTest"
+    }
+    lazy var refrigerStackView = UIStackView(arrangedSubviews: [refrigerIcon, refrigerItemNumber]).then {
+        $0.axis = .horizontal
+        $0.spacing = 6
+    }
+    lazy var frozenStackView = UIStackView(arrangedSubviews: [frozenIcon, frozenItemNumber]).then {
+        $0.axis = .horizontal
+        $0.spacing = 6
+    }
+    lazy var ItemCountStackView = UIStackView(arrangedSubviews: [refrigerStackView, frozenStackView]).then {
+        $0.axis = .vertical
+        $0.spacing = 7
     }
     
     
@@ -56,6 +87,7 @@ class RefrigerCell: FSPagerViewCell {
         contentView.addSubview(image)
         contentView.addSubview(title)
         contentView.addSubview(editButton)
+        contentView.addSubview(ItemCountStackView)
     }
     
     
@@ -78,12 +110,33 @@ class RefrigerCell: FSPagerViewCell {
             $0.top.equalTo(13)
             $0.trailing.equalTo(-8)
         }
+        
+        refrigerIcon.snp.makeConstraints {
+            $0.size.equalTo(editButton)
+        }
+        
+        frozenIcon.snp.makeConstraints {
+            $0.size.equalTo(editButton)
+        }
+        
+        
+        ItemCountStackView.snp.makeConstraints {
+            $0.leading.equalTo(image.snp.trailing).offset(10)
+            $0.trailing.equalTo(contentView.snp.trailing).inset(10)
+            $0.height.equalTo(refrigerIcon.snp.height).multipliedBy(2.3)
+            $0.bottom.equalTo(image.snp.bottom)
+        }
     }
     
     
     func setData(data: Refrigerator) {
         image.image = DocumentManager.shared.loadImageFromDocument(fileName: "JH\(data._id)")
         title.text = data.name
+        
+        let refrigerItemCount = repository.itemCountForState(in: data._id, state: State.refrigeration)
+        let frozenItemCount = repository.itemCountForState(in: data._id, state: State.frozen)
+        refrigerItemNumber.text = " :  \(refrigerItemCount)"
+        frozenItemNumber.text = " :  \(frozenItemCount)"
     }
     
 
@@ -100,6 +153,7 @@ extension RefrigerCell {
         let nav = UINavigationController(rootViewController: vc)
         
         switchDelegate?.switchScreen(nav: nav)
+        
     }
     
 }
