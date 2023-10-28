@@ -59,8 +59,9 @@
 		788FE32B2ADFB86B0018B1C9 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788FE32A2ADFB86B0018B1C9 /* UIView.swift */; };
 		788FE32D2ADFDF660018B1C9 /* AddItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788FE32C2ADFDF660018B1C9 /* AddItemViewModel.swift */; };
 		78BB717B2AE793480070347F /* LaunchScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 78BB717A2AE793480070347F /* LaunchScreen.png */; };
-		78BB717D2AE7A88F0070347F /* UITabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB717C2AE7A88F0070347F /* UITabBar.swift */; };
 		78BB71812AE8A6F20070347F /* FilterButtonSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB71802AE8A6F20070347F /* FilterButtonSignal.swift */; };
+		78BB71882AEBC1C20070347F /* AlarmStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB71872AEBC1C20070347F /* AlarmStatusViewController.swift */; };
+		78BB718A2AEBC1CF0070347F /* AlarmStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB71892AEBC1CF0070347F /* AlarmStatusView.swift */; };
 		78C8C24E2ACD7B75004EF75D /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 78C8C24D2ACD7B75004EF75D /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		78C8C2502ACD7B75004EF75D /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 78C8C24F2ACD7B75004EF75D /* FirebaseCrashlytics */; };
 		78C8C2522ACD8604004EF75D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 78C8C2512ACD8604004EF75D /* GoogleService-Info.plist */; };
@@ -136,8 +137,9 @@
 		788FE32A2ADFB86B0018B1C9 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		788FE32C2ADFDF660018B1C9 /* AddItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewModel.swift; sourceTree = "<group>"; };
 		78BB717A2AE793480070347F /* LaunchScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchScreen.png; sourceTree = "<group>"; };
-		78BB717C2AE7A88F0070347F /* UITabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITabBar.swift; sourceTree = "<group>"; };
 		78BB71802AE8A6F20070347F /* FilterButtonSignal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButtonSignal.swift; sourceTree = "<group>"; };
+		78BB71872AEBC1C20070347F /* AlarmStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmStatusViewController.swift; sourceTree = "<group>"; };
+		78BB71892AEBC1CF0070347F /* AlarmStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmStatusView.swift; sourceTree = "<group>"; };
 		78C8C2512ACD8604004EF75D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		78C8C2542ACD8A68004EF75D /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		78C8C25A2ACDACF5004EF75D /* RefrigerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefrigerCell.swift; sourceTree = "<group>"; };
@@ -296,6 +298,7 @@
 		785E01A72AC105D00057859F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				78BB71862AEBC18B0070347F /* AlarmStatus */,
 				785E01B12AC107DD0057859F /* TabBarController.swift */,
 				784CE0062AE0405D008ADC5B /* FilterButtonVC.swift */,
 				784CE0262AE3F653008ADC5B /* EditItems */,
@@ -339,7 +342,6 @@
 				78F37D4E2ACABFAE00ED4466 /* CALayer.swift */,
 				788FE31D2ADD5CE30018B1C9 /* UIResponder.swift */,
 				788FE32A2ADFB86B0018B1C9 /* UIView.swift */,
-				78BB717C2AE7A88F0070347F /* UITabBar.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -409,6 +411,15 @@
 				788FE3282ADF79810018B1C9 /* AddItemView.swift */,
 			);
 			path = AddItems;
+			sourceTree = "<group>";
+		};
+		78BB71862AEBC18B0070347F /* AlarmStatus */ = {
+			isa = PBXGroup;
+			children = (
+				78BB71872AEBC1C20070347F /* AlarmStatusViewController.swift */,
+				78BB71892AEBC1CF0070347F /* AlarmStatusView.swift */,
+			);
+			path = AlarmStatus;
 			sourceTree = "<group>";
 		};
 		78F37D282AC45B1B00ED4466 /* Font */ = {
@@ -664,6 +675,7 @@
 				784CE0332AE4D551008ADC5B /* PageOption.swift in Sources */,
 				784CE00B2AE053EC008ADC5B /* HapticFeedbackManager.swift in Sources */,
 				784CE0312AE4D4BF008ADC5B /* ItemState.swift in Sources */,
+				78BB71882AEBC1C20070347F /* AlarmStatusViewController.swift in Sources */,
 				78F37D592ACBC7BC00ED4466 /* AddViewController.swift in Sources */,
 				788FE3292ADF79810018B1C9 /* AddItemView.swift in Sources */,
 				78F37D5F2ACC69B600ED4466 /* DocumentManager.swift in Sources */,
@@ -687,6 +699,7 @@
 				784CE03C2AE58B79008ADC5B /* APIKey.swift in Sources */,
 				784CE02A2AE3F8AC008ADC5B /* EditItemViewController.swift in Sources */,
 				785E01B22AC107DD0057859F /* TabBarController.swift in Sources */,
+				78BB718A2AEBC1CF0070347F /* AlarmStatusView.swift in Sources */,
 				78C8C25D2ACDAD20004EF75D /* BaseCollectionViewCell.swift in Sources */,
 				785E01B72AC108250057859F /* BaseViewController.swift in Sources */,
 				788FE32D2ADFDF660018B1C9 /* AddItemViewModel.swift in Sources */,
@@ -695,7 +708,6 @@
 				78F37D422AC97FCE00ED4466 /* Observable.swift in Sources */,
 				787CEADE2AD435F80077A073 /* AllPageView.swift in Sources */,
 				784CE02F2AE462BF008ADC5B /* NotificationOption.swift in Sources */,
-				78BB717D2AE7A88F0070347F /* UITabBar.swift in Sources */,
 				784CE0092AE04402008ADC5B /* BulletinDelegate.swift in Sources */,
 				78BB71812AE8A6F20070347F /* FilterButtonSignal.swift in Sources */,
 				78F37D362AC47CE300ED4466 /* UIImage.swift in Sources */,
@@ -865,7 +877,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 7;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 57CCR42RDS;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -881,7 +893,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.junghoon.Pantrytest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -901,7 +913,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 7;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 57CCR42RDS;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -917,7 +929,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.junghoon.Pantrytest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

@@ -66,15 +66,13 @@ class EditItemViewController: BaseViewController {
             return attString
         }
         
-        let none = NSLocalizedString("None", comment: "")
-        
         guard let data = data else { return }
         
         let alarmInfo = LocalNotificationManager.shared.readAlarmInfo(identifier: "\(data._id)")
         let notiTitle: String
         switch alarmInfo {
         case .none:
-            notiTitle = none
+            notiTitle = NSLocalizedString("None", comment: "")
             self.notiOption = .none
         case .oneDayBefore:
             notiTitle = String(format: NSLocalizedString("shortDayAlarm", comment: ""), 1)

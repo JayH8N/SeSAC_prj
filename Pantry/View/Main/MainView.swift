@@ -23,13 +23,10 @@ class MainView: BaseView {
     weak var delegate: NavPushProtocol?
     
 //MARK: - Properties
-    //blur
-    //let blurEffect = UIVisualEffectView(effect: UIBlurEffect(style: .light))
         
-    //냉장고 추가버튼
     let addButton = UIButton.makeHighlightedButton(withImageName: "plus", size: 30)
     
-
+    let alarmButton = UIButton.makeHighlightedButton(withImageName: "bell", size: 30)
     
     lazy var refrigerCollection = FSPagerView(frame: .zero).then {
         $0.register(RefrigerCell.self, forCellWithReuseIdentifier: RefrigerCell.identifier)
@@ -50,16 +47,16 @@ class MainView: BaseView {
         refrigerCollection.dataSource = self
         refrigerCollection.delegate = self
         
-        //addSubview(blurEffect)
         addSubview(refrigerCollection)
     }
     
     
     override func setConstraints() {
-//        blurEffect.snp.makeConstraints {
-//            $0.edges.equalToSuperview()
-//        }
         addButton.snp.makeConstraints {
+            $0.size.equalTo(40)
+        }
+        
+        alarmButton.snp.makeConstraints {
             $0.size.equalTo(40)
         }
         

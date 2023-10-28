@@ -29,10 +29,7 @@ class DetailPagerTabViewController: TabmanViewController, PageboyViewControllerD
     
     var style = {
         var view = ToastStyle()
-        //view.backgroundColor = UIColor.toastColor
         view.imageSize = CGSize(width: 80, height: 120)
-//        view.titleColor = .black
-//        view.messageColor = .black
         return view
     }()
     
@@ -174,23 +171,26 @@ extension DetailPagerTabViewController: BarcodeScannerCodeDelegate, BarcodeScann
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
             controller.reset()
             controller.navigationController?.popViewController(animated: true)
-            
+
             BarcodeAPIManager.shared.callRequest(code: code) { data in
                 switch data {
                 case .success(let value):
-                    let vc = AddItemViewController()
-                    vc.refrigerId = self.rfId
-                    vc.receiveItemData(name: value.PRDLST_NM, memo: value.POG_DAYCNT)
-                    let nav = UINavigationController(rootViewController: vc)
+                    DispatchQueue.main.async {
+                        let vc = AddItemViewController()
+                        vc.refrigerId = self.rfId
+                        vc.receiveItemData(name: value.PRDLST_NM, memo: value.POG_DAYCNT)
+                        let nav = UINavigationController(rootViewController: vc)
 
-                    self.present(nav, animated: true)
-                    
+                        self.present(nav, animated: true)
+                    }
+
                 case .failure( _):
-                    self.view.makeToast(NSLocalizedString("APIError", comment: ""), duration: 2.0, position: .center)
+                    DispatchQueue.main.async {
+                        self.view.makeToast(NSLocalizedString("APIError", comment: ""), duration: 2.0, position: .center)
+                    }
                 }
             }
         }
-        
         
     }
 

@@ -163,50 +163,33 @@ class FilterButtonVC: BaseViewController {
         switch selectedButton.tag {
         case 1:
             switch pageOption {
-            case .All:
-                buttonSignal = .all_added
-            case .Refrigerator:
-                buttonSignal = .ref_Added
-            case .Frozen:
-                buttonSignal = .f_added
-            default:
-                break
+            case .All: buttonSignal = .all_added
+            case .Refrigerator: buttonSignal = .ref_Added
+            case .Frozen: buttonSignal = .f_added
+            default: break
             }
         case 2:
             switch pageOption {
-            case .All:
-                buttonSignal = .all_expFastest
-            case .Refrigerator:
-                buttonSignal = .ref_expFastest
-            case .Frozen:
-                buttonSignal = .f_expFastest
-            default:
-                break
+            case .All: buttonSignal = .all_expFastest
+            case .Refrigerator: buttonSignal = .ref_expFastest
+            case .Frozen: buttonSignal = .f_expFastest
+            default: break
             }
         case 3:
             switch pageOption {
-            case .All:
-                buttonSignal = .all_expSlowest
-            case .Refrigerator:
-                buttonSignal = .ref_expSlowest
-            case .Frozen:
-                buttonSignal = .f_expSlowest
-            default:
-                break
+            case .All: buttonSignal = .all_expSlowest
+            case .Refrigerator: buttonSignal = .ref_expSlowest
+            case .Frozen: buttonSignal = .f_expSlowest
+            default: break
             }
         case 4:
             switch pageOption {
-            case .All:
-                buttonSignal = .all_expiredGoods
-            case .Refrigerator:
-                buttonSignal = .ref_expiredGoods
-            case .Frozen:
-                buttonSignal = .f_expiredGoods
-            default:
-                break
+            case .All: buttonSignal = .all_expiredGoods
+            case .Refrigerator: buttonSignal = .ref_expiredGoods
+            case .Frozen: buttonSignal = .f_expiredGoods
+            default: break
             }
-        default:
-            break
+        default: break
         }
     }
     

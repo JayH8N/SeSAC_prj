@@ -63,6 +63,7 @@ class LocalNotificationManager {
         let content = UNMutableNotificationContent()
         content.title = NSLocalizedString("ExpNotiTitle", comment: "") //"유통기한 알림"
         content.body = String(format: NSLocalizedString("ExpNotiBody", comment: ""), item.name, notificationDay.rawValue)
+        content.sound = .default
         
         var triggerDateComponents = Calendar.current.dateComponents([.year, .month, .day], from: item.expiryDay) //유통기한 년, 월, 일 추출
         triggerDateComponents.hour = 18 // 오후 6시 고정
@@ -92,7 +93,6 @@ class LocalNotificationManager {
         let center = UNUserNotificationCenter.current()
         center.removePendingNotificationRequests(withIdentifiers: ["\(item._id)"]) //발생하지 않은 알림 삭제
         center.removeDeliveredNotifications(withIdentifiers: ["\(item._id)"]) // 이미 발생한 알림 삭제
-        
     }
     
     //알람 제대로 등록됬는지 확인
@@ -109,15 +109,14 @@ class LocalNotificationManager {
                     let formatter = DateFormatter()
                     formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
                     
-                    print("Title: \(content.title ?? "N/A")")
-                    print("Body: \(content.body ?? "N/A")")
+                    print("Title: \(content.title )")
+                    print("Body: \(content.body )")
                     print("Scheduled Time: \(formatter.string(from: date ?? Date()))")
                     print("--------")
                 }
             }
         }
     }
-
 }
 
 

@@ -86,4 +86,10 @@
 
 "RemoveDataMessage" = "정말로 데이터를 삭제하시겠습니까?";
 
-"AlarmIntro" = "알람은 오후6시가 기본값입니다.";
+"AlarmIntro" = "알림은 오후6시가 기본값입니다.";
+
+"Alarm" = "알림";
+
+"AlarmPermissionTitle" = "알림 권한";
+
+"AlarmPermissionMessage" = "현재 알림권한이 거부되어있습니다. 알림권한을 허용하시겠습니까?";

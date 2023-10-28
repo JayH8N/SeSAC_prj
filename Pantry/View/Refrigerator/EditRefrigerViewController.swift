@@ -242,6 +242,7 @@ extension EditRefrigerViewController: UIImagePickerControllerDelegate, UINavigat
             
             self.repository.removeRefrigerator(data)
             NotificationCenter.default.post(name: Notification.Name("RefrigerReloadData"), object: nil)
+            NotificationCenter.default.post(name: Notification.Name("itemReload"), object: nil)
             
             self.dismiss(animated: true)
         }

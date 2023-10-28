@@ -37,13 +37,16 @@ class BaseViewController: UIViewController {
     
     func showAlertView(title: String, message: String? = nil, handler: ((UIAlertAction) -> Void)? = nil) {
         
+        let okTitle = NSLocalizedString("Apply", comment: "")
+        let cancelTitle = NSLocalizedString("Cancel", comment: "")
+        
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        let ok = UIAlertAction(title: "확인", style: .default, handler: handler)
-        let cancel = UIAlertAction(title: "No", style: .cancel)
+        let ok = UIAlertAction(title: okTitle, style: .default, handler: handler)
+        let cancel = UIAlertAction(title: cancelTitle, style: .default)
         
-        alert.addAction(ok)
         alert.addAction(cancel)
+        alert.addAction(ok)
         
         present(alert, animated: true, completion: nil)
     }

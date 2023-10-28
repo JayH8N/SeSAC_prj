@@ -44,7 +44,7 @@ class FreezerPageView: BaseView {
     
     override func setConstraints() {
         filterButton.snp.makeConstraints {
-            $0.top.equalTo(self.safeAreaLayoutGuide).inset(4)
+            $0.top.equalTo(self.safeAreaLayoutGuide).inset(8)
             $0.leading.equalTo(self.snp.leading).inset(18)
         }
         

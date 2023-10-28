@@ -15,7 +15,7 @@ class RefrigeratorRepository {
     
     //realm파일경로
     func realmPathCheck() {
-        print(realm.configuration.fileURL)
+        print("렘 파일경로 : \(realm.configuration.fileURL!)")
     }
     
     //스키마버전 체크 메서드

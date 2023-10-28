@@ -87,3 +87,9 @@ The item darkens after the expiration date.";
 "RemoveDataMessage" = "Are you sure you want to delete this data";
 
 "AlarmIntro" = "The alarm defaults to 6 p.m.";
+
+"Alarm" = "Notification";
+
+"AlarmPermissionTitle" = "Notification permission";
+
+"AlarmPermissionMessage" = "Notification permission is currently denied. Allow notification permission?";

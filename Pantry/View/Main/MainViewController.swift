@@ -8,7 +8,7 @@
 import UIKit
 import UserNotifications
 
-class MainViewController: BaseViewController {
+final class MainViewController: BaseViewController {
     
     let mainView = MainView()
     let repository = RefrigeratorRepository()
@@ -16,7 +16,6 @@ class MainViewController: BaseViewController {
     
     override func loadView() {
         self.view = mainView
-        
     }
     
     
@@ -29,7 +28,6 @@ class MainViewController: BaseViewController {
         super.viewDidLoad()
         
         repository.realmPathCheck()
-        
         mainView.stored = repository.fetch()
         
         mainView.delegate = self
@@ -37,9 +35,10 @@ class MainViewController: BaseViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: Notification.Name("RefrigerReloadData"), object: nil)
         
+        let backButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
+        self.navigationItem.backBarButtonItem = backButtonItem
         
-        
-        //+++++++++++++++++++알람 확인=======================++++++++++++++++++++++=========
+        //등록된 알람 현황 확인
         UNUserNotificationCenter.current().getPendingNotificationRequests { notificationRequests in
             for request in notificationRequests {
                 let identifier = request.identifier
@@ -51,9 +50,8 @@ class MainViewController: BaseViewController {
             }
         }
         
-        print(LocalNotificationManager.shared.infoList)
-        
-
+        //UserDefaults로 저장한 알람 리스트(Dictionary)
+        print("알람 리스트 : \(LocalNotificationManager.shared.infoList)")
     }
     
     
@@ -61,11 +59,12 @@ class MainViewController: BaseViewController {
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "TAEBAEK milkyway", size: 30)!]
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(customView: mainView.addButton)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: mainView.alarmButton)
     }
     
     override func configureView() {
         mainView.addButton.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
-        
+        mainView.alarmButton.addTarget(self, action: #selector(alarmButtonTapped), for: .touchUpInside)
     }
     
     
@@ -73,14 +72,20 @@ class MainViewController: BaseViewController {
 
 extension MainViewController {
     
-    @objc func addButtonTapped() {
+    @objc private func addButtonTapped() {
         let vc = AddViewController()
         let nav = UINavigationController(rootViewController: vc)
         
         present(nav, animated: true)
     }
     
-    @objc func reloadData() {
+    @objc private func alarmButtonTapped() {
+        let vc = AlarmStatusViewController(title: NSLocalizedString("Alarm", comment: ""))
+        
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @objc private func reloadData() {
         mainView.refrigerCollection.reloadData()
     }
 }
