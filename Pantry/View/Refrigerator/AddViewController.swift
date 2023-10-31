@@ -55,7 +55,6 @@ class AddViewController: BaseViewController {
     lazy var nameLimitLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 10)
         $0.textAlignment = .left
-        //$0.text = "(0/\(nameLimit))"
     }
     
     let memo = UITextField().then {
@@ -68,7 +67,6 @@ class AddViewController: BaseViewController {
     lazy var memoLimitLabel = UILabel().then {
         $0.font = .systemFont(ofSize: 10)
         $0.textAlignment = .left
-        //$0.text = "(0/\(memoLimit))"
     }
     
     
@@ -243,10 +241,11 @@ extension AddViewController: UITextFieldDelegate {
         if textField == name {
             let nowString = name.text ?? ""
             let newString = (nowString as NSString).replacingCharacters(in: range, with: string)
-            
+
             if newString.count <= nameLimit {
                 return true
-            } else {
+            }
+            else {
                 return false
             }
         } else if textField == memo {

@@ -70,7 +70,8 @@ class DetailPagerTabViewController: TabmanViewController, PageboyViewControllerD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            tabBarController?.tabBar.backgroundColor = .natural
+        tabBarController?.tabBar.backgroundColor = .natural
+        view.backgroundColor = UIColor.natural
         configureTabman()
         configureView()
         title = rfName

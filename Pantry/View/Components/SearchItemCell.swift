@@ -55,6 +55,11 @@ class SearchItemCell: BaseCollectionViewCell {
         $0.textAlignment = .center
     }
     
+    let notificationMark = UIImageView().then {
+        $0.tintColor = .black
+        $0.image = UIImage(systemName: "bell.fill")
+    }
+    
     
     override func layoutSubviews() {
         storageStateView.layer.cornerRadius = 7
@@ -62,7 +67,7 @@ class SearchItemCell: BaseCollectionViewCell {
     
     override func configureView() {
         contentView.layer.cornerRadius = 10
-        contentView.layer.masksToBounds = true
+        contentView.layer.masksToBounds = false
         contentView.addSubview(imageBackView)
         imageBackView.addSubview(imageView)
         imageView.addSubview(storageStateView)
@@ -70,6 +75,7 @@ class SearchItemCell: BaseCollectionViewCell {
         contentView.addSubview(itemTitle)
         contentView.addSubview(storageStackView)
         contentView.addSubview(expLabel)
+        contentView.addSubview(notificationMark)
     }
     
     
@@ -118,10 +124,46 @@ class SearchItemCell: BaseCollectionViewCell {
             $0.leading.trailing.equalTo(storageStackView)
         }
         
-        
-        
+        notificationMark.snp.makeConstraints {
+            $0.size.equalTo(imageView).multipliedBy(0.25)
+            $0.top.equalTo(self.snp.top).inset(-7)
+            $0.leading.equalTo(self.snp.leading).inset(-7)
+        }
+
     }
     
+    func setCell(data: Items) {
+        itemTitle.text = data.name
+        imageView.image = DocumentManager.shared.loadImageFromDocument(fileName: "JH\(data._id)")
+        
+        if data.state == 0 {
+            storageStateView.backgroundColor = UIColor(red: 111/255, green: 178/255, blue: 232/255, alpha: 1)
+            checkNotification(data: "\(data._id)", object: notificationMark)
+        } else {
+            storageStateView.backgroundColor = .blue
+            notificationMark.isHidden = true
+        }
+        storageTitle.text = data.mainFridge.first?.name
+        
+        let countExpDay = calculateDiscount(expirationDate: data.expiryDay)
+        
+        if countExpDay < 0 {
+            contentView.backgroundColor = .darkGray.withAlphaComponent(0.9)
+            expLabel.textColor = .black
+            expLabel.text = String(format: NSLocalizedString("EXPAgo", comment: ""), (-1 * countExpDay))
+            expiredLabel.isHidden = false
+        } else {
+            contentView.backgroundColor = .darkGray.withAlphaComponent(0.3)
+            expLabel.textColor = UIColor.expColor
+            expLabel.text = String(format: NSLocalizedString("EXPLeft", comment: ""), countExpDay)
+            expiredLabel.isHidden = true
+        }
+    }
+    
+    
+}
+
+extension SearchItemCell {
     func calculateExpiryStatus(expDay: Date) -> Int {
         let timeInterval = expDay.timeIntervalSince(Date())
         
@@ -130,32 +172,15 @@ class SearchItemCell: BaseCollectionViewCell {
         return remainDay
     }
     
-    
-}
-
-extension SearchItemCell {
-    func setCell(data: Items) {
-        itemTitle.text = data.name
-        imageView.image = DocumentManager.shared.loadImageFromDocument(fileName: "JH\(data._id)")
+    func calculateDiscount(expirationDate: Date) -> Int {
+        let components = Calendar.current.dateComponents([.year, .month, .day], from: expirationDate)
+        let expDate = Calendar.current.date(from: components)!
+        print(expDate)
         
-        if data.state == 0 {
-            storageStateView.backgroundColor = UIColor(red: 111/255, green: 178/255, blue: 232/255, alpha: 1)
-        } else {
-            storageStateView.backgroundColor = .blue
-        }
-        storageTitle.text = data.mainFridge.first?.name
-        let value = calculateExpiryStatus(expDay: data.expiryDay)
+        let offsetComps = Calendar.current.dateComponents([.day], from: Date(), to: expDate)
         
-        if value >= 0 {
-            contentView.backgroundColor = .darkGray.withAlphaComponent(0.3)
-            expLabel.textColor = UIColor.expColor
-            expLabel.text = String(format: NSLocalizedString("EXPLeft", comment: ""), value)
-            expiredLabel.isHidden = true
-        } else {
-            contentView.backgroundColor = .darkGray.withAlphaComponent(0.9)
-            expLabel.textColor = .black
-            expLabel.text = String(format: NSLocalizedString("EXPAgo", comment: ""), (-1 * value))
-            expiredLabel.isHidden = false
-        }
+        return offsetComps.day!
     }
+
+    
 }

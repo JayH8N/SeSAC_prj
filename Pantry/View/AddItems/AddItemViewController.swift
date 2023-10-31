@@ -240,14 +240,17 @@ extension AddItemViewController {
     
     @objc private func segmentedControlValueChanged(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 1 {
+            mainView.notiPermissionButton.isHidden = true
             mainView.notiButton.isHidden = true
             mainView.notiIntroDuctionButton.isHidden = true
             storageIndex = 1
         } else {
-            if notiPermission == false {
+            if notiPermission == false { //index == 0, 알림권한 거부
+                mainView.notiPermissionButton.isHidden = false
                 mainView.notiButton.isHidden = true
                 mainView.notiIntroDuctionButton.isHidden = true
-            } else {
+            } else { //index == 0, 알림권한 허용
+                mainView.notiPermissionButton.isHidden = true
                 mainView.notiButton.isHidden = false
                 mainView.notiIntroDuctionButton.isHidden = false
             }
@@ -258,7 +261,8 @@ extension AddItemViewController {
     }
     
     @objc private func datePickerPickedValue() {
-        print(mainView.datePicker.date)
+        let currentDate = mainView.datePicker.date
+        print(currentDate)
     }
     
     @objc private func stepperValueChanged() {
@@ -276,7 +280,8 @@ extension AddItemViewController {
         let alarmPermissionMessage = NSLocalizedString("AlarmPermissionMessage", comment: "")
         
         
-        showAlertView(title: alarmPermissionTitle, message: alarmPermissionMessage) { _ in
+        showAlertView(title: alarmPermissionTitle, message: alarmPermissionMessage) { [weak self] _ in
+            self?.dismiss(animated: true)
             if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
                 UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
             }
@@ -320,4 +325,9 @@ extension AddItemViewController: UITextViewDelegate, UITextFieldDelegate {
     func textViewDidChange(_ textView: UITextView) {
         updateCountLimitLabel()
     }
+
+
+
 }
+
+

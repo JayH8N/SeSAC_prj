@@ -32,11 +32,11 @@ final class MainViewController: BaseViewController {
         
         mainView.delegate = self
         
-        
         NotificationCenter.default.addObserver(self, selector: #selector(reloadData), name: Notification.Name("RefrigerReloadData"), object: nil)
         
         let backButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         self.navigationItem.backBarButtonItem = backButtonItem
+        
         
         //등록된 알람 현황 확인
         UNUserNotificationCenter.current().getPendingNotificationRequests { notificationRequests in

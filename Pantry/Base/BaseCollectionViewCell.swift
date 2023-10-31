@@ -26,4 +26,14 @@ class BaseCollectionViewCell: UICollectionViewCell {
     
     func setConstraints() { }
     
+    func checkNotification(data: String, object: UIImageView) {
+        let notificationInfo = LocalNotificationManager.shared.readAlarmInfo(identifier: data)
+        switch notificationInfo {
+        case .none: object.isHidden = true
+        case .oneDayBefore: object.isHidden = false
+        case .threeDayBefore: object.isHidden = false
+        case .sevenDayBefore: object.isHidden = false
+        }
+    }
+    
 }

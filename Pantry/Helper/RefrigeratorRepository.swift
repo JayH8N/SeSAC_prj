@@ -46,8 +46,13 @@ class RefrigeratorRepository {
         }
         
         let currentDate = Date()
-        let basicDate = Calendar.current.date(byAdding: .day, value: -1, to: currentDate)
-
+        let localDate = currentDate.addingTimeInterval(TimeInterval(TimeZone.current.secondsFromGMT()))
+        let basicDate = Calendar.current.date(byAdding: .day, value: -1, to: localDate)!
+        print(currentDate)
+        print("====11111====\(localDate)")
+        print("====22222====\(basicDate)")
+        
+        
         switch sort {
         case .Added:
             return refrigerator.ingredient.sorted(byKeyPath: "registDay", ascending: false)
@@ -65,6 +70,10 @@ class RefrigeratorRepository {
         if let refrigerator = realm.object(ofType: Refrigerator.self, forPrimaryKey: rfObjectid) {
             let itemsWithState = refrigerator.ingredient.filter("state == %@", state.rawValue)
 
+            let currentDate = Date()
+            let localDate = currentDate.addingTimeInterval(TimeInterval(TimeZone.current.secondsFromGMT()))
+            let basicDate = Calendar.current.date(byAdding: .day, value: -1, to: localDate)!
+            
             switch sort {
             case .Added:
                 return itemsWithState.sorted(byKeyPath: "registDay", ascending: false)
@@ -73,8 +82,6 @@ class RefrigeratorRepository {
             case .ExpSlowest:
                 return itemsWithState.sorted(byKeyPath: "expiryDay", ascending: false)
             case .ExpiredGoods:
-                let currentDate = Date()
-                let basicDate = Calendar.current.date(byAdding: .day, value: -1, to: currentDate)
                 return itemsWithState.filter("expiryDay < %@", basicDate).sorted(byKeyPath: "expiryDay", ascending: true)
             }
         }
@@ -195,4 +202,16 @@ class RefrigeratorRepository {
         return results
     }
     
+}
+
+extension RefrigeratorRepository {
+    func calculateDiscount(expirationDate: Date) -> Int {
+        let components = Calendar.current.dateComponents([.year, .month, .day], from: expirationDate)
+        let expDate = Calendar.current.date(from: components)!
+        print(expDate)
+        
+        let offsetComps = Calendar.current.dateComponents([.day], from: Date(), to: expDate)
+        
+        return offsetComps.day!
+    }
 }

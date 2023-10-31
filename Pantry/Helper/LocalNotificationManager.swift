@@ -6,6 +6,7 @@
 //
 
 import UserNotifications
+import UIKit
 
 class LocalNotificationManager {
     static let shared = LocalNotificationManager()
@@ -64,10 +65,11 @@ class LocalNotificationManager {
         content.title = NSLocalizedString("ExpNotiTitle", comment: "") //"유통기한 알림"
         content.body = String(format: NSLocalizedString("ExpNotiBody", comment: ""), item.name, notificationDay.rawValue)
         content.sound = .default
+        content.badge = 1
         
         var triggerDateComponents = Calendar.current.dateComponents([.year, .month, .day], from: item.expiryDay) //유통기한 년, 월, 일 추출
         triggerDateComponents.hour = 18 // 오후 6시 고정
-        triggerDateComponents.minute = 0
+        triggerDateComponents.minute = 00
         
         if let triggerDate = Calendar.current.date(from: triggerDateComponents) {
             let calculatedTriggerDate = Calendar.current.date(byAdding: .day, value: -notificationDay.rawValue, to: triggerDate)

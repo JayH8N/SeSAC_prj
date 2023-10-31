@@ -16,7 +16,7 @@ class EditItemViewController: BaseViewController {
     var notiOption: NotificationOption = .none
     var storageIndex = 0
     let repository = RefrigeratorRepository()
-    
+    var notiPermission: Bool?
     let mainView = EditItemView()
     
     override func loadView() {
@@ -32,6 +32,7 @@ class EditItemViewController: BaseViewController {
         setupKeyboardEvent()
         initialSetting()
         initialAlarmSetting()
+        checkNotificationPermission()
         mainView.delegate = self
         mainView.memoTextView.delegate = self
         mainView.nameTextField.delegate = self
@@ -97,6 +98,7 @@ class EditItemViewController: BaseViewController {
         mainView.stepper.addTarget(self, action: #selector(stepperValueChanged), for: .valueChanged)
         mainView.deleteButton.addTarget(self, action: #selector(deleteButtonTapped), for: .touchUpInside)
         mainView.notiIntroDuctionButton.addTarget(self, action: #selector(notiIntroTapped), for: .touchUpInside)
+        mainView.notiPermissionButton.addTarget(self, action: #selector(notiPermissionButtonTapped), for: .touchUpInside)
     }
     
     @objc private func handleTap() {
@@ -135,6 +137,31 @@ class EditItemViewController: BaseViewController {
         
         mainView.notiButton.menu = UIMenu(title: "", image: nil, identifier: nil, options: [], children: menuItems)
         mainView.notiButton.showsMenuAsPrimaryAction = true
+    }
+    
+    private func checkNotificationPermission() {
+        let center = UNUserNotificationCenter.current()
+        
+        center.getNotificationSettings { settings in
+            switch settings.authorizationStatus {
+            case .authorized, .provisional: // 알람 권한이 이미 허용된 경우 또는 임시로 허용된 경우
+                DispatchQueue.main.async {
+                    self.notiPermission = true
+                    self.mainView.notiButton.isHidden = false
+                    self.mainView.notiIntroDuctionButton.isHidden = false
+                    self.mainView.notiPermissionButton.isHidden = true
+                }
+            case .denied: // 알람 권한이 거부된 경우
+                DispatchQueue.main.async {
+                    self.notiPermission = false
+                    self.mainView.notiButton.isHidden = true
+                    self.mainView.notiIntroDuctionButton.isHidden = true
+                    self.mainView.notiPermissionButton.isHidden = false
+                }
+            default:
+                break
+            }
+        }
     }
     
     
@@ -238,16 +265,16 @@ extension EditItemViewController {
         HapticFeedbackManager.shared.provideFeedback()
         let title = NSLocalizedString("RemoveData", comment: "")
         let message = NSLocalizedString("RemoveDataMessage", comment: "")
-
+        
         showAlertView(title: title, message: message) { _ in
             guard let data = self.data else { return }
-
+            
             LocalNotificationManager.shared.removeNotification(item: data)
             self.repository.removeItemFromRefrigerator(data._id)
-
+            
             NotificationCenter.default.post(name: Notification.Name("itemReload"), object: nil)
             NotificationCenter.default.post(name: Notification.Name("RefrigerReloadData"), object: nil)
-
+            
             self.dismiss(animated: true)
         }
     }
@@ -275,18 +302,27 @@ extension EditItemViewController {
     
     @objc private func segmentedControlValueChanged(_ sender: UISegmentedControl) {
         if sender.selectedSegmentIndex == 1 {
+            mainView.notiPermissionButton.isHidden = true
             mainView.notiButton.isHidden = true
             mainView.notiIntroDuctionButton.isHidden = true
             storageIndex = 1
         } else {
-            mainView.notiButton.isHidden = false
-            mainView.notiIntroDuctionButton.isHidden = false
+            if notiPermission == false { //index == 0, 알림권한 거부
+                mainView.notiPermissionButton.isHidden = false
+                mainView.notiButton.isHidden = true
+                mainView.notiIntroDuctionButton.isHidden = true
+            } else { //index == 0, 알림권한 허용
+                mainView.notiPermissionButton.isHidden = true
+                mainView.notiButton.isHidden = false
+                mainView.notiIntroDuctionButton.isHidden = false
+            }
             storageIndex = 0
         }
     }
     
     @objc private func datePickerPickedValue() {
-        print(mainView.datePicker.date)
+        let currentDate = mainView.datePicker.date
+        print(currentDate)
     }
     
     @objc private func stepperValueChanged() {
@@ -296,6 +332,19 @@ extension EditItemViewController {
     
     @objc private func notiIntroTapped() {
         self.view.makeToast(NSLocalizedString("AlarmIntro", comment: ""), duration: 2.0, position: .center)
+    }
+    
+    @objc private func notiPermissionButtonTapped() {
+        let alarmPermissionTitle = NSLocalizedString("AlarmPermissionTitle", comment: "")
+        let alarmPermissionMessage = NSLocalizedString("AlarmPermissionMessage", comment: "")
+        
+        
+        showAlertView(title: alarmPermissionTitle, message: alarmPermissionMessage) { [weak self] _ in
+            self?.dismiss(animated: true)
+            if let settingsURL = URL(string: UIApplication.openSettingsURLString) {
+                UIApplication.shared.open(settingsURL, options: [:], completionHandler: nil)
+            }
+        }
     }
 }
 

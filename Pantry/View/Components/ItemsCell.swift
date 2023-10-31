@@ -43,6 +43,11 @@ class ItemsCell: BaseCollectionViewCell {
         $0.trackTintColor = .black
     }
     
+    let notificationMark = UIImageView().then {
+        $0.tintColor = .black
+        $0.image = UIImage(systemName: "bell.fill")
+    }
+    
     
     override func layoutSubviews() {
         storageStateView.layer.cornerRadius = storageStateView.bounds.width / 2
@@ -58,13 +63,14 @@ class ItemsCell: BaseCollectionViewCell {
     
     override func configureView() {
         contentView.layer.cornerRadius = 17
-        contentView.layer.masksToBounds = true
+        contentView.layer.masksToBounds = false
         
         contentView.addSubview(itemImage)
         itemImage.addSubview(expiredLabel)
         contentView.addSubview(itemTitle)
         contentView.addSubview(expDateLabel)
         contentView.addSubview(progressView)
+        contentView.addSubview(notificationMark)
         
         itemImage.addSubview(storageStateView)
     }
@@ -104,6 +110,12 @@ class ItemsCell: BaseCollectionViewCell {
             $0.height.equalTo(10)
             $0.top.equalTo(itemImage.snp.bottom).offset(6)
         }
+        
+        notificationMark.snp.makeConstraints {
+            $0.size.equalTo(itemImage).multipliedBy(0.4)
+            $0.top.equalTo(self.snp.top).inset(-7)
+            $0.leading.equalTo(self.snp.leading).inset(-7)
+        }
     }
 }
 
@@ -114,8 +126,10 @@ extension ItemsCell {
         
         if data.state == 0 {
             storageStateView.backgroundColor = UIColor(red: 111/255, green: 178/255, blue: 232/255, alpha: 1)
+            checkNotification(data: "\(data._id)", object: notificationMark)
         } else {
             storageStateView.backgroundColor = .blue
+            notificationMark.isHidden = true
         }
         
         expDateLabel.text = "Exp.\n\(formatDate(date: data.expiryDay))"
@@ -132,10 +146,41 @@ extension ItemsCell {
         }
         
         progressView.setProgress(percentage, animated: false)
+        
+        
+        
     }
 }
 
 extension ItemsCell {
+    
+    //프로그레스 뷰 계산
+    func calculateDiscount(expirationDate: Date) -> Float {
+        let components = Calendar.current.dateComponents([.year, .month, .day], from: expirationDate)
+        
+        let expDate = Calendar.current.date(from: components)!
+     
+        
+        let offsetComps = Calendar.current.dateComponents([.day], from: Date(), to: expDate)
+        
+        if let day = offsetComps.day {
+            switch day {
+            case 0...3:
+                progressView.tintColor = UIColor.freshBad
+                return 0.85
+            case 4...10:
+                progressView.tintColor = UIColor.freshNotBad
+                return 0.6
+            case 11...:
+                progressView.tintColor = UIColor.freshGood
+                return 0.2
+            default: //음수 => 유통기한 초과
+                progressView.tintColor = UIColor.freshDone
+                return 1.0
+            }
+        }
+        return 0.0
+    }
     
     //날짜형식 변환
     func formatDate(date: Date) -> String {
@@ -153,29 +198,5 @@ extension ItemsCell {
         return dateFormatter.string(from: date)
     }
     
-    //프로그레스 뷰 계산
-    func calculateDiscount(expirationDate: Date) -> Float {
-        let components = Calendar.current.dateComponents([.year, .month, .day], from: expirationDate)
-        let expDate = Calendar.current.date(from: components)!
-        
-        let offsetComps = Calendar.current.dateComponents([.day], from: Date(), to: expDate)
-        
-        if let day = offsetComps.day {
-            switch day {
-            case 0...3:
-                progressView.tintColor = UIColor.freshBad
-                return 0.85
-            case 4...10:
-                progressView.tintColor = UIColor.freshNotBad
-                return 0.6
-            case 11...:
-                progressView.tintColor = UIColor.freshGood
-                return 0.2
-            default:
-                progressView.tintColor = UIColor.freshDone
-                return 1.0
-            }
-        }
-        return 0.0
-    }
+    
 }
