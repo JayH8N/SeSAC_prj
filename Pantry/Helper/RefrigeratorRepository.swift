@@ -49,8 +49,8 @@ class RefrigeratorRepository {
         let localDate = currentDate.addingTimeInterval(TimeInterval(TimeZone.current.secondsFromGMT()))
         let basicDate = Calendar.current.date(byAdding: .day, value: -1, to: localDate)!
         print(currentDate)
-        print("====11111====\(localDate)")
-        print("====22222====\(basicDate)")
+        print("====1Timezone====\(localDate)")
+        print("====2Timezone - 1====\(basicDate)")
         
         
         switch sort {
