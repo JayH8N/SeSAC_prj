@@ -1,0 +1,24 @@
+PODS:
+  - BarcodeScanner (5.0.0)
+  - FSPagerView (0.8.3)
+  - JJFloatingActionButton (2.5.0)
+
+DEPENDENCIES:
+  - BarcodeScanner
+  - FSPagerView
+  - JJFloatingActionButton
+
+SPEC REPOS:
+  trunk:
+    - BarcodeScanner
+    - FSPagerView
+    - JJFloatingActionButton
+
+SPEC CHECKSUMS:
+  BarcodeScanner: 2f5a53198eae49dc39bf61f2c1f05c04e01ff72d
+  FSPagerView: 670405b2f18e2a87fa37f20b00de783e562c25a8
+  JJFloatingActionButton: fdc3aefb0f28f04d0f988fa25d5fac97028a9ea7
+
+PODFILE CHECKSUM: de272156d63e0e5e4126ffe0ba542b1c48d516e7
+
+COCOAPODS: 1.13.0

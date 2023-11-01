@@ -6,6 +6,6 @@
   
 */
 
-NSCameraUsageDescription = "Permission to use the camera";
+NSCameraUsageDescription = "Please allow camera permission. Used to upload images when registering items.";
 
-NSPhotoLibraryUsageDescription = "Do you want to allow access to the photo album?";
+NSPhotoLibraryUsageDescription = "Please allow access to the album. Used to upload images when registering items.";

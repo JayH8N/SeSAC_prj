@@ -71,8 +71,8 @@ class LocalNotificationManager {
         content.badge = badgeCount as NSNumber
         
         var triggerDateComponents = Calendar.current.dateComponents([.year, .month, .day], from: item.expiryDay) //유통기한 년, 월, 일 추출
-        triggerDateComponents.hour = 15 // 오후 6시 고정
-        triggerDateComponents.minute = 45
+        triggerDateComponents.hour = 18 // 오후 6시 고정
+        triggerDateComponents.minute = 00
         
         if let triggerDate = Calendar.current.date(from: triggerDateComponents) {
             let calculatedTriggerDate = Calendar.current.date(byAdding: .day, value: -notificationDay.rawValue, to: triggerDate)
