@@ -27,8 +27,8 @@ class BasicAPIManager {
         
         return Observable<SearchAppModel>.create { value in
             //서버통신에 대한 응답값
-            
-            let urlString = "https://itunes.apple.com/search?term=\(keyword)&country=KR&media=software&lang=ko_KR&limit=20"
+            let text = keyword.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+            let urlString = "https://itunes.apple.com/search?term=\(text)&country=KR&media=software&lang=ko_KR&limit=10"
             
             guard let url = URL(string: urlString) else {
                 value.onError(APIError.invalidURL)
@@ -38,7 +38,6 @@ class BasicAPIManager {
             URLSession.shared.dataTask(with: url) { data, response, error in
                 
                 print("URLSession Succeed")
-                
                 if let _ = error {
                     value.onError(APIError.unknown)
                     return
@@ -51,14 +50,13 @@ class BasicAPIManager {
                 
                 if let data = data, let appData = try? JSONDecoder().decode(SearchAppModel.self, from: data) {
                     value.onNext(appData)
+                } else {
+                    print("Optional 예외처리 필요")
                 }
-                
             }.resume()
-            
-            
+
             return Disposables.create()
         }
-        
         
     }
     

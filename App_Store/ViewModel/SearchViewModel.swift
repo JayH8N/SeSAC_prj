@@ -6,10 +6,12 @@
 //
 
 import Foundation
+import RxSwift
+import RxCocoa
 
 class SearchViewModel {
     
-    
-    
+    let appLists = PublishSubject<[AppInfo]>()
+    let disposeBag = DisposeBag()
     
 }

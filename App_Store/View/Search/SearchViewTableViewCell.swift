@@ -34,6 +34,8 @@ class SearchViewTableViewCell: BaseTableViewCell {
     }
     
     
+    
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         

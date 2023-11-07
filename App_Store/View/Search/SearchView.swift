@@ -17,8 +17,9 @@ class SearchView: BaseView {
     let tableView = UITableView().then {
         $0.register(SearchViewTableViewCell.self, forCellReuseIdentifier: SearchViewTableViewCell.identifier)
         $0.backgroundColor = .white
-        $0.rowHeight = 90
+        $0.rowHeight = 80
         $0.separatorStyle = .singleLine
+        $0.keyboardDismissMode = .onDrag
     }
     
     
