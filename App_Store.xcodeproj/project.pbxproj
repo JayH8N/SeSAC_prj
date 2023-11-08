@@ -28,6 +28,8 @@
 		78B7A8FF2AFA211D009ED138 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 78B7A8FE2AFA211D009ED138 /* RxCocoa */; };
 		78B7A9012AFA211D009ED138 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 78B7A9002AFA211D009ED138 /* RxSwift */; };
 		78B7A9042AFA2153009ED138 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 78B7A9032AFA2153009ED138 /* SnapKit */; };
+		78C0B5422AFBC10600314FE0 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C0B5412AFBC10600314FE0 /* BaseCollectionViewCell.swift */; };
+		78C0B5442AFBC17100314FE0 /* ScreenshotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C0B5432AFBC17100314FE0 /* ScreenshotCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		78728F8E2AF9074300F13F46 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		78728FA52AF91F3800F13F46 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		78728FA72AF91F4000F13F46 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		78C0B5412AFBC10600314FE0 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
+		78C0B5432AFBC17100314FE0 /* ScreenshotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +116,7 @@
 		78728F5A2AF8FA8F00F13F46 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				78C0B5432AFBC17100314FE0 /* ScreenshotCell.swift */,
 				78728F6A2AF9006B00F13F46 /* SearchViewTableViewCell.swift */,
 				78728F642AF8FC9500F13F46 /* SearchView.swift */,
 				78728F662AF8FC9D00F13F46 /* SearchVC.swift */,
@@ -142,6 +147,7 @@
 				78728F5E2AF8FAD800F13F46 /* BaseView.swift */,
 				78728F602AF8FAE900F13F46 /* BaseVC.swift */,
 				78728F622AF8FB0000F13F46 /* BaseTableViewCell.swift */,
+				78C0B5412AFBC10600314FE0 /* BaseCollectionViewCell.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -251,6 +257,7 @@
 				78728FA62AF91F3800F13F46 /* DetailVC.swift in Sources */,
 				78728FA82AF91F4000F13F46 /* DetailView.swift in Sources */,
 				78728F462AF8F75900F13F46 /* AppDelegate.swift in Sources */,
+				78C0B5422AFBC10600314FE0 /* BaseCollectionViewCell.swift in Sources */,
 				78728F6B2AF9006B00F13F46 /* SearchViewTableViewCell.swift in Sources */,
 				78728F482AF8F75900F13F46 /* SceneDelegate.swift in Sources */,
 				78728F692AF8FD6B00F13F46 /* SearchViewModel.swift in Sources */,
@@ -258,6 +265,7 @@
 				78728F632AF8FB0000F13F46 /* BaseTableViewCell.swift in Sources */,
 				78728F652AF8FC9500F13F46 /* SearchView.swift in Sources */,
 				78728F612AF8FAE900F13F46 /* BaseVC.swift in Sources */,
+				78C0B5442AFBC17100314FE0 /* ScreenshotCell.swift in Sources */,
 				78728F672AF8FC9D00F13F46 /* SearchVC.swift in Sources */,
 				78728F6E2AF900D700F13F46 /* ReusableIdentifier.swift in Sources */,
 			);

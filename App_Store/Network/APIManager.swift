@@ -50,8 +50,6 @@ class BasicAPIManager {
                 
                 if let data = data, let appData = try? JSONDecoder().decode(SearchAppModel.self, from: data) {
                     value.onNext(appData)
-                } else {
-                    print("Optional 예외처리 필요")
                 }
             }.resume()
 

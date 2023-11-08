@@ -30,13 +30,9 @@ class SearchVC: BaseVC {
     private func tableViewBind() {
         viewModel.appLists
             .bind(to: mainView.tableView.rx.items(cellIdentifier: SearchViewTableViewCell.identifier, cellType: SearchViewTableViewCell.self)) {(row, element, cell) in
-                cell.appNameLabel.text = element.trackName
                 
-                let url = element.artworkUrl60
-                if let url = URL(string: url) {
-                    cell.appIconImage.kf.setImage(with: url)
-                    //, options: [.processor(ResizingImageProcessor(referenceSize: CGSize(width: 60, height: 60)))])
-                }
+                cell.setTableCell(data: element)
+                
             }
             .disposed(by: viewModel.disposeBag)
         

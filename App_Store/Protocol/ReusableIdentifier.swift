@@ -18,3 +18,9 @@ extension SearchViewTableViewCell: ReusableIdentifier {
         return String(describing: self)
     }
 }
+
+extension ScreenshotCell: ReusableIdentifier {
+    static var identifier: String {
+        return String(describing: self)
+    }
+}
