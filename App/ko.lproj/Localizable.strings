@@ -93,3 +93,7 @@
 "AlarmPermissionTitle" = "알림 권한";
 
 "AlarmPermissionMessage" = "현재 알림권한이 거부되어있습니다. 알림권한을 허용하시겠습니까?";
+
+"EmptyViewTitle" = "아직 생성된 냉장고가 없어요.";
+
+"EmptyViewSubTitle" = "+ 버튼으로 냉장고를 생성해 식재료를 관리해 보세요";

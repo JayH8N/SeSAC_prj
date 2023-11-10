@@ -40,6 +40,31 @@ class MainView: BaseView {
         $0.interitemSpacing = 20
         $0.transformer = FSPagerViewTransformer(type: .overlap)
     }
+    
+    //EmptyView
+    let emptyView = UIView().then {
+        $0.backgroundColor = .clear
+    }
+    let emptyTitleLabel = UILabel().then {
+        $0.backgroundColor = .clear
+        $0.font = UIFont.boldSystemFont(ofSize: 17)
+        $0.text = NSLocalizedString("EmptyViewTitle", comment: "")
+        $0.textAlignment = .center
+    }
+    let emptySubTitleLabel = UILabel().then {
+        $0.backgroundColor = .clear
+        $0.font = UIFont.systemFont(ofSize: 13)
+        $0.text = NSLocalizedString("EmptyViewSubTitle", comment: "")
+        $0.numberOfLines = 2
+        $0.textAlignment = .center
+    }
+    lazy var emptyTextStackView = UIStackView(arrangedSubviews: [emptyTitleLabel, emptySubTitleLabel]).then {
+        $0.axis = .vertical
+        $0.alignment = .center
+        $0.distribution = .fillEqually
+        $0.spacing = 8
+    }
+    
 
 //MARK: - Setting
     override func configureView() {
@@ -48,6 +73,9 @@ class MainView: BaseView {
         refrigerCollection.delegate = self
         
         addSubview(refrigerCollection)
+        
+        refrigerCollection.addSubview(emptyView)
+        emptyView.addSubview(emptyTextStackView)
     }
     
     
@@ -65,11 +93,31 @@ class MainView: BaseView {
             $0.top.equalTo(self.safeAreaLayoutGuide).inset(20)
             $0.height.equalTo(self.snp.height).multipliedBy(0.3)
         }
+        
+        emptyView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+        
+        emptySubTitleLabel.snp.makeConstraints {
+            $0.width.equalTo(emptyTextStackView.snp.width).multipliedBy(0.7)
+        }
+        
+        emptyTextStackView.snp.makeConstraints {
+            $0.center.equalToSuperview()
+            $0.width.equalToSuperview()
+            $0.height.equalToSuperview().multipliedBy(0.4)
+        }
     }
 }
 
 extension MainView: FSPagerViewDelegate, FSPagerViewDataSource {
     func numberOfItems(in pagerView: FSPagerView) -> Int {
+        let count = stored.count
+        if count != 0 {
+            emptyView.isHidden = true
+        } else {
+            emptyView.isHidden = false
+        }
         return stored.count
     }
     

@@ -70,7 +70,7 @@ class LocalNotificationManager {
         userDefaults.set(badgeCount, forKey: "NotificationBadgeCount")
         content.badge = badgeCount as NSNumber
         
-        var triggerDateComponents = Calendar.current.dateComponents([.year, .month, .day], from: item.expiryDay) //유통기한 년, 월, 일 추출
+        var triggerDateComponents = Calendar.current.dateComponents([.year, .month, .day], from: item.expiryDay)
         triggerDateComponents.hour = 18 // 오후 6시 고정
         triggerDateComponents.minute = 00
         
@@ -84,7 +84,7 @@ class LocalNotificationManager {
                 if let error = error {
                     print("Error=======: \(error)")
                 } else {
-                    print("알람 등록 성공!!!!==========제발제발===")
+                    print("알람 등록 성공")
                 }
             }
         }

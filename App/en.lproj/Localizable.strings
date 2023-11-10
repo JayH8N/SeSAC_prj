@@ -93,3 +93,7 @@ The item darkens after the expiration date.";
 "AlarmPermissionTitle" = "Notification permission";
 
 "AlarmPermissionMessage" = "Notification permission is currently denied. Allow notification permission?";
+
+"EmptyViewTitle" = "No refrigerators";
+
+"EmptyViewSubTitle" = "Create a refrigerator with the + button to organize your items";
