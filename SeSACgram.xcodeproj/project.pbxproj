@@ -9,21 +9,33 @@
 /* Begin PBXBuildFile section */
 		78C0B6632B026A9400314FE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C0B6622B026A9400314FE0 /* AppDelegate.swift */; };
 		78C0B6652B026A9400314FE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C0B6642B026A9400314FE0 /* SceneDelegate.swift */; };
-		78C0B6672B026A9400314FE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C0B6662B026A9400314FE0 /* ViewController.swift */; };
-		78C0B66A2B026A9400314FE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78C0B6682B026A9400314FE0 /* Main.storyboard */; };
 		78C0B66C2B026A9600314FE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78C0B66B2B026A9600314FE0 /* Assets.xcassets */; };
 		78C0B66F2B026A9600314FE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78C0B66D2B026A9600314FE0 /* LaunchScreen.storyboard */; };
+		78C0B6812B026D2100314FE0 /* UserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C0B6802B026D2100314FE0 /* UserDefaultHelper.swift */; };
+		78C0B6832B026D3E00314FE0 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C0B6822B026D3E00314FE0 /* HapticManager.swift */; };
+		78C0B6852B02730B00314FE0 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C0B6842B02730B00314FE0 /* SignInView.swift */; };
+		78C0B6872B02731400314FE0 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C0B6862B02731400314FE0 /* SignInVC.swift */; };
+		78C0B6892B02732200314FE0 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C0B6882B02732200314FE0 /* SignInViewModel.swift */; };
+		78C0B68B2B02735C00314FE0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C0B68A2B02735C00314FE0 /* Constants.swift */; };
+		78C0B68D2B02744300314FE0 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 78C0B68C2B02744300314FE0 /* .gitignore */; };
+		78C0B68F2B02746F00314FE0 /* SeSAC_API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C0B68E2B02746F00314FE0 /* SeSAC_API.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		78C0B65F2B026A9400314FE0 /* SeSACgram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACgram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78C0B6622B026A9400314FE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78C0B6642B026A9400314FE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		78C0B6662B026A9400314FE0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		78C0B6692B026A9400314FE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		78C0B66B2B026A9600314FE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		78C0B66E2B026A9600314FE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		78C0B6702B026A9600314FE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		78C0B6802B026D2100314FE0 /* UserDefaultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultHelper.swift; sourceTree = "<group>"; };
+		78C0B6822B026D3E00314FE0 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
+		78C0B6842B02730B00314FE0 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		78C0B6862B02731400314FE0 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
+		78C0B6882B02732200314FE0 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		78C0B68A2B02735C00314FE0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		78C0B68C2B02744300314FE0 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		78C0B68E2B02746F00314FE0 /* SeSAC_API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSAC_API.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +52,7 @@
 		78C0B6562B026A9400314FE0 = {
 			isa = PBXGroup;
 			children = (
+				78C0B68C2B02744300314FE0 /* .gitignore */,
 				78C0B6612B026A9400314FE0 /* SeSACgram */,
 				78C0B6602B026A9400314FE0 /* Products */,
 			);
@@ -56,15 +69,100 @@
 		78C0B6612B026A9400314FE0 /* SeSACgram */ = {
 			isa = PBXGroup;
 			children = (
-				78C0B6622B026A9400314FE0 /* AppDelegate.swift */,
-				78C0B6642B026A9400314FE0 /* SceneDelegate.swift */,
-				78C0B6662B026A9400314FE0 /* ViewController.swift */,
-				78C0B6682B026A9400314FE0 /* Main.storyboard */,
-				78C0B66B2B026A9600314FE0 /* Assets.xcassets */,
-				78C0B66D2B026A9600314FE0 /* LaunchScreen.storyboard */,
-				78C0B6702B026A9600314FE0 /* Info.plist */,
+				78C0B6772B026C1400314FE0 /* Source */,
+				78C0B6762B026C0B00314FE0 /* Resource */,
 			);
 			path = SeSACgram;
+			sourceTree = "<group>";
+		};
+		78C0B6762B026C0B00314FE0 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				78C0B6702B026A9600314FE0 /* Info.plist */,
+				78C0B66B2B026A9600314FE0 /* Assets.xcassets */,
+				78C0B66D2B026A9600314FE0 /* LaunchScreen.storyboard */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		78C0B6772B026C1400314FE0 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				78C0B6782B026CA500314FE0 /* App */,
+				78C0B67E2B026CF000314FE0 /* Constants */,
+				78C0B67D2B026CE500314FE0 /* Network */,
+				78C0B67C2B026CE000314FE0 /* View */,
+				78C0B67B2B026CD500314FE0 /* Helper */,
+				78C0B67A2B026CCA00314FE0 /* Model */,
+				78C0B6792B026CC300314FE0 /* Extension */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		78C0B6782B026CA500314FE0 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				78C0B6622B026A9400314FE0 /* AppDelegate.swift */,
+				78C0B6642B026A9400314FE0 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		78C0B6792B026CC300314FE0 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		78C0B67A2B026CCA00314FE0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		78C0B67B2B026CD500314FE0 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				78C0B6802B026D2100314FE0 /* UserDefaultHelper.swift */,
+				78C0B6822B026D3E00314FE0 /* HapticManager.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		78C0B67C2B026CE000314FE0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				78C0B67F2B026D0200314FE0 /* SignIn */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		78C0B67D2B026CE500314FE0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				78C0B68E2B02746F00314FE0 /* SeSAC_API.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		78C0B67E2B026CF000314FE0 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				78C0B68A2B02735C00314FE0 /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		78C0B67F2B026D0200314FE0 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				78C0B6842B02730B00314FE0 /* SignInView.swift */,
+				78C0B6862B02731400314FE0 /* SignInVC.swift */,
+				78C0B6882B02732200314FE0 /* SignInViewModel.swift */,
+			);
+			path = SignIn;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,8 +224,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				78C0B66F2B026A9600314FE0 /* LaunchScreen.storyboard in Resources */,
+				78C0B68D2B02744300314FE0 /* .gitignore in Resources */,
 				78C0B66C2B026A9600314FE0 /* Assets.xcassets in Resources */,
-				78C0B66A2B026A9400314FE0 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +236,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78C0B6672B026A9400314FE0 /* ViewController.swift in Sources */,
 				78C0B6632B026A9400314FE0 /* AppDelegate.swift in Sources */,
+				78C0B6892B02732200314FE0 /* SignInViewModel.swift in Sources */,
+				78C0B6812B026D2100314FE0 /* UserDefaultHelper.swift in Sources */,
+				78C0B6872B02731400314FE0 /* SignInVC.swift in Sources */,
+				78C0B6832B026D3E00314FE0 /* HapticManager.swift in Sources */,
 				78C0B6652B026A9400314FE0 /* SceneDelegate.swift in Sources */,
+				78C0B68F2B02746F00314FE0 /* SeSAC_API.swift in Sources */,
+				78C0B6852B02730B00314FE0 /* SignInView.swift in Sources */,
+				78C0B68B2B02735C00314FE0 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		78C0B6682B026A9400314FE0 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				78C0B6692B026A9400314FE0 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		78C0B66D2B026A9600314FE0 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -294,10 +390,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 57CCR42RDS;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SeSACgram/Info.plist;
+				INFOPLIST_FILE = SeSACgram/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -326,10 +421,9 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 57CCR42RDS;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SeSACgram/Info.plist;
+				INFOPLIST_FILE = SeSACgram/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
