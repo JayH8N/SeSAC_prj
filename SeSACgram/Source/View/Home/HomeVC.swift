@@ -1,5 +1,5 @@
 //
-//  SignInVC.swift
+//  HomeVC.swift
 //  SeSACgram
 //
 //  Created by hoon on 11/14/23.
@@ -7,9 +7,9 @@
 
 import UIKit
 
-class SignInVC: UIViewController {
+class HomeVC: UIViewController {
     
-    let mainView = SignInView()
+    let mainView = HomeView()
     
     
     override func loadView() {
@@ -19,10 +19,8 @@ class SignInVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
     }
-    
     
     
     
