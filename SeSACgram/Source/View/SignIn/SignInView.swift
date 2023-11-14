@@ -15,7 +15,7 @@ class SignInView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = Constants.CustomColor.Main
+        backgroundColor = Constants.CustomColor.Appearance
         configureView()
         setConstraints()
     }

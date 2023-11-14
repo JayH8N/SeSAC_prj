@@ -15,13 +15,16 @@ final class TabBarVC: UITabBarController {
         configureTabBar()
         
         //Home
-        let home = templateNavigationController(image: "Home", rootViewController: HomeVC())
+        let home = templateNavigationController(image: Constants.Image.TabBarHome,
+                                                rootViewController: HomeVC())
         
         //Search
-        let search = templateNavigationController(image: "Search", rootViewController: SearchVC())
+        let search = templateNavigationController(image: Constants.Image.TabBarSearch,
+                                                  rootViewController: SearchVC())
         
         //Profile
-        let profile = templateNavigationController(image: "Profile", rootViewController: ProfileVC())
+        let profile = templateNavigationController(image: Constants.Image.TabBarProfile,
+                                                   rootViewController: ProfileVC())
         
         viewControllers = [home, search, profile]
     }
@@ -31,9 +34,9 @@ final class TabBarVC: UITabBarController {
 extension TabBarVC {
     
     private func configureTabBar() {
-        tabBar.backgroundColor = Constants.CustomColor.Main
-        tabBar.tintColor = UIColor.darkGray
-        tabBar.unselectedItemTintColor = .darkGray
+        tabBar.backgroundColor = Constants.CustomColor.Appearance
+        tabBar.tintColor = Constants.CustomColor.DeepGreen
+        tabBar.unselectedItemTintColor = Constants.CustomColor.DeepGreen
     }
     
     private func templateNavigationController(image: String, rootViewController: UIViewController) -> UINavigationController {

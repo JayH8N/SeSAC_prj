@@ -17,16 +17,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SeSAC" translatesAutoresizingMaskIntoConstraints="NO" id="HaT-PA-djn">
-                                <rect key="frame" x="76.666666666666686" y="234.33333333333337" width="240" height="128"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SeSAC_LaunchScreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="HaT-PA-djn">
+                                <rect key="frame" x="76.666666666666686" y="213" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="HaT-PA-djn" secondAttribute="height" multiplier="15:8" id="UKz-aG-8Uy"/>
                                     <constraint firstAttribute="width" constant="240" id="nxK-LB-JZi"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gram" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0g-Xz-0XD">
-                                <rect key="frame" x="172.33333333333334" y="350.66666666666669" width="48.333333333333343" height="23"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SeSACgram" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0g-Xz-0XD">
+                                <rect key="frame" x="94.000000000000014" y="339" width="205.33333333333337" height="46"/>
+                                <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="37"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -48,7 +48,7 @@
                         <constraints>
                             <constraint firstItem="Qbt-sq-gJ0" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="1.74" id="B5i-Qh-3x4"/>
                             <constraint firstItem="Qbt-sq-gJ0" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="F6a-yg-VMy"/>
-                            <constraint firstItem="HaT-PA-djn" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="0.7" id="INM-Wa-kPt"/>
+                            <constraint firstItem="HaT-PA-djn" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="0.65" id="INM-Wa-kPt"/>
                             <constraint firstItem="e0g-Xz-0XD" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" multiplier="0.85" id="TOu-Ft-mbQ"/>
                             <constraint firstItem="5AX-GH-kgB" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="eZ9-W2-F6s"/>
                             <constraint firstItem="e0g-Xz-0XD" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="f2o-oB-l1R"/>
@@ -59,11 +59,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20.610687022900763" y="73.943661971830991"/>
+            <point key="canvasLocation" x="-876" y="-192"/>
         </scene>
     </scenes>
     <resources>
-        <image name="SeSAC" width="401" height="459"/>
+        <image name="SeSAC_LaunchScreen.png" width="300" height="300"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
