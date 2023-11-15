@@ -1,31 +1,30 @@
 //
-//  SignInView.swift
+//  BaseView.swift
 //  SeSACgram
 //
-//  Created by hoon on 11/14/23.
+//  Created by hoon on 11/15/23.
 //
 
 import UIKit
 
-class SignInView: BaseView {
+class BaseView: UIView {
     
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        backgroundColor = Constants.Color.Appearance
+        configureView()
+        setConstraints()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func configureView() {
-        
-    }
     
-    override func setConstraints() {
-        
-    }
+    func configureView() { }
+    
+    func setConstraints() { }
     
     
 }

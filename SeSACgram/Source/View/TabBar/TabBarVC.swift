@@ -34,9 +34,9 @@ final class TabBarVC: UITabBarController {
 extension TabBarVC {
     
     private func configureTabBar() {
-        tabBar.backgroundColor = Constants.CustomColor.Appearance
-        tabBar.tintColor = Constants.CustomColor.DeepGreen
-        tabBar.unselectedItemTintColor = Constants.CustomColor.DeepGreen
+        tabBar.backgroundColor = Constants.Color.Appearance
+        tabBar.tintColor = Constants.Color.DeepGreen
+        tabBar.unselectedItemTintColor = Constants.Color.DeepGreen
     }
     
     private func templateNavigationController(image: String, rootViewController: UIViewController) -> UINavigationController {

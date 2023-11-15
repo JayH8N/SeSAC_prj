@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignInVC: UIViewController {
+class SignInVC: BaseVC {
     
     let mainView = SignInView()
     
@@ -23,8 +23,5 @@ class SignInVC: UIViewController {
         
     }
     
-    
-    
-    
-    
+
 }

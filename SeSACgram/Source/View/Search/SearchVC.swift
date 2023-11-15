@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SearchVC: UIViewController {
+class SearchVC: BaseVC {
     
     let mainView = SearchView()
     

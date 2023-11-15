@@ -7,15 +7,12 @@
 
 import UIKit
 
-class SearchView: UIView {
+class SearchView: BaseView {
     
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = Constants.CustomColor.Appearance
-        configureView()
-        setConstraints()
     }
     
     required init?(coder: NSCoder) {
@@ -23,11 +20,11 @@ class SearchView: UIView {
     }
     
     
-    func configureView() {
+    override func configureView() {
         
     }
     
-    func setConstraints() {
+    override func setConstraints() {
         
     }
 }

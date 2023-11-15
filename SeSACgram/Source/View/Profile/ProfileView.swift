@@ -7,27 +7,25 @@
 
 import UIKit
 
-class ProfileView: UIView {
+class ProfileView: BaseView {
     
     
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        backgroundColor = Constants.CustomColor.Appearance
-        configureView()
-        setConstraints()
+       
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configureView() {
+    override func configureView() {
         
     }
     
-    func setConstraints() {
+    override func setConstraints() {
         
     }
     

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeVC: UIViewController {
+class HomeVC: BaseVC {
     
     let mainView = HomeView()
     
@@ -20,7 +20,6 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
         
     }
-    
     
     
     
