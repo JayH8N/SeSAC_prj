@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileVC: UIViewController {
+final class ProfileVC: BaseVC {
     
     let mainView = ProfileView()
     
@@ -20,4 +20,11 @@ class ProfileVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    
+    deinit {
+        print("====\(Self.self)====Deinit")
+    }
+    
+    
 }

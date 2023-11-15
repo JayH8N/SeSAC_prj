@@ -1,15 +1,16 @@
 //
-//  SearchVC.swift
+//  PWVC.swift
 //  SeSACgram
 //
-//  Created by hoon on 11/14/23.
+//  Created by hoon on 11/15/23.
 //
 
-import UIKit
+import Foundation
 
-final class SearchVC: BaseVC {
+
+class PWVC: BaseVC {
     
-    let mainView = SearchView()
+    let mainView = PWView()
     
     override func loadView() {
         self.view = mainView
@@ -21,8 +22,6 @@ final class SearchVC: BaseVC {
     }
     
     
-    deinit {
-        print("====\(Self.self)====Deinit")
-    }
+    
     
 }

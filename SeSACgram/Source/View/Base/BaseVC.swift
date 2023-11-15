@@ -17,11 +17,8 @@ class BaseVC: UIViewController {
     
     
     func configureView() { }
+    
     func setConstraints() { }
     
-    
-    deinit {
-        print("===deinit===")
-    }
     
 }

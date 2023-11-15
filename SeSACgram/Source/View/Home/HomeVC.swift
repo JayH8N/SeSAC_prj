@@ -7,7 +7,7 @@
 
 import UIKit
 
-class HomeVC: BaseVC {
+final class HomeVC: BaseVC {
     
     let mainView = HomeView()
     
@@ -21,6 +21,8 @@ class HomeVC: BaseVC {
         
     }
     
-    
+    deinit {
+        print("====\(Self.self)====Deinit")
+    }
     
 }

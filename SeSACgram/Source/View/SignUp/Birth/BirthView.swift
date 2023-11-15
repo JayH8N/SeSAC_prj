@@ -1,24 +1,22 @@
 //
-//  HomeView.swift
+//  BirthView.swift
 //  SeSACgram
 //
-//  Created by hoon on 11/14/23.
+//  Created by hoon on 11/15/23.
 //
 
-import UIKit
+import Foundation
 
-final class HomeView: BaseView {
+class BirthView: BaseView {
     
     
-  
     
     override func configureView() {
         
     }
     
+    
     override func setConstraints() {
         
     }
-    
-    
 }

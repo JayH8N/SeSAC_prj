@@ -24,7 +24,7 @@
                                     <constraint firstAttribute="width" constant="240" id="nxK-LB-JZi"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SeSACgram" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0g-Xz-0XD">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SeSACgram" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e0g-Xz-0XD">
                                 <rect key="frame" x="94.000000000000014" y="339" width="205.33333333333337" height="46"/>
                                 <fontDescription key="fontDescription" name="Didot" family="Didot" pointSize="37"/>
                                 <nil key="textColor"/>

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SignInVC: BaseVC {
+final class SignInVC: BaseVC {
     
     let mainView = SignInView()
     
@@ -19,9 +19,13 @@ class SignInVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         
     }
     
 
+    deinit {
+        print("====\(Self.self)====Deinit")
+    }
+    
 }
