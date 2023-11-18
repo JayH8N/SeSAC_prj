@@ -45,6 +45,9 @@
 		781BC7672B050B16000D779A /* SeSAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BC7662B050B16000D779A /* SeSAC.swift */; };
 		781BC7692B050BF2000D779A /* RequestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BC7682B050BF2000D779A /* RequestAPI.swift */; };
 		781BC76B2B050C01000D779A /* ResponseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BC76A2B050C01000D779A /* ResponseAPI.swift */; };
+		781BC7782B07E40F000D779A /* BorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BC7772B07E40F000D779A /* BorderButton.swift */; };
+		781BC77B2B07ED62000D779A /* AddTargetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BC77A2B07ED62000D779A /* AddTargetProtocol.swift */; };
+		781BC77D2B07F173000D779A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BC77C2B07F173000D779A /* CustomTextField.swift */; };
 		78C0B6632B026A9400314FE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C0B6622B026A9400314FE0 /* AppDelegate.swift */; };
 		78C0B6652B026A9400314FE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C0B6642B026A9400314FE0 /* SceneDelegate.swift */; };
 		78C0B66C2B026A9600314FE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78C0B66B2B026A9600314FE0 /* Assets.xcassets */; };
@@ -61,6 +64,8 @@
 		78C0B6982B031B9B00314FE0 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 78C0B6972B031B9B00314FE0 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		78C0B69A2B031B9B00314FE0 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 78C0B6992B031B9B00314FE0 /* FirebaseCrashlytics */; };
 		78C0B69C2B031B9B00314FE0 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 78C0B69B2B031B9B00314FE0 /* FirebaseMessaging */; };
+		78DB5AAF2B089E0A00AB1357 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 78DB5AAE2B089E0A00AB1357 /* IQKeyboardManagerSwift */; };
+		78DB5AB12B09106800AB1357 /* SignUPTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DB5AB02B09106800AB1357 /* SignUPTitleLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +101,9 @@
 		781BC7662B050B16000D779A /* SeSAC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSAC.swift; sourceTree = "<group>"; };
 		781BC7682B050BF2000D779A /* RequestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAPI.swift; sourceTree = "<group>"; };
 		781BC76A2B050C01000D779A /* ResponseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseAPI.swift; sourceTree = "<group>"; };
+		781BC7772B07E40F000D779A /* BorderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderButton.swift; sourceTree = "<group>"; };
+		781BC77A2B07ED62000D779A /* AddTargetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTargetProtocol.swift; sourceTree = "<group>"; };
+		781BC77C2B07F173000D779A /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		78C0B65F2B026A9400314FE0 /* SeSACgram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACgram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78C0B6622B026A9400314FE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78C0B6642B026A9400314FE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -110,6 +118,7 @@
 		78C0B68A2B02735C00314FE0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		78C0B68C2B02744300314FE0 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		78C0B68E2B02746F00314FE0 /* SeSAC_API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSAC_API.swift; sourceTree = "<group>"; };
+		78DB5AB02B09106800AB1357 /* SignUPTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUPTitleLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +135,7 @@
 				78C0B6962B031B9B00314FE0 /* FirebaseAnalytics in Frameworks */,
 				781BC7572B04FD99000D779A /* RxMoya in Frameworks */,
 				78C0B6982B031B9B00314FE0 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				78DB5AAF2B089E0A00AB1357 /* IQKeyboardManagerSwift in Frameworks */,
 				781BC7372B04DB0C000D779A /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,6 +272,24 @@
 			path = Birth;
 			sourceTree = "<group>";
 		};
+		781BC7742B07D335000D779A /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				781BC7772B07E40F000D779A /* BorderButton.swift */,
+				781BC77C2B07F173000D779A /* CustomTextField.swift */,
+				78DB5AB02B09106800AB1357 /* SignUPTitleLabel.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		781BC7792B07ECA0000D779A /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				781BC77A2B07ED62000D779A /* AddTargetProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
 		78C0B6562B026A9400314FE0 = {
 			isa = PBXGroup;
 			children = (
@@ -304,6 +332,7 @@
 		78C0B6772B026C1400314FE0 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				781BC7792B07ECA0000D779A /* Protocol */,
 				78C0B6782B026CA500314FE0 /* App */,
 				78C0B67E2B026CF000314FE0 /* Constants */,
 				78C0B67D2B026CE500314FE0 /* Network */,
@@ -355,6 +384,7 @@
 		78C0B67C2B026CE000314FE0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				781BC7742B07D335000D779A /* CustomView */,
 				781BC7302B04BFD0000D779A /* Base */,
 				781BC7382B04E7F9000D779A /* SignUp */,
 				78C0B67F2B026D0200314FE0 /* SignIn */,
@@ -421,6 +451,7 @@
 				781BC7592B04FDC0000D779A /* Then */,
 				781BC75C2B04FF22000D779A /* RxCocoa */,
 				781BC75E2B04FF22000D779A /* RxSwift */,
+				78DB5AAE2B089E0A00AB1357 /* IQKeyboardManagerSwift */,
 			);
 			productName = SeSACgram;
 			productReference = 78C0B65F2B026A9400314FE0 /* SeSACgram.app */;
@@ -456,6 +487,7 @@
 				781BC7532B04FD99000D779A /* XCRemoteSwiftPackageReference "Moya" */,
 				781BC7582B04FDC0000D779A /* XCRemoteSwiftPackageReference "Then" */,
 				781BC75B2B04FF22000D779A /* XCRemoteSwiftPackageReference "RxSwift" */,
+				78DB5AAD2B089E0A00AB1357 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = 78C0B6602B026A9400314FE0 /* Products */;
 			projectDirPath = "";
@@ -517,9 +549,11 @@
 				781BC7102B0387E0000D779A /* ProfileViewModel.swift in Sources */,
 				781BC7652B050995000D779A /* SeSACAPIManager.swift in Sources */,
 				78C0B6892B02732200314FE0 /* SignInViewModel.swift in Sources */,
+				781BC77D2B07F173000D779A /* CustomTextField.swift in Sources */,
 				781BC7402B04E867000D779A /* EmailView.swift in Sources */,
 				781BC7462B04E889000D779A /* PWVC.swift in Sources */,
 				781BC7092B038726000D779A /* SearchViewModel.swift in Sources */,
+				78DB5AB12B09106800AB1357 /* SignUPTitleLabel.swift in Sources */,
 				781BC6F12B0377F0000D779A /* TabBarVC.swift in Sources */,
 				78C0B6812B026D2100314FE0 /* UserDefaultHelper.swift in Sources */,
 				781BC7632B05091D000D779A /* UIButton.swift in Sources */,
@@ -544,8 +578,10 @@
 				781BC7442B04E880000D779A /* PWView.swift in Sources */,
 				781BC7052B038717000D779A /* SearchView.swift in Sources */,
 				781BC6FC2B0383DB000D779A /* HomeVC.swift in Sources */,
+				781BC7782B07E40F000D779A /* BorderButton.swift in Sources */,
 				78C0B6852B02730B00314FE0 /* SignInView.swift in Sources */,
 				781BC7672B050B16000D779A /* SeSAC.swift in Sources */,
+				781BC77B2B07ED62000D779A /* AddTargetProtocol.swift in Sources */,
 				781BC7342B04BFE1000D779A /* BaseVC.swift in Sources */,
 				78C0B68B2B02735C00314FE0 /* Constants.swift in Sources */,
 				781BC7692B050BF2000D779A /* RequestAPI.swift in Sources */,
@@ -698,6 +734,7 @@
 				DEVELOPMENT_TEAM = 57CCR42RDS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSACgram/Resource/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "새싹그램";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -731,6 +768,7 @@
 				DEVELOPMENT_TEAM = 57CCR42RDS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SeSACgram/Resource/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "새싹그램";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -816,6 +854,14 @@
 				minimumVersion = 10.17.0;
 			};
 		};
+		78DB5AAD2B089E0A00AB1357 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.5.16;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -868,6 +914,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 78C0B6942B031B9B00314FE0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseMessaging;
+		};
+		78DB5AAE2B089E0A00AB1357 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 78DB5AAD2B089E0A00AB1357 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

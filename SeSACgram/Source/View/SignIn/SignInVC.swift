@@ -9,7 +9,7 @@ import UIKit
 
 final class SignInVC: BaseVC {
     
-    let mainView = SignInView()
+    private let mainView = SignInView()
     
     
     override func loadView() {
@@ -20,12 +20,31 @@ final class SignInVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        self.hideKeyboardWhenTappedAround()
+        addTargets()
     }
-    
 
     deinit {
         print("====\(Self.self)====Deinit")
     }
     
+}
+
+extension SignInVC: AddTargetProtocol {
+    func addTargets() {
+        mainView.signInButton.addTarget(self,
+                                        action: #selector(signInButtonTapped),
+                                        for: .touchUpInside)
+        mainView.signUpButton.addTarget(self,
+                                        action: #selector(signUPButtonTapped),
+                                        for: .touchUpInside)
+    }
+    
+    @objc private func signInButtonTapped() {
+        //로그인 API호출
+    }
+    @objc private func signUPButtonTapped() {
+        let vc = EmailVC()
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }

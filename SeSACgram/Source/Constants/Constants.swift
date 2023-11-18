@@ -19,6 +19,27 @@ enum Constants {
         static let TabBarHome = "Home"
         static let TabBarSearch = "Search"
         static let TabBarProfile = "Profile"
+        static let SeSAC_Logo = "SeSAC_LaunchScreen"
+        static let Xmark = UIImage(systemName: "xmark")
+        static let OpenEye = UIImage(systemName: "eye")
+        static let CloseEye = UIImage(systemName: "eye.slash")
     }
+    
+    enum Font {
+        static let HeaderSize: UIFont = .systemFont(ofSize: 28, weight: .bold)
+        static let textFieldTitle: UIFont = .systemFont(ofSize: 17, weight: .bold)
+        static let BodySize: UIFont = .systemFont(ofSize: 13, weight: .regular)
+        static let themeFont = UIFont(name: "omyu pretty", size: 22)
+    }
+    
+    enum Size {
+        static let buttonCornerRadius: CGFloat = 22
+        static let textFieldCornerRadius: CGFloat = 10
+    }
+    
+    enum Frame {
+        static let buttonHeight: Int = 44
+    }
+    
     
 }
