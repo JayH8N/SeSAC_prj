@@ -13,7 +13,7 @@ class SignUPTitleLabel: UILabel {
         super.init(frame: .zero)
      
         self.text = title
-        self.font = Constants.Font.HeaderSize
+        self.font = Constants.Font.HeaderTitle
     }
     
     required init?(coder: NSCoder) {

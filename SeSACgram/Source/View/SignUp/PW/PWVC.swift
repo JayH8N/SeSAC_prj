@@ -5,12 +5,11 @@
 //  Created by hoon on 11/15/23.
 //
 
-import Foundation
+import UIKit
 
-
-class PWVC: BaseVC {
+final class PWVC: BaseVC {
     
-    let mainView = PWView()
+    private let mainView = PWView()
     
     override func loadView() {
         self.view = mainView
@@ -18,10 +17,21 @@ class PWVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        addTargets()
+        self.hideKeyboardWhenTappedAround()
     }
     
+}
+
+extension PWVC: AddTargetProtocol {
+    func addTargets() {
+        mainView.nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
+    }
     
+    @objc private func nextButtonTapped() {
+        let vc = NicknameVC()
+        navigationController?.pushViewController(vc, animated: true)
+    }
     
     
 }

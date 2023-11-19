@@ -19,7 +19,6 @@ final class SignInVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.hideKeyboardWhenTappedAround()
         addTargets()
     }

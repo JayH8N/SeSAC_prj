@@ -7,9 +7,9 @@
 
 import Foundation
 
-class EmailVC: BaseVC {
+final class EmailVC: BaseVC {
     
-    let mainView = EmailView()
+    private let mainView = EmailView()
     
     override func loadView() {
         self.view = mainView
@@ -17,10 +17,19 @@ class EmailVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.hideKeyboardWhenTappedAround()
+        addTargets()
     }
     
+}
+
+extension EmailVC: AddTargetProtocol {
+    func addTargets() {
+        mainView.nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
+    }
     
-    
-    
+    @objc private func nextButtonTapped() {
+        let vc = PWVC()
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }

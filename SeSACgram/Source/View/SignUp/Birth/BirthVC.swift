@@ -8,9 +8,9 @@
 import Foundation
 
 
-class BirthVC: BaseVC {
+final class BirthVC: BaseVC {
     
-    let mainView = BirthView()
+    private let mainView = BirthView()
     
     override func loadView() {
         self.view = mainView
@@ -18,11 +18,18 @@ class BirthVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
+        addTargets()
+    }
+}
+
+extension BirthVC: AddTargetProtocol {
+    func addTargets() {
         
     }
     
-    
-    
-    
+    @objc private func nextButtonTapped() {
+        
+    }
 }
 

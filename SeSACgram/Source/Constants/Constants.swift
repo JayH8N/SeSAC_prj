@@ -26,8 +26,8 @@ enum Constants {
     }
     
     enum Font {
-        static let HeaderSize: UIFont = .systemFont(ofSize: 28, weight: .bold)
-        static let textFieldTitle: UIFont = .systemFont(ofSize: 17, weight: .bold)
+        static let HeaderTitle: UIFont = .systemFont(ofSize: 28, weight: .bold)
+        static let HeaderSubTitle: UIFont = .systemFont(ofSize: 15, weight: .thin)
         static let BodySize: UIFont = .systemFont(ofSize: 13, weight: .regular)
         static let themeFont = UIFont(name: "omyu pretty", size: 22)
     }
@@ -38,6 +38,7 @@ enum Constants {
     }
     
     enum Frame {
+        static let textFieldHeight: Int = 54
         static let buttonHeight: Int = 44
     }
     

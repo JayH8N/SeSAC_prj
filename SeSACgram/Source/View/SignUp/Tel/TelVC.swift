@@ -5,12 +5,12 @@
 //  Created by hoon on 11/15/23.
 //
 
-import Foundation
+import UIKit
 
 
-class TelVC: BaseVC {
+final class TelVC: BaseVC {
     
-    let mainView = TelView()
+    private let mainView = TelView()
     
     override func loadView() {
         self.view = mainView
@@ -18,10 +18,19 @@ class TelVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.hideKeyboardWhenTappedAround()
+        addTargets()
+    }
+
+}
+
+extension TelVC: AddTargetProtocol {
+    func addTargets() {
+        mainView.nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
     }
     
-    
-    
-    
+    @objc private func nextButtonTapped() {
+        let vc = BirthVC()
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }

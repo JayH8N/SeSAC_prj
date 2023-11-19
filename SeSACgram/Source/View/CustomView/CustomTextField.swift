@@ -9,11 +9,18 @@ import UIKit
 import SnapKit
 import Then
 
-class CustomTextField: UITextField {
+final class CustomTextField: UITextField {
     
     enum Style {
-        case id, pw
+        case id, pw, birth
     }
+    
+    //달력
+    private let datePicker = UIPickerView()
+    private var years = Array(1994...2100).map { String($0) }
+    private let months = Array(1...12).map { String($0) }
+    private let days = Array(1...31).map { String($0) }
+    
     
     private let rightButton = UIButton().then {
         $0.tintColor = Constants.Color.DeepGreen
@@ -50,11 +57,13 @@ class CustomTextField: UITextField {
             rightButton.setImage(Constants.Image.CloseEye, for: .normal)
             rightButton.addTarget(self, action: #selector(eyeTapped), for: .touchUpInside)
             isSecureTextEntry = true
+        case .birth:
+            self.tintColor = .clear
+            datePicker.delegate = self
+            datePicker.dataSource = self
+            self.inputView = datePicker
         }
     }
-    
-    
-    
 }
 
 //MARK: - extension
@@ -82,4 +91,39 @@ extension CustomTextField {
             rightButton.setImage(Constants.Image.OpenEye, for: .normal)
         }
     }
+}
+
+//UIPickerView
+extension CustomTextField: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 3
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        switch component {
+        case 0: return years.count
+        case 1: return months.count
+        case 2: return days.count
+        default: return 0
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        switch component {
+        case 0: return years[row]
+        case 1: return months[row]
+        case 2: return days[row]
+        default: return nil
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let selectedYear = years[pickerView.selectedRow(inComponent: 0)]
+        let selectedMonth = months[pickerView.selectedRow(inComponent: 1)]
+        let selectedDay = days[pickerView.selectedRow(inComponent: 2)]
+        
+        self.text = "\(selectedYear)년 \(selectedMonth)월 \(selectedDay)일"
+    }
+    
+    
 }

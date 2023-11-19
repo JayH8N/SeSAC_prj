@@ -8,9 +8,9 @@
 import Foundation
 
 
-class NicknameVC: BaseVC {
+final class NicknameVC: BaseVC {
     
-    let mainView = NicknameView()
+    private let mainView = NicknameView()
     
     override func loadView() {
         self.view = mainView
@@ -18,10 +18,20 @@ class NicknameVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.hideKeyboardWhenTappedAround()
+        addTargets()
     }
     
     
+}
+
+extension NicknameVC: AddTargetProtocol {
+    func addTargets() {
+        mainView.nextButton.addTarget(self, action: #selector(nextButtonTapped), for: .touchUpInside)
+    }
     
-    
+    @objc private func nextButtonTapped() {
+        let vc = TelVC()
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }

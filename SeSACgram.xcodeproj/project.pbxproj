@@ -66,6 +66,7 @@
 		78C0B69C2B031B9B00314FE0 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 78C0B69B2B031B9B00314FE0 /* FirebaseMessaging */; };
 		78DB5AAF2B089E0A00AB1357 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 78DB5AAE2B089E0A00AB1357 /* IQKeyboardManagerSwift */; };
 		78DB5AB12B09106800AB1357 /* SignUPTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DB5AB02B09106800AB1357 /* SignUPTitleLabel.swift */; };
+		78DB5AB32B0912BB00AB1357 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DB5AB22B0912BB00AB1357 /* AppManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,6 +120,7 @@
 		78C0B68C2B02744300314FE0 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		78C0B68E2B02746F00314FE0 /* SeSAC_API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSAC_API.swift; sourceTree = "<group>"; };
 		78DB5AB02B09106800AB1357 /* SignUPTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUPTitleLabel.swift; sourceTree = "<group>"; };
+		78DB5AB22B0912BB00AB1357 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -374,6 +376,7 @@
 		78C0B67B2B026CD500314FE0 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				78DB5AB22B0912BB00AB1357 /* AppManager.swift */,
 				78C0B6802B026D2100314FE0 /* UserDefaultHelper.swift */,
 				78C0B6822B026D3E00314FE0 /* HapticManager.swift */,
 				781BC7642B050995000D779A /* SeSACAPIManager.swift */,
@@ -566,6 +569,7 @@
 				781BC7072B03871E000D779A /* SearchVC.swift in Sources */,
 				78C0B6832B026D3E00314FE0 /* HapticManager.swift in Sources */,
 				781BC70C2B0387CE000D779A /* ProfileView.swift in Sources */,
+				78DB5AB32B0912BB00AB1357 /* AppManager.swift in Sources */,
 				781BC7522B04E8BD000D779A /* BirthVC.swift in Sources */,
 				78C0B6652B026A9400314FE0 /* SceneDelegate.swift in Sources */,
 				781BC76B2B050C01000D779A /* ResponseAPI.swift in Sources */,
