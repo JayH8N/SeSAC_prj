@@ -1,5 +1,5 @@
 //
-//  SeSAC.swift
+//  SeSACMember.swift
 //  SeSACgram
 //
 //  Created by hoon on 11/15/23.
@@ -8,12 +8,13 @@
 import Foundation
 import Moya
 
-enum SeSAC {
-    case signUP(data: Join)
+enum SeSACMember {
+    case signUP(data: SignUp)
     case logIn(email: String, pw: String)
+    case checkEmail(email: Email)
 }
 
-extension SeSAC: TargetType {
+extension SeSACMember: TargetType {
     
     var baseURL: URL {
         URL(string: SeSAC_API.baseURL)!
@@ -25,6 +26,8 @@ extension SeSAC: TargetType {
             return "join"
         case .logIn:
             return "login"
+        case .checkEmail:
+            return "/validation/email"
         }
     }
     
@@ -34,10 +37,12 @@ extension SeSAC: TargetType {
     
     var task: Moya.Task {
         switch self {
+        case .checkEmail(let email):
+            return .requestJSONEncodable(email)
         case .signUP(let data):
             return .requestJSONEncodable(data)
         case .logIn(let email, let pw):
-            let data = Login(email: email, pw: pw)
+            let data = LogIn(email: email, pw: pw)
             return .requestJSONEncodable(data)
         }
     }
@@ -46,6 +51,5 @@ extension SeSAC: TargetType {
         ["Content-Type": "application/json",
          "SesacKey": SeSAC_API.apiKey ]
     }
-    
     
 }

@@ -17,7 +17,7 @@ final class EmailView: BaseView {
         $0.font = Constants.Font.HeaderSubTitle
     }
     
-    private let emailTextField = CustomTextField(placeholder: "E-Mail", style: .id)
+    let emailTextField = CustomTextField(placeholder: "E-Mail", style: .id)
     let nextButton = UIButton.responsiveButton(title: "다음", color: Constants.Color.DeepGreen)
     
     override func configureView() {

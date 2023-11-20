@@ -5,7 +5,9 @@
 //  Created by hoon on 11/15/23.
 //
 
-import Foundation
+import UIKit
+import RxSwift
+import RxCocoa
 
 final class EmailVC: BaseVC {
     
@@ -19,6 +21,11 @@ final class EmailVC: BaseVC {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         addTargets()
+        bind()
+    }
+    
+    private func bind() {
+        
     }
     
 }

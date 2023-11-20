@@ -21,26 +21,6 @@ final class BirthView: BaseView {
     private let birthTextField = CustomTextField(placeholder: "생년월일", style: .birth)
     let nextButton = UIButton.responsiveButton(title: "회원가입", color: Constants.Color.DeepGreen)
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setDate()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func setDate() {
-        let currentDate = Date()
-        let yearFormatter = DateFormatter()
-        yearFormatter.dateFormat = "yyyy"
-        let monthFormatter = DateFormatter()
-        monthFormatter.dateFormat = "MM"
-        let dayFormatter = DateFormatter()
-        dayFormatter.dateFormat = "dd"
-    }
-    
-    
     override func configureView() {
         addSubview(titleLabel)
         addSubview(subTitleLabel)

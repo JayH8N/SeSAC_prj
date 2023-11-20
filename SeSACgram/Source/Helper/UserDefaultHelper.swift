@@ -7,25 +7,31 @@
 
 import Foundation
 
-final class UseerDefaultsHelper {
+@propertyWrapper
+struct HoonDefaults<T> {
+    let key: String
+    let defaultValue: T
     
-    static let standard = UseerDefaultsHelper()
+    var wrappedValue: T {
+        get {
+            //값 조회
+            UserDefaults.standard.object(forKey: key) as? T ?? defaultValue
+        }
+        set {
+            //값 저장
+            UserDefaults.standard.setValue(newValue, forKey: key)
+        }
+    }
+}
+
+
+enum UseerDefaultsHelper {
     
-    private init() {}
-    
-    private let userDefaults = UserDefaults.standard
-    
-    enum ForKey: String {
+    enum Key: String {
         case authenticationToken
     }
     
-    var authenticationToken: Bool {
-        get {
-            return userDefaults.bool(forKey: ForKey.authenticationToken.rawValue)
-        }
-        set {
-            userDefaults.set(newValue, forKey: ForKey.authenticationToken.rawValue)
-        }
-    }
+    @HoonDefaults(key: Key.authenticationToken.rawValue, defaultValue: "Token")
+    static var authenticationToken
     
 }

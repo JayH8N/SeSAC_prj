@@ -42,12 +42,13 @@
 		781BC7612B050678000D779A /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BC7602B050678000D779A /* UIImage.swift */; };
 		781BC7632B05091D000D779A /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BC7622B05091C000D779A /* UIButton.swift */; };
 		781BC7652B050995000D779A /* SeSACAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BC7642B050995000D779A /* SeSACAPIManager.swift */; };
-		781BC7672B050B16000D779A /* SeSAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BC7662B050B16000D779A /* SeSAC.swift */; };
+		781BC7672B050B16000D779A /* SeSACMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BC7662B050B16000D779A /* SeSACMember.swift */; };
 		781BC7692B050BF2000D779A /* RequestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BC7682B050BF2000D779A /* RequestAPI.swift */; };
 		781BC76B2B050C01000D779A /* ResponseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BC76A2B050C01000D779A /* ResponseAPI.swift */; };
 		781BC7782B07E40F000D779A /* BorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BC7772B07E40F000D779A /* BorderButton.swift */; };
 		781BC77B2B07ED62000D779A /* AddTargetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BC77A2B07ED62000D779A /* AddTargetProtocol.swift */; };
 		781BC77D2B07F173000D779A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BC77C2B07F173000D779A /* CustomTextField.swift */; };
+		7898964E2B0B60FC00D27948 /* SeSACError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7898964D2B0B60FC00D27948 /* SeSACError.swift */; };
 		78C0B6632B026A9400314FE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C0B6622B026A9400314FE0 /* AppDelegate.swift */; };
 		78C0B6652B026A9400314FE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C0B6642B026A9400314FE0 /* SceneDelegate.swift */; };
 		78C0B66C2B026A9600314FE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78C0B66B2B026A9600314FE0 /* Assets.xcassets */; };
@@ -99,12 +100,13 @@
 		781BC7602B050678000D779A /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		781BC7622B05091C000D779A /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		781BC7642B050995000D779A /* SeSACAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACAPIManager.swift; sourceTree = "<group>"; };
-		781BC7662B050B16000D779A /* SeSAC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSAC.swift; sourceTree = "<group>"; };
+		781BC7662B050B16000D779A /* SeSACMember.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACMember.swift; sourceTree = "<group>"; };
 		781BC7682B050BF2000D779A /* RequestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAPI.swift; sourceTree = "<group>"; };
 		781BC76A2B050C01000D779A /* ResponseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseAPI.swift; sourceTree = "<group>"; };
 		781BC7772B07E40F000D779A /* BorderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderButton.swift; sourceTree = "<group>"; };
 		781BC77A2B07ED62000D779A /* AddTargetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTargetProtocol.swift; sourceTree = "<group>"; };
 		781BC77C2B07F173000D779A /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		7898964D2B0B60FC00D27948 /* SeSACError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACError.swift; sourceTree = "<group>"; };
 		78C0B65F2B026A9400314FE0 /* SeSACgram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACgram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78C0B6622B026A9400314FE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78C0B6642B026A9400314FE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -369,6 +371,7 @@
 			children = (
 				781BC7682B050BF2000D779A /* RequestAPI.swift */,
 				781BC76A2B050C01000D779A /* ResponseAPI.swift */,
+				7898964D2B0B60FC00D27948 /* SeSACError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -403,7 +406,7 @@
 			isa = PBXGroup;
 			children = (
 				78C0B68E2B02746F00314FE0 /* SeSAC_API.swift */,
-				781BC7662B050B16000D779A /* SeSAC.swift */,
+				781BC7662B050B16000D779A /* SeSACMember.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -549,6 +552,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78C0B6632B026A9400314FE0 /* AppDelegate.swift in Sources */,
+				7898964E2B0B60FC00D27948 /* SeSACError.swift in Sources */,
 				781BC7102B0387E0000D779A /* ProfileViewModel.swift in Sources */,
 				781BC7652B050995000D779A /* SeSACAPIManager.swift in Sources */,
 				78C0B6892B02732200314FE0 /* SignInViewModel.swift in Sources */,
@@ -584,7 +588,7 @@
 				781BC6FC2B0383DB000D779A /* HomeVC.swift in Sources */,
 				781BC7782B07E40F000D779A /* BorderButton.swift in Sources */,
 				78C0B6852B02730B00314FE0 /* SignInView.swift in Sources */,
-				781BC7672B050B16000D779A /* SeSAC.swift in Sources */,
+				781BC7672B050B16000D779A /* SeSACMember.swift in Sources */,
 				781BC77B2B07ED62000D779A /* AddTargetProtocol.swift in Sources */,
 				781BC7342B04BFE1000D779A /* BaseVC.swift in Sources */,
 				78C0B68B2B02735C00314FE0 /* Constants.swift in Sources */,
