@@ -8,13 +8,13 @@
 import Foundation
 import Moya
 
-enum SeSACMember {
+enum SeSACUserPost {
     case signUP(data: SignUp)
     case logIn(email: String, pw: String)
     case checkEmail(email: Email)
 }
 
-extension SeSACMember: TargetType {
+extension SeSACUserPost: TargetType {
     
     var baseURL: URL {
         URL(string: SeSAC_API.baseURL)!
@@ -49,7 +49,7 @@ extension SeSACMember: TargetType {
     
     var headers: [String : String]? {
         ["Content-Type": "application/json",
-         "SesacKey": SeSAC_API.apiKey ]
+         "SesacKey": SeSAC_API.apiKey]
     }
     
 }

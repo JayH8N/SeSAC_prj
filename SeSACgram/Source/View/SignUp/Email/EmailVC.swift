@@ -11,6 +11,9 @@ import RxCocoa
 
 final class EmailVC: BaseVC {
     
+    private let disposeBag = DisposeBag()
+    
+    
     private let mainView = EmailView()
     
     override func loadView() {
@@ -25,7 +28,15 @@ final class EmailVC: BaseVC {
     }
     
     private func bind() {
-        
+        mainView.emailTextField
+            .rx
+            .text
+            .orEmpty
+            .debounce(RxTimeInterval.seconds(1), scheduler: MainScheduler.instance)
+            .distinctUntilChanged()
+            .subscribe(with: self) { owner, value in
+                
+            }
     }
     
 }

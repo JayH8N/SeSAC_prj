@@ -14,24 +14,30 @@ struct HoonDefaults<T> {
     
     var wrappedValue: T {
         get {
-            //값 조회
+            // 값 조회
             UserDefaults.standard.object(forKey: key) as? T ?? defaultValue
         }
         set {
-            //값 저장
+            // 값 저장
             UserDefaults.standard.setValue(newValue, forKey: key)
         }
     }
 }
 
-
-enum UseerDefaultsHelper {
+class UserDefaultsHelper {
+    static let shared = UserDefaultsHelper()
     
+    private init() { }
+
     enum Key: String {
         case authenticationToken
+        case refreshToken
     }
     
     @HoonDefaults(key: Key.authenticationToken.rawValue, defaultValue: "Token")
-    static var authenticationToken
-    
+    var authenticationToken: String
+
+    @HoonDefaults(key: Key.refreshToken.rawValue, defaultValue: "RefreshToken")
+    var refreshToken: String
+
 }

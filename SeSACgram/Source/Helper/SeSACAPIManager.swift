@@ -13,56 +13,61 @@ import RxCocoa
 
 class SeSACAPIManager {
     static let shared = SeSACAPIManager()
+    private let provider = MoyaProvider<SeSACUserPost>()
+
     private init() { }
 
-    private func provider<T: TargetType>() -> MoyaProvider<T> {
-        return MoyaProvider<T>()
+    func signUp(signUpData: SignUp, completion: @escaping (Result<SignUpResponse, NetworkError>) -> Void) {
+        let target = SeSACUserPost.signUP(data: signUpData)
+        request(target, decodingType: SignUpResponse.self, completion: completion)
     }
 
-    func request<U: Decodable, T: TargetType>(_ target: T, decodingType: U.Type, completion: @escaping (Result<U, Error>) -> Void) {
-        provider().request(target) { result in
+    func logIn(email: String, password: String, completion: @escaping (Result<LoginResponse, NetworkError>) -> Void) {
+        let target = SeSACUserPost.logIn(email: email, pw: password)
+        request(target, decodingType: LoginResponse.self, completion: completion)
+    }
+
+    func checkEmail(email: Email, completion: @escaping (Result<EmailResponse, NetworkError>) -> Void) {
+        let target = SeSACUserPost.checkEmail(email: email)
+        request(target, decodingType: EmailResponse.self, completion: completion)
+    }
+
+    private func request<U: Decodable, T: TargetType>(_ target: T, decodingType: U.Type, completion: @escaping (Result<U, NetworkError>) -> Void) {
+        provider.request(target as! SeSACUserPost) { result in
             switch result {
-            case .success(let value):
+            case .success(let response):
                 do {
-                    let decodedData = try JSONDecoder().decode(U.self, from: value.data)
+                    let decodedData = try JSONDecoder().decode(U.self, from: response.data)
                     completion(.success(decodedData))
                 } catch {
-                    completion(.failure(error))
+                    let networkError = NetworkError.mapError(error)
+                    completion(.failure(networkError))
                 }
-            case .failure(let error):
-                completion(.failure(error))
+            case .failure(let moyaError):
+                let networkError = NetworkError.fromMoyaError(moyaError)
+                completion(.failure(networkError))
             }
         }
     }
 }
 
-//class SeSACAPIManager {
-//    static let shared = SeSACAPIManager()
-//    private init() { }
-//
-//    private func provider<T: TargetType>() -> MoyaProvider<T> {
-//        return MoyaProvider<T>()
-//    }
-//
-//    func request<U: Decodable, T: TargetType>(_ target: T) -> Single<Result<U, Error>> {
-//        return Single.create { single in
-//            let cancellable = self.provider().request(target) { result in
-//                switch result {
-//                case .success(let value):
-//                    do {
-//                        let decodedData = try JSONDecoder().decode(U.self, from: value.data)
-//                        single(.success(.success(decodedData)))
-//                    } catch {
-//                        single(.success(.failure(error)))
-//                    }
-//                case .failure(let error):
-//                    single(.success(.failure(error)))
-//                }
-//            }
-//
-//            return Disposables.create {
-//                cancellable.cancel()
-//            }
+
+
+//SeSACAPIManager.shared.logIn(email: "example@example.com", password: "password") { result in
+//    switch result {
+//    case .success(let loginResponse):
+//        // 성공적으로 디코딩된 데이터 처리
+//    case .failure(let apiError):
+//        switch apiError {
+//        case .common(let commonError):
+//            // CommonError에 대한 처리
+//            print("Common Error: \(commonError)")
+//        case .login(let loginError):
+//            // LoginError에 대한 처리
+//            print("Login Error: \(loginError)")
+//        default:
+//            // 다른 에러 케이스에 대한 처리
+//            break
 //        }
 //    }
 //}
