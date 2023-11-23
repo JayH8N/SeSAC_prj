@@ -4,51 +4,73 @@
 //
 //  Created by hoon on 11/20/23.
 //
-
-import Foundation
+import Moya
 
 enum NetworkError: Error {
-    case common(CommonError)
-    case signUp(SignUPError)
-    case email(EmailError)
-    case login(LoginError)
-    case token(TokenError)
-    case withdraw(WithdrawError)
+    case commonError(CommonError)
+    case signUPError(SignUPError)
+    case emailCkeckError(EmailCheckError)
+    case loginError(LogInError)
+    case tokenError(TokenError)
+    case withdrawError(WithdrawError)
+    
+    init(statusCode: Int) {
+        switch statusCode {
+        case 420:
+            self = .commonError(.invalidAPIKey)
+        case 429:
+            self = .commonError(.serverOverCall)
+        case 444:
+            self = .commonError(.invalidURL)
+        case 500:
+            self = .commonError(.serverError)
+        default:
+            self = .commonError(.serverError)
+        }
+    }
+    
+    init(moyaError: MoyaError) {
+        if let statusCode = moyaError.response?.statusCode {
+            self.init(statusCode: statusCode)
+        } else {
+            self = .commonError(.serverError)
+        }
+    }
+    
+    
 }
 
-
 enum CommonError: Int, Error {
-    case missAPIKey = 420
-    case overRequest = 429
+    case invalidAPIKey = 420
+    case serverOverCall = 429
     case invalidURL = 444
     case serverError = 500
 }
 
 enum SignUPError: Int, Error {
-    case missingRequiredValue = 400
-    case existingUser = 409
+    case requiredValueMissing = 400//필수값 누락
+    case existingUser = 409//이미가입한 유저일 경우 return
 }
 
-enum EmailError: Int, Error {
-    case missingRequiredValue = 400
-    case existingEmail = 409
+enum EmailCheckError: Int, Error {
+    case requiredValueMissing = 400//필수값 누락
+    case unableEmail = 409//사용불가능한 이메일
 }
 
-enum LoginError: Int, Error {
-    case missingRequiredValue = 400 //body에 필수값 누락
-    case checkValue = 401 //미가입, 비밀번호 불일치
+enum LogInError: Int, Error {
+    case requiredValueMissing = 400//필수값 누락
+    case unsubscribe = 401//계정확인(미가입 or 비밀번호 불일치)
 }
 
 enum TokenError: Int, Error {
-    case invalidToken = 401 //인증할 수 없는 액세스 토큰
-    case forbidden = 403 //접근권한이 없는 경우
-    case nonExpiring = 409 //액세스 토큰 만료되지 않음 -> 액세스 토큰 만료 후 재요청
-    case expiredRefreshToken = 418 //⭐️ 로그인 화면으로 전환되어야 함
+    case UnauthenticatedToken = 401//인증할 수 없는 토큰
+    case forbidden = 403//Forbidden
+    case validToken = 409//토큰 만료되지 않음 -> 계속 사용
+    case expiredRefreshToken = 418//리프레시 토큰 만료 -> 로그인 화면으로
 }
 
 enum WithdrawError: Int, Error {
-    case invalidToken = 401 //인증할 수 없는 액세스 토큰
-    case forbidden = 403 //접근권한이 없는 경우
-    case expiredExcessToken = 419 //⭐️ refresh라우터를 통한 토큰 갱신 필요
+    case unauthenticatedToken = 401//인증할 수 없는 토큰
+    case forbidden = 403//Forbidden
+    case expiredToken = 419//토믄만료 -> 토큰 갱신필요
 }
-

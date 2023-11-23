@@ -13,7 +13,8 @@ struct EmailResponse: Decodable {
     let message: String
 }
 
-struct SignUpResponse: Decodable {
+//회원가입, 탈퇴
+struct SignUPWithdrawResponse: Decodable {
     let id: String
     let email: String
     let nick: String
@@ -29,4 +30,9 @@ struct SignUpResponse: Decodable {
 struct LoginResponse: Decodable {
     let token: String
     let refreshToken: String
+}
+
+//토큰 갱신
+struct RefreshToken: Decodable {
+    let token: String
 }

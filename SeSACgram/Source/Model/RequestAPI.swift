@@ -25,3 +25,4 @@ struct LogIn: Encodable {
     let email: String
     let pw: String
 }
+

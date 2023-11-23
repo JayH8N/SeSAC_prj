@@ -50,6 +50,7 @@
 		781BC77D2B07F173000D779A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BC77C2B07F173000D779A /* CustomTextField.swift */; };
 		7898964E2B0B60FC00D27948 /* SeSACError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7898964D2B0B60FC00D27948 /* SeSACError.swift */; };
 		789896632B0CCFD000D27948 /* SeSACUserGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789896622B0CCFD000D27948 /* SeSACUserGet.swift */; };
+		7898966E2B0DF96300D27948 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 7898966D2B0DF96300D27948 /* Toast */; };
 		78C0B6632B026A9400314FE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C0B6622B026A9400314FE0 /* AppDelegate.swift */; };
 		78C0B6652B026A9400314FE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C0B6642B026A9400314FE0 /* SceneDelegate.swift */; };
 		78C0B66C2B026A9600314FE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78C0B66B2B026A9600314FE0 /* Assets.xcassets */; };
@@ -132,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7898966E2B0DF96300D27948 /* Toast in Frameworks */,
 				781BC75D2B04FF22000D779A /* RxCocoa in Frameworks */,
 				78C0B69C2B031B9B00314FE0 /* FirebaseMessaging in Frameworks */,
 				781BC75F2B04FF22000D779A /* RxSwift in Frameworks */,
@@ -469,6 +471,7 @@
 				781BC75C2B04FF22000D779A /* RxCocoa */,
 				781BC75E2B04FF22000D779A /* RxSwift */,
 				78DB5AAE2B089E0A00AB1357 /* IQKeyboardManagerSwift */,
+				7898966D2B0DF96300D27948 /* Toast */,
 			);
 			productName = SeSACgram;
 			productReference = 78C0B65F2B026A9400314FE0 /* SeSACgram.app */;
@@ -505,6 +508,7 @@
 				781BC7582B04FDC0000D779A /* XCRemoteSwiftPackageReference "Then" */,
 				781BC75B2B04FF22000D779A /* XCRemoteSwiftPackageReference "RxSwift" */,
 				78DB5AAD2B089E0A00AB1357 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				7898966C2B0DF96300D27948 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 			);
 			productRefGroup = 78C0B6602B026A9400314FE0 /* Products */;
 			projectDirPath = "";
@@ -866,6 +870,14 @@
 				minimumVersion = 6.6.0;
 			};
 		};
+		7898966C2B0DF96300D27948 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
 		78C0B6942B031B9B00314FE0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -914,6 +926,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 781BC75B2B04FF22000D779A /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		7898966D2B0DF96300D27948 /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7898966C2B0DF96300D27948 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
 		};
 		78C0B6952B031B9B00314FE0 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;

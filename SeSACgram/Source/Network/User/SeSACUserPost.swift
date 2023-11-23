@@ -8,13 +8,30 @@
 import Foundation
 import Moya
 
-enum SeSACUserPost {
+enum SeSACUserAPI {
     case signUP(data: SignUp)
     case logIn(email: String, pw: String)
     case checkEmail(email: Email)
+    case tokenRefresh
+    case withdraw
+    
+    func addHeaders() -> [String: String] {
+        let authToken = UserDefaultsHelper.shared.authenticationToken
+        var headers: [String: String] = ["SesacKey": SeSAC_API.apiKey,
+                                         "Authorization": authToken ]
+        
+        switch self {
+        case .tokenRefresh:
+            let refreshToken = UserDefaultsHelper.shared.refreshToken
+                headers["Refresh"] = refreshToken
+        default:
+            break
+        }
+        return headers
+    }
 }
 
-extension SeSACUserPost: TargetType {
+extension SeSACUserAPI: TargetType {
     
     var baseURL: URL {
         URL(string: SeSAC_API.baseURL)!
@@ -28,11 +45,20 @@ extension SeSACUserPost: TargetType {
             return "login"
         case .checkEmail:
             return "/validation/email"
+        case .tokenRefresh:
+            return "/refresh"
+        case .withdraw:
+            return "/withdraw"
         }
     }
     
     var method: Moya.Method {
-        return .post
+        switch self {
+        case .signUP, .logIn, .checkEmail:
+            return .post
+        case .tokenRefresh, .withdraw:
+            return .get
+        }
     }
     
     var task: Moya.Task {
@@ -44,12 +70,19 @@ extension SeSACUserPost: TargetType {
         case .logIn(let email, let pw):
             let data = LogIn(email: email, pw: pw)
             return .requestJSONEncodable(data)
+        case .tokenRefresh, .withdraw:
+            return .requestPlain
         }
     }
     
     var headers: [String : String]? {
-        ["Content-Type": "application/json",
-         "SesacKey": SeSAC_API.apiKey]
+        switch self {
+        case .signUP, .logIn, .checkEmail:
+            return ["Content-Type": "application/json",
+                    "SesacKey": SeSAC_API.apiKey]
+        case .tokenRefresh, .withdraw:
+            return addHeaders()
+        }
     }
     
 }
