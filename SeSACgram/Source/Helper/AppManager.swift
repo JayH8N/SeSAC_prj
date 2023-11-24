@@ -15,7 +15,7 @@ class AppManager {
     private init() { }
     
     func configure() {
-        sleep(2)
+        sleep(1)
         FirebaseApp.configure()
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = false

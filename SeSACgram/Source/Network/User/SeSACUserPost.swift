@@ -8,7 +8,56 @@
 import Foundation
 import Moya
 
-enum SeSACUserAPI {
+enum SeSACUserPost {
+    case signUP(data: SignUp)
+    case logIn(email: String, pw: String)
+    case checkEmail(email: Email)
+}
+
+extension SeSACUserPost: TargetType {
+    
+    var baseURL: URL {
+        URL(string: SeSAC_API.baseURL)!
+    }
+    
+    var path: String {
+        switch self {
+        case .signUP:
+            return "join"
+        case .logIn:
+            return "login"
+        case .checkEmail:
+            return "/validation/email"
+        }
+    }
+    
+    var method: Moya.Method {
+        return .post
+    }
+    
+    var task: Moya.Task {
+        switch self {
+        case .checkEmail(let email):
+            return .requestJSONEncodable(email)
+        case .signUP(let data):
+            return .requestJSONEncodable(data)
+        case .logIn(let email, let pw):
+            let data = LogIn(email: email, pw: pw)
+            return .requestJSONEncodable(data)
+        }
+    }
+    
+    var headers: [String : String]? {
+        ["Content-Type": "application/json",
+         "SesacKey": SeSAC_API.apiKey]
+    }
+    
+}
+
+
+//=====================================
+
+enum SeSACAPI {
     case signUP(data: SignUp)
     case logIn(email: String, pw: String)
     case checkEmail(email: Email)
@@ -31,7 +80,7 @@ enum SeSACUserAPI {
     }
 }
 
-extension SeSACUserAPI: TargetType {
+extension SeSACAPI: TargetType {
     
     var baseURL: URL {
         URL(string: SeSAC_API.baseURL)!
@@ -44,17 +93,17 @@ extension SeSACUserAPI: TargetType {
         case .logIn:
             return "login"
         case .checkEmail:
-            return "/validation/email"
+            return "validation/email"
         case .tokenRefresh:
-            return "/refresh"
+            return "refresh"
         case .withdraw:
-            return "/withdraw"
+            return "withdraw"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .signUP, .logIn, .checkEmail:
+        case .checkEmail, .logIn, .signUP:
             return .post
         case .tokenRefresh, .withdraw:
             return .get
@@ -77,12 +126,11 @@ extension SeSACUserAPI: TargetType {
     
     var headers: [String : String]? {
         switch self {
-        case .signUP, .logIn, .checkEmail:
+        case .checkEmail, .logIn, .signUP:
             return ["Content-Type": "application/json",
                     "SesacKey": SeSAC_API.apiKey]
         case .tokenRefresh, .withdraw:
             return addHeaders()
         }
     }
-    
 }

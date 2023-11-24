@@ -25,7 +25,7 @@ extension UIButton {
         button.layer.cornerRadius = Constants.Size.buttonCornerRadius
         button.clipsToBounds = true
         button.titleLabel?.font = Constants.Font.themeFont
-        
+        button.isEnabled = false
         return button
     }
 }

@@ -22,7 +22,7 @@ final class CustomTextField: UITextField {
     private let days = Array(1...31).map { String($0) }
     
     
-    private let rightButton = UIButton().then {
+    let rightButton = UIButton().then {
         $0.tintColor = Constants.Color.DeepGreen
         $0.isHidden = true
         $0.contentEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 20)

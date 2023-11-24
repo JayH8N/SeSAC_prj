@@ -6,40 +6,40 @@
 //
 import Moya
 
-enum NetworkError: Error {
-    case commonError(CommonError)
-    case signUPError(SignUPError)
-    case emailCkeckError(EmailCheckError)
-    case loginError(LogInError)
-    case tokenError(TokenError)
-    case withdrawError(WithdrawError)
-    
-    init(statusCode: Int) {
-        switch statusCode {
-        case 420:
-            self = .commonError(.invalidAPIKey)
-        case 429:
-            self = .commonError(.serverOverCall)
-        case 444:
-            self = .commonError(.invalidURL)
-        case 500:
-            self = .commonError(.serverError)
-        default:
-            self = .commonError(.serverError)
-        }
-    }
-    
-    init(moyaError: MoyaError) {
-        if let statusCode = moyaError.response?.statusCode {
-            self.init(statusCode: statusCode)
-        } else {
-            self = .commonError(.serverError)
-        }
-    }
-    
-    
-}
-
+//enum NetworkError: Error {
+//    case commonError(CommonError)
+//    case signUPError(SignUPError)
+//    case emailCkeckError(EmailCheckError)
+//    case loginError(LogInError)
+//    case tokenError(TokenError)
+//    case withdrawError(WithdrawError)
+//    
+//    init(statusCode: Int) {
+//        switch statusCode {
+//        case 420:
+//            self = .commonError(.invalidAPIKey)
+//        case 429:
+//            self = .commonError(.serverOverCall)
+//        case 444:
+//            self = .commonError(.invalidURL)
+//        case 500:
+//            self = .commonError(.serverError)
+//        default:
+//            self = .commonError(.serverError)
+//        }
+//    }
+//    
+//    init(moyaError: MoyaError) {
+//        if let statusCode = moyaError.response?.statusCode {
+//            self.init(statusCode: statusCode)
+//        } else {
+//            self = .commonError(.serverError)
+//        }
+//    }
+//    
+//    
+//}
+//
 enum CommonError: Int, Error {
     case invalidAPIKey = 420
     case serverOverCall = 429
@@ -53,9 +53,14 @@ enum SignUPError: Int, Error {
 }
 
 enum EmailCheckError: Int, Error {
+    case invalidAPIKey = 420
+    case serverOverCall = 429
+    case invalidURL = 444
+    case serverError = 500
     case requiredValueMissing = 400//필수값 누락
     case unableEmail = 409//사용불가능한 이메일
 }
+
 
 enum LogInError: Int, Error {
     case requiredValueMissing = 400//필수값 누락
@@ -74,3 +79,8 @@ enum WithdrawError: Int, Error {
     case forbidden = 403//Forbidden
     case expiredToken = 419//토믄만료 -> 토큰 갱신필요
 }
+
+//
+//struct CommonError: Decodable {
+//    let message: String?
+//}

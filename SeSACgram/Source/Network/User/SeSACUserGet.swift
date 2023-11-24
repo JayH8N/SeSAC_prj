@@ -48,12 +48,7 @@ extension SeSACUserGet: TargetType {
     }
     
     var task: Moya.Task {
-        switch self {
-        case .tokenRefresh:
-            return .requestPlain
-        case .withdraw:
-            return .requestPlain
-        }
+        .requestPlain
     }
     
     var headers: [String : String]? {
