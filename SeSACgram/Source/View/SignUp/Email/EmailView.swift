@@ -13,7 +13,7 @@ final class EmailView: BaseView {
     
     private let titleLabel = SignUPTitleLabel(title: "이메일 입력")
     private let subTitleLabel = UILabel().then {
-        $0.text = "회원 가입에 사용할 이메일 주소를 입력해주세요\n'@'와 '.net 또는 .com 포함 필수"
+        $0.text = "회원 가입에 사용할 이메일 주소를 입력해주세요"
         $0.font = Constants.Font.HeaderSubTitle
         $0.numberOfLines = 2
     }

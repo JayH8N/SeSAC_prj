@@ -17,10 +17,10 @@ final class PWView: BaseView {
         $0.font = Constants.Font.HeaderSubTitle
     }
     
-    private let pwTextField = CustomTextField(placeholder: "비밀번호", style: .pw)
-    private let pwTextFieldCheck = CustomTextField(placeholder: "비밀번호 확인", style: .pw)
+    let pwTextField = CustomTextField(placeholder: "비밀번호", style: .pw)
+    let pwTextFieldCheck = CustomTextField(placeholder: "비밀번호 확인", style: .pw)
     
-    let nextButton = UIButton.responsiveButton(title: "다음", color: Constants.Color.DeepGreen)
+    let nextButton = UIButton.responsiveButton(title: "다음", color: UIColor.gray)
     
     override func configureView() {
         addSubview(titleLabel)

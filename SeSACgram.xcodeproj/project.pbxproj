@@ -51,7 +51,6 @@
 		7898964E2B0B60FC00D27948 /* SeSACError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7898964D2B0B60FC00D27948 /* SeSACError.swift */; };
 		789896632B0CCFD000D27948 /* SeSACUserGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789896622B0CCFD000D27948 /* SeSACUserGet.swift */; };
 		7898966E2B0DF96300D27948 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 7898966D2B0DF96300D27948 /* Toast */; };
-		789896A22B10E35900D27948 /* EmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789896A12B10E35900D27948 /* EmailViewModel.swift */; };
 		78C0B6632B026A9400314FE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C0B6622B026A9400314FE0 /* AppDelegate.swift */; };
 		78C0B6652B026A9400314FE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C0B6642B026A9400314FE0 /* SceneDelegate.swift */; };
 		78C0B66C2B026A9600314FE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78C0B66B2B026A9600314FE0 /* Assets.xcassets */; };
@@ -111,7 +110,6 @@
 		781BC77C2B07F173000D779A /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		7898964D2B0B60FC00D27948 /* SeSACError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACError.swift; sourceTree = "<group>"; };
 		789896622B0CCFD000D27948 /* SeSACUserGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACUserGet.swift; sourceTree = "<group>"; };
-		789896A12B10E35900D27948 /* EmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailViewModel.swift; sourceTree = "<group>"; };
 		78C0B65F2B026A9400314FE0 /* SeSACgram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACgram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78C0B6622B026A9400314FE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78C0B6642B026A9400314FE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -242,7 +240,6 @@
 			children = (
 				781BC73F2B04E867000D779A /* EmailView.swift */,
 				781BC7412B04E86E000D779A /* EmailVC.swift */,
-				789896A12B10E35900D27948 /* EmailViewModel.swift */,
 			);
 			path = Email;
 			sourceTree = "<group>";
@@ -600,7 +597,6 @@
 				781BC74A2B04E89B000D779A /* NicknameVC.swift in Sources */,
 				781BC70E2B0387D7000D779A /* ProfileVC.swift in Sources */,
 				78C0B68F2B02746F00314FE0 /* SeSAC_API.swift in Sources */,
-				789896A22B10E35900D27948 /* EmailViewModel.swift in Sources */,
 				781BC74C2B04E8A3000D779A /* TelView.swift in Sources */,
 				781BC74E2B04E8AA000D779A /* TelVC.swift in Sources */,
 				781BC7442B04E880000D779A /* PWView.swift in Sources */,

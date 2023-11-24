@@ -6,8 +6,12 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class PWVC: BaseVC {
+    
+    private let disposeBag = DisposeBag()
     
     private let mainView = PWView()
     
@@ -19,6 +23,24 @@ final class PWVC: BaseVC {
         super.viewDidLoad()
         addTargets()
         self.hideKeyboardWhenTappedAround()
+        bind()
+    }
+    
+    private func bind() {
+        
+        let pwObservable = mainView.pwTextField.rx.text.orEmpty
+        let pwCheckObservable = mainView.pwTextFieldCheck.rx.text.orEmpty
+        
+        let check = Observable.combineLatest(pwObservable, pwCheckObservable)
+            .map { $0 == $1 && ($0.count != 0 && $1.count != 0) }
+        
+        check
+            .map {isValid in
+                self.mainView.nextButton.setBackgroundColor(isValid ? Constants.Color.DeepGreen : UIColor.gray, for: .normal)
+                return isValid
+            }
+            .bind(to: mainView.nextButton.rx.isEnabled)
+            .disposed(by: disposeBag)
     }
     
 }
