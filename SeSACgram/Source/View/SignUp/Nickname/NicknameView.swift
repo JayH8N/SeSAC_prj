@@ -18,7 +18,7 @@ final class NicknameView: BaseView {
         $0.numberOfLines = 2
     }
     
-    private let nickNameTextField = CustomTextField(placeholder: "닉네임", style: .id)
+    let nickNameTextField = CustomTextField(placeholder: "닉네임", style: .id)
     let nextButton = UIButton.responsiveButton(title: "다음", color: Constants.Color.DeepGreen)
     
     override func configureView() {

@@ -48,6 +48,7 @@
 		781BC7782B07E40F000D779A /* BorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BC7772B07E40F000D779A /* BorderButton.swift */; };
 		781BC77B2B07ED62000D779A /* AddTargetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BC77A2B07ED62000D779A /* AddTargetProtocol.swift */; };
 		781BC77D2B07F173000D779A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BC77C2B07F173000D779A /* CustomTextField.swift */; };
+		788EB1302B11CC9800162793 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788EB12F2B11CC9800162793 /* String.swift */; };
 		7898964E2B0B60FC00D27948 /* SeSACError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7898964D2B0B60FC00D27948 /* SeSACError.swift */; };
 		789896632B0CCFD000D27948 /* SeSACUserGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789896622B0CCFD000D27948 /* SeSACUserGet.swift */; };
 		7898966E2B0DF96300D27948 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 7898966D2B0DF96300D27948 /* Toast */; };
@@ -108,6 +109,7 @@
 		781BC7772B07E40F000D779A /* BorderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderButton.swift; sourceTree = "<group>"; };
 		781BC77A2B07ED62000D779A /* AddTargetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTargetProtocol.swift; sourceTree = "<group>"; };
 		781BC77C2B07F173000D779A /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		788EB12F2B11CC9800162793 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		7898964D2B0B60FC00D27948 /* SeSACError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACError.swift; sourceTree = "<group>"; };
 		789896622B0CCFD000D27948 /* SeSACUserGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACUserGet.swift; sourceTree = "<group>"; };
 		78C0B65F2B026A9400314FE0 /* SeSACgram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACgram.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -375,6 +377,7 @@
 			children = (
 				781BC7602B050678000D779A /* UIImage.swift */,
 				781BC7622B05091C000D779A /* UIButton.swift */,
+				788EB12F2B11CC9800162793 /* String.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -578,6 +581,7 @@
 				78DB5AB12B09106800AB1357 /* SignUPTitleLabel.swift in Sources */,
 				781BC6F12B0377F0000D779A /* TabBarVC.swift in Sources */,
 				78C0B6812B026D2100314FE0 /* UserDefaultHelper.swift in Sources */,
+				788EB1302B11CC9800162793 /* String.swift in Sources */,
 				781BC7632B05091D000D779A /* UIButton.swift in Sources */,
 				781BC7502B04E8B3000D779A /* BirthView.swift in Sources */,
 				781BC7612B050678000D779A /* UIImage.swift in Sources */,

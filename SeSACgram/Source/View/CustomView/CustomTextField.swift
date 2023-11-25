@@ -15,6 +15,8 @@ final class CustomTextField: UITextField {
         case id, pw, birth
     }
     
+    let isValid: Bool = true
+    
     //달력
     private let datePicker = UIPickerView()
     private var years = Array(1994...2100).map { String($0) }

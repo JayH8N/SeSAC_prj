@@ -19,7 +19,9 @@ final class BirthView: BaseView {
     }
     
     private let birthTextField = CustomTextField(placeholder: "생년월일", style: .birth)
-    let nextButton = UIButton.responsiveButton(title: "회원가입", color: Constants.Color.DeepGreen)
+    let nextButton = UIButton.responsiveButton(title: "회원가입", color: Constants.Color.DeepGreen).then {
+        $0.isEnabled = true
+    }
     
     override func configureView() {
         addSubview(titleLabel)
