@@ -55,6 +55,7 @@ extension PWVC: AddTargetProtocol {
     }
     
     @objc private func nextButtonTapped() {
+        UserDefaultsHelper.shared.pw = mainView.pwTextField.text ?? ""
         let vc = NicknameVC()
         navigationController?.pushViewController(vc, animated: true)
     }

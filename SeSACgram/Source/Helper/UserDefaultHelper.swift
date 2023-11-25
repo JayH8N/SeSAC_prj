@@ -33,6 +33,7 @@ class UserDefaultsHelper {
         case authenticationToken
         case refreshToken
         case email
+        case pw
         case nickname
         case phone
     }
@@ -45,6 +46,9 @@ class UserDefaultsHelper {
     
     @HoonDefaults(key: Key.email.rawValue, defaultValue: "Email")
     var email: String
+    
+    @HoonDefaults(key: Key.pw.rawValue, defaultValue: "Password")
+    var pw: String
     
     @HoonDefaults(key: Key.nickname.rawValue, defaultValue: "Nickname")
     var nickname: String

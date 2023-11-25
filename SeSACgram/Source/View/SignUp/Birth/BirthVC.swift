@@ -9,6 +9,10 @@ import UIKit
 import Toast
 
 final class BirthVC: BaseVC {
+    private let email = UserDefaultsHelper.shared.email
+    private let pw = UserDefaultsHelper.shared.pw
+    private let nickname = UserDefaultsHelper.shared.nickname
+    private let phone = UserDefaultsHelper.shared.phone ?? ""
     
     private let mainView = BirthView()
     
@@ -28,12 +32,25 @@ final class BirthVC: BaseVC {
     
     //회원가입 api
     private func signUp() {
-        self?.navigationController?.popToRootViewController(animated: true) // <- 성공케이스일때 실행
+        let data = SignUp(email: email, password: pw, nick: nickname, tel: phone, birth: mainView.birthTextField.text)
+        APIManager.shared.signUp(data: data) { result in
+            switch result {
+            case .success( _):
+                self.navigationController?.popToRootViewController(animated: true)
+            case .failure(let error):
+                if let error = error as? SignUPError {
+                    switch error {
+                    case .requiredValueMissing:
+                        print("\(error.errorDescription)")
+                    case .existingUser:
+                        print("\(error.errorDescription)")
+                    }
+                }
+            }
+        }
     }
     
-    private func transition() {
-     
-    }
+    
 }
 
 extension BirthVC: AddTargetProtocol {
@@ -42,22 +59,15 @@ extension BirthVC: AddTargetProtocol {
     }
     
     @objc private func nextButtonTapped() {
-        let email = UserDefaultsHelper.shared.email
-        let nickname = UserDefaultsHelper.shared.nickname
-        let phone = UserDefaultsHelper.shared.phone ?? ""
         let birth = mainView.birthTextField.text ?? ""
         let userInfo: String = "이메일(ID) : \(email)\n닉네임 : \(nickname)\nTEL : \(phone)\n생일 : \(birth)"
         
         showAlertView(title: "가입하시겠습니까?", message: userInfo) { [weak self] _ in
             self?.signUp()
-            
 //            if let viewControllers = self?.navigationController?.viewControllers,
 //               let firstViewController = viewControllers.first as? SignInVC {
 //                firstViewController.showToastMessage()
 //            }
         }
-        
-        
     }
 }
-
