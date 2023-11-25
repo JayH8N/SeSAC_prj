@@ -26,6 +26,11 @@ final class TelVC: BaseVC {
         self.hideKeyboardWhenTappedAround()
         addTargets()
         bind()
+        mainView.telTextField.delegate = self
+    }
+    
+    deinit {
+        print("====\(Self.self)====Deinit")
     }
     
     private func bind() {
@@ -76,7 +81,21 @@ extension TelVC: AddTargetProtocol {
     }
     
     @objc private func nextButtonTapped() {
+        UserDefaultsHelper.shared.phone = mainView.telTextField.text
         let vc = BirthVC()
         navigationController?.pushViewController(vc, animated: true)
+    }
+}
+
+extension TelVC: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let textFieldText = mainView.telTextField.text ?? ""
+        let inputString = (textFieldText as NSString).replacingCharacters(in: range, with: string)
+        
+        if inputString.count <= mainView.numLimit {
+            return true
+        } else {
+            return false
+        }
     }
 }

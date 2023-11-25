@@ -32,6 +32,9 @@ class UserDefaultsHelper {
     enum Key: String {
         case authenticationToken
         case refreshToken
+        case email
+        case nickname
+        case phone
     }
     
     @HoonDefaults(key: Key.authenticationToken.rawValue, defaultValue: "Token")
@@ -39,5 +42,14 @@ class UserDefaultsHelper {
 
     @HoonDefaults(key: Key.refreshToken.rawValue, defaultValue: "RefreshToken")
     var refreshToken: String
+    
+    @HoonDefaults(key: Key.email.rawValue, defaultValue: "Email")
+    var email: String
+    
+    @HoonDefaults(key: Key.nickname.rawValue, defaultValue: "Nickname")
+    var nickname: String
+    
+    @HoonDefaults(key: Key.phone.rawValue, defaultValue: nil)
+    var phone: String?
 
 }

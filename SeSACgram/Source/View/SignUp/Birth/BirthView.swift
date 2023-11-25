@@ -18,7 +18,7 @@ final class BirthView: BaseView {
         $0.numberOfLines = 0
     }
     
-    private let birthTextField = CustomTextField(placeholder: "생년월일", style: .birth)
+    let birthTextField = CustomTextField(placeholder: "생년월일", style: .birth)
     let nextButton = UIButton.responsiveButton(title: "회원가입", color: Constants.Color.DeepGreen).then {
         $0.isEnabled = true
     }

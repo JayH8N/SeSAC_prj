@@ -18,7 +18,6 @@ final class HomeVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     deinit {

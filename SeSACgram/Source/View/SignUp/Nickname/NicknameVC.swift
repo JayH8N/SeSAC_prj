@@ -26,6 +26,10 @@ final class NicknameVC: BaseVC {
         bind()
     }
     
+    deinit {
+        print("====\(Self.self)====Deinit")
+    }
+    
     private func bind() {
         let isTextFieldEmpty = mainView.nickNameTextField
             .rx
@@ -57,6 +61,7 @@ extension NicknameVC: AddTargetProtocol {
     }
     
     @objc private func nextButtonTapped() {
+        UserDefaultsHelper.shared.nickname = mainView.nickNameTextField.text ?? "Nickname"
         let vc = TelVC()
         navigationController?.pushViewController(vc, animated: true)
     }

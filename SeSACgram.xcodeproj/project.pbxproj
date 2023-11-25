@@ -60,7 +60,6 @@
 		78C0B6832B026D3E00314FE0 /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C0B6822B026D3E00314FE0 /* HapticManager.swift */; };
 		78C0B6852B02730B00314FE0 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C0B6842B02730B00314FE0 /* SignInView.swift */; };
 		78C0B6872B02731400314FE0 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C0B6862B02731400314FE0 /* SignInVC.swift */; };
-		78C0B6892B02732200314FE0 /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C0B6882B02732200314FE0 /* SignInViewModel.swift */; };
 		78C0B68B2B02735C00314FE0 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C0B68A2B02735C00314FE0 /* Constants.swift */; };
 		78C0B68D2B02744300314FE0 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 78C0B68C2B02744300314FE0 /* .gitignore */; };
 		78C0B68F2B02746F00314FE0 /* SeSAC_API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C0B68E2B02746F00314FE0 /* SeSAC_API.swift */; };
@@ -122,7 +121,6 @@
 		78C0B6822B026D3E00314FE0 /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		78C0B6842B02730B00314FE0 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		78C0B6862B02731400314FE0 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
-		78C0B6882B02732200314FE0 /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
 		78C0B68A2B02735C00314FE0 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		78C0B68C2B02744300314FE0 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		78C0B68E2B02746F00314FE0 /* SeSAC_API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSAC_API.swift; sourceTree = "<group>"; };
@@ -440,7 +438,6 @@
 			children = (
 				78C0B6842B02730B00314FE0 /* SignInView.swift */,
 				78C0B6862B02731400314FE0 /* SignInVC.swift */,
-				78C0B6882B02732200314FE0 /* SignInViewModel.swift */,
 			);
 			path = SignIn;
 			sourceTree = "<group>";
@@ -573,7 +570,6 @@
 				7898964E2B0B60FC00D27948 /* SeSACError.swift in Sources */,
 				781BC7102B0387E0000D779A /* ProfileViewModel.swift in Sources */,
 				781BC7652B050995000D779A /* SeSACAPIManager.swift in Sources */,
-				78C0B6892B02732200314FE0 /* SignInViewModel.swift in Sources */,
 				781BC77D2B07F173000D779A /* CustomTextField.swift in Sources */,
 				781BC7402B04E867000D779A /* EmailView.swift in Sources */,
 				781BC7462B04E889000D779A /* PWVC.swift in Sources */,

@@ -18,6 +18,7 @@ final class TelView: BaseView {
         $0.numberOfLines = 2
     }
     
+    let numLimit: Int = 13
     let telTextField = CustomTextField(placeholder: "휴대폰 번호", style: .id).then {
         $0.keyboardType = .numberPad
     }

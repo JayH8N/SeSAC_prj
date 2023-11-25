@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Toast
 
 final class SignInVC: BaseVC {
     
@@ -21,12 +22,17 @@ final class SignInVC: BaseVC {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         addTargets()
+//        showToastMessage()
     }
 
     deinit {
         print("====\(Self.self)====Deinit")
     }
     
+//    func showToastMessage() {
+//        self.view.makeToast("회원가입을 축하드립니다", duration: 2.0, position: .center)
+//        self.view.makeToast("dddddd")
+//    }
 }
 
 extension SignInVC: AddTargetProtocol {

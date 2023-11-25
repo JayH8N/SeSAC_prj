@@ -395,6 +395,7 @@ final class APIManager {
 
     private init() {}
 
+    //이메일 중복확인
     func checkEmail(email: String, completion: @escaping (Result<EmailResponse, Error>) -> Void) {
         let emailModel = Email(email: email)
 
@@ -408,14 +409,19 @@ final class APIManager {
                     completion(.success(result))
                     print("======성공")
                 } else {
+                    print("======실패 : 응답코드(\(statusCode))")
                     completion(.failure(EmailCheckError(rawValue: statusCode)!))
                 }
             case .failure(let error):
                 completion(.failure(error))
-                print("======실패")
             }
         }
     }
+    
+    
+    
+    
+    
 }
 
 

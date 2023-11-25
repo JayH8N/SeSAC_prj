@@ -26,6 +26,10 @@ final class PWVC: BaseVC {
         bind()
     }
     
+    deinit {
+        print("====\(Self.self)====Deinit")
+    }
+    
     private func bind() {
         
         let pwObservable = mainView.pwTextField.rx.text.orEmpty
