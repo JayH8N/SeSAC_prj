@@ -12,10 +12,9 @@ import RxCocoa
 final class TelVC: BaseVC {
     
     private let disposeBag = DisposeBag()
-    
     private let mainView = TelView()
     
-    let phone = PublishSubject<String>()
+    private let phone = PublishSubject<String>()
     
     override func loadView() {
         self.view = mainView

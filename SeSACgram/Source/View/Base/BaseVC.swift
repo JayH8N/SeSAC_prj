@@ -28,13 +28,23 @@ class BaseVC: UIViewController {
     
     
     //Alert
-    func showAlertView(title: String, message: String? = nil, handler: ((UIAlertAction) -> Void)? = nil) {
+    func showAlert2Button(title: String, message: String? = nil, handler: ((UIAlertAction) -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let ok = UIAlertAction(title: "확인", style: .default, handler: handler)
         let cancel = UIAlertAction(title: "취소", style: .default)
 
         alert.addAction(cancel)
+        alert.addAction(ok)
+        
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func showAlert1Button(title: String, message: String? = nil, handler: ((UIAlertAction) -> Void)? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let ok = UIAlertAction(title: "확인", style: .default, handler: handler)
+
         alert.addAction(ok)
         
         present(alert, animated: true, completion: nil)

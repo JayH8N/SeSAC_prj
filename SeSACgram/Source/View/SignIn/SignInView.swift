@@ -6,9 +6,6 @@
 //
 
 import UIKit
-
-//import RxSwift
-//import RxCocoa
 import Then
 import SnapKit
 
@@ -30,7 +27,9 @@ final class SignInView: BaseView {
     }
     
     let signInButton = UIButton.responsiveButton(title: "로그인",
-                                                 color: Constants.Color.DeepGreen)
+                                                 color: Constants.Color.DeepGreen).then {
+        $0.isEnabled = true
+    }
     
     let signUpButton = BorderButton(title: "새 계정 만들기")
     

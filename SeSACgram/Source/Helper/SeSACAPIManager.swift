@@ -61,6 +61,29 @@ final class APIManager {
         }
     }
     
+    func login(data: LogIn, completion: @escaping (Result<LoginResponse,Error>) -> Void) {
+        provider.request(.logIn(data: data)) { result in
+            switch result {
+            case .success(let value):
+                let statusCode = value.statusCode
+                print("++++++++++++++\(statusCode)")
+                if statusCode == 200 {
+                    print("==로그인 성공==")
+                    let result = try! JSONDecoder().decode(LoginResponse.self, from: value.data)
+                    completion(.success(result))
+                }
+                if let commonError = CommonError(rawValue: statusCode) {
+                    print("Error:\(commonError.errorDescription), statusCode:\(statusCode)")
+                } else if let error = LogInError(rawValue: statusCode) {
+                    completion(.failure(error))
+                    print("\(error.errorDescription)")
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
+    
     
     
     

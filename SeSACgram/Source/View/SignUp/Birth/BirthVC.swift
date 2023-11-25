@@ -32,7 +32,7 @@ final class BirthVC: BaseVC {
     
     //회원가입 api
     private func signUp() {
-        let data = SignUp(email: email, password: pw, nick: nickname, tel: phone, birth: mainView.birthTextField.text)
+        let data = SignUp(email: email, password: pw, nick: nickname, phoneNum: phone, birthDay: mainView.birthTextField.text)
         APIManager.shared.signUp(data: data) { result in
             switch result {
             case .success( _):
@@ -62,7 +62,7 @@ extension BirthVC: AddTargetProtocol {
         let birth = mainView.birthTextField.text ?? ""
         let userInfo: String = "이메일(ID) : \(email)\n닉네임 : \(nickname)\nTEL : \(phone)\n생일 : \(birth)"
         
-        showAlertView(title: "가입하시겠습니까?", message: userInfo) { [weak self] _ in
+        showAlert2Button(title: "가입하시겠습니까?", message: userInfo) { [weak self] _ in
             self?.signUp()
 //            if let viewControllers = self?.navigationController?.viewControllers,
 //               let firstViewController = viewControllers.first as? SignInVC {

@@ -17,12 +17,12 @@ struct SignUp: Encodable {
     let email: String
     let password: String
     let nick: String
-    let tel: String?
-    let birth: String?
+    let phoneNum: String?
+    let birthDay: String?
 }
 
 struct LogIn: Encodable {
     let email: String
-    let pw: String
+    let password: String
 }
 

@@ -42,7 +42,7 @@ extension SeSACUserPost: TargetType {
         case .signUP(let data):
             return .requestJSONEncodable(data)
         case .logIn(let email, let pw):
-            let data = LogIn(email: email, pw: pw)
+            let data = LogIn(email: email, password: pw)
             return .requestJSONEncodable(data)
         }
     }
@@ -59,7 +59,7 @@ extension SeSACUserPost: TargetType {
 
 enum SeSACAPI {
     case signUP(data: SignUp)
-    case logIn(email: String, pw: String)
+    case logIn(data: LogIn)
     case checkEmail(email: Email)
     case tokenRefresh
     case withdraw
@@ -116,8 +116,7 @@ extension SeSACAPI: TargetType {
             return .requestJSONEncodable(email)
         case .signUP(let data):
             return .requestJSONEncodable(data)
-        case .logIn(let email, let pw):
-            let data = LogIn(email: email, pw: pw)
+        case .logIn(let data):
             return .requestJSONEncodable(data)
         case .tokenRefresh, .withdraw:
             return .requestPlain
