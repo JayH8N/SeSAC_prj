@@ -22,6 +22,7 @@ final class BirthVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.delegate = self
         self.hideKeyboardWhenTappedAround()
         addTargets()
     }
@@ -60,14 +61,21 @@ extension BirthVC: AddTargetProtocol {
     
     @objc private func nextButtonTapped() {
         let birth = mainView.birthTextField.text ?? ""
-        let userInfo: String = "이메일(ID) : \(email)\n닉네임 : \(nickname)\nTEL : \(phone)\n생일 : \(birth)"
+        let userInfo: String = "ID : \(email)\n닉네임 : \(nickname)\nTEL : \(phone)\n생일 : \(birth)"
         
         showAlert2Button(title: "가입하시겠습니까?", message: userInfo) { [weak self] _ in
             self?.signUp()
-//            if let viewControllers = self?.navigationController?.viewControllers,
-//               let firstViewController = viewControllers.first as? SignInVC {
-//                firstViewController.showToastMessage()
-//            }
+        }
+    }
+}
+
+extension BirthVC: UINavigationControllerDelegate {
+    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
+        if let viewControllers = self.navigationController?.viewControllers,
+           let firstViewController = viewControllers.first as? SignInVC {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                firstViewController.showWelcomeToastMessage()
+            }
         }
     }
 }

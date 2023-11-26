@@ -11,23 +11,22 @@ import SnapKit
 
 final class EmailView: BaseView {
     
-    private let titleLabel = SignUPTitleLabel(title: "이메일 입력")
+    private let titleLabel = SignUPTitleLabel(title: "아이디 입력")
     private let subTitleLabel = UILabel().then {
-        $0.text = "회원 가입에 사용할 이메일 주소를 입력해주세요"
+        $0.text = "회원 가입에 사용할 아이디를 입력해주세요"
         $0.font = Constants.Font.HeaderSubTitle
         $0.numberOfLines = 2
     }
     
-    let emailTextField = CustomTextField(placeholder: "E-Mail", style: .id)
-    let failMessage = UILabel().then {
+    let emailTextField = CustomTextField(placeholder: "아이디 입력", style: .id)
+    let resultMessage = UILabel().then {
         $0.font = Constants.Font.BodySize
         $0.textColor = UIColor.red
         $0.isHidden = true
-        $0.text = "사용이 불가능한 이메일입니다."
     }
-    let nextButton = UIButton.responsiveButton(title: "다음", color: Constants.Color.DeepGreen)
+    let nextButton = UIButton.responsiveButton(title: "다음", color: Constants.Color.DeepGreen, isEnable: false)
     
-    lazy var emailTextFieldStackView = UIStackView(arrangedSubviews: [emailTextField, failMessage]).then {
+    lazy var emailTextFieldStackView = UIStackView(arrangedSubviews: [emailTextField, resultMessage]).then {
         $0.axis = .vertical
         $0.spacing = 4
     }

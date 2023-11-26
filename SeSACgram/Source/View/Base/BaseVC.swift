@@ -33,6 +33,8 @@ class BaseVC: UIViewController {
         
         let ok = UIAlertAction(title: "확인", style: .default, handler: handler)
         let cancel = UIAlertAction(title: "취소", style: .default)
+        ok.setValue(Constants.Color.DeepGreen, forKey: "titleTextColor")
+        cancel.setValue(Constants.Color.DeepGreen, forKey: "titleTextColor")
 
         alert.addAction(cancel)
         alert.addAction(ok)
@@ -40,10 +42,12 @@ class BaseVC: UIViewController {
         present(alert, animated: true, completion: nil)
     }
     
+    //Alert
     func showAlert1Button(title: String, message: String? = nil, handler: ((UIAlertAction) -> Void)? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let ok = UIAlertAction(title: "확인", style: .default, handler: handler)
+        ok.setValue(Constants.Color.DeepGreen, forKey: "titleTextColor")
 
         alert.addAction(ok)
         

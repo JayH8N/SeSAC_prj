@@ -70,6 +70,7 @@
 		78DB5AAF2B089E0A00AB1357 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 78DB5AAE2B089E0A00AB1357 /* IQKeyboardManagerSwift */; };
 		78DB5AB12B09106800AB1357 /* SignUPTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DB5AB02B09106800AB1357 /* SignUPTitleLabel.swift */; };
 		78DB5AB32B0912BB00AB1357 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DB5AB22B0912BB00AB1357 /* AppManager.swift */; };
+		78F102D52B13155C003774D2 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 78F102D42B13155C003774D2 /* NVActivityIndicatorView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -143,6 +144,7 @@
 				78C0B6962B031B9B00314FE0 /* FirebaseAnalytics in Frameworks */,
 				781BC7572B04FD99000D779A /* RxMoya in Frameworks */,
 				78C0B6982B031B9B00314FE0 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				78F102D52B13155C003774D2 /* NVActivityIndicatorView in Frameworks */,
 				78DB5AAF2B089E0A00AB1357 /* IQKeyboardManagerSwift in Frameworks */,
 				781BC7372B04DB0C000D779A /* SnapKit in Frameworks */,
 			);
@@ -472,6 +474,7 @@
 				781BC75E2B04FF22000D779A /* RxSwift */,
 				78DB5AAE2B089E0A00AB1357 /* IQKeyboardManagerSwift */,
 				7898966D2B0DF96300D27948 /* Toast */,
+				78F102D42B13155C003774D2 /* NVActivityIndicatorView */,
 			);
 			productName = SeSACgram;
 			productReference = 78C0B65F2B026A9400314FE0 /* SeSACgram.app */;
@@ -509,6 +512,7 @@
 				781BC75B2B04FF22000D779A /* XCRemoteSwiftPackageReference "RxSwift" */,
 				78DB5AAD2B089E0A00AB1357 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				7898966C2B0DF96300D27948 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				78F102D32B13155C003774D2 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 			);
 			productRefGroup = 78C0B6602B026A9400314FE0 /* Products */;
 			projectDirPath = "";
@@ -894,6 +898,14 @@
 				minimumVersion = 6.5.16;
 			};
 		};
+		78F102D32B13155C003774D2 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -956,6 +968,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 78DB5AAD2B089E0A00AB1357 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
+		};
+		78F102D42B13155C003774D2 /* NVActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 78F102D32B13155C003774D2 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

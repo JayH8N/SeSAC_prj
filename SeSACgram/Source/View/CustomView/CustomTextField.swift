@@ -78,6 +78,8 @@ extension CustomTextField: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         layer.borderColor = UIColor.lightGray.cgColor
         rightButton.isHidden = true
+        rightButton.tintColor = Constants.Color.DeepGreen
+        self.tintColor = Constants.Color.DeepGreen
     }
 }
 

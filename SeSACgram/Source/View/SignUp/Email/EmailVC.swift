@@ -25,6 +25,11 @@ final class EmailVC: BaseVC {
         self.hideKeyboardWhenTappedAround()
         addTargets()
         bindEmailTextField()
+        mainView.emailTextField.layer.borderColor = UIColor.gray.cgColor
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        mainView.resultMessage.isHidden = true
     }
     
     deinit {
@@ -63,7 +68,7 @@ final class EmailVC: BaseVC {
                     self?.mainView.emailTextField.tintColor = Constants.Color.DeepGreen
                     self?.mainView.emailTextField.rightButton.tintColor = Constants.Color.DeepGreen
                     self?.mainView.emailTextField.layer.borderColor = Constants.Color.DeepGreen.cgColor
-                    self?.mainView.failMessage.isHidden = isEmpty
+                    self?.mainView.resultMessage.isHidden = isEmpty
                 }
             }
             .disposed(by: disposeBag)
@@ -81,7 +86,7 @@ final class EmailVC: BaseVC {
                     self.mainView.emailTextField.tintColor = Constants.Color.DeepGreen
                     self.mainView.emailTextField.rightButton.tintColor = Constants.Color.DeepGreen
                     self.mainView.emailTextField.layer.borderColor = Constants.Color.DeepGreen.cgColor
-                    self.mainView.failMessage.isHidden = true
+                    self.mainView.resultMessage.isHidden = true
                 } else {
                     // 텍스트가 빈 문자열이 아닌 경우에 대한 UI 업데이트
                     self.mainView.nextButton.isEnabled = isValid
@@ -89,7 +94,9 @@ final class EmailVC: BaseVC {
                     self.mainView.emailTextField.tintColor = isValid ? Constants.Color.DeepGreen : UIColor.red
                     self.mainView.emailTextField.rightButton.tintColor = isValid ? Constants.Color.DeepGreen : UIColor.red
                     self.mainView.emailTextField.layer.borderColor = isValid ? Constants.Color.DeepGreen.cgColor : UIColor.red.cgColor
-                    self.mainView.failMessage.isHidden = isValid
+                    self.mainView.resultMessage.isHidden = false
+                    self.mainView.resultMessage.text = isValid ? "사용가능한 아이디입니다" : "사용이 불가능한 아이디입니다"
+                    self.mainView.resultMessage.textColor = isValid ? Constants.Color.DeepGreen : UIColor.red
                 }
             }
             .disposed(by: disposeBag)

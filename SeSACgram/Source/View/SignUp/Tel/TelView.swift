@@ -22,9 +22,7 @@ final class TelView: BaseView {
     let telTextField = CustomTextField(placeholder: "휴대폰 번호", style: .id).then {
         $0.keyboardType = .numberPad
     }
-    let nextButton = UIButton.responsiveButton(title: "건너뛰기", color: Constants.Color.DeepGreen).then {
-        $0.isEnabled = true
-    }
+    let nextButton = UIButton.responsiveButton(title: "건너뛰기", color: Constants.Color.DeepGreen, isEnable: true)
     
     override func configureView() {
         addSubview(titleLabel)

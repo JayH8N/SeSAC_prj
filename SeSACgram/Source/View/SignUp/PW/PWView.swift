@@ -20,7 +20,7 @@ final class PWView: BaseView {
     let pwTextField = CustomTextField(placeholder: "비밀번호", style: .pw)
     let pwTextFieldCheck = CustomTextField(placeholder: "비밀번호 확인", style: .pw)
     
-    let nextButton = UIButton.responsiveButton(title: "다음", color: UIColor.gray)
+    let nextButton = UIButton.responsiveButton(title: "다음", color: UIColor.gray, isEnable: false)
     
     override func configureView() {
         addSubview(titleLabel)

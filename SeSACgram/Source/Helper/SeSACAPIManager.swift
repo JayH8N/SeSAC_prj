@@ -14,7 +14,7 @@ final class APIManager {
 
     private init() {}
 
-    //이메일 중복확인
+    //MARK: - 이메일 중복확인
     func checkEmail(email: String, completion: @escaping (Result<EmailResponse, Error>) -> Void) {
         let emailModel = Email(email: email)
 
@@ -28,7 +28,7 @@ final class APIManager {
                     completion(.success(result))
                 } 
                 if let commonError = CommonError(rawValue: statusCode) {
-                    print("Error:\(commonError.errorDescription), statusCode:\(statusCode)")
+                    print("Error:\(commonError.errorDescription)")
                 } else if let error = EmailCheckError(rawValue: statusCode) {
                     completion(.failure(error))
                     print("\(error.errorDescription)")
@@ -39,7 +39,7 @@ final class APIManager {
         }
     }
     
-    //회원가입
+    //MARK: - 회원가입
     func signUp(data: SignUp, completion: @escaping (Result<SignUPWithdrawResponse, Error>) -> Void) {
         provider.request(.signUP(data: data)) { result in
             switch result {
@@ -51,7 +51,7 @@ final class APIManager {
                     completion(.success(result))
                 }
                 if let commonError = CommonError(rawValue: statusCode) {
-                    print("Error:\(commonError.errorDescription), statusCode:\(statusCode)")
+                    print("Error:\(commonError.errorDescription)")
                 } else if let error = SignUPError(rawValue: statusCode) {
                     completion(.failure(error))
                 }
@@ -61,22 +61,24 @@ final class APIManager {
         }
     }
     
+    //MARK: - 로그인
     func login(data: LogIn, completion: @escaping (Result<LoginResponse,Error>) -> Void) {
         provider.request(.logIn(data: data)) { result in
             switch result {
             case .success(let value):
                 let statusCode = value.statusCode
-                print("++++++++++++++\(statusCode)")
                 if statusCode == 200 {
                     print("==로그인 성공==")
                     let result = try! JSONDecoder().decode(LoginResponse.self, from: value.data)
+                    UserDefaultsHelper.shared.authenticationToken = result.token
+                    UserDefaultsHelper.shared.refreshToken = result.refreshToken
                     completion(.success(result))
                 }
                 if let commonError = CommonError(rawValue: statusCode) {
-                    print("Error:\(commonError.errorDescription), statusCode:\(statusCode)")
+                    print("Error:\(commonError.errorDescription)")
                 } else if let error = LogInError(rawValue: statusCode) {
                     completion(.failure(error))
-                    print("\(error.errorDescription)")
+                    //print("\(error.errorDescription)")
                 }
             case .failure(let error):
                 completion(.failure(error))
@@ -84,8 +86,49 @@ final class APIManager {
         }
     }
     
+    //MARK: - 토큰갱신
+    func updateToken(completion: @escaping (Result<RefreshToken,Error>) -> Void) {
+        provider.request(.tokenRefresh) { result in
+            switch result {
+            case.success(let value):
+                let statusCode = value.statusCode
+                if statusCode == 200 {
+                    let result = try! JSONDecoder().decode(RefreshToken.self, from: value.data)
+                    UserDefaultsHelper.shared.authenticationToken = result.token
+                    print("==토큰 갱신완료==")
+                    completion(.success(result))
+                }
+                if let commonError = CommonError(rawValue: statusCode) {
+                    print("Error:\(commonError.errorDescription)")
+                } else if let error = TokenError(rawValue: statusCode) {
+                    completion(.failure(error))
+                    //print("\(error.errorDescription)")
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
     
-    
-    
-    
+    //MARK: - 탈퇴
+    func withdraw(completion: @escaping (Result<SignUPWithdrawResponse,Error>) -> Void) {
+        provider.request(.withdraw) { result in
+            switch result {
+            case .success(let value):
+                let statusCode = value.statusCode
+                if statusCode == 200 {
+                    print("==탈퇴 성공==")
+                    let result = try! JSONDecoder().decode(SignUPWithdrawResponse.self, from: value.data)
+                    completion(.success(result))
+                }
+                if let commonError = CommonError(rawValue: statusCode) {
+                    print("Error:\(commonError.errorDescription)")
+                } else if let error = WithdrawError(rawValue: statusCode) {
+                    completion(.failure(error))
+                }
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+    }
 }

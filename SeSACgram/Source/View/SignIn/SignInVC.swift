@@ -15,6 +15,9 @@ final class SignInVC: BaseVC {
     private let disposeBag = DisposeBag()
     private let mainView = SignInView()
     
+    //토스트메세지 스타일
+    private let style = ToastStyle()
+    
     override func loadView() {
         self.view = mainView
     }
@@ -23,17 +26,31 @@ final class SignInVC: BaseVC {
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         addTargets()
-//        showToastMessage()
     }
 
     deinit {
         print("====\(Self.self)====Deinit")
     }
     
-//    func showToastMessage() {
-//        self.view.makeToast("회원가입을 축하드립니다", duration: 2.0, position: .center)
-//        self.view.makeToast("dddddd")
-//    }
+    func showWelcomeToastMessage() {
+        self.view.makeToast("회원가입을 축하드립니다\n로그인을 진행해주세요", duration: 1.5, position: .center, title: nil, image: nil, style: style, completion: nil)
+    }
+    
+    func showByeToastMessage() {
+        self.view.makeToast("탈퇴가 완료되었습니다.\n다음에도 찾아주세요!", duration: 2.0, position: .center, title: nil, image: nil, style: style, completion: nil)
+    }
+    
+    private func indicatorEffect() {
+        mainView.signInButton.titleLabel?.isHidden = true
+        mainView.indicator.isHidden = false
+        mainView.indicator.startAnimating()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.2) {
+            self.mainView.signInButton.titleLabel?.isHidden = false
+            self.mainView.indicator.isHidden = true
+            self.mainView.indicator.stopAnimating()
+        }
+    }
     
 }
 
@@ -51,20 +68,24 @@ extension SignInVC: AddTargetProtocol {
         let email = mainView.emailTextField.text ?? ""
         let pw = mainView.pwTextField.text ?? ""
         let data = LogIn(email: email, password: pw)
-        APIManager.shared.login(data: data) { result in
+        APIManager.shared.login(data: data) { [weak self] result in
             switch result {
             case .success( _):
                 let vc = TabBarVC()
                 vc.modalPresentationStyle = .fullScreen
                 vc.modalTransitionStyle = .crossDissolve
-                self.present(vc, animated: true)
+                self?.indicatorEffect()
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                    self?.present(vc, animated: true)
+                }
             case .failure(let failure):
                 if let error = failure as? LogInError {
                     switch error {
                     case .requiredValueMissing:
-                        self.showAlert1Button(title: "필수값을 채워주세요")
+                        self?.showAlert1Button(title: "필수값을 채워주세요")
                     case .unsubscribe:
-                        self.showAlert1Button(title: "미가입 또는 비밀번호 불일치입니다.")
+                        self?.showAlert1Button(title: "미가입 또는 비밀번호 불일치입니다.")
                     }
                 }
             }

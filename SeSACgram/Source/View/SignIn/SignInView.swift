@@ -8,6 +8,7 @@
 import UIKit
 import Then
 import SnapKit
+import NVActivityIndicatorView
 
 final class SignInView: BaseView {
     
@@ -27,16 +28,22 @@ final class SignInView: BaseView {
     }
     
     let signInButton = UIButton.responsiveButton(title: "로그인",
-                                                 color: Constants.Color.DeepGreen).then {
-        $0.isEnabled = true
-    }
+                                                 color: Constants.Color.DeepGreen, isEnable: true)
     
     let signUpButton = BorderButton(title: "새 계정 만들기")
+    
+    let indicator = NVActivityIndicatorView(frame: .zero,
+                                            type: .ballPulse,
+                                            color: .white,
+                                            padding: 4).then {
+        $0.isHidden = true
+    }
     
     override func configureView() {
         addSubview(logoImage)
         addSubview(loginTextFieldStackView)
         addSubview(signInButton)
+        signInButton.addSubview(indicator)
         addSubview(signUpButton)
     }
     
@@ -57,6 +64,12 @@ final class SignInView: BaseView {
             $0.leading.trailing.equalToSuperview().inset(24)
             $0.height.equalTo(Constants.Frame.buttonHeight)
             $0.top.equalTo(loginTextFieldStackView.snp.bottom).offset(20)
+        }
+        
+        indicator.snp.makeConstraints {
+            $0.center.equalToSuperview()
+            $0.height.equalTo(Constants.Frame.buttonHeight)
+            $0.width.equalTo(60)
         }
         
         signUpButton.snp.makeConstraints {

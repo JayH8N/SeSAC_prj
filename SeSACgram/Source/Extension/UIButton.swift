@@ -14,7 +14,7 @@ extension UIButton {
     }
     
     //반응형 버튼
-    static func responsiveButton(title: String, color: UIColor) -> UIButton {
+    static func responsiveButton(title: String, color: UIColor, isEnable: Bool) -> UIButton {
         let action = UIAction(title: "") { _ in
             HapticManager.shared.viberateForInteraction(style: .light)
         }
@@ -25,7 +25,7 @@ extension UIButton {
         button.layer.cornerRadius = Constants.Size.buttonCornerRadius
         button.clipsToBounds = true
         button.titleLabel?.font = Constants.Font.themeFont
-        button.isEnabled = false
+        button.isEnabled = isEnable
         return button
     }
 }
