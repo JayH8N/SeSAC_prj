@@ -46,9 +46,9 @@ final class SignInVC: BaseVC {
         mainView.indicator.startAnimating()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.2) {
-            self.mainView.signInButton.titleLabel?.isHidden = false
+            //self.mainView.signInButton.titleLabel?.isHidden = false
             self.mainView.indicator.isHidden = true
-            self.mainView.indicator.stopAnimating()
+            //self.mainView.indicator.stopAnimating()
         }
     }
     
@@ -71,6 +71,7 @@ extension SignInVC: AddTargetProtocol {
         APIManager.shared.login(data: data) { [weak self] result in
             switch result {
             case .success( _):
+                UserDefaultsHelper.shared.isLogIn = true
                 let vc = TabBarVC()
                 vc.modalPresentationStyle = .fullScreen
                 vc.modalTransitionStyle = .crossDissolve

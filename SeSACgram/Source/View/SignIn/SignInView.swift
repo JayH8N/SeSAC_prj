@@ -13,7 +13,7 @@ import NVActivityIndicatorView
 final class SignInView: BaseView {
     
     let logoImage = UIImageView().then {
-        $0.image = UIImage(named: Constants.Image.SeSAC_Logo)
+        $0.image = Constants.Image.SeSAC_Logo
     }
     
     let emailTextField = CustomTextField(placeholder: "이메일 주소",

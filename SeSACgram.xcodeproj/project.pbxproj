@@ -42,7 +42,7 @@
 		781BC7612B050678000D779A /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BC7602B050678000D779A /* UIImage.swift */; };
 		781BC7632B05091D000D779A /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BC7622B05091C000D779A /* UIButton.swift */; };
 		781BC7652B050995000D779A /* SeSACAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BC7642B050995000D779A /* SeSACAPIManager.swift */; };
-		781BC7672B050B16000D779A /* SeSACUserPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BC7662B050B16000D779A /* SeSACUserPost.swift */; };
+		781BC7672B050B16000D779A /* SeSACAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BC7662B050B16000D779A /* SeSACAPI.swift */; };
 		781BC7692B050BF2000D779A /* RequestAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BC7682B050BF2000D779A /* RequestAPI.swift */; };
 		781BC76B2B050C01000D779A /* ResponseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BC76A2B050C01000D779A /* ResponseAPI.swift */; };
 		781BC7782B07E40F000D779A /* BorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BC7772B07E40F000D779A /* BorderButton.swift */; };
@@ -50,7 +50,6 @@
 		781BC77D2B07F173000D779A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BC77C2B07F173000D779A /* CustomTextField.swift */; };
 		788EB1302B11CC9800162793 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788EB12F2B11CC9800162793 /* String.swift */; };
 		7898964E2B0B60FC00D27948 /* SeSACError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7898964D2B0B60FC00D27948 /* SeSACError.swift */; };
-		789896632B0CCFD000D27948 /* SeSACUserGet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 789896622B0CCFD000D27948 /* SeSACUserGet.swift */; };
 		7898966E2B0DF96300D27948 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 7898966D2B0DF96300D27948 /* Toast */; };
 		78C0B6632B026A9400314FE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C0B6622B026A9400314FE0 /* AppDelegate.swift */; };
 		78C0B6652B026A9400314FE0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78C0B6642B026A9400314FE0 /* SceneDelegate.swift */; };
@@ -71,6 +70,11 @@
 		78DB5AB12B09106800AB1357 /* SignUPTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DB5AB02B09106800AB1357 /* SignUPTitleLabel.swift */; };
 		78DB5AB32B0912BB00AB1357 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DB5AB22B0912BB00AB1357 /* AppManager.swift */; };
 		78F102D52B13155C003774D2 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 78F102D42B13155C003774D2 /* NVActivityIndicatorView */; };
+		78F102D72B138337003774D2 /* LogInStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F102D62B138337003774D2 /* LogInStateManager.swift */; };
+		78F102DA2B140D74003774D2 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F102D92B140D74003774D2 /* LoadingView.swift */; };
+		78F102DC2B140D7B003774D2 /* LoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F102DB2B140D7B003774D2 /* LoadingVC.swift */; };
+		78F102E52B14238F003774D2 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 78F102E42B14238F003774D2 /* NVActivityIndicatorView */; };
+		78F102E72B14238F003774D2 /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = 78F102E62B14238F003774D2 /* NVActivityIndicatorViewExtended */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -103,7 +107,7 @@
 		781BC7602B050678000D779A /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		781BC7622B05091C000D779A /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		781BC7642B050995000D779A /* SeSACAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACAPIManager.swift; sourceTree = "<group>"; };
-		781BC7662B050B16000D779A /* SeSACUserPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACUserPost.swift; sourceTree = "<group>"; };
+		781BC7662B050B16000D779A /* SeSACAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACAPI.swift; sourceTree = "<group>"; };
 		781BC7682B050BF2000D779A /* RequestAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestAPI.swift; sourceTree = "<group>"; };
 		781BC76A2B050C01000D779A /* ResponseAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseAPI.swift; sourceTree = "<group>"; };
 		781BC7772B07E40F000D779A /* BorderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderButton.swift; sourceTree = "<group>"; };
@@ -111,7 +115,6 @@
 		781BC77C2B07F173000D779A /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		788EB12F2B11CC9800162793 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		7898964D2B0B60FC00D27948 /* SeSACError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACError.swift; sourceTree = "<group>"; };
-		789896622B0CCFD000D27948 /* SeSACUserGet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACUserGet.swift; sourceTree = "<group>"; };
 		78C0B65F2B026A9400314FE0 /* SeSACgram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACgram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78C0B6622B026A9400314FE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78C0B6642B026A9400314FE0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +130,9 @@
 		78C0B68E2B02746F00314FE0 /* SeSAC_API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSAC_API.swift; sourceTree = "<group>"; };
 		78DB5AB02B09106800AB1357 /* SignUPTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUPTitleLabel.swift; sourceTree = "<group>"; };
 		78DB5AB22B0912BB00AB1357 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
+		78F102D62B138337003774D2 /* LogInStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInStateManager.swift; sourceTree = "<group>"; };
+		78F102D92B140D74003774D2 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		78F102DB2B140D7B003774D2 /* LoadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,12 +142,14 @@
 			files = (
 				7898966E2B0DF96300D27948 /* Toast in Frameworks */,
 				781BC75D2B04FF22000D779A /* RxCocoa in Frameworks */,
+				78F102E52B14238F003774D2 /* NVActivityIndicatorView in Frameworks */,
 				78C0B69C2B031B9B00314FE0 /* FirebaseMessaging in Frameworks */,
 				781BC75F2B04FF22000D779A /* RxSwift in Frameworks */,
 				78C0B69A2B031B9B00314FE0 /* FirebaseCrashlytics in Frameworks */,
 				781BC7552B04FD99000D779A /* Moya in Frameworks */,
 				781BC75A2B04FDC0000D779A /* Then in Frameworks */,
 				78C0B6962B031B9B00314FE0 /* FirebaseAnalytics in Frameworks */,
+				78F102E72B14238F003774D2 /* NVActivityIndicatorViewExtended in Frameworks */,
 				781BC7572B04FD99000D779A /* RxMoya in Frameworks */,
 				78C0B6982B031B9B00314FE0 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				78F102D52B13155C003774D2 /* NVActivityIndicatorView in Frameworks */,
@@ -303,8 +311,7 @@
 		789896612B0CCFC200D27948 /* User */ = {
 			isa = PBXGroup;
 			children = (
-				781BC7662B050B16000D779A /* SeSACUserPost.swift */,
-				789896622B0CCFD000D27948 /* SeSACUserGet.swift */,
+				781BC7662B050B16000D779A /* SeSACAPI.swift */,
 			);
 			path = User;
 			sourceTree = "<group>";
@@ -399,6 +406,7 @@
 				78C0B6802B026D2100314FE0 /* UserDefaultHelper.swift */,
 				78C0B6822B026D3E00314FE0 /* HapticManager.swift */,
 				781BC7642B050995000D779A /* SeSACAPIManager.swift */,
+				78F102D62B138337003774D2 /* LogInStateManager.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -407,6 +415,7 @@
 			isa = PBXGroup;
 			children = (
 				781BC7742B07D335000D779A /* CustomView */,
+				78F102D82B140D68003774D2 /* Loading */,
 				781BC7302B04BFD0000D779A /* Base */,
 				781BC7382B04E7F9000D779A /* SignUp */,
 				78C0B67F2B026D0200314FE0 /* SignIn */,
@@ -444,6 +453,15 @@
 			path = SignIn;
 			sourceTree = "<group>";
 		};
+		78F102D82B140D68003774D2 /* Loading */ = {
+			isa = PBXGroup;
+			children = (
+				78F102D92B140D74003774D2 /* LoadingView.swift */,
+				78F102DB2B140D7B003774D2 /* LoadingVC.swift */,
+			);
+			path = Loading;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -475,6 +493,8 @@
 				78DB5AAE2B089E0A00AB1357 /* IQKeyboardManagerSwift */,
 				7898966D2B0DF96300D27948 /* Toast */,
 				78F102D42B13155C003774D2 /* NVActivityIndicatorView */,
+				78F102E42B14238F003774D2 /* NVActivityIndicatorView */,
+				78F102E62B14238F003774D2 /* NVActivityIndicatorViewExtended */,
 			);
 			productName = SeSACgram;
 			productReference = 78C0B65F2B026A9400314FE0 /* SeSACgram.app */;
@@ -578,6 +598,7 @@
 				781BC7402B04E867000D779A /* EmailView.swift in Sources */,
 				781BC7462B04E889000D779A /* PWVC.swift in Sources */,
 				781BC7092B038726000D779A /* SearchViewModel.swift in Sources */,
+				78F102DA2B140D74003774D2 /* LoadingView.swift in Sources */,
 				78DB5AB12B09106800AB1357 /* SignUPTitleLabel.swift in Sources */,
 				781BC6F12B0377F0000D779A /* TabBarVC.swift in Sources */,
 				78C0B6812B026D2100314FE0 /* UserDefaultHelper.swift in Sources */,
@@ -593,11 +614,11 @@
 				78C0B6832B026D3E00314FE0 /* HapticManager.swift in Sources */,
 				781BC70C2B0387CE000D779A /* ProfileView.swift in Sources */,
 				78DB5AB32B0912BB00AB1357 /* AppManager.swift in Sources */,
-				789896632B0CCFD000D27948 /* SeSACUserGet.swift in Sources */,
 				781BC7522B04E8BD000D779A /* BirthVC.swift in Sources */,
 				78C0B6652B026A9400314FE0 /* SceneDelegate.swift in Sources */,
 				781BC76B2B050C01000D779A /* ResponseAPI.swift in Sources */,
 				781BC6FE2B0383E4000D779A /* HomeViewModel.swift in Sources */,
+				78F102D72B138337003774D2 /* LogInStateManager.swift in Sources */,
 				781BC74A2B04E89B000D779A /* NicknameVC.swift in Sources */,
 				781BC70E2B0387D7000D779A /* ProfileVC.swift in Sources */,
 				78C0B68F2B02746F00314FE0 /* SeSAC_API.swift in Sources */,
@@ -608,12 +629,13 @@
 				781BC6FC2B0383DB000D779A /* HomeVC.swift in Sources */,
 				781BC7782B07E40F000D779A /* BorderButton.swift in Sources */,
 				78C0B6852B02730B00314FE0 /* SignInView.swift in Sources */,
-				781BC7672B050B16000D779A /* SeSACUserPost.swift in Sources */,
+				781BC7672B050B16000D779A /* SeSACAPI.swift in Sources */,
 				781BC77B2B07ED62000D779A /* AddTargetProtocol.swift in Sources */,
 				781BC7342B04BFE1000D779A /* BaseVC.swift in Sources */,
 				78C0B68B2B02735C00314FE0 /* Constants.swift in Sources */,
 				781BC7692B050BF2000D779A /* RequestAPI.swift in Sources */,
 				781BC7422B04E86E000D779A /* EmailVC.swift in Sources */,
+				78F102DC2B140D7B003774D2 /* LoadingVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -973,6 +995,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 78F102D32B13155C003774D2 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
 			productName = NVActivityIndicatorView;
+		};
+		78F102E42B14238F003774D2 /* NVActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 78F102D32B13155C003774D2 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorView;
+		};
+		78F102E62B14238F003774D2 /* NVActivityIndicatorViewExtended */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 78F102D32B13155C003774D2 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorViewExtended;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -94,7 +94,6 @@ final class APIManager {
                 let statusCode = value.statusCode
                 if statusCode == 200 {
                     let result = try! JSONDecoder().decode(RefreshToken.self, from: value.data)
-                    UserDefaultsHelper.shared.authenticationToken = result.token
                     print("==토큰 갱신완료==")
                     completion(.success(result))
                 }
@@ -102,7 +101,7 @@ final class APIManager {
                     print("Error:\(commonError.errorDescription)")
                 } else if let error = TokenError(rawValue: statusCode) {
                     completion(.failure(error))
-                    //print("\(error.errorDescription)")
+                    print("\(error.errorDescription)")
                 }
             case .failure(let error):
                 completion(.failure(error))

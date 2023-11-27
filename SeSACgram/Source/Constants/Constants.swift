@@ -19,13 +19,14 @@ enum Constants {
         static let TabBarHome = "Home"
         static let TabBarSearch = "Search"
         static let TabBarProfile = "Profile"
-        static let SeSAC_Logo = "SeSAC_LaunchScreen"
+        static let SeSAC_Logo = UIImage(named: "SeSAC_LaunchScreen")
         static let Xmark = UIImage(systemName: "xmark")
         static let OpenEye = UIImage(systemName: "eye")
         static let CloseEye = UIImage(systemName: "eye.slash")
     }
     
     enum Font {
+        static let MainTitle = UIFont(name: "TAEBAEK milkyway", size: 37)
         static let HeaderTitle: UIFont = .systemFont(ofSize: 28, weight: .bold)
         static let HeaderSubTitle: UIFont = .systemFont(ofSize: 15, weight: .thin)
         static let BodySize: UIFont = .systemFont(ofSize: 13, weight: .regular)

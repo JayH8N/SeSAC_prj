@@ -30,12 +30,7 @@ final class ProfileVC: BaseVC {
         APIManager.shared.withdraw { [weak self] result in
             switch result {
             case .success( _):
-                let vc = SignInVC()
-                vc.modalPresentationStyle = .fullScreen
-                vc.modalTransitionStyle = .crossDissolve
-                self?.present(vc, animated: true) {
-                    vc.showByeToastMessage()
-                }
+                self?.transitionSignVC()
             case .failure(let error):
                 if let error = error as? WithdrawError {
                     switch error {
@@ -43,17 +38,12 @@ final class ProfileVC: BaseVC {
                         print("accessToken갱신합니다.")
                         APIManager.shared.updateToken { result in
                             switch result {
-                            case .success( _):
-                                //UserDefaultsHelper.shared.authenticationToken = data.token
+                            case .success(let value):
+                                UserDefaultsHelper.shared.authenticationToken = value.token
                                 APIManager.shared.withdraw { result in
                                     switch result {
                                     case .success( _):
-                                        let vc = SignInVC()
-                                        vc.modalPresentationStyle = .fullScreen
-                                        vc.modalTransitionStyle = .crossDissolve
-                                        self?.present(vc, animated: true) {
-                                            vc.showByeToastMessage()
-                                        }
+                                        self?.transitionSignVC()
                                     case .failure(let error):
                                         if let error = error as? WithdrawError {
                                             print("\(error.errorDescription)")
@@ -65,10 +55,7 @@ final class ProfileVC: BaseVC {
                                     switch error {
                                     case .expiredRefreshToken:
                                         self?.showAlert1Button(title: "로그인세션 만료", message: "로그인세션이 만료되었습니다.\n다시 로그인 해주세요!") { _ in
-                                            let vc = SignInVC()
-                                            vc.modalPresentationStyle = .fullScreen
-                                            vc.modalTransitionStyle = .crossDissolve
-                                            self?.present(vc, animated: true)
+                                            self?.transitionSignVC()
                                         }
                                     default:
                                         print("\(error.errorDescription)")
@@ -81,6 +68,16 @@ final class ProfileVC: BaseVC {
                     }
                 }
             }
+        }
+    }
+    
+    private func transitionSignVC() {
+        UserDefaultsHelper.shared.isLogIn = false
+        let vc = SignInVC()
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        self.present(vc, animated: true) {
+            vc.showByeToastMessage()
         }
     }
 }

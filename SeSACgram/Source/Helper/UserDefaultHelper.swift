@@ -36,6 +36,7 @@ class UserDefaultsHelper {
         case pw
         case nickname
         case phone
+        case isLogIn
     }
     
     @HoonDefaults(key: Key.authenticationToken.rawValue, defaultValue: "Token")
@@ -55,5 +56,7 @@ class UserDefaultsHelper {
     
     @HoonDefaults(key: Key.phone.rawValue, defaultValue: nil)
     var phone: String?
-
+    
+    @HoonDefaults(key: Key.isLogIn.rawValue, defaultValue: false)
+    var isLogIn: Bool
 }
