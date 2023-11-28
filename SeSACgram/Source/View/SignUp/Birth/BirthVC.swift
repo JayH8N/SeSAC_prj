@@ -22,7 +22,7 @@ final class BirthVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.delegate = self
+        //self.navigationController?.delegate = self
         self.hideKeyboardWhenTappedAround()
         addTargets()
     }
@@ -37,7 +37,9 @@ final class BirthVC: BaseVC {
         APIManager.shared.signUp(data: data) { result in
             switch result {
             case .success( _):
-                self.navigationController?.popToRootViewController(animated: true)
+                DispatchQueue.main.async {
+                    self.navigationController?.popToRootViewController(animated: true)
+                }
             case .failure(let error):
                 if let error = error as? SignUPError {
                     switch error {
@@ -65,17 +67,7 @@ extension BirthVC: AddTargetProtocol {
         
         showAlert2Button(title: "가입하시겠습니까?", message: userInfo) { [weak self] _ in
             self?.signUp()
-        }
-    }
-}
-
-extension BirthVC: UINavigationControllerDelegate {
-    func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
-        if let viewControllers = self.navigationController?.viewControllers,
-           let firstViewController = viewControllers.first as? SignInVC {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-                firstViewController.showWelcomeToastMessage()
-            }
+            NotificationCenter.default.post(name: Notification.Name.welcome, object: nil)
         }
     }
 }

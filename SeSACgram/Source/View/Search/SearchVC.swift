@@ -9,7 +9,7 @@ import UIKit
 
 final class SearchVC: BaseVC {
     
-    let mainView = SearchView()
+    private let mainView = SearchView()
     
     override func loadView() {
         self.view = mainView

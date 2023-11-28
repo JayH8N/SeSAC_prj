@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		780079642B14B9B1000A58BD /* MenuListButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780079632B14B9B1000A58BD /* MenuListButtonView.swift */; };
+		780079682B14D6D7000A58BD /* SetPersonalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780079672B14D6D7000A58BD /* SetPersonalView.swift */; };
+		7800796A2B14D6DF000A58BD /* SetPersonalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780079692B14D6DF000A58BD /* SetPersonalVC.swift */; };
+		780079712B14ED9F000A58BD /* CALayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780079702B14ED9F000A58BD /* CALayer.swift */; };
+		780079732B156230000A58BD /* PushableTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780079722B156230000A58BD /* PushableTransition.swift */; };
+		780079792B15F854000A58BD /* Notification.Name.swift in Sources */ = {isa = PBXBuildFile; fileRef = 780079782B15F854000A58BD /* Notification.Name.swift */; };
 		781BC6F12B0377F0000D779A /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BC6F02B0377F0000D779A /* TabBarVC.swift */; };
 		781BC6FA2B0383D3000D779A /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BC6F92B0383D3000D779A /* HomeView.swift */; };
 		781BC6FC2B0383DB000D779A /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BC6FB2B0383DB000D779A /* HomeVC.swift */; };
@@ -75,9 +81,19 @@
 		78F102DC2B140D7B003774D2 /* LoadingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F102DB2B140D7B003774D2 /* LoadingVC.swift */; };
 		78F102E52B14238F003774D2 /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = 78F102E42B14238F003774D2 /* NVActivityIndicatorView */; };
 		78F102E72B14238F003774D2 /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = 78F102E62B14238F003774D2 /* NVActivityIndicatorViewExtended */; };
+		78F102F22B149B90003774D2 /* HighlightedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F102F12B149B90003774D2 /* HighlightedButton.swift */; };
+		78F102F52B14A48D003774D2 /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F102F42B14A48D003774D2 /* BottomSheetView.swift */; };
+		78F102F72B14A495003774D2 /* BottomSheetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F102F62B14A495003774D2 /* BottomSheetVC.swift */; };
+		78F102F92B14B465003774D2 /* ModalDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78F102F82B14B465003774D2 /* ModalDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		780079632B14B9B1000A58BD /* MenuListButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuListButtonView.swift; sourceTree = "<group>"; };
+		780079672B14D6D7000A58BD /* SetPersonalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPersonalView.swift; sourceTree = "<group>"; };
+		780079692B14D6DF000A58BD /* SetPersonalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetPersonalVC.swift; sourceTree = "<group>"; };
+		780079702B14ED9F000A58BD /* CALayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayer.swift; sourceTree = "<group>"; };
+		780079722B156230000A58BD /* PushableTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushableTransition.swift; sourceTree = "<group>"; };
+		780079782B15F854000A58BD /* Notification.Name.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.Name.swift; sourceTree = "<group>"; };
 		781BC6F02B0377F0000D779A /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		781BC6F92B0383D3000D779A /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		781BC6FB2B0383DB000D779A /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -133,6 +149,10 @@
 		78F102D62B138337003774D2 /* LogInStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInStateManager.swift; sourceTree = "<group>"; };
 		78F102D92B140D74003774D2 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		78F102DB2B140D7B003774D2 /* LoadingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingVC.swift; sourceTree = "<group>"; };
+		78F102F12B149B90003774D2 /* HighlightedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightedButton.swift; sourceTree = "<group>"; };
+		78F102F42B14A48D003774D2 /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
+		78F102F62B14A495003774D2 /* BottomSheetVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetVC.swift; sourceTree = "<group>"; };
+		78F102F82B14B465003774D2 /* ModalDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +181,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		780079652B14D65F000A58BD /* MenuList */ = {
+			isa = PBXGroup;
+			children = (
+				780079662B14D6AD000A58BD /* SetPersonal */,
+			);
+			path = MenuList;
+			sourceTree = "<group>";
+		};
+		780079662B14D6AD000A58BD /* SetPersonal */ = {
+			isa = PBXGroup;
+			children = (
+				780079672B14D6D7000A58BD /* SetPersonalView.swift */,
+				780079692B14D6DF000A58BD /* SetPersonalVC.swift */,
+			);
+			path = SetPersonal;
+			sourceTree = "<group>";
+		};
 		781BC6E82B03729B000D779A /* LaunchScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +248,7 @@
 				781BC70B2B0387CE000D779A /* ProfileView.swift */,
 				781BC70D2B0387D7000D779A /* ProfileVC.swift */,
 				781BC70F2B0387E0000D779A /* ProfileViewModel.swift */,
+				78F102F32B14A462003774D2 /* BottomSheet */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -296,6 +334,8 @@
 				781BC7772B07E40F000D779A /* BorderButton.swift */,
 				781BC77C2B07F173000D779A /* CustomTextField.swift */,
 				78DB5AB02B09106800AB1357 /* SignUPTitleLabel.swift */,
+				78F102F12B149B90003774D2 /* HighlightedButton.swift */,
+				780079632B14B9B1000A58BD /* MenuListButtonView.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -304,6 +344,8 @@
 			isa = PBXGroup;
 			children = (
 				781BC77A2B07ED62000D779A /* AddTargetProtocol.swift */,
+				78F102F82B14B465003774D2 /* ModalDelegate.swift */,
+				780079722B156230000A58BD /* PushableTransition.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -385,6 +427,8 @@
 				781BC7602B050678000D779A /* UIImage.swift */,
 				781BC7622B05091C000D779A /* UIButton.swift */,
 				788EB12F2B11CC9800162793 /* String.swift */,
+				780079702B14ED9F000A58BD /* CALayer.swift */,
+				780079782B15F854000A58BD /* Notification.Name.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -392,9 +436,9 @@
 		78C0B67A2B026CCA00314FE0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7898964D2B0B60FC00D27948 /* SeSACError.swift */,
 				781BC7682B050BF2000D779A /* RequestAPI.swift */,
 				781BC76A2B050C01000D779A /* ResponseAPI.swift */,
-				7898964D2B0B60FC00D27948 /* SeSACError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -460,6 +504,16 @@
 				78F102DB2B140D7B003774D2 /* LoadingVC.swift */,
 			);
 			path = Loading;
+			sourceTree = "<group>";
+		};
+		78F102F32B14A462003774D2 /* BottomSheet */ = {
+			isa = PBXGroup;
+			children = (
+				78F102F42B14A48D003774D2 /* BottomSheetView.swift */,
+				78F102F62B14A495003774D2 /* BottomSheetVC.swift */,
+				780079652B14D65F000A58BD /* MenuList */,
+			);
+			path = BottomSheet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -594,6 +648,7 @@
 				7898964E2B0B60FC00D27948 /* SeSACError.swift in Sources */,
 				781BC7102B0387E0000D779A /* ProfileViewModel.swift in Sources */,
 				781BC7652B050995000D779A /* SeSACAPIManager.swift in Sources */,
+				78F102F72B14A495003774D2 /* BottomSheetVC.swift in Sources */,
 				781BC77D2B07F173000D779A /* CustomTextField.swift in Sources */,
 				781BC7402B04E867000D779A /* EmailView.swift in Sources */,
 				781BC7462B04E889000D779A /* PWVC.swift in Sources */,
@@ -608,18 +663,23 @@
 				781BC7612B050678000D779A /* UIImage.swift in Sources */,
 				781BC7482B04E894000D779A /* NicknameView.swift in Sources */,
 				78C0B6872B02731400314FE0 /* SignInVC.swift in Sources */,
+				780079642B14B9B1000A58BD /* MenuListButtonView.swift in Sources */,
 				781BC7322B04BFD9000D779A /* BaseView.swift in Sources */,
 				781BC6FA2B0383D3000D779A /* HomeView.swift in Sources */,
 				781BC7072B03871E000D779A /* SearchVC.swift in Sources */,
+				78F102F22B149B90003774D2 /* HighlightedButton.swift in Sources */,
 				78C0B6832B026D3E00314FE0 /* HapticManager.swift in Sources */,
+				780079712B14ED9F000A58BD /* CALayer.swift in Sources */,
 				781BC70C2B0387CE000D779A /* ProfileView.swift in Sources */,
 				78DB5AB32B0912BB00AB1357 /* AppManager.swift in Sources */,
+				780079682B14D6D7000A58BD /* SetPersonalView.swift in Sources */,
 				781BC7522B04E8BD000D779A /* BirthVC.swift in Sources */,
 				78C0B6652B026A9400314FE0 /* SceneDelegate.swift in Sources */,
 				781BC76B2B050C01000D779A /* ResponseAPI.swift in Sources */,
 				781BC6FE2B0383E4000D779A /* HomeViewModel.swift in Sources */,
 				78F102D72B138337003774D2 /* LogInStateManager.swift in Sources */,
 				781BC74A2B04E89B000D779A /* NicknameVC.swift in Sources */,
+				7800796A2B14D6DF000A58BD /* SetPersonalVC.swift in Sources */,
 				781BC70E2B0387D7000D779A /* ProfileVC.swift in Sources */,
 				78C0B68F2B02746F00314FE0 /* SeSAC_API.swift in Sources */,
 				781BC74C2B04E8A3000D779A /* TelView.swift in Sources */,
@@ -630,6 +690,10 @@
 				781BC7782B07E40F000D779A /* BorderButton.swift in Sources */,
 				78C0B6852B02730B00314FE0 /* SignInView.swift in Sources */,
 				781BC7672B050B16000D779A /* SeSACAPI.swift in Sources */,
+				780079732B156230000A58BD /* PushableTransition.swift in Sources */,
+				78F102F92B14B465003774D2 /* ModalDelegate.swift in Sources */,
+				780079792B15F854000A58BD /* Notification.Name.swift in Sources */,
+				78F102F52B14A48D003774D2 /* BottomSheetView.swift in Sources */,
 				781BC77B2B07ED62000D779A /* AddTargetProtocol.swift in Sources */,
 				781BC7342B04BFE1000D779A /* BaseVC.swift in Sources */,
 				78C0B68B2B02735C00314FE0 /* Constants.swift in Sources */,

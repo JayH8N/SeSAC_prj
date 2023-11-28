@@ -15,7 +15,7 @@ final class BorderButton: UIButton {
         super.init(frame: .zero)
         
         setTitle(title, for: .normal)
-        titleLabel?.font = Constants.Font.themeFont
+        titleLabel?.font = Constants.Font.ButtonFont
         setTitleColor(Constants.Color.LightGreen, for: .normal)
         backgroundColor = .clear
         layer.borderColor = Constants.Color.LightGreen.cgColor

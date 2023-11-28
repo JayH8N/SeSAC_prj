@@ -19,7 +19,7 @@ final class LoadingView: BaseView {
     
     private let titleLabel = UILabel().then {
         $0.text = "SeSACgram"
-        $0.font = UIFont(name: "Didot", size: 37)//Constants.Font.MainTitle
+        $0.font = Constants.Font.MainTitle
     }
     
     private let subTitleFrom = UILabel().then {

@@ -9,7 +9,7 @@ import UIKit
 
 final class LoadingVC: BaseVC {
     
-    let mainView = LoadingView()
+    private let mainView = LoadingView()
     
     override func loadView() {
         self.view = mainView

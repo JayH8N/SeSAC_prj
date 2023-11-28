@@ -13,8 +13,10 @@ class BaseVC: UIViewController {
         super.viewDidLoad()
         configureView()
         setConstraints()
+        setNavigationBar()
     }
     
+    func setNavigationBar() { }
     
     func configureView() { }
     

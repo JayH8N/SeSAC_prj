@@ -19,6 +19,10 @@ class AppManager {
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = false
         UINavigationBar.appearance().tintColor = Constants.Color.DeepGreen
+        UINavigationBar.appearance().titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: Constants.Color.DeepGreen,
+            NSAttributedString.Key.font: Constants.Font.NavigationTitle!
+        ]
     }
     
 }

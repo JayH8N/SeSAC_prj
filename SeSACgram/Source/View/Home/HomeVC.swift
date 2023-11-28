@@ -9,11 +9,15 @@ import UIKit
 
 final class HomeVC: BaseVC {
     
-    let mainView = HomeView()
+    private let mainView = HomeView()
     
     
     override func loadView() {
         self.view = mainView
+    }
+    
+    override func setNavigationBar() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(customView: mainView.appNameLabel)
     }
     
     override func viewDidLoad() {

@@ -21,23 +21,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let loadingVC = LoadingVC()
         self.window?.rootViewController = loadingVC
         self.window?.makeKeyAndVisible()
-//        LogInStateManager.shared.rootViewControl { value in
-//            if value {
-//                let vc = TabBarVC()
-//                self.window?.rootViewController = UINavigationController(rootViewController: vc)
-//            } else {
-//                let vc = SignInVC()
-//                self.window?.rootViewController = UINavigationController(rootViewController: vc)
-//            }
-//            
-//        }
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-            // 여기에 네트워크 통신 코드 추가
+
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
             LogInStateManager.shared.rootViewControl { value in
                 DispatchQueue.main.async {
                     if value {
                         let vc = TabBarVC()
-                        self.window?.rootViewController = UINavigationController(rootViewController: vc)
+                        self.window?.rootViewController = vc
                     } else {
                         let vc = SignInVC()
                         self.window?.rootViewController = UINavigationController(rootViewController: vc)

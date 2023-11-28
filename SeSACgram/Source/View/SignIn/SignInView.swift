@@ -12,7 +12,7 @@ import NVActivityIndicatorView
 
 final class SignInView: BaseView {
     
-    let logoImage = UIImageView().then {
+    private let logoImage = UIImageView().then {
         $0.image = Constants.Image.SeSAC_Logo
     }
     
@@ -21,7 +21,7 @@ final class SignInView: BaseView {
     let pwTextField = CustomTextField(placeholder: "비밀번호",
                                       style: .pw)
     
-    lazy var loginTextFieldStackView = UIStackView(arrangedSubviews: [emailTextField, pwTextField]).then {
+    private lazy var loginTextFieldStackView = UIStackView(arrangedSubviews: [emailTextField, pwTextField]).then {
         $0.axis = .vertical
         $0.spacing = 20
         $0.distribution = .fillEqually
