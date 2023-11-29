@@ -10,8 +10,6 @@ import SnapKit
 
 final class ProfileView: BaseView {
     
-    let withdrawButton = UIButton.responsiveButton(title: "탈퇴", color: Constants.Color.DeepGreen , isEnable: true)
-    
     let nickNameLabel = UILabel().then {
         $0.text = "닉네임"
         $0.font = Constants.Font.NickNameFont
@@ -27,16 +25,9 @@ final class ProfileView: BaseView {
     
     override func configureView() {
         //self.backgroundColor = .clear
-        addSubview(withdrawButton)
     }
     
     override func setConstraints() {
-        withdrawButton.snp.makeConstraints {
-            $0.center.equalToSuperview()
-            $0.width.equalTo(60)
-            $0.height.equalTo(55)
-        }
-        
         menuButton.snp.makeConstraints {
             $0.size.equalTo(40)
         }

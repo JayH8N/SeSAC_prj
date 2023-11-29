@@ -30,7 +30,7 @@ class UserDefaultsHelper {
     private init() { }
 
     enum Key: String {
-        case authenticationToken
+        case accessToken
         case refreshToken
         case email
         case pw
@@ -39,10 +39,10 @@ class UserDefaultsHelper {
         case isLogIn
     }
     
-    @HoonDefaults(key: Key.authenticationToken.rawValue, defaultValue: "Token")
-    var authenticationToken: String
+    @HoonDefaults(key: Key.accessToken.rawValue, defaultValue: "NonToken")
+    var accessToken: String
 
-    @HoonDefaults(key: Key.refreshToken.rawValue, defaultValue: "RefreshToken")
+    @HoonDefaults(key: Key.refreshToken.rawValue, defaultValue: "NonToken")
     var refreshToken: String
     
     @HoonDefaults(key: Key.email.rawValue, defaultValue: "Email")
@@ -59,4 +59,12 @@ class UserDefaultsHelper {
     
     @HoonDefaults(key: Key.isLogIn.rawValue, defaultValue: false)
     var isLogIn: Bool
+    
+    func removeAccessToken() {
+        accessToken = "NonToken"
+    }
+    func removeRefreshToken() {
+        refreshToken = "NonToken"
+    }
 }
+

@@ -16,7 +16,7 @@ enum SeSACAPI {
     case withdraw
     
     func addHeaders() -> [String: String] {
-        let authToken = UserDefaultsHelper.shared.authenticationToken
+        let authToken = UserDefaultsHelper.shared.accessToken
         var headers: [String: String] = ["SesacKey": SeSAC_API.apiKey,
                                          "Authorization": authToken ]
         

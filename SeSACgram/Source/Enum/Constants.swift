@@ -15,6 +15,7 @@ enum Constants {
         static let Appearance = UIColor(named: "AppearanceColor")
         static let AppearanceModal = UIColor(named: "AppearanceModal")
         static let AppearanceObject = UIColor(named: "AppearanceObject")
+        static let Red = UIColor(red: 200/255, green: 58/255, blue: 59/255, alpha: 1)
     }
     
     enum Image {
@@ -26,6 +27,7 @@ enum Constants {
         static let OpenEye = UIImage(systemName: "eye")
         static let CloseEye = UIImage(systemName: "eye.slash")
         static let Gear = "gear"
+        static let Arroaw = UIImage(systemName: "chevron.right")
     }
     
     enum Font {
@@ -49,6 +51,7 @@ enum Constants {
         static let textFieldHeight: Int = 54
         static let buttonHeight: Int = 44
         static let menuListHeight: Int = 44
+        static let tableViewheight: CGFloat = 44
     }
     
     

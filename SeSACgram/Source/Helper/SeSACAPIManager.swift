@@ -70,7 +70,7 @@ final class APIManager {
                 if statusCode == 200 {
                     print("==로그인 성공==")
                     let result = try! JSONDecoder().decode(LoginResponse.self, from: value.data)
-                    UserDefaultsHelper.shared.authenticationToken = result.token
+                    UserDefaultsHelper.shared.accessToken = result.token
                     UserDefaultsHelper.shared.refreshToken = result.refreshToken
                     completion(.success(result))
                 }
