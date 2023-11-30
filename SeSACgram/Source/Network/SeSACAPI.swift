@@ -18,7 +18,7 @@ enum SeSACAPI {
     func addHeaders() -> [String: String] {
         let authToken = UserDefaultsHelper.shared.accessToken
         var headers: [String: String] = ["SesacKey": SeSAC_API.apiKey,
-                                         "Authorization": authToken ]
+                                         "Authorization": authToken! ]
         
         switch self {
         case .tokenRefresh:
@@ -34,7 +34,7 @@ enum SeSACAPI {
 extension SeSACAPI: TargetType {
     
     var baseURL: URL {
-        URL(string: SeSAC_API.baseURL)!
+        URL(string: SeSAC_API.testURL)!
     }
     
     var path: String {
@@ -82,5 +82,11 @@ extension SeSACAPI: TargetType {
         case .tokenRefresh, .withdraw:
             return addHeaders()
         }
+    }
+}
+
+extension SeSACAPI {
+    var validationType: ValidationType {
+        return .successCodes
     }
 }

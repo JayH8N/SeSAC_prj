@@ -112,8 +112,11 @@ final class EmailVC: BaseVC {
             switch result {
             case .success:
                 isValidSubject.onNext(true)
-            case .failure:
+            case .failure(let error):
                 isValidSubject.onNext(false)
+                if let error = error as? EmailCheckError {
+                    print("\(error.errorDescription)")
+                }
             }
         }
     }

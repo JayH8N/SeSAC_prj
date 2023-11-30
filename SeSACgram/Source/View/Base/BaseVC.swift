@@ -14,6 +14,7 @@ class BaseVC: UIViewController {
         configureView()
         setConstraints()
         setNavigationBar()
+        NotificationCenter.default.addObserver(self, selector: #selector(getReadToBackLogIn), name: Notification.Name.backToLogIn, object: nil)
     }
     
     func setNavigationBar() { }
@@ -54,6 +55,22 @@ class BaseVC: UIViewController {
         alert.addAction(ok)
         
         present(alert, animated: true, completion: nil)
+    }
+    
+    @objc private func getReadToBackLogIn() {
+        showAlert1Button(title: "로그인 세션 만료", message: "다시 로그인 해주세요") { [weak self] _ in
+            self?.returnToLogIn()
+        }
+    }
+    
+    func returnToLogIn() {
+        UserDefaultsHelper.shared.isLogIn = false
+        UserDefaultsHelper.shared.removeAccessToken()
+        DispatchQueue.main.async {
+            let nav = UINavigationController(rootViewController: SignInVC())
+            self.view?.window?.rootViewController = nav
+            self.view.window?.makeKeyAndVisible()
+        }
     }
 }
 

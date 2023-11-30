@@ -28,7 +28,7 @@ final class SignInVC: BaseVC {
         addTargets()
         setNotificatioin()
     }
-
+    
     deinit {
         print("====\(Self.self)====Deinit")
     }
@@ -53,10 +53,10 @@ final class SignInVC: BaseVC {
         self.view.makeToast("회원가입을 축하드립니다\n로그인을 진행해주세요", duration: 2.0, position: .center, title: nil, image: nil, style: style, completion: nil)
     }
     
-//    @objc private func showByeToastMessage() {
-//        print("ByeMessage실행됨")
-//        self.view.makeToast("탈퇴가 완료되었습니다.\n다음에도 찾아주세요!", duration: 2.0, position: .center, title: nil, image: nil, style: style, completion: nil)
-//    }
+    //    @objc private func showByeToastMessage() {
+    //        print("ByeMessage실행됨")
+    //        self.view.makeToast("탈퇴가 완료되었습니다.\n다음에도 찾아주세요!", duration: 2.0, position: .center, title: nil, image: nil, style: style, completion: nil)
+    //    }
     
 }
 
@@ -76,9 +76,12 @@ extension SignInVC: AddTargetProtocol {
         let data = LogIn(email: email, password: pw)
         APIManager.shared.login(data: data) { result in
             switch result {
-            case .success( _):
-                UserDefaultsHelper.shared.isLogIn = true
+            case .success(let value):
+                print("==로그인 성공==")
                 self.indicatorEffect()
+                UserDefaultsHelper.shared.isLogIn = true
+                UserDefaultsHelper.shared.accessToken = value.token
+                UserDefaultsHelper.shared.refreshToken = value.refreshToken
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
                     self.view?.window?.rootViewController = TabBarVC()

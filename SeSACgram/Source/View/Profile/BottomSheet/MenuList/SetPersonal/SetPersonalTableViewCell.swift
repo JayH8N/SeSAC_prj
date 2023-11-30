@@ -24,6 +24,7 @@ final class SetPersonalTableViewCell: BaseTableViewCell {
     }
     lazy var stackView = UIStackView(arrangedSubviews: [iconImage, title]).then {
         $0.axis = .horizontal
+        $0.spacing = 20
     }
     
     override var description: String {
@@ -40,9 +41,6 @@ final class SetPersonalTableViewCell: BaseTableViewCell {
         iconImage.snp.makeConstraints {
             $0.leading.equalToSuperview().inset(12)
             $0.size.equalTo(contentView.snp.height).multipliedBy(0.8)
-        }
-        title.snp.makeConstraints {
-            $0.leading.equalTo(iconImage.snp.trailing).offset(20)
         }
         stackView.snp.makeConstraints {
             $0.centerY.equalToSuperview()

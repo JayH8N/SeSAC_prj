@@ -40,10 +40,10 @@ class UserDefaultsHelper {
     }
     
     @HoonDefaults(key: Key.accessToken.rawValue, defaultValue: "NonToken")
-    var accessToken: String
+    var accessToken: String?
 
     @HoonDefaults(key: Key.refreshToken.rawValue, defaultValue: "NonToken")
-    var refreshToken: String
+    var refreshToken: String?
     
     @HoonDefaults(key: Key.email.rawValue, defaultValue: "Email")
     var email: String

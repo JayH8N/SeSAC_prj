@@ -37,6 +37,7 @@ final class BirthVC: BaseVC {
         APIManager.shared.signUp(data: data) { result in
             switch result {
             case .success( _):
+                print("==회원가입 성공==")
                 DispatchQueue.main.async {
                     self.navigationController?.popToRootViewController(animated: true)
                 }

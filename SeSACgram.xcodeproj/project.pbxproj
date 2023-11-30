@@ -43,8 +43,6 @@
 		781BC74E2B04E8AA000D779A /* TelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BC74D2B04E8AA000D779A /* TelVC.swift */; };
 		781BC7502B04E8B3000D779A /* BirthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BC74F2B04E8B3000D779A /* BirthView.swift */; };
 		781BC7522B04E8BD000D779A /* BirthVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781BC7512B04E8BD000D779A /* BirthVC.swift */; };
-		781BC7552B04FD99000D779A /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 781BC7542B04FD99000D779A /* Moya */; };
-		781BC7572B04FD99000D779A /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 781BC7562B04FD99000D779A /* RxMoya */; };
 		781BC75A2B04FDC0000D779A /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 781BC7592B04FDC0000D779A /* Then */; };
 		781BC75D2B04FF22000D779A /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 781BC75C2B04FF22000D779A /* RxCocoa */; };
 		781BC75F2B04FF22000D779A /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 781BC75E2B04FF22000D779A /* RxSwift */; };
@@ -76,6 +74,9 @@
 		78C0B69A2B031B9B00314FE0 /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = 78C0B6992B031B9B00314FE0 /* FirebaseCrashlytics */; };
 		78C0B69C2B031B9B00314FE0 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 78C0B69B2B031B9B00314FE0 /* FirebaseMessaging */; };
 		78CF5B4D2B174797007468B2 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CF5B4C2B174797007468B2 /* Menu.swift */; };
+		78CF5B522B17872B007468B2 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 78CF5B512B17872B007468B2 /* Moya */; };
+		78CF5B542B17872B007468B2 /* RxMoya in Frameworks */ = {isa = PBXBuildFile; productRef = 78CF5B532B17872B007468B2 /* RxMoya */; };
+		78CF5B582B178938007468B2 /* AuthInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78CF5B572B178938007468B2 /* AuthInterceptor.swift */; };
 		78DB5AAF2B089E0A00AB1357 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 78DB5AAE2B089E0A00AB1357 /* IQKeyboardManagerSwift */; };
 		78DB5AB12B09106800AB1357 /* SignUPTitleLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DB5AB02B09106800AB1357 /* SignUPTitleLabel.swift */; };
 		78DB5AB32B0912BB00AB1357 /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78DB5AB22B0912BB00AB1357 /* AppManager.swift */; };
@@ -152,6 +153,7 @@
 		78C0B68C2B02744300314FE0 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		78C0B68E2B02746F00314FE0 /* SeSAC_API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSAC_API.swift; sourceTree = "<group>"; };
 		78CF5B4C2B174797007468B2 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		78CF5B572B178938007468B2 /* AuthInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInterceptor.swift; sourceTree = "<group>"; };
 		78DB5AB02B09106800AB1357 /* SignUPTitleLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUPTitleLabel.swift; sourceTree = "<group>"; };
 		78DB5AB22B0912BB00AB1357 /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 		78F102D62B138337003774D2 /* LogInStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInStateManager.swift; sourceTree = "<group>"; };
@@ -168,20 +170,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78CF5B542B17872B007468B2 /* RxMoya in Frameworks */,
 				7898966E2B0DF96300D27948 /* Toast in Frameworks */,
 				781BC75D2B04FF22000D779A /* RxCocoa in Frameworks */,
 				78F102E52B14238F003774D2 /* NVActivityIndicatorView in Frameworks */,
 				78C0B69C2B031B9B00314FE0 /* FirebaseMessaging in Frameworks */,
 				781BC75F2B04FF22000D779A /* RxSwift in Frameworks */,
 				78C0B69A2B031B9B00314FE0 /* FirebaseCrashlytics in Frameworks */,
-				781BC7552B04FD99000D779A /* Moya in Frameworks */,
 				781BC75A2B04FDC0000D779A /* Then in Frameworks */,
 				78C0B6962B031B9B00314FE0 /* FirebaseAnalytics in Frameworks */,
 				78F102E72B14238F003774D2 /* NVActivityIndicatorViewExtended in Frameworks */,
-				781BC7572B04FD99000D779A /* RxMoya in Frameworks */,
 				78C0B6982B031B9B00314FE0 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				78F102D52B13155C003774D2 /* NVActivityIndicatorView in Frameworks */,
 				78DB5AAF2B089E0A00AB1357 /* IQKeyboardManagerSwift in Frameworks */,
+				78CF5B522B17872B007468B2 /* Moya in Frameworks */,
 				781BC7372B04DB0C000D779A /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,14 +370,6 @@
 			path = Protocol;
 			sourceTree = "<group>";
 		};
-		789896612B0CCFC200D27948 /* User */ = {
-			isa = PBXGroup;
-			children = (
-				781BC7662B050B16000D779A /* SeSACAPI.swift */,
-			);
-			path = User;
-			sourceTree = "<group>";
-		};
 		78C0B6562B026A9400314FE0 = {
 			isa = PBXGroup;
 			children = (
@@ -494,7 +488,8 @@
 			isa = PBXGroup;
 			children = (
 				78C0B68E2B02746F00314FE0 /* SeSAC_API.swift */,
-				789896612B0CCFC200D27948 /* User */,
+				781BC7662B050B16000D779A /* SeSACAPI.swift */,
+				78CF5B572B178938007468B2 /* AuthInterceptor.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -559,8 +554,6 @@
 				78C0B6992B031B9B00314FE0 /* FirebaseCrashlytics */,
 				78C0B69B2B031B9B00314FE0 /* FirebaseMessaging */,
 				781BC7362B04DB0C000D779A /* SnapKit */,
-				781BC7542B04FD99000D779A /* Moya */,
-				781BC7562B04FD99000D779A /* RxMoya */,
 				781BC7592B04FDC0000D779A /* Then */,
 				781BC75C2B04FF22000D779A /* RxCocoa */,
 				781BC75E2B04FF22000D779A /* RxSwift */,
@@ -569,6 +562,8 @@
 				78F102D42B13155C003774D2 /* NVActivityIndicatorView */,
 				78F102E42B14238F003774D2 /* NVActivityIndicatorView */,
 				78F102E62B14238F003774D2 /* NVActivityIndicatorViewExtended */,
+				78CF5B512B17872B007468B2 /* Moya */,
+				78CF5B532B17872B007468B2 /* RxMoya */,
 			);
 			productName = SeSACgram;
 			productReference = 78C0B65F2B026A9400314FE0 /* SeSACgram.app */;
@@ -601,12 +596,12 @@
 			packageReferences = (
 				78C0B6942B031B9B00314FE0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				781BC7352B04DB0C000D779A /* XCRemoteSwiftPackageReference "SnapKit" */,
-				781BC7532B04FD99000D779A /* XCRemoteSwiftPackageReference "Moya" */,
 				781BC7582B04FDC0000D779A /* XCRemoteSwiftPackageReference "Then" */,
 				781BC75B2B04FF22000D779A /* XCRemoteSwiftPackageReference "RxSwift" */,
 				78DB5AAD2B089E0A00AB1357 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				7898966C2B0DF96300D27948 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				78F102D32B13155C003774D2 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
+				78CF5B502B17872B007468B2 /* XCRemoteSwiftPackageReference "Moya" */,
 			);
 			productRefGroup = 78C0B6602B026A9400314FE0 /* Products */;
 			projectDirPath = "";
@@ -703,6 +698,7 @@
 				781BC74A2B04E89B000D779A /* NicknameVC.swift in Sources */,
 				7800796A2B14D6DF000A58BD /* SetPersonalVC.swift in Sources */,
 				781BC70E2B0387D7000D779A /* ProfileVC.swift in Sources */,
+				78CF5B582B178938007468B2 /* AuthInterceptor.swift in Sources */,
 				78C0B68F2B02746F00314FE0 /* SeSAC_API.swift in Sources */,
 				781BC74C2B04E8A3000D779A /* TelView.swift in Sources */,
 				781BC74E2B04E8AA000D779A /* TelVC.swift in Sources */,
@@ -960,14 +956,6 @@
 				minimumVersion = 5.6.0;
 			};
 		};
-		781BC7532B04FD99000D779A /* XCRemoteSwiftPackageReference "Moya" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Moya/Moya.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 15.0.3;
-			};
-		};
 		781BC7582B04FDC0000D779A /* XCRemoteSwiftPackageReference "Then" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/devxoul/Then.git";
@@ -1000,6 +988,14 @@
 				minimumVersion = 10.17.0;
 			};
 		};
+		78CF5B502B17872B007468B2 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 15.0.3;
+			};
+		};
 		78DB5AAD2B089E0A00AB1357 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
@@ -1023,16 +1019,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 781BC7352B04DB0C000D779A /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
-		};
-		781BC7542B04FD99000D779A /* Moya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 781BC7532B04FD99000D779A /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = Moya;
-		};
-		781BC7562B04FD99000D779A /* RxMoya */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 781BC7532B04FD99000D779A /* XCRemoteSwiftPackageReference "Moya" */;
-			productName = RxMoya;
 		};
 		781BC7592B04FDC0000D779A /* Then */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -1073,6 +1059,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 78C0B6942B031B9B00314FE0 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseMessaging;
+		};
+		78CF5B512B17872B007468B2 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 78CF5B502B17872B007468B2 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		78CF5B532B17872B007468B2 /* RxMoya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 78CF5B502B17872B007468B2 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = RxMoya;
 		};
 		78DB5AAE2B089E0A00AB1357 /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
