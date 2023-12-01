@@ -45,7 +45,10 @@ extension UIButton {
         HapticManager.shared.viberateForInteraction(style: .light)
     }
     
-    
-    
+    func setButtonImage(size: CGFloat, systemName: String, state: UIControl.State) {
+        let buttonImage = UIImage.SymbolConfiguration(pointSize: size, weight: .light, scale: .small)
+        let image = UIImage(systemName: systemName, withConfiguration: buttonImage)
+        setImage(image, for: state)
+    }
     
 }

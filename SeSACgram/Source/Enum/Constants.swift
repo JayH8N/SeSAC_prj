@@ -28,6 +28,9 @@ enum Constants {
         static let CloseEye = UIImage(systemName: "eye.slash")
         static let Gear = "gear"
         static let Arroaw = UIImage(systemName: "chevron.right")
+        static let Post = "plus.app"
+        static let PostFill = "plus.app.fill"
+        static let Camera = UIImage(systemName: "camera.fill")
     }
     
     enum Font {
@@ -35,6 +38,7 @@ enum Constants {
         static let HomeTitle = UIFont(name: "Didot", size: 30)
         static let HeaderTitle: UIFont = .systemFont(ofSize: 28, weight: .bold)
         static let HeaderSubTitle: UIFont = .systemFont(ofSize: 15, weight: .thin)
+        static let PostContentTitle: UIFont = .systemFont(ofSize: 18, weight: .semibold)
         static let BodySize: UIFont = .systemFont(ofSize: 13, weight: .regular)
         static let ButtonFont = UIFont(name: "omyu pretty", size: 22)
         static let NickNameFont = UIFont(name: "omyu pretty", size: 35)
@@ -45,6 +49,7 @@ enum Constants {
     enum Size {
         static let buttonCornerRadius: CGFloat = 22
         static let textFieldCornerRadius: CGFloat = 10
+        static let cellCornerRadius: CGFloat = 15
     }
     
     enum Frame {
