@@ -59,6 +59,10 @@
 		783A879D2B19DD1D0085AC29 /* ImagePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A879C2B19DD1D0085AC29 /* ImagePickerCell.swift */; };
 		783A879F2B19F8500085AC29 /* AddedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A879E2B19F8500085AC29 /* AddedImageCell.swift */; };
 		783A87A12B19FC000085AC29 /* CustomTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A87A02B19FC000085AC29 /* CustomTextView.swift */; };
+		783A87D22B1C58630085AC29 /* YPImagePicker in Frameworks */ = {isa = PBXBuildFile; productRef = 783A87D12B1C58630085AC29 /* YPImagePicker */; };
+		783A87D42B1C6CBE0085AC29 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A87D32B1C6CBE0085AC29 /* HomeCell.swift */; };
+		783A87D62B1C72580085AC29 /* ProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A87D52B1C72580085AC29 /* ProfileImage.swift */; };
+		783A87D82B1C77DB0085AC29 /* LikedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A87D72B1C77DB0085AC29 /* LikedButton.swift */; };
 		788EB1302B11CC9800162793 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788EB12F2B11CC9800162793 /* String.swift */; };
 		7898964E2B0B60FC00D27948 /* SeSACError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7898964D2B0B60FC00D27948 /* SeSACError.swift */; };
 		7898966E2B0DF96300D27948 /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 7898966D2B0DF96300D27948 /* Toast */; };
@@ -148,6 +152,9 @@
 		783A879C2B19DD1D0085AC29 /* ImagePickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerCell.swift; sourceTree = "<group>"; };
 		783A879E2B19F8500085AC29 /* AddedImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedImageCell.swift; sourceTree = "<group>"; };
 		783A87A02B19FC000085AC29 /* CustomTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextView.swift; sourceTree = "<group>"; };
+		783A87D32B1C6CBE0085AC29 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
+		783A87D52B1C72580085AC29 /* ProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImage.swift; sourceTree = "<group>"; };
+		783A87D72B1C77DB0085AC29 /* LikedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikedButton.swift; sourceTree = "<group>"; };
 		788EB12F2B11CC9800162793 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		7898964D2B0B60FC00D27948 /* SeSACError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSACError.swift; sourceTree = "<group>"; };
 		78C0B65F2B026A9400314FE0 /* SeSACgram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSACgram.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -191,6 +198,7 @@
 				78C0B69C2B031B9B00314FE0 /* FirebaseMessaging in Frameworks */,
 				781BC75F2B04FF22000D779A /* RxSwift in Frameworks */,
 				78C0B69A2B031B9B00314FE0 /* FirebaseCrashlytics in Frameworks */,
+				783A87D22B1C58630085AC29 /* YPImagePicker in Frameworks */,
 				781BC75A2B04FDC0000D779A /* Then in Frameworks */,
 				78C0B6962B031B9B00314FE0 /* FirebaseAnalytics in Frameworks */,
 				78F102E72B14238F003774D2 /* NVActivityIndicatorViewExtended in Frameworks */,
@@ -261,6 +269,7 @@
 				781BC6F92B0383D3000D779A /* HomeView.swift */,
 				781BC6FB2B0383DB000D779A /* HomeVC.swift */,
 				781BC6FD2B0383E4000D779A /* HomeViewModel.swift */,
+				783A87D32B1C6CBE0085AC29 /* HomeCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -372,6 +381,8 @@
 				78DB5AB02B09106800AB1357 /* SignUPTitleLabel.swift */,
 				78F102F12B149B90003774D2 /* HighlightedButton.swift */,
 				780079632B14B9B1000A58BD /* MenuListButtonView.swift */,
+				783A87D52B1C72580085AC29 /* ProfileImage.swift */,
+				783A87D72B1C77DB0085AC29 /* LikedButton.swift */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -593,6 +604,7 @@
 				78F102E62B14238F003774D2 /* NVActivityIndicatorViewExtended */,
 				78CF5B512B17872B007468B2 /* Moya */,
 				78CF5B532B17872B007468B2 /* RxMoya */,
+				783A87D12B1C58630085AC29 /* YPImagePicker */,
 			);
 			productName = SeSACgram;
 			productReference = 78C0B65F2B026A9400314FE0 /* SeSACgram.app */;
@@ -631,6 +643,7 @@
 				7898966C2B0DF96300D27948 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				78F102D32B13155C003774D2 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 				78CF5B502B17872B007468B2 /* XCRemoteSwiftPackageReference "Moya" */,
+				783A87D02B1C58630085AC29 /* XCRemoteSwiftPackageReference "YPImagePicker" */,
 			);
 			productRefGroup = 78C0B6602B026A9400314FE0 /* Products */;
 			projectDirPath = "";
@@ -711,11 +724,14 @@
 				78C0B6872B02731400314FE0 /* SignInVC.swift in Sources */,
 				780079642B14B9B1000A58BD /* MenuListButtonView.swift in Sources */,
 				781BC7322B04BFD9000D779A /* BaseView.swift in Sources */,
+				783A87D62B1C72580085AC29 /* ProfileImage.swift in Sources */,
+				783A87D82B1C77DB0085AC29 /* LikedButton.swift in Sources */,
 				781BC6FA2B0383D3000D779A /* HomeView.swift in Sources */,
 				781BC7072B03871E000D779A /* SearchVC.swift in Sources */,
 				78F102F22B149B90003774D2 /* HighlightedButton.swift in Sources */,
 				783A87A12B19FC000085AC29 /* CustomTextView.swift in Sources */,
 				78C0B6832B026D3E00314FE0 /* HapticManager.swift in Sources */,
+				783A87D42B1C6CBE0085AC29 /* HomeCell.swift in Sources */,
 				783A879D2B19DD1D0085AC29 /* ImagePickerCell.swift in Sources */,
 				780079712B14ED9F000A58BD /* CALayer.swift in Sources */,
 				781BC70C2B0387CE000D779A /* ProfileView.swift in Sources */,
@@ -1008,6 +1024,14 @@
 				minimumVersion = 6.6.0;
 			};
 		};
+		783A87D02B1C58630085AC29 /* XCRemoteSwiftPackageReference "YPImagePicker" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Yummypets/YPImagePicker.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.2.2;
+			};
+		};
 		7898966C2B0DF96300D27948 /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/scalessec/Toast-Swift.git";
@@ -1070,6 +1094,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 781BC75B2B04FF22000D779A /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		783A87D12B1C58630085AC29 /* YPImagePicker */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 783A87D02B1C58630085AC29 /* XCRemoteSwiftPackageReference "YPImagePicker" */;
+			productName = YPImagePicker;
 		};
 		7898966D2B0DF96300D27948 /* Toast */ = {
 			isa = XCSwiftPackageProductDependency;

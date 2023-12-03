@@ -40,6 +40,7 @@ enum Constants {
         static let HeaderSubTitle: UIFont = .systemFont(ofSize: 15, weight: .thin)
         static let PostContentTitle: UIFont = .systemFont(ofSize: 18, weight: .semibold)
         static let BodySize: UIFont = .systemFont(ofSize: 13, weight: .regular)
+        static let HomeNickname: UIFont = .systemFont(ofSize: 15, weight: .semibold)
         static let ButtonFont = UIFont(name: "omyu pretty", size: 22)
         static let NickNameFont = UIFont(name: "omyu pretty", size: 35)
         static let TypicalFont = UIFont(name: "omyu pretty", size: 19)

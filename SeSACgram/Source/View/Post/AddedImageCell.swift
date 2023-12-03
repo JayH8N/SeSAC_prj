@@ -15,7 +15,9 @@ class AddedImageCell: BaseCollectionViewCell {
         $0.contentMode = .scaleAspectFill
     }
     
-    private let removeButton = UIButton.makeHighlightedButton(withImageName: "xmark.circle.fill", size: 30)
+    private let removeButton = UIButton.makeHighlightedButton(withImageName: "xmark.circle.fill", size: 30).then {
+        $0.tintColor = .gray
+    }
     
     override var description: String {
         String(describing: Self.self)
@@ -38,8 +40,8 @@ class AddedImageCell: BaseCollectionViewCell {
             $0.edges.equalToSuperview()
         }
         removeButton.snp.makeConstraints {
-            $0.top.equalTo(self.snp.top).inset(-5)
-            $0.trailing.equalTo(self.snp.trailing).inset(-5)
+            $0.top.equalTo(self.snp.top).inset(-10)
+            $0.trailing.equalTo(self.snp.trailing).inset(-10)
         }
     }
     
