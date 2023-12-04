@@ -7,8 +7,11 @@
 
 import UIKit
 import YPImagePicker
+import RxCocoa
+import RxSwift
 
 final class PostVC: BaseVC, UINavigationControllerDelegate {
+    private let disposeBag = DisposeBag()
     private var selectedImage: [UIImage] = []
     
     private let mainView = PostView()
@@ -23,6 +26,7 @@ final class PostVC: BaseVC, UINavigationControllerDelegate {
         self.hideKeyboardWhenTappedAround()
         mainView.imagePickerCollectionView.delegate = self
         mainView.imagePickerCollectionView.dataSource = self
+        bind()
     }
     
     private func initNav() {
@@ -36,6 +40,27 @@ final class PostVC: BaseVC, UINavigationControllerDelegate {
     
     @objc private func cancelButtonTapped() {
         dismiss(animated: true)
+    }
+    
+    private func bind() {
+        let title = mainView.titleTextField.rx.text.orEmpty
+        let contentText = mainView.contentTextView.rx.text.orEmpty
+        
+        let validation = Observable.combineLatest(title, contentText) { first, second in
+            return first.count > 0 && second.count > 0
+        }
+        
+        validation
+            .bind(to: mainView.postButton.rx.isEnabled)
+            .disposed(by: disposeBag)
+        
+        validation
+            .subscribe(with: self) { owner, value in
+                owner.mainView.postButton.setBackgroundColor(value ? Constants.Color.DeepGreen : UIColor.gray
+                                                             , for: .normal)
+            }
+            .disposed(by: disposeBag)
+        
     }
     
     private func presentImagePicker() {

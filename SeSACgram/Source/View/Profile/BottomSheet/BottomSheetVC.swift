@@ -44,12 +44,12 @@ extension BottomSheetVC {
     
     //modalView dismiss
     @objc private func viewTapped() {
-        modalDelegate?.onTapClose()
+        modalDelegate?.onTapClose?()
         dismiss(animated: true, completion: nil)
     }
     //설정 및 개인정보
     @objc private func firstMenuTapped() {
-        modalDelegate?.onTapClose()
+        modalDelegate?.onTapClose?()
         self.dismiss(animated: true) {
             let vc = SetPersonalVC(title: "설정 및 개인정보")
             self.pushDelegate?.push(vc: vc)

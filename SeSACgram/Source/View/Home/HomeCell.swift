@@ -12,8 +12,10 @@ import Then
 
 final class HomeCell: BaseCollectionViewCell {
     
+    weak var presentDelegate: ModalDelegate?
+    
     private let profileBackView = UIView().then {
-        $0.backgroundColor = .lightGray
+        $0.backgroundColor = Constants.Color.Appearance
     }
     
     private let profileImage = ProfileImage(frame: .zero)
@@ -26,17 +28,39 @@ final class HomeCell: BaseCollectionViewCell {
         $0.backgroundColor = .gray
     }
     
-    private let titleBackView = UIView().then {
-        $0.backgroundColor = .black
+    private let pageControl = UIPageControl().then {
+        $0.currentPage = 0
+        $0.numberOfPages = 5//imageNames.count
+        $0.pageIndicatorTintColor = .lightGray // 페이지를 암시하는 동그란 점의 색상
+        $0.currentPageIndicatorTintColor = Constants.Color.LightGreen
     }
     
-    private let likedButton = UIButton().then {
-        $0.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+    private let titleBackView = UIView().then {
+        $0.backgroundColor = Constants.Color.Appearance
+        $0.isUserInteractionEnabled = true
     }
+    
+    private let likedButton = LikedButton()
     
     
     private let title = UILabel().then {
         $0.text = "제목입니다."
+        $0.font = Constants.Font.HomeNickname
+    }
+    
+    private let contentText = UILabel().then {
+        $0.text = "testTexttestTexttestTexttestTexttestTexttestTexttestTexttestTexttestTexttestTexttestTexttestTexttestTexttestTexttestTexttestTexttestTexttestTexttestTexttestTexttestTexttestTexttestTexttestTexttestTexttestTexttestTexttestTexttestText"
+        $0.numberOfLines = 0
+        $0.font = Constants.Font.BodySize
+    }
+    
+    private let commentButton = UILabel().then {
+        let attributedString = NSAttributedString(string: "댓글 보기",
+                                                  attributes: [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue])
+        $0.attributedText = attributedString
+        $0.textColor = UIColor.lightGray
+        $0.font = Constants.Font.BodySize
+        $0.isUserInteractionEnabled = true
     }
     
     override var description: String {
@@ -44,6 +68,7 @@ final class HomeCell: BaseCollectionViewCell {
     }
     
     override func configureView() {
+        tapGeusture()
         contentView.addSubview(profileBackView)
         contentView.addSubview(imageCellCollectionView)
         contentView.addSubview(titleBackView)
@@ -58,6 +83,10 @@ final class HomeCell: BaseCollectionViewCell {
     
     private func setTitleBackView() {
         titleBackView.addSubview(likedButton)
+        titleBackView.addSubview(pageControl)
+        titleBackView.addSubview(title)
+        titleBackView.addSubview(contentText)
+        titleBackView.addSubview(commentButton)
     }
     
     override func setConstraints() {
@@ -89,8 +118,28 @@ final class HomeCell: BaseCollectionViewCell {
         }
         
         likedButton.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(10)
+            $0.top.equalToSuperview().inset(6)
             $0.leading.equalToSuperview().inset(20)
+            $0.size.equalTo(titleBackView.snp.height).multipliedBy(0.25)
+        }
+        pageControl.snp.makeConstraints {
+            $0.top.equalTo(likedButton)
+            $0.centerX.equalToSuperview()
+        }
+        
+        title.snp.makeConstraints {
+            $0.top.equalTo(likedButton.snp.bottom).offset(5)
+            $0.leading.equalTo(likedButton)
+        }
+        
+        contentText.snp.makeConstraints {
+            $0.top.equalTo(title.snp.bottom).offset(0)
+            $0.horizontalEdges.equalToSuperview().inset(20)
+            $0.height.equalToSuperview().multipliedBy(0.33)
+        }
+        commentButton.snp.makeConstraints {
+            $0.top.equalTo(contentText.snp.bottom).offset(2)
+            $0.leading.equalTo(likedButton)
         }
     }
     
@@ -98,5 +147,18 @@ final class HomeCell: BaseCollectionViewCell {
         let layout = UICollectionViewFlowLayout()
         
         return layout
+    }
+
+
+}
+
+extension HomeCell {
+    private func tapGeusture() {
+        let comment = UITapGestureRecognizer(target: self, action: #selector(commentButtonTapped))
+        commentButton.addGestureRecognizer(comment)
+    }
+    
+    @objc private func commentButtonTapped() {
+        self.presentDelegate?.presnet?()
     }
 }

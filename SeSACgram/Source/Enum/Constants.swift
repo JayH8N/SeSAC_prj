@@ -31,6 +31,8 @@ enum Constants {
         static let Post = "plus.app"
         static let PostFill = "plus.app.fill"
         static let Camera = UIImage(systemName: "camera.fill")
+        static let Heart = UIImage(systemName: "heart")
+        static let HeartFill = UIImage(systemName: "heart.fill")
     }
     
     enum Font {
@@ -48,12 +50,14 @@ enum Constants {
     }
     
     enum Size {
+        static let commentCornerRadius: CGFloat = 24
         static let buttonCornerRadius: CGFloat = 22
         static let textFieldCornerRadius: CGFloat = 10
         static let cellCornerRadius: CGFloat = 15
     }
     
     enum Frame {
+        static let commentTextFieldHeight: Int = 48
         static let textFieldHeight: Int = 54
         static let buttonHeight: Int = 44
         static let menuListHeight: Int = 44

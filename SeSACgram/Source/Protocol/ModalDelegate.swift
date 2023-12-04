@@ -5,8 +5,9 @@
 //  Created by hoon on 11/27/23.
 //
 
-import Foundation
+import UIKit
 
-protocol ModalDelegate: AnyObject {
-    func onTapClose()
+@objc protocol ModalDelegate: AnyObject {
+    @objc optional func onTapClose()
+    @objc optional func presnet()
 }
