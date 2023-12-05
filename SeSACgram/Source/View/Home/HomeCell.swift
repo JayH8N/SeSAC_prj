@@ -9,8 +9,15 @@ import UIKit
 import SnapKit
 import Then
 
+import RxSwift
+import RxCocoa
 
 final class HomeCell: BaseCollectionViewCell {
+//MARK: - about RxSwift...
+    private let imageList = PublishRelay<[String]>()
+    private let disposeBag = DisposeBag()
+//
+    
     
     weak var presentDelegate: ModalDelegate?
     
@@ -25,12 +32,17 @@ final class HomeCell: BaseCollectionViewCell {
     }
     
     private lazy var imageCellCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout()).then {
-        $0.backgroundColor = .gray
+        $0.register(ImageCell.self, forCellWithReuseIdentifier: ImageCell().description)
+        $0.isPagingEnabled = true
+        $0.showsHorizontalScrollIndicator = false
+        //🔥테스트용코드 삭제요망
+        $0.delegate = self
+        $0.dataSource = self
     }
     
     private let pageControl = UIPageControl().then {
+        $0.numberOfPages = 5
         $0.currentPage = 0
-        $0.numberOfPages = 5//imageNames.count
         $0.pageIndicatorTintColor = .lightGray // 페이지를 암시하는 동그란 점의 색상
         $0.currentPageIndicatorTintColor = Constants.Color.LightGreen
     }
@@ -62,6 +74,29 @@ final class HomeCell: BaseCollectionViewCell {
         $0.font = Constants.Font.BodySize
         $0.isUserInteractionEnabled = true
     }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        //bind()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+//    private func bind() {
+//        imageList
+//            .bind(to: imageCellCollectionView.rx.items(cellIdentifier: ImageCell().description,
+//                                                       cellType: ImageCell.self)) { row, element, cell in
+//                cell.setImages(url: element)
+//            }
+//                                                       .disposed(by: disposeBag)
+//        
+//        imageList
+//            .map { $0.count }
+//            .bind(to: pageControl.rx.numberOfPages)
+//            .disposed(by: disposeBag)
+//    }
     
     override var description: String {
         return String(describing: Self.self)
@@ -145,10 +180,13 @@ final class HomeCell: BaseCollectionViewCell {
     
     private func layout() -> UICollectionViewLayout {
         let layout = UICollectionViewFlowLayout()
-        
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 0
+        let with = UIScreen.main.bounds.width
+        layout.itemSize = CGSize(width: with, height: with)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         return layout
     }
-
 
 }
 
@@ -161,4 +199,33 @@ extension HomeCell {
     @objc private func commentButtonTapped() {
         self.presentDelegate?.presnet?()
     }
+}
+
+//이미지 스크롤시 페이지컨트롤 업데이트
+extension HomeCell: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let width = scrollView.bounds.size.width
+        let x = scrollView.contentOffset.x + (width / 2.0)
+        
+        let newPage = Int(x / width)
+        if pageControl.currentPage != newPage {
+            pageControl.currentPage = newPage
+        }
+    }
+}
+
+
+//🔥Test용 코드 삭제요망
+extension HomeCell: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ImageCell().description, for: indexPath) as! ImageCell
+        cell.setCell()
+        
+        return cell
+    }
+    
 }

@@ -22,10 +22,10 @@ final class PostVC: BaseVC, UINavigationControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initNav()
-        self.hideKeyboardWhenTappedAround()
         mainView.imagePickerCollectionView.delegate = self
         mainView.imagePickerCollectionView.dataSource = self
+        initNav()
+        self.hideKeyboardWhenTappedAround()
         bind()
     }
     

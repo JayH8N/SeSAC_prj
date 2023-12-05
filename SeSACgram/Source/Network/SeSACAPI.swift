@@ -34,7 +34,7 @@ enum SeSACAPI {
 extension SeSACAPI: TargetType {
     
     var baseURL: URL {
-        URL(string: SeSAC_API.testURL)!
+        URL(string: SeSAC_API.baseURL)!
     }
     
     var path: String {

@@ -15,9 +15,7 @@ class AddedImageCell: BaseCollectionViewCell {
         $0.contentMode = .scaleAspectFill
     }
     
-    private let removeButton = UIButton.makeHighlightedButton(withImageName: "xmark.circle.fill", size: 30).then {
-        $0.tintColor = .gray
-    }
+    private let removeButton = UIButton.makeHighlightedButton(withImageName: "xmark.circle.fill", size: 30)
     
     override var description: String {
         String(describing: Self.self)

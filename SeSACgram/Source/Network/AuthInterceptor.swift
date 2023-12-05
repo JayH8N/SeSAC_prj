@@ -16,7 +16,7 @@ class AuthInterceptor: RequestInterceptor {
     private init() { }
     
     func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
-        guard urlRequest.url?.absoluteString.hasPrefix(SeSAC_API.testURL) == true,
+        guard urlRequest.url?.absoluteString.hasPrefix(SeSAC_API.baseURL) == true,
               let accessToken = UserDefaultsHelper.shared.accessToken,
               let refreshToken = UserDefaultsHelper.shared.refreshToken
         else {
@@ -38,7 +38,7 @@ class AuthInterceptor: RequestInterceptor {
             return
         }
         
-        //Rx에서는 main
+        
         DispatchQueue.global().async {
             APIManager.shared.updateToken { result in
                 switch result {

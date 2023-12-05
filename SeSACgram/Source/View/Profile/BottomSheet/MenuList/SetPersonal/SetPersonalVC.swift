@@ -26,6 +26,7 @@ final class SetPersonalVC: BaseVC {
         super.viewDidLoad()
         mainView.tableView.delegate = self
         mainView.tableView.dataSource = self
+        NotificationCenter.default.addObserver(self, selector: #selector(getReadToBackLogIn), name: Notification.Name.backToLogIn, object: nil)
     }
     
 //    private func withdraw() {
@@ -83,6 +84,12 @@ final class SetPersonalVC: BaseVC {
                     print("\(withdrawError.errorDescription)")
                 }
             }
+        }
+    }
+    
+    @objc private func getReadToBackLogIn() {
+        showAlert1Button(title: "로그인 세션 만료", message: "다시 로그인 해주세요") { [weak self] _ in
+            self?.returnToLogIn()
         }
     }
 }

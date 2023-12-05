@@ -59,6 +59,8 @@
 		781C99B62B1CD8F80069DD60 /* CommentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781C99B52B1CD8F80069DD60 /* CommentVC.swift */; };
 		7825B00B2B1DCF7E0015BD6C /* CommentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7825B00A2B1DCF7E0015BD6C /* CommentTableViewCell.swift */; };
 		7825B00D2B1DDD9D0015BD6C /* CommentTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7825B00C2B1DDD9D0015BD6C /* CommentTextField.swift */; };
+		7825B0112B1F1CF20015BD6C /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7825B0102B1F1CF20015BD6C /* ImageCell.swift */; };
+		7825B0142B1F3BE00015BD6C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7825B0132B1F3BE00015BD6C /* Kingfisher */; };
 		783A879B2B19DC6D0085AC29 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A879A2B19DC6D0085AC29 /* BaseCollectionViewCell.swift */; };
 		783A879D2B19DD1D0085AC29 /* ImagePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A879C2B19DD1D0085AC29 /* ImagePickerCell.swift */; };
 		783A879F2B19F8500085AC29 /* AddedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A879E2B19F8500085AC29 /* AddedImageCell.swift */; };
@@ -156,6 +158,7 @@
 		781C99B52B1CD8F80069DD60 /* CommentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentVC.swift; sourceTree = "<group>"; };
 		7825B00A2B1DCF7E0015BD6C /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		7825B00C2B1DDD9D0015BD6C /* CommentTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTextField.swift; sourceTree = "<group>"; };
+		7825B0102B1F1CF20015BD6C /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
 		783A879A2B19DC6D0085AC29 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		783A879C2B19DD1D0085AC29 /* ImagePickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerCell.swift; sourceTree = "<group>"; };
 		783A879E2B19F8500085AC29 /* AddedImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedImageCell.swift; sourceTree = "<group>"; };
@@ -213,6 +216,7 @@
 				78C0B6982B031B9B00314FE0 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				78F102D52B13155C003774D2 /* NVActivityIndicatorView in Frameworks */,
 				78DB5AAF2B089E0A00AB1357 /* IQKeyboardManagerSwift in Frameworks */,
+				7825B0142B1F3BE00015BD6C /* Kingfisher in Frameworks */,
 				78CF5B522B17872B007468B2 /* Moya in Frameworks */,
 				781BC7372B04DB0C000D779A /* SnapKit in Frameworks */,
 			);
@@ -279,6 +283,7 @@
 				781BC6FB2B0383DB000D779A /* HomeVC.swift */,
 				781BC6FD2B0383E4000D779A /* HomeViewModel.swift */,
 				783A87D32B1C6CBE0085AC29 /* HomeCell.swift */,
+				7825B0102B1F1CF20015BD6C /* ImageCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -625,6 +630,7 @@
 				78CF5B512B17872B007468B2 /* Moya */,
 				78CF5B532B17872B007468B2 /* RxMoya */,
 				783A87D12B1C58630085AC29 /* YPImagePicker */,
+				7825B0132B1F3BE00015BD6C /* Kingfisher */,
 			);
 			productName = SeSACgram;
 			productReference = 78C0B65F2B026A9400314FE0 /* SeSACgram.app */;
@@ -664,6 +670,7 @@
 				78F102D32B13155C003774D2 /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 				78CF5B502B17872B007468B2 /* XCRemoteSwiftPackageReference "Moya" */,
 				783A87D02B1C58630085AC29 /* XCRemoteSwiftPackageReference "YPImagePicker" */,
+				7825B0122B1F3BE00015BD6C /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 78C0B6602B026A9400314FE0 /* Products */;
 			projectDirPath = "";
@@ -762,6 +769,7 @@
 				7825B00D2B1DDD9D0015BD6C /* CommentTextField.swift in Sources */,
 				781BC7522B04E8BD000D779A /* BirthVC.swift in Sources */,
 				78CF5B892B18CAEB007468B2 /* PostViewModel.swift in Sources */,
+				7825B0112B1F1CF20015BD6C /* ImageCell.swift in Sources */,
 				78C0B6652B026A9400314FE0 /* SceneDelegate.swift in Sources */,
 				781BC76B2B050C01000D779A /* ResponseAPI.swift in Sources */,
 				781BC6FE2B0383E4000D779A /* HomeViewModel.swift in Sources */,
@@ -1048,6 +1056,14 @@
 				minimumVersion = 6.6.0;
 			};
 		};
+		7825B0122B1F3BE00015BD6C /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.10.0;
+			};
+		};
 		783A87D02B1C58630085AC29 /* XCRemoteSwiftPackageReference "YPImagePicker" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Yummypets/YPImagePicker.git";
@@ -1118,6 +1134,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 781BC75B2B04FF22000D779A /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
+		};
+		7825B0132B1F3BE00015BD6C /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7825B0122B1F3BE00015BD6C /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 		783A87D12B1C58630085AC29 /* YPImagePicker */ = {
 			isa = XCSwiftPackageProductDependency;
