@@ -16,7 +16,7 @@ class AuthInterceptor: RequestInterceptor {
     private init() { }
     
     func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Result<URLRequest, Error>) -> Void) {
-        guard urlRequest.url?.absoluteString.hasPrefix(SeSAC_API.baseURL) == true,
+        guard urlRequest.url?.absoluteString.hasPrefix(SeSAC_API.testURL) == true,
               let accessToken = UserDefaultsHelper.shared.accessToken,
               let refreshToken = UserDefaultsHelper.shared.refreshToken
         else {
@@ -38,20 +38,23 @@ class AuthInterceptor: RequestInterceptor {
             return
         }
         
-        APIManager.shared.updateToken { result in
-            switch result {
-            case .success( _):
-                //토큰 재발급 성공
-                completion(.retry)
-            case .failure(let error):
-                if let error = error as? TokenError {
-                    switch error {
-                    case .expiredRefreshToken:
-                        //리프레시토큰 만료 -> 얼럿 띄운후, 로그인 화면으로 전환
-                        UserDefaultsHelper.shared.isLogIn = false
-                        NotificationCenter.default.post(name: Notification.Name.backToLogIn, object: nil)
-                    default:
-                        print("\(error.errorDescription)")
+        //Rx에서는 main
+        DispatchQueue.global().async {
+            APIManager.shared.updateToken { result in
+                switch result {
+                case .success( _):
+                    //토큰 재발급 성공
+                    completion(.retry)
+                case .failure(let error):
+                    if let error = error as? TokenError {
+                        switch error {
+                        case .expiredRefreshToken:
+                            //리프레시토큰 만료 -> 얼럿 띄운후, 로그인 화면으로 전환
+                            UserDefaultsHelper.shared.isLogIn = false
+                            NotificationCenter.default.post(name: Notification.Name.backToLogIn, object: nil)
+                        default:
+                            print("\(error.errorDescription)")
+                        }
                     }
                 }
             }
