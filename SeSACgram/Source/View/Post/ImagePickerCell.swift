@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import SnapKit
 
-class ImagePickerCell: BaseCollectionViewCell {
+final class ImagePickerCell: BaseCollectionViewCell {
     
     private let imageView = UIImageView().then {
         $0.contentMode = .scaleAspectFill
@@ -52,5 +52,17 @@ class ImagePickerCell: BaseCollectionViewCell {
         }
     }
     
-    
+    func updateLabel(count: Int) {
+        let attributedString = NSMutableAttributedString(string: "\(count)/4")
+        
+        if count != 0 {
+            attributedString.addAttribute(NSAttributedString.Key.foregroundColor,
+                                          value: Constants.Color.DeepGreen, range: NSMakeRange(0, "\(count)".count))
+        } else {
+            attributedString.addAttribute(NSAttributedString.Key.foregroundColor,
+                                          value: UIColor.lightGray, range: NSMakeRange(0, "\(count)".count))
+        }
+        countLabel.attributedText = attributedString
+    }
+
 }

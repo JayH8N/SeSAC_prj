@@ -9,13 +9,27 @@ import UIKit
 import SnapKit
 import SnapKit
 
-class AddedImageCell: BaseCollectionViewCell {
+final class AddedImageCell: BaseCollectionViewCell {
+    
+    private var indexPath: Int?
+    weak var removeDelegate: RemoveImageProtocol?
     
     private let imageView = UIImageView().then {
         $0.contentMode = .scaleAspectFill
+        $0.layer.masksToBounds = true
+        $0.layer.cornerRadius = Constants.Size.cellCornerRadius
     }
     
     private let removeButton = UIButton.makeHighlightedButton(withImageName: "xmark.circle.fill", size: 30)
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        removeButton.addTarget(self, action: #selector(tappedRemoveButton), for: .touchUpInside)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override var description: String {
         String(describing: Self.self)
@@ -43,8 +57,15 @@ class AddedImageCell: BaseCollectionViewCell {
         }
     }
     
-    func setImage() {
-        //이미지 삽입 로직
+    func setImage(image: UIImage, indexPath: Int) {
+        imageView.image = image
+        self.indexPath = indexPath
+    }
+    
+    @objc private func tappedRemoveButton() {
+        if let indexPath {
+            removeDelegate?.removeImage(indexPath: indexPath)
+        }
     }
     
 }

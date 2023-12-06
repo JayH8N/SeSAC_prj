@@ -61,6 +61,10 @@
 		7825B00D2B1DDD9D0015BD6C /* CommentTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7825B00C2B1DDD9D0015BD6C /* CommentTextField.swift */; };
 		7825B0112B1F1CF20015BD6C /* ImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7825B0102B1F1CF20015BD6C /* ImageCell.swift */; };
 		7825B0142B1F3BE00015BD6C /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 7825B0132B1F3BE00015BD6C /* Kingfisher */; };
+		7825B01A2B2069190015BD6C /* TestPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7825B0192B2069190015BD6C /* TestPostView.swift */; };
+		7825B01C2B20693B0015BD6C /* TestPostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7825B01B2B20693B0015BD6C /* TestPostVC.swift */; };
+		7825B01E2B206CFA0015BD6C /* TestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7825B01D2B206CFA0015BD6C /* TestCell.swift */; };
+		7825B0312B208B360015BD6C /* RemoveImageProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7825B0302B208B360015BD6C /* RemoveImageProtocol.swift */; };
 		783A879B2B19DC6D0085AC29 /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A879A2B19DC6D0085AC29 /* BaseCollectionViewCell.swift */; };
 		783A879D2B19DD1D0085AC29 /* ImagePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A879C2B19DD1D0085AC29 /* ImagePickerCell.swift */; };
 		783A879F2B19F8500085AC29 /* AddedImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 783A879E2B19F8500085AC29 /* AddedImageCell.swift */; };
@@ -159,6 +163,10 @@
 		7825B00A2B1DCF7E0015BD6C /* CommentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTableViewCell.swift; sourceTree = "<group>"; };
 		7825B00C2B1DDD9D0015BD6C /* CommentTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentTextField.swift; sourceTree = "<group>"; };
 		7825B0102B1F1CF20015BD6C /* ImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCell.swift; sourceTree = "<group>"; };
+		7825B0192B2069190015BD6C /* TestPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPostView.swift; sourceTree = "<group>"; };
+		7825B01B2B20693B0015BD6C /* TestPostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPostVC.swift; sourceTree = "<group>"; };
+		7825B01D2B206CFA0015BD6C /* TestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCell.swift; sourceTree = "<group>"; };
+		7825B0302B208B360015BD6C /* RemoveImageProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveImageProtocol.swift; sourceTree = "<group>"; };
 		783A879A2B19DC6D0085AC29 /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		783A879C2B19DD1D0085AC29 /* ImagePickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerCell.swift; sourceTree = "<group>"; };
 		783A879E2B19F8500085AC29 /* AddedImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedImageCell.swift; sourceTree = "<group>"; };
@@ -408,6 +416,7 @@
 				781BC77A2B07ED62000D779A /* AddTargetProtocol.swift */,
 				78F102F82B14B465003774D2 /* ModalDelegate.swift */,
 				780079722B156230000A58BD /* PushableTransition.swift */,
+				7825B0302B208B360015BD6C /* RemoveImageProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -420,6 +429,16 @@
 				7825B00A2B1DCF7E0015BD6C /* CommentTableViewCell.swift */,
 			);
 			path = Comment;
+			sourceTree = "<group>";
+		};
+		7825B0162B2069060015BD6C /* TestPost */ = {
+			isa = PBXGroup;
+			children = (
+				7825B0192B2069190015BD6C /* TestPostView.swift */,
+				7825B01B2B20693B0015BD6C /* TestPostVC.swift */,
+				7825B01D2B206CFA0015BD6C /* TestCell.swift */,
+			);
+			path = TestPost;
 			sourceTree = "<group>";
 		};
 		78C0B6562B026A9400314FE0 = {
@@ -568,6 +587,7 @@
 		78CF5B812B18CA1B007468B2 /* Post */ = {
 			isa = PBXGroup;
 			children = (
+				7825B0162B2069060015BD6C /* TestPost */,
 				78CF5B822B18CA26007468B2 /* PostView.swift */,
 				78CF5B842B18CA2D007468B2 /* PostVC.swift */,
 				78CF5B882B18CAEB007468B2 /* PostViewModel.swift */,
@@ -742,6 +762,7 @@
 				78DB5AB12B09106800AB1357 /* SignUPTitleLabel.swift in Sources */,
 				781BC6F12B0377F0000D779A /* TabBarVC.swift in Sources */,
 				78C0B6812B026D2100314FE0 /* UserDefaultHelper.swift in Sources */,
+				7825B01E2B206CFA0015BD6C /* TestCell.swift in Sources */,
 				788EB1302B11CC9800162793 /* String.swift in Sources */,
 				781BC7632B05091D000D779A /* UIButton.swift in Sources */,
 				78CF5B832B18CA26007468B2 /* PostView.swift in Sources */,
@@ -750,12 +771,14 @@
 				781BC7612B050678000D779A /* UIImage.swift in Sources */,
 				781BC7482B04E894000D779A /* NicknameView.swift in Sources */,
 				78C0B6872B02731400314FE0 /* SignInVC.swift in Sources */,
+				7825B0312B208B360015BD6C /* RemoveImageProtocol.swift in Sources */,
 				780079642B14B9B1000A58BD /* MenuListButtonView.swift in Sources */,
 				781BC7322B04BFD9000D779A /* BaseView.swift in Sources */,
 				783A87D62B1C72580085AC29 /* ProfileImage.swift in Sources */,
 				783A87D82B1C77DB0085AC29 /* LikedButton.swift in Sources */,
 				781BC6FA2B0383D3000D779A /* HomeView.swift in Sources */,
 				781BC7072B03871E000D779A /* SearchVC.swift in Sources */,
+				7825B01C2B20693B0015BD6C /* TestPostVC.swift in Sources */,
 				78F102F22B149B90003774D2 /* HighlightedButton.swift in Sources */,
 				783A87A12B19FC000085AC29 /* CustomTextView.swift in Sources */,
 				78C0B6832B026D3E00314FE0 /* HapticManager.swift in Sources */,
@@ -766,6 +789,7 @@
 				781BC70C2B0387CE000D779A /* ProfileView.swift in Sources */,
 				78DB5AB32B0912BB00AB1357 /* AppManager.swift in Sources */,
 				780079682B14D6D7000A58BD /* SetPersonalView.swift in Sources */,
+				7825B01A2B2069190015BD6C /* TestPostView.swift in Sources */,
 				7825B00D2B1DDD9D0015BD6C /* CommentTextField.swift in Sources */,
 				781BC7522B04E8BD000D779A /* BirthVC.swift in Sources */,
 				78CF5B892B18CAEB007468B2 /* PostViewModel.swift in Sources */,

@@ -227,5 +227,4 @@ extension HomeCell: UICollectionViewDelegate, UICollectionViewDataSource {
         
         return cell
     }
-    
 }
