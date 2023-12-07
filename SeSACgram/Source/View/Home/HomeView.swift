@@ -19,8 +19,6 @@ final class HomeView: BaseView {
     
     let refresh = UIRefreshControl().then {
         $0.backgroundColor = .clear
-        $0.attributedTitle = NSAttributedString(string: "Loading Data...",
-                    attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemGray, NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 16)])
     }
     
     lazy var homeCollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout()).then {

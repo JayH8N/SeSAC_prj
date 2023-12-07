@@ -12,13 +12,7 @@ import RxSwift
 
 final class PostVC: BaseVC, UINavigationControllerDelegate {
     private let disposeBag = DisposeBag()
-//    private var selectedImage: [UIImage] = [] {
-//        didSet {
-//            self.reloadCollectionView()
-//        }
-//    }
     private var selectedImages = BehaviorSubject<[UIImage]>(value: [])
-    //배열을 Observable로 변환하여 combinlatest에 활용
     
     private let mainView = PostView()
     
@@ -31,8 +25,11 @@ final class PostVC: BaseVC, UINavigationControllerDelegate {
         mainView.imagePickerCollectionView.delegate = self
         mainView.imagePickerCollectionView.dataSource = self
         initNav()
-        self.hideKeyboardWhenTappedAround()
-        bind()
+        bind() 
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
+        self.view.endEditing(true)
     }
     
     private func initNav() {
@@ -67,6 +64,7 @@ final class PostVC: BaseVC, UINavigationControllerDelegate {
             }
             .disposed(by: disposeBag)
         
+        //이미지 배열에 변화 생길때마다 업데이트
         selectedImages
             .subscribe(with: self) { owner, _ in
                 owner.reloadCollectionView()
@@ -75,12 +73,14 @@ final class PostVC: BaseVC, UINavigationControllerDelegate {
     }
     
     private func presentImagePicker() {
+        var currentImages = try! self.selectedImages.value()
+        
         var config = YPImagePickerConfiguration()
         config.startOnScreen = .library // 첫 시작시 앨범이 default
         config.shouldSaveNewPicturesToAlbum = true // YPImagePicker의 카메라로 찍은 사진 핸드폰에 저장하기
         config.showsPhotoFilters = true // 이미지 필터 사용여부
         config.library.defaultMultipleSelection = true // 한장 선택 default (여러장 선택x)
-        config.library.maxNumberOfItems = 4 // 사진 최대 선택 개수
+        config.library.maxNumberOfItems = 4 - currentImages.count // 사진 최대 선택 개수
         config.library.mediaType = .photo // 옵션 : photo, video, photo and video
         config.overlayView?.contentMode = .scaleAspectFit // 사진 스케일
         
@@ -91,7 +91,6 @@ final class PostVC: BaseVC, UINavigationControllerDelegate {
             for item in items {
                 if case let .photo(photo) = item {
                     //self.selectedImages.append(photo.image)
-                    var currentImages = try! self.selectedImages.value()
                     currentImages.append(photo.image)
                     self.selectedImages.onNext(currentImages)
                 }
