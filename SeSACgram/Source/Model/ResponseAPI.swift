@@ -36,3 +36,14 @@ struct LoginResponse: Decodable {
 struct RefreshToken: Decodable {
     let token: String
 }
+
+//MARK: - Post
+struct PostResponse: Decodable {
+    let likes, image, comments, hashTags: [String]
+    let creator: Creator
+    let time, title, content: String
+}
+
+struct Creator: Decodable {
+    let nick: String
+}

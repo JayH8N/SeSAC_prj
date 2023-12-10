@@ -131,6 +131,27 @@ final class APIManager {
             }
         }
     }
+
+    //MARK: - Post
+    func post(images: [Data], title: String, content: String, completion: @escaping (Result<PostResponse,Error>) -> Void) {
+        let data = Post(title: title, content: content, files: images)
+        provider.request(.post(data: data)) { result in
+            switch result {
+            case .success(let value):
+                let result = try! JSONDecoder().decode(PostResponse.self, from: value.data)
+                print("포스트 게시 완료")
+                completion(.success(result))
+            case .failure(let error):
+                let statusCode = error.response?.statusCode ?? 500
+                if let commonError = CommonError(rawValue: statusCode) {
+                    print("Error:\(commonError.errorDescription)")
+                } else if let error = PostError(rawValue: statusCode) {
+                    completion(.failure(error))
+                }
+            }
+        }
+    }
+    
 }
 
 

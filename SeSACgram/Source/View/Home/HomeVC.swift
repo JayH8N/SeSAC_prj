@@ -23,6 +23,7 @@ final class HomeVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadHome), name: Notification.Name.homeReload, object: nil)
         mainView.homeCollectionView.delegate = self
         mainView.homeCollectionView.dataSource = self
         addTargets()
@@ -30,6 +31,14 @@ final class HomeVC: BaseVC {
     
     deinit {
         print("====\(Self.self)====Deinit")
+    }
+    
+    private func reloadData() {
+        mainView.homeCollectionView.reloadData()
+    }
+    
+    @objc private func reloadHome() {
+        self.reloadData()
     }
     
 }

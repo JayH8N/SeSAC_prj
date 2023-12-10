@@ -26,3 +26,10 @@ struct LogIn: Encodable {
     let password: String
 }
 
+//MARK: - Post
+struct Post: Encodable {
+    let title: String
+    let content: String
+    let files: [Data]
+    let product_id: String = SeSAC_API.product_id
+}

@@ -24,12 +24,20 @@ final class PostVC: BaseVC, UINavigationControllerDelegate {
         super.viewDidLoad()
         mainView.imagePickerCollectionView.delegate = self
         mainView.imagePickerCollectionView.dataSource = self
+        NotificationCenter.default.addObserver(self, selector: #selector(getReadToBackLogIn), name: Notification.Name.backToLogIn, object: nil)
         initNav()
-        bind() 
+        bind()
+        addTargets()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?){
         self.view.endEditing(true)
+    }
+    
+    @objc private func getReadToBackLogIn() {
+        showAlert1Button(title: "로그인 세션 만료", message: "다시 로그인 해주세요") { [weak self] _ in
+            self?.returnToLogIn()
+        }
     }
     
     private func initNav() {
@@ -117,9 +125,46 @@ extension PostVC: AddTargetProtocol {
     }
     
     @objc private func postButtonTapped() {
-        //api요청, 성공시 dismiss
+        let title = self.mainView.titleTextField.text!
+        let content = self.mainView.contentTextView.text!
         
+        let dispatchGroup = DispatchGroup()
+        var imageData: [Data] = []
+        dispatchGroup.enter()
+        DispatchQueue.global().async {
+            let images = try! self.selectedImages.value()
+            imageData = self.convertImagesToDataAndCompression(images: images)
+            dispatchGroup.leave()
+        }
+        dispatchGroup.notify(queue: .global()) {
+            APIManager.shared.post(images: imageData, title: title, content: content) { result in
+                switch result {
+                case .success( _):
+                    DispatchQueue.main.async {
+                        NotificationCenter.default.post(name: Notification.Name.homeReload, object: nil)
+                        self.dismiss(animated: true)
+                    }
+                case .failure(let error):
+                    if let error = error as? PostError {
+                        print(error.errorDescription)
+                    }
+                }
+            }
+        }
     }
+    
+    //이미지 Data타입변환 및 압축
+    private func convertImagesToDataAndCompression(images: [UIImage]) -> [Data] {
+        var convertedData: [Data] = []
+        for image in images {
+            if let imageData = image.jpegData(compressionQuality: 0.5) {
+                convertedData.append(imageData)
+            }
+        }
+        
+        return convertedData
+    }
+    
 }
 
 extension PostVC: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -155,7 +200,6 @@ extension PostVC: UICollectionViewDelegate, UICollectionViewDataSource {
 
 extension PostVC: RemoveImageProtocol {
     func removeImage(indexPath: Int) {
-        print("dfdf")
         let target = indexPath - 1
         var images = try! selectedImages.value()
         images.remove(at: target)

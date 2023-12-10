@@ -14,8 +14,9 @@ enum SeSACAPI {
     case checkEmail(email: Email)
     case tokenRefresh
     case withdraw
+    case post(data: Post)
     
-    func addHeaders() -> [String: String] {
+    private func addHeaders() -> [String: String] {
         let authToken = UserDefaultsHelper.shared.accessToken
         var headers: [String: String] = ["SesacKey": SeSAC_API.apiKey,
                                          "Authorization": authToken! ]
@@ -24,6 +25,8 @@ enum SeSACAPI {
         case .tokenRefresh:
             let refreshToken = UserDefaultsHelper.shared.refreshToken
                 headers["Refresh"] = refreshToken
+        case .post:
+            headers["Content-Type"] = "multipart/form-data"
         default:
             break
         }
@@ -49,12 +52,14 @@ extension SeSACAPI: TargetType {
             return "refresh"
         case .withdraw:
             return "withdraw"
+        case .post:
+            return "post"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .checkEmail, .logIn, .signUP:
+        case .checkEmail, .logIn, .signUP, .post:
             return .post
         case .tokenRefresh, .withdraw:
             return .get
@@ -71,6 +76,8 @@ extension SeSACAPI: TargetType {
             return .requestJSONEncodable(data)
         case .tokenRefresh, .withdraw:
             return .requestPlain
+        case .post(let data):
+            return .uploadMultipart(convertData(data: data))
         }
     }
     
@@ -81,6 +88,8 @@ extension SeSACAPI: TargetType {
                     "SesacKey": SeSAC_API.apiKey]
         case .tokenRefresh, .withdraw:
             return addHeaders()
+        case .post:
+            return addHeaders()
         }
     }
 }
@@ -88,5 +97,23 @@ extension SeSACAPI: TargetType {
 extension SeSACAPI {
     var validationType: ValidationType {
         return .successCodes
+    }
+    
+    private func convertData(data: Post) -> [MultipartFormData] {
+        var formData: [MultipartFormData] = []
+        
+        for (index, fileData) in data.files.enumerated() {
+            let fileName = "image\(index + 1).jpg"
+            let formDataItem = MultipartFormData(provider: .data(fileData), name: "file", fileName: fileName, mimeType: "image/jpeg")
+            formData.append(formDataItem)
+        }
+        
+        let titleFormData = MultipartFormData(provider: .data(data.title.data(using: .utf8)!), name: "title")
+        let contentFormData = MultipartFormData(provider: .data(data.content.data(using: .utf8)!), name: "content")
+        let productIdFormData = MultipartFormData(provider: .data(data.product_id.data(using: .utf8)!), name: "product_id")
+        
+        formData.append(contentsOf: [titleFormData, contentFormData, productIdFormData])
+        
+        return formData
     }
 }
