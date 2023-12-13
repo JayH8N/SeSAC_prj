@@ -169,7 +169,7 @@ extension PostVC: AddTargetProtocol {
 
 extension PostVC: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        var count = try! selectedImages.value().count
+        let count = try! selectedImages.value().count
         return 1 + count
     }
     

@@ -47,3 +47,13 @@ struct PostResponse: Decodable {
 struct Creator: Decodable {
     let nick: String
 }
+//MARK: - InquiryPost
+struct InquiryPostResponse: Decodable {
+    let data: [PostResponse]
+    let nextCursor: String
+    
+    enum CodingKeys: String, CodingKey {
+        case data
+        case nextCursor = "next_cursor"
+    }
+}

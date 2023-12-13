@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import Then
 
 final class ProfileView: BaseView {
     
@@ -23,13 +24,26 @@ final class ProfileView: BaseView {
         $0.alpha = 0
     }
     
+    let refresh = UIRefreshControl().then {
+        $0.backgroundColor = .clear
+    }
+    
+    lazy var profileTableView = UITableView(frame: .zero, style: .grouped).then {
+        $0.backgroundColor = .clear
+        $0.register(PhotosTableCell.self, forCellReuseIdentifier: PhotosTableCell().description)
+    }
+    
     override func configureView() {
-        //self.backgroundColor = .clear
+        addSubview(profileTableView)
     }
     
     override func setConstraints() {
         menuButton.snp.makeConstraints {
             $0.size.equalTo(40)
+        }
+        
+        profileTableView.snp.makeConstraints {
+            $0.edges.equalTo(self.safeAreaLayoutGuide)
         }
     }
     

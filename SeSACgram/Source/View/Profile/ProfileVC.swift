@@ -17,6 +17,8 @@ final class ProfileVC: BaseVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mainView.profileTableView.delegate = self
+        mainView.profileTableView.dataSource = self
         addTargets()
     }
     
@@ -77,4 +79,28 @@ extension ProfileVC: PushableTransition {
     func push(vc: UIViewController) {
         self.navigationController?.pushViewController(vc, animated: true)
     }
+}
+
+extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: PhotosTableCell().description, for: indexPath)
+        
+        return cell
+    }
+    
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let header = ProfileHeaderView()
+        
+        return header
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 180
+    }
+    
 }
