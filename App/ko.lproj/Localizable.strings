@@ -97,3 +97,22 @@
 "EmptyViewTitle" = "아직 생성된 냉장고가 없어요.";
 
 "EmptyViewSubTitle" = "+ 버튼으로 냉장고를 생성해 식재료를 관리해 보세요";
+
+"SettingTitle" = "설정";
+
+//Setting Menu
+"noti" = "알림";
+
+"termsOfService" = "이용약관";
+
+"other" = "기타";
+
+"notificationSetting" = "알림설정";
+
+"privacyPolicy" = "개인정보처리방침";
+
+"contactUS" = "문의하기";
+
+"openSource" = "오픈소스";
+
+"appVersion" = "앱 버전";

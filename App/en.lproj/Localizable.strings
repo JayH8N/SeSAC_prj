@@ -97,3 +97,22 @@ The item darkens after the expiration date.";
 "EmptyViewTitle" = "No refrigerators";
 
 "EmptyViewSubTitle" = "Create a refrigerator with the + button to organize your items";
+
+"SettingTitle" = "Setting";
+
+//Setting Menu
+"noti" = "Notification";
+
+"termsOfService" = "Terms of Service";
+
+"other" = "Other";
+
+"notificationSetting" = "Notification Setting";
+
+"privacyPolicy" = "privacy Policy";
+
+"contactUS" = "Contact US";
+
+"openSource" = "Open Source";
+
+"appVersion" = "App Version";

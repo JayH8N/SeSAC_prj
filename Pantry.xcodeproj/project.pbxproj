@@ -33,7 +33,7 @@
 		785E01B02AC107740057859F /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E01AF2AC107740057859F /* MainViewController.swift */; };
 		785E01B22AC107DD0057859F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E01B12AC107DD0057859F /* TabBarController.swift */; };
 		785E01B52AC108190057859F /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E01B42AC108190057859F /* BaseView.swift */; };
-		785E01B72AC108250057859F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E01B62AC108250057859F /* BaseViewController.swift */; };
+		785E01B72AC108250057859F /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 785E01B62AC108250057859F /* BaseVC.swift */; };
 		785E01BA2AC170990057859F /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 785E01B92AC170990057859F /* SnapKit */; };
 		785E01BD2AC170F70057859F /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 785E01BC2AC170F70057859F /* Realm */; };
 		785E01BF2AC170F70057859F /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 785E01BE2AC170F70057859F /* RealmSwift */; };
@@ -58,6 +58,15 @@
 		788FE3292ADF79810018B1C9 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788FE3282ADF79810018B1C9 /* AddItemView.swift */; };
 		788FE32B2ADFB86B0018B1C9 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788FE32A2ADFB86B0018B1C9 /* UIView.swift */; };
 		788FE32D2ADFDF660018B1C9 /* AddItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 788FE32C2ADFDF660018B1C9 /* AddItemViewModel.swift */; };
+		78A06F682B304046008617B8 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A06F672B304046008617B8 /* SettingView.swift */; };
+		78A06F6A2B30404E008617B8 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A06F692B30404E008617B8 /* SettingVC.swift */; };
+		78A06F6C2B30405B008617B8 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A06F6B2B30405B008617B8 /* SettingViewModel.swift */; };
+		78A06F6E2B3048E7008617B8 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A06F6D2B3048E7008617B8 /* SettingCell.swift */; };
+		78A06F702B304C10008617B8 /* SettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A06F6F2B304C10008617B8 /* SettingModel.swift */; };
+		78A06F722B3050A4008617B8 /* SettingMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A06F712B3050A4008617B8 /* SettingMenu.swift */; };
+		78A06F742B3052C6008617B8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A06F732B3052C6008617B8 /* Constants.swift */; };
+		78A06F772B308503008617B8 /* NotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A06F762B308503008617B8 /* NotionView.swift */; };
+		78A06F792B308508008617B8 /* NotionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A06F782B308508008617B8 /* NotionVC.swift */; };
 		78BB717B2AE793480070347F /* LaunchScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 78BB717A2AE793480070347F /* LaunchScreen.png */; };
 		78BB71812AE8A6F20070347F /* FilterButtonSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB71802AE8A6F20070347F /* FilterButtonSignal.swift */; };
 		78BB71882AEBC1C20070347F /* AlarmStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB71872AEBC1C20070347F /* AlarmStatusViewController.swift */; };
@@ -117,7 +126,7 @@
 		785E01AF2AC107740057859F /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		785E01B12AC107DD0057859F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		785E01B42AC108190057859F /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
-		785E01B62AC108250057859F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		785E01B62AC108250057859F /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 		785E01C02AC171140057859F /* Realm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
 		787CEAD02AD3F5AB0077A073 /* NavPushProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavPushProtocol.swift; sourceTree = "<group>"; };
 		787CEAD32AD434E30077A073 /* DetailPagerTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPagerTab.swift; sourceTree = "<group>"; };
@@ -136,6 +145,15 @@
 		788FE3282ADF79810018B1C9 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 		788FE32A2ADFB86B0018B1C9 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		788FE32C2ADFDF660018B1C9 /* AddItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemViewModel.swift; sourceTree = "<group>"; };
+		78A06F672B304046008617B8 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		78A06F692B30404E008617B8 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
+		78A06F6B2B30405B008617B8 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		78A06F6D2B3048E7008617B8 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
+		78A06F6F2B304C10008617B8 /* SettingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingModel.swift; sourceTree = "<group>"; };
+		78A06F712B3050A4008617B8 /* SettingMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingMenu.swift; sourceTree = "<group>"; };
+		78A06F732B3052C6008617B8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		78A06F762B308503008617B8 /* NotionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotionView.swift; sourceTree = "<group>"; };
+		78A06F782B308508008617B8 /* NotionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotionVC.swift; sourceTree = "<group>"; };
 		78BB717A2AE793480070347F /* LaunchScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchScreen.png; sourceTree = "<group>"; };
 		78BB71802AE8A6F20070347F /* FilterButtonSignal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButtonSignal.swift; sourceTree = "<group>"; };
 		78BB71872AEBC1C20070347F /* AlarmStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmStatusViewController.swift; sourceTree = "<group>"; };
@@ -223,6 +241,8 @@
 				784CE0322AE4D551008ADC5B /* PageOption.swift */,
 				784CE0342AE4DD9F008ADC5B /* Sort.swift */,
 				78BB71802AE8A6F20070347F /* FilterButtonSignal.swift */,
+				78A06F712B3050A4008617B8 /* SettingMenu.swift */,
+				78A06F732B3052C6008617B8 /* Constants.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -266,7 +286,7 @@
 				785E01AB2AC107300057859F /* Extensions */,
 				785E01AA2AC107220057859F /* Sources */,
 				785E01A92AC106060057859F /* ViewModel */,
-				785E01A72AC105D00057859F /* View */,
+				785E01A72AC105D00057859F /* Scene */,
 				785E01A62AC105C40057859F /* Model */,
 			);
 			path = Pantry;
@@ -291,15 +311,17 @@
 			children = (
 				785E01C02AC171140057859F /* Realm.swift */,
 				784CE0402AE58E17008ADC5B /* Network.swift */,
+				78A06F6F2B304C10008617B8 /* SettingModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		785E01A72AC105D00057859F /* View */ = {
+		785E01A72AC105D00057859F /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				78A06F662B30400E008617B8 /* Setting */,
+				78A06F652B303F68008617B8 /* TabBar */,
 				78BB71862AEBC18B0070347F /* AlarmStatus */,
-				785E01B12AC107DD0057859F /* TabBarController.swift */,
 				784CE0062AE0405D008ADC5B /* FilterButtonVC.swift */,
 				784CE0262AE3F653008ADC5B /* EditItems */,
 				784CE0022AE02914008ADC5B /* Refrigerator */,
@@ -310,7 +332,7 @@
 				785E01AC2AC107540057859F /* Main */,
 				78F37D2B2AC4616900ED4466 /* Search */,
 			);
-			path = View;
+			path = Scene;
 			sourceTree = "<group>";
 		};
 		785E01A92AC106060057859F /* ViewModel */ = {
@@ -359,7 +381,7 @@
 			isa = PBXGroup;
 			children = (
 				785E01B42AC108190057859F /* BaseView.swift */,
-				785E01B62AC108250057859F /* BaseViewController.swift */,
+				785E01B62AC108250057859F /* BaseVC.swift */,
 				78F37D492ACAB3E500ED4466 /* BaseTableViewCell.swift */,
 				78C8C25C2ACDAD20004EF75D /* BaseCollectionViewCell.swift */,
 			);
@@ -411,6 +433,35 @@
 				788FE3282ADF79810018B1C9 /* AddItemView.swift */,
 			);
 			path = AddItems;
+			sourceTree = "<group>";
+		};
+		78A06F652B303F68008617B8 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				785E01B12AC107DD0057859F /* TabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		78A06F662B30400E008617B8 /* Setting */ = {
+			isa = PBXGroup;
+			children = (
+				78A06F752B3084D6008617B8 /* NotionWK */,
+				78A06F672B304046008617B8 /* SettingView.swift */,
+				78A06F692B30404E008617B8 /* SettingVC.swift */,
+				78A06F6B2B30405B008617B8 /* SettingViewModel.swift */,
+				78A06F6D2B3048E7008617B8 /* SettingCell.swift */,
+			);
+			path = Setting;
+			sourceTree = "<group>";
+		};
+		78A06F752B3084D6008617B8 /* NotionWK */ = {
+			isa = PBXGroup;
+			children = (
+				78A06F762B308503008617B8 /* NotionView.swift */,
+				78A06F782B308508008617B8 /* NotionVC.swift */,
+			);
+			path = NotionWK;
 			sourceTree = "<group>";
 		};
 		78BB71862AEBC18B0070347F /* AlarmStatus */ = {
@@ -660,6 +711,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78F37D2D2AC4617A00ED4466 /* SearchView.swift in Sources */,
+				78A06F6C2B30405B008617B8 /* SettingViewModel.swift in Sources */,
 				78F37D2F2AC4618400ED4466 /* SearchViewController.swift in Sources */,
 				787CEAED2AD461140077A073 /* ItemsCell.swift in Sources */,
 				788FE3272ADF78130018B1C9 /* AddItemViewController.swift in Sources */,
@@ -680,6 +732,9 @@
 				788FE3292ADF79810018B1C9 /* AddItemView.swift in Sources */,
 				78F37D5F2ACC69B600ED4466 /* DocumentManager.swift in Sources */,
 				788FE32B2ADFB86B0018B1C9 /* UIView.swift in Sources */,
+				78A06F682B304046008617B8 /* SettingView.swift in Sources */,
+				78A06F772B308503008617B8 /* NotionView.swift in Sources */,
+				78A06F742B3052C6008617B8 /* Constants.swift in Sources */,
 				785E01892ABE883E0057859F /* AppDelegate.swift in Sources */,
 				785E01AE2AC1076D0057859F /* MainView.swift in Sources */,
 				784CE0282AE3F8A2008ADC5B /* EditItemView.swift in Sources */,
@@ -701,21 +756,26 @@
 				785E01B22AC107DD0057859F /* TabBarController.swift in Sources */,
 				78BB718A2AEBC1CF0070347F /* AlarmStatusView.swift in Sources */,
 				78C8C25D2ACDAD20004EF75D /* BaseCollectionViewCell.swift in Sources */,
-				785E01B72AC108250057859F /* BaseViewController.swift in Sources */,
+				785E01B72AC108250057859F /* BaseVC.swift in Sources */,
 				788FE32D2ADFDF660018B1C9 /* AddItemViewModel.swift in Sources */,
 				785E01B02AC107740057859F /* MainViewController.swift in Sources */,
 				785E01C12AC171140057859F /* Realm.swift in Sources */,
 				78F37D422AC97FCE00ED4466 /* Observable.swift in Sources */,
 				787CEADE2AD435F80077A073 /* AllPageView.swift in Sources */,
 				784CE02F2AE462BF008ADC5B /* NotificationOption.swift in Sources */,
+				78A06F792B308508008617B8 /* NotionVC.swift in Sources */,
 				784CE0092AE04402008ADC5B /* BulletinDelegate.swift in Sources */,
 				78BB71812AE8A6F20070347F /* FilterButtonSignal.swift in Sources */,
+				78A06F6E2B3048E7008617B8 /* SettingCell.swift in Sources */,
 				78F37D362AC47CE300ED4466 /* UIImage.swift in Sources */,
+				78A06F6A2B30404E008617B8 /* SettingVC.swift in Sources */,
 				78F37D4F2ACABFAE00ED4466 /* CALayer.swift in Sources */,
 				78F37D342AC47CC300ED4466 /* UIButton.swift in Sources */,
 				784CE0102AE08A50008ADC5B /* CustomRadioButton.swift in Sources */,
 				78F37D5B2ACBDB4100ED4466 /* AddViewModel.swift in Sources */,
+				78A06F702B304C10008617B8 /* SettingModel.swift in Sources */,
 				78F37D392AC47E9300ED4466 /* highlightedButton.swift in Sources */,
+				78A06F722B3050A4008617B8 /* SettingMenu.swift in Sources */,
 				787CEAE22AD436930077A073 /* FreezerPageViewController.swift in Sources */,
 				784CE0392AE58B12008ADC5B /* BarcodeAPIManager.swift in Sources */,
 			);
@@ -877,7 +937,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 57CCR42RDS;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -893,7 +953,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.junghoon.Pantrytest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -913,7 +973,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 57CCR42RDS;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -929,7 +989,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.junghoon.Pantrytest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
