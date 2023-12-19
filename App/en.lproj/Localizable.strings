@@ -116,3 +116,19 @@ The item darkens after the expiration date.";
 "openSource" = "Open Source";
 
 "appVersion" = "App Version";
+//
+"feedback" = "Please enter your inquiry";
+
+"feedBackTitle" = "<Pantry>Enquiries and comments";
+
+"MailTransferFailed" = "Mail transfer failed";
+
+"MailTransferFailedMessage" = "The 'mail' app is required to send mail. Please restore it from the App Store or check your email settings and try again.";
+
+"GoAppStore" = "Going to the App Store";
+
+"updateTitle" = "Update";
+
+"updateMessage" = "The latest version exists. Would you like to update it?";
+
+"LatestVersion" = "It's the latest version right now.";

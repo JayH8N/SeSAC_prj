@@ -23,8 +23,8 @@ struct SetSettingSection {
     
     static func generateData() -> [SetSettingSection] {
         return [
-            SetSettingSection(items: [SettingItem(title: NSLocalizedString(SettingMenu.MenuList.notificationSetting.rawValue, comment: ""))],
-                              header: NSLocalizedString(SettingMenu.Header.noti.rawValue, comment: "")),
+//            SetSettingSection(items: [SettingItem(title: NSLocalizedString(SettingMenu.MenuList.notificationSetting.rawValue, comment: ""))],
+//                              header: NSLocalizedString(SettingMenu.Header.noti.rawValue, comment: "")),
             SetSettingSection(items: [SettingItem(title: NSLocalizedString(SettingMenu.MenuList.privacyPolicy.rawValue, comment: ""))],
                               header: NSLocalizedString(SettingMenu.Header.termsOfService.rawValue, comment: "")),
             SetSettingSection(items: [SettingItem(title: NSLocalizedString(SettingMenu.MenuList.contactUS.rawValue, comment: "")),

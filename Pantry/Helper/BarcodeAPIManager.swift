@@ -2,7 +2,6 @@
 
 import Foundation
 import Alamofire
-import Toast
 
 class BarcodeAPIManager {
     

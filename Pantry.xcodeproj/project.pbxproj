@@ -67,6 +67,9 @@
 		78A06F742B3052C6008617B8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A06F732B3052C6008617B8 /* Constants.swift */; };
 		78A06F772B308503008617B8 /* NotionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A06F762B308503008617B8 /* NotionView.swift */; };
 		78A06F792B308508008617B8 /* NotionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A06F782B308508008617B8 /* NotionVC.swift */; };
+		78A06FEF2B31650F008617B8 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 78A06FEE2B31650F008617B8 /* Settings.bundle */; };
+		78A06FF32B31A0CD008617B8 /* ITunesAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78A06FF22B31A0CD008617B8 /* ITunesAPIManager.swift */; };
+		78A06FF62B31A2F4008617B8 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 78A06FF52B31A2F4008617B8 /* SwiftyJSON */; };
 		78BB717B2AE793480070347F /* LaunchScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 78BB717A2AE793480070347F /* LaunchScreen.png */; };
 		78BB71812AE8A6F20070347F /* FilterButtonSignal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB71802AE8A6F20070347F /* FilterButtonSignal.swift */; };
 		78BB71882AEBC1C20070347F /* AlarmStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78BB71872AEBC1C20070347F /* AlarmStatusViewController.swift */; };
@@ -154,6 +157,8 @@
 		78A06F732B3052C6008617B8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		78A06F762B308503008617B8 /* NotionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotionView.swift; sourceTree = "<group>"; };
 		78A06F782B308508008617B8 /* NotionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotionVC.swift; sourceTree = "<group>"; };
+		78A06FEE2B31650F008617B8 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		78A06FF22B31A0CD008617B8 /* ITunesAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunesAPIManager.swift; sourceTree = "<group>"; };
 		78BB717A2AE793480070347F /* LaunchScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LaunchScreen.png; sourceTree = "<group>"; };
 		78BB71802AE8A6F20070347F /* FilterButtonSignal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButtonSignal.swift; sourceTree = "<group>"; };
 		78BB71872AEBC1C20070347F /* AlarmStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmStatusViewController.swift; sourceTree = "<group>"; };
@@ -188,6 +193,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78A06FF62B31A2F4008617B8 /* SwiftyJSON in Frameworks */,
 				785E01BF2AC170F70057859F /* RealmSwift in Frameworks */,
 				78C8C24E2ACD7B75004EF75D /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				785E01BD2AC170F70057859F /* Realm in Frameworks */,
@@ -258,6 +264,7 @@
 		785E017C2ABE883E0057859F = {
 			isa = PBXGroup;
 			children = (
+				78A06FEE2B31650F008617B8 /* Settings.bundle */,
 				78C8C2542ACD8A68004EF75D /* .gitignore */,
 				785E01A52AC1053E0057859F /* App */,
 				785E01872ABE883E0057859F /* Pantry */,
@@ -519,6 +526,7 @@
 				784CE00A2AE053EC008ADC5B /* HapticFeedbackManager.swift */,
 				784CE02B2AE4442C008ADC5B /* LocalNotificationManager.swift */,
 				784CE0382AE58B12008ADC5B /* BarcodeAPIManager.swift */,
+				78A06FF22B31A0CD008617B8 /* ITunesAPIManager.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -573,6 +581,7 @@
 				788FE3232ADE4EB20018B1C9 /* Toast */,
 				784CE0002ADFF59D008ADC5B /* MarqueeLabel */,
 				784CE03E2AE58D9A008ADC5B /* Alamofire */,
+				78A06FF52B31A2F4008617B8 /* SwiftyJSON */,
 			);
 			productName = Pantry;
 			productReference = 785E01852ABE883E0057859F /* Pantry.app */;
@@ -613,6 +622,7 @@
 				788FE3222ADE4EB20018B1C9 /* XCRemoteSwiftPackageReference "Toast-Swift" */,
 				784CDFFF2ADFF59D008ADC5B /* XCRemoteSwiftPackageReference "MarqueeLabel" */,
 				784CE03D2AE58D9A008ADC5B /* XCRemoteSwiftPackageReference "Alamofire" */,
+				78A06FF42B31A2F4008617B8 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 785E01862ABE883E0057859F /* Products */;
 			projectDirPath = "";
@@ -635,6 +645,7 @@
 				785E01922ABE883F0057859F /* Assets.xcassets in Resources */,
 				78C8C2522ACD8604004EF75D /* GoogleService-Info.plist in Resources */,
 				78BB717B2AE793480070347F /* LaunchScreen.png in Resources */,
+				78A06FEF2B31650F008617B8 /* Settings.bundle in Resources */,
 				78F37D622ACCE6BA00ED4466 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -712,6 +723,7 @@
 			files = (
 				78F37D2D2AC4617A00ED4466 /* SearchView.swift in Sources */,
 				78A06F6C2B30405B008617B8 /* SettingViewModel.swift in Sources */,
+				78A06FF32B31A0CD008617B8 /* ITunesAPIManager.swift in Sources */,
 				78F37D2F2AC4618400ED4466 /* SearchViewController.swift in Sources */,
 				787CEAED2AD461140077A073 /* ItemsCell.swift in Sources */,
 				788FE3272ADF78130018B1C9 /* AddItemViewController.swift in Sources */,
@@ -953,7 +965,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.junghoon.Pantrytest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -989,7 +1001,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2.1;
+				MARKETING_VERSION = 1.3.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.junghoon.Pantrytest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1081,6 +1093,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		78A06FF42B31A2F4008617B8 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
 		78C8C24C2ACD7B75004EF75D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -1139,6 +1159,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 788FE3222ADE4EB20018B1C9 /* XCRemoteSwiftPackageReference "Toast-Swift" */;
 			productName = Toast;
+		};
+		78A06FF52B31A2F4008617B8 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 78A06FF42B31A2F4008617B8 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
 		};
 		78C8C24D2ACD7B75004EF75D /* FirebaseAnalyticsWithoutAdIdSupport */ = {
 			isa = XCSwiftPackageProductDependency;
