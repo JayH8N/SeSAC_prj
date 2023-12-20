@@ -130,3 +130,20 @@ enum PostError: Int, Error, LocalizedError {
         }
     }
 }
+//MARK: - Profile응답코드
+enum ProfileError: Int, Error, LocalizedError {
+    case unauthenticatedToken = 401 //인증할 수 없는 토큰
+    case forbidden = 403
+    case expiredToken = 419
+    
+    var errorDescription: String {
+        switch self {
+        case .unauthenticatedToken:
+            return "===인증할 수 없는 액세스 토큰입니다. : \(self.rawValue)==="
+        case .forbidden:
+            return "===접근권한이 없습니다. : \(self.rawValue)==="
+        case .expiredToken:
+            return "===액세스 토큰이 만료되었습니다. 토큰을 재발급해주세요 : \(self.rawValue)==="
+        }
+    }
+}

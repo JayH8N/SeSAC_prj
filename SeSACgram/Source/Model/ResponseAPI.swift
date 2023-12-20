@@ -57,3 +57,25 @@ struct InquiryPostResponse: Decodable {
         case nextCursor = "next_cursor"
     }
 }
+//MARK: - Profile
+struct ProfileResponse: Decodable {
+    let posts: [String]
+    let followers, following: [Follow]
+    let id, email, nick, phoneNum: String
+    let birthDay: String
+
+    enum CodingKeys: String, CodingKey {
+        case posts, followers, following
+        case id = "_id"
+        case email, nick, phoneNum, birthDay
+    }
+}
+
+struct Follow: Decodable {
+    let id, nick, profile: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id = "_id"
+        case nick, profile
+    }
+}

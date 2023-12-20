@@ -20,6 +20,7 @@ final class ProfileVC: BaseVC {
         mainView.profileTableView.delegate = self
         mainView.profileTableView.dataSource = self
         addTargets()
+        initialSetting()
     }
     
     override func setNavigationBar() {
@@ -28,6 +29,21 @@ final class ProfileVC: BaseVC {
         
         let backButtonItem = UIBarButtonItem(title: "", style: .plain, target: self, action: nil)
         self.navigationItem.backBarButtonItem = backButtonItem
+    }
+    
+    private func initialSetting() {
+        APIManager.shared.checkProfile { result in
+            switch result {
+            case .success(let value):
+                DispatchQueue.main.async {
+                    self.mainView.nickNameLabel.text = value.nick
+                }
+            case .failure(let error):
+                if let profileError = error as? ProfileError {
+                    print("\(profileError.errorDescription)")
+                }
+            }
+        }
     }
     
     static func instance() -> ProfileVC {
@@ -93,14 +109,22 @@ extension ProfileVC: UITableViewDelegate, UITableViewDataSource {
     }
     
     
+    //테이블뷰 헤더
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let header = ProfileHeaderView()
+        
+        header.profileEditButton.addTarget(self, action: #selector(profileEditButtonTapped), for: .touchUpInside)
         
         return header
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 180
+        return 190
+    }
+    
+    @objc private func profileEditButtonTapped() {
+        //프로필 편집 버튼
+        //프로필 편집 화면으로 전환
     }
     
 }

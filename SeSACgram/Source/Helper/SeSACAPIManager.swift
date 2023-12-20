@@ -151,6 +151,27 @@ final class APIManager {
             }
         }
     }
+    //MARK: -
+    
+    
+    //MARK: - Profile
+    func checkProfile(completion: @escaping (Result<ProfileResponse,Error>) -> Void) {
+        provider.request(.profileMe) { result in
+            switch result {
+            case .success(let value):
+                let result = try! JSONDecoder().decode(ProfileResponse.self, from: value.data)
+                print("프로필 조회 성공")
+                completion(.success(result))
+            case .failure(let error):
+                let statusCode = error.response?.statusCode ?? 500
+                if let commonError = CommonError(rawValue: statusCode) {
+                    print("Error:\(commonError.errorDescription)")
+                } else if let error = ProfileError(rawValue: statusCode) {
+                    completion(.failure(error))
+                }
+            }
+        }
+    }
     
 }
 

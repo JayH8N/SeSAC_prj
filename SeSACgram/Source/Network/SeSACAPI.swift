@@ -16,6 +16,7 @@ enum SeSACAPI {
     case withdraw
     case post(data: Post)
     case inquiryPost(next: String?, limit: String, productId: String)
+    case profileMe
     
     private func addHeaders() -> [String: String] {
         let authToken = UserDefaultsHelper.shared.accessToken
@@ -55,6 +56,8 @@ extension SeSACAPI: TargetType {
             return "withdraw"
         case .post, .inquiryPost:
             return "post"
+        case .profileMe:
+            return "profile/me"
         }
     }
     
@@ -62,7 +65,7 @@ extension SeSACAPI: TargetType {
         switch self {
         case .checkEmail, .logIn, .signUP, .post:
             return .post
-        case .tokenRefresh, .withdraw, .inquiryPost:
+        case .tokenRefresh, .withdraw, .inquiryPost, .profileMe:
             return .get
         }
     }
@@ -75,7 +78,7 @@ extension SeSACAPI: TargetType {
             return .requestJSONEncodable(data)
         case .logIn(let data):
             return .requestJSONEncodable(data)
-        case .tokenRefresh, .withdraw:
+        case .tokenRefresh, .withdraw, .profileMe:
             return .requestPlain
         case .post(let data):
             return .uploadMultipart(convertData(data: data))
@@ -93,7 +96,7 @@ extension SeSACAPI: TargetType {
         case .checkEmail, .logIn, .signUP:
             return ["Content-Type": "application/json",
                     "SesacKey": SeSAC_API.apiKey]
-        case .tokenRefresh, .withdraw, .post, .inquiryPost:
+        case .tokenRefresh, .withdraw, .post, .inquiryPost, .profileMe:
             return addHeaders()
         }
     }

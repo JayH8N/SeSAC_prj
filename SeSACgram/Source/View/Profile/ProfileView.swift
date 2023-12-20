@@ -12,7 +12,7 @@ import Then
 final class ProfileView: BaseView {
     
     let nickNameLabel = UILabel().then {
-        $0.text = "닉네임"
+        $0.text = "NickName"
         $0.font = Constants.Font.NickNameFont
         $0.textColor = Constants.Color.DeepGreen
     }
