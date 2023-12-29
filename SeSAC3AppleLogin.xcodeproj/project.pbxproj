@@ -16,6 +16,7 @@
 		78800B992B3D030600687742 /* SeSAC3AppleLoginTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78800B982B3D030600687742 /* SeSAC3AppleLoginTests.swift */; };
 		78800BA32B3D030600687742 /* SeSAC3AppleLoginUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78800BA22B3D030600687742 /* SeSAC3AppleLoginUITests.swift */; };
 		78800BA52B3D030600687742 /* SeSAC3AppleLoginUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78800BA42B3D030600687742 /* SeSAC3AppleLoginUITestsLaunchTests.swift */; };
+		78800BB32B3E635D00687742 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78800BB22B3E635D00687742 /* AuthenticationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		78800B9E2B3D030600687742 /* SeSAC3AppleLoginUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SeSAC3AppleLoginUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		78800BA22B3D030600687742 /* SeSAC3AppleLoginUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSAC3AppleLoginUITests.swift; sourceTree = "<group>"; };
 		78800BA42B3D030600687742 /* SeSAC3AppleLoginUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeSAC3AppleLoginUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		78800BB12B3D0C1E00687742 /* SeSAC3AppleLogin.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SeSAC3AppleLogin.entitlements; sourceTree = "<group>"; };
+		78800BB22B3E635D00687742 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +102,7 @@
 		78800B802B3D030500687742 /* SeSAC3AppleLogin */ = {
 			isa = PBXGroup;
 			children = (
+				78800BB12B3D0C1E00687742 /* SeSAC3AppleLogin.entitlements */,
 				78800B812B3D030500687742 /* AppDelegate.swift */,
 				78800B832B3D030500687742 /* SceneDelegate.swift */,
 				78800B852B3D030500687742 /* ViewController.swift */,
@@ -106,6 +110,7 @@
 				78800B8A2B3D030600687742 /* Assets.xcassets */,
 				78800B8C2B3D030600687742 /* LaunchScreen.storyboard */,
 				78800B8F2B3D030600687742 /* Info.plist */,
+				78800BB22B3E635D00687742 /* AuthenticationManager.swift */,
 			);
 			path = SeSAC3AppleLogin;
 			sourceTree = "<group>";
@@ -259,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78800B862B3D030500687742 /* ViewController.swift in Sources */,
+				78800BB32B3E635D00687742 /* AuthenticationManager.swift in Sources */,
 				78800B822B3D030500687742 /* AppDelegate.swift in Sources */,
 				78800B842B3D030500687742 /* SceneDelegate.swift in Sources */,
 			);
@@ -440,6 +446,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SeSAC3AppleLogin/SeSAC3AppleLogin.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 57CCR42RDS;
@@ -468,6 +475,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SeSAC3AppleLogin/SeSAC3AppleLogin.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 57CCR42RDS;
