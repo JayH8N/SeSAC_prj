@@ -13,6 +13,10 @@
 		78800C032B4555A800687742 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78800C012B4555A800687742 /* LaunchScreen.storyboard */; };
 		78800C0B2B45568900687742 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 78800C0A2B45568900687742 /* .gitignore */; };
 		78800C122B45573100687742 /* Talk_API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78800C112B45573100687742 /* Talk_API.swift */; };
+		78800C1C2B45753800687742 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78800C1B2B45753800687742 /* Constants.swift */; };
+		78800C202B45786800687742 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78800C1F2B45786800687742 /* UIColor.swift */; };
+		78800C232B45873700687742 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78800C222B45873700687742 /* BaseView.swift */; };
+		78800C252B45874000687742 /* BaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78800C242B45874000687742 /* BaseVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		78800C042B4555A800687742 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		78800C0A2B45568900687742 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		78800C112B45573100687742 /* Talk_API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Talk_API.swift; sourceTree = "<group>"; };
+		78800C1B2B45753800687742 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		78800C1F2B45786800687742 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		78800C222B45873700687742 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		78800C242B45874000687742 /* BaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +115,7 @@
 		78800C142B4557CF00687742 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				78800C212B45872B00687742 /* Base */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -121,6 +130,7 @@
 		78800C162B4557E100687742 /* Enum */ = {
 			isa = PBXGroup;
 			children = (
+				78800C1B2B45753800687742 /* Constants.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -135,8 +145,18 @@
 		78800C182B4557F300687742 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				78800C1F2B45786800687742 /* UIColor.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		78800C212B45872B00687742 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				78800C222B45873700687742 /* BaseView.swift */,
+				78800C242B45874000687742 /* BaseVC.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,6 +233,10 @@
 				78800BF72B4555A600687742 /* AppDelegate.swift in Sources */,
 				78800C122B45573100687742 /* Talk_API.swift in Sources */,
 				78800BF92B4555A600687742 /* SceneDelegate.swift in Sources */,
+				78800C232B45873700687742 /* BaseView.swift in Sources */,
+				78800C1C2B45753800687742 /* Constants.swift in Sources */,
+				78800C252B45874000687742 /* BaseVC.swift in Sources */,
+				78800C202B45786800687742 /* UIColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
