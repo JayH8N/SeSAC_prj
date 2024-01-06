@@ -14,7 +14,7 @@ class FilterButtonVC: BaseVC {
     weak var delegate: BulletinDelegate?
     var selectedSort: Sort?
     var pageOption: PageOption?
-    var buttonSignal: FilterButtonSignal? //filter누르고 바로 확인누르면 옵셔널이라 오류날듯
+    var buttonSignal: FilterButtonSignal?
     
     let bgView = UIView().then {
         $0.backgroundColor = .clear

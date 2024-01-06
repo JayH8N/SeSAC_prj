@@ -156,8 +156,6 @@ extension SettingVC: UITableViewDelegate, UITableViewDataSource {
     
     private func didSelect(title: String) {
         switch title {
-//        case NSLocalizedString(SettingMenu.MenuList.notificationSetting.rawValue, comment: ""):
-//            print("알림설정")
         case NSLocalizedString(SettingMenu.MenuList.privacyPolicy.rawValue, comment: ""):
             let link = "https://sweet-baryonyx-eba.notion.site/3299bf21232041ed91f0d01bddf47ea5?pvs=4"
             let vc = NotionVC(link: link)
@@ -184,5 +182,4 @@ extension SettingVC: UITableViewDelegate, UITableViewDataSource {
             break
         }
     }
-    
 }
