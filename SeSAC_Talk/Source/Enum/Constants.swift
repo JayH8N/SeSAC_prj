@@ -43,6 +43,10 @@ enum Constants {
         static let Caption = UIFont.systemFont(ofSize: 12, weight: .regular)
     }
     
+    enum Image {
+        static let onBoardingImage: UIImage = .onboarding
+    }
+    
 //    enum Icon {
 //        static let NewMessageButton =
 //        

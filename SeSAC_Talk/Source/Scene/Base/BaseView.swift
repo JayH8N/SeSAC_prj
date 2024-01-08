@@ -11,6 +11,7 @@ class BaseView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.backgroundColor = Constants.Color.Background.Primary
         configureView()
         setConstraints()
     }
@@ -21,4 +22,5 @@ class BaseView: UIView {
     
     func configureView() { }
     func setConstraints() { }
+    
 }

@@ -17,4 +17,33 @@ class BaseVC: UIViewController {
     func configureView() { }
     
     func setConstraints() { }
+    
+    enum Detent {
+        case large
+        case medium
+        case custom(CGFloat)
+    }
+    
+    func createBottomSheet(vc: BaseVC, detent: Detent) {
+        guard let bottomSheet = vc.sheetPresentationController else { return }
+        
+        var height: UISheetPresentationController.Detent {
+            switch detent {
+            case .large:
+                return .large()
+            case .medium:
+                return .medium()
+            case .custom(let cGFloat):
+                return .custom { _ in
+                    cGFloat
+                }
+            }
+        }
+        
+        bottomSheet.preferredCornerRadius = 10
+        bottomSheet.detents = [height]
+        bottomSheet.prefersGrabberVisible = true
+        
+        self.present(vc, animated: true)
+    }
 }

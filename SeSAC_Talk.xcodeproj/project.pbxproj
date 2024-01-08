@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7817437F2B4BFFAE00EC1E35 /* OnBoardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7817437E2B4BFFAE00EC1E35 /* OnBoardingView.swift */; };
+		781743812B4BFFB500EC1E35 /* OnBoardingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781743802B4BFFB500EC1E35 /* OnBoardingVC.swift */; };
+		781743842B4C00BC00EC1E35 /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = 781743832B4C00BC00EC1E35 /* Then */; };
+		781743872B4C00D000EC1E35 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 781743862B4C00D000EC1E35 /* SnapKit */; };
+		781743892B4C00D000EC1E35 /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 781743882B4C00D000EC1E35 /* SnapKit-Dynamic */; };
+		7817438C2B4C00FD00EC1E35 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 7817438B2B4C00FD00EC1E35 /* RxCocoa */; };
+		7817438E2B4C00FD00EC1E35 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7817438D2B4C00FD00EC1E35 /* RxSwift */; };
+		781743912B4C188B00EC1E35 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781743902B4C188B00EC1E35 /* ActionButton.swift */; };
+		781743932B4C1B9100EC1E35 /* AddTargetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781743922B4C1B9100EC1E35 /* AddTargetProtocol.swift */; };
+		781743962B4C1E6700EC1E35 /* LoginBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781743952B4C1E6700EC1E35 /* LoginBottomView.swift */; };
+		781743982B4C1E6F00EC1E35 /* LoginBottomVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781743972B4C1E6F00EC1E35 /* LoginBottomVC.swift */; };
+		7817439A2B4C2B4900EC1E35 /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 781743992B4C2B4900EC1E35 /* LoginButton.swift */; };
+		7817439C2B4C313900EC1E35 /* NSMutableAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7817439B2B4C313900EC1E35 /* NSMutableAttributedString.swift */; };
 		78800BF72B4555A600687742 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78800BF62B4555A600687742 /* AppDelegate.swift */; };
 		78800BF92B4555A600687742 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78800BF82B4555A600687742 /* SceneDelegate.swift */; };
 		78800C002B4555A800687742 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78800BFF2B4555A800687742 /* Assets.xcassets */; };
@@ -20,6 +33,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7817437E2B4BFFAE00EC1E35 /* OnBoardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingView.swift; sourceTree = "<group>"; };
+		781743802B4BFFB500EC1E35 /* OnBoardingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnBoardingVC.swift; sourceTree = "<group>"; };
+		781743902B4C188B00EC1E35 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		781743922B4C1B9100EC1E35 /* AddTargetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTargetProtocol.swift; sourceTree = "<group>"; };
+		781743952B4C1E6700EC1E35 /* LoginBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBottomView.swift; sourceTree = "<group>"; };
+		781743972B4C1E6F00EC1E35 /* LoginBottomVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginBottomVC.swift; sourceTree = "<group>"; };
+		781743992B4C2B4900EC1E35 /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
+		7817439B2B4C313900EC1E35 /* NSMutableAttributedString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSMutableAttributedString.swift; sourceTree = "<group>"; };
 		78800BF32B4555A600687742 /* SeSAC_Talk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SeSAC_Talk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		78800BF62B4555A600687742 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		78800BF82B4555A600687742 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,12 +60,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				781743842B4C00BC00EC1E35 /* Then in Frameworks */,
+				781743872B4C00D000EC1E35 /* SnapKit in Frameworks */,
+				7817438E2B4C00FD00EC1E35 /* RxSwift in Frameworks */,
+				7817438C2B4C00FD00EC1E35 /* RxCocoa in Frameworks */,
+				781743892B4C00D000EC1E35 /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7817437D2B4BFF3100EC1E35 /* OnBoarding */ = {
+			isa = PBXGroup;
+			children = (
+				781743942B4C1E3300EC1E35 /* LoginBottomView */,
+				7817437E2B4BFFAE00EC1E35 /* OnBoardingView.swift */,
+				781743802B4BFFB500EC1E35 /* OnBoardingVC.swift */,
+			);
+			path = OnBoarding;
+			sourceTree = "<group>";
+		};
+		7817438F2B4C186B00EC1E35 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				781743902B4C188B00EC1E35 /* ActionButton.swift */,
+				781743992B4C2B4900EC1E35 /* LoginButton.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		781743942B4C1E3300EC1E35 /* LoginBottomView */ = {
+			isa = PBXGroup;
+			children = (
+				781743952B4C1E6700EC1E35 /* LoginBottomView.swift */,
+				781743972B4C1E6F00EC1E35 /* LoginBottomVC.swift */,
+			);
+			path = LoginBottomView;
+			sourceTree = "<group>";
+		};
 		78800BEA2B4555A600687742 = {
 			isa = PBXGroup;
 			children = (
@@ -74,13 +128,13 @@
 		78800C0C2B4556EF00687742 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				78800C132B45579D00687742 /* App */,
+				78800C102B45572500687742 /* Network */,
 				78800C182B4557F300687742 /* Extension */,
 				78800C172B4557ED00687742 /* Helper */,
 				78800C162B4557E100687742 /* Enum */,
 				78800C152B4557DC00687742 /* Protocol */,
 				78800C142B4557CF00687742 /* Scene */,
-				78800C132B45579D00687742 /* App */,
-				78800C102B45572500687742 /* Network */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -115,6 +169,8 @@
 		78800C142B4557CF00687742 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				7817438F2B4C186B00EC1E35 /* CustomView */,
+				7817437D2B4BFF3100EC1E35 /* OnBoarding */,
 				78800C212B45872B00687742 /* Base */,
 			);
 			path = Scene;
@@ -123,6 +179,7 @@
 		78800C152B4557DC00687742 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				781743922B4C1B9100EC1E35 /* AddTargetProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -146,6 +203,7 @@
 			isa = PBXGroup;
 			children = (
 				78800C1F2B45786800687742 /* UIColor.swift */,
+				7817439B2B4C313900EC1E35 /* NSMutableAttributedString.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -175,6 +233,13 @@
 			dependencies = (
 			);
 			name = SeSAC_Talk;
+			packageProductDependencies = (
+				781743832B4C00BC00EC1E35 /* Then */,
+				781743862B4C00D000EC1E35 /* SnapKit */,
+				781743882B4C00D000EC1E35 /* SnapKit-Dynamic */,
+				7817438B2B4C00FD00EC1E35 /* RxCocoa */,
+				7817438D2B4C00FD00EC1E35 /* RxSwift */,
+			);
 			productName = SeSAC_Talk;
 			productReference = 78800BF32B4555A600687742 /* SeSAC_Talk.app */;
 			productType = "com.apple.product-type.application";
@@ -203,6 +268,11 @@
 				Base,
 			);
 			mainGroup = 78800BEA2B4555A600687742;
+			packageReferences = (
+				781743822B4C00BC00EC1E35 /* XCRemoteSwiftPackageReference "Then" */,
+				781743852B4C00D000EC1E35 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				7817438A2B4C00FD00EC1E35 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = 78800BF42B4555A600687742 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -233,10 +303,18 @@
 				78800BF72B4555A600687742 /* AppDelegate.swift in Sources */,
 				78800C122B45573100687742 /* Talk_API.swift in Sources */,
 				78800BF92B4555A600687742 /* SceneDelegate.swift in Sources */,
+				781743932B4C1B9100EC1E35 /* AddTargetProtocol.swift in Sources */,
+				781743982B4C1E6F00EC1E35 /* LoginBottomVC.swift in Sources */,
 				78800C232B45873700687742 /* BaseView.swift in Sources */,
+				781743962B4C1E6700EC1E35 /* LoginBottomView.swift in Sources */,
 				78800C1C2B45753800687742 /* Constants.swift in Sources */,
+				7817439C2B4C313900EC1E35 /* NSMutableAttributedString.swift in Sources */,
+				7817437F2B4BFFAE00EC1E35 /* OnBoardingView.swift in Sources */,
+				7817439A2B4C2B4900EC1E35 /* LoginButton.swift in Sources */,
+				781743912B4C188B00EC1E35 /* ActionButton.swift in Sources */,
 				78800C252B45874000687742 /* BaseVC.swift in Sources */,
 				78800C202B45786800687742 /* UIColor.swift in Sources */,
+				781743812B4BFFB500EC1E35 /* OnBoardingVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,7 +460,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 57CCR42RDS;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SeSAC_Talk/Info.plist;
+				INFOPLIST_FILE = SeSAC_Talk/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -412,7 +490,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 57CCR42RDS;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SeSAC_Talk/Info.plist;
+				INFOPLIST_FILE = SeSAC_Talk/Resource/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -455,6 +533,61 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		781743822B4C00BC00EC1E35 /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+		781743852B4C00D000EC1E35 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.0;
+			};
+		};
+		7817438A2B4C00FD00EC1E35 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		781743832B4C00BC00EC1E35 /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 781743822B4C00BC00EC1E35 /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+		781743862B4C00D000EC1E35 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 781743852B4C00D000EC1E35 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		781743882B4C00D000EC1E35 /* SnapKit-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 781743852B4C00D000EC1E35 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
+		};
+		7817438B2B4C00FD00EC1E35 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7817438A2B4C00FD00EC1E35 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		7817438D2B4C00FD00EC1E35 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7817438A2B4C00FD00EC1E35 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 78800BEB2B4555A600687742 /* Project object */;
 }
