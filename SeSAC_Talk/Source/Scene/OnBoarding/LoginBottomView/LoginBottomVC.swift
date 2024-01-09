@@ -54,8 +54,14 @@ extension LoginBottomVC {
                 owner.handleLoginTap(.email)
             }
             .disposed(by: disposeBag)
-            
-            
+        
+        let labelTapGesture = UITapGestureRecognizer(target: self, action: #selector(signUpButtonClicked))
+        mainView.signUPLabel.addGestureRecognizer(labelTapGesture)
+        
+    }
+    
+    @objc private func signUpButtonClicked() {
+        self.handleLoginTap(.signUp)
     }
     
     private func handleLoginTap(_ type: LoginType) {
