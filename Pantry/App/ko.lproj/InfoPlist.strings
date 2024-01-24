@@ -1,0 +1,11 @@
+/* 
+  InfoPlist.strings
+  Pantry
+
+  Created by hoon on 2023/10/04.
+  
+*/
+
+NSCameraUsageDescription = "카메라 권한을 허용해 주세요. 아이템 등록 시 이미지 업로드에 사용됩니다.";
+
+NSPhotoLibraryUsageDescription = "앨범 접근 권한을 허용해 주세요. 아이템 등록 시 이미지 업로드에 사용됩니다.";

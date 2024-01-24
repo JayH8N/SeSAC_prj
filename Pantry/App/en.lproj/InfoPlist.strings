@@ -1,0 +1,11 @@
+/* 
+  InfoPlist.strings
+  Pantry
+
+  Created by hoon on 2023/10/04.
+  
+*/
+
+NSCameraUsageDescription = "Please allow camera permission. Used to upload images when registering items.";
+
+NSPhotoLibraryUsageDescription = "Please allow access to the album. Used to upload images when registering items.";

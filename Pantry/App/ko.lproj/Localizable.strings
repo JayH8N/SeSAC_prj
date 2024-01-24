@@ -1,0 +1,134 @@
+/* 
+  Localizable.strings
+  Pantry
+
+  Created by hoon on 2023/09/27.
+  
+*/
+
+"Search" = "검색";
+
+"AddRefriger" = "냉장고 추가";
+
+"Cancel" = "취소";
+
+"Add" = "추가";
+
+"EnterTitle" = "이름을 입력해주세요";
+
+"Memo" = "메모";
+
+"Edit" = "편집";
+
+"Camera" = "카메라";
+
+"Album" = "앨범";
+
+"NoCamera" = "카메라 이용할 수 없습니다";
+
+"Refrigerator" = "냉장";
+
+"Freezer" = "냉동";
+
+"All" = "전체";
+
+"addItemBarcode" = "바코드로 추가";
+
+"Delete" = "삭제";
+
+"Update" = "수정";
+
+"AddItem" = "물건 추가";
+
+"ItemName" = "물건 이름";
+
+"Expiry date" = "유통기한";
+
+"Quantity" =  "수량";
+
+"ItemNameEssential" = "물건 이름입력은 필수입력입니다.";
+
+"introTitle" = "프로그레스바 안내";
+
+"introMessage" = "막대의 진행도가 높아질수록 유통기한이 임박했음을 의미합니다.
+유통기한이 지나게 되면 아이템이 어둡게 처리됩니다.";
+
+"SelectSort" = "정렬 선택";
+
+"Apply" = "확인";
+
+//정렬 선택
+"SortNetAdded" = "추가된 순";
+
+"SortFastestDate" = "유통기한 빠른순";
+
+"SortSlowestDate" = "유통기한 느린순";
+
+"ExpiredGoods" = "유통기한 지난 물건";
+
+"ExpNotiTitle" = "유통기한 알림";
+
+"ExpNotiBody" = "%@의 유통기한이 %d일 남았습니다.";
+
+"None" = "None";
+
+"dayAlarm" = "%d일전 알람";
+
+"shortDayAlarm" = "%d일전";
+
+"APIError" = "등록되지 않은 물건입니다.";
+
+"EXPLeft" = "%d일 남음";
+
+"EXPAgo" = "%d일 지남";
+
+"RemoveData" = "데이터 삭제";
+
+"RemoveDataMessage" = "정말로 데이터를 삭제하시겠습니까?";
+
+"AlarmIntro" = "알림은 오후6시가 기본값입니다.";
+
+"Alarm" = "알림";
+
+"AlarmPermissionTitle" = "알림 권한";
+
+"AlarmPermissionMessage" = "현재 알림권한이 거부되어있습니다. 알림권한을 허용하시겠습니까?";
+
+"EmptyViewTitle" = "아직 생성된 냉장고가 없어요.";
+
+"EmptyViewSubTitle" = "+ 버튼으로 냉장고를 생성해 식재료를 관리해 보세요";
+
+"SettingTitle" = "설정";
+
+//Setting Menu
+"noti" = "알림";
+
+"termsOfService" = "이용약관";
+
+"other" = "기타";
+
+"notificationSetting" = "알림설정";
+
+"privacyPolicy" = "개인정보처리방침";
+
+"contactUS" = "문의하기";
+
+"openSource" = "오픈소스";
+
+"appVersion" = "앱 버전";
+//
+"feedback" = "문의 내용을 입력해주세요";
+
+"feedBackTitle" = "<Pantry>문의 및 의견";
+
+"MailTransferFailed" = "메일 전송 실패";
+
+"MailTransferFailedMessage" = "메일을 보내려면 'Mail' 앱이 필요합니다. App Store에서 해당 앱을 복원하거나 이메일 설정을 확인하고 다시 시도해주세요.";
+
+"GoAppStore" = "App Store로 이동하기";
+
+"updateTitle" = "업데이트";
+
+"updateMessage" = "최신버전이 존재합니다. 업데이트 하시겠어요?";
+
+"LatestVersion" = "현재 최신버전입니다.";
